@@ -98,9 +98,13 @@
     }
 
 
+    /* Container-header */
+
+    
+
     /* Footer */
     footer {
-        background-color: #000227; /* Cor azul de fundo */
+        background-color: #001747; /* Cor azul de fundo */
         color: white; /* Cor do texto dentro do footer */
         display: flex; /* Usando flexbox para distribuir os elementos internos */
         flex-direction: column;
