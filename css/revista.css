@@ -1,12 +1,8 @@
 html, body {
     overflow: auto;
-<<<<<<< Updated upstream
     margin: 0;
     padding: 0;
     height: 100%;
-=======
-   
->>>>>>> Stashed changes
 }
 
 .container-header {
@@ -29,7 +25,6 @@ h4 {
     display: inline;
 }
 
-<<<<<<< Updated upstream
 
 .swiper {
     width: 100%;
@@ -61,11 +56,6 @@ h4 {
 
 
 
-/**/
-
-
-=======
->>>>>>> Stashed changes
 
 /* Estilo para telas grandes (Desktop) */
 @media screen and (min-width: 1025px) {
@@ -354,7 +344,6 @@ h4 {
     color: #ccc;
   }
   
-<<<<<<< Updated upstream
   /* Rodapé */
   footer {
     margin-top: 3rem;
@@ -363,8 +352,6 @@ h4 {
   }
   
 /*=======
-=======
->>>>>>> Stashed changes
 */
 
 .carousel {
@@ -514,7 +501,7 @@ h4 {
 /*>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
-*/
 =======
-  
+
 >>>>>>> Stashed changes
+*/

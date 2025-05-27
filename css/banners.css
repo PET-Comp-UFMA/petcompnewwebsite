@@ -1,0 +1,445 @@
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  overflow: auto;
+}
+
+.container-header {
+  color: white;
+  background-color: #01204C;
+}
+
+.container-header a {
+  cursor: pointer;
+  color: #3AA3FC;
+  text-decoration: none;
+}
+
+.container-body p {
+  line-height: 1.6;
+  text-align: justify;
+}
+
+h4 {
+  display: inline;
+}
+
+
+/* Estilo do Swiper para posicionar a paginação abaixo dos cards */
+.carousel {
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+/* Estilo do Swiper */
+.carousel {
+  position: relative;
+}
+
+/* Estilo dos bullets de navegação (paginações) */
+.swiper-pagination {
+  position: absolute;
+  bottom: 10px;
+  display: flex;
+  justify-content: center; /* Centraliza os bullets horizontalmente */
+  z-index: 10;
+}
+
+/* Personalize os bullets */
+.swiper-pagination-bullet {
+  background-color: #007bff; /* Cor dos bullets */
+}
+
+.swiper {
+  position: relative;
+  padding-bottom: 40px;
+  width: 90%;
+  max-width: 500px;
+  height: 95vh;
+  margin: 40px auto;
+  border-radius: 10px;
+  background: #ccc;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Ajuste para o layout dos slides */
+.swiper-slide {
+  display: flex;
+  justify-content: center; /* Centraliza os cards */
+  align-items: center;
+  font-size: 30px;
+  background-color: #ccc;
+}
+
+.swiper-slide img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+  object-position: center;
+  height: auto;
+  display: block;
+}
+
+/* Adicional: Adicionar margem aos slides, se necessário, para espaçamento */
+.swiper-slide {
+  margin-bottom: 20px; /* Ajuste conforme o seu layout */
+}
+/* Estilo do Swiper */
+.carousel {
+  position: relative;
+}
+
+/* Estilo dos slides */
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Garantir que o conteúdo dos cards esteja centralizado */
+}
+
+/* Estilo dos bullets de navegação (paginações) */
+.swiper-pagination {
+  position: relative;
+  bottom: 10px; /* Coloca os bullets abaixo dos slides */
+  display: flex;
+  justify-content: center;
+  z-index: 1000; /* Garante que a paginação fique abaixo dos cards */
+  padding-top: 20px; /* Adiciona um espaçamento acima da paginação */
+}
+
+/* Personalize os bullets */
+.swiper-pagination-bullet {
+  background-color: #007bff;
+  width: 12px; /* Tamanho dos bullets */
+  height: 12px; /* Tamanho dos bullets */
+  margin: 0 5px; /* Espaçamento entre os bullets */
+}
+/* Estilo do Swiper */
+.carousel {
+  position: relative;
+}
+
+/* Estilo dos slides */
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Garantir que o conteúdo dos cards esteja centralizado */
+}
+
+/* Estilo dos bullets de navegação (paginações) */
+.swiper-pagination {
+  position: relative;
+  bottom: 10px; /* Coloca os bullets abaixo dos slides */
+  display: flex;
+  justify-content: center;
+  z-index: 1000; /* Garante que a paginação fique abaixo dos cards */
+  padding-top: 30px; /* Adiciona um espaçamento acima da paginação */
+}
+
+/* Personalize os bullets */
+.swiper-pagination-bullet {
+  background-color: #007bff;
+  width: 12px; /* Tamanho dos bullets */
+  height: 12px; /* Tamanho dos bullets */
+  margin: 0 5px; /* Espaçamento entre os bullets */
+}
+.swiper-slide a{
+  text-decoration: none;
+
+}
+/* Ajustes de responsividade */
+@media (max-width: 768px) {
+  .swiper-pagination {
+    margin-top: 10px;
+  }
+  .swiper-pagination-bullet {
+    width: 10px; /* Bullets menores em telas pequenas */
+    height: 10px;
+  }
+}
+
+
+/* Ajustes de responsividade */
+@media (max-width: 768px) {
+  .swiper-pagination {
+    margin-top: 10px;
+  }
+  .swiper-pagination-bullet {
+    width: 10px; /* Bullets menores em telas pequenas */
+    height: 10px;
+  }
+}
+
+
+@media screen and (min-width: 1025px) {
+  .container-header {
+      padding: 50px 60px;
+  }
+
+  .container-header h2 {
+      font-size: 50px;
+      margin-bottom: 20px;
+      font-weight: bold;
+  }
+
+  .container-header h3 {
+      font-size: 30px;
+      margin-bottom: 20px;
+      font-weight: normal;
+  }
+
+  .container-header p {
+      font-size: 16px;
+      font-weight: normal;
+  }
+
+  .container-body {
+      padding: 50px 60px;
+  }
+
+  .container-body p {
+      font-size: 20px;
+      font-weight: medium;
+  }
+}
+
+@media (max-width: 1360px) {
+
+  .main .sites-cards {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 3em;
+    padding: 0 2em;
+  }
+
+  .software-card {
+    width: 100%;
+  }
+
+  .software-card img {
+    display: flex;
+    flex-direction: column;
+  }
+
+}
+
+@media (max-width: 1024px) {
+  
+  header .nav-links{ /* Provisorio, enquanto o header nao fica pronto */
+    display: none;
+  }
+
+  .title-section {
+    padding: 2rem 3rem;
+  }
+
+  .title-section h1 {
+    font-size: 50px;
+  }
+
+  .title-section h2 {
+    font-size: 30px;
+  }
+
+  .text-fab-software {
+    padding: 2rem 3rem;
+    font-size: 20px;
+  }
+
+  .main .sites-cards {
+    grid-template-columns: 1fr;
+    grid-gap: 3em;
+    padding: 0 2em;
+  }
+
+  .software-card {
+    width: 100%;
+  }
+
+  .software-card img {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+/* Telas menores que 768px (Tablets em modo retrato e celulares grandes) */
+@media (max-width: 768px) {
+
+  header .nav-links{ /* Provisorio, enquanto o header nao fica pronto */
+    display: none;
+  }
+
+  .title-section {
+    padding: 1.5rem 2rem;
+  }
+
+  .title-section h1 {
+    font-size: 40px;
+  }
+
+  .title-section h2 {
+    font-size: 25px;
+  }
+
+  .text-fab-software {
+    padding: 1.5rem 2rem;
+    font-size: 18px;
+  }
+
+  .acess-title {
+    font-size: 18px;
+    flex-wrap: wrap;
+  }
+
+  .main .sites-cards {
+    grid-gap: 2em;
+    padding: 0 1.5em;
+  }
+
+  .software-card img {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+/* Telas menores que 480px (Celulares pequenos) */
+@media (max-width: 480px) {
+
+  header .nav-links{ /* Provisorio, enquanto o header nao fica pronto */
+    display: none;
+  }
+
+
+  .title-section {
+    padding: 1rem;
+  }
+
+  .title-section h1 {
+    font-size: 30px;
+  }
+
+  .title-section h2 {
+    font-size: 20px;
+  }
+
+  .text-fab-software {
+    padding: 1rem;
+    font-size: 16px;
+  }
+
+  .main .sites-cards {
+    grid-gap: 1em;
+    padding: 0 1em;
+  }
+
+  .software-card {
+    width: 100%;
+  }
+
+  .software-card img {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .software-card h2, .software-card a {
+    font-size: 16px;
+  }
+
+  .software-card .label {
+    font-size: 14px;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .container-header {
+      padding: 50px 60px;
+  }
+
+  .container-header h2 {
+      font-size: 50px;
+      margin-bottom: 20px;
+      font-weight: bold;
+  }
+
+  .container-header h3 {
+      font-size: 30px;
+      margin-bottom: 20px;
+      font-weight: normal;
+  }
+
+  .container-header p {
+      font-size: 16px;
+      font-weight: normal;
+  }
+
+  .container-body {
+      padding: 50px 60px;
+  }
+
+  .container-body p {
+      font-size: 20px;
+      font-weight: medium;
+  }
+}
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+  .container-header {
+      padding: 20px 70px;
+  }
+
+  .container-header h2 {
+      font-size: 24px;
+      margin-bottom: 15px;
+  }
+
+  .container-header h3 {
+      font-size: 16px;
+      margin-bottom: 15px;
+  }
+
+  .container-header p {
+      font-size: 9px;
+      font-weight: normal;
+  }
+
+  .container-body {
+      padding: 20px 50px;
+  }
+
+  .container-body p {
+      font-size: 14px;
+      text-indent: 2em;
+  }
+}
+@media screen and (max-width: 600px) {
+  .container-header {
+      padding: 20px 40px;
+  }
+
+  .container-header h2 {
+      font-size: 20px;
+      margin-bottom: 10px;
+  }
+
+  .container-header h3 {
+      font-size: 10px;
+      margin-bottom: 10px;
+  }
+
+  .container-header p {
+      font-size: 5px;
+      font-weight: normal;
+  }
+
+  .container-body {
+      padding: 20px 40px;
+  }
+
+  .container-body p {
+      font-size: 10px;
+      text-indent: 2em;
+  }
+}
+
