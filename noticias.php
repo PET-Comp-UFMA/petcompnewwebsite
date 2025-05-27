@@ -69,6 +69,7 @@ if (!is_null($titulo) || !is_null($texto)) {
 
   <main>
 
+    <!--- HEADER --->
     <?php include('header.php') ?>
 
 
@@ -79,7 +80,12 @@ if (!is_null($titulo) || !is_null($texto)) {
 
     </div>
 
-
+    <div class="container-body">
+      <p>
+        Bem-vindo à seção de notícias do PETComp, onde você encontrará as atualizações mais recentes sobre nossas ações, projetos e iniciativas. Nossa missão é promover a transparência e a comunicação com todos os nossos colaboradores, parceiros e comunidade em geral.
+        Aqui, você poderá acompanhar os avanços de nossos programas, eventos, parcerias e novidades importantes que fazem parte do nosso dia a dia. Através dessas atualizações, buscamos compartilhar nosso compromisso com a excelência e o impacto positivo que geramos nas áreas em que atuamos.
+      </p>
+    </div>
 
     <section class="container">
 
