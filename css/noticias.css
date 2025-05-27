@@ -1,3 +1,15 @@
+.container-body {
+  line-height: 1.6;
+  text-align: justify;
+  padding: 50px 60px;
+
+  p {
+    font-size: 20px;
+    font-weight: medium;
+  }
+}
+
+
 .resultados{
 
   text-align: center;
@@ -5,3 +17,4 @@
   padding-bottom: 16vh;
 
 } 
+
