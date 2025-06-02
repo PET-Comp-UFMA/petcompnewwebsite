@@ -61,7 +61,7 @@ if (!is_null($titulo) || !is_null($texto)) {
   $title = 'Notícias | PETComp';
   $cssFiles = ['css/globals.css', 'css/noticias.css', 'css/trabalhos_publicados.css', 'css/publicacoes.css'];
   include 'head.php';
-?>
+?>  
 
 
 
@@ -90,30 +90,21 @@ if (!is_null($titulo) || !is_null($texto)) {
 
       <form action="noticias.php" class="filtro" method="<?php echo $_SERVER['PHP_SELF'] ?>">
 
-        <div class="author">
-
-          <label for="author">Título</label>
-
-          <input name="author" type="text" placeholder="Digite o título" value="<?php echo $titulo; ?>">
-
+        <div class="search-field">
+          <label for="titulo">Título</label>
+          <input id="titulo" name="titulo" class="search-input" type="text" placeholder="Digite o título" value="<?php echo $titulo; ?>">
         </div>
 
-        <div class="keyword">
-
-          <label for="keyword">Texto</label>
-
-          <input name="keyword" type="text" placeholder="Digite uma parte de texto" value="<?php echo $texto; ?>">
-
+        <div class="search-field">
+          <label for="texto">Texto</label>
+          <input id="texto" name="texto" class="search-input" type="text" placeholder="Digite uma parte de texto" value="<?php echo $texto; ?>">
         </div>
+
 
         <div class="search">
-
           <label for="search-button">Buscar</label>
-
           <button name="search-button" class="search-button"><img src="./assets/svg/search.svg" alt=""></button>
-
         </div>
-
       </form>
 
 

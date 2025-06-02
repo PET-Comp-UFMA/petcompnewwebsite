@@ -10,6 +10,20 @@
   }
 }
 
+.search-input {
+  border: 2px solid #333;
+  padding: 6px 10px;
+  border-radius: 4px;
+  font-size: 1rem;
+  outline-offset: 2px;
+  transition: border-color 0.3s ease;
+}
+
+.search-input:focus {
+  border-color: #007BFF;
+  outline: none;
+}
+
 
 .resultados{
 
