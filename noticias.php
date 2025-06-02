@@ -74,11 +74,6 @@ if (!is_null($titulo) || !is_null($texto)) {
 
 
 
-    <div class="section-header">
-
-      <h2>Notícias</h2>
-
-    </div>
 
     <div class="container-body">
       <p>
