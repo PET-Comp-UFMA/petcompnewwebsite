@@ -13,7 +13,7 @@
         <h2>Biblioteca</h2>
         <h3>Veja as monitorias que promovemos</h3>
         <h4><a href="index.php">Página Inicial</a></h4>
-        <h4> -> Biblioteca PETComp</h4>
+        <h4> → Biblioteca PETComp</h4>
     </div>
         
         <div class="container-body">
