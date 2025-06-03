@@ -50,10 +50,10 @@ if (!is_null($titulo) || !is_null($texto)) {
 
 <body>
 
-  <main>
+  <!--- HEADER --->
+  <?php include('header.php') ?>
 
-    <!--- HEADER --->
-    <?php include('header.php') ?>
+  <main>
 
     <div class="container-body">
       <p>
