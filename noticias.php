@@ -1,14 +1,9 @@
 <?php
 
 require_once('conexao.php');
-
 require_once('scripts.php/utils.php');
 
-
-
 $buscaRealizada =  false;
-
-
 
 if (isset($_GET['titulo'])) {
 
@@ -22,8 +17,6 @@ if (isset($_GET['titulo'])) {
 
 }
 
-
-
 if (isset($_GET['texto'])) {
 
   $texto = $_GET['texto'];
@@ -36,25 +29,17 @@ if (isset($_GET['texto'])) {
 
 }
 
-
-
 if (!is_null($titulo) || !is_null($texto)) {
 
   $buscaRealizada = true;
 
 }
 
-
-
 ?>
-
-
 
 <!DOCTYPE html>
 
 <html lang="en">
-
-
 
 <!-- HEAD -->
 <?php
@@ -63,17 +48,12 @@ if (!is_null($titulo) || !is_null($texto)) {
   include 'head.php';
 ?>  
 
-
-
 <body>
 
   <main>
 
     <!--- HEADER --->
     <?php include('header.php') ?>
-
-
-
 
     <div class="container-body">
       <p>
@@ -85,8 +65,6 @@ if (!is_null($titulo) || !is_null($texto)) {
     <section class="container">
 
       <h2>Buscar por: </h2>
-
-
 
       <form action="noticias.php" class="filtro" method="<?php echo $_SERVER['PHP_SELF'] ?>">
 
@@ -108,7 +86,6 @@ if (!is_null($titulo) || !is_null($texto)) {
       </form>
 
 
-
       <!-- START  -->
 
       <section id="paginate">
@@ -121,19 +98,13 @@ if (!is_null($titulo) || !is_null($texto)) {
 
             mysqli_select_db($mysqli, $bd) or die("Could not select database");
 
-
-
             if ($buscaRealizada) {
 
               $query = "SELECT * FROM noticias WHERE ";
 
-
-
               if (!is_null($titulo)) {
 
                 $query = $query . "titulo LIKE '%" . $titulo . "%'";
-
-
 
                 if (!is_null($texto)) {
 
@@ -143,15 +114,11 @@ if (!is_null($titulo) || !is_null($texto)) {
 
               }
 
-
-
               if (!is_null($texto)) {
 
                 $query = $query . "texto LIKE '%" . $texto . "%'";
 
               }
-
-
 
               $query = $query . " ORDER BY data DESC;";
 
@@ -182,7 +149,6 @@ if (!is_null($titulo) || !is_null($texto)) {
           ?>
 
 
-
               <li class="item">
 
                 <div class="card">
@@ -204,18 +170,13 @@ if (!is_null($titulo) || !is_null($texto)) {
                     </div>
 
 
-
                     <div class="share">
 
                       <p class="type">Compartilhe</p>
 
                       <div class="links ">
 
-
-
                         <a target="_blank" href="https://twitter.com/intent/tweet?url=<?php echo $url ?>" id="twitter-share-btt" rel="nofollow" target="_blank"><img src="./assets/svg/twitter_icon_copy.svg" alt=""></a>
-
-
 
                         <?php
 
@@ -238,7 +199,6 @@ if (!is_null($titulo) || !is_null($texto)) {
                   </div>
 
 
-
                   <div class="card-bottom">
 
                     <div class="resume">
@@ -250,7 +210,6 @@ if (!is_null($titulo) || !is_null($texto)) {
                         $resumo= substr($row['texto'], 0, $tamanho_resumo); //escolhendo quantos caracteres aparecerão no resumo (450)
 
                       ?>
-
 
 
                       <p class="resume-title">Resumo</p>
@@ -274,7 +233,6 @@ if (!is_null($titulo) || !is_null($texto)) {
                     </div>
 
 
-
                     <?php if (isset($row['data'])) : ?>
 
                       <div class="container-data">
@@ -286,9 +244,7 @@ if (!is_null($titulo) || !is_null($texto)) {
                     <?php endif ?>
 
 
-
                   </div>
-
 
 
                   <div class="line-gray"></div>
@@ -296,11 +252,9 @@ if (!is_null($titulo) || !is_null($texto)) {
               </li>
 
 
-
           <?php endfor; ?>
 
                 
-
         </ul>
 
       </section>
