@@ -14,8 +14,8 @@
         <h2>Minicurso e Oficinas</h2>
         <h3>Veja os minicursos e oficinas que o PETComp promove</h3>
         <h4><a href="index.php">Página Inicial</a></h4>
-        <h4> -> Projetos</h4> 
-        <h4> -> Minicursos e Oficinas</h4> 
+        <h4> → Projetos</h4> 
+        <h4> → Minicursos e Oficinas</h4> 
          
     </div>
 
