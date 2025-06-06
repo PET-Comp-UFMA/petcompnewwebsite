@@ -1,3 +1,363 @@
+main .container {
+
+  margin: 40px auto;
+
+  width: 80%;
+
+}
+
+main .container .filtro {
+
+  display: flex;
+
+  flex-direction: column;
+
+  padding-bottom: 20px;
+
+}
+
+main .container .titulo label,
+
+main .container .texto label,
+
+main .container .filtro label,
+
+main .container .search label {
+
+  font-size: calc((12px + 0.25vw) * 0.875);
+
+  font-weight: 700;
+
+  letter-spacing: 4px;
+
+  margin: 10px 0;
+
+  text-transform: uppercase;
+
+}
+
+main .container .filtro input,
+
+main .container .filtro .type select {
+
+  background: none;
+
+  border: 1px solid var(--gray-border);
+
+  border-radius: 6px;
+
+  font-size: 16px;
+
+  font-style: italic;
+
+  font-weight: 400;
+
+  padding: 14px;
+
+  outline: none;
+
+  width: 100%;
+
+}
+
+main .container .search {
+
+  display: flex;
+
+  flex-direction: column;
+
+}
+
+main .container .search-button {
+
+  background: none;
+
+  border: 1px solid var(--gray-border);
+
+  border-radius: 50px;
+
+  cursor: pointer;
+
+  height: 50px;
+
+  margin: auto 0;
+
+  padding: 12px;
+
+  transition: 0.2s ease-in-out;
+
+  width: 50px;
+
+}
+
+main .container .list,
+
+main .container .list-authors,
+
+main .container .list-tags {
+
+  list-style: none;
+
+}
+
+main .container .list .item {
+
+  padding: 4px;
+
+}
+
+main .container .card {
+
+  display: flex;
+
+  flex-direction: column;
+
+  padding: 0;
+
+  width: 100%;
+
+}
+
+main .container .card .details {
+
+  display: flex;
+
+  flex-direction: row;
+
+  justify-content: space-between;
+
+  margin-bottom: 20px;
+
+  width: 100%;
+
+}
+
+main .container .card .details .data-name {
+
+  max-width: 600px;
+
+  width: 40%;
+
+}
+
+main .container .card .details .data-name,
+
+main .container .card .details .share,
+
+main .container .card .details .authors,
+
+main .container .card .details .resume {
+
+  display: flex;
+
+  flex-direction: column;
+
+}
+
+main .container .card .details .data-name .article-name {
+
+  font-size: 22px;
+
+  font-weight: 500;
+
+}
+
+main .container .card .details .data-name .article-name a {
+
+  font-size: 22px;
+
+  font-weight: 500;
+
+  text-decoration: none;
+
+  color: var(--primary);
+
+}
+
+main .container .card .details .share {
+
+  align-items: center;
+
+  display: flex;
+
+  width: 15%;
+
+}
+
+main .container .card .details .share .type {
+
+  text-align: center;
+
+}
+
+main .container .card .details .data-name,
+
+main .container .card .details .share,
+
+main .container .card .details .authors,
+
+main .container .card .details .resume {
+
+  display: flex;
+
+  flex-direction: column;
+
+}
+
+main .container .card .details .share .links {
+
+  width: 90%;
+
+  text-align: center;
+
+  margin-left: auto;
+
+  margin-right: auto;
+
+  display: flex;
+
+  justify-content: space-around;
+
+}
+
+main .container .card .details .share p,
+
+main .container .card .details .authors p,
+
+main .container .card .resume .resume-title,
+
+main .container .card .panel .tags-title {
+
+  font-size: calc((12px + 0.25vw) * 0.875);
+
+  font-weight: 700;
+
+  letter-spacing: 4px;
+
+  margin: 6px 0;
+
+  margin-bottom: 20px;
+
+  text-transform: uppercase;
+
+}
+
+main .container .card .details .share a img {
+
+  height: 20px;
+
+  width: 20px;
+
+}
+
+main .container .card .card-bottom {
+
+  flex-direction: column;
+
+  display: flex;
+
+  justify-content: flex-end;
+
+}
+
+main .container .card .card-bottom .data {
+
+  margin: 0;
+
+  font-size: 14px;
+
+}
+
+main .container .card .card-bottom .data .data-day {
+
+  font-weight: 500;
+
+}
+
+.line-primary {
+
+  background: var(--primary);
+
+}
+
+.line-primary,
+
+.line-gray {
+
+  height: 1px;
+
+  margin: 10px 0;
+
+  width: 100%;
+
+}
+
+.line-gray {
+
+  background: #9d9dc4;
+
+}
+
+main .container .pagination {
+
+  align-items: center;
+
+  display: flex;
+
+  justify-content: center;
+
+  margin-bottom: 40px;
+
+}
+
+main .container .pagination .numbers div,
+
+main .container .pagination .prev,
+
+main .container .pagination .next {
+
+  align-items: center;
+
+  background: var(--primary);
+
+  border: 1px solid var(--primary);
+
+  border-radius: 50%;
+
+  color: white;
+
+  cursor: pointer;
+
+  display: flex;
+
+  height: 25px;
+
+  justify-content: center;
+
+  margin: 0 4px;
+
+  padding: 8px;
+
+  width: 25px;
+
+}
+
+main .container .pagination .numbers {
+
+  display: flex;
+
+}
+
+
+
+
+
+
+
+
+
+
+
 
 .container-body {
   line-height: 1.6;
