@@ -44,7 +44,7 @@ if (!is_null($titulo) || !is_null($texto)) {
 <!-- HEAD -->
 <?php
   $title = 'Notícias | PETComp';
-  $cssFiles = ['css/globals.css', 'css/noticias.css', 'css/trabalhos_publicados.css'];
+  $cssFiles = ['css/globals.css', 'css/noticias.css'];
   include 'head.php';
 ?>  
 
