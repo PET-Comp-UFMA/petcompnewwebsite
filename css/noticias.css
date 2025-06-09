@@ -6,6 +6,7 @@ main .container {
 
 }
 
+/* Estilização dos campos de busca */
 main .container .filtro {
 
   display: flex;
@@ -90,6 +91,8 @@ main .container .search-button {
 
 }
 
+
+/* Estilização dos cards das notíticas */
 main .container .list,
 
 main .container .list-authors,
