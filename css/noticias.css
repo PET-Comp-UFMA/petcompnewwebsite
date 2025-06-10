@@ -6,93 +6,83 @@ main .container {
 
 }
 
-/* Estilização dos campos de busca */
-main .container .filtro {
+/* <<<Estilização dos campos de busca>>> */
 
+
+/* ========== Bloco filtro ========== */
+.filtro {
   display: flex;
-
   flex-direction: column;
-
   padding-bottom: 20px;
-
 }
 
-main .container .titulo label,
-
-main .container .texto label,
-
-main .container .filtro label,
-
-main .container .search label {
-
+.filtro__title {
   font-size: calc((12px + 0.25vw) * 0.875);
-
   font-weight: 700;
-
   letter-spacing: 4px;
-
   margin: 10px 0;
-
   text-transform: uppercase;
-
 }
 
-main .container .filtro input,
-
-main .container .filtro .type select {
-
-  background: none;
-
-  border: 1px solid var(--gray-border);
-
-  border-radius: 6px;
-
-  font-size: 16px;
-
-  font-style: italic;
-
-  font-weight: 400;
-
-  padding: 14px;
-
-  outline: none;
-
-  width: 100%;
-
-}
-
-main .container .search {
-
+.filtro__form {
   display: flex;
-
   flex-direction: column;
-
 }
 
-main .container .search-button {
+.filtro__field {
+  display: flex;
+  flex-direction: column;
+}
 
+.filtro__label {
+  font-size: calc((12px + 0.25vw) * 0.875);
+  font-weight: 700;
+  letter-spacing: 4px;
+  margin: 10px 0;
+  text-transform: uppercase;
+}
+
+.filtro__input {
   background: none;
-
   border: 1px solid var(--gray-border);
-
-  border-radius: 50px;
-
-  cursor: pointer;
-
-  height: 50px;
-
-  margin: auto 0;
-
-  padding: 12px;
-
-  transition: 0.2s ease-in-out;
-
-  width: 50px;
-
+  border-radius: 6px;
+  font-size: 16px;
+  font-style: italic;
+  font-weight: 400;
+  padding: 14px;
+  outline: none;
+  width: 100%;
 }
+
+/* Ações / botão */
+.filtro__actions {
+  display: flex;
+  flex-direction: column;
+}
+
+.filtro__button {
+  background: none;
+  border: 1px solid var(--gray-border);
+  border-radius: 50px;
+  cursor: pointer;
+  height: 50px;
+  margin: auto 0;
+  padding: 12px;
+  transition: 0.2s ease-in-out;
+  width: 50px;
+}
+
+.filtro__icon {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 
 
 /* Estilização dos cards das notíticas */
+
+
 main .container .list,
 
 main .container .list-authors,
@@ -395,4 +385,3 @@ main .container .pagination .numbers {
   padding-bottom: 16vh;
 
 } 
-

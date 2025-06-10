@@ -66,24 +66,46 @@ if (!is_null($titulo) || !is_null($texto)) {
 
       <h2>Buscar por: </h2>
 
-      <form action="noticias.php" class="filtro" method="<?php echo $_SERVER['PHP_SELF'] ?>">
+      <section class="filtro">
+        <h2 class="filtro__title">Buscar por:</h2>
 
-        <div class="search-field">
-          <label for="titulo">Título</label>
-          <input id="titulo" name="titulo" class="search-input" type="text" placeholder="Digite o título" value="<?php echo $titulo; ?>">
-        </div>
+        <form
+          action="noticias.php"
+          method="get"
+          class="filtro__form"
+        >
+          <div class="filtro__field">
+            <label for="titulo" class="filtro__label">Título</label>
+            <input
+              id="titulo"
+              name="titulo"
+              type="text"
+              class="filtro__input"
+              placeholder="Digite o título"
+              value="<?= htmlspecialchars($titulo) ?>"
+            />
+          </div>
 
-        <div class="search-field">
-          <label for="texto">Texto</label>
-          <input id="texto" name="texto" class="search-input" type="text" placeholder="Digite uma parte de texto" value="<?php echo $texto; ?>">
-        </div>
+          <div class="filtro__field">
+            <label for="texto" class="filtro__label">Texto</label>
+            <input
+              id="texto"
+              name="texto"
+              type="text"
+              class="filtro__input"
+              placeholder="Digite uma parte de texto"
+              value="<?= htmlspecialchars($texto) ?>"
+            />
+          </div>
 
+          <div class="filtro__actions">
+            <button type="submit" class="filtro__button">
+              <img src="./assets/svg/search.svg" alt="Buscar" class="filtro__icon" />
+            </button>
+          </div>
+        </form>
+      </section>
 
-        <div class="search">
-          <label for="search-button">Buscar</label>
-          <button name="search-button" class="search-button"><img src="./assets/svg/search.svg" alt=""></button>
-        </div>
-      </form>
 
 
       <!-- START  -->
