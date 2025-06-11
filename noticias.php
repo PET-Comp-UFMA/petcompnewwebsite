@@ -172,187 +172,105 @@ if (!is_null($titulo) || !is_null($texto)) {
 
 
               <li class="item">
-
                 <div class="card">
-
                   <div class="details">
-
                     <div class="data-name">
-
                       <h5 class="article-name">
-
                         <a href="<?php echo $parametros ?>">
-
                           <?php print_r($row['titulo']) ?>
-
                         </a>
-
                       </h5>
-
                     </div>
 
-
                     <div class="share">
-
                       <p class="type">Compartilhe</p>
-
                       <div class="links ">
-
                         <a target="_blank" href="https://twitter.com/intent/tweet?url=<?php echo $url ?>" id="twitter-share-btt" rel="nofollow" target="_blank"><img src="./assets/svg/twitter_icon_copy.svg" alt=""></a>
 
                         <?php
-
                         $baseUrl = substr(url(), 0, strpos(url(), "?")); //removendo argumentos do post, tudo depois de "?"
-
                         $baseUrl = str_replace("publicacoes.php", "", $baseUrl); //removendo "publicacoes.php" do link de compartilhamento
-
                         $url =  $baseUrl . "noticia.php?id=" . $id;
-
                         ?>
 
                         <a target="_blank" href="https://www.facebook.com/sharer.php?u=<?php echo $url ?>"><img src="./assets/svg/facebook_icon_copy.svg" alt=""></a>
-
                         <a href="whatsapp://send?text=<?php echo urlencode('Acesse: - ' . $url) ?>"><img src="./assets/svg/whatsapp.svg" alt=""></a>
-
                       </div>
-
                     </div>
-
                   </div>
 
-
                   <div class="card-bottom">
-
                     <div class="resume">
 
                       <?php
-
                         $tamanho_resumo = 450;
-
                         $resumo= substr($row['texto'], 0, $tamanho_resumo); //escolhendo quantos caracteres aparecerão no resumo (450)
-
                       ?>
 
-
                       <p class="resume-title">Resumo</p>
-
                       <p class="resume-text">
 
                         <?php 
-
                           if ($tamanho_resumo < strlen($row['texto'])){
-
                             $resumo .= "...";
-
                           }
-
                           echo $resumo;
-
                         ?>
 
                       </p>
-
                     </div>
 
-
                     <?php if (isset($row['data'])) : ?>
-
                       <div class="container-data">
-
                         <p class="data">Data de publicação: <span class="data-day"><?=$row['data']?></span></p>
-
                       </div>
-
                     <?php endif ?>
 
-
                   </div>
-
-
                   <div class="line-gray"></div>
-
               </li>
-
-
           <?php endfor; ?>
-
-                
         </ul>
-
       </section>
-
-     
 
       <div class="pagination">
 
         <!-- botões -->
 
         <div class="prev">
-
           <span class="material-icons">
-
             navigate_before
-
           </span>
-
         </div>
-
         <div class="numbers">
-
           <div>1</div>
-
           <div>2</div>
-
           <div>3</div>
-
         </div>
-
         <div" class="next">
-
           <span class="material-icons">
-
             navigate_next
-
           </span>
-
       </div>
-
       </div>
 
     <?php } else { ?>
-
       <li class="item">
-
         <div class="resultados">
-
           <h2>Sem resultados!</h2>
-
         </div>
-
       </li>
-
     <?php } ?>
-
     </section>
-
-  
 
   </main>
 
-
-
 </body>
-
-
 
 <?php include('footer.php') ?>
 
 </div>
-
 <script src="./scripts/script.js"></script>
-
 </body>
-
-
 
 </html>
