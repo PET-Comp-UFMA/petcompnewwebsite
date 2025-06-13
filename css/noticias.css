@@ -6,6 +6,17 @@ main .container {
 
 }
 
+.container-body {
+  line-height: 1.6;
+  text-align: justify;
+  padding: 50px 60px;
+
+  p {
+    font-size: 20px;
+    font-weight: medium;
+  }
+}
+
 /* <<<Estilização dos campos de busca>>> */
 
 
@@ -235,32 +246,6 @@ main .container .pagination .next {
 main .container .pagination .numbers {
   display: flex;
 }
-
-.container-body {
-  line-height: 1.6;
-  text-align: justify;
-  padding: 50px 60px;
-
-  p {
-    font-size: 20px;
-    font-weight: medium;
-  }
-}
-
-.search-input {
-  border: 2px solid #333;
-  padding: 6px 10px;
-  border-radius: 4px;
-  font-size: 1rem;
-  outline-offset: 2px;
-  transition: border-color 0.3s ease;
-}
-
-.search-input:focus {
-  border-color: #007BFF;
-  outline: none;
-}
-
 
 .resultados{
 
