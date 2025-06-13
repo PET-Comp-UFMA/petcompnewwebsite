@@ -67,7 +67,6 @@ if (!is_null($titulo) || !is_null($texto)) {
       <h2>Buscar por: </h2>
 
       <section class="filtro">
-        <h2 class="filtro__title">Buscar por:</h2>
 
         <form
           action="noticias.php"
@@ -82,7 +81,6 @@ if (!is_null($titulo) || !is_null($texto)) {
               type="text"
               class="filtro__input"
               placeholder="Digite o título"
-              value="<?= htmlspecialchars($titulo) ?>"
             />
           </div>
 
@@ -94,7 +92,6 @@ if (!is_null($titulo) || !is_null($texto)) {
               type="text"
               class="filtro__input"
               placeholder="Digite uma parte de texto"
-              value="<?= htmlspecialchars($texto) ?>"
             />
           </div>
 
@@ -134,6 +131,8 @@ if (!is_null($titulo) || !is_null($texto)) {
             } else {
               $query = "SELECT * FROM noticias ORDER BY data DESC";
             }
+
+            echo $query;
 
             $result = mysqli_query($mysqli, $query);
             $num_results = mysqli_num_rows($result);
