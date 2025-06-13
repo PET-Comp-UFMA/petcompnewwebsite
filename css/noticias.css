@@ -1,77 +1,281 @@
-.noticias{
-    padding: 100px;
-    padding-top: 40px;
-    border:none;
-    text-decoration: none;
-    display:flex;
-    flex-direction: column;
-    font-size: 15px;
-}
-
-.resultados{
-  text-align: center;
-  padding-bottom: 16vh;
-} 
-
-.materia{
-    display:flex;
-    flex-direction: row;
-    align-items: center;
-    background: #eeeeee70;
-    margin: 20px 0;
-    padding: 15px;
-}
-.materia > img{
-    width: 200px;
-    height: 200px;
-}
-.textoMateria{
-    display:flex;
-    flex-direction: column;
-    color: #888888;
-    padding:20px;
-    text-align: justify;
-}
-
-.textoMateria p {
-  margin: 20px 0;
-}
-.botao{
-    background: #33C3FF;
-    width: 90px;
-    height: 50px;
-    font-family: Basic;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 15px;
-    line-height: 35px;
-    border: none;
-    border-radius: 2px;
-    cursor: pointer;
-}
-
-
-
-.botao a {
-  color: #fff;
-  text-decoration: none;
-}
-.botao a:visited {
-    color: white;
-}
-
-
-
-@media (max-width:800px) {
-  .noticias {
-    margin-bottom: 20px;
-    padding: 0;
-    width: 90%;
-  }
-
-  .materia {
-    flex-direction: column;
-    margin: 20px;
-    width: 100%;
-  }
+main .container {
+
+  margin: 40px auto;
+
+  width: 80%;
+
 }
+
+/* <<<Estilização dos campos de busca>>> */
+
+
+/* ========== Bloco filtro ========== */
+.filtro {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 20px;
+}
+
+.filtro__title {
+  font-size: calc((12px + 0.25vw) * 0.875);
+  font-weight: 700;
+  letter-spacing: 4px;
+  margin: 10px 0;
+  text-transform: uppercase;
+}
+
+.filtro__form {
+  display: flex;
+  flex-direction: column;
+}
+
+.filtro__field {
+  display: flex;
+  flex-direction: column;
+}
+
+.filtro__label {
+  font-size: calc((12px + 0.25vw) * 0.875);
+  font-weight: 700;
+  letter-spacing: 4px;
+  margin: 10px 0;
+  text-transform: uppercase;
+}
+
+.filtro__input {
+  background: none;
+  border: 1px solid var(--gray-border);
+  border-radius: 6px;
+  font-size: 16px;
+  font-style: italic;
+  font-weight: 400;
+  padding: 14px;
+  outline: none;
+  width: 100%;
+}
+
+/* Ações / botão */
+.filtro__actions {
+  display: flex;
+  flex-direction: column;
+}
+
+.filtro__button {
+  background: none;
+  border: 1px solid var(--gray-border);
+  border-radius: 50px;
+  cursor: pointer;
+  height: 50px;
+  margin: auto 0;
+  padding: 12px;
+  transition: 0.2s ease-in-out;
+  width: 50px;
+}
+
+.filtro__icon {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+
+
+/* Estilização dos cards das notíticas */
+
+
+main .container .list,
+main .container .list-authors,
+main .container .list-tags {
+  list-style: none;
+}
+
+main .container .list .item {
+  padding: 4px;
+}
+
+main .container .card {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  width: 100%;
+}
+
+main .container .card .details {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+main .container .card .details .data-name {
+  max-width: 600px;
+  width: 40%;
+}
+
+main .container .card .details .data-name,
+main .container .card .details .share,
+main .container .card .details .authors,
+main .container .card .details .resume {
+  display: flex;
+  flex-direction: column;
+}
+
+main .container .card .details .data-name .article-name {
+  font-size: 22px;
+  font-weight: 500;
+}
+
+main .container .card .details .data-name .article-name a {
+  font-size: 22px;
+  font-weight: 500;
+  text-decoration: none;
+  color: var(--primary);
+}
+
+main .container .card .details .share {
+  align-items: center;
+  display: flex;
+  width: 15%;
+}
+
+main .container .card .details .share .type {
+  text-align: center;
+}
+
+main .container .card .details .data-name,
+main .container .card .details .share,
+main .container .card .details .authors,
+main .container .card .details .resume {
+  display: flex;
+  flex-direction: column;
+}
+
+main .container .card .details .share .links {
+  width: 90%;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: space-around;
+}
+
+main .container .card .details .share p,
+main .container .card .details .authors p,
+main .container .card .resume .resume-title,
+main .container .card .panel .tags-title {
+  font-size: calc((12px + 0.25vw) * 0.875);
+  font-weight: 700;
+  letter-spacing: 4px;
+  margin: 6px 0;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+main .container .card .details .share a img {
+  height: 20px;
+  width: 20px;
+}
+
+main .container .card .card-bottom {
+  flex-direction: column;
+  display: flex;
+  justify-content: flex-end;
+}
+
+main .container .card .card-bottom .data {
+  margin: 0;
+  font-size: 14px;
+}
+
+main .container .card .card-bottom .data .data-day {
+  font-weight: 500;
+}
+
+.line-primary {
+  background: var(--primary);
+}
+
+.line-primary,
+.line-gray {
+  height: 1px;
+  margin: 10px 0;
+  width: 100%;
+}
+
+.line-gray {
+  background: #9d9dc4;
+}
+
+main .container .pagination {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+main .container .pagination .numbers div,
+main .container .pagination .prev,
+main .container .pagination .next {
+  align-items: center;
+  background: var(--primary);
+  border: 1px solid var(--primary);
+  border-radius: 50%;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  height: 25px;
+  justify-content: center;
+  margin: 0 4px;
+  padding: 8px;
+  width: 25px;
+}
+
+main .container .pagination .numbers {
+  display: flex;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.container-body {
+  line-height: 1.6;
+  text-align: justify;
+  padding: 50px 60px;
+
+  p {
+    font-size: 20px;
+    font-weight: medium;
+  }
+}
+
+.search-input {
+  border: 2px solid #333;
+  padding: 6px 10px;
+  border-radius: 4px;
+  font-size: 1rem;
+  outline-offset: 2px;
+  transition: border-color 0.3s ease;
+}
+
+.search-input:focus {
+  border-color: #007BFF;
+  outline: none;
+}
+
+
+.resultados{
+
+  text-align: center;
+
+  padding-bottom: 16vh;
+
+} 
