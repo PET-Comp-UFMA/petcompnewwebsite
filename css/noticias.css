@@ -207,6 +207,7 @@ main .container .card .card-bottom .data .data-day {
   background: #9d9dc4;
 }
 
+/* Estilização da paginação */
 main .container .pagination {
   align-items: center;
   display: flex;
@@ -234,17 +235,6 @@ main .container .pagination .next {
 main .container .pagination .numbers {
   display: flex;
 }
-
-
-
-
-
-
-
-
-
-
-
 
 .container-body {
   line-height: 1.6;
