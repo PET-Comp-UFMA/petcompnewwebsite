@@ -117,57 +117,34 @@ if (!is_null($titulo) || !is_null($texto)) {
           <!-- lista com cada li e cada li tem a box dentro-->
 
           <?php
-
             mysqli_select_db($mysqli, $bd) or die("Could not select database");
 
             if ($buscaRealizada) {
-
               $query = "SELECT * FROM noticias WHERE ";
-
               if (!is_null($titulo)) {
-
                 $query = $query . "titulo LIKE '%" . $titulo . "%'";
-
                 if (!is_null($texto)) {
-
                   $query = $query . " and ";
-
                 }
-
               }
-
               if (!is_null($texto)) {
-
                 $query = $query . "texto LIKE '%" . $texto . "%'";
-
               }
-
               $query = $query . " ORDER BY data DESC;";
-
             } else {
-
               $query = "SELECT * FROM noticias ORDER BY data DESC";
-
             }
 
             $result = mysqli_query($mysqli, $query);
-
             $num_results = mysqli_num_rows($result);
 
             if ($num_results > 0) {
-
               for ($i = 0; $i < $num_results; $i++) :  
-
                 $row = mysqli_fetch_array($result);  
-
                 $baseUrl = url();
-
                 $id = $row['id'];
-
                 $parametros = "noticia.php?id=" . $id;
-
                 $url =  $baseUrl . $parametros;
-
           ?>
 
 
