@@ -112,7 +112,7 @@ if (!is_null($titulo) || !is_null($texto)) {
 
       <section id="paginate">
 
-        <ul class="list" style="list-style: none;">
+        <ul class="news-list">
 
           <!-- lista com cada li e cada li tem a box dentro-->
 
@@ -148,64 +148,68 @@ if (!is_null($titulo) || !is_null($texto)) {
           ?>
 
 
-              <li class="item">
-                <div class="card">
-                  <div class="details">
-                    <div class="data-name">
-                      <h5 class="article-name">
-                        <a href="<?php echo $parametros ?>">
-                          <?php print_r($row['titulo']) ?>
-                        </a>
-                      </h5>
-                    </div>
-
-                    <div class="share">
-                      <p class="type">Compartilhe</p>
-                      <div class="links ">
-                        <a target="_blank" href="https://twitter.com/intent/tweet?url=<?php echo $url ?>" id="twitter-share-btt" rel="nofollow" target="_blank"><img src="./assets/svg/twitter_icon_copy.svg" alt=""></a>
-
-                        <?php
-                        $baseUrl = substr(url(), 0, strpos(url(), "?")); //removendo argumentos do post, tudo depois de "?"
-                        $baseUrl = str_replace("publicacoes.php", "", $baseUrl); //removendo "publicacoes.php" do link de compartilhamento
-                        $url =  $baseUrl . "noticia.php?id=" . $id;
-                        ?>
-
-                        <a target="_blank" href="https://www.facebook.com/sharer.php?u=<?php echo $url ?>"><img src="./assets/svg/facebook_icon_copy.svg" alt=""></a>
-                        <a href="whatsapp://send?text=<?php echo urlencode('Acesse: - ' . $url) ?>"><img src="./assets/svg/whatsapp.svg" alt=""></a>
-                      </div>
-                    </div>
+          <li class="news-list__item">
+            <article class="card">
+              <div class="card__details">
+                <div class="card__meta card__meta--title">
+                  <h5 class="card__title">
+                    <a href="<?php echo $parametros ?>" class="card__link">
+                      <?php echo htmlspecialchars($row['titulo']) ?>
+                    </a>
+                  </h5>
+                </div>
+                <div class="card__meta card__meta--share">
+                  <p class="card__share-label">Compartilhe</p>
+                  <div class="card__share-links">
+                    <a
+                      class="card__share-link"
+                      href="https://twitter.com/intent/tweet?url=<?php echo urlencode($url) ?>"
+                      target="_blank"
+                      rel="nofollow noopener"
+                    >
+                      <img src="./assets/svg/twitter_icon_copy.svg" alt="Twitter">
+                    </a>
+                    <a
+                      class="card__share-link"
+                      href="https://www.facebook.com/sharer.php?u=<?php echo urlencode($url) ?>"
+                      target="_blank"
+                      rel="noopener"
+                    >
+                      <img src="./assets/svg/facebook_icon_copy.svg" alt="Facebook">
+                    </a>
+                    <a
+                      class="card__share-link"
+                      href="whatsapp://send?text=<?php echo urlencode('Acesse: - ' . $url) ?>"
+                    >
+                      <img src="./assets/svg/whatsapp.svg" alt="WhatsApp">
+                    </a>
                   </div>
+                </div>
+              </div>
 
-                  <div class="card-bottom">
-                    <div class="resume">
+              <div class="card__body">
+                <div class="card__resume">
+                  <p class="card__resume-title">Resumo</p>
+                  <p class="card__resume-text">
+                    <?php
+                      $limit = 450;
+                      $text = substr($row['texto'], 0, $limit);
+                      echo nl2br(htmlspecialchars(strlen($row['texto']) > $limit ? $text.'...' : $text));
+                    ?>
+                  </p>
+                </div>
 
-                      <?php
-                        $tamanho_resumo = 450;
-                        $resumo= substr($row['texto'], 0, $tamanho_resumo); //escolhendo quantos caracteres aparecerão no resumo (450)
-                      ?>
-
-                      <p class="resume-title">Resumo</p>
-                      <p class="resume-text">
-
-                        <?php 
-                          if ($tamanho_resumo < strlen($row['texto'])){
-                            $resumo .= "...";
-                          }
-                          echo $resumo;
-                        ?>
-
-                      </p>
-                    </div>
-
-                    <?php if (isset($row['data'])) : ?>
-                      <div class="container-data">
-                        <p class="data">Data de publicação: <span class="data-day"><?=$row['data']?></span></p>
-                      </div>
-                    <?php endif ?>
-
+                <?php if (!empty($row['data'])): ?>
+                  <div class="card__date">
+                    Publicado em <time datetime="<?= $row['data'] ?>"><?= $row['data'] ?></time>
                   </div>
-                  <div class="line-gray"></div>
-              </li>
+                <?php endif; ?>
+              </div>
+
+              <div class="card__line card__line--gray"></div>
+            </article>
+          </li>
+          
           <?php endfor; ?>
         </ul>
       </section>
