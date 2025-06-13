@@ -23,6 +23,7 @@
 
         <div class="box-container">
             <div class = "sections-cards">
+
                 <div class="monitoring-card">
                     <div class="card-background"  id = "card-1" ></div>
                     <div class="card-item">
@@ -34,6 +35,7 @@
                             <a href="https://drive.google.com/drive/folders/1lgkO5emzPdYbeRuOvcedcDhmtHtW-U1U" target="_blank" >Acessar</a>
                         </div>
                     </div>
+                    <img src="img\algoritmos.png" alt="">
                 </div>
 
                 <div class="monitoring-card">
@@ -47,12 +49,13 @@
                             <a href="https://drive.google.com/drive/folders/1lgkO5emzPdYbeRuOvcedcDhmtHtW-U1U" target="_blank">Acessar</a>
                         </div>
                     </div>
+                    <img src="img\calculo1.png" alt="">
                 </div>
 
                 <div class="monitoring-card">
                     <div class="card-background" id = "card-3"></div>
                     <div class="card-item">
-                        <h3>Estrutura de dados 1</h3>
+                        <h3>Estrutura de <br> Dados 1</h3>
                         <div class= "box-texts">
                             <p>Vídeo aula</p>
                             <p>Questionário</p>
@@ -60,12 +63,13 @@
                             <a href="https://drive.google.com/drive/folders/1lgkO5emzPdYbeRuOvcedcDhmtHtW-U1U" target="_blank">Acessar</a>
                         </div>
                     </div>
+                    <img src="img\ed1.png" alt="">
                 </div>
 
                 <div class="monitoring-card">
                     <div class="card-background"  id = "card-4" ></div>
                     <div class="card-item">
-                        <h3>Linguagem de programação 1</h3>
+                        <h3>Linguagem de <br>Programação 1</h3>
                         <div class= "box-texts">
                             <p>Vídeo aula</p>
                             <p>Questionário</p>
@@ -73,12 +77,13 @@
                             <a href="https://drive.google.com/drive/folders/1lgkO5emzPdYbeRuOvcedcDhmtHtW-U1U" target="_blank">Acessar</a>
                         </div>
                     </div>
+                    <img src="img\lp1.png" alt="">
                 </div>
 
-                <div class="monitoring-card">
+                <div class="monitoring-card" id = "card-mdl">
                     <div class="card-background" id = "card-5" ></div>
                     <div class="card-item">
-                        <h3>Matemática Discreta e Lógica</h3>
+                        <h3>Matemática <br>Discreta e Lógica</h3>
                         <div class= "box-texts">
                             <p>Vídeo aula</p>
                             <p>Questionário</p>
@@ -86,6 +91,7 @@
                             <a href="https://drive.google.com/drive/folders/1lgkO5emzPdYbeRuOvcedcDhmtHtW-U1U" target="_blank">Acessar</a>
                         </div>
                     </div>
+                    <img src="img\mdl.png" alt="">
                 </div>
 
             </div>
