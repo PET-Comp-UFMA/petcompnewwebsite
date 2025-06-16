@@ -82,7 +82,7 @@ if (!is_null($titulo) || !is_null($texto)) {
               type="text"
               class="filtro__input"
               placeholder="Digite o título"
-              value="<?= htmlspecialchars($titulo) ?>"
+              value="<?= $titulo !== null ? htmlspecialchars($titulo) : ''; ?>"
             />
           </div>
 
@@ -94,7 +94,7 @@ if (!is_null($titulo) || !is_null($texto)) {
               type="text"
               class="filtro__input"
               placeholder="Digite uma parte de texto"
-              value="<?= htmlspecialchars($texto) ?>"
+              value="<?= $texto !== null ? htmlspecialchars($texto) : ''; ?>"
             />
           </div>
 
