@@ -55,7 +55,7 @@ main .container {
 
 .filtro__input {
   background: none;
-  border: 1px solid var(--gray-border);
+  border: 1px solid #626689;
   border-radius: 6px;
   font-size: 16px;
   font-style: italic;
@@ -63,6 +63,8 @@ main .container {
   padding: 14px;
   outline: none;
   width: 100%;
+  
+  
 }
 
 /* Ações / botão */

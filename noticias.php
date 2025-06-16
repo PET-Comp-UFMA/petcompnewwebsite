@@ -6,33 +6,21 @@ require_once('scripts.php/utils.php');
 $buscaRealizada =  false;
 
 if (isset($_GET['titulo'])) {
-
   $titulo = $_GET['titulo'];
-
   if ($titulo == "") $titulo = null;
-
 } else {
-
   $titulo = null;
-
 }
 
 if (isset($_GET['texto'])) {
-
   $texto = $_GET['texto'];
-
   if ($texto == "") $texto = null;
-
 } else {
-
   $texto = null;
-
 }
 
 if (!is_null($titulo) || !is_null($texto)) {
-
   $buscaRealizada = true;
-
 }
 
 ?>
