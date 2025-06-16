@@ -1,226 +1,88 @@
 <?php
+require_once 'conexao.php';
 
-	require_once('conexao.php');
+// Valida e obtém o parâmetro `id` da URL
+$id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
+if (!$id) {
+    // Redireciona ou finaliza a execução
+    header('Location: ListaNoticias.php');
+    exit;
+}
 
-    if(!isset($_GET['id'])){
+// Prepara e executa consulta principal (uso de prepared statement evita SQL injection)
+$stmt = $mysqli->prepare('SELECT titulo, texto, foto FROM noticias WHERE id = ?');
+$stmt->bind_param('i', $id);
+$stmt->execute();
+$stmt->bind_result($titulo, $textoRaw, $fotoRaw);
 
-        
+if (!$stmt->fetch()) {
+    // Se não encontrou a notícia, redireciona
+    header('Location: ListaNoticias.php');
+    exit;
+}
+$stmt->close();
 
-        //No servidor usar essa:
+// Divide texto em parágrafos e separa múltiplas imagens
+$paragrafos = preg_split("/(\r\n){2,}/", $textoRaw);
+$imagens     = array_filter(explode('|', $fotoRaw));
 
-        /*
+// Consulta os botões relacionados
+$btnStmt = $mysqli->prepare('SELECT botaoNome, botaoLink FROM noticias_botoes WHERE idNoticia = ?');
+$btnStmt->bind_param('i', $id);
+$btnStmt->execute();
+$btnStmt->bind_result($botaoNome, $botaoLink);
 
-        $URL="http://observatoriodesaudemental.com.br/v2/Observatorio-SaudeMental/ListaNoticias.php";
+// Cabeçalho (head.php deverá iterar sobre $cssFiles e imprimir as <link>)
+$title    = htmlspecialchars($titulo . ' | PETComp', ENT_QUOTES, 'UTF-8');
+$cssFiles = [
+    'css/noticias.css',
+    'css/styles.css',
+    'css/styles2.css',
+    'css/noticiaespecifica.css',
+    'css/trabalhos_publicados.css'
+];
+include 'head.php';
 
-        echo "<script type='text/javascript'>document.location.href='{$URL}';</script>";
-
-        echo '<META HTTP-EQUIV="refresh" content="0;URL=' . $URL . '">';
-
-        */
-
-        die();
-
-        
-
-        //No localhost usar essa:
-
-        // header('Location: ListaNoticias.php');
-
-        // die();
-
-    }else{
-
-
-
-    $id = $_GET['id'];
-
-    mysqli_select_db($mysqli, $bd) or die("Could not select database");	
-
-    $query = "SELECT * FROM `noticias` WHERE `id` = " . $id;
-
-    $queryBotoes = "SELECT * FROM `noticias_botoes` WHERE `idNoticia` = " . $id;
-
-    
-
-    $result = mysqli_query($mysqli, $query);
-
-    $row = mysqli_fetch_array($result);
-
-
-
-    $resultBotoes = mysqli_query($mysqli, $queryBotoes);
-
-    $row_Botoes = mysqli_num_rows($resultBotoes);
-
-    
-
-    $Titulo = $row['titulo'];
-
-    $Texto = preg_split("/(\r\n){2,}/", $row['texto']);
-
-
-
-    $Imagem = $row['foto'];
-
-    $imagens = explode("|", $Imagem, 2);
-
-
-
-    if($row){
-
-
-
+// Inclui header global (navbar, logo, etc)
+include 'header.php';
 ?>
-
-
-
-<!DOCTYPE html>
-
-<html lang="en">
-
-<head>
-
-  <meta charset="utf-8">
-
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title> <?php echo $Titulo ?> | PETComp</title>
-
-  
-
-  <link rel="icon" href="./assets/images/logos/PETComp.png">
-
-
-
-  <link rel="stylesheet" href="css/noticias.css">
-
-  <link rel="stylesheet" href="css/styles.css">
-
-  <link rel="stylesheet" href="css/styles2.css">
-
-  <link rel="stylesheet" href="css/noticiaespecifica.css">
-
-  <link rel="stylesheet" href="css/trabalhos_publicados.css">
-
-  
-
-
-
-
-
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
-
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-</head>
-
-
-
-<?php 
-
-  include('header.php');
-
-?>
-
-
 
 <body>
-
   <main class="fade">
+    <section class="container noticia-especifica">
+      <h1 class="titulo-noticia"><?= htmlspecialchars($titulo, ENT_QUOTES, 'UTF-8') ?></h1>
 
-    <section class="container">
-
-      <div class="noticia-especifica">
-
-        <h1 class="titulo-noticia"><?php print_r($Titulo) ?></h1>
-
-        <div class="img_noticias">
-
-          <?php foreach($imagens as $image):?>
-
-            <img class="img-noticia" src="<?php print_r($image) ?>" alt="">
-
-          <?php endforeach?>
-
-        </div>
-
-        <?php foreach($Texto as $paragrafo){ ?>
-
-          <p class="texto-noticia-esp">
-
-            <?php echo  $paragrafo;?>
-
-          </p>
-
-        <?php  } ?>
-
+      <?php if ($imagens): ?>
+      <div class="img_noticias">
+        <?php foreach ($imagens as $src): ?>
+          <img class="img-noticia" src="<?= htmlspecialchars($src, ENT_QUOTES, 'UTF-8') ?>" alt="">
+        <?php endforeach; ?>
       </div>
+      <?php endif; ?>
 
+      <?php foreach ($paragrafos as $p): ?>
+        <p class="texto-noticia-esp"><?= nl2br(htmlspecialchars(trim($p), ENT_QUOTES, 'UTF-8')) ?></p>
+      <?php endforeach; ?>
+
+      <?php if ($btnStmt->execute() && $btnStmt->store_result() && $btnStmt->num_rows): ?>
       <div class="noticia-especifica-botoes">
-
         <?php 
-
-          if($row_Botoes){
-
-      
-
-            for($i = 0;$i<$row_Botoes;$i++){
-
-              $botoes = mysqli_fetch_array($resultBotoes);
-
-              $botaoNome = $botoes['botaoNome'];
-
-              $botaoLink = $botoes['botaoLink']; 
-
-             ?>
-
-            <a class="botaoGenerico" target="_blank" href="<?php echo $botaoLink?>">
-
-              <?php echo $botaoNome; ?>
-
-            </a>
-
-          <?php } 
-
-          }?>
-
-          
-
+        $btnStmt->bind_result($nm, $lnk);
+        while ($btnStmt->fetch()): ?>
+          <a class="botaoGenerico" href="<?= htmlspecialchars($lnk, ENT_QUOTES, 'UTF-8') ?>" target="_blank">
+            <?= htmlspecialchars($nm, ENT_QUOTES, 'UTF-8') ?>
+          </a>
+        <?php endwhile; ?>
       </div>
+      <?php endif;
+      $btnStmt->close(); ?>
 
-      <div class="voltar" style="">
-
-        <a href="./noticias.php">
-
-        <button class="button-back">
-
-          Voltar
-
-        </button></a>
-
+      <div class="voltar">
+        <a href="noticias.php" class="button-back">Voltar</a>
       </div>
-
-
-
     </section>
-
   </main>
 
+  <script src="scripts/script.js" defer></script>
 </body>
-
-
-
-<script src="./scripts/script.js"></script>
-
-<?php
-
-      }
-
-    }
-
-?>
-
-
-
+</html>
