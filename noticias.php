@@ -32,7 +32,7 @@ if (!is_null($titulo) || !is_null($texto)) {
 <!-- HEAD -->
 <?php
   $title = 'Notícias | PETComp';
-  $cssFiles = ['css/globals.css', 'css/noticias.css'];
+  $cssFiles = ['css/noticias.css'];
   include 'head.php';
 ?>  
 
