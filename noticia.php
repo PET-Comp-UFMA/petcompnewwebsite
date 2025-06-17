@@ -5,7 +5,7 @@ require_once 'conexao.php';
 $id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
 if (!$id) {
     // Redireciona ou finaliza a execução
-    header('Location: ListaNoticias.php');
+    header('Location: noticias.php');
     exit;
 }
 
@@ -17,30 +17,18 @@ $stmt->bind_result($titulo, $textoRaw, $fotoRaw);
 
 if (!$stmt->fetch()) {
     // Se não encontrou a notícia, redireciona
-    header('Location: ListaNoticias.php');
+    header('Location: noticias.php');
     exit;
 }
 $stmt->close();
 
 // Divide texto em parágrafos e separa múltiplas imagens
 $paragrafos = preg_split("/(\r\n){2,}/", $textoRaw);
-$imagens     = array_filter(explode('|', $fotoRaw));
-
-// Consulta os botões relacionados
-$btnStmt = $mysqli->prepare('SELECT botaoNome, botaoLink FROM noticias_botoes WHERE idNoticia = ?');
-$btnStmt->bind_param('i', $id);
-$btnStmt->execute();
-$btnStmt->bind_result($botaoNome, $botaoLink);
+$imagens = array_filter(explode('|', $fotoRaw));
 
 // Cabeçalho (head.php deverá iterar sobre $cssFiles e imprimir as <link>)
-$title    = htmlspecialchars($titulo . ' | PETComp', ENT_QUOTES, 'UTF-8');
-$cssFiles = [
-    'css/noticias.css',
-    'css/styles.css',
-    'css/styles2.css',
-    'css/noticiaespecifica.css',
-    'css/trabalhos_publicados.css'
-];
+$title = htmlspecialchars($titulo . ' | PETComp', ENT_QUOTES, 'UTF-8');
+$cssFiles = ["css/noticiaespecifica.css"];
 include 'head.php';
 
 // Inclui header global (navbar, logo, etc)
@@ -63,19 +51,6 @@ include 'header.php';
       <?php foreach ($paragrafos as $p): ?>
         <p class="texto-noticia-esp"><?= nl2br(htmlspecialchars(trim($p), ENT_QUOTES, 'UTF-8')) ?></p>
       <?php endforeach; ?>
-
-      <?php if ($btnStmt->execute() && $btnStmt->store_result() && $btnStmt->num_rows): ?>
-      <div class="noticia-especifica-botoes">
-        <?php 
-        $btnStmt->bind_result($nm, $lnk);
-        while ($btnStmt->fetch()): ?>
-          <a class="botaoGenerico" href="<?= htmlspecialchars($lnk, ENT_QUOTES, 'UTF-8') ?>" target="_blank">
-            <?= htmlspecialchars($nm, ENT_QUOTES, 'UTF-8') ?>
-          </a>
-        <?php endwhile; ?>
-      </div>
-      <?php endif;
-      $btnStmt->close(); ?>
 
       <div class="voltar">
         <a href="noticias.php" class="button-back">Voltar</a>
