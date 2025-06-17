@@ -147,33 +147,6 @@ if (!is_null($titulo) || !is_null($texto)) {
                     </a>
                   </h5>
                 </div>
-                <div class="card__meta card__meta--share">
-                  <p class="card__share-label">Compartilhe</p>
-                  <div class="card__share-links">
-                    <a
-                      class="card__share-link"
-                      href="https://twitter.com/intent/tweet?url=<?php echo urlencode($url) ?>"
-                      target="_blank"
-                      rel="nofollow noopener"
-                    >
-                      <img src="./assets/svg/twitter_icon_copy.svg" alt="Twitter">
-                    </a>
-                    <a
-                      class="card__share-link"
-                      href="https://www.facebook.com/sharer.php?u=<?php echo urlencode($url) ?>"
-                      target="_blank"
-                      rel="noopener"
-                    >
-                      <img src="./assets/svg/facebook_icon_copy.svg" alt="Facebook">
-                    </a>
-                    <a
-                      class="card__share-link"
-                      href="whatsapp://send?text=<?php echo urlencode('Acesse: - ' . $url) ?>"
-                    >
-                      <img src="./assets/svg/whatsapp.svg" alt="WhatsApp">
-                    </a>
-                  </div>
-                </div>
               </div>
 
               <div class="card__body">
@@ -188,11 +161,42 @@ if (!is_null($titulo) || !is_null($texto)) {
                   </p>
                 </div>
 
-                <?php if (!empty($row['data'])): ?>
-                  <div class="card__date">
-                    Publicado em <time datetime="<?= $row['data'] ?>"><?= $row['data'] ?></time>
+                <div class="card__bottom">
+
+                  <?php if (!empty($row['data'])): ?>
+                    <div class="card__date">
+                      Publicado em <time datetime="<?= $row['data'] ?>"><?= $row['data'] ?></time>
+                    </div>
+                  <?php endif; ?>
+
+                  <div class="card__meta card__meta--share">
+                    <div class="card__share-links">
+                      <a
+                        class="card__share-link"
+                        href="https://twitter.com/intent/tweet?url=<?php echo urlencode($url) ?>"
+                        target="_blank"
+                        rel="nofollow noopener"
+                      >
+                        <img src="./assets/svg/twitter_icon_copy.svg" alt="Twitter">
+                      </a>
+                      <a
+                        class="card__share-link"
+                        href="https://www.facebook.com/sharer.php?u=<?php echo urlencode($url) ?>"
+                        target="_blank"
+                        rel="noopener"
+                      >
+                        <img src="./assets/svg/facebook_icon_copy.svg" alt="Facebook">
+                      </a>
+                      <a
+                        class="card__share-link"
+                        href="whatsapp://send?text=<?php echo urlencode('Acesse: - ' . $url) ?>"
+                      >
+                        <img src="./assets/svg/whatsapp.svg" alt="WhatsApp">
+                      </a>
+                    </div>
                   </div>
-                <?php endif; ?>
+
+                </div>
               </div>
 
               <hr class="card__line card__line--blue">

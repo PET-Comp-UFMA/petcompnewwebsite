@@ -142,15 +142,6 @@ main .container {
 }
 
 /* Compartilhamento */
-.card__share-label {
-  font-size: calc((12px + 0.25vw) * 0.875);
-  font-weight: 700;
-  letter-spacing: 4px;
-  margin: 0 0 20px;
-  text-transform: uppercase;
-  text-align: center;
-}
-
 .card__share-links {
   display: flex;
   justify-content: space-around;
@@ -170,6 +161,11 @@ main .container {
   justify-content: flex-end;
 }
 
+.card__bottom {
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
 /* Resumo */
 .card__resume {
   margin-bottom: 16px;
