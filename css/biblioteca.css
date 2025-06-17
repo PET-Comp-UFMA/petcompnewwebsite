@@ -84,8 +84,20 @@ h4 {
 
 .monitoring-card:hover .card-background {
     transform: scale(10);
-}
 
+}
+.monitoring-card:hover{
+    .card-item{
+        a{
+            color:navy;
+            border:2px solid navy;
+        }
+        p{
+            color:#01204C;
+            border: 2px solid #01204C;
+        }
+    }
+}
 
 .box-texts {
     display: flex;
@@ -223,9 +235,34 @@ h4 {
     .container-body p {
         font-size: 10px;
         text-indent: 2em;
-    }
-    .container-body p {
         line-height: 1.6;
         text-align: justify;
+    }
+   
+
+    .monitoring-card {
+        width: 292px;
+        height: 136px;
+    }
+
+    .card-item {
+        position: relative;
+        z-index: 2;
+        padding: 8px;
+        color: #000;
+        
+        h3{
+            font-size: 15px;
+        }
+        a {
+            font-size:10px;
+            padding:3px 19px;
+        }
+
+        p {
+            padding: 2px;
+            font-size:7px;
+            margin: 0px;
+        }
     }
 }
