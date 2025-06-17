@@ -48,7 +48,7 @@ include 'header.php';
 ?>
 
 <body>
-  <main class="fade">
+  <main>
     <section class="container noticia-especifica">
       <h1 class="titulo-noticia"><?= htmlspecialchars($titulo, ENT_QUOTES, 'UTF-8') ?></h1>
 
