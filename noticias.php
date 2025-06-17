@@ -55,7 +55,6 @@ if (!is_null($titulo) || !is_null($texto)) {
       <h2>Buscar por: </h2>
 
       <section class="filtro">
-        <h2 class="filtro__title">Buscar por:</h2>
 
         <form
           action="noticias.php"

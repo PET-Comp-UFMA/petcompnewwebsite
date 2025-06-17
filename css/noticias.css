@@ -27,14 +27,6 @@ main .container {
   padding-bottom: 20px;
 }
 
-.filtro__title {
-  font-size: calc((12px + 0.25vw) * 0.875);
-  font-weight: 700;
-  letter-spacing: 4px;
-  margin: 10px 0;
-  text-transform: uppercase;
-}
-
 .filtro__form {
   display: flex;
   flex-direction: column;
