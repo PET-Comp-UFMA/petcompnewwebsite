@@ -36,6 +36,7 @@ if (!is_null($titulo) || !is_null($texto)) {
   include 'head.php';
 ?>  
 
+
 <body>
 
   <!--- HEADER --->
@@ -193,7 +194,7 @@ if (!is_null($titulo) || !is_null($texto)) {
                 <?php endif; ?>
               </div>
 
-              <div class="card__line card__line--gray"></div>
+              <hr class="card__line card__line--blue">
             </article>
           </li>
           

@@ -199,8 +199,14 @@ main .container {
 /* Linhas separadoras */
 .card__line {
   width: 100%;
-  height: 1px;
+  height: 5px;
   margin: 10px 0;
+  border-top: none;
+}
+
+.card__line--blue {
+  background: #060B3F;
+  opacity: 1;
 }
 
 .card__line--gray {
