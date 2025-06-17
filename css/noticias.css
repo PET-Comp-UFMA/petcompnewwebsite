@@ -110,6 +110,7 @@ main .container {
 .card__details {
   display: flex;
   justify-content: space-between;
+  width: 100%;
   margin-bottom: 20px;
 }
 
@@ -119,8 +120,7 @@ main .container {
 }
 
 .card__meta--title {
-  max-width: 600px;
-  width: 40%;
+  margin-right: 10%;
 }
 
 .card__meta--share {
@@ -131,7 +131,8 @@ main .container {
 /* Título e link */
 .card__title {
   font-size: 22px;
-  font-weight: 500;
+  font-weight: 700;
+  font-family: 'Mada', sans-serif;
   margin: 0;
 }
 
