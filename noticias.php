@@ -36,7 +36,7 @@ if (!is_null($titulo) || !is_null($texto)) {
   include 'head.php';
 ?>  
 
-<link href="https://fonts.googleapis.com/css2?family=Mada:wght@400;500;600;700&display=swap" rel="stylesheet"> // Importação da fonte Mada
+<link href="https://fonts.googleapis.com/css2?family=Mada:wght@400;500;600;700&display=swap" rel="stylesheet"> <!-- Importação da fonte Mada -->
 
 <body>
 
