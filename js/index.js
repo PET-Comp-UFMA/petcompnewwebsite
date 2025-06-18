@@ -42,6 +42,8 @@ function changeNews() {
 
 // Inicia o loop para mudança de notícias
 setInterval(changeNews, 6000);
+
+// Função para abrir menu mobile do header
 function openMenu() {
     document.querySelector('.navbar').classList.toggle('active');
 }

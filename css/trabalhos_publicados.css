@@ -1,547 +1,555 @@
-body {
-  background: var(--bg);
-}
-
-main .container {
-  margin: 40px auto;
-  width: 80%;
-}
-
-main .container .filtro {
-  display: flex;
-  flex-direction: column;
-  padding-bottom: 20px;
-}
-
-main .container .filtro,
-main .container .filtro .year {
-  display: flex;
-  flex-direction: column;
-}
-
-main .container .titulo label,
-main .container .texto label,
-main .container .filtro label,
-main .container .search label {
-  font-size: calc((12px + 0.25vw) * 0.875);
-  font-weight: 700;
-  letter-spacing: 4px;
-  margin: 10px 0;
-  text-transform: uppercase;
-}
-
-main .container .filtro input,
-main .container .filtro .type select {
-  background: none;
-  border: 1px solid var(--gray-border);
-  border-radius: 6px;
-  font-size: 16px;
-  font-style: italic;
-  font-weight: 400;
-  padding: 14px;
-  outline: none;
-  width: 100%;
-}
-
-main .container .filtro .type select {
-  background: none;
-  color: var(--text-gray);
-}
-
-main .container .search {
-  display: flex;
-  flex-direction: column;
-}
-
-main .container .search-button {
-  background: none;
-  border: 1px solid var(--gray-border);
-  border-radius: 50px;
-  cursor: pointer;
-  height: 50px;
-  margin: auto 0;
-  padding: 12px;
-  transition: 0.2s ease-in-out;
-  width: 50px;
-}
-
-main .container .search-button:hover,
-main .container .search-button:focus {
-  opacity: 0.6;
-}
-
-main .container .list,
-main .container .list-authors,
-main .container .list-tags {
-  list-style: none;
-}
-
-main .container .list .item {
-  padding: 4px;
-}
-
-.resultados {
-  text-align: center;
-}
-
-main .container .card {
-  display: flex;
-  flex-direction: column;
-  padding: 0;
-  width: 100%;
-}
-
-main .container .card .details {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin-bottom: 20px;
-  width: 100%;
-}
-
-main .container .card .details .data-name {
-  max-width: 600px;
-  width: 40%;
-}
-
-main .container .card .details .share {
-  align-items: center;
-  display: flex;
-  width: 15%;
-}
-
-main .container .card .details .share .type {
-  text-align: center;
-}
-
-main .container .card .details .authors {
-  width: 35%;
-}
-
-main .container .card .details .data-name,
-main .container .card .details .share,
-main .container .card .details .authors,
-main .container .card .details .resume {
-  display: flex;
-  flex-direction: column;
-}
-
-main .container .card .details .share .links {
-  width: 90%;
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-  display: flex;
-  justify-content: space-around;
-}
-
-main .container .card .pub-details {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  width: 100%;
-}
-
-main .container .card .pub-type {
-  font-size: 14px;
-  margin-top: 20px;
-}
-
-main .container .card .pub-type .pub-type-cont {
-  color: var(--primary);
-  font-weight: bold;
-  margin-left: 4px;
-}
-
-main .container .card .panel .tags .list-tags {
-  display: flex;
-  flex-direction: row;
-}
-
-main .container .card .panel {
-  display: none;
-}
-
-main .container .card .panel .resume {
-  margin: 20px 0;
-  text-align: justify;
-}
-
-main .container .card .details .share p,
-main .container .card .details .authors p,
-main .container .card .resume .resume-title,
-main .container .card .panel .tags-title {
-  font-size: calc((12px + 0.25vw) * 0.875);
-  font-weight: 700;
-  letter-spacing: 4px;
-  margin: 6px 0;
-  margin-bottom: 20px;
-  text-transform: uppercase;
-}
-
-main .container .card .details .data-name .article-name {
-  font-size: 22px;
-  font-weight: 500;
-}
-
-main .container .card .details .data-name .article-name a {
-  font-size: 22px;
-  font-weight: 500;
-  text-decoration: none;
-  color: var(--primary);
-}
-
-main .container .card .details .share a img {
-  height: 20px;
-  width: 20px;
-}
-
-main .container .card .authors .list-authors .item-author-name,
-main .container .card .panel .resume .resume-text,
-main .container .card .panel .tags .list-tags .item-tag {
-  font-size: 18px;
-  margin: 0;
-  padding: 0;
-}
-
-main .container .card .panel .tags .list-tags .item-tag {
-  padding: 10px;
-  padding-top: 0;
-  padding-left: 0;
-  width: fit-content;
-}
-
-main .container .card .buttons-container {
-  display: flex;
-  align-items: center;
-}
-
-main .container .card .button-show-more,
-main .container .card .button-download {
-  align-items: center;
-  background: none;
-  border: 1px solid var(--primary);
-  border-radius: 25px;
-  color: var(--primary);
-  cursor: pointer;
-  display: flex;
-  font-size: 16px;
-  font-weight: 500;
-  margin: 10px 15px 10px 0;
-  text-decoration: none;
-  padding: 12px;
-  transition: 0.1s ease-out;
-  width: fit-content;
-}
-
-main .container .card .button-show-more:hover,
-main .container .card .button-download:hover {
-  background: var(--primary);
-  color: var(--text-white);
-}
-
-main .container .card .button-show-more span,
-main .container .card .button-download span {
-  font-size: 18px;
-  font-weight: 400;
-}
-
-main .container .authors {
-  padding: 0px 15px;
-}
-
-main .container .card .card-bottom {
-  flex-direction: column;
-  display: flex;
-  justify-content: flex-end;
-}
-
-main .container .card .card-bottom .data {
-  margin: 0;
-  font-size: 14px;
-}
-main .container .card .card-bottom .data .data-day {
-  font-weight: 500;
-}
-
-main .container .pagination {
-  align-items: center;
-  display: flex;
-  justify-content: center;
-  margin-bottom: 40px;
-}
-
-main .container .pagination .numbers {
-  display: flex;
-}
-
-.pagination .numbers div:hover {
-  background: var(--bg);
-  color: var(--primary);
-}
-
-main .container .pagination .numbers div,
-main .container .pagination .prev,
-main .container .pagination .next {
-  align-items: center;
-  background: var(--primary);
-  border: 1px solid var(--primary);
-  border-radius: 50%;
-  color: white;
-  cursor: pointer;
-  display: flex;
-  height: 25px;
-  justify-content: center;
-  margin: 0 4px;
-  padding: 8px;
-  width: 25px;
-}
-
-main .container .pagination .prev:hover,
-main .container .pagination .next:hover {
-  background: var(--bg);
-  color: var(--primary);
-}
-
-main .container .pagination .numbers .active {
-  background: var(--primary);
-  color: var(--bg);
-}
-
-main .container .pagination .numbers .active:hover {
-  background: var(--primary);
-  color: #fff;
-}
-
-.line-primary {
-  background: var(--primary);
-}
-
-.line-gray {
-  background: #9d9dc4;
-}
-
-.line-primary,
-.line-gray {
-  height: 1px;
-  margin: 10px 0;
-  width: 100%;
-}
-
-.tag-zero {
-  display: none;
-}
-
-@media screen and (max-width: 800px) {
-  main .container {
-    margin: 0 auto;
-    width: 90%;
-  }
-
-  main .container .filtro {
-    display: flex;
-    flex-direction: column;
-  }
-
-  main .container .card .details .share {
-    padding: 10px 0 0 0;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 60%;
-  }
-
-  main .container .card .details .share .type {
-    display: inline;
-    text-align: left;
-  }
-
-  main .container .card .details .share .links {
-    width: 40%;
-  }
-
-  main .container .card .details .authors {
-    padding: 0;
-  }
-
-  /* main .container .card .card-bottom .container-data{
-    text-align: end;
-  } */
-
-  main .container .filtro label {
-    font-size: calc((12px + 0.25vw) * 0.875);
-    font-weight: 700;
-    letter-spacing: 4px;
-    margin: 10px 0;
-    text-transform: uppercase;
-  }
-
-  main .container .filtro input,
-  main .container .filtro .type select {
-    background: none;
-    border: 1px solid var(--gray-border);
-    border-radius: 6px;
-    font-size: 16px;
-    font-style: italic;
-    padding: 14px;
-    outline: none;
-    width: 100%;
-  }
-
-  main .container .filtro .type select {
-    background: none;
-    color: #707070;
-  }
-
-  main .container .search {
-    display: flex;
-    flex-direction: column;
-  }
-
-  main .container .search-button {
-    background: none;
-    border: 1px solid var(--gray-border);
-    border-radius: 50px;
-    cursor: pointer;
-    height: 50px;
-    margin: auto 0;
-    padding: 12px;
-    transition: 0.2s ease-in-out;
-    width: 50px;
-  }
-
-  main .container .search-button:hover,
-  main .container .search-button:focus {
-    opacity: 0.6;
-  }
-
-  main .container .list,
-  main .container .list-authors,
-  main .container .list-tags {
-    list-style: none;
-  }
-
-  main .container .list .item {
-    padding: 4px;
-  }
-
-  main .container .card {
-    display: flex;
-    flex-direction: column;
-    padding: 0;
-    width: 100%;
-  }
-
-  main .container .card .details {
-    display: flex;
-    flex-direction: column;
-  }
-
-  main .container .card .details .data-name,
-  main .container .card .details .authors,
-  main .container .card .details .resume,
-  main .container .card .details .tags {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-  }
-
-  main .container .card .details .data-name p,
-  main .container .card .details .share p,
-  main .container .card .details .authors p,
-  main .container .card .panel .resume .resume-title,
-  main .container .card .panel .tags-title {
-    font-size: calc((12px + 0.25vw) * 0.875);
-    font-weight: 700;
-    letter-spacing: 4px;
-    margin: 6px 0;
-    text-transform: uppercase;
-  }
-
-  main .container .card .details .share {
-    margin: 10px 0;
-  }
-
-  main .container .card .details .share .links {
-    justify-content: space-between;
-    margin: 10px 0;
-  }
-
-  main .container .card .details .share a img {
-    height: 20px;
-    width: 20px;
-  }
-
-  main .container .card .authors .list-authors .item-author-name,
-  main .container .card .panel .resume .resume-text,
-  main .container .card .panel .tags .list-tags .item-tag {
-    font-size: 14px;
-    margin: 0;
-    padding: 0;
-  }
-
-  main .container .card button {
-    background: none;
-    border: 1px solid var(--primary);
-    border-radius: 25px;
-    color: var(--primary);
-    font-size: 16px;
-    font-weight: 500;
-    margin: 10px 15px 10px 0;
-    text-decoration: none;
-    padding: 5px;
-    transition: 0.1s ease-out;
-    width: 60%;
-  }
-
-  main .container .pagination {
-    align-items: center;
-    display: flex;
-    justify-content: center;
-  }
-
-  main .container .pagination .numbers {
-    display: flex;
-  }
-
-  main .container .pagination .numbers div,
-  main .container .pagination .prev,
-  main .container .pagination .next {
-    align-items: center;
-    background: var(--primary);
-    border: 1px solid var(--primary);
-    border-radius: 50%;
-    color: white;
-    cursor: pointer;
-    display: flex;
-    height: 25px;
-    justify-content: center;
-    margin: 0 4px;
-    padding: 8px;
-    width: 25px;
-  }
-
-  main .container .pagination .prev:hover,
-  main .container .pagination .next:hover {
-    background: var(--bg);
-    color: var(--primary);
-  }
-
-  main .container .pagination .numbers .active {
-    background: var(--bg);
-    color: var(--primary);
-  }
-}
-
-@media screen and (max-width: 430px) {
-  main .container .card .details .share .links {
-    width: 90%;
-    text-align: center;
-    margin-left: 2vh;
-    margin-right: auto;
-    display: flex;
-    justify-content: space-around;
-  }
-  main .container .card .details .share .links a {
-    margin: auto 2vh auto 2vh;
-  }
-}
+body {
+  background: var(--bg);
+}
+
+main .container {
+  margin: 40px auto;
+  width: 80%;
+}
+
+main .container .filtro {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 20px;
+}
+
+main .container .filtro,
+main .container .filtro .year {
+  display: flex;
+  flex-direction: column;
+}
+
+main .container .titulo label,
+main .container .texto label,
+main .container .filtro label,
+main .container .search label {
+  font-size: calc((12px + 0.25vw) * 0.875);
+  font-weight: 700;
+  letter-spacing: 4px;
+  margin: 10px 0;
+  text-transform: uppercase;
+}
+
+main .container .filtro input,
+main .container .filtro .type select {
+  background: none;
+  border: 1px solid #626689;
+  border-radius: 6px;
+  font-size: 16px;
+  font-style: italic;
+  font-weight: 400;
+  padding: 14px;
+  outline: none;
+  width: 100%;
+}
+
+main .container .filtro .type select {
+  background: none;
+  color: var(--text-gray);
+}
+
+main .container .search {
+  display: flex;
+  flex-direction: column;
+}
+
+main .container .search-button {
+  background: none;
+  border: 1px solid var(--gray-border);
+  border-radius: 50px;
+  cursor: pointer;
+  height: 50px;
+  margin: auto 0;
+  padding: 12px;
+  transition: 0.2s ease-in-out;
+  width: 50px;
+}
+
+main .container .search-button:hover,
+main .container .search-button:focus {
+  opacity: 0.6;
+}
+
+main .container .list,
+main .container .list-authors,
+main .container .list-tags {
+  list-style: none;
+}
+
+main .container .list .item {
+  padding: 4px;
+}
+
+.resultados {
+  text-align: center;
+}
+
+main .container .card {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  width: 100%;
+}
+
+main .container .card .details {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+main .container .card .details .data-name {
+  max-width: 600px;
+  width: 40%;
+}
+
+main .container .card .details .share {
+  align-items: center;
+  display: flex;
+  width: 15%;
+}
+
+main .container .card .details .share .type {
+  text-align: center;
+}
+
+main .container .card .details .authors {
+  width: 35%;
+}
+
+main .container .card .details .data-name,
+main .container .card .details .share,
+main .container .card .details .authors,
+main .container .card .details .resume {
+  display: flex;
+  flex-direction: column;
+}
+
+main .container .card .details .share .links {
+  width: 90%;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: space-around;
+}
+
+main .container .card .pub-details {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
+main .container .card .pub-type {
+  font-size: 14px;
+  margin-top: 20px;
+}
+
+main .container .card .pub-type .pub-type-cont {
+  color: var(--primary);
+  font-weight: bold;
+  margin-left: 4px;
+}
+
+main .container .card .panel .tags .list-tags {
+  display: flex;
+  flex-direction: row;
+}
+
+main .container .card .panel {
+  display: none;
+}
+
+main .container .card .panel .resume {
+  margin: 20px 0;
+  text-align: justify;
+}
+
+main .container .card .details .share p,
+main .container .card .details .authors p,
+main .container .card .resume .resume-title,
+main .container .card .panel .tags-title {
+  font-size: calc((12px + 0.25vw) * 0.875);
+  font-weight: 700;
+  letter-spacing: 4px;
+  margin: 6px 0;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+main .container .card .details .data-name .article-name {
+  font-size: 22px;
+  font-weight: 500;
+}
+
+main .container .card .details .data-name .article-name a {
+  font-size: 22px;
+  font-weight: 500;
+  text-decoration: none;
+  color: var(--primary);
+}
+
+main .container .card .details .share a img {
+  height: 20px;
+  width: 20px;
+}
+
+main .container .card .authors .list-authors .item-author-name,
+main .container .card .panel .resume .resume-text,
+main .container .card .panel .tags .list-tags .item-tag {
+  font-size: 18px;
+  margin: 0;
+  padding: 0;
+}
+
+main .container .card .panel .tags .list-tags .item-tag {
+  padding: 10px;
+  padding-top: 0;
+  padding-left: 0;
+  width: fit-content;
+}
+
+main .container .card .buttons-container {
+  display: flex;
+  align-items: center;
+}
+
+main .container .card .button-show-more,
+main .container .card .button-download {
+  align-items: center;
+  background: none;
+  border: 1px solid var(--primary);
+  border-radius: 25px;
+  color: var(--primary);
+  cursor: pointer;
+  display: flex;
+  font-size: 16px;
+  font-weight: 500;
+  margin: 10px 15px 10px 0;
+  text-decoration: none;
+  padding: 12px;
+  transition: 0.1s ease-out;
+  width: fit-content;
+}
+
+main .container .card .button-show-more:hover,
+main .container .card .button-download:hover {
+  background: var(--primary);
+  color: var(--text-white);
+}
+
+main .container .card .button-show-more span,
+main .container .card .button-download span {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+main .container .authors {
+  padding: 0px 15px;
+}
+
+main .container .card .card-bottom {
+  flex-direction: column;
+  display: flex;
+  justify-content: flex-end;
+}
+
+main .container .card .card-bottom .data {
+  margin: 0;
+  font-size: 14px;
+}
+
+main .container .card .card-bottom .data .data-day {
+  font-weight: 500;
+}
+
+main .container .pagination {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+main .container .pagination .numbers {
+  display: flex;
+}
+
+.pagination .numbers div:hover {
+  background: var(--bg);
+  color: var(--primary);
+}
+
+main .container .pagination .numbers div,
+main .container .pagination .prev,
+main .container .pagination .next {
+  align-items: center;
+  background: var(--primary);
+  border: 1px solid var(--primary);
+  border-radius: 50%;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  height: 25px;
+  justify-content: center;
+  margin: 0 4px;
+  padding: 8px;
+  width: 25px;
+}
+
+main .container .pagination .prev:hover,
+main .container .pagination .next:hover {
+  background: var(--bg);
+  color: var(--primary);
+}
+
+main .container .pagination .numbers .active {
+  background: var(--primary);
+  color: var(--bg);
+}
+
+main .container .pagination .numbers .active:hover {
+  background: var(--primary);
+  color: #fff;
+}
+
+.line-primary {
+  background: var(--primary);
+}
+
+.line-gray {
+  background: #9d9dc4;
+}
+
+.line-primary,
+.line-gray {
+  height: 1px;
+  margin: 10px 0;
+  width: 100%;
+}
+
+.tag-zero {
+  display: none;
+}
+
+@media screen and (max-width: 800px) {
+
+  main .container {
+    margin: 0 auto;
+    width: 90%;
+  }
+
+  main .container .filtro {
+    display: flex;
+    flex-direction: column;
+  }
+
+  main .container .card .details .share {
+    padding: 10px 0 0 0;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 60%;
+  }
+
+  main .container .card .details .share .type {
+    display: inline;
+    text-align: left;
+  }
+
+  main .container .card .details .share .links {
+    width: 40%;
+  }
+
+  main .container .card .details .authors {
+    padding: 0;
+  }
+
+  /* main .container .card .card-bottom .container-data{
+
+    text-align: end;
+
+  } */
+
+  main .container .filtro label {
+    font-size: calc((12px + 0.25vw) * 0.875);
+    font-weight: 700;
+    letter-spacing: 4px;
+    margin: 10px 0;
+    text-transform: uppercase;
+  }
+
+  main .container .filtro input,
+  main .container .filtro .type select {
+    background: none;
+    border: 1px solid var(--gray-border);
+    border-radius: 6px;
+    font-size: 16px;
+    font-style: italic;
+    padding: 14px;
+    outline: none;
+    width: 100%;
+  }
+
+  main .container .filtro .type select {
+    background: none;
+    color: #707070;
+  }
+
+  main .container .search {
+    display: flex;
+    flex-direction: column;
+  }
+
+  main .container .search-button {
+    background: none;
+    border: 1px solid var(--gray-border);
+    border-radius: 50px;
+    cursor: pointer;
+    height: 50px;
+    margin: auto 0;
+    padding: 12px;
+    transition: 0.2s ease-in-out;
+    width: 50px;
+  }
+
+  main .container .search-button:hover,
+  main .container .search-button:focus {
+    opacity: 0.6;
+  }
+
+  main .container .list,
+  main .container .list-authors,
+  main .container .list-tags {
+    list-style: none;
+  }
+
+  main .container .list .item {
+    padding: 4px;
+  }
+
+  main .container .card {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    width: 100%;
+  }
+
+  main .container .card .details {
+    display: flex;
+    flex-direction: column;
+  }
+
+  main .container .card .details .data-name,
+  main .container .card .details .authors,
+  main .container .card .details .resume,
+  main .container .card .details .tags {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  main .container .card .details .data-name p,
+  main .container .card .details .share p,
+  main .container .card .details .authors p,
+  main .container .card .panel .resume .resume-title,
+  main .container .card .panel .tags-title {
+    font-size: calc((12px + 0.25vw) * 0.875);
+    font-weight: 700;
+    letter-spacing: 4px;
+    margin: 6px 0;
+    text-transform: uppercase;
+  }
+
+  main .container .card .details .share {
+    margin: 10px 0;
+  }
+
+  main .container .card .details .share .links {
+    justify-content: space-between;
+    margin: 10px 0;
+  }
+
+  main .container .card .details .share a img {
+    height: 20px;
+    width: 20px;
+  }
+
+  main .container .card .authors .list-authors .item-author-name,
+  main .container .card .panel .resume .resume-text,
+  main .container .card .panel .tags .list-tags .item-tag {
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+  }
+
+  main .container .card button {
+    background: none;
+    border: 1px solid var(--primary);
+    border-radius: 25px;
+    color: var(--primary);
+    font-size: 16px;
+    font-weight: 500;
+    margin: 10px 15px 10px 0;
+    text-decoration: none;
+    padding: 5px;
+    transition: 0.1s ease-out;
+    width: 60%;
+  }
+
+  main .container .pagination {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
+
+  main .container .pagination .numbers {
+    display: flex;
+  }
+
+  main .container .pagination .numbers div,
+  main .container .pagination .prev,
+  main .container .pagination .next {
+    align-items: center;
+    background: var(--primary);
+    border: 1px solid var(--primary);
+    border-radius: 50%;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    height: 25px;
+    justify-content: center;
+    margin: 0 4px;
+    padding: 8px;
+    width: 25px;
+  }
+
+  main .container .pagination .prev:hover,
+  main .container .pagination .next:hover {
+    background: var(--bg);
+    color: var(--primary);
+  }
+
+  main .container .pagination .numbers .active {
+    background: var(--bg);
+    color: var(--primary);
+  }
+}
+
+@media screen and (max-width: 430px) {
+
+  main .container .card .details .share .links {
+    width: 90%;
+    text-align: center;
+    margin-left: 2vh;
+    margin-right: auto;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  main .container .card .details .share .links a {
+    margin: auto 2vh auto 2vh;
+  }
+
+}
+
