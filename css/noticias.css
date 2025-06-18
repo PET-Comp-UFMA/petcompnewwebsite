@@ -96,6 +96,7 @@ main .container {
 
 .news-list__item {
   padding: 4px;
+  margin-bottom: 32px;
 }
 
 /* Card principal */
