@@ -95,7 +95,7 @@ h4 {
     .card-item{
         p{
             color:#1A365E;
-            border: 2px solid #1A365E;
+            border: 1px solid #1A365E;
         }
     }
 }
@@ -105,6 +105,11 @@ h4 {
     align-items: center;
     justify-content: center;
     gap: 60px;
+}
+
+.division img {
+    width: 200px;
+    height: auto;
 }
 
 .box-texts {
@@ -135,18 +140,20 @@ h4 {
         text-align: center;
         border-radius: 36px;
         cursor: pointer;
-        line-height: 36px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     p{
         color: #1A365E;
         display: inline-block;
-        border: 2px solid #1A365E;
+        border: 1px solid #1A365E;
         border-radius: 6px;
         text-align: center;
         margin-bottom: 4px;
         width: 114px;
-        font-size: 15px;
+        font-size: 14px;
         
     }
     h3{
@@ -156,6 +163,7 @@ h4 {
         font-size: 25px;
     }
 }
+
 
 #division-mdl{
     gap:10px
@@ -287,23 +295,92 @@ h4 {
 }
 
 @media screen and (max-width: 500px) {
-
     .monitoring-card {
-        transform: scale(0.75);
-    }
-    .sections-cards {
-        gap: 0px;
+        width: 392px;
+        height: 224px;
     }
 
-}
+    .card-item {
+        position: relative;
+        z-index: 2;
+        padding: 8px;
+        color: #000;
+        
+        h3{
+            font-size: 19px;
+        }
 
-@media screen and (max-width: 400px) {
+        a {
+            font-size: 15px;
+            width: 123px;
+            height: 36px;
+        }
 
-    .monitoring-card {
-        transform: scale(0.6);
+        p {
+            padding: 3px;
+            font-size:12px;
+            width: 100px;
+        }
+    }
+    .division{
+        gap:40px
+    }
+    .division img{
+        width: 160px;
     }
     .sections-cards{
-        padding: 0px;
+        gap: 15px;
+    }
+}
+
+
+@media screen and (max-width: 400px) {
+    .box-texts{
+        gap: 3px;
+    }
+    .monitoring-card {
+        width: 365px;
+        height: 210px;
+    }
+
+    .card-item {
+        position: relative;
+        z-index: 2;
+        padding: 8px;
+        color: #000;
+        
+        h3{
+            font-size: 20px;
+        }
+
+        a {
+            font-size: 15px;
+            width: 110px;
+            height: 35px;
+        }
+
+        p {
+            padding: 3px;
+            font-size:10px;
+            width: 90px;
+        }
+    }
+
+    .monitoring-card:hover .card-background {
+        transform: scale(6);
+    }
+    .division{
+        gap:40px
+    }
+    .division img{
+        width: 140px;
+    }
+    .sections-cards{
+        gap: 10px;
+    }
+    .box-texts {
+        display: flex;
+        gap: 3px;
     }
 
 }

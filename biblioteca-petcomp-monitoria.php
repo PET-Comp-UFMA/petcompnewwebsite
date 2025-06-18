@@ -35,7 +35,7 @@
                                 <p>Resumo</p>
                                 <a href="https://drive.google.com/drive/u/2/folders/1hBGSNqltpZr0msZtGBgRmkfAFXP6Qn4l" target="_blank" >Acessar</a>
                             </div>
-                            <img src="img\algoritmos.png" alt="">
+                            <img src="img\algoritmos.png" alt="" >
                         </div>
                     </div>
                 </div>
