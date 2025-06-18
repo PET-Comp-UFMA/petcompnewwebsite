@@ -16,7 +16,7 @@
                 <img src="img/logo-pet-branco.png" alt="logo-pet-branco">
                 <img src="img/logo-ufma-branco.png" alt="logo-ufma-branco">
             </div>
-            <hr>
+            <hr class="footer__line">
         </div>
 
         <div class="footer-mid">
@@ -91,7 +91,7 @@
         </div>
         
         <div class="footer-bottom">
-            <hr>
+            <hr class="footer__line">
             <div class="footer-logos">
                 <a  target="_blank" href="https://www.instagram.com/petcompufma/">
                     <img src="img/logo-instagram.png" alt="logo-instagram">
