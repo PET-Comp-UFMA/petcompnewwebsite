@@ -16,8 +16,11 @@
         while($row = mysqli_fetch_assoc($resultRevistas)) {
             $arrayRevistas[] = $row;
         }
+    } else {
+        $arrayRevistas = [];
     }
 ?>
+
 <body>
     <?php include 'header.php'; ?>
 

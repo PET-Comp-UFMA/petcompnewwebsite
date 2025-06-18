@@ -302,10 +302,6 @@ h4 {
 }
 
 @media (max-width: 1024px) {
-  
-  header .nav-links{ /* Provisorio, enquanto o header nao fica pronto */
-    display: none;
-  }
 
   .title-section {
     padding: 2rem 3rem;

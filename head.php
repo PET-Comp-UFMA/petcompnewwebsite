@@ -32,6 +32,9 @@
          integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
          crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script src="js/index.js" defer></script>
+
     <?php 
         if (isset($cssFiles) && is_array($cssFiles)) {
             foreach ($cssFiles as $cssFile) {
