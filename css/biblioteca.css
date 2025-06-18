@@ -13,10 +13,15 @@ body {
     background-color: #01204C;
 }
 
-.container-header a {
+.monitoring-card a {
     cursor: pointer;
-    color: #3AA3FC;
+    color: #027BDF;
     text-decoration: none;
+}
+
+.monitoring-card a:hover{
+    color:white;
+    background-color: #027BDF;
 }
 
 .container-body p {
@@ -66,40 +71,44 @@ h4 {
 
 /*Cores de cada card*/
 #card-1 {
-    background-color: #93D7F4;
+    background-color: #A8DFF6;
 }
 
 #card-2 {
-    background-color: #7C79FF; 
+    background-color: #9694FF; 
 }
 #card-3 {
-    background-color: #61E87F;
+    background-color: #A0F1B2;
 }
 #card-4 {
     background-color: #F25EB7;
 }
 #card-5 {
-    background-color: #A850FF;
+    background-color: #B973FF;
 }
 
 .monitoring-card:hover .card-background {
-    transform: scale(10);
+    transform: scale(8);
 
 }
 .monitoring-card:hover{
     .card-item{
-        a{
-            color:navy;
-            border:2px solid navy;
-        }
         p{
-            color:#01204C;
-            border: 2px solid #01204C;
+            color:#1A365E;
+            border: 2px solid #1A365E;
         }
     }
 }
 
+.division{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+}
+
 .box-texts {
+    padding-left: 10px;
     display: flex;
     flex-direction: column;
     gap: 6px;
@@ -109,35 +118,48 @@ h4 {
 }
 
 .card-item {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: relative;
     z-index: 2;
-    padding: 30px;
     color: #000;
 
     a {
+        width: 135px;
+        height: 40px;
         text-decoration: none;
         color: #027BDF;
         border: 2px solid #027BDF;
-        padding: 5px;
-        padding-left: 35px;
-        padding-right: 35px;
         text-align: center;
         border-radius: 36px;
         cursor: pointer;
+        line-height: 36px;
     }
 
     p{
-        color: #8E8D90;
+        color: #1A365E;
         display: inline-block;
-        border: 2px solid #8E8D90;
+        border: 2px solid #1A365E;
         border-radius: 6px;
         text-align: center;
-        padding: 2px 20px;
         margin-bottom: 4px;
+        width: 114px;
+        font-size: 15px;
         
+    }
+    h3{
+        font-family: 'Mada';
+        font-weight: bold;
+        color: #060B3F;
+        font-size: 25px;
     }
 }
 
+#division-mdl{
+    gap:10px
+}
 
 /*--------------------Responsive--------------------*/
 @media screen and (max-width: 1050px){
@@ -241,8 +263,7 @@ h4 {
    
 
     .monitoring-card {
-        width: 292px;
-        height: 136px;
+        transform: scale(0.9);
     }
 
     .card-item {
@@ -252,17 +273,37 @@ h4 {
         color: #000;
         
         h3{
-            font-size: 15px;
+            font-size: 26px;
         }
         a {
-            font-size:10px;
-            padding:3px 19px;
+            font-size:15px;
         }
 
         p {
             padding: 2px;
-            font-size:7px;
-            margin: 0px;
+            font-size:12px
         }
     }
+}
+
+@media screen and (max-width: 500px) {
+
+    .monitoring-card {
+        transform: scale(0.75);
+    }
+    .sections-cards {
+        gap: 0px;
+    }
+
+}
+
+@media screen and (max-width: 400px) {
+
+    .monitoring-card {
+        transform: scale(0.6);
+    }
+    .sections-cards{
+        padding: 0px;
+    }
+
 }
