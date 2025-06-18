@@ -254,7 +254,7 @@
          <h2>Ex-Integrantes</h2>
       </div>
       <div class="integrantes ex">
-         <div class="tutores">
+         <div class="orientadores">
             <?php foreach ($orientadoresInativos as $orientadorInativo): ?>
             <div class="card">
                <div class="card-img">
