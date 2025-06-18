@@ -23,67 +23,83 @@
 
         <div class="box-container">
             <div class = "sections-cards">
+
                 <div class="monitoring-card">
                     <div class="card-background"  id = "card-1" ></div>
                     <div class="card-item">
-                        <h3>Algoritmos 1</h3>
-                        <div class= "box-texts">
-                            <p>Vídeo aula</p>
-                            <p>Questionário</p>
-                            <p>Resumo</p>
-                            <a href="https://drive.google.com/drive/folders/1lgkO5emzPdYbeRuOvcedcDhmtHtW-U1U" target="_blank" >Acessar</a>
+                        <div class="division">
+                            <div class= "box-texts">
+                                <h3>Algoritmos 1</h3>
+                                <p>Vídeo aula</p>
+                                <p>Questionário</p>
+                                <p>Resumo</p>
+                                <a href="https://drive.google.com/drive/u/2/folders/1hBGSNqltpZr0msZtGBgRmkfAFXP6Qn4l" target="_blank" >Acessar</a>
+                            </div>
+                            <img src="img\algoritmos.png" alt="">
                         </div>
                     </div>
                 </div>
 
                 <div class="monitoring-card">
-                    <div class="card-background"  id = "card-2"  ></div>
+                    <div class="card-background" id="card-2"></div>
                     <div class="card-item">
-                        <h3>Cálculo 1</h3>
-                        <div class= "box-texts">
-                            <p>Vídeo aula</p>
-                            <p>Questionário</p>
-                            <p>Resumo</p>
-                            <a href="https://drive.google.com/drive/folders/1lgkO5emzPdYbeRuOvcedcDhmtHtW-U1U" target="_blank">Acessar</a>
+                        <div class="division">
+                            <div class="box-texts">
+                                <h3>Cálculo 1</h3>
+                                <p>Vídeo aula</p>
+                                <p>Questionário</p>
+                                <p>Resumo</p>
+                                <a href="https://drive.google.com/drive/u/2/folders/1lgkO5emzPdYbeRuOvcedcDhmtHtW-U1U" target="_blank">Acessar</a>
+                            </div>
+                            <img src="img\calculo.png" alt="">
                         </div>
                     </div>
                 </div>
 
                 <div class="monitoring-card">
-                    <div class="card-background" id = "card-3"></div>
+                    <div class="card-background" id="card-3"></div>
                     <div class="card-item">
-                        <h3>Estrutura de dados 1</h3>
-                        <div class= "box-texts">
-                            <p>Vídeo aula</p>
-                            <p>Questionário</p>
-                            <p>Resumo</p>
-                            <a href="https://drive.google.com/drive/folders/1lgkO5emzPdYbeRuOvcedcDhmtHtW-U1U" target="_blank">Acessar</a>
+                        <div class="division">
+                            <div class="box-texts">
+                                <h3>Estrutura de <br>Dados 1</h3>
+                                <p>Vídeo aula</p>
+                                <p>Questionário</p>
+                                <p>Resumo</p>
+                                <a href="https://drive.google.com/drive/u/2/folders/1yi-2fwODYUSjB-d4QgMt4Liga4O5OhRq" target="_blank">Acessar</a>
+                            </div>
+                            <img src="img\ed1.png" alt="">
                         </div>
                     </div>
                 </div>
 
                 <div class="monitoring-card">
-                    <div class="card-background"  id = "card-4" ></div>
+                    <div class="card-background" id="card-4"></div>
                     <div class="card-item">
-                        <h3>Linguagem de programação 1</h3>
-                        <div class= "box-texts">
-                            <p>Vídeo aula</p>
-                            <p>Questionário</p>
-                            <p>Resumo</p>
-                            <a href="https://drive.google.com/drive/folders/1lgkO5emzPdYbeRuOvcedcDhmtHtW-U1U" target="_blank">Acessar</a>
+                        <div class="division">
+                            <div class="box-texts">
+                                <h3>Linguagem de <br>programação 1</h3>
+                                <p>Vídeo aula</p>
+                                <p>Questionário</p>
+                                <p>Resumo</p>
+                                <a href="https://drive.google.com/drive/u/2/folders/1zI5vU7jCRf1nQ2o9HIIpAQSWjG_7Pjn8" target="_blank">Acessar</a>
+                            </div>
+                            <img src="img\lp1.png" alt="">
                         </div>
                     </div>
                 </div>
 
                 <div class="monitoring-card">
-                    <div class="card-background" id = "card-5" ></div>
+                    <div class="card-background" id="card-5"></div>
                     <div class="card-item">
-                        <h3>Matemática Discreta e Lógica</h3>
-                        <div class= "box-texts">
-                            <p>Vídeo aula</p>
-                            <p>Questionário</p>
-                            <p>Resumo</p>
-                            <a href="https://drive.google.com/drive/folders/1lgkO5emzPdYbeRuOvcedcDhmtHtW-U1U" target="_blank">Acessar</a>
+                        <div class="division" id="division-mdl">
+                            <div class="box-texts">
+                                <h3>Matemática Discreta<br>e Lógica</h3>
+                                <p>Vídeo aula</p>
+                                <p>Questionário</p>
+                                <p>Resumo</p>
+                                <a href="https://drive.google.com/drive/u/2/folders/1XRzrnR91LlKKRIibVEjyXA0j5u-NeSGd" target="_blank">Acessar</a>
+                            </div>
+                            <img src="img\mdl.png" alt="">
                         </div>
                     </div>
                 </div>
