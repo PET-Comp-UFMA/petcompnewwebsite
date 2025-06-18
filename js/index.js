@@ -48,3 +48,22 @@ function openMenu() {
     document.querySelector('.navbar').classList.toggle('active');
 }
 
+// Alternar menu mobile
+document.querySelectorAll('.dropbtn').forEach(btn => {
+  btn.addEventListener('click', function (e) {
+
+    e.preventDefault(); // impede redirecionamento imediato
+
+    if(window.innerWidth <= 950) { 
+        const dropdown = this.parentElement;
+
+        // fecha outros dropdowns
+        document.querySelectorAll('.dropdown').forEach(d => {
+            if(d !== dropdown) d.classList.remove('open');
+        });
+
+        dropdown.classList.toggle('open');
+    }
+
+  });
+});
