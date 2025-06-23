@@ -27,9 +27,9 @@
       
    // Consultas para obter orientadores e integrantes ativos
    if ($page == 1) {
-      $queryOrientadoresAtivos = "SELECT id, primeiro_nome, ultimo_nome, imagem, sobre, social FROM petianos WHERE ativo = 1 AND Tutor = 1 ORDER BY ano DESC, periodo DESC";
-      $queryIntegrantes = "SELECT id, primeiro_nome, ultimo_nome, imagem, sobre, social FROM petianos WHERE ativo = 1 AND voluntario = 0 AND Tutor = 0 ORDER BY ano DESC, periodo DESC";
-      $queryVoluntarios = "SELECT id, primeiro_nome, ultimo_nome, imagem, sobre, social FROM petianos  WHERE ativo = 1 AND voluntario = 1 AND Tutor = 0 ORDER BY ano DESC, periodo DESC";
+      $queryOrientadoresAtivos = "SELECT id, primeiro_nome, ultimo_nome, imagem, sobre, social FROM petianos WHERE ativo = 1 AND orientador = 1 ORDER BY ano DESC, periodo DESC";
+      $queryIntegrantes = "SELECT id, primeiro_nome, ultimo_nome, imagem, sobre, social FROM petianos WHERE ativo = 1 AND voluntario = 0 AND orientador = 0 ORDER BY ano DESC, periodo DESC";
+      $queryVoluntarios = "SELECT id, primeiro_nome, ultimo_nome, imagem, sobre, social FROM petianos  WHERE ativo = 1 AND voluntario = 1 AND orientador = 0 ORDER BY ano DESC, periodo DESC";
 
       // executando as consultas com os parâmetros de paginação
       $resultOrientadoresAtivos = mysqli_query($mysqli, $queryOrientadoresAtivos);
@@ -42,8 +42,8 @@
       $voluntarios = mysqli_fetch_all($resultVoluntarios, MYSQLI_ASSOC);
    }
    else { // Consultas para orientadores e integrantes inativos com paginação
-      $queryOrientadoresInativos = "SELECT id, primeiro_nome, ultimo_nome, imagem, sobre, social FROM petianos WHERE ativo = 0 AND Tutor = 1 ORDER BY ano DESC, periodo DESC LIMIT $start, $limit";
-      $queryInativos = "SELECT id, primeiro_nome, ultimo_nome, imagem, sobre, social FROM petianos WHERE ativo = 0 AND Tutor = 0 ORDER BY id DESC LIMIT $start, $limit";
+      $queryOrientadoresInativos = "SELECT id, primeiro_nome, ultimo_nome, imagem, sobre, social FROM petianos WHERE ativo = 0 AND orientador = 1 ORDER BY ano DESC, periodo DESC LIMIT $start, $limit";
+      $queryInativos = "SELECT id, primeiro_nome, ultimo_nome, imagem, sobre, social FROM petianos WHERE ativo = 0 AND orientador = 0 ORDER BY id DESC LIMIT $start, $limit";
    
       // executando as consultas com os parâmetros de paginação
       $resultOrientadoresInativos = mysqli_query($mysqli, $queryOrientadoresInativos);
@@ -83,7 +83,7 @@
       <?php if($page == 1): ?>
       <?php if(count($integrantes) > 0 && count($orientadoresAtivos) > 0): ?>
       <div class="integrantes">
-         <div class="tutores">
+         <div class="orientadores">
             <?php foreach ($orientadoresAtivos as $orientadorAtivo): ?>
             <div class="card">
                <div class="card-img">
@@ -254,7 +254,7 @@
          <h2>Ex-Integrantes</h2>
       </div>
       <div class="integrantes ex">
-         <div class="tutores">
+         <div class="orientadores">
             <?php foreach ($orientadoresInativos as $orientadorInativo): ?>
             <div class="card">
                <div class="card-img">

@@ -115,7 +115,7 @@
               }
 
               if(!is_null($palavra_chave)){
-                $query = $query . "palavra_chave LIKE '%". $palavra_chave . "%'";
+                $query = $query . "palavras_chave LIKE '%". $palavra_chave . "%'";
 
                 if(!is_null($ano)){
                   $query = $query . " and ";
@@ -190,11 +190,11 @@
           </div>
         <?php endif ?>
         
-        <?php if(isset($row['palavras_chaves'])): ?>
+        <?php if(isset($row['palavras_chave'])): ?>
           <p class="tags-title">Palavras-chave</p>
           <div class="tags">
             <ul class="list-tags">
-              <li class="item-tag"><?php print_r($row['palavras_chaves']) ?></li>
+              <li class="item-tag"><?php print_r($row['palavras_chave']) ?></li>
             </ul>
           </div>
         <?php endif ?>
