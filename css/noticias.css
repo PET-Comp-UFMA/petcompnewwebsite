@@ -237,8 +237,8 @@ main .container {
   padding: 0;             /* removido padding extra */
   border: none;
   border-radius: 50%;
-  background-color: var(--primary);
-  color: #fff;
+  background-color: #060B3F;
+  color: #bbbbbb;
   cursor: pointer;
   transition: background-color 0.2s ease;
 }
@@ -266,8 +266,8 @@ main .container {
   padding: 0;
   border: none;
   border-radius: 50%;
-  background-color: var(--primary);
-  color: #fff;
+  background-color: #060B3F;
+  color: #bbbbbb;
   cursor: pointer;
   transition: background-color 0.2s ease;
 }
