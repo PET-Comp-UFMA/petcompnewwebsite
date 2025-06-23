@@ -14,7 +14,9 @@ function changeNews() {
     setTimeout(() => {
         noticias.forEach((noticia, index) => {
             const newsIndex = (currentIndex + index) % newsData.length;
-            noticia.querySelector('img').src = newsData[newsIndex].foto;
+            noticia.querySelector('img').src = newsData[newsIndex].foto; 
+            newhref = "noticia.php?id=" + newsData[newsIndex].id
+            noticia.setAttribute('href', newhref)
             
             // Define o título de acordo com a posição
             if (index === 0) { // Notícia principal (60 caracteres)
