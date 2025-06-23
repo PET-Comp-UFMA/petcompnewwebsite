@@ -276,3 +276,37 @@ main .container {
   background-color: var(--primary-dark);
 }
 
+
+
+
+
+
+
+
+/* <<< Responsividade >>> */
+
+/* Tablets grandes (entre 992px e 1200px) */
+@media (max-width: 1200px) {
+  /* Ajustes para telas menores que desktops largos */
+}
+
+/* Tablets médios (entre 768px e 991px) */
+@media (max-width: 991px) {
+  .card__meta--share {
+    width: 20%;
+  }
+}
+
+/* Celulares grandes (entre 576px e 767px) */
+@media (max-width: 767px) {
+  .card__meta--share {
+    width: 30%;
+  }
+}
+
+/* Celulares pequenos (até 575px) */
+@media (max-width: 575px) {
+  .card__meta--share {
+    width: 30%;
+  }
+}
