@@ -36,6 +36,8 @@ if (!is_null($titulo) || !is_null($texto)) {
   include 'head.php';
 ?>  
 
+<link href="https://fonts.googleapis.com/css2?family=Mada:wght@400;500;600;700&display=swap" rel="stylesheet"> <!-- Importação da fonte Mada -->
+
 <body>
 
   <!--- HEADER --->
@@ -55,7 +57,6 @@ if (!is_null($titulo) || !is_null($texto)) {
       <h2>Buscar por: </h2>
 
       <section class="filtro">
-        <h2 class="filtro__title">Buscar por:</h2>
 
         <form
           action="noticias.php"
@@ -146,33 +147,6 @@ if (!is_null($titulo) || !is_null($texto)) {
                     </a>
                   </h5>
                 </div>
-                <div class="card__meta card__meta--share">
-                  <p class="card__share-label">Compartilhe</p>
-                  <div class="card__share-links">
-                    <a
-                      class="card__share-link"
-                      href="https://twitter.com/intent/tweet?url=<?php echo urlencode($url) ?>"
-                      target="_blank"
-                      rel="nofollow noopener"
-                    >
-                      <img src="./assets/svg/twitter_icon_copy.svg" alt="Twitter">
-                    </a>
-                    <a
-                      class="card__share-link"
-                      href="https://www.facebook.com/sharer.php?u=<?php echo urlencode($url) ?>"
-                      target="_blank"
-                      rel="noopener"
-                    >
-                      <img src="./assets/svg/facebook_icon_copy.svg" alt="Facebook">
-                    </a>
-                    <a
-                      class="card__share-link"
-                      href="whatsapp://send?text=<?php echo urlencode('Acesse: - ' . $url) ?>"
-                    >
-                      <img src="./assets/svg/whatsapp.svg" alt="WhatsApp">
-                    </a>
-                  </div>
-                </div>
               </div>
 
               <div class="card__body">
@@ -187,14 +161,45 @@ if (!is_null($titulo) || !is_null($texto)) {
                   </p>
                 </div>
 
-                <?php if (!empty($row['data'])): ?>
-                  <div class="card__date">
-                    Publicado em <time datetime="<?= $row['data'] ?>"><?= $row['data'] ?></time>
+                <div class="card__bottom">
+
+                  <?php if (!empty($row['data'])): ?>
+                    <div class="card__date">
+                      Publicado em <time datetime="<?= $row['data'] ?>"><?= $row['data'] ?></time>
+                    </div>
+                  <?php endif; ?>
+
+                  <div class="card__meta card__meta--share">
+                    <div class="card__share-links">
+                      <a
+                        class="card__share-link"
+                        href="https://twitter.com/intent/tweet?url=<?php echo urlencode($url) ?>"
+                        target="_blank"
+                        rel="nofollow noopener"
+                      >
+                        <img src="./assets/svg/twitter_icon_copy.svg" alt="Twitter">
+                      </a>
+                      <a
+                        class="card__share-link"
+                        href="https://www.facebook.com/sharer.php?u=<?php echo urlencode($url) ?>"
+                        target="_blank"
+                        rel="noopener"
+                      >
+                        <img src="./assets/svg/facebook_icon_copy.svg" alt="Facebook">
+                      </a>
+                      <a
+                        class="card__share-link"
+                        href="whatsapp://send?text=<?php echo urlencode('Acesse: - ' . $url) ?>"
+                      >
+                        <img src="./assets/svg/whatsapp.svg" alt="WhatsApp">
+                      </a>
+                    </div>
                   </div>
-                <?php endif; ?>
+
+                </div>
               </div>
 
-              <div class="card__line card__line--gray"></div>
+              <hr class="card__line card__line--blue">
             </article>
           </li>
           
@@ -203,25 +208,21 @@ if (!is_null($titulo) || !is_null($texto)) {
       </section>
 
       <div class="pagination">
+        <button class="pagination__button pagination__button--prev" type="button">
+          <span class="material-icons">navigate_before</span>
+        </button>
 
-        <!-- botões -->
+        <div class="pagination__numbers">
+          <button class="pagination__number" type="button">1</button>
+          <button class="pagination__number" type="button">2</button>
+          <button class="pagination__number" type="button">3</button>
+        </div>
 
-        <div class="prev">
-          <span class="material-icons">
-            navigate_before
-          </span>
-        </div>
-        <div class="numbers">
-          <div>1</div>
-          <div>2</div>
-          <div>3</div>
-        </div>
-        <div" class="next">
-          <span class="material-icons">
-            navigate_next
-          </span>
+        <button class="pagination__button pagination__button--next" type="button">
+          <span class="material-icons">navigate_next</span>
+        </button>
       </div>
-      </div>
+
 
     <?php } else { ?>
       <li class="item">

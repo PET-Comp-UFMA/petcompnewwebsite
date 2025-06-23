@@ -27,14 +27,6 @@ main .container {
   padding-bottom: 20px;
 }
 
-.filtro__title {
-  font-size: calc((12px + 0.25vw) * 0.875);
-  font-weight: 700;
-  letter-spacing: 4px;
-  margin: 10px 0;
-  text-transform: uppercase;
-}
-
 .filtro__form {
   display: flex;
   flex-direction: column;
@@ -104,6 +96,7 @@ main .container {
 
 .news-list__item {
   padding: 4px;
+  margin-bottom: 32px;
 }
 
 /* Card principal */
@@ -111,12 +104,14 @@ main .container {
   display: flex;
   flex-direction: column;
   width: 100%;
+  border: none;
 }
 
 /* Detalhes de topo */
 .card__details {
   display: flex;
   justify-content: space-between;
+  width: 100%;
   margin-bottom: 20px;
 }
 
@@ -126,8 +121,7 @@ main .container {
 }
 
 .card__meta--title {
-  max-width: 600px;
-  width: 40%;
+  margin-right: 10%;
 }
 
 .card__meta--share {
@@ -138,7 +132,8 @@ main .container {
 /* Título e link */
 .card__title {
   font-size: 22px;
-  font-weight: 500;
+  font-weight: 700;
+  font-family: 'Mada', sans-serif;
   margin: 0;
 }
 
@@ -148,15 +143,6 @@ main .container {
 }
 
 /* Compartilhamento */
-.card__share-label {
-  font-size: calc((12px + 0.25vw) * 0.875);
-  font-weight: 700;
-  letter-spacing: 4px;
-  margin: 0 0 20px;
-  text-transform: uppercase;
-  text-align: center;
-}
-
 .card__share-links {
   display: flex;
   justify-content: space-around;
@@ -176,6 +162,11 @@ main .container {
   justify-content: flex-end;
 }
 
+.card__bottom {
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
 /* Resumo */
 .card__resume {
   margin-bottom: 16px;
@@ -206,8 +197,14 @@ main .container {
 /* Linhas separadoras */
 .card__line {
   width: 100%;
-  height: 1px;
+  height: 5px;
   margin: 10px 0;
+  border-top: none;
+}
+
+.card__line--blue {
+  background: #060B3F;
+  opacity: 1;
 }
 
 .card__line--gray {
@@ -215,38 +212,67 @@ main .container {
 }
 
 /* <<<Estilização da paginação>>> */
-main .container .pagination {
-  align-items: center;
+/* Block: container geral da paginação */
+.pagination {
   display: flex;
   justify-content: center;
-  margin-bottom: 40px;
+  align-items: center;
+  margin-bottom: 2.5rem; /* 40px */
+  gap: 0.25rem;          /* espaço rápido entre botões */
 }
 
-main .container .pagination .numbers div,
-main .container .pagination .prev,
-main .container .pagination .next {
+/* Element: “wrapper” dos números */
+.pagination__numbers {
+  display: flex;
+  gap: 0.5rem; /* 8px de espaçamento entre números */
+}
+
+/* Element: botão genérico (prev e next) */
+.pagination__button {
+  display: flex;
+  justify-content: center;
   align-items: center;
-  background: var(--primary);
-  border: 1px solid var(--primary);
+  width: 2.5rem;          /* 40px */
+  height: 2.5rem;         /* 40px */
+  padding: 0;             /* removido padding extra */
+  border: none;
   border-radius: 50%;
-  color: white;
+  background-color: #060B3F;
+  color: #bbbbbb;
   cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+.pagination__button:hover {
+  background-color: var(--primary-dark);
+}
+
+/* Modifier: botão “anterior” */
+.pagination__button--prev {
+  /* caso precise alterar algo só para ‘prev’ */
+}
+
+/* Modifier: botão “próximo” */
+.pagination__button--next {
+  /* caso precise alterar algo só para ‘next’ */
+}
+
+/* Element: cada número */
+.pagination__number {
   display: flex;
-  height: 25px;
   justify-content: center;
-  margin: 0 4px;
-  padding: 8px;
-  width: 25px;
+  align-items: center;
+  width: 2.5rem;          /* 40px */
+  height: 2.5rem;         /* 40px */
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background-color: #060B3F;
+  color: #bbbbbb;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+.pagination__number:hover,
+.pagination__number--active {
+  background-color: var(--primary-dark);
 }
 
-main .container .pagination .numbers {
-  display: flex;
-}
-
-.resultados{
-
-  text-align: center;
-
-  padding-bottom: 16vh;
-
-} 
