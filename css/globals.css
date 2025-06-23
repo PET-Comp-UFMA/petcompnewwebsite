@@ -303,7 +303,7 @@
             text-align: center;
             margin: auto auto;
         }
-        hr {
+        .footer__line {
             display: none;
         }
         .footer-bottom {
@@ -323,7 +323,7 @@
             justify-content: center;
             text-align: center;
         }
-        hr {
+        .footer__line {
             display: none;
         }
         a {
