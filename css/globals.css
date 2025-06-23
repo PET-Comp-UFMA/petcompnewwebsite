@@ -245,7 +245,7 @@
         .footer-mid {
             gap: 4rem;
         }
-        a {
+        header a, footer a {
             opacity: 1;
         }
         .navbar a {
@@ -326,7 +326,7 @@
         .footer__line {
             display: none;
         }
-        a {
+        header a, footer a {
             font-size: 0.9rem;
             opacity: 1;
 
@@ -364,7 +364,7 @@
         }
     }
     @media screen and (max-width: 360px) {
-        a {
+        header a, footer a {
             font-size: 0.7rem;
             opacity: 1;
         }
