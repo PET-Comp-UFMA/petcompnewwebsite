@@ -6,6 +6,26 @@ main .container {
 
 }
 
+.container-header {
+  color: white;
+  background-color: #01204C;
+}
+
+.container-header a {
+  cursor: pointer;
+  color: #3AA3FC;
+  text-decoration: none;
+}
+
+.container-body p {
+  line-height: 1.6;
+  text-align: justify;
+}
+
+h4 {
+  display: inline;
+}
+
 .container-body {
   line-height: 1.6;
   text-align: justify;
@@ -277,6 +297,89 @@ main .container {
 }
 
 
+@media screen and (min-width: 1025px) {
+  .container-header {
+      padding: 50px 60px;
+  }
+
+  .container-header h2 {
+      font-size: 50px;
+      margin-bottom: 20px;
+      font-weight: bold;
+  }
+
+  .container-header h3 {
+      font-size: 30px;
+      margin-bottom: 20px;
+      font-weight: normal;
+  }
+
+  .container-header p {
+      font-size: 16px;
+      font-weight: normal;
+  }
+}
+
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+  .container-header {
+      padding: 20px 70px;
+  }
+
+  .container-header h2 {
+      font-size: 24px;
+      margin-bottom: 15px;
+  }
+
+  .container-header h3 {
+      font-size: 16px;
+      margin-bottom: 15px;
+  }
+
+  .container-header p {
+      font-size: 9px;
+      font-weight: normal;
+  }
+
+  .container-body {
+      padding: 20px 50px;
+  }
+
+  .container-body p {
+      font-size: 14px;
+      text-indent: 2em;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .container-header {
+      padding: 20px 40px;
+  }
+
+  .container-header h2 {
+      font-size: 20px;
+      margin-bottom: 10px;
+  }
+
+  .container-header h3 {
+      font-size: 10px;
+      margin-bottom: 10px;
+  }
+
+  .container-header p {
+      font-size: 5px;
+      font-weight: normal;
+  }
+
+  .container-body {
+      padding: 20px 40px;
+  }
+
+  .container-body p {
+      font-size: 10px;
+      text-indent: 2em;
+  }
+}
+
 
 
 
@@ -310,3 +413,4 @@ main .container {
     width: 30%;
   }
 }
+
