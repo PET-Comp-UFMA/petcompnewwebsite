@@ -265,7 +265,7 @@ footer {
     .footer-mid {
         gap: 4rem;
     }
-    a {
+    header a, footer a { 
         opacity: 1;
     }
 
@@ -368,7 +368,7 @@ footer {
         text-align: center;
         margin: auto auto;
     }
-    hr {
+    .footer__line {
         display: none;
     }
     .footer-bottom {
@@ -396,10 +396,10 @@ footer {
         justify-content: center;
         text-align: center;
     }
-    hr {
+    .footer__line {
         display: none;
     }
-    a {
+    header a, footer a {
         font-size: 0.9rem;
         opacity: 1;
 
@@ -434,7 +434,7 @@ footer {
     }
 }
 @media screen and (max-width: 360px) {
-    a {
+    header a, footer a {
         font-size: 0.7rem;
         opacity: 1;
     }
