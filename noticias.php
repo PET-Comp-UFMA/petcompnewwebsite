@@ -208,25 +208,21 @@ if (!is_null($titulo) || !is_null($texto)) {
       </section>
 
       <div class="pagination">
+        <button class="pagination__button pagination__button--prev" type="button">
+          <span class="material-icons">navigate_before</span>
+        </button>
 
-        <!-- botões -->
+        <div class="pagination__numbers">
+          <button class="pagination__number" type="button">1</button>
+          <button class="pagination__number" type="button">2</button>
+          <button class="pagination__number" type="button">3</button>
+        </div>
 
-        <div class="prev">
-          <span class="material-icons">
-            navigate_before
-          </span>
-        </div>
-        <div class="numbers">
-          <div>1</div>
-          <div>2</div>
-          <div>3</div>
-        </div>
-        <div" class="next">
-          <span class="material-icons">
-            navigate_next
-          </span>
+        <button class="pagination__button pagination__button--next" type="button">
+          <span class="material-icons">navigate_next</span>
+        </button>
       </div>
-      </div>
+
 
     <?php } else { ?>
       <li class="item">

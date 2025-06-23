@@ -212,38 +212,67 @@ main .container {
 }
 
 /* <<<Estilização da paginação>>> */
-main .container .pagination {
-  align-items: center;
+/* Block: container geral da paginação */
+.pagination {
   display: flex;
   justify-content: center;
-  margin-bottom: 40px;
+  align-items: center;
+  margin-bottom: 2.5rem; /* 40px */
+  gap: 0.25rem;          /* espaço rápido entre botões */
 }
 
-main .container .pagination .numbers div,
-main .container .pagination .prev,
-main .container .pagination .next {
+/* Element: “wrapper” dos números */
+.pagination__numbers {
+  display: flex;
+  gap: 0.5rem; /* 8px de espaçamento entre números */
+}
+
+/* Element: botão genérico (prev e next) */
+.pagination__button {
+  display: flex;
+  justify-content: center;
   align-items: center;
-  background: var(--primary);
-  border: 1px solid var(--primary);
+  width: 2.5rem;          /* 40px */
+  height: 2.5rem;         /* 40px */
+  padding: 0;             /* removido padding extra */
+  border: none;
   border-radius: 50%;
-  color: white;
+  background-color: var(--primary);
+  color: #fff;
   cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+.pagination__button:hover {
+  background-color: var(--primary-dark);
+}
+
+/* Modifier: botão “anterior” */
+.pagination__button--prev {
+  /* caso precise alterar algo só para ‘prev’ */
+}
+
+/* Modifier: botão “próximo” */
+.pagination__button--next {
+  /* caso precise alterar algo só para ‘next’ */
+}
+
+/* Element: cada número */
+.pagination__number {
   display: flex;
-  height: 25px;
   justify-content: center;
-  margin: 0 4px;
-  padding: 8px;
-  width: 25px;
+  align-items: center;
+  width: 2.5rem;          /* 40px */
+  height: 2.5rem;         /* 40px */
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background-color: var(--primary);
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+.pagination__number:hover,
+.pagination__number--active {
+  background-color: var(--primary-dark);
 }
 
-main .container .pagination .numbers {
-  display: flex;
-}
-
-.resultados{
-
-  text-align: center;
-
-  padding-bottom: 16vh;
-
-} 
