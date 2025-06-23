@@ -292,17 +292,21 @@ main .container {
 
 /* Tablets médios (entre 768px e 991px) */
 @media (max-width: 991px) {
-  /* Ajustes para tablets */
+  .card__meta--share {
+    width: 20%;
+  }
 }
 
 /* Celulares grandes (entre 576px e 767px) */
 @media (max-width: 767px) {
-  /* Ajustes para celulares maiores */
+  .card__meta--share {
+    width: 30%;
+  }
 }
 
 /* Celulares pequenos (até 575px) */
 @media (max-width: 575px) {
   .card__meta--share {
-    width: 18px;
+    width: 30%;
   }
 }
