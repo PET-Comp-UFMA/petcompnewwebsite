@@ -439,3 +439,16 @@ footer {
         opacity: 1;
     }
 }
+
+
+/* Implantação temporária para efeito de aparecimento gradual do header no mobile */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px); /* Pequeno movimento para dar um efeito mais suave */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
