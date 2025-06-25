@@ -237,8 +237,9 @@ h4 {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 2.5rem; /* 40px */
-  gap: 0.25rem;          /* espaço rápido entre botões */
+  margin-bottom: 2.5rem; 
+  gap: 0.25rem;          
+  opacity: 0; /* Retirar temporariamente o pagination */
 }
 
 /* Element: “wrapper” dos números */
