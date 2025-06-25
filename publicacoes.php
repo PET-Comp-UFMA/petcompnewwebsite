@@ -88,11 +88,12 @@
         <button name="search-button" class="search-button"><img src="./assets/svg/search.svg" alt=""></button>
       </div>
     </form>
-      <!-- START  -->
+    
+    <!-- START  -->
       
     <section id="paginate">
     <ul class="list" style="list-style: none;">  <!-- lista com cada li e cada li tem a box dentro-->
-       <?php
+        <?php
             mysqli_select_db($mysqli, $bd) or die("Could not select database");
 
             if($buscaRealizada){
@@ -148,35 +149,14 @@
             <?php print_r($row['titulo'])?>
             </h5>
           </div>
-          <div class="share">
-            <p class="type">Compartilhe</p>
-            <div class="links ">
-            <?php
-                $baseUrl = url();
-                $parametro = strtr($row['titulo'], $caracteres_sem_acento);
-                $parametro = substr_replace($parametro ,'',-1); //removendo o ultimo ' ' que vem do bd e gera erro no link 
-                $parametro = urlencode((str_replace(" ", "+", $parametro)));
-                $url =  $baseUrl."publicacoes.php?publication=".$parametro;
-              ?>
-              <a target="_blank" href="https://twitter.com/intent/tweet?url=<?php echo $url?>" id="twitter-share-btt" rel="nofollow" target="_blank"><img src="./assets/svg/twitter_icon_copy.svg" alt=""></a>
-
-
-
-              <?php 
-                $baseUrl = substr(url(), 0, strpos(url(), "?")); //removendo argumentos do post, tudo depois de "?"
-                $baseUrl = str_replace("publicacoes.php", "", $baseUrl); //removendo "publicacoes.php" do link de compartilhamento
-                $url =  $baseUrl."publicacoes.php?publication=".urlencode($row['titulo'])."&author=". urlencode($row['autor']);
-              ?>
-              <a target="_blank" href="https://www.facebook.com/sharer.php?u=<?php echo $url?>"><img src="./assets/svg/facebook_icon_copy.svg" alt=""></a>
-              <a href="whatsapp://send?text=<?php echo urlencode('Acesse: - '.$url)?>"><img src="./assets/svg/whatsapp.svg" alt=""></a> 
-            </div>
-          </div>
+          
           <div class="authors">
             <p class="authors-names">Autores</p>
             <ul class="list-authors">
               <li class="item-author-name"><?php print_r($row['autor']) ?></li>
             </ul>
           </div>
+
         </div>
       
         <div class="panel">
@@ -224,16 +204,44 @@
 
         <?php if (isset($row['ano'])): ?>
           <div class="container-data">
-            <p class="data">Ano de publicação: <span class="data-day"><?php print_r($row['ano'])?></span></p>
+            <div class="card-date">
+              <p class="data">Ano de publicação: <span class="data-day"><?php print_r($row['ano'])?></span></p>
+            </div>
+
+            <div class="share">
+              <!-- <p class="type">Compartilhe</p> -->
+              <div class="links ">
+                <?php
+                  $baseUrl = url();
+                  $parametro = strtr($row['titulo'], $caracteres_sem_acento);
+                  $parametro = substr_replace($parametro ,'',-1); //removendo o ultimo ' ' que vem do bd e gera erro no link 
+                  $parametro = urlencode((str_replace(" ", "+", $parametro)));
+                  $url =  $baseUrl."publicacoes.php?publication=".$parametro;
+                ?>
+                <a target="_blank" href="https://twitter.com/intent/tweet?url=<?php echo $url?>" id="twitter-share-btt" rel="nofollow" target="_blank"><img src="./assets/svg/twitter_icon_copy.svg" alt=""></a>
+
+                <?php 
+                  $baseUrl = substr(url(), 0, strpos(url(), "?")); //removendo argumentos do post, tudo depois de "?"
+                  $baseUrl = str_replace("publicacoes.php", "", $baseUrl); //removendo "publicacoes.php" do link de compartilhamento
+                  $url =  $baseUrl."publicacoes.php?publication=".urlencode($row['titulo'])."&author=". urlencode($row['autor']);
+                ?>
+
+                <a target="_blank" href="https://www.facebook.com/sharer.php?u=<?php echo $url?>"><img src="./assets/svg/facebook_icon_copy.svg" alt=""></a>
+                <a href="whatsapp://send?text=<?php echo urlencode('Acesse: - '.$url)?>"><img src="./assets/svg/whatsapp.svg" alt=""></a> 
+              </div>
+            </div>
+
           </div>
         <?php endif ?>
+
+        <div class="line-gray"></div>
 
         </div>
         
         
         <!-- </div> -->
         
-        <div class="line-gray"></div>
+        <!-- <div class="line-gray"></div> -->
         <!-- fim -->
       <?php
         }
