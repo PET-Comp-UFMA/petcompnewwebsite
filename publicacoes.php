@@ -12,12 +12,12 @@
     require_once('scripts.php/utils.php');
 
     $buscaRealizada =  false;
-    $publicacao = $_GET['publication'] ?? ''; 
+    $titulo = $_GET['publication'] ?? ''; 
     $autor = $_GET['author'] ?? '';
     $palavras_chave = $_GET['keyword'] ?? ''; 
     $ano = $_GET['year'] ?? '';
 
-    if (!empty($publicacao) || !empty($autor) || !empty($palavras_chave) || !empty($ano)) {
+    if (!empty($titulo) || !empty($autor) || !empty($palavras_chave) || !empty($ano)) {
       $buscaRealizada = true;
     }
 ?>
@@ -44,7 +44,7 @@
     <form action="publicacoes.php" class="filtro" method="get"> 
       <div class="publication">
         <label for="publication">Título</label>
-        <input name="publication" type="text" placeholder="Digite o título" value="<?php echo htmlspecialchars($publicacao);?>">
+        <input name="publication" type="text" placeholder="Digite o título" value="<?php echo htmlspecialchars($titulo);?>">
       </div>
       <div class="author">
         <label for="author">Autor</label>
@@ -74,26 +74,24 @@
 
             if($buscaRealizada){ # Buscar todas publicações que contém as substrings de cada parâmetro informado
               $query .= "WHERE ";
-              $filtros = []; 
-              if (!empty($publicacao)){
-                $publicacao = mysqli_escape_string($mysqli, $publicacao);
-                $filtros[] = "titulo LIKE '%$publicacao%' ";
+              $filtros = [];
+              $campos = [ # coluna da tabela trabalhos publicados => parametro GET
+                'titulo' => $titulo,
+                'autor' => $autor,
+                'palavras_chave' => $palavras_chave,
+                'ano' => $ano
+              ];
+
+              foreach ($campos as $coluna => $param) {
+                  if (!empty($param)) {
+                      $param = mysqli_real_escape_string($mysqli, $param);
+                      $filtros[] = "$coluna LIKE '%$param%'";
+                  }
               }
-              if (!empty($autor)){
-                $autor = mysqli_escape_string($mysqli, $autor);
-                $filtros[] = "autor LIKE '%$autor%' ";
-              }
-              if (!empty($palavras_chave)){
-                $palavras_chave = mysqli_escape_string($mysqli, $palavras_chave);
-                $filtros[] = "palavras_chave LIKE '%$palavras_chave%' ";
-              }
-              if (!empty($ano)){
-                $ano = mysqli_escape_string($mysqli, $ano);
-                $filtros[] = "ano LIKE '%$ano%' "; 
-              }
+              
               $query .= implode(" AND ", $filtros); # Separando cada filtro por AND
             }
-            $query .= "ORDER BY ano DESC"; # As publicações vem em ordem por ano independente de busca 
+            $query .= "ORDER BY ano DESC"; # As publicações vem em ordem por ano independente da busca 
             $trabalhos = mysqli_query($mysqli, $query);
             $num_trabalhos = mysqli_num_rows($trabalhos);
 
@@ -190,19 +188,8 @@
 
           </div>
 
-<<<<<<< Updated upstream
-        <div class="line-gray"></div>
-
-        </div>
+        <div class="line-gray"></div>    
         
-=======
-        </div>        
->>>>>>> Stashed changes
-        
-        <!-- </div> -->
-        
-        <!-- <div class="line-gray"></div> -->
-        <!-- fim -->
       <?php
         endwhile
       ?>
