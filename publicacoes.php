@@ -12,37 +12,12 @@
     require_once('scripts.php/utils.php');
 
     $buscaRealizada =  false;
+    $titulo = $_GET['publication'] ?? ''; 
+    $autor = $_GET['author'] ?? '';
+    $palavras_chave = $_GET['keyword'] ?? ''; 
+    $ano = $_GET['year'] ?? '';
 
-    if (isset($_GET['publication'])) {
-      $publicacao = $_GET['publication'];
-      if ($publicacao == "") $publicacao = null;
-      
-    } else {
-      $publicacao = null;
-    }
-
-    if (isset($_GET['author'])) {
-      $autor = $_GET['author'];
-      if ($autor == "") $autor = null;
-    } else {
-      $autor = null;
-    }
-
-    if (isset($_GET['keyword'])) {
-      $palavra_chave = $_GET['keyword'];
-      if ($palavra_chave == "") $palavra_chave = null;
-    } else {
-      $palavra_chave = null;
-    }
-
-    if (isset($_GET['year'])) {
-      $ano = $_GET['year'];
-      if ($ano == "") $ano = null;
-    } else {
-      $ano = null;
-    }
-
-    if (!is_null($publicacao) || !is_null($autor) || !is_null($palavra_chave) || !is_null($ano)) {
+    if (!empty($titulo) || !empty($autor) || !empty($palavras_chave) || !empty($ano)) {
       $buscaRealizada = true;
     }
 ?>
@@ -66,22 +41,22 @@
     <main>
       <section class="container">
     	<h2>Buscar por: </h2>
-    <form action="publicacoes.php" class="filtro" method="<?php echo $_SERVER['PHP_SELF']?>"> 
+    <form action="publicacoes.php" class="filtro" method="get"> 
       <div class="publication">
         <label for="publication">Título</label>
-        <input name="publication" type="text" placeholder="Digite o título" value="<?php echo $publicacao;?>">
+        <input name="publication" type="text" placeholder="Digite o título" value="<?php echo htmlspecialchars($titulo);?>">
       </div>
       <div class="author">
         <label for="author">Autor</label>
-        <input name="author" type="text" placeholder="Digite o nome do autor" value="<?php echo $autor;?>">
+        <input name="author" type="text" placeholder="Digite o nome do autor" value="<?php echo htmlspecialchars($autor);?>">
       </div>
       <div class="keyword">
-        <label for="keyword">Palavra-chave</label>
-        <input name="keyword" type="text" placeholder="Digite uma palavra chave" value="<?php echo $palavra_chave;?>">
+        <label for="keyword">Palavras-chave</label>
+        <input name="keyword" type="text" placeholder="Digite uma palavra chave" value="<?php echo htmlspecialchars($palavras_chave);?>">
       </div>
       <div class="year">
         <label for="year">Ano de publicação</label>
-        <input name="year" type="text" placeholder="Digite o ano de publicação" value="<?php echo $ano;?>">
+        <input name="year" type="text" placeholder="Digite o ano de publicação" value="<?php echo htmlspecialchars($ano);?>">
       </div>
       <div class="search">
         <label for="search-button">Buscar</label>
@@ -95,56 +70,39 @@
     <ul class="list" style="list-style: none;">  <!-- lista com cada li e cada li tem a box dentro-->
         <?php
             mysqli_select_db($mysqli, $bd) or die("Could not select database");
+            $query = "SELECT * FROM trabalhos_publicados "; # Query base
 
-            if($buscaRealizada){
-              $query = "SELECT * FROM trabalhos_publicados WHERE ";
+            if($buscaRealizada){ # Buscar todas publicações que contém as substrings de cada parâmetro informado
+              $query .= "WHERE ";
+              $filtros = [];
+              $campos = [ # coluna da tabela trabalhos publicados => parametro GET
+                'titulo' => $titulo,
+                'autor' => $autor,
+                'palavras_chave' => $palavras_chave,
+                'ano' => $ano
+              ];
+
+              foreach ($campos as $coluna => $param) {
+                  if (!empty($param)) {
+                      $param = mysqli_real_escape_string($mysqli, $param);
+                      $filtros[] = "$coluna LIKE '%$param%'";
+                  }
+              }
               
-              if(!is_null($publicacao)){
-                $query = $query . "titulo LIKE '%". $publicacao . "%'";
-
-                if(!is_null($autor) || !is_null($palavra_chave) || !is_null($ano)){
-                  $query = $query . " and ";
-                }
-              }
-
-              if(!is_null($autor)){
-                $query = $query . "autor LIKE '%". $autor . "%'";
-
-                if(!is_null($palavra_chave) || !is_null($ano)){
-                  $query = $query . " and ";
-                }
-              }
-
-              if(!is_null($palavra_chave)){
-                $query = $query . "palavras_chave LIKE '%". $palavra_chave . "%'";
-
-                if(!is_null($ano)){
-                  $query = $query . " and ";
-                }
-              }
-
-              if(!is_null($ano)){
-                $query = $query . "ano LIKE '%". $ano . "%'";
-              }
-
-              $query = $query . " ORDER BY ano DESC;";
-
-            } else {
-              $query = "SELECT * FROM trabalhos_publicados ORDER BY ano DESC";  
+              $query .= implode(" AND ", $filtros); # Separando cada filtro por AND
             }
-            $result = mysqli_query($mysqli, $query);
-            $num_results = mysqli_num_rows($result);
+            $query .= "ORDER BY ano DESC"; # As publicações vem em ordem por ano independente da busca 
+            $trabalhos = mysqli_query($mysqli, $query);
+            $num_trabalhos = mysqli_num_rows($trabalhos);
 
-            if($num_results > 0) {
-                for($i=0; $i<$num_results; $i++) {
-                    $row = mysqli_fetch_array($result);
+            if($num_trabalhos > 0):
+                while($row = mysqli_fetch_array($trabalhos)):
         ?>
 
       <li class="item">
       <div class="card">
         <div class="details">
           <div class="data-name">
-                <!--  -->
             <h5 class="article-name">
             <?php print_r($row['titulo'])?>
             </h5>
@@ -161,16 +119,14 @@
       
         <div class="panel">
 
-        <?php if(!is_null($row['resumo'])): ?>
           <div class="resume">
             <p class="resume-title">Resumo</p>
             <p class="resume-text">
               <?php print_r($row['resumo'])?>
             </p>
           </div>
-        <?php endif ?>
         
-        <?php if(isset($row['palavras_chave'])): ?>
+        <?php if(isset($row['palavras_chave'])): ?> <!-- Coluna opcional no banco de dados -->
           <p class="tags-title">Palavras-chave</p>
           <div class="tags">
             <ul class="list-tags">
@@ -202,7 +158,6 @@
           </div>
         </div>
 
-        <?php if (isset($row['ano'])): ?>
           <div class="container-data">
             <div class="card-date">
               <p class="data">Ano de publicação: <span class="data-day"><?php print_r($row['ano'])?></span></p>
@@ -232,19 +187,11 @@
             </div>
 
           </div>
-        <?php endif ?>
 
-        <div class="line-gray"></div>
-
-        </div>
+        <div class="line-gray"></div>    
         
-        
-        <!-- </div> -->
-        
-        <!-- <div class="line-gray"></div> -->
-        <!-- fim -->
       <?php
-        }
+        endwhile
       ?>
         </ul>
       </section> <!--END section id="paginate"-->
@@ -266,37 +213,16 @@
           </span>
         </div>
       </div>
-      <?php }else{ ?>
+      <?php else: ?>
         <li class="item">
           <div class="resultados">
             <h2>Sem resultados!</h2>
           </div>
         </li>
-        <?php } ?>
+        <?php endif; ?>
     </section> <!--END section class="container"-->
     </main>
 
     <?php include 'footer.php'; ?>
-
-
-    <script type="text/javascript">
-      function cite(str) {
-        // Create new element
-        var el = document.createElement('textarea');
-        // Set value (string to be copied)
-        el.value = str;
-        // Set non-editable to avoid focus and move outside of view
-        el.setAttribute('readonly', '');
-        el.style = {position: 'absolute', left: '-9999px'};
-        document.body.appendChild(el);
-        // Select text inside element
-        el.select();
-        // Copy text to clipboard
-        document.execCommand('copy');
-        // Remove temporary element
-        document.body.removeChild(el);
-        alert('Citação copiada para área de transferêcia');
-      }
-    </script>
 </body>
 </html>
