@@ -8,7 +8,7 @@
         $mysqli = mysqli_connect($hostname, $usuario, $senha, $bd);
     }
     catch(mysqli_sql_exception $e){
-        echo "Erro ao conectar ao banco de dados:" . $e->get_message();
+        echo "Erro ao conectar ao banco de dados:" . $e->getMessage();
     }
     
 
