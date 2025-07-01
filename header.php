@@ -40,6 +40,9 @@
         <div class="dropdown">
             <a href="eventos.php" class="nodropbtn">Eventos</a>
         </div>
+        <div class="dropdown">
+            <a href="registros.php" class="nodropbtn">Registros</a>
+        </div>
     </nav>
     <img src="./assets/svg/menu-white.svg" alt="" class="open-btn" onclick="openMenu()">
 </header>
