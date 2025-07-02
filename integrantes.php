@@ -2,15 +2,16 @@
    require_once("conexao.php");
 
    $limit = 20; // máximo de petianos por página
-   $page = isset($_GET["page"]) ? filter_var($_GET["page"], FILTER_VALIDATE_INT) : 1; // garantindo que entrada é um inteiro
+   $page = isset($_GET["page"]) ? filter_var($_GET["page"], FILTER_VALIDATE_INT) : 1; // garantindo que a entrada é um inteiro
 
    $total_petianos = mysqli_fetch_assoc(mysqli_query($mysqli, "SELECT count(id) AS id FROM petianos"))['id'];
    $pages = ceil($total_petianos / $limit);
-   $start = ($page - 2) * $limit;  // O cálculo correto para a páginação
+   
+   // Redireciona caso a pagina esteja fora do intervalo legal
+   if ($page < 1) header("Location: integrantes.php?page=1");
+   if ($page > $pages) header("Location: integrantes.php?page=$pages");
 
-   if ($start < 0) {
-       $start = 0;
-   } 
+   $start = ($page - 2) * $limit;  // valor negativo pra pagina 1, 0 pra pagina > 1
 
    function geraCard($pessoa, $titulo, $icone)
    {
@@ -47,14 +48,15 @@
                   <div class="social-logos">
                      <?php $socialpairs = explode(';', $pessoa["social"]);
                      foreach ($socialpairs as $pair):
-                        if (strpos($pair, '=')) {
+                        if (strpos($pair, '=')):
                            list($platform, $link) = explode('=', $pair); ?>
                            <div class="social-logo">
                               <a href="<?= htmlspecialchars(trim($link, '"')) ?>" target="_blank">
                                  <i class="fa fa-<?= htmlspecialchars(trim($platform)) ?>" style="font-size:40px;"></i>
                               </a>
                            </div>
-                     <?php } endforeach; ?>
+                        <?php endif; ?>
+                     <?php endforeach; ?>
                   </div>
                <?php endif; ?>
             </div>
@@ -62,9 +64,7 @@
       <?php endif;
       return ob_get_clean();
    }
-   // Redireciona caso a pagina esteja fora do intervalo legal
-   if ($page < 1) header("Location: integrantes.php?page=1");
-   if ($page > $pages) header("Location: integrantes.php?page=$pages");
+   
 
    if ($page == 1) {
       $orientadoresAtivos = mysqli_fetch_all(mysqli_query($mysqli, "SELECT * FROM petianos WHERE ativo = 1 AND orientador = 1 ORDER BY ano DESC, periodo DESC"), MYSQLI_ASSOC);
@@ -98,16 +98,16 @@
          <?php if (count($integrantes) > 0 || count($orientadoresAtivos) > 0): ?>
             <div class="integrantes">
                <div class="orientadores">
-                  <?php foreach ($orientadoresAtivos as $p): echo geraCard($p, "Orientador", "chalkboard-teacher"); endforeach; ?>
+                  <?php foreach ($orientadoresAtivos as $orientador): echo geraCard($orientador, "Orientador", "chalkboard-teacher"); endforeach; ?>
                </div>
                <div class="discentes">
-                  <?php foreach ($integrantes as $p): echo geraCard($p, "Orientando", "user-graduate"); endforeach; ?>
+                  <?php foreach ($integrantes as $integrante): echo geraCard($integrante, "Orientando", "user-graduate"); endforeach; ?>
                </div>
                <?php if (count($voluntarios) > 0): ?>
                   <div class="section-header"><h2>Voluntários</h2></div>
                   <div class="integrantes voluntarios">
                      <div class="discentes">
-                        <?php foreach ($voluntarios as $p): echo geraCard($p, "Orientando", "user-graduate"); endforeach; ?>
+                        <?php foreach ($voluntarios as $voluntario): echo geraCard($voluntario, "Voluntário", "user-graduate"); endforeach; ?>
                      </div>
                   </div>
                <?php endif; ?>
@@ -118,10 +118,10 @@
             <div class="section-header"><h2>Ex-Integrantes</h2></div>
             <div class="integrantes ex">
                <div class="orientadores">
-                  <?php foreach ($orientadoresInativos as $p): echo geraCard($p, "Orientador", "chalkboard-teacher"); endforeach; ?>
+                  <?php foreach ($orientadoresInativos as $orientador): echo geraCard($orientador, "Orientador", "chalkboard-teacher"); endforeach; ?>
                </div>
                <div class="discentes ex">
-                  <?php foreach ($inativos as $p): echo geraCard($p, "Orientando", "user-graduate"); endforeach; ?>
+                  <?php foreach ($inativos as $inativo): echo geraCard($inativo, "Orientando", "user-graduate"); endforeach; ?>
                </div>
             </div>
          <?php endif; ?>
