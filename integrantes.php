@@ -35,7 +35,6 @@
             </div>
          <?php endif; ?>
       </div>
-      <?php if ($pessoa['social'] || $pessoa['sobre']): ?>
          <div class="popup hide" id="popup-<?= $pessoa["id"] ?>">
             <div class="popup-content">
                <button class="popup-close">&times;</button>
@@ -47,21 +46,21 @@
                   <h2>Você pode encontrar <?= htmlspecialchars($pessoa["primeiro_nome"]) ?> <?= htmlspecialchars($pessoa["ultimo_nome"]) ?> em</h2>
                   <div class="social-logos">
                      <?php $socialpairs = explode(';', $pessoa["social"]);
-                     foreach ($socialpairs as $pair):
-                        if (strpos($pair, '=')):
-                           list($platform, $link) = explode('=', $pair); ?>
-                           <div class="social-logo">
-                              <a href="<?= htmlspecialchars(trim($link, '"')) ?>" target="_blank">
-                                 <i class="fa fa-<?= htmlspecialchars(trim($platform)) ?>" style="font-size:40px;"></i>
-                              </a>
-                           </div>
-                        <?php endif; ?>
+                        foreach ($socialpairs as $pair):
+                           if (strpos($pair, '=')):
+                              list($platform, $link) = explode('=', $pair); ?>
+                              <div class="social-logo">
+                                 <a href="<?= htmlspecialchars(trim($link, '"')) ?>" target="_blank">
+                                    <i class="fa fa-<?= htmlspecialchars(trim($platform)) ?>" style="font-size:40px;"></i>
+                                 </a>
+                              </div>
+                           <?php endif; ?>
                      <?php endforeach; ?>
                   </div>
                <?php endif; ?>
             </div>
          </div>
-      <?php endif;
+      <?php  
       return ob_get_clean();
    }
    
