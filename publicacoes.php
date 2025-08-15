@@ -98,97 +98,96 @@
             if($num_trabalhos > 0):
                 while($row = mysqli_fetch_array($trabalhos)):
         ?>
+                  <li class="item">
+                  <div class="card">
+                    <div class="details">
+                      <div class="data-name">
+                        <h5 class="article-name">
+                        <?php print_r($row['titulo'])?>
+                        </h5>
+                      </div>
+                      
+                      <div class="authors">
+                        <p class="authors-names">Autores</p>
+                        <ul class="list-authors">
+                          <li class="item-author-name"><?php print_r($row['autor']) ?></li>
+                        </ul>
+                      </div>
 
-      <li class="item">
-      <div class="card">
-        <div class="details">
-          <div class="data-name">
-            <h5 class="article-name">
-            <?php print_r($row['titulo'])?>
-            </h5>
-          </div>
-          
-          <div class="authors">
-            <p class="authors-names">Autores</p>
-            <ul class="list-authors">
-              <li class="item-author-name"><?php print_r($row['autor']) ?></li>
-            </ul>
-          </div>
+                    </div>
+                  
+                    <div class="panel">
 
-        </div>
-      
-        <div class="panel">
+                      <div class="resume">
+                        <p class="resume-title">Resumo</p>
+                        <p class="resume-text">
+                          <?php print_r($row['resumo'])?>
+                        </p>
+                      </div>
+                    
+                    <?php if(isset($row['palavras_chave'])): ?> <!-- Coluna opcional no banco de dados -->
+                      <p class="tags-title">Palavras-chave</p>
+                      <div class="tags">
+                        <ul class="list-tags">
+                          <li class="item-tag"><?php print_r($row['palavras_chave']) ?></li>
+                        </ul>
+                      </div>
+                    <?php endif ?>
 
-          <div class="resume">
-            <p class="resume-title">Resumo</p>
-            <p class="resume-text">
-              <?php print_r($row['resumo'])?>
-            </p>
-          </div>
-        
-        <?php if(isset($row['palavras_chave'])): ?> <!-- Coluna opcional no banco de dados -->
-          <p class="tags-title">Palavras-chave</p>
-          <div class="tags">
-            <ul class="list-tags">
-              <li class="item-tag"><?php print_r($row['palavras_chave']) ?></li>
-            </ul>
-          </div>
-        <?php endif ?>
+                    </div>
+                  
+                    <!-- <div class="buttons-container" style="display: flex; justify-content: flex-start;"> -->
+                    
+                    <div class="card-bottom">
 
-        </div>
-      
-        <!-- <div class="buttons-container" style="display: flex; justify-content: flex-start;"> -->
-        
-        <div class="card-bottom">
+                      <div class="buttons-container">
+                        <button class="button-show-more">
+                          Ver mais
+                          <span class="material-icons">
+                            add
+                          </span>
+                        </button>
 
-          <div class="buttons-container">
-            <button class="button-show-more">
-              Ver mais
-              <span class="material-icons">
-                add
-              </span>
-            </button>
+                        <a href="<?php print_r($row['link'])?>" class="button-download" target="_blank">
+                          Ver arquivo
+                          <span class="material-icons">
+                              link
+                          </span>
+                        </a>
+                      </div>
+                    </div>
 
-            <a href="<?php print_r($row['link'])?>" class="button-download" target="_blank">
-              Ver arquivo
-              <span class="material-icons">
-                  link
-              </span>
-            </a>
-          </div>
-        </div>
+                      <div class="container-data">
+                        <div class="card-date">
+                          <p class="data">Ano de publicação: <span class="data-day"><?php print_r($row['ano'])?></span></p>
+                        </div>
 
-          <div class="container-data">
-            <div class="card-date">
-              <p class="data">Ano de publicação: <span class="data-day"><?php print_r($row['ano'])?></span></p>
-            </div>
+                        <div class="share">
+                          <!-- <p class="type">Compartilhe</p> -->
+                          <div class="links ">
+                            <?php
+                              $baseUrl = url();
+                              $parametro = strtr($row['titulo'], $caracteres_sem_acento);
+                              $parametro = substr_replace($parametro ,'',-1); //removendo o ultimo ' ' que vem do bd e gera erro no link 
+                              $parametro = urlencode((str_replace(" ", "+", $parametro)));
+                              $url =  $baseUrl."publicacoes.php?publication=".$parametro;
+                            ?>
+                            <a target="_blank" href="https://twitter.com/intent/tweet?url=<?php echo $url?>" id="twitter-share-btt" rel="nofollow" target="_blank"><img src="./assets/svg/twitter_icon_copy.svg" alt=""></a>
 
-            <div class="share">
-              <!-- <p class="type">Compartilhe</p> -->
-              <div class="links ">
-                <?php
-                  $baseUrl = url();
-                  $parametro = strtr($row['titulo'], $caracteres_sem_acento);
-                  $parametro = substr_replace($parametro ,'',-1); //removendo o ultimo ' ' que vem do bd e gera erro no link 
-                  $parametro = urlencode((str_replace(" ", "+", $parametro)));
-                  $url =  $baseUrl."publicacoes.php?publication=".$parametro;
-                ?>
-                <a target="_blank" href="https://twitter.com/intent/tweet?url=<?php echo $url?>" id="twitter-share-btt" rel="nofollow" target="_blank"><img src="./assets/svg/twitter_icon_copy.svg" alt=""></a>
+                            <?php 
+                              $baseUrl = substr(url(), 0, strpos(url(), "?")); //removendo argumentos do post, tudo depois de "?"
+                              $baseUrl = str_replace("publicacoes.php", "", $baseUrl); //removendo "publicacoes.php" do link de compartilhamento
+                              $url =  $baseUrl."publicacoes.php?publication=".urlencode($row['titulo'])."&author=". urlencode($row['autor']);
+                            ?>
 
-                <?php 
-                  $baseUrl = substr(url(), 0, strpos(url(), "?")); //removendo argumentos do post, tudo depois de "?"
-                  $baseUrl = str_replace("publicacoes.php", "", $baseUrl); //removendo "publicacoes.php" do link de compartilhamento
-                  $url =  $baseUrl."publicacoes.php?publication=".urlencode($row['titulo'])."&author=". urlencode($row['autor']);
-                ?>
+                            <a target="_blank" href="https://www.facebook.com/sharer.php?u=<?php echo $url?>"><img src="./assets/svg/facebook_icon_copy.svg" alt=""></a>
+                            <a href="whatsapp://send?text=<?php echo urlencode('Acesse: - '.$url)?>"><img src="./assets/svg/whatsapp.svg" alt=""></a> 
+                          </div>
+                        </div>
 
-                <a target="_blank" href="https://www.facebook.com/sharer.php?u=<?php echo $url?>"><img src="./assets/svg/facebook_icon_copy.svg" alt=""></a>
-                <a href="whatsapp://send?text=<?php echo urlencode('Acesse: - '.$url)?>"><img src="./assets/svg/whatsapp.svg" alt=""></a> 
-              </div>
-            </div>
+                      </div>
 
-          </div>
-
-        <div class="line-gray"></div>    
+                    <div class="line-gray"></div>    
         
       <?php
         endwhile
