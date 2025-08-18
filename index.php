@@ -64,62 +64,34 @@ function truncarTitulo($titulo, $limite = 30) {
     </section>   
 </div>
 
-<div class="noticias">
-    
+
+<div class="noticias"> 
     <section class="ultimasnoticiastext">
         <h1>Últimas notícias</h1>
     </section>
+
     <div class="noticias-container">
-        <div class="container d-flex justify-content-md-center" id="center">
-            <div class="row align-items-center w-100">
-                <!-- Coluna Central -->
-                <div class="col-12 col-md-3 d-flex flex-column align-items-center">
-                    <?php if (isset($ultimasNoticias[0])): ?>
-                        <a href="noticia.php?id=<?php echo $ultimasNoticias[0]['id']; ?>" class="image-container noticia">
-                            <img src="<?php echo htmlspecialchars($ultimasNoticias[0]['foto']); ?>" 
-                                alt="Notícia Central" 
-                                class="img-fluid central-img">
-                            <div class="central-title titulo">
-                                <?php echo htmlspecialchars(truncarTitulo($ultimasNoticias[0]['titulo'], 60)); ?>
-                            </div>
-                        </a>
-                    <?php endif; ?>
-                </div>
-                <!-- Coluna Lateral -->
-                <div class="col-12 col-md-3 d-flex flex-column align-items-center">
-                    <?php if (isset($ultimasNoticias[1])): ?>
-                        <a href="noticia.php?id=<?php echo $ultimasNoticias[1]['id']; ?>" class="image-container noticia">
-                            <img src="<?php echo htmlspecialchars($ultimasNoticias[1]['foto']); ?>" 
-                                alt="Notícia Lateral 1" 
-                                class="img-fluid lateral-img">
-                            <div class="lateral-title titulo">
-                                <?php echo htmlspecialchars(truncarTitulo($ultimasNoticias[1]['titulo'], 30)); ?>
-                            </div>
-                        </a>
-                    <?php endif; ?>
-                    
-                    <?php if (isset($ultimasNoticias[2])): ?>
-                        <a href="noticia.php?id=<?php echo $ultimasNoticias[2]['id']; ?>" class="image-container noticia">
-                            <img src="<?php echo htmlspecialchars($ultimasNoticias[2]['foto']); ?>" 
-                                alt="Notícia Lateral 2" 
-                                class="img-fluid lateral-img">
-                            <div class="lateral-title titulo">
-                                <?php echo htmlspecialchars(truncarTitulo($ultimasNoticias[2]['titulo'], 30)); ?>
-                            </div>
-                        </a>
-                    <?php endif; ?>
-                </div>
+        <!-- Imagem central -->
+        <div class="image-container central">
+            <img src="assets/images/noticias/acalourada2024.2.png" alt="">
+            <div class="central-title">central</div>
+        </div>
+
+        <!-- Bloco lateral -->
+        <div class="lateral-container">
+            <div class="image-container lateral">
+                <img src="assets/images/noticias/img2.png" alt="">
+                <div class="lateral-title">1</div>
+            </div>
+            <div class="image-container lateral">
+                <img src="assets/images/noticias/post-novatos.png" alt="">
+                <div class="lateral-title">2</div>
             </div>
         </div>
     </div>
 </div>
-    <div class="separator">
-        <ul class = "dots">
-            <li class="active"></li>
-            <li></li>
-            <li></li>
-        </ul>
-    </div>
+
+
     <div class="minifundo">
         <img src="img/minifundo.png" alt="minifundo" class="background-img">
         <h2>Ensino, Pesquisa e Extensão</h2>
