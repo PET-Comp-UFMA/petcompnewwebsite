@@ -17,10 +17,8 @@
    {
       ob_start(); ?>
       <div class="card">
-         <div class="card-img">
-            <figure>
-               <img src="./assets/images/integrantes/<?= $pessoa["imagem"] ?>" alt="">
-            </figure>
+         <div class="card__container-imagem">
+               <img class="card__container-imagem__foto-petiano" src="./assets/images/integrantes/<?= $pessoa["imagem"] ?>" alt="">
          </div>
          <div class="job-img"><i class="fas fa-<?= htmlspecialchars($icone) ?>"></i></div>
          <div class="card-name">
