@@ -76,18 +76,15 @@ body {
     min-width: 700px;
     max-height: 500px;
     min-height: 500px;
-    animation: fadeIn 1s ease-out;
 }
 
 .lateral-img {
     width: 100%;
     height: auto;
-    margin-bottom: 15px;
     max-width: 350px;
     min-width: 350px;
     min-height: 240px;
     max-height: 240px;
-    animation: fadeIn 1.2s ease-out;
 }
 
 #center {
@@ -145,7 +142,6 @@ body {
     border-radius: 10px;
     max-width: 80%;
     text-align: center;
-    transition: transform 0.4s ease-in-out, opacity 0.3s ease-in-out;
 }
 
 @keyframes titleSlide {
@@ -176,16 +172,6 @@ body {
     transition: transform 0.4s ease-in-out, opacity 0.3s ease-in-out;
 }
 
-.image-container:hover img {
-    transform: scale(1.06);
-    opacity: 0.9;
-    cursor: pointer;
-}
-
-.image-container:hover .central-title,
-.image-container:hover .lateral-title {
-    transform: scale(1.06);
-}
 
 .separator {
     display: flex;
@@ -492,7 +478,7 @@ body {
     min-width: 100% !important;
 }
 
-@media screen and (min-width: 769px) and (max-width: 1400px) {
+@media screen and (max-width: 1400px) {
     .petianos-container {
         width: 100%;
         height: auto;
@@ -501,29 +487,21 @@ body {
     .petianos-container img {
         width: 100%;
     }
-
-    .row {
-        flex-direction: column;
-    }
-    .noticias {
-        display: flex;
-        flex-direction: column;
-    }
-    .noticias-container {
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center;
-        gap: 20px;
-    }
     .minifundo {
         height: auto;
         padding: 1rem;
     }
     .central-img {
-        min-width: 350px; 
-        max-width: 350px;
-        min-height: 240px;
-        max-height: 240px;
+        max-width: 630px;  /* 700px - 10% */
+        min-width: 630px;
+        max-height: 450px; /* 500px - 10% */
+        min-height: 450px;
+    }
+    .lateral-img {
+        max-width: 315px;  /* 350px - 10% */
+        min-width: 315px;
+        max-height: 216px; /* 240px - 10% */
+        min-height: 216px;
     }
     .minifundo li {
         width: 7rem;
@@ -561,6 +539,19 @@ body {
 }
 
 @media screen and (max-width: 768px) {
+    .row {
+        flex-direction: column;
+    }
+    .noticias {
+        display: flex;
+        flex-direction: column;
+    }
+    .noticias-container {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center;
+        gap: 20px;
+    }
     .main {
         display: flex;
         -ms-flex-align: center;
