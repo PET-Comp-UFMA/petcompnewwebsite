@@ -31,6 +31,8 @@
 
             </p>
 
+
+            
             <p>
 
                 A realização dos jogos de blocos, realizados durante o evento de recepção de calouros, visa proporcionar aos novos discentes do curso de computação uma prévia do que os espera pela frente. Esses jogos são uma maneira fácil de exercitar a lógica e criar suas próprias histórias, representando assim uma abordagem leve e criativa para integrá-los ao meio acadêmico. 

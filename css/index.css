@@ -436,6 +436,7 @@ body {
     word-break: break-all;
     
 }
+
 @media screen and (max-width: 1400px) {
     #center {
         margin: 0 100px;

@@ -112,9 +112,11 @@ function truncarTitulo($titulo, $limite = 30) {
         </div>
     </div>
     </div>
-    <div class="separator">
+    <div cl
+    ass="separator">
         <img src="img/separator.png" alt="separador">
     </div>
+
     <div class="minifundo">
         <img src="img/minifundo.png" alt="minifundo" class="background-img">
         <h2>Ensino, Pesquisa e Extensão</h2>
