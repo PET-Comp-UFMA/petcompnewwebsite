@@ -76,6 +76,7 @@ function truncarTitulo($titulo, $limite = 30) {
             <div class= "grid-news-texts">
                 <a class="title" href="">Evento</a>
                 <a class="title-overlay" href="">Seletivo 2025.2</a>
+                <a href=""><img id="logo-Notice" src="img\Social-Icons.png" alt=""></a>
             </div>
         </div>
 
@@ -84,6 +85,7 @@ function truncarTitulo($titulo, $limite = 30) {
             <div class= "grid-news-texts">
                 <a class="title" href="">Evento</a>
                 <a class="title-overlay" href="">Acalourada 2025.2</a>
+                <a href=""><img id="logo-Notice" src="img\Social-Icons.png" alt=""></a>
             </div>
         </div>
 
@@ -92,6 +94,7 @@ function truncarTitulo($titulo, $limite = 30) {
             <div class= "grid-news-texts">
                 <a class="title" href="">Produtos</a>
                 <a class="title-overlay" href="">Revista PETComp</a>
+                <a href="https://www.instagram.com/p/DDHxxEiRddK/"><img id="logo-Notice" src="img\Social-Icons.png" alt=""></a>
             </div>
         </div>
 
@@ -101,7 +104,7 @@ function truncarTitulo($titulo, $limite = 30) {
             <div class= "grid-news-texts">
                 <a class="title" href="">Evento</a>
                 <a class="title-overlay" href="">ExploraComp</a>
-                <a href=""><img id="logo-Notice" src="img\Social-Icons.png" alt=""></a>
+                <a href="https://www.instagram.com/p/DJ9djMNAlza/?img_index=1"><img id="logo-Notice" src="img\Social-Icons.png" alt=""></a>
             </div>
 
             
