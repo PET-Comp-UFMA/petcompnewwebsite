@@ -56,7 +56,7 @@ function truncarTitulo($titulo, $limite = 30) {
 <?php include 'header.php'; ?>
 
 <div class="background">
-    <section class="text-container1">
+    <section class="text-PETCOMP">
         <img src="img/petcomptext.png" alt="text petcomp">
     </section> 
     <section class="petianos-container">
