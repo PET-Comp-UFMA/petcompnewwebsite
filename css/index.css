@@ -126,92 +126,67 @@ body {
 
 
 .minifundo {
-    width: 100%; /* Garante que o contêiner ocupe toda a largura */
-    height: 20vh; /* Define a altura para 100% da altura da janela de visualização */
-    padding: 0;  /* Remove qualquer padding */
-    margin: 0;   /* Remove margens */
-    position: relative; /* Permite usar z-index para sobrepor elementos */
+  background-image: url("../img/minifundo.png");
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  min-height: 50vh;           /* garante altura mínima */
+  position: relative;         /* para o overlay opcional */
+  display: flex;
+  justify-content: center;    /* centro vertical */
+  align-items: center;        /* centro horizontal */
+  text-align: center;
+  padding: 2rem 1rem;
 }
 
-.background-img {
-    width: 100%; /* Faz com que a imagem ocupe toda a largura da div */
-    height: 100%; /* Faz com que a imagem ocupe toda a altura da div */
-    object-fit: cover; /* Garante que a imagem cubra toda a área sem distorcer */
-    position: absolute; /* Permite que a imagem fique atrás do texto */
-    top: 0;
-    left: 0;
-    z-index: 0; /* Garante que a imagem fique atrás do texto */
+.minifundo::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.grid-minifundo {
+  position: relative;       
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
 }
 
 .minifundo h2 {
-    color: white; /* Cor do texto para contraste */
-    font-size: 5rem; /* Tamanho do texto */
-    position: absolute; /* Permite posicionar o texto sobre a imagem */
-    top: 20px; /* Posiciona o texto no topo */
-    left: 50%; /* Centraliza o texto horizontalmente */
-    transform: translateX(-50%); /* Ajusta a posição horizontalmente para centralizar */
-    z-index: 1; /* Garante que o texto fique sobre a imagem */
-    text-align: center; /* Centraliza o texto */
-    padding: 10px; /* Adiciona um pouco de padding ao texto */
-    font-family: 'Mada';
-    font-weight: bold;
-}
-.minifundo {
-    width: 100%; /* Garante que o contêiner ocupe toda a largura */
-    height: 75vh; /* Define a altura para 100% da altura da janela de visualização */
-    padding: 0; /* Remove qualquer padding */
-    margin: 0; /* Remove margens */
-    position: relative;
-    
-}
-
-.background-img {
-    /* width: 100%; */
-    height: 100%; /* Faz com que a imagem ocupe toda a altura da div */
-    object-fit: cover; /* Garante que a imagem cubra toda a área sem distorcer */
-    position: absolute; /* Faz com que a imagem seja o plano de fundo */
-    top: 0;
-    left: 0;
-    z-index: 0; /* Garante que o fundo fique atrás de outros elementos */
-}
-
-.minifundo h2,
-.minifundo ul {
-    position: relative; /* Coloca esses elementos na frente do fundo */
-    z-index: 1; /* Garante que fiquem acima do plano de fundo */
+  margin: 0;
+  font-family: 'Mada', sans-serif;
+  font-weight: 700;
+  color: #fff;
+  font-size: clamp(1.75rem, 5vw, 3rem);
 }
 
 .minifundo ul {
-    display: flex; /* Organiza as imagens em linha */
-    justify-content: center; /* Centraliza horizontalmente */
-    gap: 100px; /* Adiciona espaço entre os itens */
-    list-style: none; /* Remove marcadores padrão da lista */
-    padding: 0; /* Remove o padding padrão */
-    margin-top: 5rem; /* Adiciona espaço acima da lista */
-    margin-bottom: 0px;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: clamp(1rem, 6vw, 4rem);
+  list-style: none;
+  padding: 0;
+  margin: 0;                  
 }
-.carousel-image {
-    height: 400px; /* Altura fixa */
-    object-fit: cover; 
-    /* width: 100%; */
-    margin-top: 0;
-}
+
 .minifundo ul li img {
-    width: 200px; /* Define o tamanho das imagens */
-    height: 200px; /* Define o tamanho das imagens */
-    object-fit: contain; /* Ajusta a proporção sem distorcer */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Adiciona animações suaves */
-    cursor: pointer; /* Indica que as imagens são interativas */
-    padding: 2rem;
-    border-radius: 85px;
+  width: clamp(64px, 12vw, 140px);
+  height: clamp(64px, 12vw, 140px);
+  object-fit: contain;
+  transition: transform .3s ease;
+  cursor: pointer;
+  padding: 0;                 
+  border-radius: 999px;      
 }
 
-.minifundo ul li {
-    border: 7px solid white;
-    border-radius: 150px;
-    padding: 0.6rem;
+.minifundo ul li img:hover {
+  transform: scale(1.08);
 }
+
 
 .swiper-slide {
 
@@ -317,7 +292,6 @@ body {
   }
 .minifundo ul li img:hover {
     transform: scale(1.1); /* Amplia levemente a imagem ao passar o mouse */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Adiciona uma sombra ao passar o mouse */
 }
 .swiper-slide {
     text-decoration: none; /* Remove sublinhado do link */
@@ -432,11 +406,6 @@ body {
         width: 7rem;
         height: 7rem;
     }
-    .minifundoliimg img {
-        width: 5rem !important;
-        height: 5rem !important;
-        padding: 0 !important;        
-    }
     .text-carousel {
         font-size: 3vw; /* Ajusta o tamanho do texto para não ficar muito grande */
     }
@@ -449,11 +418,6 @@ body {
     .minifundo  {
         padding: 5rem;
         
-
-        & ul {
-            gap: 10rem;
-        }
-
         & h2 {
             font-size: 3rem;
         }

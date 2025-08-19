@@ -112,15 +112,17 @@ function truncarTitulo($titulo, $limite = 30) {
     </div>
 </div>
 
-    <div class="minifundo">
-        <img src="img/minifundo.png" alt="minifundo" class="background-img">
-        <h2>Ensino, Pesquisa e Extensão</h2>
-        <ul>
-            <li class="minifundoliimg"> <img src="img/inovacao.png" alt="inovacaoimg"></li>
-            <li class="minifundoliimg"> <img src="img/lupa-de-pesquisa.png" alt="lupadepesquisaimg"></li>
-            <li class="minifundoliimg"> <img src="img/lampada-de-ideia.png" alt="lampadadeideiaimg"></li>
-        </ul>
-    </div> 
+<div class="minifundo">
+  <div class="grid-minifundo">
+    <h2>Ensino, Pesquisa e Extensão</h2>
+    <ul class="img-minifundo">
+      <li><img src="img/inovacao.png" alt="Inovação"></li>
+      <li><img src="img/lupa-de-pesquisa.png" alt="Pesquisa"></li>
+      <li><img src="img/lampada-de-ideia.png" alt="Ideias"></li>
+    </ul>
+  </div>
+</div>
+
     <div class="swiper carousel">
     <div class="swiper-wrapper">
         <a href="eventos.php" target="_blank" class="swiper-slide">
