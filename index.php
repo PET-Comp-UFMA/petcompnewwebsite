@@ -64,33 +64,50 @@ function truncarTitulo($titulo, $limite = 30) {
     </section>   
 </div>
 
-
 <div class="noticias"> 
     <section class="ultimasnoticiastext">
         <h1>Últimas notícias</h1>
     </section>
 
     <div class="noticias-container">
-        <!-- Imagem central -->
-        <div class="image-container central">
-            <img src="assets/images/noticias/acalourada2024.2.png" alt="">
-            <div class="central-title">central</div>
+        <!-- Bloco noticias -->
+        <div class="image-container">
+            <img class="img-notice" src="assets/images/noticias/notice1.png" alt="">
+            <div class= "grid-news-texts">
+                <a class="title" href="">Evento</a>
+                <a class="title-overlay" href="">Seletivo 2025.2</a>
+            </div>
         </div>
 
-        <!-- Bloco lateral -->
-        <div class="lateral-container">
-            <div class="image-container lateral">
-                <img src="assets/images/noticias/img2.png" alt="">
-                <div class="lateral-title">1</div>
+        <div class="image-container">
+            <img class="img-notice" src="assets/images/noticias/notice2.png" alt="">
+            <div class= "grid-news-texts">
+                <a class="title" href="">Evento</a>
+                <a class="title-overlay" href="">Acalourada 2025.2</a>
             </div>
-            <div class="image-container lateral">
-                <img src="assets/images/noticias/post-novatos.png" alt="">
-                <div class="lateral-title">2</div>
+        </div>
+
+        <div class="image-container">
+            <img class="img-notice" src="assets/images/noticias/notice3.png" alt="">
+            <div class= "grid-news-texts">
+                <a class="title" href="">Produtos</a>
+                <a class="title-overlay" href="">Revista PETComp</a>
             </div>
+        </div>
+
+        <div class="image-container">
+            <img class="img-notice" src="assets/images/noticias/notice4.png" alt="">
+
+            <div class= "grid-news-texts">
+                <a class="title" href="">Evento</a>
+                <a class="title-overlay" href="">ExploraComp</a>
+                <a href=""><img id="logo-Notice" src="img\Social-Icons.png" alt=""></a>
+            </div>
+
+            
         </div>
     </div>
 </div>
-
 
     <div class="minifundo">
         <img src="img/minifundo.png" alt="minifundo" class="background-img">

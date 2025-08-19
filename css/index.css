@@ -23,75 +23,76 @@ body {
     width: 100%;
 }
 
-/* Classe da imagem do texto PETComp abaixo do header */
+/*----------------- Container das notícias */
 .noticias-container {
     display: flex;
     justify-content: center;
     align-items: flex-start;
     gap: 20px;
-    margin-bottom: 2rem;
+    margin-bottom: 4rem;
 }
 
+/* Cada imagem */
 .image-container {
     position: relative;
-    border-radius: 20px;
     overflow: hidden;
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.4);
+    width: 270px;
+    height: 403px;
+    cursor: pointer;
+    border-radius: 7px;
 }
 
-.image-container img {
-    display: block;
+/* Gradiente sobreposto */
+.image-container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Mantém proporção sem distorcer */
-    border-radius: 20px;
-    transition: transform 0.4s ease, opacity 0.3s ease;
+    background: linear-gradient(360deg,rgba(0, 0, 0, 0.705) 0%, rgba(0, 0, 0, 0.445) 30%, rgba(0, 0, 0, 0) 100%);
+    z-index: 1;
 }
 
-/* Imagem central */
-.central {
-    width: 700px;
-    height: 500px;
+/* Imagem */
+.img-notice {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 7px;
+    transition: transform 0.5s ease;
 }
 
-/* Container das laterais */
-.lateral-container {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+/* Efeito hover */
+.image-container:hover .img-notice {
+    transform: scale(1.1);
 }
 
-/* Imagens laterais */
-.lateral {
-    width: 350px;
-    height: 240px;
-}
-
-/* Título central e lateral */
-.central-title, .lateral-title {
-    position: absolute;
-    bottom: 15px;
-    left: 15px;
+.title-overlay {
     color: white;
-    font-weight: bold;
-    padding: 8px 12px;
-    background-color: rgba(1, 32, 76, 0.6);
-    border-radius: 10px;
-    max-width: 80%;
+    font-size: 1.3rem;
+    font-weight: 700;
+    text-decoration: none;
 }
 
-/* Diferencia tamanhos */
-.central-title {
-    font-size: 20px;
+.title-overlay:hover {
+    text-decoration: underline;
 }
 
-.lateral-title {
-    font-size: 14px;
+.title {
+    color: #f1eff4ef;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin: 0;
+    text-decoration: none;
+}
+.title:hover {
+    text-decoration: underline;
 }
 
 /* Título principal da seção */
 .ultimasnoticiastext {
-    font-family: 'Alatsi';
+    font-family: 'Alatsi', sans-serif;
     text-align: center;
     margin: 2rem 0;
     color: #01204C;
@@ -103,22 +104,27 @@ body {
     margin: 0;
 }
 
-
-.noticia {
-    opacity: 1;
-    transform: translateX(0);
-    transition: opacity 0.5s ease, transform 0.5s ease;
+.grid-news-texts {
+    position: absolute;   /* posiciona o bloco na imagem */
+    bottom: 15px;
+    left: 15px;
+    display: flex;
+    flex-direction: column; /* coloca as frases em coluna */
+    z-index: 2;
 }
 
-.noticia.fade-out {
-    opacity: 0;
-    transform: translateX(50px);
+#logo-Notice{
+    width: 10%;    /* ocupa metade do elemento pai */
+    float: right;
+    margin-left: 100px;
+    height: auto;
 }
 
-.noticia.fade-in {
-    opacity: 1;
-    transform: translateX(0);
-}
+
+
+
+
+
 .minifundo {
     width: 100%; /* Garante que o contêiner ocupe toda a largura */
     height: 20vh; /* Define a altura para 100% da altura da janela de visualização */
