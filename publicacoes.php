@@ -41,7 +41,7 @@
     <main>
       <section class="container">
     	<h2>Buscar por: </h2>
-    <form action="publicacoes.php" class="filtro" method="get"> 
+    <form id="form-busca" action="publicacoes.php" class="filtro" method="get"> 
       <div class="publication">
         <label for="publication">Título</label>
         <input name="publication" type="text" placeholder="Digite o título" value="<?php echo htmlspecialchars($titulo);?>">
@@ -223,5 +223,34 @@
     </main>
 
     <?php include 'footer.php'; ?>
+    <script>
+      document.getElementById("form-busca").addEventListener("submit", function(e) {
+        e.preventDefault(); // impede o reload da página
+
+        const formData = new FormData(this);              // pega os campos do form
+        const params = new URLSearchParams(formData);     // transforma em ?a=...&b=...
+
+        // requisição para o mesmo PHP que você já usa
+        fetch("publicacoes.php?" + params.toString())
+          .then(response => response.text())             // recebe HTML como texto
+          .then(html => {
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(html, "text/html");
+
+            // pega a seção de resultados do HTML retornado
+            const novosResultados = doc.querySelector("#paginate");
+
+            // substitui os resultados atuais na página
+            document.querySelector("#paginate").innerHTML = novosResultados.innerHTML;
+
+            // (opcional) rola suavemente para o topo da seção
+            document.querySelector("#paginate").scrollIntoView({ behavior: 'smooth' });
+          })
+          .catch(() => {
+            alert("Não foi possível carregar os resultados agora. Tente novamente.");
+          });
+        });
+      </script>
+
 </body>
 </html>
