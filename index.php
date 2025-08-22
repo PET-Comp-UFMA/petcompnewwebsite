@@ -92,7 +92,7 @@ function truncarTitulo($titulo, $limite = 30) {
         <div class="image-container">
             <img class="img-notice" src="assets/images/noticias/notice3.png" alt="">
             <div class= "grid-news-texts">
-                <a class="title" href="">Produtos</a>
+                <a class="title" href="">Publicações</a>
                 <a class="title-overlay" href="">Revista PETComp</a>
                 <a href="https://www.instagram.com/p/DDHxxEiRddK/"><img id="logo-Notice" src="img\Social-Icons.png" alt=""></a>
             </div>
@@ -123,7 +123,7 @@ function truncarTitulo($titulo, $limite = 30) {
   </div>
 </div>
 
-    <div class="swiper carousel">
+<div class="swiper carousel">
     <div class="swiper-wrapper">
         <a href="eventos.php" target="_blank" class="swiper-slide">
             <img src="img/eventos.png" alt="eventos">
@@ -149,62 +149,61 @@ function truncarTitulo($titulo, $limite = 30) {
             </div>
         </a>
     </div>
-    </div>
 
-
-    <button type="button" class="swiper-button-next"></button>
-    <button type="button" class="swiper-button-prev"></button>
+    <!-- botões e paginação devem estar dentro do swiper -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
     <div class="swiper-pagination"></div>
+</div>
+
+<div class="atividades">
+    <h2 class="activities-title">Atividades</h2>
+    <div class="activities-card">
+        <img class="activities-img" src="img/image4.png" alt="monitoria">
+        <h3 class="activities-subtitle">
+            Monitoria
+        </h3>
+        <a href="monitoria.php" target="_blank"><button class="saibamaisbtn">Saiba mais</button></a>
     </div>
-    <div class="atividades">
-        <h2 class="activities-title">Atividades</h2>
-        <div class="activities-card">
-            <img class="activities-img" src="img/image4.png" alt="monitoria">
-            <h3 class="activities-subtitle">
-                Monitoria
-            </h3>
-            <a href="monitoria.php" target="_blank"><button class="saibamaisbtn">Saiba mais</button></a>
-        </div>
-        <div class="activities-card">
-            <img class="activities-img" src="img/podcast.png" alt="podcast" id="podcast-card">
-            <h3 class="activities-subtitle" >
-                Podcast
-            </h3>
-            <a href="podcast.php" target="_blank"><button class="saibamaisbtn">Saiba mais</button></a>
-        </div>
-        <div class="activities-card">
-            <img class="activities-img" src="img/desenvolvimento-web 1.png" alt="podcast" style="margin-bottom: 0.6rem;">
-            <h3 class="activities-subtitle" style="font-size: 25px;">
-                Fábrica de Software
-            </h3>
-            <a href="desenvolvimento.php" target="_blank"><button class="saibamaisbtn">Saiba mais</button></a>
-        </div>
-        <div class="activities-card">
-            <img class="activities-img" src="img/conferencia.png" alt="conferencia" style="margin-bottom: 1.4rem;">
-            <h3 class="activities-subtitle" style="font-size: 25px;">
-                Eventos
-            </h3>
-            <a href="eventos.php" target="_blank"><button class="saibamaisbtn">Saiba mais</button></a>
-        </div>
-        <div class="activities-card">
-            <img class="activities-img" src="img/livro-de-capa-preta-fechado.png" alt="conferencia" style="margin-bottom: 1.4rem;">
-            <h3 class="activities-subtitle" style="font-size: 25px;">
-                Artigos
-            </h3>
-            <a href="publicacoes.php"><button class="saibamaisbtn">Saiba mais</button></a>
-        </div>
-        <div class="activities-card">
-            <img class="activities-img" src="img/curso-online.png" alt="miniscursos e oficinas" style="margin-bottom: 0.6rem;">
-            <h3 class="activities-subtitle" style="font-size: 25px;">
-                Minicursos e oficinas
-            </h3>
-            <a href="minicurso.php" target="_blank"><button class="saibamaisbtn">Saiba mais</button></a>
-        </div>
-        <div class="text-card">
-        <h2 class="final-text">O PETComp desenvolve diversas atividades em pesquisa, ensino e extensão. Clique em um dos cards para obter mais informações!</h2>
-        </div>
-        
+    <div class="activities-card">
+        <img class="activities-img" src="img/podcast.png" alt="podcast" id="podcast-card">
+        <h3 class="activities-subtitle" >
+            Podcast
+        </h3>
+        <a href="podcast.php" target="_blank"><button class="saibamaisbtn">Saiba mais</button></a>
     </div>
+    <div class="activities-card">
+        <img class="activities-img" src="img/desenvolvimento-web 1.png" alt="podcast">
+        <h3 id = "big-word" class="activities-subtitle">
+            Fábrica de <br>Software
+        </h3>
+        <a href="desenvolvimento.php" target="_blank"><button class="saibamaisbtn">Saiba mais</button></a>
+    </div>
+    <div class="activities-card">
+        <img class="activities-img" src="img/conferencia.png" alt="conferencia">
+        <h3 class="activities-subtitle">
+            Eventos
+        </h3>
+        <a href="eventos.php" target="_blank"><button class="saibamaisbtn">Saiba mais</button></a>
+    </div>
+    <div class="activities-card">
+        <img class="activities-img" src="img/livro-de-capa-preta-fechado.png" alt="conferencia">
+        <h3 class="activities-subtitle">
+            Artigos
+        </h3>
+        <a href="publicacoes.php"><button class="saibamaisbtn">Saiba mais</button></a>
+    </div>
+    <div class="activities-card">
+        <img class="activities-img" src="img/curso-online.png" alt="miniscursos e oficinas">
+        <h3 id = "big-word" class="activities-subtitle">
+            Minicursos e <br>oficinas
+        </h3>
+        <a href="minicurso.php" target="_blank"><button class="saibamaisbtn">Saiba mais</button></a>
+    </div>
+    <div class="text-card">
+    <h2 class="final-text">O PETComp desenvolve diversas atividades em pesquisa, ensino e extensão. Clique em um dos cards para obter mais informações!</h2>
+    </div>
+    
 </div>
 
 <?php include 'footer.php'; ?>
