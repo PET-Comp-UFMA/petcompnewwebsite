@@ -41,7 +41,7 @@
     <main>
       <section class="container">
     	<h2>Buscar por: </h2>
-    <form id="form-busca" action="publicacoes.php" class="filtro" method="get"> 
+    <form id="search-form" action="publicacoes.php" class="filtro" method="get"> 
       <div class="publication">
         <label for="publication">Título</label>
         <input name="publication" type="text" placeholder="Digite o título" value="<?php echo htmlspecialchars($titulo);?>">
@@ -224,7 +224,7 @@
 
     <?php include 'footer.php'; ?>
     <script>
-      document.getElementById("form-busca").addEventListener("submit", function(e) {
+      document.getElementById("search-form").addEventListener("submit", function(e) {
         e.preventDefault(); // impede o reload da página
 
         const formData = new FormData(this);              // pega os campos do form
