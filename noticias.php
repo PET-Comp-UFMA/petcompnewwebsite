@@ -66,6 +66,7 @@ if (!is_null($titulo) || !is_null($texto)) {
       <section class="filtro">
 
         <form
+          id="search-form"  
           action="noticias.php"
           method="get"
           class="filtro__form"
@@ -248,6 +249,11 @@ if (!is_null($titulo) || !is_null($texto)) {
 
 </div>
 <script src="./scripts/script.js"></script>
+
+<script>
+  document.getElementById("")
+</script>
+
 </body>
 
 </html>
