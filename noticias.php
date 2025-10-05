@@ -251,7 +251,26 @@ if (!is_null($titulo) || !is_null($texto)) {
 <script src="./scripts/script.js"></script>
 
 <script>
-  document.getElementById("")
+  document.getElementById("search-form").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    const formData = new FormData(this);
+    const urlParams = new URLSearchParams(formData);
+
+    fetch("noticias.php?" + urlParams.toString())
+      .then(response => response.text())
+      .then(html => {
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(html, "text/html");
+
+        const novosResultados = doc.querySelector("#paginate");
+
+        document.getElementById("paginate").innerHTML = novosResultados.innerHTML;
+      })
+      .catch(() => {
+        alert("Não foi possível carregar os resultados agora. Tente novamente.");
+      });
+  });
 </script>
 
 </body>
