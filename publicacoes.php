@@ -243,8 +243,7 @@
             // substitui os resultados atuais na página
             document.querySelector("#paginate").innerHTML = novosResultados.innerHTML;
 
-            // (opcional) rola suavemente para o topo da seção
-            document.querySelector("#paginate").scrollIntoView({ behavior: 'smooth' });
+
           })
           .catch(() => {
             alert("Não foi possível carregar os resultados agora. Tente novamente.");
