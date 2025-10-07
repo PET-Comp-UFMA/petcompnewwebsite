@@ -334,7 +334,8 @@ body {
 .activities-subtitle {
     font-family: 'Alatsi';
     color: #3AA3FC;
-    font-size: 40px;
+    text-align: center;
+    font-size: 28px;
 }
 .activities img {
     align-items: center;
