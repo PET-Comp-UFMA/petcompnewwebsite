@@ -325,43 +325,43 @@ body {
     justify-content: center;
     cursor: pointer;
   }
-  .swiper-slide {
+.swiper-slide {
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    }
+}
 
-    .swiper-slide img {
-        width: 100%;
-        height: 30vw;
-        object-fit: cover;
-        filter: brightness(30%);
-    }
-    .text-container {
-        position: absolute;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        color: white;
-        z-index: 1;
-    }
-    .text-container1 {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        text-align: left;
-        color: white;
-    }
+.swiper-slide img {
+    width: 100%;
+    height: 30vw;
+    object-fit: cover;
+    filter: brightness(30%);
+}
+.text-container {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: white;
+    z-index: 1;
+}
+.text-container1 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    color: white;
+}
+
+.secundary-text {
+    font-size: 2vw;
+    max-width: 80%;
+}
     
-    .secundary-text {
-        font-size: 2vw;
-        max-width: 80%;
-    }
-    
-  .swiper button {
+.swiper button {
     width: 50px;
     height: 50px;
     color: #fff;
@@ -369,41 +369,41 @@ body {
     border: none;
     outline: none;
     transition: opacity 0.25s;
-  }
-  .text-carousel {
+}
+.text-carousel {
     font-size: 4vw;
     font-family: 'Mada';
     font-weight: bold;
 }
 
 
-  .swiper button:hover {
+.swiper button:hover {
     opacity: 0.8;
-  }
+}
 
-  .swiper button::before,
-  .swiper button::after {
+.swiper button::before,
+.swiper button::after {
     font-size:24px;
-  }
+}
 
-  .swiper-button-prev {
+.swiper-button-prev {
     display: none;
-  }
+}
 
-  .swiper-button-next {
+.swiper-button-next {
     display: none;
-  }
+}
 
-  .swiper-pagination-bullet-active {
+.swiper-pagination-bullet-active {
     background-color: #fff;
     width: 20px;
     height: 20px;
-  }
-  .swiper-pagination-bullet {
+}
+.swiper-pagination-bullet {
     display: none;
     width: 20px;
     height: 20px;
-  }
+}
 .minifundo ul li img:hover {
     transform: scale(1.1); /* Amplia levemente a imagem ao passar o mouse */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Adiciona uma sombra ao passar o mouse */
@@ -417,13 +417,20 @@ body {
     width: 100%;
     height: auto;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
     gap: 5rem;
     text-align: justify;
     padding: 3rem 1rem;
     align-items: center;
     justify-content: center;
+}
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 5rem;
+    padding: 3rem 1rem;
 }
 .activities-card {
     display: flex;
@@ -432,6 +439,7 @@ body {
     width: 250px;
     height: 250px;
     padding: 1rem;
+    gap: 4px;
     justify-content: center;
     align-items: center;
     border-radius: 15px;
@@ -480,7 +488,7 @@ body {
     display: flex;
     flex-direction: column;
     background-color: inherit;
-    width: 400px;
+    width: 500px;
     height: 250px;
     justify-content: center;
     align-items: center;
@@ -546,7 +554,6 @@ body {
     .minifundo  {
         padding: 5rem;
         
-
         & ul {
             gap: 10rem;
         }
@@ -554,9 +561,16 @@ body {
         & h2 {
             font-size: 3rem;
         }
-    
     }
 
+    .cards-container {
+        grid-template-rows: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .text-card {
+        width: 400px;
+    }
 
 }
 
@@ -613,7 +627,6 @@ body {
     .minifundo  {
         padding: 5rem;
         
-
         & ul {
             gap: 1.5rem;
         }
@@ -657,11 +670,21 @@ body {
     .swiper-pagination-bullet {
         width: 5px;
         height: 5px;
-      }
-      .final-text {
-        font-size: 1.3rem;
-        margin: 2rem;
-      }
+    }
+    .final-text {
+    font-size: 1.3rem;
+    margin: 2rem;
+    }
 
+    .activities-title {
+        font-size: 60px;
+    }
 
+    .cards-container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .text-card {
+        width: 300px;
+    }
 }
