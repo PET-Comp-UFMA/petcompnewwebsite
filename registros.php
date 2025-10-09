@@ -17,30 +17,41 @@
         <h4> → Registros</h4>
     </div>
 
-     <div class="section-header">
-    <h2>REGISTROS PETCOMP</h2>
+    <div class="section-header">
+        <h2 class="titulo">REGISTROS PETCOMP 2025</h2>
+    </div>
   </div>
 
-  <div class="ano-section">
-    <h2>2025</h2>
+    <div class="atividade">
+      <div class="fundo"></div>
+      <h3>Acalourada 2025.2</h3>
+      <div class="galeria" data-evento="acalourada2025_2">
+        
+        
+        
+      </div>
+    </div>
+
 
     <div class="atividade">
+      <div class="fundo"></div>
       <h3>ExploraComp 2025.1</h3>
-      
       <div class="galeria" data-evento="exploracomp2025">
         
         
+        
       </div>
     </div>
 
     <div class="atividade">
+      <div class="fundo"></div>
       <h3>Acalourada 2025.1</h3>
-      <div class="galeria" data-evento="acalourada2025">
-
+      <div class="galeria" data-evento="acalourada2025_1">
 
       </div>
     </div>
     <div class="atividade">
+      <div class="fundo"></div>
       <h3>Fábrica de Software</h3>
       <div class="subtitulo">
         <p>Congresso Nacional de Saúde e Tecnologia</p>
@@ -58,6 +69,7 @@
     </div>
 
      <div class="atividade">
+      <div class="fundo"></div>
       <h3>Monitoria</h3>
       <div class="galeria">
 
@@ -76,12 +88,13 @@
         </div>
       </div>
     </div>
+    <div class="section-header">
+        <h2 class="titulo">REGISTROS PETCOMP 2024</h2>
+    </div>
   </div>
 
-  <div class="ano-section">
-    <h2>2024</h2>
-
     <div class="atividade">
+      <div class="fundo"></div>
       <h3>Acalourada 2024.2</h3>
       
       <div class="galeria" data-evento="acalourada2024_2">
