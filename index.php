@@ -72,42 +72,55 @@ function truncarTitulo($titulo, $limite = 30) {
     <div class="noticias-container">
         <!-- Bloco noticias -->
         <div class="image-container">
-            <img class="img-notice" src="assets/images/noticias/notice1.png" alt="">
-            <div class= "grid-news-texts">
-                <a class="title" href="">Evento</a>
-                <a class="title-overlay" href="">Seletivo 2025.2</a>
-                <a href=""><img id="logo-Notice" src="img\Social-Icons.png" alt=""></a>
-            </div>
+            <a class="noticia-link" href="https://petcompufma.org/noticia.php?id=41" target="_blank">
+                <img class="img-notice" src="assets/images/noticias/notice1.png" alt="">
+                <div class= "grid-news-texts">
+                    <span class="title" target="_blank">Evento</span>
+                    <span class="title-overlay" >Seletivo 2025.2</span>
+                </div>
+            </a>
+            <a class="instagram-link" href="https://www.instagram.com/petcompufma/p/DOD4vNTgCDo/" target="_blank">
+                    <img id="logo-Notice" src="img\Social-Icons.png" alt="icone instagram">
+            </a>
         </div>
 
         <div class="image-container">
-            <img class="img-notice" src="assets/images/noticias/notice2.png" alt="">
-            <div class= "grid-news-texts">
-                <a class="title" href="">Evento</a>
-                <a class="title-overlay" href="">Acalourada 2025.2</a>
-                <a href=""><img id="logo-Notice" src="img\Social-Icons.png" alt=""></a>
-            </div>
+            <a class="noticia-link" href="https://petcompufma.org/noticia.php?id=37" target="_blank">
+                <img class="img-notice" src="assets/images/noticias/notice2.png" alt="">
+                <div class= "grid-news-texts">
+                    <span class="title" target="_blank">Evento</span>
+                    <span class="title-overlay" target="_blank">Acalourada 2025.2</span>
+                </div>
+            </a>
+            <a class="instagram-link" href="https://www.instagram.com/petcompufma/p/DO583T5gPEU/" target="_blank">
+                    <img id="logo-Notice" src="img\Social-Icons.png" alt="icone instagram">
+            </a>
         </div>
 
         <div class="image-container">
-            <img class="img-notice" src="assets/images/noticias/notice3.png" alt="">
-            <div class= "grid-news-texts">
-                <a class="title" href="">Publicações</a>
-                <a class="title-overlay" href="">Revista PETComp</a>
-                <a href="https://www.instagram.com/p/DDHxxEiRddK/"><img id="logo-Notice" src="img\Social-Icons.png" alt=""></a>
-            </div>
+            <a class="noticia-link" href="https://online.fliphtml5.com/hyccq/wkkw/#p=8" target="_blank">
+                <img class="img-notice" src="assets/images/noticias/notice3.png" alt="">
+                <div class= "grid-news-texts">
+                    <span class="title"  target="_blank">Publicações</span>
+                    <span class="title-overlay" target="_blank">Revista PETComp</span>  
+                </div>
+            </a>
+            <a  class="instagram-link" href="https://www.instagram.com/p/DDHxxEiRddK/" target="_blank">
+                <img id="logo-Notice" src="img\Social-Icons.png" alt="icone instagram">
+            </a>
         </div>
 
         <div class="image-container">
-            <img class="img-notice" src="assets/images/noticias/notice4.png" alt="">
-
-            <div class= "grid-news-texts">
-                <a class="title" href="">Evento</a>
-                <a class="title-overlay" href="">ExploraComp</a>
-                <a href="https://www.instagram.com/p/DJ9djMNAlza/?img_index=1"><img id="logo-Notice" src="img\Social-Icons.png" alt=""></a>
-            </div>
-
-            
+            <a class="noticia-link" href="https://petcompufma.org/noticia.php?id=38" target="_blank">
+                <img class="img-notice" src="assets/images/noticias/notice4.png" alt="">
+                <div class= "grid-news-texts">
+                    <span class="title" target="_blank">Evento</span>
+                    <span class="title-overlay" target="_blank">ExploraComp</span>
+                </div>
+            </a>
+            <a class="instagram-link" href="https://www.instagram.com/p/DJ9djMNAlza/?img_index=1" target="_blank">
+                <img id="logo-Notice" src="img\Social-Icons.png" alt="">
+            </a>
         </div>
     </div>
 </div>
