@@ -170,7 +170,7 @@ function truncarTitulo($titulo, $limite = 30) {
         <div class="activities-card">
             <img class="activities-img" src="img/podcast.png" alt="podcast" id="podcast-card">
             <h3 class="activities-subtitle" >
-                Podcast
+                Podcast 
             </h3>
             <a href="podcast.php" target="_blank"><button class="saibamaisbtn">Saiba mais</button></a>
         </div>
