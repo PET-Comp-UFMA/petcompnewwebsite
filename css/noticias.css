@@ -1,11 +1,3 @@
-main .container {
-
-  margin: 40px auto;
-
-  width: 80%;
-
-}
-
 .container-header {
   color: white;
   background-color: #01204C;
@@ -17,44 +9,27 @@ main .container {
   text-decoration: none;
 }
 
-.container-body p {
-  line-height: 1.6;
-  text-align: justify;
-}
-
-h4 {
-  display: inline;
-}
-
 .container-body {
   line-height: 1.6;
   text-align: justify;
   padding: 50px 60px;
-
-  p {
-    font-size: 20px;
-    font-weight: medium;
-  }
+  font-size: 20px;
 }
 
-/* <<<Estilização dos campos de busca>>> */
+.container {
+  margin: 40px auto;
+  width: 80%;
+}
 
-
-/* ========== Bloco filtro ========== */
 .filtro {
   display: flex;
   flex-direction: column;
-  padding-bottom: 20px;
+  margin: 0;
 }
 
-.filtro__form {
-  display: flex;
-  flex-direction: column;
-}
-
-.filtro__field {
-  display: flex;
-  flex-direction: column;
+.filtro__field{
+  margin: 0;
+  padding: 0px;
 }
 
 .filtro__label {
@@ -75,15 +50,10 @@ h4 {
   padding: 14px;
   outline: none;
   width: 100%;
-  
-  
 }
 
 /* Ações / botão */
-.filtro__actions {
-  display: flex;
-  flex-direction: column;
-}
+
 
 .filtro__button {
   background: none;
@@ -91,21 +61,13 @@ h4 {
   border-radius: 50px;
   cursor: pointer;
   height: 50px;
-  margin: auto 0;
+  margin-bottom: 24px;
   padding: 12px;
   transition: 0.2s ease-in-out;
   width: 50px;
 }
 
-.filtro__icon {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
-
 /* <<<Estilização das notícias>>> */
-
 
 /* Lista de notícias */
 .news-list {
@@ -115,8 +77,8 @@ h4 {
 }
 
 .news-list__item {
-  padding: 4px;
-  margin-bottom: 32px;
+  padding-left: 36px;
+  margin-bottom: 20px;
 }
 
 /* Card principal */
@@ -132,7 +94,7 @@ h4 {
   display: flex;
   justify-content: space-between;
   width: 100%;
-  margin-bottom: 20px;
+  margin-bottom: 8px;
 }
 
 .card__meta {
@@ -152,9 +114,9 @@ h4 {
 /* Título e link */
 .card__title {
   font-size: 22px;
-  font-weight: 700;
-  font-family: 'Mada', sans-serif;
-  margin: 0;
+  font-weight: 500;
+  text-decoration: none;
+  color: var(--primary);
 }
 
 .card__link {
@@ -196,12 +158,14 @@ h4 {
   font-size: calc((12px + 0.25vw) * 0.875);
   font-weight: 700;
   letter-spacing: 4px;
+  margin-top: 6px ;
+  margin-bottom: 20px;
   text-transform: uppercase;
-  margin: 0 0 20px;
 }
 
 .card__resume-text {
   margin: 0;
+  font-size: 18px;
 }
 
 /* Data de publicação */
@@ -215,20 +179,15 @@ h4 {
 }
 
 /* Linhas separadoras */
+
 .card__line {
   width: 100%;
-  height: 5px;
-  margin: 10px 0;
-  border-top: none;
-}
-
-.card__line--blue {
+  margin-left: 32px;
+  height: 5.5px;
+  margin-top: 50px;
+  margin-bottom: 16px;
   background: #060B3F;
   opacity: 1;
-}
-
-.card__line--gray {
-  background: #9d9dc4;
 }
 
 /* <<<Estilização da paginação>>> */
@@ -267,16 +226,6 @@ h4 {
   background-color: var(--primary-dark);
 }
 
-/* Modifier: botão “anterior” */
-.pagination__button--prev {
-  /* caso precise alterar algo só para ‘prev’ */
-}
-
-/* Modifier: botão “próximo” */
-.pagination__button--next {
-  /* caso precise alterar algo só para ‘next’ */
-}
-
 /* Element: cada número */
 .pagination__number {
   display: flex;
@@ -292,6 +241,7 @@ h4 {
   cursor: pointer;
   transition: background-color 0.2s ease;
 }
+
 .pagination__number:hover,
 .pagination__number--active {
   background-color: var(--primary-dark);
@@ -381,12 +331,6 @@ h4 {
   }
 }
 
-
-
-
-
-
-
 /* <<< Responsividade >>> */
 
 /* Tablets grandes (entre 992px e 1200px) */
@@ -414,4 +358,3 @@ h4 {
     width: 30%;
   }
 }
-
