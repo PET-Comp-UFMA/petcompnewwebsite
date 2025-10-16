@@ -178,12 +178,55 @@ function truncarTitulo($titulo, $limite = 30) {
         </h3>
         <a href="monitoria.php" target="_blank"><button class="saibamaisbtn">Saiba mais</button></a>
     </div>
-    <div class="activities-card">
-        <img class="activities-img" src="img/podcast.png" alt="podcast" id="podcast-card">
-        <h3 class="activities-subtitle" >
-            Podcast
-        </h3>
-        <a href="podcast.php" target="_blank"><button class="saibamaisbtn">Saiba mais</button></a>
+
+    <div class="atividades">
+        <h2 class="activities-title">Atividades</h2>
+        <div class="activities-card">
+            <img class="activities-img" src="img/image4.png" alt="monitoria">
+            <h3 class="activities-subtitle">
+                Monitoria
+            </h3>
+            <a href="monitoria.php" target="_blank"><button class="saibamaisbtn">Saiba mais</button></a>
+        </div>
+        <div class="activities-card">
+            <img class="activities-img" src="img/podcast.png" alt="podcast" id="podcast-card">
+            <h3 class="activities-subtitle" >
+                Podcast 
+            </h3>
+            <a href="podcast.php" target="_blank"><button class="saibamaisbtn">Saiba mais</button></a>
+        </div>
+        <div class="activities-card">
+            <img class="activities-img" src="img/desenvolvimento-web 1.png" alt="podcast" style="margin-bottom: 0.6rem;">
+            <h3 class="activities-subtitle" style="font-size: 25px;">
+                Fábrica de Software
+            </h3>
+            <a href="desenvolvimento.php" target="_blank"><button class="saibamaisbtn">Saiba mais</button></a>
+        </div>
+        <div class="activities-card">
+            <img class="activities-img" src="img/conferencia.png" alt="conferencia" style="margin-bottom: 1.4rem;">
+            <h3 class="activities-subtitle" style="font-size: 25px;">
+                Eventos
+            </h3>
+            <a href="eventos.php" target="_blank"><button class="saibamaisbtn">Saiba mais</button></a>
+        </div>
+        <div class="activities-card">
+            <img class="activities-img" src="img/livro-de-capa-preta-fechado.png" alt="conferencia" style="margin-bottom: 1.4rem;">
+            <h3 class="activities-subtitle" style="font-size: 25px;">
+                Artigos
+            </h3>
+            <a href="publicacoes.php"><button class="saibamaisbtn">Saiba mais</button></a>
+        </div>
+        <div class="activities-card">
+            <img class="activities-img" src="img/curso-online.png" alt="miniscursos e oficinas" style="margin-bottom: 0.6rem;">
+            <h3 class="activities-subtitle" style="font-size: 25px;">
+                Minicursos e oficinas
+            </h3>
+            <a href="minicurso.php" target="_blank"><button class="saibamaisbtn">Saiba mais</button></a>
+        </div>
+        <div class="text-card">
+        <h2 class="final-text">O PETComp desenvolve diversas atividades em pesquisa, ensino e extensão. Clique em um dos cards para obter mais informações!</h2>
+        </div>
+        
     </div>
     <div class="activities-card">
         <img class="activities-img" src="img/desenvolvimento-web 1.png" alt="podcast">

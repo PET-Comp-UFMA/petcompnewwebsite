@@ -71,6 +71,11 @@ header {
 
 .material-icons {
     vertical-align: middle;
+    transition: transform 0.2s ease-in;
+}
+
+.dropbtn:hover .material-icons {
+    transform: rotate(180deg);
 }
 
 .dropdown-content {

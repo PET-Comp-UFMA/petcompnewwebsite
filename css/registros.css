@@ -1,37 +1,85 @@
 
-.section-header{
-    h2{
-    margin-bottom: 10px;
-    color: #333;
-    display: flex;
-    justify-content: center;
+.section-header {
+  position: relative;
+  display: flex;
+   justify-content: center;
     align-items: center;
-    padding-top: 2rem;
-    text-decoration: underline;
-    text-decoration-color: #01204C;
-    }
+  background: #001341;
+  padding: 50px 300px;
+  width: max-content; 
+  margin: 50px auto; 
+
 }
-.ano-section {
+.section-header::after {
+  content: "";
+  position: absolute;
+  top: 8px;      
+  left: 8px;      
+  width: 100%;
+  height: 100%;
+  background: #1e90ff;   
+  z-index: -1;          
+}
+
+.section-header .titulo {
+  position: absolute;
+  top: 50%;         
+  left: 50%;        
+  transform: translate(-50%, -50%); 
+  color: white;     
+  font-size: 30px;   
+  font-weight: bold;
+  text-align: center;
+}
+
+.subtitulo{
+    color:#FFFFFF
+}
+
+.atividade {
+    position: relative;
     h1, h2, h3 {
     margin-bottom: 10px;
-    color: #333;
+    color: #FFFFFF;
     display: flex;
+    font-size: 45px;
     justify-content: center;
     align-items: center;
     }
     margin-top: 50px;
-
-}
-
-.atividade {
     margin-bottom: 30px;
+    margin-left: 14rem;
+    margin-right: 14rem;
 }
+.atividade .fundo {
+    position: absolute;  
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    width: 100%;
+    height: 100%;
+    background-color: #001341;
+    z-index: 0;  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 18px;
+}
+
+
+.atividade > *:not(.fundo) {
+    position: relative;
+    z-index: 1;
+}
+
+
 
 .subtitulo{
     display: flex;
     justify-content: center;
 }
 .galeria {
+    position: relative;
     display: flex;
     justify-content: center;
     gap: 15px;
@@ -52,12 +100,11 @@
     transform: scale(1.03);
 }
 
+
 .imagens-group {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    width: 100%;
-    max-width: 270px;
     cursor: pointer;
 }
 
@@ -125,8 +172,7 @@
 }
 
 /*--------------------Responsive--------------------*/
-
-@media screen and (min-width: 1025px) {
+@media screen and (min-width: 1800px) {
     .container-header {
         padding: 50px 60px;
     }
@@ -156,10 +202,55 @@
         font-size: 20px;
         font-weight: medium;
     }
+  
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1800px){
+     .container-header {
+        padding: 50px 60px;
+    }
+
+    .container-header h2 {
+        font-size: 50px;
+        margin-bottom: 20px;
+        font-weight: bold;
+    }
+
+    .container-header h3 {
+        font-size: 30px;
+        margin-bottom: 20px;
+        font-weight: normal;
+    }
+
+    .container-header p {
+        font-size: 16px;
+        font-weight: normal;
+    }
+
+    .container-body {
+        padding: 50px 60px;
+    }
+
+    .container-body p {
+        font-size: 20px;
+        font-weight: medium;
+    }
+
+ 
+.galeria {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    padding: 20px;
+    flex-wrap: nowrap; 
+    overflow-x: auto;  
+}
+
 }
 
 @media screen and (min-width: 601px) and (max-width: 1024px) {
-    .container-header {
+   .container-header {
         padding: 20px 70px;
     }
 
@@ -186,10 +277,56 @@
         font-size: 14px;
         text-indent: 2em;
     }
+    .section-header {
+    padding: 20px;        
+    margin: 20px auto;     
+    width: 90%;           
+  }
+
+  .section-header .titulo {
+    font-size: 25px;       
+  }
+
+  .atividade {
+    margin: 20px;          
+  }
+
+  .atividade h1,
+  .atividade h2,
+  .atividade h3 {
+    font-size: 22px;      
+    text-align: center;    
+  }
+
+  .galeria {
+    flex-direction: column;  
+    align-items: center;     
+    gap: 10px;
+  }
+
+  .horizontal,
+  .vertical {
+    width: 100%;          
+    height: auto;        
+    max-width: 280px;     
+  }
+
+  .modal img {
+    max-width: 95%;
+    max-height: 70%;
+  }
+
+  #topo-btn {
+    bottom: 15px;
+    right: 15px;
+    padding: 8px 10px;
+    font-size: 16px;
+  }
+
 }
 
 @media screen and (max-width: 600px) {
-    .container-header {
+      .container-header {
         padding: 20px 40px;
     }
 
@@ -215,9 +352,54 @@
     .container-body p {
         font-size: 10px;
         text-indent: 2em;
-        line-height: 1.6;
-        text-align: justify;
     }
+
+.section-header {
+    padding: 20px;        
+    margin: 20px auto;     
+    width: 90%;           
+  }
+
+  .section-header .titulo {
+    font-size: 10px;       
+  }
+
+  .atividade {
+    margin: 20px;          
+  }
+
+  .atividade h1,
+  .atividade h2,
+  .atividade h3 {
+    font-size: 22px;      
+    text-align: center;    
+  }
+
+  .galeria {
+    flex-direction: column;  
+    align-items: center;     
+    gap: 10px;
+  }
+
+  .horizontal,
+  .vertical {
+    width: 100%;          
+    height: auto;        
+    max-width: 280px;     
+  }
+
+  .modal img {
+    max-width: 95%;
+    max-height: 70%;
+  }
+
+  #topo-btn {
+    bottom: 15px;
+    right: 15px;
+    padding: 8px 10px;
+    font-size: 16px;
+  }
+
    
 }
 

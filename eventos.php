@@ -37,6 +37,16 @@
         </div>
 
         <div class = "noticias">
+             <div class= "box-models">
+                <img src="assets/images/pag-eventos/box-Marapet.png" alt="Ícone Marapet">
+                <div class = "texts-content">
+                    <h1>Marapet</h1>
+                    <h4>
+                        O MARAPET é um evento acadêmico e formativo organizado pelos Grupos PET (Programa de Educação Tutorial) das universidades do Maranhão, especialmente da UFMA. Ele é um grande encontro estadual que reúne petianos e tutores para apresentar trabalhos, trocar experiências e discutir temas sobre ensino, pesquisa e extensão. Mais do que um evento, o MARAPET é um espaço de integração, aprendizado e compartilhamento de saberes entre os grupos PET maranhenses! 
+                    </h4>
+                    <button><a href="https://petcompufma.org/marapet/index.php" target="_blank" style="color: inherit; text-decoration: none">Saiba mais</a></button>
+                </div>
+            </div>
 
             <div class= "box-models">
                 <img src="assets\images\pag-eventos\box-acalourada.png" alt="Ícone Acalourada">

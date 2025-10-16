@@ -1,26 +1,24 @@
 <?php
    require_once("conexao.php");
 
-   $limit = 20; // máximo de petianos por página
+   $maximoPetianosPorPagina = 20; 
    $page = isset($_GET["page"]) ? filter_var($_GET["page"], FILTER_VALIDATE_INT) : 1; // garantindo que a entrada é um inteiro
 
    $total_petianos = mysqli_fetch_assoc(mysqli_query($mysqli, "SELECT count(id) AS id FROM petianos"))['id'];
-   $pages = ceil($total_petianos / $limit);
+   $pages = ceil($total_petianos / $maximoPetianosPorPagina);
    
    // Redireciona caso a pagina esteja fora do intervalo legal
    if ($page < 1) header("Location: integrantes.php?page=1");
    if ($page > $pages) header("Location: integrantes.php?page=$pages");
 
-   $start = ($page - 2) * $limit;  // valor negativo pra pagina 1, 0 pra pagina > 1
+   $start = ($page - 2) * $maximoPetianosPorPagina;  // valor negativo pra pagina 1, 0 pra pagina > 1
 
    function geraCard($pessoa, $titulo, $icone)
    {
       ob_start(); ?>
       <div class="card">
-         <div class="card-img">
-            <figure>
-               <img src="./assets/images/integrantes/<?= $pessoa["imagem"] ?>" alt="">
-            </figure>
+         <div class="card__container-imagem">
+               <img class="card__container-imagem__foto-petiano" src="./assets/images/integrantes/<?= $pessoa["imagem"] ?>" alt="">
          </div>
          <div class="job-img"><i class="fas fa-<?= htmlspecialchars($icone) ?>"></i></div>
          <div class="card-name">
@@ -70,8 +68,8 @@
       $integrantes = mysqli_fetch_all(mysqli_query($mysqli, "SELECT * FROM petianos WHERE ativo = 1 AND orientador = 0 AND voluntario = 0 ORDER BY ano DESC, periodo DESC"), MYSQLI_ASSOC);
       $voluntarios = mysqli_fetch_all(mysqli_query($mysqli, "SELECT * FROM petianos WHERE ativo = 1 AND voluntario = 1 AND orientador = 0 ORDER BY ano DESC, periodo DESC"), MYSQLI_ASSOC);
    } else {
-      $orientadoresInativos = mysqli_fetch_all(mysqli_query($mysqli, "SELECT * FROM petianos WHERE ativo = 0 AND orientador = 1 ORDER BY ano DESC, periodo DESC LIMIT $start, $limit"), MYSQLI_ASSOC);
-      $inativos = mysqli_fetch_all(mysqli_query($mysqli, "SELECT * FROM petianos WHERE ativo = 0 AND orientador = 0 ORDER BY id DESC LIMIT $start, $limit"), MYSQLI_ASSOC);
+      $orientadoresInativos = mysqli_fetch_all(mysqli_query($mysqli, "SELECT * FROM petianos WHERE ativo = 0 AND orientador = 1 ORDER BY ano DESC, periodo DESC LIMIT $start, $maximoPetianosPorPagina"), MYSQLI_ASSOC);
+      $inativos = mysqli_fetch_all(mysqli_query($mysqli, "SELECT * FROM petianos WHERE ativo = 0 AND orientador = 0 ORDER BY id DESC LIMIT $start, $maximoPetianosPorPagina"), MYSQLI_ASSOC);
    }
 
    

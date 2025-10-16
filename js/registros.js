@@ -53,6 +53,14 @@ document.addEventListener("DOMContentLoaded", () => {
 // Função para diversos tamanhos de imagens
 // Mapeamento dos eventos e suas imagens
 const imagensPorEvento = {
+  acalourada2025_2:[
+    "img/2025/Acalourada2025.2/acalourada2025 (1).jpg",
+    "img/2025/Acalourada2025.2/acalourada2025 (2).jpg",
+    "img/2025/Acalourada2025.2/acalourada2025 (4).jpg",
+    "img/2025/Acalourada2025.2/acalourada2025 (3).jpg",
+    "img/2025/Acalourada2025.2/acalourada2025 (6).jpg",
+    "img/2025/Acalourada2025.2/acalourada2025 (5).jpg"
+  ],
   exploracomp2025: [
     "img/2025/ExploraComp2025/exploracomp1.png",
     "img/2025/ExploraComp2025/exploracomp2.png",
@@ -63,15 +71,15 @@ const imagensPorEvento = {
     "img/2025/ExploraComp2025/exploracomp7.png",
     "img/2025/ExploraComp2025/exploracomp8.png"
   ],
-  acalourada2025: [
-    "img/2025/Acalourada2025/acalourada2025.1_1.jpg",
-    "img/2025/Acalourada2025/acalourada2025.1_2.jpg",
-    "img/2025/Acalourada2025/acalourada2025.1_7.jpg",
-    "img/2025/Acalourada2025/acalourada2025.1_3.jpg",
-    "img/2025/Acalourada2025/acalourada2025.1_6.jpg",
-    "img/2025/Acalourada2025/acalourada2025.1_4.jpg",
-    "img/2025/Acalourada2025/acalourada2025.1_8.jpg",
-    "img/2025/Acalourada2025/acalourada2025.1_5.jpg"
+  acalourada2025_1: [
+    "img/2025/Acalourada2025.1/acalourada2025.1_1.jpg",
+    "img/2025/Acalourada2025.1/acalourada2025.1_2.jpg",
+    "img/2025/Acalourada2025.1/acalourada2025.1_7.jpg",
+    "img/2025/Acalourada2025.1/acalourada2025.1_3.jpg",
+    "img/2025/Acalourada2025.1/acalourada2025.1_6.jpg",
+    "img/2025/Acalourada2025.1/acalourada2025.1_4.jpg",
+    "img/2025/Acalourada2025.1/acalourada2025.1_8.jpg",
+    "img/2025/Acalourada2025.1/acalourada2025.1_5.jpg"
   ],
   cnst: [
     "img/2025/Fab.Software2025/Fab.Software1.png",
@@ -99,6 +107,13 @@ const imagensPorEvento = {
     "img/2024/Acalourada 2024.1/Acaloura2024.2_7.jpg",
     "img/2024/Acalourada 2024.1/Acaloura2024.2_8.jpg"
   ],
+  monitoria_2025:[
+    "img/2025/Monitoria2025/Monitoria1.png",
+    "img/2025/Monitoria2025/Monitoria2.png",
+    "img/2025/Monitoria2025/Monitoria3.png",
+    "img/2025/Monitoria2025/Monitoria4.png",
+    "img/2025/Monitoria2025/Monitoria5.png"
+  ]
 };
 
 
