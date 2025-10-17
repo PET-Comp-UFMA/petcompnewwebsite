@@ -169,16 +169,6 @@ function truncarTitulo($titulo, $limite = 30) {
     <div class="swiper-pagination"></div>
 </div>
 
-<div class="atividades">
-    <h2 class="activities-title">Atividades</h2>
-    <div class="activities-card">
-        <img class="activities-img" src="img/image4.png" alt="monitoria">
-        <h3 class="activities-subtitle">
-            Monitoria
-        </h3>
-        <a href="monitoria.php" target="_blank"><button class="saibamaisbtn">Saiba mais</button></a>
-    </div>
-
     <div class="atividades">
         <h2 class="activities-title">Atividades</h2>
         <div class="activities-card">
@@ -225,41 +215,8 @@ function truncarTitulo($titulo, $limite = 30) {
         </div>
         <div class="text-card">
         <h2 class="final-text">O PETComp desenvolve diversas atividades em pesquisa, ensino e extensão. Clique em um dos cards para obter mais informações!</h2>
-        </div>
-        
-    </div>
-    <div class="activities-card">
-        <img class="activities-img" src="img/desenvolvimento-web 1.png" alt="podcast">
-        <h3 id = "big-word" class="activities-subtitle">
-            Fábrica de <br>Software
-        </h3>
-        <a href="desenvolvimento.php" target="_blank"><button class="saibamaisbtn">Saiba mais</button></a>
-    </div>
-    <div class="activities-card">
-        <img class="activities-img" src="img/conferencia.png" alt="conferencia">
-        <h3 class="activities-subtitle">
-            Eventos
-        </h3>
-        <a href="eventos.php" target="_blank"><button class="saibamaisbtn">Saiba mais</button></a>
-    </div>
-    <div class="activities-card">
-        <img class="activities-img" src="img/livro-de-capa-preta-fechado.png" alt="conferencia">
-        <h3 class="activities-subtitle">
-            Artigos
-        </h3>
-        <a href="publicacoes.php"><button class="saibamaisbtn">Saiba mais</button></a>
-    </div>
-    <div class="activities-card">
-        <img class="activities-img" src="img/curso-online.png" alt="miniscursos e oficinas">
-        <h3 id = "big-word" class="activities-subtitle">
-            Minicursos e <br>oficinas
-        </h3>
-        <a href="minicurso.php" target="_blank"><button class="saibamaisbtn">Saiba mais</button></a>
-    </div>
-    <div class="text-card">
-    <h2 class="final-text">O PETComp desenvolve diversas atividades em pesquisa, ensino e extensão. Clique em um dos cards para obter mais informações!</h2>
-    </div>
-    
+        </div>        
+    </div> 
 </div>
 
 <?php include 'footer.php'; ?>
