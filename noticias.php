@@ -26,10 +26,10 @@
   <body>    
 
     <div class="container-header">
-      <h2>Noticias</h2>
+      <h2>Notícias</h2>
       <h3>Confira as noticias mais recentes sobre o que fizemos</h3>
       <h4><a href="index.php">Página Inicial</a></h4>
-      <h4> → Noticias</h4>
+      <h4> → Notícias</h4>
     </div>
 
     <main>
