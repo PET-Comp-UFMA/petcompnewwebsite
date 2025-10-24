@@ -12,7 +12,7 @@
         
         <div class="container-header">
             <h2>Eventos</h2>
-            <h3>Confira os eventos que nós promovemos</h3>
+            <h3>Confira os eventos nós promovemos</h3>
             <h4><a href="index.php">Página Inicial</a></h4>
             <h4> → Eventos</h4> 
         </div>
@@ -59,7 +59,7 @@
                         de Computação, e procura guiar os calouros através da universidade e do curso, além de mostrar as
                         oportunidades que a universidade oferece tanto de forma pessoal como profissional.
                     </h4>
-                    <button><a href="https://petcompufma.org/acalourada/index.php" target="_blank" style="color: inherit; text-decoration: none">Saiba mais</a></button>
+                    <button>Saiba mais</button>
                 </div>
             </div>
 
@@ -72,7 +72,7 @@
                         com o curso de Graduação de Ciência da Computação da UFMA apresentando as oportunidades dentro da graduação. 
                         O EAComp é organizado pelo Programa de Educação Tutorial do curso de Ciência da Computação (PETComp).
                     </h4>
-                    <button><a href="https://petcompufma.org/eacomp/" target="_blank" style="color: inherit; text-decoration: none">Saiba mais</a></button>
+                    <button>Saiba mais</button>
                 </div>
             </div>
 
@@ -89,7 +89,7 @@
                         possam trocar experiências, aprender e divulgar ações bem-sucedidas no contexto do desenvolvimento e disponibilização 
                         de produções técnicas inovadoras.
                     </h4>
-                    <button><a href="https://eea.ufma.br/index.html" target="_blank" style="color: inherit; text-decoration: none">Saiba mais</a></button>
+                    <button>Saiba mais</button>
                 </div>
             </div>
 
@@ -103,7 +103,7 @@
                         encontro é caracterizado por assembleias, grupos de discussão e trabalhos, apresentação de trabalhos acadêmicos, 
                         atividades culturais, além da troca de experiências entre discentes e tutores nordestinos.
                     </h4>
-                    <button><a href="https://www.even3.com.br/enepet2020/" target="_blank" style="color: inherit; text-decoration: none">Saiba mais</a></button>
+                    <button>Saiba mais</button>
                 </div>
             </div>
 
@@ -119,7 +119,7 @@
                         referência nos Estados do Maranhão, Ceará e Piauí e região. Além disso, o evento colabora e contribui com a consolidação
                         dos Programas de Pós-Graduação da região.
                     </h4>
-                    <button><a href="https://petcompufma.org/ercemapi/" target="_blank" style="color: inherit; text-decoration: none">Saiba mais</a></button>
+                    <button>Saiba mais</button>
                 </div>
             </div>
 
@@ -127,15 +127,15 @@
                 <img src="assets\images\pag-eventos\box-ejim.svg" alt="Ícone EJIM">
                 <div class = "texts-content">
                     <h1>EJIM</h1>
-                    <h4>
+                    <p>
                         A Jornada Informática do Maranhão (JIM) é um evento de caráter acadêmico e técnico-científico com o objetivo de 
                         propiciar um espaço de intercâmbio entre os diversos atores dos setores de Informática da região, apresentando e 
                         discutindo temas que abordam a aplicação da Computação para a solução de problemas do Estado do Maranhão, bem como as 
                         pesquisas em Informática realizadas nas instituições do estado, disponibilizando aos participantes a possibilidade de 
                         acesso a temas e discussões recentes na área, através de diversas atividades, como palestras, minicursos, painéis de 
                         discussão e apresentação de trabalhos científicos.
-                    <h4>
-                    <button><a href="https://petcompufma.org/jim/" target="_blank" style="color: inherit; text-decoration: none">Saiba mais</a></button>
+                    </p>
+                    <button>Saiba mais</button>
                 </div>
             </div>
 
@@ -148,19 +148,9 @@
                         vinculados ao programa com o objetivo de discutir, coletivamente, temas e questões relevantes para a manutenção e o 
                         desenvolvimento do PET nacionalmente.
                     </h4>
-                    <button><a href="https://www.even3.com.br/xxix-enapet-2024/" target="_blank" style="color: inherit; text-decoration: none">Saiba mais</a></button>
+                    <button>Saiba mais</button>
                 </div>
             </div>
-
-            <div class="box-models">
-                <img src="assets\images\logos\exploracomp.svg">
-                <div class="texts-content">
-                    <h1>ExploraComp</h1>
-                <h4>O ExploraComp é uma ação promovida pelo PETComp - Programa de Educação Tutorial em Ciência da Computação da UFMA, voltada para estudantes do ensino médio, especialmente aqueles de baixa renda, que desejam conhecer de perto o universo da Computação. Durante a atividade, os participantes exploram o curso por meio de oficinas, bate-papos com universitários, demonstrações tecnológicas e visitas guiadas, vivenciando na prática como é estudar na UFMA. O objetivo é apresentar oportunidades de ingresso no ensino superior, inspirar trajetórias acadêmicas e aproximar jovens talentos da tecnologia e da inovação.</h4>
-                <button><a href="https://petcompufma.org/exploracomp/index.php" target="_blank" style="color: inherit; text-decoration: none">Saiba mais</a></button>
-          </div>
-        </div>
-
         </div>
     </main>
 </body>

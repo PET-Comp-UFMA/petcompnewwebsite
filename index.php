@@ -56,7 +56,7 @@ function truncarTitulo($titulo, $limite = 30) {
 <?php include 'header.php'; ?>
 
 <div class="background">
-    <section class="text-container1">
+    <section class="text-PETCOMP">
         <img src="img/petcomptext.png" alt="text petcomp">
     </section> 
     <section class="petianos-container">
@@ -64,68 +64,79 @@ function truncarTitulo($titulo, $limite = 30) {
     </section>   
 </div>
 
-<div class="noticias">
-    
+<div class="noticias"> 
     <section class="ultimasnoticiastext">
         <h1>Últimas notícias</h1>
     </section>
+
     <div class="noticias-container">
-        <div class="container d-flex justify-content-md-center" id="center">
-            <div class="row align-items-center w-100">
-                <!-- Coluna Central -->
-                <div class="col-12 col-md-3 d-flex flex-column align-items-center">
-                    <?php if (isset($ultimasNoticias[0])): ?>
-                        <a href="noticia.php?id=<?php echo $ultimasNoticias[0]['id']; ?>" class="image-container noticia">
-                            <img src="<?php echo htmlspecialchars($ultimasNoticias[0]['foto']); ?>" 
-                                alt="Notícia Central" 
-                                class="img-fluid central-img">
-                            <div class="central-title titulo">
-                                <?php echo htmlspecialchars(truncarTitulo($ultimasNoticias[0]['titulo'], 60)); ?>
-                            </div>
-                        </a>
-                    <?php endif; ?>
+        <!-- Bloco noticias -->
+        <div class="image-container">
+            <a class="noticia-link" href="https://petcompufma.org/noticia.php?id=41" target="_blank">
+                <img class="img-notice" src="assets/images/noticias/notice1.png" alt="">
+                <div class= "grid-news-texts">
+                    <span class="title" target="_blank">Evento</span>
+                    <span class="title-overlay" >Seletivo 2025.2</span>
                 </div>
-                <!-- Coluna Lateral -->
-                <div class="col-12 col-md-3 d-flex flex-column align-items-center">
-                    <?php if (isset($ultimasNoticias[1])): ?>
-                        <a href="noticia.php?id=<?php echo $ultimasNoticias[1]['id']; ?>" class="image-container noticia">
-                            <img src="<?php echo htmlspecialchars($ultimasNoticias[1]['foto']); ?>" 
-                                alt="Notícia Lateral 1" 
-                                class="img-fluid lateral-img">
-                            <div class="lateral-title titulo">
-                                <?php echo htmlspecialchars(truncarTitulo($ultimasNoticias[1]['titulo'], 30)); ?>
-                            </div>
-                        </a>
-                    <?php endif; ?>
-                    
-                    <?php if (isset($ultimasNoticias[2])): ?>
-                        <a href="noticia.php?id=<?php echo $ultimasNoticias[2]['id']; ?>" class="image-container noticia">
-                            <img src="<?php echo htmlspecialchars($ultimasNoticias[2]['foto']); ?>" 
-                                alt="Notícia Lateral 2" 
-                                class="img-fluid lateral-img">
-                            <div class="lateral-title titulo">
-                                <?php echo htmlspecialchars(truncarTitulo($ultimasNoticias[2]['titulo'], 30)); ?>
-                            </div>
-                        </a>
-                    <?php endif; ?>
+            </a>
+            <a class="instagram-link" href="https://www.instagram.com/petcompufma/p/DOD4vNTgCDo/" target="_blank">
+                    <img id="logo-Notice" src="img\Social-Icons.png" alt="icone instagram">
+            </a>
+        </div>
+
+        <div class="image-container">
+            <a class="noticia-link" href="https://petcompufma.org/noticia.php?id=37" target="_blank">
+                <img class="img-notice" src="assets/images/noticias/notice2.png" alt="">
+                <div class= "grid-news-texts">
+                    <span class="title" target="_blank">Evento</span>
+                    <span class="title-overlay" target="_blank">Acalourada 2025.2</span>
                 </div>
-            </div>
+            </a>
+            <a class="instagram-link" href="https://www.instagram.com/petcompufma/p/DO583T5gPEU/" target="_blank">
+                    <img id="logo-Notice" src="img\Social-Icons.png" alt="icone instagram">
+            </a>
+        </div>
+
+        <div class="image-container">
+            <a class="noticia-link" href="https://online.fliphtml5.com/hyccq/wkkw/#p=8" target="_blank">
+                <img class="img-notice" src="assets/images/noticias/notice3.png" alt="">
+                <div class= "grid-news-texts">
+                    <span class="title"  target="_blank">Publicações</span>
+                    <span class="title-overlay" target="_blank">Revista PETComp</span>  
+                </div>
+            </a>
+            <a  class="instagram-link" href="https://www.instagram.com/p/DDHxxEiRddK/" target="_blank">
+                <img id="logo-Notice" src="img\Social-Icons.png" alt="icone instagram">
+            </a>
+        </div>
+
+        <div class="image-container">
+            <a class="noticia-link" href="https://petcompufma.org/noticia.php?id=38" target="_blank">
+                <img class="img-notice" src="assets/images/noticias/notice4.png" alt="">
+                <div class= "grid-news-texts">
+                    <span class="title" target="_blank">Evento</span>
+                    <span class="title-overlay" target="_blank">ExploraComp</span>
+                </div>
+            </a>
+            <a class="instagram-link" href="https://www.instagram.com/p/DJ9djMNAlza/?img_index=1" target="_blank">
+                <img id="logo-Notice" src="img\Social-Icons.png" alt="">
+            </a>
         </div>
     </div>
 </div>
-    <div class="separator">
-        <img src="img/separator.png" alt="separador">
-    </div>
-    <div class="minifundo">
-        <img src="img/minifundo.png" alt="minifundo" class="background-img">
-        <h2>Ensino, Pesquisa e Extensão</h2>
-        <ul>
-            <li class="minifundoliimg"> <img src="img/inovacao.png" alt="inovacaoimg"></li>
-            <li class="minifundoliimg"> <img src="img/lupa-de-pesquisa.png" alt="lupadepesquisaimg"></li>
-            <li class="minifundoliimg"> <img src="img/lampada-de-ideia.png" alt="lampadadeideiaimg"></li>
-        </ul>
-    </div> 
-    <div class="swiper carousel">
+
+<div class="minifundo">
+  <div class="grid-minifundo">
+    <h2>Ensino, Pesquisa e Extensão</h2>
+    <ul class="img-minifundo">
+      <li><img src="img/inovacao.png" alt="Inovação"></li>
+      <li><img src="img/lupa-de-pesquisa.png" alt="Pesquisa"></li>
+      <li><img src="img/lampada-de-ideia.png" alt="Ideias"></li>
+    </ul>
+  </div>
+</div>
+
+<div class="swiper carousel">
     <div class="swiper-wrapper">
         <a href="eventos.php" target="_blank" class="swiper-slide">
             <img src="img/eventos.png" alt="eventos">
@@ -151,13 +162,13 @@ function truncarTitulo($titulo, $limite = 30) {
             </div>
         </a>
     </div>
-    </div>
 
-
-    <button type="button" class="swiper-button-next"></button>
-    <button type="button" class="swiper-button-prev"></button>
+    <!-- botões e paginação devem estar dentro do swiper -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
     <div class="swiper-pagination"></div>
-    </div>
+</div>
+
     <div class="atividades">
         <h2 class="activities-title">Atividades</h2>
         <div class="activities-card">
@@ -204,9 +215,8 @@ function truncarTitulo($titulo, $limite = 30) {
         </div>
         <div class="text-card">
         <h2 class="final-text">O PETComp desenvolve diversas atividades em pesquisa, ensino e extensão. Clique em um dos cards para obter mais informações!</h2>
-        </div>
-        
-    </div>
+        </div>        
+    </div> 
 </div>
 
 <?php include 'footer.php'; ?>
