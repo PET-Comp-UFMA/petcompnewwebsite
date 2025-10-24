@@ -1,8 +1,8 @@
 <?php
     $hostname="localhost";
     $bd="petcom59_petcomp_db";
-    $usuario="petcom59_petcomp_site";
-    $senha="37muhgCQhG9rj2n";
+    $usuario=$_ENV['DB_USER'];
+    $senha=$_ENV['DB_PASSWORD'];
 
     try{
         $mysqli = mysqli_connect($hostname, $usuario, $senha, $bd);
