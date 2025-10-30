@@ -53,8 +53,9 @@ include 'header.php';
       <?php endforeach; ?>
 
       <div class="voltar">
-        <a href="noticias.php" class="button-back">Voltar</a>
+        <button onclick="history.back()" class="button-back">Voltar</button>
       </div>
+      
     </section>
   </main>
 

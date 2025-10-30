@@ -97,7 +97,7 @@
                 foreach ($campos as $coluna => $param) {
                   if (!empty($param)){
                     $param = mysqli_real_escape_string($mysqli, $param);
-                    $filtros[] = "$coluna LIKE '%$param'";
+                    $filtros[] = "$coluna LIKE '%$param%'";
                   }
                 }
 
@@ -109,7 +109,13 @@
               $num_results = mysqli_num_rows($result);
 
               if ($num_results > 0) {
-                while ($row = mysqli_fetch_array($result)):
+                for ($i = 0; $i < $num_results; $i++) :  
+                  $row = mysqli_fetch_array($result);  
+                  $baseUrl = url();
+                  $id = $row['id'];
+                  $parametros = "noticia.php?id=" . $id;
+                  $url =  $baseUrl . $parametros;
+
             ?>
 
             <li class="news-list__item">
@@ -124,15 +130,7 @@
                   </div>
                 </div>
 
-                <div class="card__body">
-                  <div class="card__resume">
-                    <p class="card__resume-title">Resumo</p>
-                    <p class="card__resume-text">
-                      <?php
-                        print_r($row['texto'])
-                      ?>
-                    </p>
-                  </div>
+
 
                   <div class="card__bottom">
                     <?php if (!empty($row['data'])): ?>
@@ -174,7 +172,7 @@
             </li>
             <div class="card__line"></div>
             
-            <?php endwhile; ?>
+            <?php endfor; ?>
           </ul>
           
         </section>
