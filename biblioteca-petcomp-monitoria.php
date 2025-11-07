@@ -11,7 +11,7 @@
     <main>
     <div class="container-header">    
         <h2>Biblioteca</h2>
-        <h3>Veja as monitorias que promovemos</h3>
+        <h3>Veja os nossos repositórios</h3>
         <h4><a href="index.php">Página Inicial</a></h4>
         <h4> → Biblioteca PETComp</h4>
     </div>
@@ -33,7 +33,7 @@
                                 <p>Vídeo aula</p>
                                 <p>Questionário</p>
                                 <p>Resumo</p>
-                                <a href="https://drive.google.com/drive/u/2/folders/1hBGSNqltpZr0msZtGBgRmkfAFXP6Qn4l" target="_blank" >Acessar</a>
+                                <a href="https://drive.google.com/drive/u/2/folders/1BRG3kbCbN3GanjB6fFonEYOZ_SBcCWTb" target="_blank" >Acessar</a>
                             </div>
                             <img src="img\algoritmos.png" alt="">
                         </div>
@@ -49,7 +49,7 @@
                                 <p>Vídeo aula</p>
                                 <p>Questionário</p>
                                 <p>Resumo</p>
-                                <a href="https://drive.google.com/drive/u/2/folders/1lgkO5emzPdYbeRuOvcedcDhmtHtW-U1U" target="_blank">Acessar</a>
+                                <a href="https://drive.google.com/drive/u/2/folders/1H9jp0xxiXwhaZyq2CdfjjAUE_223IYZR" target="_blank">Acessar</a>
                             </div>
                             <img src="img\calculo.png" alt="">
                         </div>
@@ -65,7 +65,7 @@
                                 <p>Vídeo aula</p>
                                 <p>Questionário</p>
                                 <p>Resumo</p>
-                                <a href="https://drive.google.com/drive/u/2/folders/1yi-2fwODYUSjB-d4QgMt4Liga4O5OhRq" target="_blank">Acessar</a>
+                                <a href="https://drive.google.com/drive/u/2/folders/1UzQkDiYA8eF3hgz5VSPWam_ikmOjp-Ak" target="_blank">Acessar</a>
                             </div>
                             <img src="img\ed1.png" alt="">
                         </div>
@@ -81,7 +81,7 @@
                                 <p>Vídeo aula</p>
                                 <p>Questionário</p>
                                 <p>Resumo</p>
-                                <a href="https://drive.google.com/drive/u/2/folders/1zI5vU7jCRf1nQ2o9HIIpAQSWjG_7Pjn8" target="_blank">Acessar</a>
+                                <a href="https://drive.google.com/drive/u/2/folders/1NGBpcdmz55_a75jpLyvWr06O0n_uew2_" target="_blank">Acessar</a>
                             </div>
                             <img src="img\lp1.png" alt="">
                         </div>
@@ -97,7 +97,7 @@
                                 <p>Vídeo aula</p>
                                 <p>Questionário</p>
                                 <p>Resumo</p>
-                                <a href="https://drive.google.com/drive/u/2/folders/1XRzrnR91LlKKRIibVEjyXA0j5u-NeSGd" target="_blank">Acessar</a>
+                                <a href="https://drive.google.com/drive/u/2/folders/1g-BFLtKRUr6DkF3GCqjw8ykA9uSq0_z6" target="_blank">Acessar</a>
                             </div>
                             <img src="img\mdl.png" alt="">
                         </div>
