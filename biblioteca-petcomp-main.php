@@ -8,15 +8,14 @@
 
 <body>
   <?php include('header.php') ?>
-    <main>
+  <main>
     <div class="container-header">    
-        <h2>Biblioteca</h2>
-        <h3>Veja os nossos repositórios</h3>
-        <h4><a href="index.php">Página Inicial</a></h4>
-        <h4> → Biblioteca PETComp</h4>
-      </div>
+      <h2>Biblioteca</h2>
+      <h3>Veja os nossos repositórios</h3>
+      <h4><a href="index.php">Página Inicial</a></h4>
+      <h4> → Biblioteca PETComp</h4>
+    </div>
       
-  <main class="biblioteca-content">
     <div class="container-body">
       <p>Com o objetivo de apoiar tanto a comunidade acadêmica quanto a local, o PETComp oferece uma variedade de documentos e materiais de apoio que estão disponíveis para consulta a qualquer momento. Esses recursos foram cuidadosamente selecionados para atender às necessidades de estudantes, professores e pesquisadores, e podem ser acessados facilmente através do nosso site. Abaixo, você encontrará uma coleção de arquivos de auxílio educacional, que abrangem diferentes áreas do conhecimento e têm o intuito de complementar e enriquecer o aprendizado de todos.  </p>        
     </div>
@@ -37,7 +36,7 @@
         </div>
       </a>
 
-      <a href="#" class="biblioteca-card">
+      <a href="biblioteca-petcomp-jogos.php" class="biblioteca-card">
         <div class="card-imagem">
           <img src="assets/svg/LOGO-Jogos-Computacionais.svg" alt="logo jogos">
         </div>
@@ -61,6 +60,6 @@
     </div>
   </main>
 
+  <?php include('footer.php') ?>
 </body>
-<?php include('footer.php') ?>
 </html>
