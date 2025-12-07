@@ -1,15 +1,14 @@
 <?php
    require_once("conexao.php");
-
    $maximoPetianosPorPagina = 20; 
    $page = isset($_GET["page"]) ? filter_var($_GET["page"], FILTER_VALIDATE_INT) : 1; // garantindo que a entrada é um inteiro
 
    $total_petianos = mysqli_fetch_assoc(mysqli_query($mysqli, "SELECT count(id) AS id FROM petianos"))['id'];
    $pages = ceil($total_petianos / $maximoPetianosPorPagina);
-   
    // Redireciona caso a pagina esteja fora do intervalo legal
-   if ($page < 1) header("Location: integrantes.php?page=1");
-   if ($page > $pages) header("Location: integrantes.php?page=$pages");
+   global $root;
+   if ($page < 1) header("Location: /$root/integrantes/1");
+   if ($page > $pages) header("Location: /$root/integrantes/$pages");
 
    $start = ($page - 2) * $maximoPetianosPorPagina;  // valor negativo pra pagina 1, 0 pra pagina > 1
 
@@ -126,18 +125,19 @@
       </div>
       <nav>
          <?php $previous = $page - 1; $next = $page + 1; ?>
+         <script>var page = <?= $page ?></script> 
          <ul class="pagination">
             <li class="page-item" id="previous">
-               <a class="page-link" href="?page=<?= $previous ?>" aria-label="Previous">
+               <a class="page-link" href="integrantes/<?= $previous ?>" aria-label="Previous">
                   <span aria-hidden="true"><</span>
                   <span class="sr-only">Previous</span>
                </a>
             </li>
             <?php for ($i = 1; $i <= $pages; $i++): ?>
-               <li class="page-item"><a class="page-link" href="?page=<?= $i ?>"><?= $i ?></a></li>
+               <li class="page-item"><a class="page-link" href="integrantes/<?= $i ?>"><?= $i ?></a></li>
             <?php endfor; ?>
             <li class="page-item" id="next">
-               <a class="page-link" href="?page=<?= $next ?>" aria-label="Next">
+               <a class="page-link" href="integrantes/<?= $next ?>" aria-label="Next">
                   <span aria-hidden="true">></span>
                   <span class="sr-only">Next</span>
                </a>
