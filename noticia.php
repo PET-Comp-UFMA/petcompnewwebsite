@@ -1,12 +1,10 @@
 <?php
 require_once 'conexao.php';
-echo $_SERVER["REQUEST_URI"];
 // Valida e obtém o parâmetro `id` da URL
 $id = isset($_GET["id"]) ? filter_var($_GET["id"], FILTER_VALIDATE_INT) : null; // garantindo que a entrada é um inteiro
-global $root;
 if (!$id) {
     // Redireciona ou finaliza a execução
-    header("Location: /$root/noticias");
+    header("Location: /noticias");
     exit;
 }
 
@@ -18,7 +16,7 @@ $stmt->bind_result($titulo, $textoRaw, $fotoRaw);
 
 if (!$stmt->fetch()) {
     // Se não encontrou a notícia, redireciona
-    header("Location: /$root/noticias");
+    header("Location: /noticias");
     exit;
 }
 $stmt->close();

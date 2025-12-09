@@ -1,5 +1,5 @@
 <?php 
-    $root = "petcomp-newwebsite";
+    $root = "/";
     # regex que aceita qualquer string caso seja precedida por '/'
     # representa os parametros das paginas dinamicas.
     # pode ser qualquer palavra pois a página que deve validar o parametro.
@@ -7,24 +7,23 @@
 
     $routes = [
         $root => function () { require("index.php"); },
-        "$root/sobre" => function () { require("sobre.php"); },
-        "$root/sobre" => function () { require("sobre.php"); },
-        "$root/monitoria" => function () { require("monitoria.php"); },
-        "$root/desenvolvimento" => function () { require("desenvolvimento.php"); },
-        "$root/minicurso" => function () { require("minicurso.php"); },
-        "$root/revista" => function () { require("revista.php"); },
-        "$root/banners" => function () { require("banners.php"); },
-        "$root/noticias" => function () { require("noticias.php"); },
-        "$root/publicacoes" => function () { require("publicacoes.php"); },
-        "$root/biblioteca" => function () { require("biblioteca-petcomp-monitoria.php"); },
-        "$root/podcast" => function () { require("podcast.php"); },
-        "$root/eventos" => function () { require("eventos.php"); },
-        "$root/registros" => function () { require("registros.php"); },
-        "$root/noticias$param" => function ($id) {
+        "sobre" => function () { require("sobre.php"); },
+        "monitoria" => function () { require("monitoria.php"); },
+        "desenvolvimento" => function () { require("desenvolvimento.php"); },
+        "minicurso" => function () { require("minicurso.php"); },
+        "revista" => function () { require("revista.php"); },
+        "banners" => function () { require("banners.php"); },
+        "noticias" => function () { require("noticias.php"); },
+        "publicacoes" => function () { require("publicacoes.php"); },
+        "biblioteca" => function () { require("biblioteca-petcomp-monitoria.php"); },
+        "podcast" => function () { require("podcast.php"); },
+        "eventos" => function () { require("eventos.php"); },
+        "registros" => function () { require("registros.php"); },
+        "noticias$param" => function ($id) {
             $_GET['id'] = $id;
             require("noticia.php");
         },
-        "$root/integrantes$param" => function ($id) { 
+        "integrantes$param" => function ($id) { 
             $_GET['page'] = $id;
             require("integrantes.php");
         }          

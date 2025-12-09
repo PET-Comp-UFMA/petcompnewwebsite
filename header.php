@@ -2,7 +2,7 @@
     <img id="logo" src="img/logo.png" alt="Logo PETComp">
     <nav class="navbar">
         <div class="dropdown">
-            <a href="" class="nodropbtn">Início</a>
+            <a href="/" class="nodropbtn">Início</a>
         </div>
         <div class="dropdown">
             <a href="#" class="dropbtn">Conheça o PETComp <span class="material-icons">arrow_drop_down</span></a>

@@ -6,9 +6,8 @@
    $total_petianos = mysqli_fetch_assoc(mysqli_query($mysqli, "SELECT count(id) AS id FROM petianos"))['id'];
    $pages = ceil($total_petianos / $maximoPetianosPorPagina);
    // Redireciona caso a pagina esteja fora do intervalo legal
-   global $root;
-   if ($page < 1) header("Location: /$root/integrantes/1");
-   if ($page > $pages) header("Location: /$root/integrantes/$pages");
+   if ($page < 1) header("Location: /integrantes/1");
+   if ($page > $pages) header("Location: /integrantes/$pages");
 
    $start = ($page - 2) * $maximoPetianosPorPagina;  // valor negativo pra pagina 1, 0 pra pagina > 1
 
