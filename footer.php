@@ -26,10 +26,10 @@
                 </h2>
                 <ul class="ulist">
                     <li class="litem">
-                        <a class="item-button" href="sobre.php">Sobre nós</a>
+                        <a class="item-button" href="sobre">Sobre nós</a>
                     </li>
                     <li class="litem">
-                        <a target="_blank" class="item-button" href="integrantes.php">Integrantes</a>
+                        <a target="_blank" class="item-button" href="integrantes">Integrantes</a>
                     </li>
                 </ul>
             </div>
@@ -39,13 +39,13 @@
                 </h2>
                 <ul class="ulist">
                     <li class="litem">
-                        <a target="_blank"class="item-button" href="monitoria.php">Monitoria</a>
+                        <a target="_blank"class="item-button" href="monitoria">Monitoria</a>
                     </li>
                     <li class="litem">
-                        <a target="_blank" class="item-button" href="desenvolvimento.php">Fáb. Software</a>
+                        <a target="_blank" class="item-button" href="desenvolvimento">Fáb. Software</a>
                     </li>
                     <li class="litem">
-                        <a target="_blank" class="item-button" href="minicurso.php">Minicursos e Oficinas</a>
+                        <a target="_blank" class="item-button" href="minicurso">Minicursos e Oficinas</a>
                     </li>
                 </ul>
             </div>
@@ -55,10 +55,10 @@
                 </h2>
                 <ul class="ulist">
                     <li class="litem">
-                        <a target="_blank" class="item-button" href="publicacoes.php">Trabalhos Publicados</a>
+                        <a target="_blank" class="item-button" href="publicacoes">Trabalhos Publicados</a>
                     </li>
                     <li class="litem">
-                        <a target="_blank" class="item-button" href="revista.php">Revista PETComp</a>
+                        <a target="_blank" class="item-button" href="revista">Revista PETComp</a>
                     </li>
                 </ul>
             </div>
@@ -68,10 +68,10 @@
                 </h2>
                 <ul class="ulist">
                     <li class="litem">
-                        <a target="_blank" class="item-button" href="biblioteca-petcomp-monitoria.php">Biblioteca PETComp</a>
+                        <a target="_blank" class="item-button" href="biblioteca">Biblioteca PETComp</a>
                     </li>
                     <li class="litem">
-                        <a target="_blank" class="item-button" href="podcast.php">PODCast</a>
+                        <a target="_blank" class="item-button" href="podcast">PODCast</a>
                     </li>
                 </ul>
             </div>

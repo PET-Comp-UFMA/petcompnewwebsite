@@ -28,7 +28,7 @@
     <div class="container-header">
       <h2>Notícias</h2>
       <h3>Confira as noticias mais recentes sobre o que fizemos</h3>
-      <h4><a href="index.php">Página Inicial</a></h4>
+      <h4><a href="">Página Inicial</a></h4>
       <h4> → Notícias</h4>
     </div>
 
@@ -48,7 +48,7 @@
       <section class="container">
         <h2>Buscar por: </h2>
         
-          <form id="search-form" action="noticias.php" method="get" class="filtro">
+          <form id="search-form" action="noticias" method="get" class="filtro">
             <div class="filtro__field">
               <label for="titulo" class="filtro__label">Título</label>
               <input
@@ -111,10 +111,8 @@
               if ($num_results > 0) {
                 for ($i = 0; $i < $num_results; $i++) :  
                   $row = mysqli_fetch_array($result);  
-                  $baseUrl = url();
                   $id = $row['id'];
-                  $parametros = "noticia.php?id=" . $id;
-                  $url =  $baseUrl . $parametros;
+                  $url =  "noticias/" . $id;
 
             ?>
 
@@ -123,7 +121,7 @@
                 <div class="card__details">
                   <div class="card__meta card__meta--title">
                     <h5 class="card__title">
-                      <a href="<?php echo $parametros ?>" class="card__link">
+                      <a href="<?= $url ?>" class="card__link">
                         <?php print_r($row['titulo']) ?>
                       </a>
                     </h5>
@@ -220,7 +218,7 @@
       const formData = new FormData(this);
       const urlParams = new URLSearchParams(formData);
 
-      fetch("noticias.php?" + urlParams.toString())
+      fetch("noticias?" + urlParams.toString())
         .then(response => response.text())
         .then(html => {
           const parser = new DOMParser();

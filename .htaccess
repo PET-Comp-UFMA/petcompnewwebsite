@@ -1,0 +1,10 @@
+RewriteEngine On
+
+# Redireciona para router.php se o arquivo ou diretorio nao existir
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ router.php [QSA,L]
+
+<IfModule mime_module>
+  AddHandler application/x-httpd-php .php
+</IfModule>

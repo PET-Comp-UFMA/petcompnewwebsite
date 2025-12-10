@@ -35,6 +35,7 @@
 
     <script src="js/index.js" defer></script>
 
+
     <?php 
         if (isset($cssFiles) && is_array($cssFiles)) {
             foreach ($cssFiles as $cssFile) {
