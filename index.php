@@ -71,7 +71,7 @@ function truncarTitulo($titulo, $limite = 30) {
     <div class="noticias-container">
         <!-- Bloco noticias -->
         <div class="image-container">
-            <a class="noticia-link" href="https://petcompufma.org/noticias/41" target="_blank">
+            <a class="noticia-link" href="noticias/41" target="_blank">
                 <img class="img-notice" src="assets/images/noticias/notice1.png" alt="">
                 <div class= "grid-news-texts">
                     <span class="title" target="_blank">Evento</span>
@@ -84,7 +84,7 @@ function truncarTitulo($titulo, $limite = 30) {
         </div>
 
         <div class="image-container">
-            <a class="noticia-link" href="https://petcompufma.org/noticias/37" target="_blank">
+            <a class="noticia-link" href="noticias/37" target="_blank">
                 <img class="img-notice" src="assets/images/noticias/notice2.png" alt="">
                 <div class= "grid-news-texts">
                     <span class="title" target="_blank">Evento</span>
@@ -110,7 +110,7 @@ function truncarTitulo($titulo, $limite = 30) {
         </div>
 
         <div class="image-container">
-            <a class="noticia-link" href="https://petcompufma.org/noticias/38" target="_blank">
+            <a class="noticia-link" href="noticias/38" target="_blank">
                 <img class="img-notice" src="assets/images/noticias/notice4.png" alt="">
                 <div class= "grid-news-texts">
                     <span class="title" target="_blank">Evento</span>

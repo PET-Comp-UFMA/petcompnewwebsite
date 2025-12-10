@@ -1,13 +1,18 @@
 <?php
+   global $root;
    require_once("conexao.php");
    $maximoPetianosPorPagina = 20; 
-   $page = isset($_GET["page"]) ? filter_var($_GET["page"], FILTER_VALIDATE_INT) : 1; // garantindo que a entrada é um inteiro
+   $page = $_GET["page"];
+   if (isset($page) && $page != ""){
+      $page = filter_var($_GET["page"], FILTER_VALIDATE_INT);
+   }
+   else $page = 1;
 
    $total_petianos = mysqli_fetch_assoc(mysqli_query($mysqli, "SELECT count(id) AS id FROM petianos"))['id'];
    $pages = ceil($total_petianos / $maximoPetianosPorPagina);
    // Redireciona caso a pagina esteja fora do intervalo legal
-   if ($page < 1) header("Location: /integrantes/1");
-   if ($page > $pages) header("Location: /integrantes/$pages");
+   if ($page < 1) header("Location: /$root");
+   if ($page > $pages) header("Location: /$root");
 
    $start = ($page - 2) * $maximoPetianosPorPagina;  // valor negativo pra pagina 1, 0 pra pagina > 1
 

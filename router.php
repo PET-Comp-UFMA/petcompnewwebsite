@@ -1,29 +1,34 @@
+<?php $root = trim(dirname($_SERVER['SCRIPT_NAME']), '/\\'); 
+?>
+<base href="<?= $root ? "/$root/" : '/' ?>">
+
 <?php 
-    $root = "/";
+    //$root = "petcomp-newwebsite";
+    //echo "root: " . $root . "<br>"; // imprime
     # regex que aceita qualquer string caso seja precedida por '/'
     # representa os parametros das paginas dinamicas.
     # pode ser qualquer palavra pois a página que deve validar o parametro.
     $param = "[/]?(\w*)"; 
 
     $routes = [
-        $root => function () { require("index.php"); },
-        "sobre" => function () { require("sobre.php"); },
-        "monitoria" => function () { require("monitoria.php"); },
-        "desenvolvimento" => function () { require("desenvolvimento.php"); },
-        "minicurso" => function () { require("minicurso.php"); },
-        "revista" => function () { require("revista.php"); },
-        "banners" => function () { require("banners.php"); },
-        "noticias" => function () { require("noticias.php"); },
-        "publicacoes" => function () { require("publicacoes.php"); },
-        "biblioteca" => function () { require("biblioteca-petcomp-monitoria.php"); },
-        "podcast" => function () { require("podcast.php"); },
-        "eventos" => function () { require("eventos.php"); },
-        "registros" => function () { require("registros.php"); },
-        "noticias$param" => function ($id) {
+        "$root/" => function () { require("index.php"); },
+        ($root ? "$root/sobre": "sobre") => function () { require("sobre.php"); },
+        ($root ? "$root/monitoria": "monitoria") => function () { require("monitoria.php"); },
+        ($root ? "$root/desenvolvimento": "desenvolvimento") => function () { require("desenvolvimento.php"); },
+        ($root ? "$root/minicurso": "minicurso") => function () { require("minicurso.php"); },
+        ($root ? "$root/revista": "revista") => function () { require("revista.php"); },
+        ($root ? "$root/banners": "banners") => function () { require("banners.php"); },
+        ($root ? "$root/noticias": "noticias") => function () { require("noticias.php"); },
+        ($root ? "$root/publicacoes": "publicacoes") => function () { require("publicacoes.php"); },
+        ($root ? "$root/biblioteca": "biblioteca") => function () { require("biblioteca-petcomp-monitoria.php"); },
+        ($root ? "$root/podcast": "podcast") => function () { require("podcast.php"); },
+        ($root ? "$root/eventos": "eventos") => function () { require("eventos.php"); },
+        ($root ? "$root/registros": "registros") => function () { require("registros.php"); },
+        ($root ? "$root/noticias$param": "noticias$param") => function ($id) {
             $_GET['id'] = $id;
             require("noticia.php");
         },
-        "integrantes$param" => function ($id) { 
+        ($root ? "$root/integrantes$param": "integrantes$param") => function ($id) { 
             $_GET['page'] = $id;
             require("integrantes.php");
         }          
@@ -47,5 +52,6 @@
 
     $path = parse_url($_SERVER["REQUEST_URI"], PHP_URL_PATH); # extraindo url digitada
     $path = ltrim($path, '/'); // removendo '/' à esquerda
+    //echo "url: " . $path . "<br>";
     route($path, $routes); // redirecionando a url pra rota correspondente
 ?>
