@@ -59,7 +59,7 @@
                         de Computação, e procura guiar os calouros através da universidade e do curso, além de mostrar as
                         oportunidades que a universidade oferece tanto de forma pessoal como profissional.
                     </h4>
-                    <button>Saiba mais</button>
+                    <button><a href="https://petcompufma.org/acalourada/index.php" target="_blank" style="color: inherit; text-decoration: none">Saiba mais</a></button>
                 </div>
             </div>
 
@@ -72,7 +72,7 @@
                         com o curso de Graduação de Ciência da Computação da UFMA apresentando as oportunidades dentro da graduação. 
                         O EAComp é organizado pelo Programa de Educação Tutorial do curso de Ciência da Computação (PETComp).
                     </h4>
-                    <button>Saiba mais</button>
+                    <button><a href="https://petcompufma.org/eacomp/index.html" target="_blank" style="color: inherit; text-decoration: none">Saiba mais</a></button>
                 </div>
             </div>
 
@@ -89,7 +89,7 @@
                         possam trocar experiências, aprender e divulgar ações bem-sucedidas no contexto do desenvolvimento e disponibilização 
                         de produções técnicas inovadoras.
                     </h4>
-                    <button>Saiba mais</button>
+                    <button><a href="https://eea.ufma.br/#:~:text=O%20I%20EEA%20da%20UFMA%20tem,a%20Ag%C3%AAncia%20de%20Inova%C3%A7%C3%A3o%2C%20Empreendedorismo%2C" target="_blank" style="color: inherit; text-decoration: none">Saiba mais</a></button>
                 </div>
             </div>
 
@@ -103,7 +103,7 @@
                         encontro é caracterizado por assembleias, grupos de discussão e trabalhos, apresentação de trabalhos acadêmicos, 
                         atividades culturais, além da troca de experiências entre discentes e tutores nordestinos.
                     </h4>
-                    <button>Saiba mais</button>
+                    
                 </div>
             </div>
 
@@ -119,7 +119,7 @@
                         referência nos Estados do Maranhão, Ceará e Piauí e região. Além disso, o evento colabora e contribui com a consolidação
                         dos Programas de Pós-Graduação da região.
                     </h4>
-                    <button>Saiba mais</button>
+                    <button><a href="https://petcompufma.org/ercemapi/index.php" target="_blank" style="color: inherit; text-decoration: none">Saiba mais</a></button>
                 </div>
             </div>
 
@@ -135,7 +135,6 @@
                         acesso a temas e discussões recentes na área, através de diversas atividades, como palestras, minicursos, painéis de 
                         discussão e apresentação de trabalhos científicos.
                     </p>
-                    <button>Saiba mais</button>
                 </div>
             </div>
 
@@ -148,7 +147,6 @@
                         vinculados ao programa com o objetivo de discutir, coletivamente, temas e questões relevantes para a manutenção e o 
                         desenvolvimento do PET nacionalmente.
                     </h4>
-                    <button>Saiba mais</button>
                 </div>
             </div>
         </div>
