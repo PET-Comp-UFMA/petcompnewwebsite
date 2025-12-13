@@ -11,7 +11,7 @@
                 <a href="integrantes">Integrantes</a>
             </div>
         </div>
-        <div class="dropdown">
+        <div class="dropdown dropdown_projetos">
             <a href="#" class="dropbtn">Projetos <span class="material-icons">arrow_drop_down</span></a>
             <div class="dropdown-content">
                 <a href="monitoria">Monitoria</a>
@@ -30,7 +30,7 @@
         <div class="dropdown">
             <a href="noticias">Notícias</a>
         </div>
-        <div class="dropdown">
+        <div class="dropdown dropdown_produtos">
             <a href="#" class="dropbtn">Produtos <span class="material-icons">arrow_drop_down</span></a>
             <div class="dropdown-content">
                 <a href="biblioteca">Biblioteca PETComp</a>
