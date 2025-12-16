@@ -22,4 +22,4 @@ jobs:
             **/.git*
             **/.git*/**
             **/node_modules/**
-            **/.htaccess # server-specific config
+            **/.htaccess
