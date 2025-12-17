@@ -4,7 +4,7 @@
     $title = "Biblioteca";
     $cssFiles = ['css\biblioteca-main.css', 'css/biblioteca.css'];
     include "head.php";
-?>
+  ?>
 
 <body>
   <?php include('header.php') ?>
@@ -47,7 +47,7 @@
         </div>
       </a>
 
-      <a href="#" class="biblioteca-card">
+      <a href="biblioteca-petcomp-minicursos.php" class="biblioteca-card">
         <div class="card-imagem">
           <img src="assets/svg/logo-minicursos.svg" alt="logo minicursos">
         </div>
