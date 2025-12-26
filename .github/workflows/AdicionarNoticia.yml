@@ -1,0 +1,43 @@
+name: Adicionar Notícia no Banco de Dados
+
+on:
+  workflow_dispatch:
+    inputs:
+      titulo:
+        description: "Titulo da notícia: "
+        required: true
+      texto:
+        description: "Texto da notícia: "
+        required: true
+      data:
+        description: "Data da notícia YYYY-MM-DD (Caso não informado, usa a atual) : "
+        required: false
+      foto:
+        description: "Nome da foto da notícia no servidor: "
+        required: false
+        
+jobs:
+  inserirNoticia:
+    runs-on: ubuntu-latest
+    container:
+      image: mysql:8.0
+    steps:
+     - name: Inserir notícia no Banco de Dados
+       env:
+        TITULO: ${{ github.event.inputs.titulo }} 
+        TEXTO: ${{ github.event.inputs.texto }}
+        FOTO: ${{ github.event.inputs.foto }}
+        DATA: ${{ github.event.inputs.data }}
+       run: |
+          export LANG=C.UTF-8
+          export LC_ALL=C.UTF-8
+          if [ -z "$DATA" ]; then
+            DATA=$(date +"%Y-%m-%d")
+          fi
+          mysql \
+            -h ${{ secrets.DB_HOST }} \
+            -u ${{ secrets.DB_USER }} \
+            -p${{ secrets.DB_PASSWORD }} \
+            ${{ secrets.DB_NAME }} \
+            -e "INSERT INTO noticias (titulo, texto, data, foto)
+            VALUES ('$TITULO', '$TEXTO', '$DATA', '$FOTO');"

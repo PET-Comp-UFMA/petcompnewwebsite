@@ -1,0 +1,30 @@
+name: Desativar Petiano no Banco de Dados
+
+on:
+  workflow_dispatch:
+    inputs:
+      primeiro_nome:
+        description: "Primeiro nome do petiano: "
+        required: true
+      ultimo_nome:
+        description: "Último nome do petiano: "
+        required: true  
+jobs:
+  desativarPetiano:
+    runs-on: ubuntu-latest
+    container:
+      image: mysql:8.0
+    steps:
+     - name: Desativar integrante no Banco de Dados
+       env:
+        PRIMEIRO_NOME: ${{ github.event.inputs.primeiro_nome }}
+        ULTIMO_NOME: ${{ github.event.inputs.ultimo_nome }}
+       run: |
+          mysql \
+            -h ${{ secrets.DB_HOST }} \
+            -u ${{ secrets.DB_USER }} \
+            -p${{ secrets.DB_PASSWORD }} \
+            ${{ secrets.DB_NAME }} \
+            -e "UPDATE petianos 
+                SET ativo = 0
+                WHERE primeiro_nome = '$PRIMEIRO_NOME' AND ultimo_nome = '$ULTIMO_NOME' AND ativo = 1;"
