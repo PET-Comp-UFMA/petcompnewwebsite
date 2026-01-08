@@ -59,7 +59,7 @@ function truncarTitulo($titulo, $limite = 30) {
         <img src="img/petcomptext.png" alt="text petcomp">
     </section> 
     <section class="petianos-container">
-        <img src="img/foto_header.svg" alt="imagem dos petianos" id="petianosimg">
+        <img src="img/foto_headerP.svg" alt="imagem dos petianos" id="petianosimg">
     </section>   
 </div>
 
