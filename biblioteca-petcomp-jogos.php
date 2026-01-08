@@ -19,7 +19,7 @@
   <div class="main-content">
     <a href="#" class="biblioteca-card">
       <div class="imagens">
-        <img src="img/algoritmizando.png" alt="imagem algoritmizando">
+        <img src="img\algoritimizando - jogo.svg" alt="imagem algoritmizando">
       </div>
       <div class="card-content">
         <h3>Algoritmizando</h3>
@@ -30,7 +30,7 @@
 
     <a href="#" class="biblioteca-card">
       <div class="imagens">
-        <img src="img/bingo-binario.png" alt="imagem bingo">
+        <img src="img\bingo_binario- jogo.svg" alt="imagem bingo">
       </div>
       <div class="card-content">
         <h3>Bingo Binário</h3>
@@ -41,7 +41,7 @@
 
     <a href="#" class="biblioteca-card">
       <div class="imagens">
-        <img src="img/boliche.png" alt="imagem boliche">
+        <img src="img\boliche_binario - jogo.svg" alt="imagem boliche">
       </div>
       <div class="card-content">
         <h3>Boliche computacional</h3>
@@ -52,7 +52,7 @@
 
     <a href="#" class="biblioteca-card">
       <div class="imagens">
-        <img src="img/couptacao.png" alt="imagem couptacao">
+        <img src="img\couptacao - jogo.svg" alt="imagem couptacao">
       </div>
       <div class="card-content">
         <h3>Couptação</h3>
@@ -63,7 +63,7 @@
 
     <a href="#" class="biblioteca-card">
       <div class="imagens">
-        <img src="img/desvendando-programadores.png" alt="imagem jogo">
+        <img src="img\desvendando- jogo.svg" alt="imagem jogo">
       </div>
       <div class="card-content">
         <h3>Desvendando os programadores</h3>
@@ -74,7 +74,7 @@
 
     <a href="#" class="biblioteca-card">
       <div class="imagens">
-        <img src="img/encruzilhados.png" alt="imagem encruzilhados">
+        <img src="img\Encruzilhados - jogo.svg" alt="imagem encruzilhados">
       </div>
       <div class="card-content">
         <h3>Encruzilhados</h3>
@@ -85,7 +85,7 @@
 
     <a href="#" class="biblioteca-card">
       <div class="imagens">
-        <img src="img/fecha-conta.png" alt="imagem fecha a conta">
+        <img src="img\fecha_conta - jogo.svg" alt="imagem fecha a conta">
       </div>
       <div class="card-content">
         <h3>Fecha a Conta</h3>
@@ -96,7 +96,7 @@
 
     <a href="#"class="biblioteca-card">
       <div class="imagens">
-        <img src="img/pure-logic.png" alt="imagem pure logic">
+        <img src="img\pure_logic - jogo.svg" alt="imagem pure logic">
       </div>
       <div class="card-content">
         <h3>Pure Logic</h3>
@@ -107,7 +107,7 @@
 
     <a href="#"class="biblioteca-card">
       <div class="imagens">
-        <img src="img/limitando.png" alt="imagem limitando">
+        <img src="img\l1m1tand0 - jogo.svg" alt="imagem limitando">
       </div>
       <div class="card-content">
         <h3>L1M1TANDO</h3>
@@ -118,7 +118,7 @@
 
     <a href="#"class="biblioteca-card">
       <div class="imagens">
-        <img src="img/tab-algorithm.png" alt="imagem jogo">
+        <img src="img\tab_algorithm - jogo.svg" alt="imagem jogo">
       </div>
       <div class="card-content">
         <h3>Tab algorithm</h3>
@@ -129,7 +129,7 @@
 
     <a href="#"class="biblioteca-card">
       <div class="imagens">
-        <img src="img/resolve-pra-mim.png" alt="imagem jogo">
+        <img src="img\resolve_p_mim - jogo.svg" alt="imagem jogo">
       </div>
       <div class="card-content">
         <h3>Resolve Pra Mim</h3>
@@ -140,7 +140,7 @@
 
     <a href="#"class="biblioteca-card">
       <div class="imagens">
-        <img src="img/tabuleiro-algoritmos.png" alt="imagem jogo">
+        <img src="img\tabuleiro_algoritmo- jogo.svg" alt="imagem jogo">
       </div>
       <div class="card-content">
         <h3>Tabuleiro De Algoritmos</h3>
@@ -151,7 +151,7 @@
 
     <a href="#"class="biblioteca-card">
       <div class="imagens">
-        <img src="img/tab-quiz.png" alt="imagem jogo">
+        <img src="img\tabquiz - jogo.svg" alt="imagem jogo">
       </div>
       <div class="card-content">
         <h3>Tab-Quiz</h3>
@@ -162,7 +162,7 @@
 
     <a href="#"class="biblioteca-card">
       <div class="imagens">
-        <img src="img/while.jpg" alt="imagem jogo">
+        <img src="img\while- jogo.svg" alt="imagem jogo">
       </div>
       <div class="card-content">
         <h3>While</h3>
