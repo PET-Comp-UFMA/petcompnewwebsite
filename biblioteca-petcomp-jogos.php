@@ -16,6 +16,11 @@
     <h4> → Material Jogos</h4>
   </div>
 
+  <?php 
+    $href = 'biblioteca-petcomp-main.php';
+    include('components/btn-voltar.php');
+  ?>
+
   <div class="main-content">
     <a href="#" class="biblioteca-card">
       <div class="imagens">

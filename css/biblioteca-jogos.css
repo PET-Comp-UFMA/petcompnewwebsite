@@ -29,15 +29,15 @@
 .imagens {
   border-radius: 1rem 0 0 1rem; /* 16px */
   overflow: hidden;
-  border: 0.125rem solid #E8E8E9; /* 2px */
+  border: 0.125rem solid #e8e8e9; /* 2px */
   width: 8.4375rem; /* 135px */
   flex-shrink: 0;
   object-fit: cover;
 }
 
 .card-content {
-  color: #FFF;
-  background-color: #060B3F;
+  color: #fff;
+  background-color: #060b3f;
   display: flex;
   flex-direction: column;
   gap: 0.75rem; /* 12px */
@@ -64,17 +64,17 @@
   align-items: center;
   flex-shrink: 0;
   border-radius: 1.25rem; /* 20px */
-  border: 0.125rem solid #047CE0; /* 2px */
-  color: #047CE0;
-  background-color: #060B3F;
+  border: 0.125rem solid #047ce0; /* 2px */
+  color: #047ce0;
+  background-color: #060b3f;
   cursor: pointer;
   align-self: flex-end;
   transition: all 0.3s ease;
 }
 
 .download-btn:hover {
-  background-color: #047CE0;
-  color: #FFF;
+  background-color: #047ce0;
+  color: #fff;
 }
 
 .pagination {
@@ -88,8 +88,8 @@
 .box-pagination {
   width: 3.75rem;
   height: 3.75rem;
-  background-color: #060B3F;
-  color: #FFFFFF;
+  background-color: #060b3f;
+  color: #ffffff;
   display: flex;
   justify-content: center;
   text-align: center;
@@ -98,17 +98,17 @@
   cursor: pointer;
   font-weight: 400;
   padding: 1rem;
-  transition: all 0.3s ease;;
+  transition: all 0.3s ease;
 }
 
 .box-pagination.ativo {
-  background-color: #047CE0;
+  background-color: #047ce0;
   transform: scale(1.1);
   transition: all 0.3s ease;
 }
 
 .box-pagination:hover {
-  background-color: #047CE0;
+  background-color: #047ce0;
   transform: scale(1.05);
 }
 

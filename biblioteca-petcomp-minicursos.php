@@ -17,6 +17,11 @@
     <h4> → Material Minicursos</h4>
   </div>
 
+  <?php 
+    $href = 'biblioteca-petcomp-main.php';
+    include('components/btn-voltar.php');
+  ?>
+
   <div class="main-content" id="aba-1">
     <a href="#" class="biblioteca-card">
       <div class="imagens">
