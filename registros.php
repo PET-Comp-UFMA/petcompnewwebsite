@@ -21,14 +21,17 @@
         <h2 class="titulo">REGISTROS PETCOMP 2025</h2>
     </div>
   </div>
+  <div class="atividade">
+      <div class="fundo"></div>
+      <h3>Marapet</h3>
+      <div class="galeria" data-evento="marapet2025">
+      </div>
+    </div>
 
     <div class="atividade">
       <div class="fundo"></div>
       <h3>Acalourada 2025.2</h3>
       <div class="galeria" data-evento="acalourada2025_2">
-        
-        
-        
       </div>
     </div>
 
