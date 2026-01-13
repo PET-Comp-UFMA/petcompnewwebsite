@@ -1,0 +1,49 @@
+name: Adicionar Trabalho Publicado no Banco de Dados
+
+on:
+  workflow_dispatch:
+    inputs:
+      titulo:
+        description: "Titulo do trabalho: "
+        required: true
+      autores:
+        description: "Autores: "
+        required: true
+      ano:
+        description: "Ano: "
+        required: true
+      palavras_chave:
+        description: "palavras_chave: "
+        required: false
+      resumo:
+        description: "Resumo: "
+        required: true
+      link:
+        description: "Link para o artigo (caminho no sistema de arquivos ou link na web): "
+        required: true
+jobs:
+  inserirTrabalho:
+    runs-on: ubuntu-latest
+    container:
+      image: mysql:8.0
+    steps:
+     - name: Inserir trabalho publicado no Banco de Dados
+       env:
+        TITULO: ${{ github.event.inputs.titulo }} 
+        AUTORES: ${{ github.event.inputs.autores }}
+        ANO: ${{ github.event.inputs.ano }}
+        PALAVRAS_CHAVE: ${{ github.event.inputs.palavras_chave }}
+        RESUMO: ${{ github.event.inputs.resumo }}
+        LINK: ${{ github.event.inputs.link }}
+
+       run: |
+          export LANG=C.UTF-8
+          export LC_ALL=C.UTF-8
+
+          mysql \
+            -h ${{ secrets.DB_HOST }} \
+            -u ${{ secrets.DB_USER }} \
+            -p${{ secrets.DB_PASSWORD }} \
+            ${{ secrets.DB_NAME }} \
+            -e "INSERT INTO trabalhos_publicados (titulo, autor, ano, palavras_chave, resumo, link)
+            VALUES ('$TITULO', '$AUTORES', '$ANO', '$PALAVRAS_CHAVE', '$RESUMO', '$LINK');"
