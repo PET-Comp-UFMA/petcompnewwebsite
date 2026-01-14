@@ -8,12 +8,7 @@
   position: relative;
   width: 100%;
   max-width: 900px;
-}
-
-/* Container principal do Swiper */
-.swiper {
-  width: 100%;
-  padding-bottom: 1rem; /* espaço para paginação */
+  margin: 0 auto;
 }
 
 /* Slides */
@@ -34,6 +29,7 @@
   display: block;
 }
 
+
 /* Destaque do slide central */
 .swiper-slide-active {
   transform: scale(1.15);
@@ -48,23 +44,14 @@
   z-index: 2;
 }
 
-/* Paginação */
-.swiper-pagination {
-  position: relative;
-  margin-top: 0.3rem;
+.swiper-controls {
   display: flex;
-  justify-content: center;
-}
-
-.swiper-pagination-bullet {
-  width: 10px;
-  height: 10px;
-  background-color: #3AA3FC;
-  opacity: 0.5;
-}
-
-.swiper-pagination-bullet-active {
-  opacity: 1;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;       /* ocupa toda a largura do carousel */
+  max-width: 400px;  /* opcional: controla a largura do conjunto */
+ margin: 0.5rem auto 2rem auto; /* 0.5rem do banner, 2rem debaixo */
+  gap: 1rem;       
 }
 
 /* Setas de navegação */
@@ -73,19 +60,39 @@
   width: 44px;
   height: 44px;
   color: #01204C;
-  top: auto;               /* remove alinhamento automático */
-  bottom: 0.1rem;          /* mesma linha dos bullets */
-  transform: translateY(0);
+  position: static; /* tira do overlay do Swiper */
+  transform: none;  /* remove transform */
 }
 
-/* Posicionamento das setas fora do banner */
+/* Paginação */
+.swiper-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  background-color: #3AA3FC;
+  opacity: 0.5;
+  margin: 0 4px;
+}
+
+
+.swiper-pagination-bullet-active {
+  opacity: 1;
+}
+
+
 .swiper-button-prev {
-  left: calc(50% - 120px);
+  left:30%;
 }
 
 .swiper-button-next {
-  right: calc(50% - 120px);
+  right: 30%;
 }
+
 
 
 @media (max-width: 768px) {

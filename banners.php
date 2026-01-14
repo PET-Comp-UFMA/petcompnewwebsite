@@ -83,11 +83,11 @@
 
                     </div>
 
-                    <div class="swiper-pagination"></div>
-
-                    <div class="swiper-button-prev" aria-label="Banner anterior"></div>
+                    <div class="swiper-controls">
+                        <div class="swiper-button-prev" aria-label="Banner anterior"></div>
+                        <div class="swiper-pagination"></div>
                     <div class="swiper-button-next" aria-label="Próximo banner"></div>
-                    
+                </div>
                 </div>
             </div>
 
