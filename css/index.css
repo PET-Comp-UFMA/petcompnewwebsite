@@ -227,6 +227,7 @@ body {
 }
 
 .minifundo ul li img {
+    display: flex;
   width: 100%;
   height: 140px;
   object-fit: contain;
@@ -364,11 +365,14 @@ body {
     height: 30px;
 }
 .activities-title {
+    width: 100%;
+    text-align: center;
     font-family: 'Alatsi';
     font-size: 70px;
     color: #fff;
     margin: 3rem;
 }
+
 .saibamaisbtn {
     height: 35px;
     width: 120px;
@@ -497,16 +501,15 @@ body {
         padding: 1rem;
         
         & ul {
-            flex-direction: column;
-            gap: 1rem;
+            gap: 3rem;
         }
 
         & h2 {
             font-size: 26px;
         }
         li {
-            width: 4rem;
-            height: 4rem;
+            width: 5rem;
+            height: 5rem;
         }
     }
     .central-img {
@@ -570,7 +573,11 @@ body {
     }
 }
 
+
+
+
 @media screen and (max-width: 420px) {
+    
     .swiper-button-prev,
     .swiper-button-next {
       width: 30px;     /* reduz largura */
@@ -601,13 +608,13 @@ body {
         margin: 0;
     }
     .atividades {
-        gap: 3rem;
+        gap: 2rem;
     }
     
     .activities-card {
-        width: 150px;
-        height: 150px;
-        padding: 10px;
+        width: 148px;
+        height: 170px;
+        padding: 9px;
         border-radius: 15px;
     }
     .activities-subtitle {
