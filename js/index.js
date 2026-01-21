@@ -69,3 +69,28 @@ document.querySelectorAll('.dropbtn').forEach(btn => {
 
   });
 });
+
+function fecharDropdown(dropdown) {
+    dropdown.classList.remove("open");
+}
+
+function fecharTodosDropdowns() {
+    document.querySelectorAll(".dropdown").forEach(fecharDropdown);
+}
+
+function ehDropdown(target) {
+    classes = target.classList;
+    return (classes.contains("dropdown") || classes.contains("dropbtn") ||  classes.contains("material-icons"));
+}
+function fecharDropdowns(evento) {
+    const target = evento.target;
+
+    console.log(target.classList);
+
+    if (!ehDropdown(target)) {
+        fecharTodosDropdowns();
+        console.log("fechei");
+    }
+}
+
+document.documentElement.addEventListener("click", fecharDropdowns);
