@@ -62,7 +62,7 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;       /* ocupa toda a largura do carousel */
-  max-width: 400px;  /* opcional: controla a largura do conjunto */
+  max-width: 475px;  /* opcional: controla a largura do conjunto */
   margin: 0.25rem auto 0 auto; /* 0.5rem do banner, 2rem debaixo */
   gap: 1rem;       
 }
