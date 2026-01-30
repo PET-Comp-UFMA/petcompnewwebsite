@@ -1,21 +1,18 @@
 
 document.addEventListener("DOMContentLoaded", (e) => {
-  console.log("Hello World")
-  var pages1 = document.querySelectorAll(".page-item")
-  var url1 = window.location.href;
-  var previous1 = document.querySelector("#previous") 
-  var next1 = document.querySelector("#next") 
-  var page1 = url1.split('page=')[1] ?? 1;
-  console.log(pages1.length)
-  pages1.forEach((page2) => {
-    if(page2.innerText == page1) {
-      page2.classList.add("active");
+  var pages = document.querySelectorAll(".page-item")
+  var previous = document.querySelector("#previous") 
+  var next = document.querySelector("#next") 
+  var current_page = window.page // vindo do html
+  pages.forEach((page) => {
+    if(page.innerText == current_page) {
+      page.classList.add("active");
     }
-    if(page1 == 1) {
-      previous1.classList.add("disabled")
+    if(current_page == 1) {
+      previous.classList.add("disabled")
     }
-    if(page1 == (pages1.length-2)) {
-      next1.classList.add("disabled")
+    if(current_page == (pages.length-2)) {
+      next.classList.add("disabled")
     }
   })
 })

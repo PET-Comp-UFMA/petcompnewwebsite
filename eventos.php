@@ -18,21 +18,12 @@
         </div>
         
         <div class="container-body">
-            <p>Os eventos serão planejados através de reuniões entre o grupo. Na primeira reunião, um petiano é 
-                eleito líder do monitoramento das atividades a serem realizadas para que ocorra o evento. Este líder
-                , em conjunto com o tutor, indica membros para auxiliá-lo diretamente, podendo inclusive, ser todos 
-                os membros do PET. O tutor atua como facilitador entre as várias entidades e atores da universidade.
+            <p>Os eventos do PETComp nascem da troca de ideias e do trabalho coletivo entre seus integrantes. Em encontros iniciais, o grupo se reúne para pensar e estruturar cada atividade, escolhendo um membro que assume o papel de liderança na organização do evento. Esse processo acontece de forma colaborativa, com o apoio do tutor, que atua como um elo entre o grupo e a universidade, facilitando diálogos, parcerias e articulações necessárias. Conforme o perfil e o alcance de cada evento, diferentes membros são convidados a participar ativamente da organização, fortalecendo o espírito de equipe.
+
             </p>
             <p>
-            O grupo então define a programação baseada em minicursos, tutorias, palestras, competições, apresentação, 
-            rodas de discussão e laboratórios e define também comissões para cuidar de grandes tarefas do evento. A 
-            programação é baseada na tendência atual da área e tende a atender os anseios do público diretamente envolvido 
-            do curso de Ciência da Computação.
-            </p>
-            <p>Os eventos são então divulgados através de redes sociais em todos os cursos da área do Maranhão, em 
-                instituições públicas e particulares, assim como em instituições que possuem cursos técnicos na área. 
-                Durante os eventos, as comissões formadas atuam para garantir que a realização do evento ocorra de forma 
-                completamente ordenada.
+            A programação é construída com foco na vivência acadêmica e profissional, reunindo minicursos, palestras, tutoriais, competições, apresentações, rodas de conversa e atividades práticas em laboratório. As escolhas refletem as tendências atuais da área e buscam dialogar diretamente com os interesses e expectativas do público do curso de Ciência da Computação, criando espaços de aprendizado, debate e troca de experiências. Para dar suporte a essa diversidade de atividades, o grupo se organiza em comissões, cada uma dedicada a aspectos essenciais do evento.
+
             </p>
         </div>
 
@@ -59,7 +50,7 @@
                         de Computação, e procura guiar os calouros através da universidade e do curso, além de mostrar as
                         oportunidades que a universidade oferece tanto de forma pessoal como profissional.
                     </h4>
-                    <button>Saiba mais</button>
+                    <button><a href="https://petcompufma.org/acalourada/index.php" target="_blank" style="color: inherit; text-decoration: none">Saiba mais</a></button>
                 </div>
             </div>
 
@@ -72,7 +63,7 @@
                         com o curso de Graduação de Ciência da Computação da UFMA apresentando as oportunidades dentro da graduação. 
                         O EAComp é organizado pelo Programa de Educação Tutorial do curso de Ciência da Computação (PETComp).
                     </h4>
-                    <button>Saiba mais</button>
+                    <button><a href="https://petcompufma.org/eacomp/index.html" target="_blank" style="color: inherit; text-decoration: none">Saiba mais</a></button>
                 </div>
             </div>
 
@@ -89,7 +80,7 @@
                         possam trocar experiências, aprender e divulgar ações bem-sucedidas no contexto do desenvolvimento e disponibilização 
                         de produções técnicas inovadoras.
                     </h4>
-                    <button>Saiba mais</button>
+                    <button><a href="https://eea.ufma.br/#:~:text=O%20I%20EEA%20da%20UFMA%20tem,a%20Ag%C3%AAncia%20de%20Inova%C3%A7%C3%A3o%2C%20Empreendedorismo%2C" target="_blank" style="color: inherit; text-decoration: none">Saiba mais</a></button>
                 </div>
             </div>
 
@@ -103,7 +94,7 @@
                         encontro é caracterizado por assembleias, grupos de discussão e trabalhos, apresentação de trabalhos acadêmicos, 
                         atividades culturais, além da troca de experiências entre discentes e tutores nordestinos.
                     </h4>
-                    <button>Saiba mais</button>
+                    
                 </div>
             </div>
 
@@ -119,7 +110,7 @@
                         referência nos Estados do Maranhão, Ceará e Piauí e região. Além disso, o evento colabora e contribui com a consolidação
                         dos Programas de Pós-Graduação da região.
                     </h4>
-                    <button>Saiba mais</button>
+                    <button><a href="https://petcompufma.org/ercemapi/index.php" target="_blank" style="color: inherit; text-decoration: none">Saiba mais</a></button>
                 </div>
             </div>
 
@@ -135,7 +126,6 @@
                         acesso a temas e discussões recentes na área, através de diversas atividades, como palestras, minicursos, painéis de 
                         discussão e apresentação de trabalhos científicos.
                     </p>
-                    <button>Saiba mais</button>
                 </div>
             </div>
 
@@ -148,7 +138,6 @@
                         vinculados ao programa com o objetivo de discutir, coletivamente, temas e questões relevantes para a manutenção e o 
                         desenvolvimento do PET nacionalmente.
                     </h4>
-                    <button>Saiba mais</button>
                 </div>
             </div>
         </div>

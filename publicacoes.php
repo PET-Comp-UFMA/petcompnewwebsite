@@ -231,7 +231,7 @@
         const params = new URLSearchParams(formData);     // transforma em ?a=...&b=...
 
         // requisição para o mesmo PHP que você já usa
-        fetch("publicacoes.php?" + params.toString())
+        fetch("publicacoes?" + params.toString())
           .then(response => response.text())             // recebe HTML como texto
           .then(html => {
             const parser = new DOMParser();

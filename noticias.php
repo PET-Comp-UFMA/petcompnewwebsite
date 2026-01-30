@@ -28,7 +28,7 @@
     <div class="container-header">
       <h2>Notícias</h2>
       <h3>Confira as noticias mais recentes sobre o que fizemos</h3>
-      <h4><a href="index.php">Página Inicial</a></h4>
+      <h4><a href="">Página Inicial</a></h4>
       <h4> → Notícias</h4>
     </div>
 
@@ -48,7 +48,7 @@
       <section class="container">
         <h2>Buscar por: </h2>
         
-          <form id="search-form" action="noticias.php" method="get" class="filtro">
+          <form id="search-form" action="noticias" method="get" class="filtro">
             <div class="filtro__field">
               <label for="titulo" class="filtro__label">Título</label>
               <input
@@ -97,7 +97,7 @@
                 foreach ($campos as $coluna => $param) {
                   if (!empty($param)){
                     $param = mysqli_real_escape_string($mysqli, $param);
-                    $filtros[] = "$coluna LIKE '%$param'";
+                    $filtros[] = "$coluna LIKE '%$param%'";
                   }
                 }
 
@@ -109,7 +109,11 @@
               $num_results = mysqli_num_rows($result);
 
               if ($num_results > 0) {
-                while ($row = mysqli_fetch_array($result)):
+                for ($i = 0; $i < $num_results; $i++) :  
+                  $row = mysqli_fetch_array($result);  
+                  $id = $row['id'];
+                  $url =  "noticias/" . $id;
+
             ?>
 
             <li class="news-list__item">
@@ -117,22 +121,14 @@
                 <div class="card__details">
                   <div class="card__meta card__meta--title">
                     <h5 class="card__title">
-                      <a href="<?php echo $parametros ?>" class="card__link">
+                      <a href="<?= $url ?>" class="card__link">
                         <?php print_r($row['titulo']) ?>
                       </a>
                     </h5>
                   </div>
                 </div>
 
-                <div class="card__body">
-                  <div class="card__resume">
-                    <p class="card__resume-title">Resumo</p>
-                    <p class="card__resume-text">
-                      <?php
-                        print_r($row['texto'])
-                      ?>
-                    </p>
-                  </div>
+
 
                   <div class="card__bottom">
                     <?php if (!empty($row['data'])): ?>
@@ -174,7 +170,7 @@
             </li>
             <div class="card__line"></div>
             
-            <?php endwhile; ?>
+            <?php endfor; ?>
           </ul>
           
         </section>
@@ -222,7 +218,7 @@
       const formData = new FormData(this);
       const urlParams = new URLSearchParams(formData);
 
-      fetch("noticias.php?" + urlParams.toString())
+      fetch("noticias?" + urlParams.toString())
         .then(response => response.text())
         .then(html => {
           const parser = new DOMParser();

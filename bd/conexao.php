@@ -11,5 +11,4 @@
         echo "Erro ao conectar ao banco de dados:" . $e->getMessage();
     }
     
-
 ?>
