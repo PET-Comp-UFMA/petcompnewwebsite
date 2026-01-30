@@ -18,9 +18,17 @@
     </div>
 
     <div class="section-header">
-        <h2 class="titulo">REGISTROS PETCOMP 2025</h2>
+        <h2 class="titulo">REGISTROS PETCOMP 2026</h2>
+    </div>
+    <div class="atividade">
+      <div class="fundo"></div>
+      <h3>Vários eventos, muitos momentos. Em breve por aqui!</h3>
+      </div>
     </div>
   </div>
+  <div class="section-header">
+        <h2 class="titulo">REGISTROS PETCOMP 2025</h2>
+    </div>
   <div class="atividade">
       <div class="fundo"></div>
       <h3>Marapet</h3>
