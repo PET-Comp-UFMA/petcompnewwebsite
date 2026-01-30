@@ -33,8 +33,8 @@
         <div class="dropdown dropdown_produtos">
             <a href="#" class="dropbtn">Produtos <span class="material-icons">arrow_drop_down</span></a>
             <div class="dropdown-content">
-                <a href="biblioteca">Biblioteca PETComp</a>
-                <a href="podcast">PodCast</a>
+                <a href="biblioteca-petcomp-main.php">Biblioteca PETComp</a>
+                <a href="podcast.php">PodCast</a>
             </div>
         </div>
         <div class="dropdown">
