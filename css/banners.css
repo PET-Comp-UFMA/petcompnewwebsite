@@ -11,6 +11,8 @@
   padding: 1.5rem;
   line-height: 1.6;
   text-align: justify;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 .carousel {
@@ -131,6 +133,38 @@
   user-select: none;
 }
 
+/* ===== INFO DOS BANNER ===== */
+.banner-info-section{
+    padding: 2rem 0 3rem 0;
+    background-color: #01204C;
+}
+
+.info-container{
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.banner-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.banner-card h3 {
+  margin-bottom: 0.75rem;
+  color: #01204C;
+}
+
+.banner-card p {
+  flex-grow: 1;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
 /* Animação suave */
 @keyframes zoomIn {
   from {
@@ -157,3 +191,5 @@
     display: none; /* no mobile usa swipe */
   }
 }
+
+
