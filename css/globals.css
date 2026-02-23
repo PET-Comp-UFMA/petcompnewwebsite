@@ -56,27 +56,6 @@ header {
         text-align: center;
     }
 
-    & a:hover {
-        background-color: #002d5a;
-        border-radius: 5px;
-    }
-}
-
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
-.dropdown:hover .dropbtn {
-    background-color: #002d5a;
-}
-
-.material-icons {
-    vertical-align: middle;
-    transition: transform 0.2s ease-in;
-}
-
-.dropbtn:hover .material-icons {
-    transform: rotate(180deg);
 }
 
 .dropdown-content {
@@ -96,10 +75,6 @@ header {
     & a {
         display: block;
         color: black;   
-    }
-
-    & a:hover {
-        background-color: rgb(255, 255, 255);
     }
 }
 
@@ -242,6 +217,34 @@ footer {
     transform: scale(0.95);
 }
 
+/* Para dispositivos que possuem opção de hover */
+@media (hover: hover) {
+    .navbar a:hover {
+        background-color: #002d5a;
+        border-radius: 5px;
+    }
+
+    .dropdown-content a:hover {
+        background-color: rgb(255, 255, 255);
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    .dropdown:hover .dropbtn {
+        background-color: #002d5a;
+    }
+
+    .material-icons {
+        vertical-align: middle;
+        transition: transform 0.2s ease-in;
+    }
+
+    .dropbtn:hover .material-icons {
+        transform: rotate(180deg);
+    }
+}
 
 /* Estilização para todo dispositivo desktop */
 @media screen and (min-width: 951px) {
@@ -298,6 +301,13 @@ footer {
     
 }
 
+@media (hover: hover) and (max-width: 950px) {
+    .navbar a:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 5px;
+    }
+}
+
 @media screen and (max-width: 950px) {
     header {
         position: relative;
@@ -343,11 +353,6 @@ footer {
         width: 100%;
         text-align: center;
         text-decoration: none;
-    }
-    
-    .navbar a:hover {
-        background-color: rgba(255, 255, 255, 0.1);
-        border-radius: 5px;
     }
 
     .dropdown-content {
