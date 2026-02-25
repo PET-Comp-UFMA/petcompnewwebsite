@@ -135,8 +135,8 @@
 
 /* ===== INFO DOS BANNER ===== */
 .banner-info-section{
-    padding: 2rem 0 3rem 0;
-    background-color: #01204C;
+    background-color: #ffffff;
+       padding: 3rem 0 4rem;
 }
 
 .info-container{
@@ -144,25 +144,37 @@
   margin: 0 auto;
 }
 
+.info-carousel {
+  padding: 0 1rem;
+}
+
+.info-carousel .swipers-slide {
+  display: flex;
+  justify-content: center;
+}
+
 .banner-card {
-  background: #ffffff;
-  border-radius: 12px;
-  padding: 1.5rem;
-  height: 100%;
+  background: #01204C;
+  border-radius: 16px;
+  padding: 1.8rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+  box-shadow: 0 8px 25px rgba(0,0,0,0.12);
 }
 
 .banner-card h3 {
   margin-bottom: 0.75rem;
-  color: #01204C;
+  color: #ffffff;
 }
 
 .banner-card p {
   flex-grow: 1;
   line-height: 1.5;
   margin-bottom: 1rem;
+  color: #ffffff;
+  opacity: 0.9;
 }
 
 /* Animação suave */
@@ -188,7 +200,7 @@
 
   .swiper-button-prev,
   .swiper-button-next {
-    display: none; /* no mobile usa swipe */
+    display: none; 
   }
 }
 

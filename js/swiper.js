@@ -1,11 +1,18 @@
+var infoSwiper = new Swiper('.info-carousel',{
+  slidesPerView: 1,
+  spaceBetween: 20,
+  loop: true,
+  allowTouchMove: false,
+});
+
 var swiper = new Swiper('.carousel', {
     slidesPerView: 3,
     centeredSlides: true,
     spaceBetween: 30,
     loop: true,
 
-    slideToClickedSlide: false, // 🔴 FUNDAMENTAL
-    preventClicks: true,        // 🔴 FUNDAMENTAL
+    slideToClickedSlide: false, 
+    preventClicks: true,      
     preventClicksPropagation: true,
 
     navigation: {
@@ -33,7 +40,10 @@ var swiper = new Swiper('.carousel', {
   }
 });
 
-document.querySelectorAll('.swiper-slide').forEach((slide, index) => {
+swiper.controller.control = infoSwiper;
+infoSwiper.controller.control = swiper;
+
+document.querySelectorAll('.carousel .swiper-slide').forEach((slide, index) => {
   slide.addEventListener('click', () => {
     swiper.slideToLoop(index);
   });
