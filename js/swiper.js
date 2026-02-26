@@ -1,8 +1,10 @@
 var infoSwiper = new Swiper('.info-carousel',{
-  slidesPerView: 1,
-  spaceBetween: 20,
+  slidesPerView: 3,
+  centeredSlides: true,
+  spaceBetween: 30,
   loop: true,
-  allowTouchMove: false,
+  autoHeight: true,
+  allowTouchMove: false // opcional (recomendado)
 });
 
 var swiper = new Swiper('.carousel', {

@@ -153,7 +153,7 @@
                                 <p>Descrição banner 4</p>
 
                                 <div class="banner-card-actions">
-                                <button class="btn-view" data-img="./assets/banners/01.jpg">Visualizar</button>
+                                <button class="btn-view" data-img="./assets/banners/04.jpg">Visualizar</button>
                                 <a href="./assets/banners/04.jpg" download class="btn-download">Download</a>
                                 </div>
                             </div>
