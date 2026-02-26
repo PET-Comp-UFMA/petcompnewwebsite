@@ -84,6 +84,10 @@ header {
     cursor: pointer;
 }
 
+.dropdown.open .dropbtn {
+    background-color: #002d5a;
+}
+
 /* Container-header */
 .container-header {
     color: white;
