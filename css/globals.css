@@ -47,15 +47,18 @@ header {
     align-items: center;
     justify-content: space-between;
     gap: 15px;
+}
 
-    & a {
-        color: white;
-        text-decoration: none;
-        padding: 10px;
-        font-size: 20px;
-        text-align: center;
-    }
+.dropbtn {
+    background-color: transparent;
+}
 
+.nav-link, .dropbtn {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    font-size: 20px;
+    text-align: center;
 }
 
 .dropdown-content {
@@ -71,11 +74,11 @@ header {
     min-width: fit-content;
     left: 50%;
     transform: translateX(-50%);
+}
 
-    & a {
-        display: block;
-        color: black;   
-    }
+.dropdown-link {
+    display: block;
+    color: black;  
 }
 
 .open-btn {
@@ -84,7 +87,7 @@ header {
     cursor: pointer;
 }
 
-.dropdown.open .dropbtn {
+.dropdown.open .dropbtn { 
     background-color: #002d5a;
 }
 
@@ -230,6 +233,7 @@ footer {
 
     .dropdown-content a:hover {
         background-color: rgb(255, 255, 255);
+        border-radius: 5px;
     }
 
     .dropdown:hover .dropdown-content {
@@ -299,7 +303,7 @@ footer {
         gap: 5px;
     }
 
-    .navbar a {
+    .nav-link, .dropbtn {
         font-size: 16px;
     }
     
@@ -350,7 +354,7 @@ footer {
         animation: fadeIn 0.3s forwards;
     }
 
-    .navbar a {
+    .nav-link, .dropbtn {
         color: white;
         font-size: 22px;
         padding: 15px 0;
@@ -366,23 +370,23 @@ footer {
         border-radius: 8px;
         margin-top: 5px;
         box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
 
-        & a {
-            color: white;
-            font-weight: 500;
-            text-decoration: none;
-            padding: 12px 20px;
-            text-align: center;
-            font-size: 16px;
-            transition: background 0.2s ease;
-        }
+    .dropdown-link {
+        color: white;
+        font-weight: 500;
+        text-decoration: none;
+        padding: 12px 20px;
+        text-align: center;
+        font-size: 16px;
+        transition: background 0.2s ease;
     }
 
     .dropdown.open .dropdown-content {
         display: flex;
     }
 
-    .dropdown .dropbtn {
+    .dropbtn {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -447,7 +451,7 @@ footer {
         padding: 15px 0;
     }
 
-    .navbar a, .dropdown .dropbtn {
+    .navbar a, .dropbtn {
         display: block;
         padding: 15px;
         text-align: center;
