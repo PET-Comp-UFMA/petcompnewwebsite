@@ -24,6 +24,10 @@
 
     <div class="gallery">
     <div class="group">
+         <div class="image-container">
+            <img src="img/sobre-image7.png" class="wide">
+            <p class="image-description">Equipe PETComp 2025</p>
+        </div>
         <div class="image-container">
             <img src="img/sobre-imagem1.jpg" class="wide">
             <p class="image-description">Equipe PETComp 2023</p>
