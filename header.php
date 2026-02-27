@@ -2,7 +2,7 @@
     <img id="logo" src="img/logo.png" alt="Logo PETComp">
     <nav class="navbar">
         <div class="nav-item dropdown">
-            <a href="" class="nodropbtn">Início</a>
+            <a href="">Início</a>
         </div>
         <div class="nav-item dropdown">
             <button class="dropbtn">Conheça o PETComp <span class="material-icons">arrow_drop_down</span></button>
@@ -38,10 +38,10 @@
             </div>
         </div>
         <div class="nav-item dropdown">
-            <a href="eventos" class="nodropbtn">Eventos</a>
+            <a href="eventos">Eventos</a>
         </div>
         <div class="nav-item dropdown">
-            <a href="registros" class="nodropbtn">Registros</a>
+            <a href="registros">Registros</a>
         </div>
     </nav>
     <img src="./assets/svg/menu-white.svg" alt="" class="open-btn" onclick="openMenu()">
