@@ -71,7 +71,7 @@
                                 <p>Vídeo aula</p>
                                 <p>Questionário</p>
                                 <p>Resumo</p>
-                                <a href="https://drive.google.com/drive/u/2/folders/1UzQkDiYA8eF3hgz5VSPWam_ikmOjp-Ak" target="_blank">Acessar</a>
+                                <a href="https://drive.google.com/drive/u/1/folders/1m4WewzLausEO0hvcfGVxYx7ZyS4nRzHA" target="_blank">Acessar</a>
                             </div>
                             <img src="img\ed1.png" alt="">
                         </div>
