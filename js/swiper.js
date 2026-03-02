@@ -1,9 +1,28 @@
+//function ajustarAlturaCards() {
+  //let maiorAltura = 0;
+
+  //const cards = document.querySelectorAll('.info-carousel .banner-card');
+
+  //cards.forEach(card => {
+    //card.style.height = 'auto';
+  //});
+
+  //cards.forEach(card => {
+   // if (card.offsetHeight > maiorAltura) {
+ //     maiorAltura = card.offsetHeight;
+  //  }
+ // });
+
+//  cards.forEach(card => {
+ //   card.style.height = maiorAltura + 'px';
+ // });
+//}
+
 var infoSwiper = new Swiper('.info-carousel',{
   slidesPerView: 1,
   centeredSlides: true,
   spaceBetween: 30,
-  loop: true,
-  autoHeight: true,
+  loop: false,
   allowTouchMove: false 
 });
 
@@ -42,8 +61,9 @@ var swiper = new Swiper('.carousel', {
   }
 });
 
-swiper.controller.control = infoSwiper;
-infoSwiper.controller.control = swiper;
+swiper.on('realIndexChange', function () {
+  infoSwiper.slideTo(swiper.realIndex);
+});
 
 document.querySelectorAll('.carousel .swiper-slide').forEach((slide, index) => {
   slide.addEventListener('click', () => {
@@ -76,4 +96,12 @@ modal.addEventListener('click', (e) => {
     modal.style.display = 'none';
   }
 });
+//ajuste de altura
+//window.addEventListener('load', function () {
+ // setTimeout(ajustarAlturaCards, 300);
+//});
+
+//window.addEventListener('resize', function () {
+//  ajustarAlturaCards();
+//});
 
