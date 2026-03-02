@@ -111,8 +111,7 @@
                             <div class="swiper-slide">
                             <div class="banner-card">
                                 <h3>Uma Abordagem Competitiva para Aprendizado</h3>
-                                <p>Transmitir o conhecimento apropriado de um determinado conteúdo sempre é acompanhado de desafios e o maior deles é ter a garantia que os alunos realmente absorveram a matéria lecionada de forma eficaz. Em vista de tal disputa, o grupo do Programa de Educação Tutorial de Ciência da Computação (PETComp) da Universidade Federal do Maranhão (UFMA), apresenta através deste trabalho uma proposta de abordagem competitiva metodológica para estruturação de competições envolvendo temáticas presentes no curso, tais como programação, robótica e jogos com a finalidade de subsidiar práticas de ensino, pesquisa e extensão.
-</p>
+                                <p>Transmitir o conhecimento apropriado de um determinado conteúdo sempre é acompanhado de desafios e o maior deles é ter a garantia que os alunos realmente absorveram a matéria lecionada de forma eficaz. Em vista de tal disputa, o grupo do Programa de Educação Tutorial de Ciência da Computação (PETComp) da Universidade Federal do Maranhão (UFMA), apresenta através deste trabalho uma proposta de abordagem competitiva metodológica para estruturação de competições envolvendo temáticas presentes no curso, tais como programação, robótica e jogos com a finalidade de subsidiar práticas de ensino, pesquisa e extensão.</p>
 
                                 <div class="banner-card-actions">
                                 <button class="btn-view" data-img="./assets/banners/01.jpg">Visualizar</button>

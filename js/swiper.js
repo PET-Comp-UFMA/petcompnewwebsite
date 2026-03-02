@@ -1,10 +1,10 @@
 var infoSwiper = new Swiper('.info-carousel',{
-  slidesPerView: 3,
+  slidesPerView: 1,
   centeredSlides: true,
   spaceBetween: 30,
   loop: true,
   autoHeight: true,
-  allowTouchMove: false // opcional (recomendado)
+  allowTouchMove: false 
 });
 
 var swiper = new Swiper('.carousel', {
@@ -55,7 +55,6 @@ const modal = document.getElementById('bannerModal');
 const modalImg = document.getElementById('modalImage');
 const closeModal = document.getElementById('closeModal');
 
-// Clique no banner → abre modal
 document.querySelectorAll('.swiper-slide img').forEach(img => {
   img.addEventListener('click', (e) => {
     e.preventDefault();     // bloqueia ação padrão

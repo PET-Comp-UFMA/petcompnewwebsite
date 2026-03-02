@@ -1,3 +1,7 @@
+body {
+ background: red !important;
+}
+
 .carousel-section {
   padding: 1rem 0 1.5rem 0; /* cima | lados | baixo */
 }
@@ -109,7 +113,7 @@
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.85);
-  display: none; /* escondido por padrão */
+  display: none; 
   justify-content: center;
   align-items: center;
   z-index: 9999;
@@ -135,33 +139,44 @@
 
 /* ===== INFO DOS BANNER ===== */
 .banner-info-section{
-    background-color: #ffffff;
-       padding: 3rem 0 4rem;
+    background-color: #01204C;
+    width: 100%;
+    padding: 3rem 0;
+    min-height: 520px;
+    display: flex;
+    align-items: center;
 }
 
 .info-container{
-  max-width: 1000px;
+  width: 100%;
+  max-width: 900px;
   margin: 0 auto;
+  height: 420px;
 }
 
-.info-carousel {
-  padding: 0 1rem;
+.swiper.info-carousel,
+.swiper.info-carousel .swiper-wrapper,
+.swiper.info-carousel .swiper-slide {
+  height: 100%;
 }
 
-.info-carousel .swipers-slide {
+.info-carousel .swiper-slide {
   display: flex;
+  align-items: center;
   justify-content: center;
 }
 
 .banner-card {
-  background: #01204C;
-  border-radius: 16px;
-  padding: 1.8rem;
+  background: #ff0909;
+  color: white;
+  width: 100%;
+  height: 100%;
+  padding: 40px;
+  border-radius: 18px;
+  box-shadow: 0 8px 20px rgba(0,0,0,.15);
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-
-  box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+  justify-content: center;
 }
 
 .banner-card h3 {
