@@ -141,47 +141,40 @@
 .banner-info-section{
     background-color: #ffffff;
     width: 100%;
-    padding: 3rem 0;
-/*    min-height: 520px;
-    display: flex;
-    align-items: center;*/
+    padding: 1rem 0;
 }
 
 .info-carousel{
   width: 100%;
-  overflow: hidden;
 }
 
 .info-container{
-  outline: 3px solid red;
   width: 100%;
-  max-width: 900px;
+  max-width: 800px;
   margin: 0 auto;
-  padding: 0 20px; 
+  overflow: hidden;
 }
 
 .info-carousel .swiper-slide {
-  width: 100% !important;
   display: flex;
   justify-content: center;
 }
 
 .info-carousel .swiper-wrapper {
   box-sizing: border-box;
+  align-items: stretch;
 }
 
 .banner-card {
   background: #01204C;
   color: white;
-  width: 100%;
+  width: 80%;
+  height: 60%;
   max-width: 100%;
+  box-sizing: border-box;
   padding: 40px;
   border-radius: 18px;
   box-shadow: 0 8px 20px rgba(0,0,0,.15);
-  outline: 3px solid red;
-  /*display: flex;
-  flex-direction: column;
-  justify-content: space-between;*/
 }
 
 .banner-card h3 {
