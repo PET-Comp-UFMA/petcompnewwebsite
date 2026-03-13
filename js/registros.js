@@ -53,6 +53,16 @@ document.addEventListener("DOMContentLoaded", () => {
 // Função para diversos tamanhos de imagens
 // Mapeamento dos eventos e suas imagens
 const imagensPorEvento = {
+  marapet2025:[
+    "img/2025/Marapet/Marapet1.jpeg",
+    "img/2025/Marapet/Marapet4.jpg",
+    "img/2025/Marapet/Marapet5.jpg",
+    "img/2025/Marapet/Marapet7.jpg",
+    "img/2025/Marapet/Marapet2.jpg",
+    "img/2025/Marapet/Marapet6.jpg",
+    "img/2025/Marapet/Marapet3.jpeg",
+    "img/2025/Marapet/Marapet8.jpg"
+  ],
   acalourada2025_2:[
     "img/2025/Acalourada2025.2/acalourada2025 (1).jpg",
     "img/2025/Acalourada2025.2/acalourada2025 (2).jpg",

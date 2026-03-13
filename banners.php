@@ -16,12 +16,12 @@
         <h2>Banners</h2>
         <h3>Confira os banners do PETComp</h3>
         <h4><a href="index.php">Página Inicial</a></h4>
-        <h4> -> Publicações</h4>
-        <h4> -> Banners</h4>
+        <h4> → Publicações</h4>
+        <h4> → Banners</h4>
     </div>
 
     <div class="container-body">
-        <p>Aqui você pode encontrar banners de trabalhos realizados e apresentados pelo PETComp ao longo de toda sua história.</p>
+        <p>Aqui você pode encontrar os banners de trabalhos desenvolvidos e apresentados pelo PETComp ao longo de toda a sua história. Esse acervo reúne produções realizadas em diferentes períodos, refletindo a evolução, o compromisso e as contribuições do grupo ao longo dos anos. Os trabalhos apresentados evidenciam a dedicação à pesquisa, à inovação e à disseminação do conhecimento, registrando momentos importantes da trajetória do PETComp e seu impacto em eventos, projetos e atividades acadêmicas e institucionais.</p>
     </div>
 
     <div class="main">

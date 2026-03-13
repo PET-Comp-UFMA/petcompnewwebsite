@@ -1,0 +1,196 @@
+.main-content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto;
+  grid-column-gap: 2rem; /* 32px */
+  grid-row-gap: 2rem; /* 32px */
+  padding: 3.9375rem 5.25rem 8.0625rem 5.25rem; /* 63px 132px 129px 84px */
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.biblioteca-card {
+  display: flex;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 100%; /* 600px */
+  max-width: 37.5rem;
+  text-decoration: none;
+  box-shadow: 0.75rem 0.75rem 1.75rem 0 rgba(0, 0, 0, 0.35);
+  border-radius: 1rem; /* 16px */
+}
+
+.imagens img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.imagens {
+  border-radius: 1rem 0 0 1rem; /* 16px */
+  overflow: hidden;
+  border: 0.125rem solid #e8e8e9; /* 2px */
+  width: 8.4375rem; /* 135px */
+  flex-shrink: 0;
+  object-fit: cover;
+}
+
+.card-content {
+  color: #fff;
+  background-color: #060b3f;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem; /* 12px */
+  padding: 0.875rem 1.1875rem 1.1875rem 0.875rem; /* 14px 19px 19px 14px */
+  overflow: hidden;
+  border-radius: 0 1rem 1rem 0; /* 16px */
+  flex: 1;
+}
+
+.card-content h3 {
+  font-weight: 700;
+}
+
+.card-content p {
+  font-weight: 700;
+}
+
+.download-btn {
+  display: flex;
+  width: 9.3125rem; /* 149px */
+  height: 2.5rem; /* 40px */
+  padding: 0.5rem 2.125rem; /* 8px 34px */
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  border-radius: 1.25rem; /* 20px */
+  border: 0.125rem solid #047ce0; /* 2px */
+  color: #047ce0;
+  background-color: #060b3f;
+  cursor: pointer;
+  align-self: flex-end;
+  transition: all 0.3s ease;
+}
+
+.download-btn:hover {
+  background-color: #047ce0;
+  color: #fff;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2.8125rem;
+  margin-bottom: 1rem;
+}
+
+.box-pagination {
+  width: 3.75rem;
+  height: 3.75rem;
+  background-color: #060b3f;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-weight: 400;
+  padding: 1rem;
+  transition: all 0.3s ease;
+}
+
+.box-pagination.ativo {
+  background-color: #047ce0;
+  transform: scale(1.1);
+  transition: all 0.3s ease;
+}
+
+.box-pagination:hover {
+  background-color: #047ce0;
+  transform: scale(1.05);
+}
+
+.box-pagination h1 {
+  pointer-events: none;
+  margin: 0;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 1400px) {
+  .main-content {
+    grid-column-gap: 8rem; /* 128px */
+    padding: 3rem 5rem 6rem 4rem;
+  }
+}
+
+@media (max-width: 1200px) {
+  .main-content {
+    grid-column-gap: 4rem; /* 64px */
+    padding: 2.5rem 3rem 5rem 3rem;
+  }
+
+  .biblioteca-card {
+    width: 100%;
+    max-width: 37.5rem;
+  }
+}
+
+@media (max-width: 915px) {
+  .main-content {
+    grid-template-columns: 1fr; /* Uma única coluna */
+    grid-row-gap: 2rem;
+    padding: 2rem 1.5rem;
+    justify-items: center;
+  }
+
+  .biblioteca-card {
+    width: 100%;
+    max-width: 35rem;
+    height: auto;
+    min-height: 11.875rem;
+  }
+
+  .card-content {
+    width: auto;
+    flex: 1;
+  }
+
+  .imagens {
+    width: 7.5rem; /* 120px */
+  }
+}
+
+@media (max-width: 600px) {
+  .main-content {
+    padding: 1.5rem 1rem;
+    grid-row-gap: 1.5rem;
+  }
+
+  .biblioteca-card {
+    flex-direction: column;
+    height: auto;
+    max-width: 100%;
+  }
+
+  .imagens {
+    width: 100%;
+    border-radius: 1rem 1rem 0 0;
+    height: 12.5rem; /* 200px */
+  }
+
+  .card-content {
+    width: 100%;
+    border-radius: 0 0 1rem 1rem;
+    padding: 1rem;
+    gap: 0.75rem;
+  }
+
+  .download-btn {
+    width: 8rem;
+    height: 2.25rem;
+    font-size: 0.875rem;
+    padding: 0.5rem 1.5rem;
+  }
+}
