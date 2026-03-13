@@ -72,6 +72,7 @@ function openMenu() {
         if (!mediaQuery.matches) return;
 
         const dropdown = click.target.closest(".dropdown");
+        const dropbtn = click.target.closest(".dropbtn");
 
 
         // Clicar fora de dropdowns
@@ -95,6 +96,11 @@ function openMenu() {
             disableDropdown(dropdownActive);
             enableDropdown(dropdown);
             dropdownActive = dropdown;
+            return;
+        }
+        
+        // Se clicou no contéudo do dropdown, e não no botão
+        if (!dropbtn) {
             return;
         }
 
