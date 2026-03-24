@@ -1,29 +1,10 @@
-//function ajustarAlturaCards() {
-  //let maiorAltura = 0;
-
-  //const cards = document.querySelectorAll('.info-carousel .banner-card');
-
-  //cards.forEach(card => {
-    //card.style.height = 'auto';
-  //});
-
-  //cards.forEach(card => {
-   // if (card.offsetHeight > maiorAltura) {
- //     maiorAltura = card.offsetHeight;
-  //  }
- // });
-
-//  cards.forEach(card => {
- //   card.style.height = maiorAltura + 'px';
- // });
-//}
-
 var infoSwiper = new Swiper('.info-carousel',{
   slidesPerView: 1,
   centeredSlides: true,
   spaceBetween: 30,
   loop: false,
-  allowTouchMove: false 
+  allowTouchMove: false,
+  autoHeight: true 
 });
 
 var swiper = new Swiper('.carousel', {

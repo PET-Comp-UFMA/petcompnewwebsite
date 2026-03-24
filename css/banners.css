@@ -141,7 +141,7 @@
 .banner-info-section{
     background-color: #ffffff;
     width: 100%;
-    padding: 1rem 0;
+    padding: 0 0;
 }
 
 .info-carousel{
@@ -150,9 +150,8 @@
 
 .info-container{
   width: 100%;
-  max-width: 800px;
+  max-width: 900px;
   margin: 0 auto;
-  overflow: hidden;
 }
 
 .info-carousel .swiper-slide {
@@ -170,7 +169,6 @@
   color: white;
   width: 80%;
   height: 60%;
-  max-width: 100%;
   box-sizing: border-box;
   padding: 40px;
   border-radius: 18px;
@@ -198,6 +196,53 @@
     opacity: 1;
   }
 }
+
+.banner-card-actions {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+}
+
+.btn-view,
+.btn-download {
+  padding: 0.5rem 1.25rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.2s ease, transform 0.1s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Botão Visualizar — destaque principal */
+.btn-view {
+  background-color: #3AA3FC;
+  color: #fff;
+  border: none;
+}
+
+.btn-view:hover {
+  background-color: #1a8de0;
+  transform: translateY(-2px);
+}
+
+/* Botão Download — estilo outline */
+.btn-download {
+  background-color: transparent;
+  color: #3AA3FC;
+  border: 2px solid #3AA3FC;
+}
+
+.btn-download:hover {
+  background-color: #3AA3FC;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+
 
 @media (max-width: 768px) {
   .container-body {
