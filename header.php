@@ -1,5 +1,7 @@
 <header>
-    <img id="logo" src="img/logo.png" alt="Logo PETComp">
+    <a href="">
+        <img id="logo" src="img/logo.png" alt="Logo PETComp">
+    </a>
     <nav class="navbar">
         <div>
             <a href="" class="nav-link">Início</a>
