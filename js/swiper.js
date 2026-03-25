@@ -56,6 +56,16 @@ const modal = document.getElementById('bannerModal');
 const modalImg = document.getElementById('modalImage');
 const closeModal = document.getElementById('closeModal');
 
+document.querySelectorAll('.btn-view').forEach(btn => {
+  btn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const imgSrc = btn.getAttribute('data-img');
+    modal.style.display = 'flex';
+    modalImg.src = imgSrc;
+    swiper.autoplay.stop();
+  });
+});
+
 document.querySelectorAll('.swiper-slide img').forEach(img => {
   img.addEventListener('click', (e) => {
     e.preventDefault();     // bloqueia ação padrão
@@ -63,26 +73,20 @@ document.querySelectorAll('.swiper-slide img').forEach(img => {
 
     modal.style.display = 'flex';
     modalImg.src = img.src;
+    swiper.autoplay.stop();
   });
 });
 
 // Fechar ao clicar no X
 closeModal.addEventListener('click', () => {
   modal.style.display = 'none';
+  setTimeout(() => swiper.autoplay.start(), 300);
 });
 
 // Fechar ao clicar fora da imagem
 modal.addEventListener('click', (e) => {
   if (e.target === modal) {
     modal.style.display = 'none';
+    setTimeout(() => swiper.autoplay.start(), 300); //loop volta quando fecha
   }
 });
-//ajuste de altura
-//window.addEventListener('load', function () {
- // setTimeout(ajustarAlturaCards, 300);
-//});
-
-//window.addEventListener('resize', function () {
-//  ajustarAlturaCards();
-//});
-

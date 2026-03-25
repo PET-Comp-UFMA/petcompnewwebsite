@@ -124,7 +124,7 @@
                             <div class="swiper-slide">
                             <div class="banner-card">
                                 <h3>Antigo Banner do PETCOMP</h3>
-                                <p>Apresenta a estrutura do PETComputação  na epóca, tutorados pelo Prof. Geraldo Braz Junior e contendo 12 bolsistas , mostra também os objetivos, fatos sobre o programa e o que era feito. Atividades baseadas no conceito de unir pesquisa, ensino e extensão conforme a orientação do MEC</p>
+                                <p>O banner apresenta o PETComp (Programa de Educação Tutorial de Ciência da Computação da UFMA), criado em 2007, destacando sua atuação na formação acadêmica e profissional dos estudantes por meio da integração entre ensino, pesquisa e extensão. O grupo desenvolve atividades como projetos de pesquisa, seminários, minicursos e competições, com o objetivo de estimular o aprendizado, a autonomia, o pensamento crítico e a responsabilidade dos alunos. Além disso, evidencia seus principais eixos de atuação, também ressalta o impacto do programa, com a formação de diversos estudantes que se destacam no mercado e na academia, reforçando a importância do PETComp na trajetória acadêmica dos discentes</p>
 
                                 <div class="banner-card-actions">
                                 <button class="btn-view" data-img="./assets/banners/02.jpg">Visualizar</button>
