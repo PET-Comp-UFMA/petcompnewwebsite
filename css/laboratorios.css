@@ -1,0 +1,248 @@
+html, body {
+    overflow: auto;
+}
+
+.container-header {
+    color: white;
+    background-color: #01204C;
+}
+
+.container-header a {
+    cursor: pointer;
+    color: #3AA3FC;
+    text-decoration: none;
+}
+
+.container-body p {
+    line-height: 1.6;
+    text-align: justify;
+}
+
+h4 {
+    display: inline;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    padding: 0 60px 50px 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border: 1px solid #eaeaea;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card-header {
+    position: relative;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    clip-path: polygon(0 80%, 100% 30%, 100% 100%, 0 100%);
+    z-index: 1;
+}
+
+.card-logo-img {
+    position: relative;
+    z-index: 2; 
+    max-width: 140px; 
+    max-height: 80px; 
+    object-fit: contain; 
+}
+
+.bg-dxt {background-color: #ABF3FF;}
+.bg-vip {background-color: #B8DB87;}
+.bg-modal {background-color: #D28B8B;}
+.bg-lint {background-color: #BDE2D0;}
+.bg-nca {background-color: #D2C0DA;}
+.bg-lsdi {background-color: #ABD6DE;}
+.bg-laws {background-color: #E98080;}
+.bg-inovtec {background-color: #808080;}
+.bg-lacmor {background-color: #8086AF;}
+.bg-telemidia {background-color: #F7CB90;}
+.bg-lidi {background-color: #ECF0A0;}
+
+
+.card-body {
+    padding: 25px 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.card-title{
+    font-size: 16px;
+    font-weight: bold;
+    color: #1a1a1a;
+    margin-bottom: 5px;
+}
+
+.card-text{
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 25px;
+}
+
+.btn-saiba-mais {
+    background-color: #3151a1;
+    color: #ffffff;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 30px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    margin-top: auto;
+}
+
+.btn-saiba-mais:hover {
+    background-color: #233b77;
+}
+
+/* Animação de carregamento mais lenta */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px); /* Pequeno movimento para dar um efeito mais suave */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Estilo para telas grandes (Desktop) */
+@media screen and (min-width: 1025px) {
+    .container-header {
+        padding: 50px 60px;
+    }
+
+    .container-header h2 {
+        font-size: 50px;
+        margin-bottom: 20px;
+        font-weight: bold;
+    }
+
+    .container-header h3 {
+        font-size: 30px;
+        margin-bottom: 20px;
+        font-weight: normal;
+    }
+
+    .container-header p {
+        font-size: 16px;
+        font-weight: normal;
+    }
+
+    .container-body {
+        padding: 50px 60px;
+    }
+
+    .container-body p {
+        font-size: 20px;
+        font-weight: medium;
+    }
+}
+
+/* Estilo para dispositivos com largura entre 601px e 1024px */
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+    .container-header {
+        padding: 20px 70px;
+    }
+
+    .container-header h2 {
+        font-size: 24px;
+        margin-bottom: 15px;
+    }
+
+    .container-header h3 {
+        font-size: 16px;
+        margin-bottom: 15px;
+    }
+
+    .container-header p {
+        font-size: 9px;
+        font-weight: normal;
+    }
+
+    .container-body {
+        padding: 20px 50px;
+    }
+
+    .container-body p {
+        font-size: 14px;
+        text-indent: 2em;
+    }
+
+    .grid-container { 
+        padding: 0 50px 50px 50px; 
+    }
+}
+
+/* Estilo para dispositivos com largura até 768px (telas médias) */
+@media screen and (max-width: 768px) {
+    h4 {
+        font-size: 0.9rem;
+    }
+}
+
+/* Estilo para dispositivos com largura até 600px (smartphones) */
+@media screen and (max-width: 600px) {
+    .container-header {
+        padding: 20px 40px;
+    }
+
+    .container-header h2 {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    .container-header h3 {
+        font-size: 10px;
+        margin-bottom: 10px;
+    }
+
+    .container-header p {
+        font-size: 5px;
+        font-weight: normal;
+    }
+
+    .container-body {
+        padding: 20px 40px;
+    }
+
+    .container-body p {
+        font-size: 10px;
+        text-indent: 2em;
+    }
+
+    .grid-container { 
+        padding: 0 40px 40px 40px;
+    }
+}
