@@ -50,22 +50,64 @@ function openMenu() {
     document.querySelector('.navbar').classList.toggle('active');
 }
 
-// Alternar menu mobile
-document.querySelectorAll('.dropbtn').forEach(btn => {
-  btn.addEventListener('click', function (e) {
 
-    e.preventDefault(); // impede redirecionamento imediato
 
-    if(window.innerWidth <= 950) { 
-        const dropdown = this.parentElement;
+(function dropdownController() {
+    let mediaQuery = window.matchMedia("(max-width: 950px)");
+    window.addEventListener("change", () => {
+        mediaQuery = window.matchMedia("(max-width: 950px)");
+    })
 
-        // fecha outros dropdowns
-        document.querySelectorAll('.dropdown').forEach(d => {
-            if(d !== dropdown) d.classList.remove('open');
-        });
+    let dropdownActive = null;
 
-        dropdown.classList.toggle('open');
+    function enableDropdown(dropdown) {
+        dropdown.classList.add("open");
     }
 
-  });
-});
+    function disableDropdown(dropdown) {
+        dropdown.classList.remove("open");
+    }
+
+    function handleClick(click) {
+        if (!mediaQuery.matches) return;
+
+        const dropdown = click.target.closest(".dropdown");
+        const dropbtn = click.target.closest(".dropbtn");
+
+
+        // Clicar fora de dropdowns
+        if (!dropdown) {
+            if (dropdownActive) {
+                disableDropdown(dropdownActive);
+                dropdownActive = null;
+            }
+            return;
+        }
+
+        // Clicar para abrir um primeiro dropdown
+        if (!dropdownActive) {
+            enableDropdown(dropdown);
+            dropdownActive = dropdown;
+            return;
+        }
+
+        // Clicar para abrir um segundo dropdown e fechar o primeiro
+        if (dropdown !== dropdownActive) {
+            disableDropdown(dropdownActive);
+            enableDropdown(dropdown);
+            dropdownActive = dropdown;
+            return;
+        }
+        
+        // Se clicou no contéudo do dropdown, e não no botão
+        if (!dropbtn) {
+            return;
+        }
+
+        // Clicar para fechar o dropdown aberto
+        disableDropdown(dropdownActive);
+        dropdownActive = null;
+    }
+
+    document.addEventListener("click", handleClick);
+})();
