@@ -7,6 +7,7 @@
     $cssFiles = ['css/banners.css'];
     $jsFiles = ['js/swiper.js'];
     include "head.php";
+    
 ?>
 
 
