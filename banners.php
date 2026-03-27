@@ -5,7 +5,7 @@
 <?php 
     $title = "Banners";
     $cssFiles = ['css/banners.css'];
-    $jsFiles = ['js/swiper.js'];
+    $jsFiles = ['js/banner-swipper.js'];
     include "head.php";
     
 ?>

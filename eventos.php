@@ -18,21 +18,12 @@
         </div>
         
         <div class="container-body">
-            <p>Os eventos serão planejados através de reuniões entre o grupo. Na primeira reunião, um petiano é 
-                eleito líder do monitoramento das atividades a serem realizadas para que ocorra o evento. Este líder
-                , em conjunto com o tutor, indica membros para auxiliá-lo diretamente, podendo inclusive, ser todos 
-                os membros do PET. O tutor atua como facilitador entre as várias entidades e atores da universidade.
+            <p>Os eventos do PETComp nascem da troca de ideias e do trabalho coletivo entre seus integrantes. Em encontros iniciais, o grupo se reúne para pensar e estruturar cada atividade, escolhendo um membro que assume o papel de liderança na organização do evento. Esse processo acontece de forma colaborativa, com o apoio do tutor, que atua como um elo entre o grupo e a universidade, facilitando diálogos, parcerias e articulações necessárias. Conforme o perfil e o alcance de cada evento, diferentes membros são convidados a participar ativamente da organização, fortalecendo o espírito de equipe.
+
             </p>
             <p>
-            O grupo então define a programação baseada em minicursos, tutorias, palestras, competições, apresentação, 
-            rodas de discussão e laboratórios e define também comissões para cuidar de grandes tarefas do evento. A 
-            programação é baseada na tendência atual da área e tende a atender os anseios do público diretamente envolvido 
-            do curso de Ciência da Computação.
-            </p>
-            <p>Os eventos são então divulgados através de redes sociais em todos os cursos da área do Maranhão, em 
-                instituições públicas e particulares, assim como em instituições que possuem cursos técnicos na área. 
-                Durante os eventos, as comissões formadas atuam para garantir que a realização do evento ocorra de forma 
-                completamente ordenada.
+            A programação é construída com foco na vivência acadêmica e profissional, reunindo minicursos, palestras, tutoriais, competições, apresentações, rodas de conversa e atividades práticas em laboratório. As escolhas refletem as tendências atuais da área e buscam dialogar diretamente com os interesses e expectativas do público do curso de Ciência da Computação, criando espaços de aprendizado, debate e troca de experiências. Para dar suporte a essa diversidade de atividades, o grupo se organiza em comissões, cada uma dedicada a aspectos essenciais do evento.
+
             </p>
         </div>
 
