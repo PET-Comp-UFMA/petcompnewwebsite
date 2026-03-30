@@ -32,7 +32,7 @@ include 'head.php';
             <div class="card-body">
                 <h3 class="card-title">DEXTERS Lab</h3>
                 <p class="card-text">Lorem ipsum dolor sit amet</p>
-                <button class="btn-saiba-mais">Saiba mais</button>
+                <button class="btn-saiba-mais" onclick="abrirPopUp('popUpNCA')">Saiba mais</button>
             </div>
         </div>
 
@@ -80,7 +80,7 @@ include 'head.php';
             <div class="card-body">
                 <h3 class="card-title">NCA</h3>
                 <p class="card-text">Lorem ipsum dolor sit amet</p>
-                <button class="btn-saiba-mais">Saiba mais</button>
+                <button class="btn-saiba-mais" onclick="abrirPopUp('popUpNCA')">Saiba mais</button>
             </div>
         </div>
 
@@ -157,7 +157,48 @@ include 'head.php';
         </div>
     </div>
 
+    <div id="popUpNCA" class="popup-overlay">
+        <div class="popup-container">
+            <span class="close-btn" onclick="fecharPopUp('popUpNCA')">&times;</span>
+
+            <div class="popup-header">
+                <img src="assets/images/pag-labs/logo-nca.png" alt="Logo NCA" class="popup-logo">
+                <h2>NCA</h2>
+                <h3>Núcleo de Computação Aplicada</h3>
+            </div>
+            <div class="popup-body">
+                <p>O NCA é um espaço destinado à produção de desenvolvimento de tecnologias de ponta, agregando em um mesmo espaço as atividades de dois laboratórios - Labmint (Laboratório de Mídias Interativas) e Labpai (Laboratório de Processamento e Análise de Imagens) - que trabalham nas áreas de processamento de imagens, visão computacional, visualização e interação com dados complexos e sistemas de informações geográficas.</p>
+                <!-- js -->
+                <div class="popup-footer">
+                    <div class="coordenador">
+                        <img src="assets/images/pag-labs/logo-inovtec.png" alt="Foto Anselmo" class="prof-img">
+                        <h4>Prof. Dr. Anselmo Cardoso Paiva</h4>
+                        <span>Coordenador do NCA</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <?php include 'footer.php'; ?>
+
+    <script>
+        function abrirPopUp(idPopUp) {
+            const popUp = document.getElementById(idPopUp);
+            popUp.style.display = 'flex';
+        }
+
+        function fecharPopUp(idPopUp) {
+            const popUp = document.getElementById(idPopUp);
+            popUp.style.display = 'none';
+        }
+
+        window.onclick = function(event) {
+            if (event.target.classList.contains('popup-overlay')) {
+                popUp.style.display = 'none';
+            }
+        }
+    </script>
 
 </body>
 
