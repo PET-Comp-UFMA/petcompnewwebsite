@@ -5,6 +5,23 @@
 $title = "Laboratórios";
 $cssFiles = ['css/laboratorios.css'];
 include 'head.php';
+
+function componenteCard($titulo, $Cor, $Logo, $idPopUp)
+{
+?>
+    <div class="card">
+        <div class="card-header">
+            <div class="card-bg <?= $Cor ?>"></div>
+            <img src="<?= $Logo ?>" alt="Logo <?= $titulo ?>" class="card-logo-img">
+        </div>
+        <div class="card-body">
+            <h3 class="card-title"><?= $titulo ?></h3>
+            <p class="card-text">Lorem ipsum dolor sit amet</p>
+            <button class="btn-saiba-mais" onclick="abrirPopUp('<?= $idPopUp ?>')">Saiba mais</button>
+        </div>
+    </div>
+<?php
+}
 ?>
 
 <body>
@@ -24,137 +41,19 @@ include 'head.php';
     </div>
 
     <div class="grid-container">
-        <div class="card">
-            <div class="card-header">
-                <div class="card-bg bg-dxt"></div>
-                <img src="assets/images/pag-labs/logo-dxt.png" alt="Logo DEXTERS Lab" class="card-logo-img">
-            </div>
-            <div class="card-body">
-                <h3 class="card-title">DEXTERS Lab</h3>
-                <p class="card-text">Lorem ipsum dolor sit amet</p>
-                <button class="btn-saiba-mais" onclick="abrirPopUp('popUpNCA')">Saiba mais</button>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="card-header">
-                <div class="card-bg bg-vip"></div>
-                <img src="assets/images/pag-labs/logo-viplab.png" alt="Logo Vip Lab" class="card-logo-img">
-            </div>
-            <div class="card-body">
-                <h3 class="card-title">VIPLAB</h3>
-                <p class="card-text">Lorem ipsum dolor sit amet</p>
-                <button class="btn-saiba-mais">Saiba mais</button>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="card-header">
-                <div class="card-bg bg-modal"></div>
-                <img src="assets/images/pag-labs/logo-modal.png" alt="Logo Modal" class="card-logo-img">
-            </div>
-            <div class="card-body">
-                <h3 class="card-title">MODAL</h3>
-                <p class="card-text">Lorem ipsum dolor sit amet</p>
-                <button class="btn-saiba-mais">Saiba mais</button>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="card-header">
-                <div class="card-bg bg-lint"></div>
-                <img src="assets/svg/pag-labs/logo-lint.svg" alt="Logo Lint" class="card-logo-img">
-            </div>
-            <div class="card-body">
-                <h3 class="card-title">LINT²</h3>
-                <p class="card-text">Lorem ipsum dolor sit amet</p>
-                <button class="btn-saiba-mais">Saiba mais</button>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="card-header">
-                <div class="card-bg bg-nca"></div>
-                <img src="assets/images/pag-labs/logo-nca.png" alt="Logo NCA" class="card-logo-img">
-            </div>
-            <div class="card-body">
-                <h3 class="card-title">NCA</h3>
-                <p class="card-text">Lorem ipsum dolor sit amet</p>
-                <button class="btn-saiba-mais" onclick="abrirPopUp('popUpNCA')">Saiba mais</button>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="card-header">
-                <div class="card-bg bg-lsdi"></div>
-                <img src="assets/images/pag-labs/logo-lsdi.png" alt="Logo LSDi" class="card-logo-img">
-            </div>
-            <div class="card-body">
-                <h3 class="card-title">LSDi</h3>
-                <p class="card-text">Lorem ipsum dolor sit amet</p>
-                <button class="btn-saiba-mais">Saiba mais</button>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="card-header">
-                <div class="card-bg bg-laws"></div>
-                <img src="assets/images/pag-labs/logo-laws.png" alt="Logo LAWS" class="card-logo-img">
-            </div>
-            <div class="card-body">
-                <h3 class="card-title">LAWS</h3>
-                <p class="card-text">Lorem ipsum dolor sit amet</p>
-                <button class="btn-saiba-mais">Saiba mais</button>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="card-header">
-                <div class="card-bg bg-inovtec"></div>
-                <img src="assets/images/pag-labs/logo-inovtec.png" alt="Logo INOVTEC" class="card-logo-img">
-            </div>
-            <div class="card-body">
-                <h3 class="card-title">INOVTEC</h3>
-                <p class="card-text">Lorem ipsum dolor sit amet</p>
-                <button class="btn-saiba-mais">Saiba mais</button>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="card-header">
-                <div class="card-bg bg-lacmor"></div>
-                <img src="assets/images/pag-labs/logo-lacmor.png" alt="Logo LACMOR" class="card-logo-img">
-            </div>
-            <div class="card-body">
-                <h3 class="card-title">LACMOR</h3>
-                <p class="card-text">Lorem ipsum dolor sit amet</p>
-                <button class="btn-saiba-mais">Saiba mais</button>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="card-header">
-                <div class="card-bg bg-telemidia"></div>
-                <img src="assets/images/pag-labs/logo-telemidia.png" alt="Logo TELEMÍDIA" class="card-logo-img">
-            </div>
-            <div class="card-body">
-                <h3 class="card-title">TELEMÍDIA</h3>
-                <p class="card-text">Lorem ipsum dolor sit amet</p>
-                <button class="btn-saiba-mais">Saiba mais</button>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="card-header">
-                <div class="card-bg bg-lidi"></div>
-                <img src="assets/images/pag-labs/logo-lidi.png" alt="Logo LIDI" class="card-logo-img">
-            </div>
-            <div class="card-body">
-                <h3 class="card-title">LIDI</h3>
-                <p class="card-text">Lorem ipsum dolor sit amet</p>
-                <button class="btn-saiba-mais">Saiba mais</button>
-            </div>
-        </div>
+        <?php
+        componenteCard("DEXTERS Lab", "bg-dxt", "assets/images/pag-labs/logo-dxt.png", "popUpDxt");
+        componenteCard("VIPLAB", "bg-vip", "assets/images/pag-labs/logo-viplab.png", "popUpVip");
+        componenteCard("MODAL", "bg-modal", "assets/images/pag-labs/logo-modal.png", "popUpModal");
+        componenteCard("LINT²", "bg-lint", "assets/svg/pag-labs/logo-lint.svg", "popUpLint");
+        componenteCard("NCA", "bg-nca", "assets/images/pag-labs/logo-nca.png", "popUpNCA");
+        componenteCard("LSDi", "bg-lsdi", "assets/images/pag-labs/logo-lsdi.png", "popUpLsdi");
+        componenteCard("LAWS", "bg-laws", "assets/images/pag-labs/logo-laws.png", "popUpLaws");
+        componenteCard("INOVTEC", "bg-inovtec", "assets/images/pag-labs/logo-inovtec.png", "popUpInovtec");
+        componenteCard("LACMOR", "bg-dxt", "assets/images/pag-labs/logo-lacmor.png", "popUpLacmor");
+        componenteCard("TELEMÍDIA", "bg-telemidia", "assets/images/pag-labs/logo-telemidia.png", "popUpTelemidia");
+        componenteCard("LIDI", "bg-lidi", "assets/images/pag-labs/logo-lidi.png", "popUpLidi");
+        ?>
     </div>
 
     <div id="popUpNCA" class="popup-overlay">
