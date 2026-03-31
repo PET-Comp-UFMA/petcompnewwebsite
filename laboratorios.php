@@ -22,6 +22,23 @@ function componenteCard($titulo, $Cor, $Logo, $idPopUp)
     </div>
 <?php
 }
+
+function componentePopUp($titulo, $Cor, $Logo, $idPopUp)
+{
+?>
+    <div class="card">
+        <div class="card-header">
+            <div class="card-bg <?= $Cor ?>"></div>
+            <img src="<?= $Logo ?>" alt="Logo <?= $titulo ?>" class="card-logo-img">
+        </div>
+        <div class="card-body">
+            <h3 class="card-title"><?= $titulo ?></h3>
+            <p class="card-text">Lorem ipsum dolor sit amet</p>
+            <button class="btn-saiba-mais" onclick="abrirPopUp('<?= $idPopUp ?>')">Saiba mais</button>
+        </div>
+    </div>
+<?php
+}
 ?>
 
 <body>
