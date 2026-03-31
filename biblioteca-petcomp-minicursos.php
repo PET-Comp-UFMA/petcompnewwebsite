@@ -1,3 +1,5 @@
+<?php require_once "scripts.php/renderComponent.php" ?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
   <?php 
@@ -8,14 +10,15 @@
   ?>
 <body>
   <?php include('header.php') ?>
+
+  <?php renderComponent("container-header.php", [
+    "titulo_pagina" => "Minicursos",
+    "descricao" => "Veja os nossos minicursos",
+    "caminho" => ["Biblioteca PETComp", "Minicursos"]
+  ]);
+  ?>
+
   <main>
-  <div class="container-header">    
-    <h2>Biblioteca</h2>
-    <h3>Veja os nossos repositórios</h3>
-    <h4><a href="index.php">Página Inicial</a></h4>
-    <h4> → <a href="biblioteca-petcomp-main.php">Biblioteca PETComp</a></h4>
-    <h4> → Material Minicursos</h4>
-  </div>
 
   <?php 
     $href = 'biblioteca-petcomp-main.php';

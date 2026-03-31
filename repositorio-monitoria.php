@@ -1,4 +1,4 @@
-<?php require_once "scripts.php/repositorio-monitoria.php" ?>
+<?php require_once "scripts.php/renderComponent.php" ?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
