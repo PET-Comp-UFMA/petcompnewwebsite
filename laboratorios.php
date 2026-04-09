@@ -23,11 +23,11 @@ function componenteCard($titulo, $subtitulo, $Cor, $Logo, $idPopUp)
 <?php
 }
 
-function componentePopUp($idPopUp, $caminhoLogo, $titulo, $subtitulo, $descricao, $coordenadores = [])
+function componentePopUp($idPopUp, $cor, $caminhoLogo, $titulo, $subtitulo, $descricao, $coordenadores = [])
 {
 ?>
     <div id="<?= $idPopUp ?>" class="popup-overlay">
-        <div class="popup-container">
+        <div class="popup-container" style="background: linear-gradient(180deg, <?= $cor ?> 0%, #ffffff 25%);">
             <span class="close-btn" onclick="fecharPopUp('<?= $idPopUp ?>')">&times;</span>
 
             <div class="popup-header">
@@ -43,6 +43,10 @@ function componentePopUp($idPopUp, $caminhoLogo, $titulo, $subtitulo, $descricao
                             <img src="<?= $coord['foto'] ?>" alt="Foto <?= $coord['nome'] ?>" class="prof-img">
                             <h4><?= $coord['nome'] ?></h4>
                             <span><?= $coord['cargo'] ?></span>
+                            <div class="links">
+                                <h5><a href="<?= $coord['email'] ?>" style="color: <?= $cor ?>;">E-mail</a></h5>
+                                <h5><a href="<?= $coord['lattes'] ?>" style="color: <?= $cor ?>;">Lattes</a></h5>
+                            </div>
                         </div>
                     <?php endforeach; ?>
                 </div>
@@ -74,11 +78,11 @@ function componentePopUp($idPopUp, $caminhoLogo, $titulo, $subtitulo, $descricao
     <div class="grid-container">
         <?php
         componenteCard("DEXTERS Lab", "Laboratório de Engenharia de Software", "bg-dxt", "assets/images/pag-labs/logo-dxt.png", "popUpDxt");
-        componenteCard("VIPLAB", "Laboratório de Engenharia de Software", "bg-vip", "assets/images/pag-labs/logo-viplab.png", "popUpVip");
-        componenteCard("MODAL", "Laboratório de Engenharia de Software", "bg-modal", "assets/images/pag-labs/logo-modal.png", "popUpModal");
-        componenteCard("LINT²", "Laboratório de Engenharia de Software", "bg-lint", "assets/svg/pag-labs/logo-lint.svg", "popUpLint");
-        componenteCard("NCA", "Laboratório de Engenharia de Software", "bg-nca", "assets/images/pag-labs/logo-nca.png", "popUpNCA");
-        componenteCard("LSDi", "Laboratório de Engenharia de Software", "bg-lsdi", "assets/images/pag-labs/logo-lsdi.png", "popUpLsdi");
+        componenteCard("VIPLAB", "Laboratório de Visão e Processamento de Imagens", "bg-vip", "assets/images/pag-labs/logo-viplab.png", "popUpVip");
+        componenteCard("MODAL", "Laboratório de Modelagem Matemática e Algoritmos", "bg-modal", "assets/images/pag-labs/logo-modal.png", "popUpModal");
+        componenteCard("LINT²", "Laboratório de Inteligência Interativa", "bg-lint", "assets/svg/pag-labs/logo-lint.svg", "popUpLint");
+        componenteCard("NCA", "Núcleo de Computação Aplicada", "bg-nca", "assets/images/pag-labs/logo-nca.png", "popUpNCA");
+        componenteCard("LSDi", "Laboratório de Sistemas Distribuídos Inteligentes", "bg-lsdi", "assets/images/pag-labs/logo-lsdi.png", "popUpLsdi");
         componenteCard("LAWS", "Laboratório de Engenharia de Software", "bg-laws", "assets/images/pag-labs/logo-laws.png", "popUpLaws");
         componenteCard("INOVTEC", "Laboratório de Engenharia de Software", "bg-inovtec", "assets/images/pag-labs/logo-inovtec.png", "popUpInovtec");
         componenteCard("LACMOR", "Laboratório de Engenharia de Software", "bg-dxt", "assets/images/pag-labs/logo-lacmor.png", "popUpLacmor");
@@ -90,173 +94,118 @@ function componentePopUp($idPopUp, $caminhoLogo, $titulo, $subtitulo, $descricao
     <?php // AINDA FALTA FAZER O CARROSSEL DEPOIS
     componentePopUp(
         "popUpDxt",
+        "#ABF3FF",
         "assets/images/pag-labs/logo-dxt.png",
         "DEXTERS LAB",
         "Laboratório de Engenharia de Software",
         "O Laboratório de Engenharia de Software atua com pesquisas relacionadas ao processo de desenvolvimento de software com qualidade e inclusão de aspectos de interação humano-computador para aumentar a competitividade de produtos de software.",
         [
             [
-                'foto' => 'assets/images/pag-labs/coord-dxt.png',
+                'foto' => 'assets/images/pag-labs/coord-dxt.jpeg',
                 'nome' => 'Prof. Dr. Luis Rivero',
-                'cargo' => 'Coordenador do DXT Lab'
-            ]
-        ]
-    );
-    componentePopUp(
-        "popUpDxt",
-        "assets/images/pag-labs/logo-nca.png",
-        "NCA",
-        "Núcleo de Computação Aplicada",
-        "O NCA é um espaço destinado à produção de desenvolvimento de tecnologias de ponta, agregando em um mesmo espaço as atividades de dois laboratórios - Labmint (Laboratório de Mídias Interativas) e Labpai (Laboratório de Processamento e Análise de Imagens) - que trabalham nas áreas de processamento de imagens, visão computacional, visualização e interação com dados complexos e sistemas de informações geográficas.",
-        [
-            [
-                'foto' => 'assets/images/pag-labs/logo-inovtec.png',
-                'nome' => 'Prof. Dr. Anselmo Cardoso Paiva',
-                'cargo' => 'Coordenador do NCA'
-            ]
-        ]
-    );
-    componentePopUp(
-        "popUpDxt",
-        "assets/images/pag-labs/logo-nca.png",
-        "NCA",
-        "Núcleo de Computação Aplicada",
-        "O NCA é um espaço destinado à produção de desenvolvimento de tecnologias de ponta, agregando em um mesmo espaço as atividades de dois laboratórios - Labmint (Laboratório de Mídias Interativas) e Labpai (Laboratório de Processamento e Análise de Imagens) - que trabalham nas áreas de processamento de imagens, visão computacional, visualização e interação com dados complexos e sistemas de informações geográficas.",
-        [
-            [
-                'foto' => 'assets/images/pag-labs/logo-inovtec.png',
-                'nome' => 'Prof. Dr. Anselmo Cardoso Paiva',
-                'cargo' => 'Coordenador do NCA'
-            ]
-        ]
-    );
-    componentePopUp(
-        "popUpDxt",
-        "assets/images/pag-labs/logo-nca.png",
-        "NCA",
-        "Núcleo de Computação Aplicada",
-        "O NCA é um espaço destinado à produção de desenvolvimento de tecnologias de ponta, agregando em um mesmo espaço as atividades de dois laboratórios - Labmint (Laboratório de Mídias Interativas) e Labpai (Laboratório de Processamento e Análise de Imagens) - que trabalham nas áreas de processamento de imagens, visão computacional, visualização e interação com dados complexos e sistemas de informações geográficas.",
-        [
-            [
-                'foto' => 'assets/images/pag-labs/logo-inovtec.png',
-                'nome' => 'Prof. Dr. Anselmo Cardoso Paiva',
-                'cargo' => 'Coordenador do NCA'
-            ]
-        ]
-    );
-    componentePopUp(
-        "popUpDxt",
-        "assets/images/pag-labs/logo-nca.png",
-        "NCA",
-        "Núcleo de Computação Aplicada",
-        "O NCA é um espaço destinado à produção de desenvolvimento de tecnologias de ponta, agregando em um mesmo espaço as atividades de dois laboratórios - Labmint (Laboratório de Mídias Interativas) e Labpai (Laboratório de Processamento e Análise de Imagens) - que trabalham nas áreas de processamento de imagens, visão computacional, visualização e interação com dados complexos e sistemas de informações geográficas.",
-        [
-            [
-                'foto' => 'assets/images/pag-labs/logo-inovtec.png',
-                'nome' => 'Prof. Dr. Anselmo Cardoso Paiva',
-                'cargo' => 'Coordenador do NCA'
-            ]
-        ]
-    );
-    componentePopUp(
-        "popUpDxt",
-        "assets/images/pag-labs/logo-nca.png",
-        "NCA",
-        "Núcleo de Computação Aplicada",
-        "O NCA é um espaço destinado à produção de desenvolvimento de tecnologias de ponta, agregando em um mesmo espaço as atividades de dois laboratórios - Labmint (Laboratório de Mídias Interativas) e Labpai (Laboratório de Processamento e Análise de Imagens) - que trabalham nas áreas de processamento de imagens, visão computacional, visualização e interação com dados complexos e sistemas de informações geográficas.",
-        [
-            [
-                'foto' => 'assets/images/pag-labs/logo-inovtec.png',
-                'nome' => 'Prof. Dr. Anselmo Cardoso Paiva',
-                'cargo' => 'Coordenador do NCA'
-            ]
-        ]
-    );
-    componentePopUp(
-        "popUpDxt",
-        "assets/images/pag-labs/logo-nca.png",
-        "NCA",
-        "Núcleo de Computação Aplicada",
-        "O NCA é um espaço destinado à produção de desenvolvimento de tecnologias de ponta, agregando em um mesmo espaço as atividades de dois laboratórios - Labmint (Laboratório de Mídias Interativas) e Labpai (Laboratório de Processamento e Análise de Imagens) - que trabalham nas áreas de processamento de imagens, visão computacional, visualização e interação com dados complexos e sistemas de informações geográficas.",
-        [
-            [
-                'foto' => 'assets/images/pag-labs/logo-inovtec.png',
-                'nome' => 'Prof. Dr. Anselmo Cardoso Paiva',
-                'cargo' => 'Coordenador do NCA'
-            ]
-        ]
-    );
-    componentePopUp(
-        "popUpDxt",
-        "assets/images/pag-labs/logo-nca.png",
-        "NCA",
-        "Núcleo de Computação Aplicada",
-        "O NCA é um espaço destinado à produção de desenvolvimento de tecnologias de ponta, agregando em um mesmo espaço as atividades de dois laboratórios - Labmint (Laboratório de Mídias Interativas) e Labpai (Laboratório de Processamento e Análise de Imagens) - que trabalham nas áreas de processamento de imagens, visão computacional, visualização e interação com dados complexos e sistemas de informações geográficas.",
-        [
-            [
-                'foto' => 'assets/images/pag-labs/logo-inovtec.png',
-                'nome' => 'Prof. Dr. Anselmo Cardoso Paiva',
-                'cargo' => 'Coordenador do NCA'
-            ]
-        ]
-    );
-    componentePopUp(
-        "popUpDxt",
-        "assets/images/pag-labs/logo-nca.png",
-        "NCA",
-        "Núcleo de Computação Aplicada",
-        "O NCA é um espaço destinado à produção de desenvolvimento de tecnologias de ponta, agregando em um mesmo espaço as atividades de dois laboratórios - Labmint (Laboratório de Mídias Interativas) e Labpai (Laboratório de Processamento e Análise de Imagens) - que trabalham nas áreas de processamento de imagens, visão computacional, visualização e interação com dados complexos e sistemas de informações geográficas.",
-        [
-            [
-                'foto' => 'assets/images/pag-labs/logo-inovtec.png',
-                'nome' => 'Prof. Dr. Anselmo Cardoso Paiva',
-                'cargo' => 'Coordenador do NCA'
-            ]
-        ]
-    );
-    componentePopUp(
-        "popUpDxt",
-        "assets/images/pag-labs/logo-nca.png",
-        "NCA",
-        "Núcleo de Computação Aplicada",
-        "O NCA é um espaço destinado à produção de desenvolvimento de tecnologias de ponta, agregando em um mesmo espaço as atividades de dois laboratórios - Labmint (Laboratório de Mídias Interativas) e Labpai (Laboratório de Processamento e Análise de Imagens) - que trabalham nas áreas de processamento de imagens, visão computacional, visualização e interação com dados complexos e sistemas de informações geográficas.",
-        [
-            [
-                'foto' => 'assets/images/pag-labs/logo-inovtec.png',
-                'nome' => 'Prof. Dr. Anselmo Cardoso Paiva',
-                'cargo' => 'Coordenador do NCA'
-            ]
-        ]
-    );
-    componentePopUp(
-        "popUpDxt",
-        "assets/images/pag-labs/logo-nca.png",
-        "NCA",
-        "Núcleo de Computação Aplicada",
-        "O NCA é um espaço destinado à produção de desenvolvimento de tecnologias de ponta, agregando em um mesmo espaço as atividades de dois laboratórios - Labmint (Laboratório de Mídias Interativas) e Labpai (Laboratório de Processamento e Análise de Imagens) - que trabalham nas áreas de processamento de imagens, visão computacional, visualização e interação com dados complexos e sistemas de informações geográficas.",
-        [
-            [
-                'foto' => 'assets/images/pag-labs/logo-inovtec.png',
-                'nome' => 'Prof. Dr. Anselmo Cardoso Paiva',
-                'cargo' => 'Coordenador do NCA'
-            ]
-        ]
-    );
-    componentePopUp(
-        "popUpDxt",
-        "assets/images/pag-labs/logo-nca.png",
-        "NCA",
-        "Núcleo de Computação Aplicada",
-        "O NCA é um espaço destinado à produção de desenvolvimento de tecnologias de ponta, agregando em um mesmo espaço as atividades de dois laboratórios - Labmint (Laboratório de Mídias Interativas) e Labpai (Laboratório de Processamento e Análise de Imagens) - que trabalham nas áreas de processamento de imagens, visão computacional, visualização e interação com dados complexos e sistemas de informações geográficas.",
-        [
-            [
-                'foto' => 'assets/images/pag-labs/logo-inovtec.png',
-                'nome' => 'Prof. Dr. Anselmo Cardoso Paiva',
-                'cargo' => 'Coordenador do NCA'
+                'cargo' => 'Coordenador do DXT Lab',
+                'email' => 'mailto:luis.rivero@ufma.br',
+                'lattes' => 'http://lattes.cnpq.br/8534667641706692'
             ]
         ]
     );
 
+    componentePopUp(
+        "popUpVip",
+        "#B8DB87",
+        "assets/images/pag-labs/logo-viplab.png",
+        "VIPLAB",
+        "Vision and Image Processing Lab",
+        "O Vision and Image Processing Lab (Laboratório de Visão e Processamento de Imagens) - VIPLab - é um dos laboratórios vinculados ao Núcleo de Computação Aplicada (NCA). O laboratório desenvolve pesquisas nas áreas de algoritmos de aprendizado profundo aplicados a problemas médicos e ciência de dados.",
+        [
+            [
+                'foto' => 'assets/images/pag-labs/coord-vip1.jpeg',
+                'nome' => 'Prof. Dr. Geraldo Braz Júnior',
+                'cargo' => 'Coordenador do VIPLab',
+                'email' => 'mailto:geraldo@nca.ufma.br',
+                'lattes' => 'http://lattes.cnpq.br/8287861610873629'
+            ],
+            [
+                'foto' => 'assets/images/pag-labs/coord_vip2.jpeg',
+                'nome' => 'Prof. Dr. João Dallyson',
+                'cargo' => 'Coordenador do VIPLab',
+                'email' => 'mailto:joao.dallyson@ufma.br',
+                'lattes' => 'http://lattes.cnpq.br/6047330108382641'
+            ]
+        ]
+    );
+
+    componentePopUp(
+        "popUpModal",
+        "#D28B8B",
+        "assets/images/pag-labs/logo-modal.png",
+        "MODAL",
+        "Laboratório de Modelagem Matemática e Algoritmos",
+        "O Laboratório de Modelagem Matemática e Algoritmos é voltado para o estudo, desenvolvimento e aplicações de modelos matemáticos que possam representar fenômenos do mundo real, com a implementação de algoritmos que resolvem ou aproximam as soluções desses modelos.",
+        [
+            [
+                'foto' => 'assets/images/pag-labs/coord-modal.jpeg',
+                'nome' => 'Prof. Dr. Francisco Glaubos',
+                'cargo' => 'Coordenador do MODAL',
+                'email' => 'mailto:francisco.glaubos@ufma.br',
+                'lattes' => 'http://lattes.cnpq.br/1711180190759554'
+            ]
+        ]
+    );
+
+    componentePopUp(
+        "popUpLint",
+        "#BDE2D0",
+        "assets/svg/pag-labs/logo-lint.svg",
+        "LINT²",
+        "Laboratório de Inteligência Interativa",
+        "O laboratório de Inteligência Interativa atua nas áreas de Inteligência Artificial, Ciência de Dados, Jogos Digitais, entre outras atuações.",
+        [
+            [
+                'foto' => 'assets/images/pag-labs/coord-lint.jpeg',
+                'nome' => 'Prof. Dr. Tiago Bonini Borchartt',
+                'cargo' => 'Coordenador do LINT²',
+                'email' => 'mailto:tiago.bonini@ufma.br',
+                'lattes' => 'http://lattes.cnpq.br/2352727269839328'
+            ]
+        ]
+    );
+
+    componentePopUp(
+        "popUpNCA",
+        "#D2C0DA",
+        "assets/images/pag-labs/logo-nca.png",
+        "NCA",
+        "Núcleo de Computação Aplicada",
+        "O NCA é um espaço destinado à produção e desenvolvimento de tecnologias de ponta, agregando em um mesmo espaço as atividades de dois laboratórios (LABMINT e LABPAI) que trabalham nas áreas de processamento de imagens, visão computacional, visualização e interação com dados complexos e sistemas de informações geográficos.",
+        [
+            [
+                'foto' => 'assets/images/pag-labs/coord-nca.jpeg',
+                'nome' => 'Prof. Dr. Anselmo Cardoso de Paiva',
+                'cargo' => 'Coordenador do NCA',
+                'email' => 'mailto:anselmo.paiva@ufma.br',
+                'lattes' => 'http://lattes.cnpq.br/6446831084215512'
+            ]
+        ]
+    );
+
+    componentePopUp(
+        "popUpLsdi",
+        "#ABD6DE",
+        "assets/images/pag-labs/logo-lsdi.png",
+        "LSDi",
+        "Laboratório de Sistemas Distribuídos Inteligentes",
+        "O LSDi tem como principal linha de pesquisa a área de sistemas distribuídos, com ênfase em sistemas de computação móvel e pervasiva que combinam com o uso de inteligência computacional.",
+        [
+            [
+                'foto' => 'assets/images/pag-labs/coord-lsdi.jpeg',
+                'nome' => 'Prof. Dr. Francisco José da Silva e Silva',
+                'cargo' => 'Coordenador do LSDi',
+                'email' => 'mailto:francisco.silva@ufma.br',
+                'lattes' => 'http://lattes.cnpq.br/0770343284012942'
+            ]
+        ]
+    );
     ?>
 
     <?php include 'footer.php'; ?>

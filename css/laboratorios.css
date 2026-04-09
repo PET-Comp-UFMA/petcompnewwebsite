@@ -22,6 +22,10 @@ h4 {
     display: inline;
 }
 
+h5 {
+    display: inline;
+}
+
 .grid-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -231,9 +235,20 @@ h4 {
     text-align: center;
 }
 
+.coordenador h5 {
+    font-size: 12px;
+    font-weight: bold;
+}
+
 .coordenador span {
     font-size: 11px;
     color: #666;
+}
+
+.links {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
 }
 
 /* Animação de carregamento mais lenta */
