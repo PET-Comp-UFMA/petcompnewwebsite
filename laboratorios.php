@@ -85,7 +85,7 @@ function componentePopUp($idPopUp, $cor, $caminhoLogo, $titulo, $subtitulo, $des
         componenteCard("LSDi", "Laboratório de Sistemas Distribuídos Inteligentes", "bg-lsdi", "assets/images/pag-labs/logo-lsdi.png", "popUpLsdi");
         componenteCard("LAWS", "Laboratório de Engenharia de Software", "bg-laws", "assets/images/pag-labs/logo-laws.png", "popUpLaws");
         componenteCard("INOVTEC", "Laboratório de Engenharia de Software", "bg-inovtec", "assets/images/pag-labs/logo-inovtec.png", "popUpInovtec");
-        componenteCard("LACMOR", "Laboratório de Engenharia de Software", "bg-dxt", "assets/images/pag-labs/logo-lacmor.png", "popUpLacmor");
+        componenteCard("LACMOR", "Laboratório de Engenharia de Software", "bg-lacmor", "assets/images/pag-labs/logo-lacmor.png", "popUpLacmor");
         componenteCard("TELEMÍDIA", "Laboratório de Engenharia de Software", "bg-telemidia", "assets/images/pag-labs/logo-telemidia.png", "popUpTelemidia");
         componenteCard("LIDI", "Laboratório de Engenharia de Software", "bg-lidi", "assets/images/pag-labs/logo-lidi.png", "popUpLidi");
         ?>
@@ -203,6 +203,96 @@ function componentePopUp($idPopUp, $cor, $caminhoLogo, $titulo, $subtitulo, $des
                 'cargo' => 'Coordenador do LSDi',
                 'email' => 'mailto:francisco.silva@ufma.br',
                 'lattes' => 'http://lattes.cnpq.br/0770343284012942'
+            ]
+        ]
+    );
+
+    componentePopUp(
+        "popUpLaws",
+        "#E98080",
+        "assets/images/pag-labs/logo-laws.png",
+        "LAWS",
+        "Laboratório de Sistemas Web Avançados",
+        "O Laboratory of Advanced Web Systems (Laboratório de Sistemas Web Avançados) - LAWS - tem como objetivo a realização de projetos de pesquisa e desenvolvimento envolvendo a infra-estrutura da Web, Multimídia e suas aplicações. Suas principais áreas de atuação são: Avaliação de Desempenho, Qualidade de Serviço, Arquiteturas Orientadas a Serviços, Multimídia e TV Digital.",
+        [
+            [
+                'foto' => 'assets/images/pag-labs/coord-laws.jpeg',
+                'nome' => 'Prof. Dr. Mário Antonio Meireles Teixeira',
+                'cargo' => 'Coordenador do LAWS',
+                'email' => 'mailto:mario.meireles@ufma.br',
+                'lattes' => 'http://lattes.cnpq.br/9943003955628885'
+            ]
+        ]
+    );
+
+    componentePopUp(
+        "popUpInovtec",
+        "#808080",
+        "assets/images/pag-labs/logo-inovtec.png",
+        "INOVTEC",
+        "Núcleo de Estudos Tecnológicos em Mecatrônica",
+        "O Núcleo de Estudos Tecnológicos em Mecatrônica tem o intuito de juntar os conhecimentos em Computação juntamente com as Engenharias Elétrica e Mecânica. O foco está em projetos eletromecânicos automatizados, controlados por sistemas e programas de computadores.",
+        [
+            [
+                'foto' => 'assets/images/pag-labs/coord-inovtec.jpeg',
+                'nome' => 'Prof. Dr. Areolino de Almeida Neto',
+                'cargo' => 'Coordenador do INOVTEC',
+                'email' => 'mailto:areolino.neto@ufma.br',
+                'lattes' => 'http://lattes.cnpq.br/8041675571955870'
+            ]
+        ]
+    );
+
+    componentePopUp(
+        "popUpLacmor",
+        "#8086AF",
+        "assets/images/pag-labs/logo-lacmor.png",
+        "LACMOR",
+        "Laboratório de Métodos de Cognição Artificial para Otimização e Robótica",
+        "O Laboratório de Aprendizagem Computacional, Métodos de Otimização e Robótica realiza investigação científica nas áreas de otimização, aprendizado de máquina e robótica móvel.",
+        [
+            [
+                'foto' => 'assets/images/pag-labs/coord-lacmor.jpeg',
+                'nome' => 'Prof. Dr. Alexandre César Muniz de Oliveira',
+                'cargo' => 'Coordenador do LACMOR',
+                'email' => 'mailto:alexandre.cesar@ufma.br',
+                'lattes' => 'http://lattes.cnpq.br/5225588855422632'
+            ]
+        ]
+    );
+
+    componentePopUp(
+        "popUpTelemidia",
+        "#F7CB90",
+        "assets/images/pag-labs/logo-telemidia.png",
+        "Telemídia",
+        "Laboratório de Sistemas Multimídia",
+        "O TELEMÍDIA é uma filial do TELEMÍDIA da PUC–RIO, sendo focado nas áreas de sistemas multimídia e Web.",
+        [
+            [
+                'foto' => 'assets/images/pag-labs/coord-telemidia.jpeg',
+                'nome' => 'Prof. Dr. Carlos de Salles Soares Neto',
+                'cargo' => 'Coordenador do Telemídia',
+                'email' => 'mailto:carlos.salles@ufma.br',
+                'lattes' => 'http://lattes.cnpq.br/1512846862093142'
+            ]
+        ]
+    );
+
+    componentePopUp(
+        "popUpLidi",
+        "#ECF0A0",
+        "assets/images/pag-labs/logo-lidi.png",
+        "LIDI",
+        "Laboratório de Inclusão  Digital",
+        "O Laboratório de Inclusão  Digital (LIDI) desempenha um papel crucial na promoção de inclusão tecnológica. Este projeto busca mitigar as disparidades digitais ao capacitar esses grupos, proporcionando-lhes habilidades essenciais para navegarem no mundo digital em constante evolução. Ao alinhar-se com a missão da UNITI na UFMA, o laboratório contribui significativamente para a construção de uma comunidade mais inclusiva e tecnologicamente capacitada.",
+        [
+            [
+                'foto' => 'assets/images/pag-labs/coord-lidi.jpeg',
+                'nome' => 'Prof. Dr. Carlos Eduardo Portela Serra de Castro',
+                'cargo' => 'Coordenador do LIDI',
+                'email' => 'mailto:carlos.castro@ufma.br',
+                'lattes' => 'http://lattes.cnpq.br/4162711893419264'
             ]
         ]
     );
