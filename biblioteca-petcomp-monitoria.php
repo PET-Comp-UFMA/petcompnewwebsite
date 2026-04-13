@@ -1,3 +1,5 @@
+<?php require_once "scripts.php/renderComponent.php" ?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <?php 
@@ -9,13 +11,12 @@
 <body>
     <?php include('header.php') ?>
     <main>
-        <div class="container-header">    
-            <h2>Biblioteca</h2>
-            <h3>Veja os nossos repositórios</h3>
-            <h4><a href="index.php">Página Inicial</a></h4>
-            <h4> → <a href="biblioteca-petcomp-main.php">Biblioteca PETComp</a></h4>
-            <h4> → Material Monitorias</h4>
-        </div>
+        <?php renderComponent("container-header.php", [
+            "titulo_pagina" => "Monitorias",
+            "descricao" => "Veja as nossas monitorias",
+            "caminho" => ["Biblioteca PETComp", "Monitorias"]
+        ]);
+        ?>
 
         <?php 
             $href = 'biblioteca-petcomp-main.php';
