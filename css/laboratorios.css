@@ -22,6 +22,10 @@ h4 {
     display: inline;
 }
 
+h5 {
+    display: inline;
+}
+
 .grid-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -123,6 +127,128 @@ h4 {
 
 .btn-saiba-mais:hover {
     background-color: #233b77;
+}
+
+.popup-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 10000;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.popup-container {
+    background: linear-gradient(180deg, #D2C0DA 0%, #ffffff 25%);
+    border-radius: 20px;
+    width: 100%;
+    max-width: 600px;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    padding: 40px 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 0.3s ease-out;
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    font-size: 30px;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.close-btn:hover {
+    color: #ff0000
+}
+
+.popup-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.popup-logo {
+    max-width: 150px;
+    margin-bottom: 30px;
+}
+
+.popup-header h2 {
+    font-size: 28px;
+    color: #000;
+    margin: 0;
+    font-weight: bolder;
+}
+
+.popup-header h3 {
+    font-size: 14px;
+    color: #555;
+    font-weight: bold;
+    margin: 5px 0 0 0;
+}
+
+.popup-body p {
+    font-size: 13px;
+    line-height: 1.6;
+    text-align: justify;
+    color: #000;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+.popup-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.coordenador {
+    text-align: center;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.prof-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.coordenador h4 {
+    font-size: 14px;
+    font-weight: bold;
+    color: #000;
+    margin: 0;
+    text-align: center;
+}
+
+.coordenador h5 {
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.coordenador span {
+    font-size: 11px;
+    color: #666;
+}
+
+.links {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
 }
 
 /* Animação de carregamento mais lenta */
@@ -244,5 +370,9 @@ h4 {
 
     .grid-container { 
         padding: 0 40px 40px 40px;
+    }
+
+    .popup-footer {
+        flex-direction: column;
     }
 }
