@@ -232,7 +232,6 @@ body {
   height: 140px;
   object-fit: contain;
   transition: transform .3s ease;
-  cursor: pointer;
   padding: 0;     
 }
 
