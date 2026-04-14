@@ -12,9 +12,9 @@
     <?php include('header.php') ?>
     <main>
         <?php renderComponent("container-header.php", [
-            "titulo_pagina" => "Monitorias",
-            "descricao" => "Veja as nossas monitorias",
-            "caminho" => ["Biblioteca PETComp", "Monitorias"]
+            "titulo_pagina" => "Repositório Educacional Aberto",
+            "descricao" => "Monitorias",
+            "caminho" => ["Repositório Educacional", "Monitorias"]
         ]);
         ?>
 
@@ -24,7 +24,7 @@
         ?>
         
         <div class="container-body">
-            <p>Com o objetivo de apoiar tanto a comunidade acadêmica quanto a local, o PETComp oferece uma variedade de documentos e materiais de apoio que estão disponíveis para consulta a qualquer momento. Esses recursos foram cuidadosamente selecionados para atender às necessidades de estudantes, professores e pesquisadores, e podem ser acessados facilmente através do nosso site. Abaixo, você encontrará uma coleção de arquivos de auxílio educacional, que abrangem diferentes áreas do conhecimento e têm o intuito de complementar e enriquecer o aprendizado de todos.  
+            <p>  
             </p>        
         </div>
 
