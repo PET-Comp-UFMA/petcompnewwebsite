@@ -111,6 +111,22 @@
                     </div>
                 </div>
 
+                <div class="monitoring-card">
+                    <div class="card-background" id="card-6"></div>
+                    <div class="card-item">
+                        <div class="division" id="division-cvga">
+                            <div class="box-texts">
+                                <h3>Cálculo Vetorial<br>e Geometria Analítica</h3>
+                                <p>Vídeo aula</p>
+                                <p>Questionário</p>
+                                <p>Resumo</p>
+                                <a href="https://drive.google.com/drive/u/0/folders/1aePehmxr_hn5xgtvBDzlGHyifHPt0sKA" target="_blank">Acessar</a>
+                            </div>
+                            <img src="img\CVGA.png" alt="">
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     

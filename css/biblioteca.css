@@ -86,6 +86,9 @@ h4 {
 #card-5 {
   background-color: #b973ff;
 }
+#card-6 {
+  background-color: #FFD294;
+}
 
 .monitoring-card:hover .card-background {
   transform: scale(8);
@@ -155,8 +158,13 @@ h4 {
   }
 }
 
-#division-mdl {
-  gap: 10px;
+
+
+#division-cvga img,
+#division-mdl img {
+  max-width: 120px;
+  max-height: 120px;
+  object-fit: contain;
 }
 
 .area-voltar {
