@@ -1,26 +1,6 @@
-<?php require_once "scripts.php/repositorio-monitoria.php" ?>
-
-<!DOCTYPE html>
-<html lang="pt-br">
-
 <?php 
-    $title = "Monitoria";
-    $cssFiles = ["css/monitoria.css"];
-    include "head.php";
+require_once __DIR__ . '/components/core/page.php';
+
+renderPage('view/repositorio-monitoria.php', 'Monitoria');
+
 ?>
-
-<body>
-    <?php include "header.php"; ?>
-
-    <?php 
-        renderComponent("container-header.php", [
-            "titulo_pagina" => "Repositório educacional",
-            "descricao" => "Monitoria de Algoritmos I",
-            "caminho" => ["Repositório educacional", "Monitoria de Algoritmos I"]
-        ]);
-    ?>
-
-    <?php include "footer.php"; ?>
-</body>
-
-</html>
