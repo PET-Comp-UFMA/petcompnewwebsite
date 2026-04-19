@@ -1,6 +1,6 @@
 <?php 
 
-require_once 'core/component.php';
+require_once __DIR__ . '/core/component.php';
 
 class ContainerHeader extends Component {
 
@@ -9,7 +9,7 @@ class ContainerHeader extends Component {
         protected string $descricao,
         protected array $caminho
     ) {
-        $this->dependencies[] = "../css/monitoria.css";
+        $this->cssDependencies[] = "css/monitoria.css";
     }
 
     public function render(): String {
