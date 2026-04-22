@@ -229,6 +229,11 @@ h4 {
     padding: 50px 60px;
   }
 
+  .repositorio-opcoes {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+
   .container-body p {
     font-size: 20px;
     font-weight: medium;
@@ -257,6 +262,11 @@ h4 {
 
   .container-body {
     padding: 20px 50px;
+  }
+
+  .repositorio-opcoes {
+    padding-left: 50px;
+    padding-right: 50px;
   }
 
   .container-body p {
@@ -288,6 +298,15 @@ h4 {
   .container-body {
     padding: 20px 40px;
   }
+
+ .repositorio-opcoes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  padding-bottom: 2.5rem;
+  width: 100%;
+  margin: 0;
+}
 
   .container-body p {
     font-size: 10px;
