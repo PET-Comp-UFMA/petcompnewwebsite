@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
   <?php 
-    $title = "Biblioteca";
+    $title = "Repositório Educacional";
     $cssFiles = ['css\biblioteca-main.css', 'css/biblioteca.css'];
     include "head.php";
   ?>
@@ -14,9 +14,9 @@
 
   <?php
       renderComponent("container-header.php", [
-        "titulo_pagina" => "Biblioteca",
-        "descricao" => "Veja os nossos repositórios",
-        "caminho" => ["Biblioteca PETComp"]
+        "titulo_pagina" => "Repositório Educacional Aberto",
+        "descricao" => "Veja o nosso Repositório de Recursos Educacionais",
+        "caminho" => ["Repositório Educacional"]
       ]);
 
     ?> 
