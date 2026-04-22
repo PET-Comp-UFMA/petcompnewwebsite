@@ -1,3 +1,5 @@
+<?php require_once "scripts.php/renderComponent.php" ?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
   <?php 
@@ -9,12 +11,15 @@
 <body>
   <?php include('header.php') ?>
   <main>
-    <div class="container-header">    
-      <h2>Repositório Educacional Aberto</h2>
-      <h3>Veja o nosso Repositório de Recursos Educacionais</h3>
-      <h4><a href="index.php">Página Inicial</a></h4>
-      <h4> → Repositório Educacional</h4>
-    </div>
+
+  <?php
+      renderComponent("container-header.php", [
+        "titulo_pagina" => "Biblioteca",
+        "descricao" => "Veja os nossos repositórios",
+        "caminho" => ["Biblioteca PETComp"]
+      ]);
+
+    ?> 
 
     <div class="container-body">
       <div class="container-body-content">

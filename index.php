@@ -71,27 +71,27 @@ function truncarTitulo($titulo, $limite = 30) {
     <div class="noticias-container">
         <!-- Bloco noticias -->
         <div class="image-container">
-            <a class="noticia-link" href="noticias/41" target="_blank">
-                <img class="img-notice" src="assets/images/noticias/notice1.png" alt="">
+            <a class="noticia-link" href="noticias/55" target="_blank">
+                <img class="img-notice" src="assets/images/noticias/noticia1.jpg" alt="">
                 <div class= "grid-news-texts">
                     <span class="title" target="_blank">Evento</span>
-                    <span class="title-overlay" >Seletivo 2025.2</span>
+                    <span class="title-overlay" >Acalorada 2026.1</span>
                 </div>
             </a>
-            <a class="instagram-link" href="https://www.instagram.com/petcompufma/p/DOD4vNTgCDo/" target="_blank">
+            <a class="instagram-link" href="https://www.instagram.com/petcompufma/p/DVdvldvgANX/" target="_blank">
                     <img id="logo-Notice" src="img\Social-Icons.png" alt="icone instagram">
             </a>
         </div>
 
         <div class="image-container">
-            <a class="noticia-link" href="noticias/37" target="_blank">
-                <img class="img-notice" src="assets/images/noticias/notice2.png" alt="">
+            <a class="noticia-link" href="noticias/54" target="_blank">
+                <img class="img-notice" src="assets/images/noticias/noticia2.jpg" alt="">
                 <div class= "grid-news-texts">
                     <span class="title" target="_blank">Evento</span>
-                    <span class="title-overlay" target="_blank">Acalourada 2025.2</span>
+                    <span class="title-overlay" target="_blank">MARAPET</span>
                 </div>
             </a>
-            <a class="instagram-link" href="https://www.instagram.com/petcompufma/p/DO583T5gPEU/" target="_blank">
+            <a class="instagram-link" href="https://www.instagram.com/petufma?igsh=MTlpcjdqa2xudGRrbA==" target="_blank">
                     <img id="logo-Notice" src="img\Social-Icons.png" alt="icone instagram">
             </a>
         </div>
