@@ -15,7 +15,7 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .biblioteca-card:hover {
-  transform: scale(8);
+  transform: scale(1.01);
   box-shadow: 0 0.75rem 2rem rgba(0, 0, 0, 0.22);
 }
 .biblioteca-card.card-largo {
