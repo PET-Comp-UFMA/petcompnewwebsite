@@ -20,6 +20,9 @@ $routes = [
     ($root ? "$root/laboratorios" : "laboratorios") => function () {
         require("laboratorios.php");
     },
+    ($root ? "$root/mapa-ccet" : "mapa-ccet") => function () {
+        require("mapa-ccet.php");
+    },
     ($root ? "$root/monitoria" : "monitoria") => function () {
         require("monitoria.php");
     },
