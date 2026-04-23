@@ -27,8 +27,9 @@ h5 {
 }
 
 .grid-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 30px;
     padding: 0 60px 50px 60px;
     max-width: 1200px;
@@ -36,6 +37,8 @@ h5 {
 }
 
 .card {
+    flex: 1 1 280px;
+    max-width: 350px;
     background-color: #ffffff;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -72,9 +75,10 @@ h5 {
 .card-logo-img {
     position: relative;
     z-index: 2; 
-    max-width: 140px; 
-    max-height: 80px; 
+    width: 140px; 
+    height: 80px; 
     object-fit: contain; 
+    object-position: center;
 }
 
 .bg-dxt {background-color: #ABF3FF;}
