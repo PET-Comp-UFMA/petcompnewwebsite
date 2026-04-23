@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
   <?php 
-    $title = "Biblioteca";
+    $title = "Repositório Educacional";
     $cssFiles = ['css\biblioteca-main.css', 'css/biblioteca.css'];
     include "head.php";
   ?>
@@ -14,9 +14,9 @@
 
   <?php
       renderComponent("container-header.php", [
-        "titulo_pagina" => "Biblioteca",
-        "descricao" => "Veja os nossos repositórios",
-        "caminho" => ["Biblioteca PETComp"]
+        "titulo_pagina" => "Repositório Educacional Aberto",
+        "descricao" => "Veja o nosso Repositório de Recursos Educacionais",
+        "caminho" => ["Repositório Educacional"]
       ]);
 
     ?> 
@@ -27,7 +27,7 @@
           <h5>REA-PET</h5>
           <p>Com o objetivo de apoiar tanto a comunidade acadêmica quanto a local, o PETComp criou o repositório educacional aberto REA-PET, onde oferece uma variedade de documentos e materiais de apoio que estão disponíveis para consulta a qualquer momento. Esses recursos foram cuidadosamente selecionados para atender às necessidades de estudantes, professores e pesquisadores, e podem ser acessados facilmente através do nosso site. Abaixo, você encontrará uma coleção de arquivos de auxílio educacional, que abrangem diferentes áreas do conhecimento e têm o intuito de complementar e enriquecer o aprendizado de todos.</p>
         </div>
-        <img src="img/logoreapet.png" alt="Logo REA-PET">
+        <img src="img/logoreapet.svg" alt="Logo REA-PET">
       </div>
     </div>
 
