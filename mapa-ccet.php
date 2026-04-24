@@ -45,6 +45,55 @@ include 'head.php';
     <div id="map-container">
         <div id="map"></div>
 
+        <div class="busca-container">
+            <div class="input-wrapper">
+                <svg class="icone-lupa" viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+
+                <input type="text" id="input-busca" placeholder="Buscar sala, laboratório...">
+            </div>
+
+            <div class="filtros-categoria">
+                <button class="btn-filtro ativo" onclick="filtrarCategoria('todos', this)">
+                    <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg> Todos
+                </button>
+
+                <button class="btn-filtro" onclick="filtrarCategoria('laboratorio', this)">
+                    <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none">
+                        <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                        <line x1="8" y1="21" x2="16" y2="21"></line>
+                        <line x1="12" y1="17" x2="12" y2="21"></line>
+                    </svg> Laboratórios
+                </button>
+
+                <button class="btn-filtro" onclick="filtrarCategoria('sala', this)">
+                    <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none">
+                        <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                        <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                    </svg> Salas
+                </button>
+
+                <button class="btn-filtro" onclick="filtrarCategoria('auditorio', this)">
+                    <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none">
+                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="9" cy="7" r="4"></circle>
+                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                    </svg> Auditórios
+                </button>
+
+                <button class="btn-filtro" onclick="filtrarCategoria('outros', this)">
+                    <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none">
+                        <rect x="3" y="5" width="18" height="14" rx="2" ry="2"></rect><text x="6" y="16" font-size="10" font-family="sans-serif" font-weight="bold" stroke="none" fill="currentColor">WC</text>
+                    </svg> Outros
+                </button>
+            </div>
+        </div>
+
         <div class="seletor-andares">
             <button class="btn-andar" onclick="mudarAndar('andar3')">3º Andar</button>
             <button class="btn-andar" onclick="mudarAndar('andar2')">2º Andar</button>

@@ -66,14 +66,103 @@ body {
     border-bottom: none; 
 
 }
+
 .btn-andar:hover {
      background-color: #f0f0f0; 
     
-    }
+}
+
 .btn-andar.ativo {
     background-color: #001a4d;
     color: white;
 }
+
+.busca-container {
+    position: absolute;
+    top: 10px;
+    left: 70px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    gap: 5px; 
+    width: 350px;
+    max-width: 90vw;
+}
+
+.input-wrapper {
+    display: flex;
+    align-items: center;
+    background: #ffffff;
+    border-radius: 25px; 
+    padding: 10px 16px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15); 
+}
+
+.icone-lupa {
+    color: #333;
+    margin-right: 10px;
+}
+
+#input-busca {
+    border: none;
+    outline: none;
+    width: 100%;
+    font-size: 15px;
+    color: #333;
+    background: transparent;
+    font-family: Arial, sans-serif;
+}
+
+#input-busca::placeholder {
+    color: #a0a0a0;
+}
+
+.filtros-categoria {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 8px;
+}
+
+.btn-filtro {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    padding: 6px 12px;
+    border-radius: 6px; 
+    cursor: pointer;
+    font-size: 14px;
+    color: #111;
+    font-family: Arial, sans-serif;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08); 
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+.btn-filtro:hover {
+    background: #f9f9f9;
+}
+
+.btn-filtro.ativo {
+    border-color: #001a4d; 
+    background-color: #f2f5ff; 
+}
+
+#input-busca {
+    border: none;
+    outline: none;
+    padding: 8px;
+    width: 250px;
+    font-size: 14px;
+}
+
+.filtros-categoria {
+    display: flex;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+
 
 /* Animação de carregamento mais lenta */
 @keyframes fadeIn {
