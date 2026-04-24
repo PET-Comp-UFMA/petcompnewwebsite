@@ -1,0 +1,20 @@
+.card-monitoria {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-monitoria__aside {
+    margin-right: 60px;
+}
+
+.card-monitoria__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
+
+.card-monitoria__title {
+    font-weight: 700;
+}
