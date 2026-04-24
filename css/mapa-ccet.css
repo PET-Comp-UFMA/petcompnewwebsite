@@ -26,36 +26,53 @@ h5 {
     display: inline;
 }
 
-.sala-clicavel {
-    cursor: pointer;
-    transition: fill 0.3s ease, stroke 0.3s ease;
+body { 
+    margin: 0; padding: 0; font-family: Arial, sans-serif; 
+
 }
 
-.sala-clicavel:hover {
-    fill: #4CAF50; 
-    stroke: #333; 
-    stroke-width: 2px;
+#map-container { 
+    position: relative; width: 100%; height: 80vh; 
 }
 
-.mapa-container {
-    width: 50%; 
-    height: 500px;
-    border: 2px solid #ccc;
+#map { 
+    width: 100%; height: 100%; background-color: #f8f9fa; 
+}
+
+.seletor-andares {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1000; 
+    background: white;
     border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
     overflow: hidden;
-    margin: 0 auto; 
-    background-color: #030a3e;
+    display: flex;
+    flex-direction: column;
 }
 
-#mapa-ccet {
-    width: 100%;
-    height: 100%;
-    margin: 0 auto; 
+.btn-andar {
+    background: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-bottom: 1px solid #eee;
+    font-weight: bold;
+    color: #333;
 }
 
-.mapa-container svg {
-    width: 100%;
-    height: auto;
+.btn-andar:last-child { 
+    border-bottom: none; 
+
+}
+.btn-andar:hover {
+     background-color: #f0f0f0; 
+    
+    }
+.btn-andar.ativo {
+    background-color: #001a4d;
+    color: white;
 }
 
 /* Animação de carregamento mais lenta */
