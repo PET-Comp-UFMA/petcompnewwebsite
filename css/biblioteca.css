@@ -40,17 +40,20 @@ h4 {
   justify-content: center;
   align-items: center;
   padding-bottom: 5.5rem;
+  overflow: hidden; 
+  width: 100%; 
 }
 .sections-cards {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  grid-gap: 32px;
   gap: 32px;
-  width: max-content;
+  width: 100%; 
+  max-width: 1050px;
 }
 .monitoring-card {
   position: relative;
-  width: 490px;
+  width: 100%;        /* ← trocar 490px por 100% */
+  max-width: 490px;   /* ← adicionar max-width para desktop */
   height: 280px;
   background-color: white;
   box-shadow: 3px 5px 10px 5px rgba(0, 0, 0, 0.233);
@@ -103,7 +106,7 @@ h4 {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 60px;
+ 
 }
 
 .box-texts {
@@ -200,6 +203,7 @@ h4 {
 @media screen and (max-width: 1050px) {
   .sections-cards {
     grid-template-columns: 1fr;
+    justify-items: center;
   }
 }
 
@@ -297,7 +301,9 @@ h4 {
   }
 
   .monitoring-card {
-    transform: scale(0.9);
+    width: 100%;
+    height: auto;
+    min-height: 220px;
   }
 
   .card-item {
@@ -322,18 +328,27 @@ h4 {
 
 @media screen and (max-width: 500px) {
   .monitoring-card {
-    transform: scale(0.75);
+   width: 80%;
+    height: auto;
+    min-height: 200px;
   }
   .sections-cards {
-    gap: 0px;
+    gap: 30px;
+    grid-template-columns: 1fr;
   }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 420px) {
   .monitoring-card {
-    transform: scale(0.6);
+    width: 100%;
+    height: auto;
+    min-height: 180px;
   }
   .sections-cards {
     padding: 0px;
+  }
+
+  .area-voltar{
+    padding: 17px 0px 0px 20px;
   }
 }
