@@ -1,6 +1,6 @@
 {
   "algoritmos1": {
-    "nome": "Monitoria de Algoritmos 1",
+    "nome": "Algoritmos 1",
     "imagem": "./img/matpet_algoritmos1.png",
     "descricao-monitoria": "A monitoria de Algoritmos 1 tem como objetivo auxiliar os alunos a compreender os fundamentos básicos de algoritmos, como lógica de programação, tipos de dados, variáveis, estruturas de controle e muito mais. Os encontros são realizados toda quarta feira via Google Meet e são ideias para tirar dúvidas sobre a matéria e reforçar conceitos abordados em sala de aula.",
     "video-aula": "https://youtube.com/playlist?list=XXXX",
@@ -13,7 +13,7 @@
     
   },
   "calculo1": {
-    "nome": "Monitoria de Cálculo 1",
+    "nome": "Cálculo 1",
     "imagem": "./assets/images/maths.png",
     "descricao-monitoria": "A monitoria de Cálculo 1 tem como objetivo auxiliar os alunos a compreender os fundamentos básicos de cálculo, como limites, derivadas e integrais. Os encontros são realizados toda quarta feira via Google Meet e são ideias para tirar dúvidas sobre a matéria e reforçar conceitos abordados em sala de aula.",
     "video-aula": "https://youtube.com/playlist?list=YYYY",
@@ -24,7 +24,7 @@
     "descricao-material": "Provas, livros, slides e demais recursos complementares para a disciplina."
   },
   "ed1": {
-    "nome": "Monitoria de Estrutura de Dados 1",
+    "nome": "Estrutura de Dados 1",
     "imagem": "./assets/images/maths.png",
     "descricao-monitoria": "A monitoria de Estrutura de Dados 1 tem como objetivo auxiliar os alunos a compreender os fundamentos básicos de estruturas de dados, como listas, pilhas, filas e árvores. Os encontros são realizados toda quarta feira via Google Meet e são ideias para tirar dúvidas sobre a matéria e reforçar conceitos abordados em sala de aula.",
     "video-aula": "https://youtube.com/playlist?list=ZZZZ",
@@ -35,7 +35,7 @@
     "descricao-material": "Provas, livros, slides e demais recursos complementares para a disciplina."
   },
   "lp1": {
-    "nome": "Monitoria de Linguagens de Programação 1",
+    "nome": "Linguagens de Programação 1",
     "imagem": "./assets/images/maths.png",
     "descricao-monitoria": "A monitoria de Linguagens de Programação 1 tem como objetivo auxiliar os alunos a compreender os fundamentos básicos de linguagens de programação, como sintaxe, semântica e lógica de programação. Os encontros são realizados toda quarta feira via Google Meet e são ideias para tirar dúvidas sobre a matéria e reforçar conceitos abordados em sala de aula.",
     "video-aula": "https://youtube.com/playlist?list=WWWW",
@@ -46,7 +46,7 @@
     "descricao-material": "Provas, livros, slides e demais recursos complementares para a disciplina."
   },
   "mdl": {
-    "nome": "Monitoria de Matemática Discreta e Lógica",
+    "nome": "Matemática Discreta e Lógica",
     "imagem": "./assets/images/maths.png",
     "descricao-monitoria": "A monitoria de Matemática Discreta e Lógica tem como objetivo auxiliar os alunos a compreender os fundamentos básicos de matemática discreta e lógica, como proposições, predicados, quantificadores e proof techniques. Os encontros são realizados toda quarta feira via Google Meet e são ideias para tirar dúvidas sobre a matéria e reforçar conceitos abordados em sala de aula.",
     "video-aula": "https://youtube.com/playlist?list=YYYY",
@@ -57,7 +57,7 @@
     "descricao-material": "Provas, livros, slides e demais recursos complementares para a disciplina."
   },
   "cvga": {
-    "nome": "Monitoria de Cálculo Vetorial e Geometria Analítica",
+    "nome": "Cálculo Vetorial e Geometria Analítica",
     "imagem": "./assets/images/maths.png",
     "descricao-monitoria": "A monitoria de Cálculo Vetorial e Geometria Analítica tem como objetivo auxiliar os alunos a compreender os fundamentos básicos de cálculo vetorial e geometria analítica, como vetores, produtos escalares e vetoriais, e transformações geométricas. Os encontros são realizados toda quarta feira via Google Meet e são ideias para tirar dúvidas sobre a matéria e reforçar conceitos abordados em sala de aula.",
     "video-aula": "https://youtube.com/playlist?list=YYYY",

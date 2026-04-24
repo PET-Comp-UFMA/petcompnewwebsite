@@ -10,6 +10,7 @@ body{
     justify-content: center;
     gap: 5rem;
     background-color: white;
+    margin-bottom: 4rem;
 }
 
 
@@ -44,11 +45,9 @@ body{
 
 .container-materiais {
     display: flex;
-    gap: 1.5rem;
-
-    max-width: 1200px;
+    gap: 3rem;
+    max-width: 100%;
     margin: 2rem auto;
-
     justify-content: center;
     flex-wrap: wrap;
     
@@ -73,26 +72,16 @@ body{
     color: white;
     border: none;
     padding: 0.75rem 1.5rem;
-    border-radius: 5px;
+    border-radius: 25px;
     cursor: pointer;
     margin-top: 1rem;
+    margin-bottom: 0.5rem;
 }
-
-.card-materiais a{
-    color: #ffffff;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 30px;
-
-}
-
 
 .card-materiais {
     background: white;
     border-radius: 20px;
-
-    width: 300px;
-
+    width: 320px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -102,19 +91,45 @@ body{
     border-radius: 30px;
 }
 
+.card-materiais h1{
+    max-height: 50px;
+    font-size: xx-large;
+    font-weight: bolder;
+    text-align: center;
+
+    
+}
+
+.card-materiais a{
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 25px;
+    padding-inline: 1rem;
+
+}
+
+
+
 .video-img{
     background-image: url('../img/video-background.png');
     background-size: cover;
     background-position: center;
     display: flex;
     flex-direction: column;
-    align-items: center;
     height: 250px;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
     width: 100%;
     border-top: 30px;
-    
 }
+
+.video-img img{
+    max-width:  100%;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
 
 .exercicios-img{
     background-image: url('../img/atividade-background.png');
@@ -127,6 +142,12 @@ body{
     justify-content: center;
     width: 100%;
     border-top: 30px;
+}
+
+.exercicios-img img{
+    max-width:  100%;
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
 .materiais-img{
@@ -142,12 +163,19 @@ body{
     border-top: 30px;
 }
 
+.materiais-img img{
+    max-width:  100%;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+
 .descricao-card {
     color: #060B3F;
     color: #000;
     text-align: center;
     font-family: Mada;
-    font-size: 18px;
+    font-size: 20px;
     font-style: normal;
     font-weight: 500;
     line-height: normal;

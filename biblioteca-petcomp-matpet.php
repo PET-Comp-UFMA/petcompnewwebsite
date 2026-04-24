@@ -14,7 +14,10 @@ if (!$id || !isset($monitorias[$id])) {
     exit;
 }
 
+
+
 $monitoria = $monitorias[$id];
+$nomeMonitoria = (string)$monitoria['nome'];
 ?>
 
 
@@ -32,14 +35,17 @@ include "head.php";
 
 <body>
     <?php include('header.php') ?>
+
     <main>
         <?php
         renderComponent("container-header.php", [
             "titulo_pagina" => "Biblioteca",
             "descricao" => "Veja os nossos repositórios",
-            "caminho" => ["Repositório Educacional, Monitoria, Nome Monitoria"]
+            "caminho" => ["Repositório Educacional", "Monitorias", $nomeMonitoria]
         ]);
         ?>
+
+        
         <div class="card-monitoria">
             <div class="icon_monitoria">
                 <img class="imagem_icon" src="<?= $monitoria['imagem'] ?>" alt="<?= $monitoria['nome'] ?>">
@@ -55,32 +61,32 @@ include "head.php";
             <div class="card-materiais">
                 <figure class="video-img">
                     <img src="img/video-aulas.png" alt="Ícone de vídeo aulas">
-                    <h1>Video Aulas</h1>
+                    <h1>Vídeo Aula</h1>
                 </figure>
                 <div class="descricao-card">
                     <p><?= $monitoria['descricao-video'] ?></p>
-                    <button> <a href="<?= $monitoria['video-aula'] ?>" target="_blank">Acessar</a> </button>
+                    <button> <a href="<?= $monitoria['video-aula'] ?>" >Acessar</a> </button>
                 </div>
 
             </div>
             <div class="card-materiais">
                 <figure class="exercicios-img">
                     <img src="img/exercicios.png" alt="Ícone de Exercícios">
-                    <h1>Exercícios</h1>
+                    <h1>Atividades </h1>
                 </figure>
                 <div class="descricao-card">
                     <p><?= $monitoria['descricao-atividade'] ?></p>
-                    <a href="<?= $monitoria['atividade'] ?>" target="_blank">Acessar</a>
+                    <button><a href="<?= $monitoria['atividade'] ?>" target="">Acessar</a></button>
                 </div>
             </div>
             <div class="card-materiais">
                 <figure class="materiais-img">
                     <img src="img/material.png" alt="Ícone de Material Complementar">
-                    <h1>Material Complementar</h1>
+                    <h1>Materiais</h1>
                 </figure>
                 <div class="descricao-card">
                     <p><?= $monitoria['descricao-material'] ?></p>
-                    <a href="<?= $monitoria['material'] ?>" target="_blank">Acessar</a>
+                    <button><a href="<?= $monitoria['material'] ?>" target="">Acessar</a></button>
                 </div>
             </div>
 
