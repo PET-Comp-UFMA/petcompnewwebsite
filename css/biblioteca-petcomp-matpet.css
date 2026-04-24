@@ -1,0 +1,154 @@
+body{
+    background-color: #F0F1F8;
+}
+
+
+.card-monitoria {
+    display : flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 5rem;
+    background-color: white;
+}
+
+
+.imagem_icon {
+    flex: 0 0 auto;
+    width: 80%;
+    max-width: 25rem;
+    height: auto;
+    display: block;
+    padding: 2rem 0 2rem 0;
+}
+
+.container-text {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    flex: 0 0 50%;
+}
+
+.container-text h1 {
+    font-size: 3.75rem;
+    font-weight: 600;
+    color: #001341;
+    margin: 0;
+    line-height: 1.1;
+}
+
+.container-text p {
+    font-size: 20px;
+    max-width: 60ch;
+}
+
+.container-materiais {
+    display: flex;
+    gap: 1.5rem;
+
+    max-width: 1200px;
+    margin: 2rem auto;
+
+    justify-content: center;
+    flex-wrap: wrap;
+    
+}
+
+.container-materiais div{  /* tira o flex direction de tudo depois*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container-materiais figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 30px 30px 0 0;
+    
+}
+
+.container-materiais button {
+    background-color: #214BA7;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+.card-materiais a{
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 30px;
+
+}
+
+
+.card-materiais {
+    background: white;
+    border-radius: 20px;
+
+    width: 300px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+    transition: 0.2s ease;
+    border-radius: 30px;
+}
+
+.video-img{
+    background-image: url('../img/video-background.png');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 250px;
+    justify-content: center;
+    width: 100%;
+    border-top: 30px;
+    
+}
+
+.exercicios-img{
+    background-image: url('../img/atividade-background.png');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 250px;
+    justify-content: center;
+    width: 100%;
+    border-top: 30px;
+}
+
+.materiais-img{
+    background-image: url('../img/materiais-background.png');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 250px;
+    justify-content: center;
+    width: 100%;
+    border-top: 30px;
+}
+
+.descricao-card {
+    color: #060B3F;
+    color: #000;
+    text-align: center;
+    font-family: Mada;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
