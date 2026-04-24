@@ -170,7 +170,7 @@ h4 {
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  gap: 0.5rem;
+  gap: 6px;
 
   width: auto;
   height: 3rem;
@@ -182,7 +182,7 @@ h4 {
   text-decoration: none;
 
   background-color: #f2f4f7;
-  border-radius: 10%;
+  border-radius: 999px;
 
   cursor: pointer;
   transition: background-color 0.2s ease, box-shadow 0.2s ease,
@@ -193,10 +193,11 @@ h4 {
   background-color: #047ce0;
   color: white;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  transform: translateY(-1px);
 }
 
 .btn-voltar:active {
-  transform: translateY(1px);
+  transform: scale(0.97);
 }
 
 /*--------------------Responsive--------------------*/
@@ -233,6 +234,11 @@ h4 {
     padding: 50px 60px;
   }
 
+  .repositorio-opcoes {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+
   .container-body p {
     font-size: 20px;
     font-weight: medium;
@@ -261,6 +267,11 @@ h4 {
 
   .container-body {
     padding: 20px 50px;
+  }
+
+  .repositorio-opcoes {
+    padding-left: 50px;
+    padding-right: 50px;
   }
 
   .container-body p {
@@ -292,6 +303,15 @@ h4 {
   .container-body {
     padding: 20px 40px;
   }
+
+ .repositorio-opcoes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  padding-bottom: 2.5rem;
+  width: 100%;
+  margin: 0;
+}
 
   .container-body p {
     font-size: 10px;

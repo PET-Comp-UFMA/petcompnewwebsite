@@ -83,11 +83,11 @@ function componentePopUp($idPopUp, $cor, $caminhoLogo, $titulo, $subtitulo, $des
         componenteCard("LINT²", "Laboratório de Inteligência Interativa", "bg-lint", "assets/svg/pag-labs/logo-lint.svg", "popUpLint");
         componenteCard("NCA", "Núcleo de Computação Aplicada", "bg-nca", "assets/images/pag-labs/logo-nca.png", "popUpNCA");
         componenteCard("LSDi", "Laboratório de Sistemas Distribuídos Inteligentes", "bg-lsdi", "assets/images/pag-labs/logo-lsdi.png", "popUpLsdi");
-        componenteCard("LAWS", "Laboratório de Engenharia de Software", "bg-laws", "assets/images/pag-labs/logo-laws.png", "popUpLaws");
-        componenteCard("INOVTEC", "Laboratório de Engenharia de Software", "bg-inovtec", "assets/images/pag-labs/logo-inovtec.png", "popUpInovtec");
-        componenteCard("LACMOR", "Laboratório de Engenharia de Software", "bg-lacmor", "assets/images/pag-labs/logo-lacmor.png", "popUpLacmor");
-        componenteCard("TELEMÍDIA", "Laboratório de Engenharia de Software", "bg-telemidia", "assets/images/pag-labs/logo-telemidia.png", "popUpTelemidia");
-        componenteCard("LIDI", "Laboratório de Engenharia de Software", "bg-lidi", "assets/images/pag-labs/logo-lidi.png", "popUpLidi");
+        componenteCard("LAWS", "Laboratório de Sistemas Web Avançados", "bg-laws", "assets/images/pag-labs/logo-laws.png", "popUpLaws");
+        componenteCard("INOVTEC", "Núcleo de Estudos Tecnológicos em Mecatrônica", "bg-inovtec", "assets/images/pag-labs/logo-inovtec.png", "popUpInovtec");
+        componenteCard("LACMOR", "Laboratório de Métodos de Cognição Artificial para Otimização e Robótica", "bg-lacmor", "assets/images/pag-labs/logo-lacmor.png", "popUpLacmor");
+        componenteCard("TELEMÍDIA", "Laboratório de Sistemas Multimídia", "bg-telemidia", "assets/images/pag-labs/logo-telemidia.png", "popUpTelemidia");
+        componenteCard("LIDI", "Laboratório de Inclusão Digital", "bg-lidi", "assets/images/pag-labs/logo-lidi.png", "popUpLidi");
         ?>
     </div>
 
@@ -284,12 +284,12 @@ function componentePopUp($idPopUp, $cor, $caminhoLogo, $titulo, $subtitulo, $des
         "#ECF0A0",
         "assets/images/pag-labs/logo-lidi.png",
         "LIDI",
-        "Laboratório de Inclusão  Digital",
-        "O Laboratório de Inclusão  Digital (LIDI) desempenha um papel crucial na promoção de inclusão tecnológica. Este projeto busca mitigar as disparidades digitais ao capacitar esses grupos, proporcionando-lhes habilidades essenciais para navegarem no mundo digital em constante evolução. Ao alinhar-se com a missão da UNITI na UFMA, o laboratório contribui significativamente para a construção de uma comunidade mais inclusiva e tecnologicamente capacitada.",
+        "Laboratório de Inclusão Digital",
+        "O Laboratório de Inclusão Digital (LIDI) desempenha um papel crucial na promoção de inclusão tecnológica. Este projeto busca mitigar as disparidades digitais ao capacitar esses grupos, proporcionando-lhes habilidades essenciais para navegarem no mundo digital em constante evolução. Ao alinhar-se com a missão da UNITI na UFMA, o laboratório contribui significativamente para a construção de uma comunidade mais inclusiva e tecnologicamente capacitada.",
         [
             [
                 'foto' => 'assets/images/pag-labs/coord-lidi.jpeg',
-                'nome' => 'Prof. Dr. Carlos Eduardo Portela Serra de Castro',
+                'nome' => 'Prof. Carlos Eduardo Portela Serra de Castro',
                 'cargo' => 'Coordenador do LIDI',
                 'email' => 'mailto:carlos.castro@ufma.br',
                 'lattes' => 'http://lattes.cnpq.br/4162711893419264'
