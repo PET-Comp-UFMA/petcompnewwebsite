@@ -24,7 +24,7 @@ $nomeMonitoria = (string)$monitoria['nome'];
 <!DOCTYPE html>
 <html lang="pt-BR">
 <?php
-$title = "Biblioteca";
+$title = "Repositório";
 $cssFiles = [
     'css/biblioteca-main.css?v=' . time(),
     'css/biblioteca.css?v=' . time(),
@@ -39,10 +39,15 @@ include "head.php";
     <main>
         <?php
         renderComponent("container-header.php", [
-            "titulo_pagina" => "Biblioteca",
+            "titulo_pagina" => "Repositório Educacional",
             "descricao" => "Veja os nossos repositórios",
             "caminho" => ["Repositório Educacional", "Monitorias", $nomeMonitoria]
         ]);
+        ?>
+
+        <?php
+            $href = 'biblioteca-petcomp-monitoria.php';
+            include('components/btn-voltar.php');
         ?>
 
         

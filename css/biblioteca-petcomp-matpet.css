@@ -1,5 +1,5 @@
-body{
-    background-color: #F0F1F8;
+main{
+    background-color: white;
 }
 
 
@@ -47,9 +47,13 @@ body{
     display: flex;
     gap: 3rem;
     max-width: 100%;
-    margin: 2rem auto;
+    margin-top: 2rem;
+    padding: 3rem 0rem 3rem 0rem;
     justify-content: center;
     flex-wrap: wrap;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #F0F1F8;
+    
     
 }
 
@@ -57,7 +61,11 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
+    
+    
 }
+
+
 
 .container-materiais figure {
     display: flex;
@@ -86,10 +94,15 @@ body{
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
-    transition: 0.2s ease;
+    box-shadow: 1px 4px 15px 0px rgba(0, 0, 0, 0.25);
     border-radius: 30px;
+    transition: transform 0.8s ease;
 }
+
+.card-materiais:hover{
+    transform: scale(1.01);
+}
+
 
 .card-materiais h1{
     max-height: 50px;
@@ -179,4 +192,5 @@ body{
     font-style: normal;
     font-weight: 500;
     line-height: normal;
+    margin-inline: 10px;
 }

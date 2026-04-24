@@ -14,7 +14,7 @@
   },
   "calculo1": {
     "nome": "Cálculo 1",
-    "imagem": "./assets/images/maths.png",
+    "imagem": "./img/matpet_calculo1.png",
     "descricao-monitoria": "A monitoria de Cálculo 1 tem como objetivo auxiliar os alunos a compreender os fundamentos básicos de cálculo, como limites, derivadas e integrais. Os encontros são realizados toda quarta feira via Google Meet e são ideias para tirar dúvidas sobre a matéria e reforçar conceitos abordados em sala de aula.",
     "video-aula": "https://youtube.com/playlist?list=YYYY",
     "descricao-video": "Vídeo aulas explicativas sobre Cálculo 1.",
@@ -25,7 +25,7 @@
   },
   "ed1": {
     "nome": "Estrutura de Dados 1",
-    "imagem": "./assets/images/maths.png",
+    "imagem": "./img/matpet_ed1.png",
     "descricao-monitoria": "A monitoria de Estrutura de Dados 1 tem como objetivo auxiliar os alunos a compreender os fundamentos básicos de estruturas de dados, como listas, pilhas, filas e árvores. Os encontros são realizados toda quarta feira via Google Meet e são ideias para tirar dúvidas sobre a matéria e reforçar conceitos abordados em sala de aula.",
     "video-aula": "https://youtube.com/playlist?list=ZZZZ",
     "descricao-video": "Vídeo aulas explicativas sobre Estrutura de Dados 1.",
@@ -36,7 +36,7 @@
   },
   "lp1": {
     "nome": "Linguagens de Programação 1",
-    "imagem": "./assets/images/maths.png",
+    "imagem": "./img/matpet_lp1.png",
     "descricao-monitoria": "A monitoria de Linguagens de Programação 1 tem como objetivo auxiliar os alunos a compreender os fundamentos básicos de linguagens de programação, como sintaxe, semântica e lógica de programação. Os encontros são realizados toda quarta feira via Google Meet e são ideias para tirar dúvidas sobre a matéria e reforçar conceitos abordados em sala de aula.",
     "video-aula": "https://youtube.com/playlist?list=WWWW",
     "descricao-video": "Vídeo aulas explicativas sobre Linguagens de Programação 1.",
@@ -47,7 +47,7 @@
   },
   "mdl": {
     "nome": "Matemática Discreta e Lógica",
-    "imagem": "./assets/images/maths.png",
+    "imagem": "./img/matpet_mdl.png",
     "descricao-monitoria": "A monitoria de Matemática Discreta e Lógica tem como objetivo auxiliar os alunos a compreender os fundamentos básicos de matemática discreta e lógica, como proposições, predicados, quantificadores e proof techniques. Os encontros são realizados toda quarta feira via Google Meet e são ideias para tirar dúvidas sobre a matéria e reforçar conceitos abordados em sala de aula.",
     "video-aula": "https://youtube.com/playlist?list=YYYY",
     "descricao-video": "Vídeo aulas explicativas sobre Matemática Discreta e Lógica.",
@@ -58,7 +58,7 @@
   },
   "cvga": {
     "nome": "Cálculo Vetorial e Geometria Analítica",
-    "imagem": "./assets/images/maths.png",
+    "imagem": "./img/matpet_cvga",
     "descricao-monitoria": "A monitoria de Cálculo Vetorial e Geometria Analítica tem como objetivo auxiliar os alunos a compreender os fundamentos básicos de cálculo vetorial e geometria analítica, como vetores, produtos escalares e vetoriais, e transformações geométricas. Os encontros são realizados toda quarta feira via Google Meet e são ideias para tirar dúvidas sobre a matéria e reforçar conceitos abordados em sala de aula.",
     "video-aula": "https://youtube.com/playlist?list=YYYY",
     "descricao-video": "Vídeo aulas explicativas sobre Cálculo Vetorial e Geometria Analítica.",
