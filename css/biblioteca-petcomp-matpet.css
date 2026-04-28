@@ -1,0 +1,196 @@
+main{
+    background-color: white;
+}
+
+
+.card-monitoria {
+    display : flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 5rem;
+    background-color: white;
+    margin-bottom: 4rem;
+}
+
+
+.imagem_icon {
+    flex: 0 0 auto;
+    width: 80%;
+    max-width: 25rem;
+    height: auto;
+    display: block;
+    padding: 2rem 0 2rem 0;
+}
+
+.container-text {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    flex: 0 0 50%;
+}
+
+.container-text h1 {
+    font-size: 3.75rem;
+    font-weight: 600;
+    color: #001341;
+    margin: 0;
+    line-height: 1.1;
+}
+
+.container-text p {
+    font-size: 20px;
+    max-width: 60ch;
+}
+
+.container-materiais {
+    display: flex;
+    gap: 3rem;
+    max-width: 100%;
+    margin-top: 2rem;
+    padding: 3rem 0rem 3rem 0rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #F0F1F8;
+    
+    
+}
+
+.container-materiais div{  /* tira o flex direction de tudo depois*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    
+}
+
+
+
+.container-materiais figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 30px 30px 0 0;
+    
+}
+
+.container-materiais button {
+    background-color: #214BA7;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 25px;
+    cursor: pointer;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.card-materiais {
+    background: white;
+    border-radius: 20px;
+    width: 320px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 1px 4px 15px 0px rgba(0, 0, 0, 0.25);
+    border-radius: 30px;
+    transition: transform 0.8s ease;
+}
+
+.card-materiais:hover{
+    transform: scale(1.01);
+}
+
+
+.card-materiais h1{
+    max-height: 50px;
+    font-size: xx-large;
+    font-weight: bolder;
+    text-align: center;
+
+    
+}
+
+.card-materiais a{
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 25px;
+    padding-inline: 1rem;
+
+}
+
+
+
+.video-img{
+    background-image: url('../img/video-background.png');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    height: 250px;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    border-top: 30px;
+}
+
+.video-img img{
+    max-width:  100%;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+
+.exercicios-img{
+    background-image: url('../img/atividade-background.png');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 250px;
+    justify-content: center;
+    width: 100%;
+    border-top: 30px;
+}
+
+.exercicios-img img{
+    max-width:  100%;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.materiais-img{
+    background-image: url('../img/materiais-background.png');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 250px;
+    justify-content: center;
+    width: 100%;
+    border-top: 30px;
+}
+
+.materiais-img img{
+    max-width:  100%;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+
+.descricao-card {
+    color: #060B3F;
+    color: #000;
+    text-align: center;
+    font-family: Mada;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin-inline: 10px;
+}
