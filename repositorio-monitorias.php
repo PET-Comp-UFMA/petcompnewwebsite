@@ -21,7 +21,7 @@
         <h4>
             <a href="index.php">Pagina Inicial</a>
             → <a href="biblioteca-petcomp-main.php">Repositório Educacional</a>
-            → <a href="matpet.php?id=<?= urlencode($monitoria['id']) ?>"><?= htmlspecialchars($monitoria['subtitulo']) ?></a>
+            → <a href="biblioteca-petcomp-matpet.php?id=<?= urlencode($monitoria['id_json']) ?>"><?= htmlspecialchars($monitoria['subtitulo']) ?></a>
             → <span><?= htmlspecialchars($monitoria['titulo']) ?></span>
         </h4>
     </div>

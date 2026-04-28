@@ -32,6 +32,7 @@ $monitorias = [
     // -------------------------------------------------------
     [
         'id'        => 'algoritmos-1',
+        'id_json'   => 'algoritmos1',
         'titulo'    => 'Vídeo Aula de Algoritmos 1',
         'subtitulo' => 'Monitoria de Algoritmos 1',
         'descricao' => 'Nas vídeo aulas de Algoritmos 1 você pode assistir gravações de monitorias anteriores, permitindo revisar conteúdos e acompanhar o desenvolvimento da disciplina no seu próprio ritmo. A monitoria tem como objetivo auxiliar os alunos a compreender os fundamentos básicos de algoritmos, como lógica de programação, tipos de dados, variáveis, estruturas de controle e muito mais.',
@@ -72,6 +73,7 @@ $monitorias = [
     // -------------------------------------------------------
     [
         'id'        => 'calculo-1',
+        'id_json'   => 'calculo1',
         'titulo'    => 'Vídeo Aula de Cálculo 1',
         'subtitulo' => 'Monitoria de Cálculo 1',
         'descricao' => 'Nas vídeo aulas de Cálculo 1 você pode assistir gravações de monitorias anteriores, revisando limites, derivadas, integrais e suas aplicações. A monitoria oferece resolução de exercícios comentada e aprofundamento dos conceitos abordados em sala de aula.',
@@ -103,6 +105,7 @@ $monitorias = [
     // -------------------------------------------------------
     [
         'id'        => 'estrutura-de-dados-1',
+        'id_json'   => 'ed1',
         'titulo'    => 'Vídeo Aula de Estrutura de Dados 1',
         'subtitulo' => 'Monitoria de Estrutura de Dados 1',
         'descricao' => 'Nas vídeo aulas de Estrutura de Dados 1 você pode assistir gravações de monitorias anteriores, cobrindo estruturas fundamentais como listas encadeadas, pilhas, filas, árvores e grafos. A monitoria aborda implementação prática em C e análise de complexidade de algoritmos.',
@@ -214,6 +217,7 @@ $monitorias = [
     // -------------------------------------------------------
     [
         'id'        => 'linguagem-de-programacao-1',
+        'id_json'   => 'lp1',
         'titulo'    => 'Vídeo Aula de Linguagem de Programação 1',
         'subtitulo' => 'Monitoria de Linguagem de Programação 1',
         'descricao' => 'Nas vídeo aulas de Linguagem de Programação 1 você pode assistir gravações de monitorias anteriores, explorando os fundamentos de linguagens de programação, paradigmas, sintaxe, semântica e boas práticas de codificação.',
@@ -245,6 +249,7 @@ $monitorias = [
     // -------------------------------------------------------
     [
         'id'        => 'matematica-discreta-e-logica',
+        'id_json'   => 'mdl',
         'titulo'    => 'Vídeo Aula de Matemática Discreta e Lógica',
         'subtitulo' => 'Monitoria de Matemática Discreta e Lógica',
         'descricao' => 'Nas vídeo aulas de Matemática Discreta e Lógica você pode assistir gravações de monitorias anteriores, abordando lógica proposicional, teoria dos conjuntos, relações, funções, combinatória e teoria dos grafos aplicada à computação.',
@@ -276,6 +281,7 @@ $monitorias = [
     // -------------------------------------------------------
     [
         'id'        => 'calculo-vetorial-e-geometria-analitica',
+        'id_json'   => 'cvga',
         'titulo'    => 'Vídeo Aula de Cálculo Vetorial e Geometria Analítica',
         'subtitulo' => 'Monitoria de Cálculo Vetorial e Geometria Analítica',
         'descricao' => 'Nas vídeo aulas de Cálculo Vetorial e Geometria Analítica você pode assistir gravações de monitorias anteriores, cobrindo vetores, retas e planos no espaço, curvas e superfícies, além de integrais de linha e superfície.',
