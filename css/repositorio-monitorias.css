@@ -242,6 +242,24 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
+  max-height: 520px;
+  overflow-y: scroll;
+  padding-right: 6px;
+}
+
+.rep-lista::-webkit-scrollbar {
+  width: 5px;
+}
+.rep-lista::-webkit-scrollbar-track {
+  background: #f0f2f8;
+  border-radius: 10px;
+}
+.rep-lista::-webkit-scrollbar-thumb {
+  background: #c5d7fb;
+  border-radius: 10px;
+}
+.rep-lista::-webkit-scrollbar-thumb:hover {
+  background: #4285f4;
 }
 
 .rep-item {
@@ -330,6 +348,7 @@
   line-height: 1.35;
   display: -webkit-box;
   -webkit-line-clamp: 2;
+  line-clamp: 2;           /* ← adiciona a propriedade padrão */
   -webkit-box-orient: vertical;
   overflow: hidden;
   margin-bottom: 4px;
