@@ -32,7 +32,7 @@
     </div>
 
     <div class="repositorio-opcoes">
-      <a href="biblioteca-petcomp-monitoria.php" class="biblioteca-card">
+      <a href="repositorio-monitorias" class="biblioteca-card">
         <div class="card-topo card-topo-monitoria" style="background-image: url('img/backgroundmonitorias.png'); background-size: cover; background-position: center;">
           <img src="img/monitoriaimagem.png" alt="monitorias">
         </div>

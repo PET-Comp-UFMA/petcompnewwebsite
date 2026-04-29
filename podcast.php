@@ -15,7 +15,7 @@
         <div class="container-header">
             <h2>PODComp</h2>
             <h3>O PODCast do PETComp</h3>
-            <h4><a href="index.php">Página Inicial</a></h4>
+            <h4><a href="./">Página Inicial</a></h4>
             <h4> → Produtos</h4>
             <h4> → Podcast</h4>
         </div>

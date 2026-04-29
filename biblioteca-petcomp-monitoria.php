@@ -19,7 +19,7 @@
         ?>
 
         <?php 
-            $href = 'biblioteca-petcomp-main.php';
+            $href = 'repositorio';
             include('components/btn-voltar.php');
         ?>
         

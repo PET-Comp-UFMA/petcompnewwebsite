@@ -15,7 +15,7 @@
     <div class="container-header">
         <h2>Fábrica de software</h2>
         <h3>Engenharia de Software no PETComp</h3>
-        <h4><a href="index.php">Página Inicial</a></h4>
+        <h4><a href="./">Página Inicial</a></h4>
         <h4> → Projetos</h4>
         <h4> → Fáb.Software</h4>
     </div>
