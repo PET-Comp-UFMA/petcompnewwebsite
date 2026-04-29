@@ -36,11 +36,14 @@ main{
     color: #001341;
     margin: 0;
     line-height: 1.1;
+    text-align: left;
+    max-width: 480px;
 }
 
 .container-text p {
     font-size: 20px;
     max-width: 60ch;
+    text-align: left; 
 }
 
 .container-materiais {

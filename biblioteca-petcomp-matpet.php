@@ -17,7 +17,7 @@ if (!$id || !isset($monitorias[$id])) {
 
 
 $monitoria = $monitorias[$id];
-$nomeMonitoria = (string)$monitoria['nome'];
+$nomeMonitoria = (string) $monitoria['nome'];
 ?>
 
 
@@ -46,17 +46,19 @@ include "head.php";
         ?>
 
         <?php
-            $href = 'biblioteca-petcomp-monitoria.php';
-            include('components/btn-voltar.php');
+        $href = 'biblioteca-petcomp-monitoria.php';
+        include('components/btn-voltar.php');
         ?>
 
-        
+
         <div class="card-monitoria">
             <div class="icon_monitoria">
                 <img class="imagem_icon" src="<?= $monitoria['imagem'] ?>" alt="<?= $monitoria['nome'] ?>">
             </div>
             <div class="container-text">
-                <h1><?= $monitoria['nome'] ?></h1>
+                <h1>
+                    <?= $monitoria['nome'] ?>
+                </h1>
                 <p>
                     <?= $monitoria['descricao-monitoria'] ?>
                 </p>
@@ -70,7 +72,7 @@ include "head.php";
                 </figure>
                 <div class="descricao-card">
                     <p><?= $monitoria['descricao-video'] ?></p>
-                    <button> <a href="<?= $monitoria['video-aula'] ?>" >Acessar</a> </button>
+                    <button> <a href="<?= $monitoria['video-aula'] ?>">Acessar</a> </button>
                 </div>
 
             </div>
