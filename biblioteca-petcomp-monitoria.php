@@ -111,11 +111,27 @@
                     </div>
                 </div>
 
+                <div class="monitoring-card">
+                    <div class="card-background" id="card-6"></div>
+                    <div class="card-item">
+                        <div class="division" id="division">
+                            <div class="box-texts">
+                                <h3>Cálculo Vetorial e <br> Geometria Analítica</h3>
+                                <p>Vídeo aula</p>
+                                <p>Questionário</p>
+                                <p>Resumo</p>
+                                <a href="https://drive.google.com/drive/folders/1aePehmxr_hn5xgtvBDzlGHyifHPt0sKA">Acessar</a>
+                            </div>
+                            <img src="img\calculoVetorial.png" alt="" width="200px">
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     
     </main>
 </body>
 <?php include('footer.php') ?>
-  <script src="./js/js.js"></script>
+  <script src="./js/biblioteca.js"></script>
 </html>
