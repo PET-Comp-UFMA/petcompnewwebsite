@@ -25,6 +25,10 @@
             → <span><?= htmlspecialchars($monitoria['titulo']) ?></span>
         </h4>
     </div>
+    <?php
+            $href = 'biblioteca-petcomp-matpet.php?id=' . urlencode($monitoria['id_json']);
+            include('components/btn-voltar.php');
+        ?>
 
     <?php
     // Semestre selecionado (default = primeiro da lista)
