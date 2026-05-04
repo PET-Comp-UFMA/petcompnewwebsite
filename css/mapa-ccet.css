@@ -27,16 +27,24 @@ h5 {
 }
 
 body { 
-    margin: 0; padding: 0; font-family: Arial, sans-serif; 
+    margin: 0; 
+    padding: 0; 
+    font-family: Arial, sans-serif; 
 
 }
 
 #map-container { 
-    position: relative; width: 100%; height: 80vh; 
+    position: relative; 
+    width: 95%; 
+    height: 95%; 
+    margin: auto;
+    margin-bottom: 50px;
 }
 
 #map { 
-    width: 100%; height: 100%; background-color: #f8f9fa; 
+    width: 100%; 
+    height: 100%; 
+    background-color: #030A3E; 
 }
 
 .seletor-andares {
@@ -73,7 +81,7 @@ body {
 }
 
 .btn-andar.ativo {
-    background-color: #001a4d;
+    background-color: #016BE5;
     color: white;
 }
 
@@ -145,7 +153,8 @@ body {
 
 .btn-filtro.ativo {
     border-color: #001a4d; 
-    background-color: #f2f5ff; 
+    background-color: #016BE5; 
+    color:#ffffff;
 }
 
 #input-busca {
@@ -162,7 +171,21 @@ body {
     margin-top: 10px;
 }
 
+.pino-customizado {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 2px solid white;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    color: white;
+    transition: transform 0.2s ease;
+}
 
+.pino-customizado:hover {
+    transform: scale(1.15) translateY(-5px);
+    z-index: 1000;
+}
 
 /* Animação de carregamento mais lenta */
 @keyframes fadeIn {

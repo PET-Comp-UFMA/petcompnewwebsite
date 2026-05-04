@@ -3,20 +3,6 @@
 
 <head>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-        }
-
-        #map {
-            width: 100%;
-            height: 80vh;
-            background-color: #ffffff;
-        }
-    </style>
 </head>
 
 <?php
@@ -87,18 +73,21 @@ include 'head.php';
                 </button>
 
                 <button class="btn-filtro" onclick="filtrarCategoria('outros', this)">
-                    <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none">
-                        <rect x="3" y="5" width="18" height="14" rx="2" ry="2"></rect><text x="6" y="16" font-size="10" font-family="sans-serif" font-weight="bold" stroke="none" fill="currentColor">WC</text>
-                    </svg> Outros
+                    <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="3" y="3" width="7" height="7" rx="1"></rect>
+                        <rect x="14" y="3" width="7" height="7" rx="1"></rect>
+                        <rect x="14" y="14" width="7" height="7" rx="1"></rect>
+                        <rect x="3" y="14" width="7" height="7" rx="1"></rect>
+                    </svg>
+                    Outros
                 </button>
             </div>
         </div>
 
         <div class="seletor-andares">
-            <button class="btn-andar" onclick="mudarAndar('andar3')">3º Andar</button>
-            <button class="btn-andar" onclick="mudarAndar('andar2')">2º Andar</button>
-            <button class="btn-andar" onclick="mudarAndar('andar1')">1º Andar</button>
-            <button class="btn-andar ativo" onclick="mudarAndar('terreo')" id="btn-terreo">Térreo</button>
+            <button class="btn-andar" onclick="mudarAndar('andar2', this)">2º Andar</button>
+            <button class="btn-andar" onclick="mudarAndar('andar1', this)">1º Andar</button>
+            <button class="btn-andar ativo" onclick="mudarAndar('terreo', this)" id="btn-terreo">Térreo</button>
         </div>
     </div>
 
