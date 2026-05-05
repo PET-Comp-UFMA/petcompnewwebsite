@@ -187,6 +187,58 @@ body {
     z-index: 1000;
 }
 
+.leaflet-popup-content-wrapper {
+    padding: 0 !important;
+    border-radius: 12px !important;
+    overflow: hidden;
+    box-shadow: 0 8px 15px rgba(0,0,0,0.2) !important;
+}
+
+.leaflet-popup-content {
+    margin: 0 !important;
+    width: 260px !important; 
+}
+
+.popup-customizado {
+    display: flex;
+    flex-direction: column;
+}
+
+.popup-img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover; 
+    display: block;
+}
+
+.popup-conteudo {
+    padding: 16px;
+}
+
+.popup-titulo {
+    margin: 0 0 4px 0;
+    font-family: 'Montserrat', sans-serif; 
+    font-size: 16px;
+    font-weight: 800;
+    color: #001a4d; 
+}
+
+.popup-subtitulo {
+    margin: 0 0 12px 0;
+    font-size: 12px;
+    font-weight: 600;
+    color: #666666;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.popup-descricao {
+    margin: 0;
+    font-size: 13px;
+    color: #444444;
+    line-height: 1.5;
+}
+
 /* Animação de carregamento mais lenta */
 @keyframes fadeIn {
     from {

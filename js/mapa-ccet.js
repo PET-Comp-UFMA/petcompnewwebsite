@@ -24,7 +24,7 @@ const iconeLaboratorio = L.divIcon({
 });
 const iconeSala = L.divIcon({
     className: 'pino-customizado pino-sala',
-    html: '<svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>',
+    html: '<svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>',
     iconSize: [32, 32],
     iconAnchor: [16, 16],
     popupAnchor: [0, -16]
@@ -78,40 +78,132 @@ const iconeWC_F = L.divIcon({
     iconAnchor: [16, 16],
     popupAnchor: [0, -16]
 });
+const iconeOutros = L.divIcon({
+    className: 'pino-customizado pino-outros',
+    html: '<svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"></rect><rect x="14" y="3" width="7" height="7" rx="1"></rect><rect x="14" y="14" width="7" height="7" rx="1"></rect><rect x="3" y="14" width="7" height="7" rx="1"></rect></svg>',
+    iconSize: [32, 32],
+    iconAnchor: [16, 16],
+    popupAnchor: [0, -16]
+});
 
 const locaisCCET = [
-    { id: 'b1', nome: 'Bloco 1 - Auditório 1', andar: 'terreo', categoria: 'auditorio', coordenadas: [607, 1324] },
-    { id: 'b6', nome: 'Bloco 6 - Auditório 2', andar: 'terreo', categoria: 'auditorio', coordenadas: [1140, 1777] },
+    // { id: '', bloco: '', sala: '', nome: '', andar: 'terreo', categoria: '', imagem: '', descricao: '', coordenadas: [, ] },
 
-    { id: 'b1', nome: 'Bloco 1 - DA 1', andar: 'terreo', categoria: 'da', coordenadas: [320, 999] },
-    { id: 'b1', nome: 'Bloco 1 - DA 2', andar: 'terreo', categoria: 'da', coordenadas: [389, 999] },
-    { id: 'b1', nome: 'Bloco 1 - DA 3', andar: 'terreo', categoria: 'da', coordenadas: [452, 999] },
-    { id: 'b1', nome: 'Bloco 1 - DA 4', andar: 'terreo', categoria: 'da', coordenadas: [510, 999] },
-    { id: 'b1', nome: 'Bloco 1 - DA 5', andar: 'terreo', categoria: 'da', coordenadas: [568, 999] },
-    { id: 'b1', nome: 'Bloco 1 - DA 6', andar: 'terreo', categoria: 'da', coordenadas: [626, 999] },
-    { id: 'b1', nome: 'Bloco 1 - DA 7', andar: 'terreo', categoria: 'da', coordenadas: [684, 999] },
-    { id: 'b1', nome: 'Bloco 1 - DA 8', andar: 'terreo', categoria: 'da', coordenadas: [742, 999] },
+    { id: 'b6', bloco: '6', sala: '', nome: 'Bloco 6 - Auditório 2', andar: 'terreo', categoria: 'auditorio', imagem: '', descricao: '', coordenadas: [1140, 1777] },
 
-    { id: 'b5', nome: 'Bloco 5 - PETComp', andar: 'terreo', categoria: 'petcomp', coordenadas: [1279, 1130] },
-    { id: 'b5', nome: 'Bloco 5 - Biblioteca CCET', andar: 'terreo', categoria: 'biblioteca', coordenadas: [1445, 440] },
+    { id: 'escada1', bloco: '1', sala: '', nome: 'Escada', andar: 'terreo', categoria: 'escada', imagem: '', descricao: '', coordenadas: [463, 1151] },
+    { id: 'auditorio1', bloco: '1', sala: '', nome: 'Auditório 1', andar: 'terreo', categoria: 'auditorio', imagem: '', descricao: '', coordenadas: [607, 1324] },
+    { id: '1', bloco: '1', sala: '108', nome: 'PET - Física', andar: 'terreo', categoria: 'pet', imagem: '', descricao: '', coordenadas: [320, 999] },
+    { id: '2', bloco: '1', sala: '107', nome: 'Diretório Acadêmico de Matemática', andar: 'terreo', categoria: 'da', imagem: '', descricao: '', coordenadas: [389, 999] },
+    { id: '3', bloco: '1', sala: '106', nome: 'Diretório Acadêmico de Química Industrial', andar: 'terreo', categoria: 'da', imagem: '', descricao: '', coordenadas: [452, 999] },
+    { id: '4', bloco: '1', sala: '105', nome: 'Diretório Acadêmico de Física', andar: 'terreo', categoria: 'da', imagem: '', descricao: '', coordenadas: [510, 999] },
+    { id: '5', bloco: '1', sala: '104', nome: 'DAComp (Diretório Acadêmico de Computação)', andar: 'terreo', categoria: 'da', imagem: '', descricao: '', coordenadas: [568, 999] },
+    { id: '6', bloco: '1', sala: '103', nome: 'DA Elétrica (Diretório Acadêmico de Engenharia Elétrica)', andar: 'terreo', categoria: 'da', imagem: '', descricao: '', coordenadas: [626, 999] },
+    { id: '7', bloco: '1', sala: '102',nome: 'CAD (Centro Acadêmico de Design)', andar: 'terreo', categoria: 'ca', imagem: '', descricao: '', coordenadas: [684, 999] },
+    { id: '8', bloco: '1', sala: '101', nome: 'DAQM (Diretório Acâdemico de Química)', andar: 'terreo', categoria: 'da', imagem: '', descricao: '', coordenadas: [742, 999] },
+    { id: '9', bloco: '1', sala: '100', nome: 'Sala', bloco: '1', sala: '100', andar: 'terreo', categoria: 'sala', imagem: '', descricao: '', coordenadas: [824, 999] },
+    { id: '10', bloco: '1', sala: '', nome: 'caeq (Centro Acadêmico de Engenharia Química)', andar: 'terreo', categoria: 'ca', imagem: '', descricao: '', coordenadas: [900, 999] },
 
-    { id: 'b1', nome: 'Bloco 1 - Escada', andar: 'terreo', categoria: 'escada', coordenadas: [463, 1151] },
-    { id: 'b4', nome: 'Bloco 4 - Escada', andar: 'terreo', categoria: 'escada', coordenadas: [2396, 1150] },
-    { id: 'b5', nome: 'Bloco 5 - Escada', andar: 'terreo', categoria: 'escada', coordenadas: [1455, 981] },
-    { id: 'b6', nome: 'Bloco 6 - Escada', andar: 'terreo', categoria: 'escada', coordenadas: [1030, 1491] },
-    { id: 'b7', nome: 'Bloco 7 - Escada', andar: 'terreo', categoria: 'escada', coordenadas: [1854, 1757] },
-    { id: 'b8', nome: 'Bloco 8 - Escada', andar: 'terreo', categoria: 'escada', coordenadas: [1246, 2069] },
+    { id: '11', bloco: '2', sala: '101', nome: 'Sala do Mestrado em Matemática', andar: 'terreo', categoria: 'sala', imagem: '', descricao: '', coordenadas: [1095, 1008] },
+    { id: '12', bloco: '2', sala: '102', nome: 'Sala do Mestrado Profissional em Energia & Ambiente e Mestrado em Computação', andar: 'terreo', categoria: 'sala', imagem: '', descricao: '', coordenadas: [1095, 917] },
+    { id: '13', bloco: '2', sala: '103', nome: 'Coordenação e Secretaria da Pós-Graduação em Ciência da Computação', andar: 'terreo', categoria: 'coord', imagem: '', descricao: '', coordenadas: [1095, 798] },
+    { id: '14', bloco: '2', sala: '104', nome: 'Coordenação e Secretaria da Pós-Graduação em Energia e Ambiente', andar: 'terreo', categoria: 'coord', imagem: '', descricao: '', coordenadas: [1095, 691] },
+    { id: '15', bloco: '2', sala: '105', nome: 'Coordenação e Secretaria do Mestrado em Ensino de Física - PROFIS', andar: 'terreo', categoria: 'coord', imagem: '', descricao: '', coordenadas: [1095, 624] },
 
-    { id: 'b6', nome: 'Bloco 6 - Banheiro Feminino', andar: 'terreo', categoria: 'wc-f', coordenadas: [1010, 1369] },
-    { id: 'b5', nome: 'Bloco 5 - Banheiro Feminino', andar: 'terreo', categoria: 'wc-f', coordenadas: [1556, 979] },
-    { id: 'b7', nome: 'Bloco 7 - Banheiro Masculino', andar: 'terreo', categoria: 'wc-m', coordenadas: [1862, 1893] },
-    { id: 'b8', nome: 'Bloco 8 - Banheiro Masculino', andar: 'terreo', categoria: 'wc-m', coordenadas: [1377, 2101] },
+    { id: '16', bloco: '3', sala: '101', nome: 'Laboratório de Biofísica e Nanossistemas - LBN', andar: 'terreo', categoria: 'laboratorio', imagem: '', descricao: '', coordenadas: [1812, 988] },
+    { id: '17', bloco: '3', sala: '102', nome: 'Sala Nossos Saberes', andar: 'terreo', categoria: 'sala', imagem: '', descricao: '', coordenadas: [1812, 865] },
+    { id: '18', bloco: '3', sala: '103', nome: 'Sala Forma & Ação', andar: 'terreo', categoria: 'sala', imagem: '', descricao: '', coordenadas: [1812, 759] },
+    { id: '19', bloco: '3', sala: '104', nome: 'Sala', andar: 'terreo', categoria: 'sala', imagem: '', descricao: '', coordenadas: [1812, 649] },
+    { id: 'nca', bloco: '3', sala: '', nome: 'NCA (Núcleo de Computação Aplicada', andar: 'terreo', categoria: 'laboratorio', imagem: '', descricao: '', coordenadas: [1939, 387] },
+
+
+    { id: '20', bloco: '4', sala: '101', nome: 'LABELETRO - Laboratório de Eletrotécnica (Prof. Lindberg Cavalcanti Conde)', andar: 'terreo', categoria: 'laboratorio', imagem: '', descricao: '', coordenadas: [2269, 980] },
+    { id: '21', bloco: '4', sala: '102', nome: 'Laboratório de Sistema de Energia Elétrica', andar: 'terreo', categoria: 'laboratorio', imagem: '', descricao: '', coordenadas: [2512, 980] },
+    { id: 'escada2', bloco: '4', sala: '', nome: 'Escada', andar: 'terreo', categoria: 'escada', imagem: '', descricao: '', coordenadas: [2396, 1150] },
+    { id: 'inovtec', bloco: '4', sala: '', nome: 'INOVTEC', andar: 'terreo', categoria: 'laboratorio', imagem: '', descricao: '', coordenadas: [2307, 1319] },
+
+    { id: 'escada3', bloco: '5', sala: '', nome: 'Escada', andar: 'terreo', categoria: 'escada', imagem: '', descricao: '', coordenadas: [1455, 981] },
+    { id: 'banheiro1', bloco: '5', sala: '', nome: 'Banheiro Feminino', andar: 'terreo', categoria: 'wc-f', imagem: '', descricao: '', coordenadas: [1556, 979] },
+    { id: 'biblioteca', bloco: '5', sala: '', nome: 'Biblioteca CCET', andar: 'terreo', categoria: 'biblioteca', imagem: '', descricao: '', coordenadas: [1445, 440] },
+    { id: '22', bloco: '5', sala: '', nome: 'PETComp', andar: 'terreo', categoria: 'petcomp', imagem: '', descricao: '', coordenadas: [1279, 1130] },
+    { id: '23', bloco: '5', sala: '101', nome: 'LAB 3 - Ciência da Computação', andar: 'terreo', categoria: 'laboratorio', imagem: '', descricao: '', coordenadas: [1400, 1130] },
+    { id: '24', bloco: '5', sala: '101', nome: 'LAB 4 - Ciência da Computação', andar: 'terreo', categoria: 'laboratorio', imagem: '', descricao: '', coordenadas: [1583, 1130] },
+
+    { id: '25', bloco: '6', sala: '', nome: 'Coordenação do Curso de Matemática (Licenciatura)', andar: 'terreo', categoria: 'coord', imagem: '', descricao: '', coordenadas: [876, 1967] },
+    { id: '26', bloco: '6', sala: '', nome: 'Coordenação do Curso de Física (Bacharelado)', andar: 'terreo', categoria: 'coord', imagem: '', descricao: '', coordenadas: [876, 1814] },
+    { id: '27', bloco: '6', sala: '', nome: 'Coordenação do Curso de Química (Licenciatura)', andar: 'terreo', categoria: 'coord', imagem: '', descricao: '', coordenadas: [876, 1691] },
+    { id: '28', bloco: '6', sala: '', nome: 'Portaria', andar: 'terreo', categoria: 'outros', imagem: '', descricao: '', coordenadas: [876, 1509] },
+    { id: '29', bloco: '6', sala: '104', nome: 'Coordenação do Curso de Química Industrial', andar: 'terreo', categoria: 'coord', imagem: '', descricao: '', coordenadas: [876, 1361] },
+    { id: '30', bloco: '6', sala: '', nome: 'Coordenação do Curso de Design', andar: 'terreo', categoria: 'coord', imagem: '', descricao: '', coordenadas: [876, 1285] },
+    { id: '31', bloco: '6', sala: '', nome: 'Coordenação do Curso de Engenharia Elétrica', andar: 'terreo', categoria: 'coord', imagem: '', descricao: '', coordenadas: [876, 1209] },
+    { id: '32', bloco: '6', sala: '', nome: 'Coordenação do Curso de Engenharia Elétrica', andar: 'terreo', categoria: 'coord', imagem: '', descricao: '', coordenadas: [876, 1124] },
+    { id: 'escada4', bloco: '6', sala: '', nome: 'Escada', andar: 'terreo', categoria: 'escada', imagem: '', descricao: '', coordenadas: [1030, 1491] },
+    { id: 'banheiro2', bloco: '6', sala: '', nome: 'Banheiro Feminino', andar: 'terreo', categoria: 'wc-f', imagem: '', descricao: '', coordenadas: [1010, 1369] },
+    { id: 'auditorio2', bloco: '6', sala: '', nome: 'Auditório 2', andar: 'terreo', categoria: 'auditorio', imagem: '', descricao: '', coordenadas: [1140, 1777] },
+
+    { id: '33', bloco: '7', sala: '101', nome: 'Sala', andar: 'terreo', categoria: 'sala', imagem: '', descricao: '', coordenadas: [2012, 1922] },
+    { id: '34', bloco: '7', sala: '102', nome: 'Sala', andar: 'terreo', categoria: 'sala', imagem: '', descricao: '', coordenadas: [2012, 1777] },
+    { id: '35', bloco: '7', sala: '103', nome: 'Sala', andar: 'terreo', categoria: 'sala', imagem: '', descricao: '', coordenadas: [2012, 1652] },
+    { id: '36', bloco: '7', sala: '104', nome: 'Sala', andar: 'terreo', categoria: 'sala', imagem: '', descricao: '', coordenadas: [2012, 1535] },
+    { id: '37', bloco: '7', sala: '105', nome: 'Sala', andar: 'terreo', categoria: 'sala', imagem: '', descricao: '', coordenadas: [2012, 1428] },
+    { id: '38', bloco: '7', sala: '106', nome: 'Sala', andar: 'terreo', categoria: 'sala', imagem: '', descricao: '', coordenadas: [2012, 1331] },
+    { id: '39', bloco: '7', sala: '107', nome: 'Sala', andar: 'terreo', categoria: 'sala', imagem: '', descricao: '', coordenadas: [2012, 1235] },
+    { id: '40', bloco: '7', sala: '108', nome: 'Sala', andar: 'terreo', categoria: 'sala', imagem: '', descricao: '', coordenadas: [2012, 1132] },
+    { id: 'escada5', bloco: '7', sala: '', nome: 'Escada', andar: 'terreo', categoria: 'escada', imagem: '', descricao: '', coordenadas: [1854, 1757] },
+    { id: 'banheiro3', bloco: '7', sala: '', nome: 'Banheiro Masculino', andar: 'terreo', categoria: 'wc-m', imagem: '', descricao: '', coordenadas: [1862, 1893] },
     
+    { id: '41', bloco: '8', sala: '104/105', nome: 'NEPP (Núcleo de Ergonomia em Processos e Produtos)', andar: 'terreo', categoria: 'outros', imagem: '', descricao: '', coordenadas: [1610, 1942] },
+    { id: '42', bloco: '8', sala: '101', nome: 'LAB 2 - Ciência da Computação', andar: 'terreo', categoria: 'laboratorio', imagem: '', descricao: '', coordenadas: [1463, 1942] },
+    { id: '43', bloco: '8', sala: '101', nome: 'LAB 1 - Ciência da Computação', andar: 'terreo', categoria: 'laboratorio', imagem: '', descricao: '', coordenadas: [1268, 1942] },
+    { id: 'b8', bloco: '8', sala: '', nome: 'Escada', andar: 'terreo', categoria: 'escada', imagem: '', descricao: '', coordenadas: [1246, 2069] },
+    { id: 'b8', bloco: '8', sala: '', nome: 'Banheiro Masculino', andar: 'terreo', categoria: 'wc-m', imagem: '', descricao: '', coordenadas: [1377, 2101] },
+    
+    { id: '44', bloco: '9', sala: '', nome: 'NDA', andar: 'terreo', categoria: 'laboratorio', imagem: '', descricao: '', coordenadas: [1607, 2439] },
+    { id: '45', bloco: '9', sala: '', nome: 'Sala dos Professores', andar: 'terreo', categoria: 'outros', imagem: '', descricao: 'Prof. Dr. Nailton Martins Rodrigues, Profa. Dra. Rafaely Nascimento Lima, Prof. Dr. Tiago Gomes dos Santos, Prof. Dr. Ulisses Alves do Rego.', coordenadas: [1479, 2439] },
+    { id: '46', bloco: '9', sala: '', nome: 'DEQUI (Departamento de Química)', andar: 'terreo', categoria: 'outros', imagem: '', descricao: '', coordenadas: [1374, 2439] },
+    { id: '47', bloco: '9', sala: '', nome: 'lequim (Laboratório de Ensino de Química)', andar: 'terreo', categoria: 'laboratorio', imagem: '', descricao: '', coordenadas: [1298, 2439] },
+    { id: '48', bloco: '9', sala: '', nome: 'lequim (Laboratório de Ensino de Química)', andar: 'terreo', categoria: 'laboratorio', imagem: '', descricao: '', coordenadas: [1236, 2439] },
+    { id: '49', bloco: '9', sala: '104', nome: 'Sala', andar: 'terreo', categoria: 'sala', imagem: '', descricao: '', coordenadas: [1096, 2432] },
+    { id: '50', bloco: '9', sala: '103', nome: 'Sala', andar: 'terreo', categoria: 'sala', imagem: '', descricao: '', coordenadas: [1096, 2332] },
+    { id: '51', bloco: '9', sala: '102', nome: 'Sala', andar: 'terreo', categoria: 'sala', imagem: '', descricao: '', coordenadas: [1096, 2234] },
+    { id: '52', bloco: '9', sala: '101', nome: 'Sala', andar: 'terreo', categoria: 'sala', imagem: '', descricao: '', coordenadas: [1096, 2106] },
+
+    { id: '53', bloco: '10', sala: '101', nome: 'Laboratório de Cerâmica', andar: 'terreo', categoria: 'laboratorio', imagem: '', descricao: '', coordenadas: [1812, 2086] },
+    { id: '54', bloco: '10', sala: '102', nome: 'LAB DESIGN', andar: 'terreo', categoria: 'laboratorio', imagem: '', descricao: '', coordenadas: [1812, 2195] },
+    { id: '55', bloco: '10', sala: '103', nome: 'Núcleo de Prototipagem e Design', andar: 'terreo', categoria: 'laboratorio', imagem: '', descricao: '', coordenadas: [1812, 2283] },
+    { id: '56', bloco: '10', sala: '104', nome: 'Oficina de Marcenaria', andar: 'terreo', categoria: 'outros', imagem: '', descricao: '', coordenadas: [1812, 2406] },
+
+
+
+
 ];
 
 const marcadoresLeaflet = [];
 let andarAtual = 'terreo';
 let categoriaAtual = 'todos';
+
+function criarHTMLPopup(local) {
+    let html = '<div class="popup-customizado">';
+
+    if (local.imagem){
+        html += `<img src="${local.imagem}" class="popup-img" alt="Foto de ${local.nome}">`;
+    }
+
+    html += '<div class="popup-conteudo">';
+
+    html += `<h3 class="popup-titulo">${local.nome}</h3>`;
+
+    let subtitulo = `Bloco ${local.bloco}`;
+    if (local.sala) subtitulo += ` - Sala ${local.sala}`;
+    html += `<p class="popup-subtitulo">${subtitulo}</p>`;
+
+    if (local.descricao) {
+        html += `<p class="popup-subtitulo">${local.descricao}</p>`;
+    }
+
+    html += '</div></div>';
+    return html;
+}
 
 function inicializarMarcadores() {
     locaisCCET.forEach(local => {
@@ -144,8 +236,11 @@ function inicializarMarcadores() {
         else if(local.categoria === 'wc-f'){
             iconeEscolhido = iconeWC_F;
         }
+        else{
+            iconeEscolhido = iconeOutros;
+        }
 
-        let marker = L.marker(local.coordenadas, {icon: iconeEscolhido}).bindPopup(`<b>${local.nome}</b>`);
+        let marker = L.marker(local.coordenadas, {icon: iconeEscolhido}).bindPopup( criarHTMLPopup(local) );
         
         marcadoresLeaflet.push({
             dados: local,
@@ -176,7 +271,8 @@ function executarBusca() {
             
             const grupoDoAndar = dadosAndares[andarAtual].marcadores;
 
-            const passaTexto = item.dados.nome.toLowerCase().includes(textoDigitado);
+            const textoParaBusca = `${item.dados.nome} Bloco ${item.dados.bloco} ${item.dados.sala} ${item.dados.categoria}`.toLowerCase();
+            const passaTexto = textoParaBusca.includes(textoDigitado);
 
             const passaCategoria = (categoriaAtual === 'todos' || item.dados.categoria === categoriaAtual);
 
@@ -234,8 +330,8 @@ map.on('click', function(e) {
 
 // 1. configurar categoria outros
 // 2. trocar tamanho pin no zoom minimo
-// 3. mudar pop up.
 // 4. colocar botao de centralizar
 // 5. rampa
 // 6. icone coord
 // 7. icone labs
+// 8. resolver sobre sala dos professores
