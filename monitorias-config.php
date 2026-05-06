@@ -4,31 +4,57 @@
  *  CONFIGURAÇÃO DAS MONITORIAS — REPOSITÓRIO EDUCACIONAL
  * ============================================================
  *
- *  Como os vídeos são exibidos:
- *  - Cada monitoria possui um array 'semestres' com os períodos disponíveis.
- *  - Cada monitoria possui um array 'aulas', onde cada aula tem um 'youtube_id'.
- *  - Na página de Vídeo Aula, o usuário seleciona um semestre via pills/botões.
- *  - A primeira aula da lista aparece em destaque (player principal).
- *  - As demais aulas ficam na lista lateral; clicar em uma delas a coloca em destaque.
- *  - O vídeo é embutido diretamente via iframe do YouTube usando o youtube_id.
- *
  *  Como adicionar uma nova aula:
  *  1. Suba o vídeo no YouTube como "Não listado"
  *  2. Copie o ID do vídeo (parte após "v=" na URL)
  *     Exemplo: https://youtube.com/watch?v=dQw4w9WgXcQ → ID = dQw4w9WgXcQ
- *  3. Adicione um novo item no array 'aulas' da monitoria correta
+ *  3. No phpMyAdmin, abra a tabela "monitorias_aulas" e insira uma nova linha
  *
- *  Como adicionar uma nova aula de um semestre diferente:
- *  - Adicione o semestre no array 'semestres' da monitoria (ex: '2025.2')
- *  - No array 'aulas', inclua o campo 'semestre' correspondente em cada aula
- *  - A página filtra automaticamente as aulas pelo semestre selecionado
+ *  Como adicionar uma nova monitoria:
+ *  1. No phpMyAdmin, abra a tabela "monitorias" e insira uma nova linha
+ *  2. No campo "semestres", separe os períodos por vírgula (ex: 2025.2,2025.1)
  * ============================================================
  */
-$monitorias = array_map(
-    fn($file) => require $file,
-    glob(__DIR__ . '/monitorias/*.php')
-);
 
+require_once 'conexao.php';
+
+// -------------------------------------------------------
+//  Busca todas as monitorias
+// -------------------------------------------------------
+$result = $mysqli->query("SELECT * FROM monitorias");
+$monitorias = [];
+
+while ($row = $result->fetch_assoc()) {
+
+    // Converte semestres de string "2025.2,2025.1" para array
+    $row['semestres'] = array_map('trim', explode(',', $row['semestres']));
+
+    // Busca as aulas desta monitoria
+    $id = $mysqli->real_escape_string($row['id']);
+    $res_aulas = $mysqli->query(
+        "SELECT * FROM monitorias_aulas WHERE monitoria_id = '$id' ORDER BY id ASC"
+    );
+
+    $aulas = [];
+    while ($aula = $res_aulas->fetch_assoc()) {
+        $aulas[] = [
+            'titulo'     => $aula['titulo'],
+            'data'       => $aula['data'],
+            'duracao'    => $aula['duracao'],
+            'modulo'     => $aula['modulo'],
+            'semestre'   => $aula['semestre'],
+            'youtube_id' => $aula['youtube_id'],
+        ];
+    }
+
+    $row['aulas'] = $aulas;
+    $monitorias[] = $row;
+}
+
+// -------------------------------------------------------
+//  Função auxiliar: retorna dados de uma monitoria pelo ID
+//  Uso: $m = get_monitoria('algoritmos-1');
+// -------------------------------------------------------
 function get_monitoria(string $id): ?array {
     global $monitorias;
     foreach ($monitorias as $m) {

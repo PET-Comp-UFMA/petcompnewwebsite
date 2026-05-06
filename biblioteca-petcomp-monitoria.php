@@ -12,9 +12,9 @@ include "head.php";
     <?php include('header.php') ?>
     <main>
         <?php renderComponent("container-header.php", [
-            "titulo_pagina" => "Monitorias",
-            "descricao" => "Veja as nossas monitorias",
-            "caminho" => ["Biblioteca PETComp", "Monitorias"]
+            "titulo_pagina" => "Repositório Educacional Aberto",
+            "descricao" => "Monitorias",
+            "caminho" => ["Repositório Educacional", "Monitorias"]
         ]);
         ?>
 
@@ -112,6 +112,22 @@ include "head.php";
                                 <a href="biblioteca-petcomp-matpet.php?id=mdl" >Acessar</a>
                             </div>
                             <img src="img\mdl.png" alt="">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="monitoring-card">
+                    <div class="card-background" id="card-6"></div>
+                    <div class="card-item">
+                        <div class="division" id="division">
+                            <div class="box-texts">
+                                <h3>Cálculo Vetorial e <br> Geometria Analítica</h3>
+                                <p>Vídeo aula</p>
+                                <p>Questionário</p>
+                                <p>Resumo</p>
+                                <a href="biblioteca-petcomp-matpet.php?id=cvga">Acessar</a>
+                            </div>
+                            <img src="img\calculoVetorial.png" alt="" width="200px">
                         </div>
                     </div>
                 </div>

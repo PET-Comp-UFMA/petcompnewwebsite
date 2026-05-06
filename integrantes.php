@@ -146,7 +146,7 @@ include "head.php";
          <li class="page-item" id="previous">
             <a class="page-link" href="integrantes/<?= $previous ?>" aria-label="Previous">
                <span aria-hidden="true">
-                  << /span>
+                  <
                      <span class="sr-only">Previous</span>
             </a>
          </li>
