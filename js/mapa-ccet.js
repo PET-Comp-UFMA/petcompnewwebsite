@@ -8,11 +8,12 @@ const limitesDaImagem = [[0, 0], [2898, 2634]];
 
 const marcadoresTerreo = L.layerGroup();
 const marcadoresAndar1 = L.layerGroup();
+const marcadoresAndar2 = L.layerGroup();
 
 const dadosAndares = {
     'terreo': { url: 'img/mapa-ccet-T.svg', marcadores: marcadoresTerreo },
-    'andar1': { url: 'img/mapa_ccet-1.jpg', marcadores: marcadoresAndar1 },
-    'andar2': { url: 'img/mapa-ccet-2.jpg', marcadores: marcadoresAndar1 },
+    'andar1': { url: 'img/mapa-ccet-1.svg', marcadores: marcadoresAndar1 },
+    'andar2': { url: 'img/mapa-ccet-2.svg', marcadores: marcadoresAndar2 },
 };
 
 const iconeLaboratorio = L.divIcon({
@@ -178,6 +179,34 @@ const locaisCCET = [
 
 ];
 
+const ControleCentralizar = L.Control.extend({
+    options: {
+        position: 'topleft'
+    },
+
+    onAdd: function (map) {
+        const container = L.DomUtil.create('div', 'leaflet-bar leaflet-control');
+        const botao = L.DomUtil.create('a', 'botao-centralizar', container);
+        
+        botao.href = '#';
+        botao.title = 'Centralizar Mapa';
+        
+        botao.innerHTML = `<svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="22" y1="12" x2="18" y2="12"></line><line x1="6" y1="12" x2="2" y2="12"></line><line x1="12" y1="6" x2="12" y2="2"></line><line x1="12" y1="22" x2="12" y2="18"></line></svg>`;
+
+        L.DomEvent.disableClickPropagation(botao);
+
+        L.DomEvent.on(botao, 'click', function(e) {
+            e.preventDefault(); // Evita que a página pule para o topo
+            map.fitBounds(limitesDaImagem); 
+        });
+
+        return container;
+    }
+});
+
+map.addControl(new ControleCentralizar());
+
+
 const marcadoresLeaflet = [];
 let andarAtual = 'terreo';
 let categoriaAtual = 'todos';
@@ -335,3 +364,4 @@ map.on('click', function(e) {
 // 6. icone coord
 // 7. icone labs
 // 8. resolver sobre sala dos professores
+// ver sobre hover dos pinos

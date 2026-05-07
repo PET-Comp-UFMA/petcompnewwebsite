@@ -60,6 +60,15 @@ body {
     flex-direction: column;
 }
 
+.logo-petcomp {
+    position: absolute;
+    bottom: 20px; 
+    right: 2px; 
+    z-index: 9999; 
+    height: 18px;
+    pointer-events: none;
+}
+
 .btn-andar {
     background: white;
     border: none;
@@ -148,7 +157,7 @@ body {
 }
 
 .btn-filtro:hover {
-    background: #f9f9f9;
+    background: #f0f0f0;
 }
 
 .btn-filtro.ativo {
@@ -237,6 +246,17 @@ body {
     font-size: 13px;
     color: #444444;
     line-height: 1.5;
+}
+
+.botao-centralizar {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    color: #444;
+}
+
+.botao-centralizar:hover {
+    color: #000;
 }
 
 /* Animação de carregamento mais lenta */

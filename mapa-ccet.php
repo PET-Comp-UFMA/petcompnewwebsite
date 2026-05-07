@@ -29,7 +29,9 @@ include 'head.php';
     </div>
 
     <div id="map-container">
-        <div id="map"></div>
+        <div id="map">
+            <img src="assets/svg/LOGOTIPO - CLARA.svg" class="logo-petcomp" alt="Logo PETComp">
+        </div>
 
         <div class="busca-container">
             <div class="input-wrapper">
