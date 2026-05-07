@@ -87,8 +87,8 @@ include 'head.php';
         </div>
 
         <div class="seletor-andares">
-            <button class="btn-andar" onclick="mudarAndar('andar2', this)">2º Andar</button>
-            <button class="btn-andar" onclick="mudarAndar('andar1', this)">1º Andar</button>
+            <button class="btn-andar" onclick="mudarAndar('2', this)">2º Andar</button>
+            <button class="btn-andar" onclick="mudarAndar('1', this)">1º Andar</button>
             <button class="btn-andar ativo" onclick="mudarAndar('terreo', this)" id="btn-terreo">Térreo</button>
         </div>
     </div>
