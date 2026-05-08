@@ -59,6 +59,13 @@ const iconePET = L.divIcon({
     iconAnchor: [16, 16],
     popupAnchor: [0, -16]
 });
+const iconeEJ = L.divIcon({
+    className: 'pino-customizado pino-ej',
+    html: '<svg viewBox="0 0 32 32" width="16" height="16"><text x="16" y="21" font-family="Arial, Helvetica, sans-serif" font-weight="bold" font-size="18" fill="currentColor" text-anchor="middle">EJ</text></svg>',
+    iconSize: [32, 32],
+    iconAnchor: [16, 16],
+    popupAnchor: [0, -16]
+});
 const iconePETComp = L.divIcon({
     className: 'pino-customizado pino-petcomp',
     html: '<svg width="16" height="14.4" viewBox="0 0 600 540" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M75.7412 540L0 407.755L157.591 134.694L207.678 221.632L100.174 408.98L175.915 540H75.7412Z" fill="white"/><path d="M600 366.123L523.037 498.368H207.9L260.501 408H474.3L551.135 279.184L600 366.123Z" fill="white"/><path d="M183.176 0H335.88L492.249 273.061H393.296L284.572 86.9388H133.089L183.176 0Z" fill="white"/><path d="M261.3 134.694H157.591L236.928 273.061L157.522 410.204L207.9 498.368L287.015 362.449H435.9L492.249 273.061L337.101 273.061L261.3 134.694Z" fill="white"/></svg>',
@@ -211,22 +218,109 @@ const locaisCCET = [
 
 
     // PRIMEIRO ANDAR
-    { id: '57', bloco: '6', sala: '202', nome: 'Laboratório de Ensino de Matemática', andar: '1', categoria: 'laboratorio', imagem: '', descricao: '', coordenadas: [869, 1969] },
-    { id: '58', bloco: '6', sala: '204', nome: 'Sala de Professor', andar: '1', categoria: 'prof', imagem: '', descricao: 'Prof. Adecarlos Costa Carvalho, Prof. Anselmo B. Raposo Júnior, Prof. Cléber Araújo Cavalcanti', coordenadas: [869, 1852] },
-    { id: '59', bloco: '6', sala: '205', nome: 'Sala de Professor', andar: '1', categoria: 'prof', imagem: '', descricao: 'Prof. Marcos Araújo', coordenadas: [869, 1813] },
-    { id: '60', bloco: '6', sala: '206', nome: 'Sala de Professor', andar: '1', categoria: 'prof', imagem: '', descricao: 'Prof. Josenildo, Profa. Valeska, Prof. Wellington', coordenadas: [869, 1773] },
-    { id: '61', bloco: '6', sala: '207', nome: 'Sala de Professor', andar: '1', categoria: 'prof', imagem: '', descricao: 'Profa. Renata de F. Limeira Carvalho', coordenadas: [869, 1734] },
-    { id: '62', bloco: '6', sala: '208', nome: 'Sala de Professor', andar: '1', categoria: 'prof', imagem: '', descricao: 'Prof. Elivaldo Macedo, Prof. Ivaldo Paz, Prof. José Santana', coordenadas: [869, 1696] },
-    { id: '63', bloco: '6', sala: '209', nome: 'Sala de Professor', andar: '1', categoria: 'prof', imagem: '', descricao: 'Prof. Artur Silva, Prof. Jairo Santos, Prof. Luís Fernando', coordenadas: [869, 1655] },
-    { id: '64', bloco: '6', sala: '210', nome: 'OBMEP', andar: '1', categoria: 'outros', imagem: '', descricao: '', coordenadas: [869, 1421] },
-    { id: '65', bloco: '6', sala: '211', nome: 'Sala de Professor', andar: '1', categoria: 'prof', imagem: '', descricao: 'Prof. Hilkias Jordão, Prof. Domício Magalhães, Prof. Ítalo Augusto, Prof. Gerard Morales, Prof. Afonso Amaral Filho', coordenadas: [869, 1382] },
-    { id: '66', bloco: '6', sala: '212', nome: 'Sala de Professor', andar: '1', categoria: 'prof', imagem: '', descricao: 'Prof. Mairton Barros', coordenadas: [869, 1343] },
-    { id: '67', bloco: '6', sala: '213', nome: 'Sala de Professor', andar: '1', categoria: 'prof', imagem: '', descricao: 'Profa. Vanessa Ribeiro Ramos, Prof. Antonio José da Silva', coordenadas: [869, 1305] },
-    { id: '68', bloco: '6', sala: '214', nome: 'Sala', andar: '1', categoria: 'outros', imagem: '', descricao: '', coordenadas: [869, 1265] },
-    { id: '69', bloco: '6', sala: '215', nome: 'Sala de Professor', andar: '1', categoria: 'prof', imagem: '', descricao: 'Prof. Portela, Profa. Inêz C. Dantas, Prof. Adauto de S. Lima Neto, Prof. Samyr Béliche Vale', coordenadas: [869, 1225] },
-    { id: '70', bloco: '6', sala: '216', nome: 'Coordenação e Secretaria do Mestrado em Design', andar: '1', categoria: 'coord', imagem: '', descricao: '', coordenadas: [869, 1177] },
+    { id: '57', bloco: '1', sala: '218', nome: 'Sala de Professor', andar: '1', categoria: 'prof', imagem: '', descricao: 'Prof. Harvey Alexander', coordenadas: [841, 1115] },
+    { id: '58', bloco: '1', sala: '199', nome: 'Sala', andar: '1', categoria: 'sala', imagem: '', descricao: '', coordenadas: [888, 991] },
+    { id: '59', bloco: '1', sala: '200', nome: 'Sala', andar: '1', categoria: 'sala', imagem: '', descricao: '', coordenadas: [808, 991] },
+    { id: '60', bloco: '1', sala: '201', nome: 'VIP Lab (Laboratório de Visão e Processamento de Imagens)', andar: '1', categoria: 'laboratorio', imagem: '', descricao: '', coordenadas: [721, 991] },
+    { id: '61', bloco: '1', sala: '202', nome: 'Sala', andar: '1', categoria: 'sala', imagem: '', descricao: '', coordenadas: [622, 991] },
+    { id: '62', bloco: '1', sala: '', nome: 'LACMOR (Laboratório de Métodos de Cognição Artifical para Otimização e Robótica)', andar: '1', categoria: 'laboratorio', imagem: '', descricao: '', coordenadas: [534, 991] },
+    { id: '63', bloco: '1', sala: '203', nome: 'Telemídia (Laboratório de Sistemas Multimídia) / MODAL (Laboratório de Modelagem Matemática e Algoritmos)', andar: '1', categoria: 'laboratorio', imagem: '', descricao: '', coordenadas: [465, 991] },
+    { id: '64', bloco: '1', sala: '204', nome: 'LINT² (Laboratório de Inteligência Interativa)', andar: '1', categoria: 'laboratorio', imagem: '', descricao: '', coordenadas: [406, 991] },
+    { id: '65', bloco: '1', sala: '', nome: 'DEINF (Departamento de Informática)', andar: '1', categoria: 'coord', imagem: '', descricao: '', coordenadas: [308, 991] },
+    { id: 'escada7', bloco: '4', sala: '', nome: 'Escada', andar: '1', categoria: 'escada', imagem: '', descricao: '', coordenadas: [477, 1150] },
 
-    { id: '71', bloco: '1', sala: '218', nome: 'Sala de Professor', andar: '1', categoria: 'prof', imagem: '', descricao: 'Prof. Harvey Alexander', coordenadas: [841, 1115] },
+    { id: '66', bloco: '2', sala: '', nome: 'Coordenação do Curso de Matemática (Bacharelado)', andar: '1', categoria: 'coord', imagem: '', descricao: '', coordenadas: [1085, 1027] },
+    { id: '67', bloco: '2', sala: '', nome: 'Coordenação do Curso de Química (Bacharelado)', andar: '1', categoria: 'coord', imagem: '', descricao: '', coordenadas: [1085, 849] },
+    { id: '68', bloco: '2', sala: '', nome: 'Coordenação do Curso de Física (Licenciatura)', andar: '1', categoria: 'coord', imagem: '', descricao: '', coordenadas: [1085, 778] },
+    { id: '69', bloco: '2', sala: '', nome: 'Coordenação do Curso de Ciência Da Computação', andar: '1', categoria: 'coord', imagem: '', descricao: '', coordenadas: [1085, 691] },
+    { id: '70', bloco: '2', sala: '', nome: 'PPGMAT - Sala dos alunos', andar: '1', categoria: 'outro', imagem: '', descricao: '', coordenadas: [1085, 622] },
+    { id: 'rampa3', bloco: '2', sala: '', nome: 'Rampa', andar: '1', categoria: 'rampa', imagem: '', descricao: '', coordenadas: [1254, 942] },
+    
+    { id: '71', bloco: '3', sala: '', nome: 'Laboratório de Medidas Elétricas', andar: '1', categoria: 'laboratorio', imagem: '', descricao: '', coordenadas: [1813, 998] },
+    { id: '72', bloco: '3', sala: '', nome: 'Laboratório de Integração de Ensino Geral - LIG', andar: '1', categoria: 'laboratorio', imagem: '', descricao: '', coordenadas: [1813, 923] },
+    { id: '73', bloco: '3', sala: '', nome: 'Laboratório de Sistemas Eletrônicos (Prof. João Bastos Tavares)', andar: '1', categoria: 'laboratorio', imagem: '', descricao: '', coordenadas: [1813, 798] },
+    { id: '74', bloco: '3', sala: '', nome: 'LABTEC - Laboratório de Tecnologia em Engenharia e Computação (Prof. Zair Abdelouahab)', andar: '1', categoria: 'laboratorio', imagem: '', descricao: '', coordenadas: [1813, 642] },
+
+    { id: '75', bloco: '4', sala: '201', nome: 'Laboratório de Controle de Processo', andar: '1', categoria: 'laboratorio', imagem: '', descricao: '', coordenadas: [2171, 980] },
+    { id: '76', bloco: '4', sala: '202', nome: 'Laboratório de Automação e Controle', andar: '1', categoria: 'laboratorio', imagem: '', descricao: '', coordenadas: [2268, 980] },
+    { id: '77', bloco: '4', sala: '203', nome: 'LESERC - Laboratório de Engenharia de Software e Rede de Computadores', andar: '1', categoria: 'laboratorio', imagem: '', descricao: '', coordenadas: [2366, 980] },
+    { id: '78', bloco: '4', sala: '204', nome: 'LESERC - Laboratório de Engenharia de Software e Rede de Computadores', andar: '1', categoria: 'laboratorio', imagem: '', descricao: '', coordenadas: [2464, 980] },
+    { id: '79', bloco: '4', sala: '205', nome: 'Sala de Professor', andar: '1', categoria: 'prof', imagem: '', descricao: 'Profa. Maria da Guia Da Silva', coordenadas: [2562, 980] },
+    { id: 'escada8', bloco: '4', sala: '', nome: 'Escada', andar: '1', categoria: 'escada', imagem: '', descricao: '', coordenadas: [2414, 1150] },
+
+    { id: '80', bloco: '5', sala: '211', nome: 'Sala de Professor', andar: '1', categoria: 'prof', imagem: '', descricao: 'Prof. Francisco J. Silva e Silva, Prof. Ivo José da C. Serra', coordenadas: [1220, 1142] },
+    { id: '81', bloco: '5', sala: '210', nome: 'Sala de Professor', andar: '1', categoria: 'prof', imagem: '', descricao: 'Prof. Geraldo Braz Júnior, Prof. Luciano R. Coutinho, Profa. Simara Rocha, Prof. Carlos de Salles S. Neto', coordenadas: [1260, 1142] },
+    { id: '82', bloco: '5', sala: '209', nome: 'Sala de Professor', andar: '1', categoria: 'prof', imagem: '', descricao: 'Prof. Jonas da Silva Junior, Prof. Vilemar G. da Silva', coordenadas: [1300, 1142] },
+    { id: '83', bloco: '5', sala: '208', nome: 'Sala de Professor', andar: '1', categoria: 'prof', imagem: '', descricao: 'Prof. Marcos Tadeu Rezende de Araújo, Luciano Buonocore, Profa. Maria de Fátima S. Farias', coordenadas: [1339, 1142] },
+    { id: '84', bloco: '5', sala: '207', nome: 'Sala de Professor', andar: '1', categoria: 'prof', imagem: '', descricao: 'Prof. Nelson José Camelo, Prof. Braga, Prof. Manuel Leonel da Costa Neto', coordenadas: [1379, 1142] },
+    { id: '85', bloco: '5', sala: '206', nome: 'Coordenação da Pós-Graduação em Engenharia de Eletricidade', andar: '1', categoria: 'coord', imagem: '', descricao: '', coordenadas: [1447, 1142] },
+    { id: '86', bloco: '5', sala: '205', nome: 'Sala de Professor', andar: '1', categoria: 'prof', imagem: '', descricao: 'Prof. João Viana da Fonseca Neto, Prof. Carlos Alberto Brandão B. Leite', coordenadas: [1515, 1142] },
+    { id: '87', bloco: '5', sala: '204', nome: 'Sala de Professor', andar: '1', categoria: 'prof', imagem: '', descricao: 'Prof. Osvaldo Ronald S. Mendez, Prof. Andre Cavalcante', coordenadas: [1554, 1142] },
+    { id: '88', bloco: '5', sala: '203', nome: 'Sala de Professor', andar: '1', categoria: 'prof', imagem: '', descricao: 'Prof. Antonio D. Maniçoba, Prof. Angel F. Torrico Caceres', coordenadas: [1593, 1142] },
+    { id: '89', bloco: '5', sala: '202', nome: 'Sala de Professor', andar: '1', categoria: 'prof', imagem: '', descricao: 'Prof. Allan Kardec Barros', coordenadas: [1632, 1142] },
+    { id: '90', bloco: '5', sala: '201', nome: 'Sala de Professor', andar: '1', categoria: 'prof', imagem: '', descricao: 'Prof. Leonardo Paucar', coordenadas: [1672, 1142] },
+    { id: 'escada9', bloco: '5', sala: '', nome: 'Escada', andar: '1', categoria: 'escada', imagem: '', descricao: '', coordenadas: [1462, 979] },
+    { id: 'banheiro5', bloco: '5', sala: '', nome: 'Banheiro Masculino', andar: '1', categoria: 'wc-m', imagem: '', descricao: '', coordenadas: [1581, 979] },
+
+    { id: '91', bloco: '6', sala: '202', nome: 'Laboratório de Ensino de Matemática', andar: '1', categoria: 'laboratorio', imagem: '', descricao: '', coordenadas: [869, 1969] },
+    { id: '92', bloco: '6', sala: '204', nome: 'Sala de Professor', andar: '1', categoria: 'prof', imagem: '', descricao: 'Prof. Adecarlos Costa Carvalho, Prof. Anselmo B. Raposo Júnior, Prof. Cléber Araújo Cavalcanti', coordenadas: [869, 1852] },
+    { id: '93', bloco: '6', sala: '205', nome: 'Sala de Professor', andar: '1', categoria: 'prof', imagem: '', descricao: 'Prof. Marcos Araújo', coordenadas: [869, 1813] },
+    { id: '94', bloco: '6', sala: '206', nome: 'Sala de Professor', andar: '1', categoria: 'prof', imagem: '', descricao: 'Prof. Josenildo, Profa. Valeska, Prof. Wellington', coordenadas: [869, 1773] },
+    { id: '95', bloco: '6', sala: '207', nome: 'Sala de Professor', andar: '1', categoria: 'prof', imagem: '', descricao: 'Profa. Renata de F. Limeira Carvalho', coordenadas: [869, 1734] },
+    { id: '96', bloco: '6', sala: '208', nome: 'Sala de Professor', andar: '1', categoria: 'prof', imagem: '', descricao: 'Prof. Elivaldo Macedo, Prof. Ivaldo Paz, Prof. José Santana', coordenadas: [869, 1696] },
+    { id: '97', bloco: '6', sala: '209', nome: 'Sala de Professor', andar: '1', categoria: 'prof', imagem: '', descricao: 'Prof. Artur Silva, Prof. Jairo Santos, Prof. Luís Fernando', coordenadas: [869, 1655] },
+    { id: '98', bloco: '6', sala: '210', nome: 'OBMEP', andar: '1', categoria: 'outros', imagem: '', descricao: '', coordenadas: [869, 1421] },
+    { id: '99', bloco: '6', sala: '211', nome: 'Sala de Professor', andar: '1', categoria: 'prof', imagem: '', descricao: 'Prof. Hilkias Jordão, Prof. Domício Magalhães, Prof. Ítalo Augusto, Prof. Gerard Morales, Prof. Afonso Amaral Filho', coordenadas: [869, 1382] },
+    { id: '100', bloco: '6', sala: '212', nome: 'Sala de Professor', andar: '1', categoria: 'prof', imagem: '', descricao: 'Prof. Mairton Barros', coordenadas: [869, 1343] },
+    { id: '101', bloco: '6', sala: '213', nome: 'Sala de Professor', andar: '1', categoria: 'prof', imagem: '', descricao: 'Profa. Vanessa Ribeiro Ramos, Prof. Antonio José da Silva', coordenadas: [869, 1305] },
+    { id: '102', bloco: '6', sala: '214', nome: 'Sala', andar: '1', categoria: 'outros', imagem: '', descricao: '', coordenadas: [869, 1265] },
+    { id: '103', bloco: '6', sala: '215', nome: 'Sala de Professor', andar: '1', categoria: 'prof', imagem: '', descricao: 'Prof. Portela, Profa. Inêz C. Dantas, Prof. Adauto de S. Lima Neto, Prof. Samyr Béliche Vale', coordenadas: [869, 1225] },
+    { id: '104', bloco: '6', sala: '216', nome: 'Coordenação e Secretaria do Mestrado em Design', andar: '1', categoria: 'coord', imagem: '', descricao: '', coordenadas: [869, 1177] },
+    { id: 'banheiro6', bloco: '6', sala: '', nome: 'Banheiro Feminino', andar: '1', categoria: 'wc-f', imagem: '', descricao: '', coordenadas: [1030, 1360] },
+    { id: 'escada10', bloco: '6', sala: '', nome: 'Escada', andar: '1', categoria: 'escada', imagem: '', descricao: '', coordenadas: [1029, 1479] },
+
+    { id: '105', bloco: '7', sala: '209', nome: 'Central de Distribuição de Fios', andar: '1', categoria: 'outros', imagem: '', descricao: '', coordenadas: [2022, 1135] },
+    { id: '106', bloco: '7', sala: '208', nome: 'Sala', andar: '1', categoria: 'sala', imagem: '', descricao: '', coordenadas: [2022, 1228] },
+    { id: '107', bloco: '7', sala: '207', nome: 'Sala', andar: '1', categoria: 'sala', imagem: '', descricao: '', coordenadas: [2022, 1286] },
+    { id: '108', bloco: '7', sala: '206', nome: 'Sala', andar: '1', categoria: 'sala', imagem: '', descricao: '', coordenadas: [2022, 1324] },
+    { id: '109', bloco: '7', sala: '205', nome: 'Laboratório de Análise Numérica e Modelagem Computacional em Matemática', andar: '1', categoria: 'laboratorio', imagem: '', descricao: '', coordenadas: [2022, 1384] },
+    { id: '110', bloco: '7', sala: '204', nome: 'Sala', andar: '1', categoria: 'sala', imagem: '', descricao: '', coordenadas: [2022, 1460] },
+    { id: '111', bloco: '7', sala: '203', nome: 'Sala', andar: '1', categoria: 'sala', imagem: '', descricao: '', coordenadas: [2022, 1581] },
+    { id: '112', bloco: '7', sala: '202', nome: 'Sala', andar: '1', categoria: 'sala', imagem: '', descricao: '', coordenadas: [2022, 1713] },
+    { id: '113', bloco: '7', sala: '201', nome: 'Sala', andar: '1', categoria: 'sala', imagem: '', descricao: '', coordenadas: [2022, 1810] },
+    { id: '114', bloco: '7', sala: '200', nome: 'Sala', andar: '1', categoria: 'sala', imagem: '', descricao: '', coordenadas: [2022, 1940] },
+    { id: '115', bloco: '7', sala: '', nome: 'Estúdio CONEXO (Empresa Júnior de Design UFMA)', andar: '1', categoria: 'ej', imagem: '', descricao: '@estudioconexo', coordenadas: [1863, 1896] },
+    { id: 'escada11', bloco: '7', sala: '', nome: 'Escada', andar: '1', categoria: 'escada', imagem: '', descricao: '', coordenadas: [1867, 1779] },
+
+    { id: '116', bloco: '8', sala: '209', nome: 'Sala', andar: '1', categoria: 'sala', imagem: '', descricao: '', coordenadas: [1554, 1937] },
+    { id: '117', bloco: '8', sala: '208', nome: 'Sala de Professor', andar: '1', categoria: 'prof', imagem: '', descricao: '', coordenadas: [1514, 1937] },
+    { id: '118', bloco: '8', sala: '207', nome: 'Sala de Professor', andar: '1', categoria: 'prof', imagem: '', descricao: 'Prof. Diego Paiva Pires, Prof. Humberto Filomeno Filho, Prof. Madson Rubem O. Silva', coordenadas: [1476, 1937] },
+    { id: '119', bloco: '8', sala: '206', nome: 'Coordenação da Pós-Graduação em Física', andar: '1', categoria: 'coord', imagem: '', descricao: '', coordenadas: [1425, 1937] },
+    { id: '120', bloco: '8', sala: '205', nome: 'Sala de Professor', andar: '1', categoria: 'prof', imagem: '', descricao: 'Prof. Ivone Lopes LIma, Prof. Carlos Alberto Feitosa', coordenadas: [1378, 1937] },
+    { id: '121', bloco: '8', sala: '204', nome: 'Sala de Professor', andar: '1', categoria: 'prof', imagem: '', descricao: 'Prof. Edson Firmino Carvalho, Prof. Jerias Alves Batista, Prof. Raimundo Machado', coordenadas: [1339, 1937] },
+    { id: '122', bloco: '8', sala: '203', nome: 'Sala de Professor', andar: '1', categoria: 'prof', imagem: '', descricao: 'Prof. Éder Nascimento Silva, Prof. Haroldo Cilas Lima Jr.', coordenadas: [1299, 1937] },
+    { id: '123', bloco: '8', sala: '202', nome: 'Sala de Professor', andar: '1', categoria: 'prof', imagem: '', descricao: 'Prof. Manoel M. Ferreira Jr., Prof. Marco Schreck, Prof. Rodolfo Casana', coordenadas: [1260, 1937] },
+    { id: '124', bloco: '8', sala: '201', nome: 'Sala de Professor', andar: '1', categoria: 'prof', imagem: '', descricao: 'Prof. Gabriel Alves Mendes, Prof. Luis R. Benito Castro, Prof. Fabiano F. dos Santos', coordenadas: [1221, 1937] },
+    { id: 'banheiro7', bloco: '8', sala: '', nome: 'Banheiro Feminino', andar: '1', categoria: 'wc-f', imagem: '', descricao: '', coordenadas: [1379, 2099] },
+    { id: 'escada12', bloco: '8', sala: '', nome: 'Escada', andar: '1', categoria: 'escada', imagem: '', descricao: '', coordenadas: [1261, 2099] },
+
+    { id: '125', bloco: '9', sala: '201', nome: 'Sala de Professor', andar: '1', categoria: 'prof', imagem: '', descricao: 'Prof. Silvete C. Guerini, Prof. Eduardo M. Diniz', coordenadas: [1081, 2050] },
+    { id: '126', bloco: '9', sala: '202', nome: 'Sala de Professor', andar: '1', categoria: 'prof', imagem: '', descricao: 'Profa. Regina C. Sousa, Prof. Antônio Pinto', coordenadas: [1081, 2092] },
+    { id: '127', bloco: '9', sala: '203', nome: 'Sala de Professor', andar: '1', categoria: 'prof', imagem: '', descricao: 'Profa. Francisca S. N. Taveira, Prof. Joacy Batista de Lima', coordenadas: [1081, 2133] },
+    { id: '128', bloco: '9', sala: '204', nome: 'Sala de Professor', andar: '1', categoria: 'prof', imagem: '', descricao: 'Profa. Sirlane A. Abreu Santana, Prof. Hildo A. dos Santos Silva, Prof. Cícero W. Brito Bezerra', coordenadas: [1081, 2182] },
+    { id: '129', bloco: '9', sala: '205', nome: 'Sala de Professor', andar: '1', categoria: 'prof', imagem: '', descricao: 'Profa. Isaide de Araújo Rodrigues, Prof. Ridvan Nunes Fernandes', coordenadas: [1081, 2229] },
+    { id: '130', bloco: '9', sala: '206', nome: 'Sala de Professor', andar: '1', categoria: 'prof', imagem: '', descricao: 'Prof. Paulo Sérgio S. Bezerra', coordenadas: [1081, 2268] },
+    { id: '131', bloco: '9', sala: '207', nome: 'Sala de Professor', andar: '1', categoria: 'prof', imagem: '', descricao: 'Prof. Flávio Santos Damos, Profa. Rita de Cássia S. Luz', coordenadas: [1081, 2308] },
+    { id: '132', bloco: '9', sala: '208', nome: 'Sala de Professor', andar: '1', categoria: 'prof', imagem: '', descricao: 'Prof. Gilvan de O. Costa Dias', coordenadas: [1081, 2347] },
+    { id: '133', bloco: '9', sala: '209', nome: 'Sala de Professor', andar: '1', categoria: 'prof', imagem: '', descricao: 'Prof. Odair dos Santos Monteiro, Prof. Roberto Batista de Lima', coordenadas: [1081, 2385] },
+    { id: '134', bloco: '9', sala: '210', nome: 'Sala de Professor', andar: '1', categoria: 'prof', imagem: '', descricao: 'Profa. Ana C. S. Alcântara, Profa. Cláudia Q. da Rocha', coordenadas: [1081, 2425] },
+    { id: '135', bloco: '9', sala: '211', nome: 'Sala de Professor', andar: '1', categoria: 'prof', imagem: '', descricao: 'Profa. Joselene R. de J. Santos, Profa. Sergiane Mendonça', coordenadas: [1081, 2465] },
+
+    { id: '136', bloco: '10', sala: '201', nome: 'Sala', andar: '1', categoria: 'sala', imagem: '', descricao: '', coordenadas: [1812, 2081] },
+    { id: '137', bloco: '10', sala: '202', nome: 'Sala', andar: '1', categoria: 'sala', imagem: '', descricao: '', coordenadas: [1812, 2202] },
+    { id: '138', bloco: '10', sala: '203', nome: 'Sala', andar: '1', categoria: 'sala', imagem: '', descricao: '', coordenadas: [1812, 2330] },
+    { id: '139', bloco: '10', sala: '204', nome: 'Sala', andar: '1', categoria: 'sala', imagem: '', descricao: '', coordenadas: [1812, 2438] },
+    { id: 'rampa4', bloco: '10', sala: '', nome: 'Rampa', andar: '1', categoria: 'rampa', imagem: '', descricao: '', coordenadas: [1637, 2125] },
 
 ];
 
@@ -307,6 +401,9 @@ function inicializarMarcadores() {
         else if (local.categoria === 'pet') {
             iconeEscolhido = iconePET;
         }
+        else if (local.categoria === 'ej') {
+            iconeEscolhido = iconeEJ;
+        }
         else if(local.categoria === 'petcomp'){
             iconeEscolhido = iconePETComp;
         }
@@ -366,7 +463,7 @@ function executarBusca() {
             
             const grupoDoAndar = dadosAndares[andarAtual].marcadores;
 
-            const textoParaBusca = `${item.dados.nome} Bloco ${item.dados.bloco} ${item.dados.sala} ${item.dados.categoria}`.toLowerCase();
+            const textoParaBusca = `${item.dados.nome} Bloco ${item.dados.bloco} Sala ${item.dados.sala} ${item.dados.categoria}`.toLowerCase();
             const passaTexto = textoParaBusca.includes(textoDigitado);
 
             const passaCategoria = (categoriaAtual === 'todos' || item.dados.categoria === categoriaAtual);
@@ -425,9 +522,9 @@ map.on('click', function(e) {
 
 // 1. configurar categoria outros
 // 2. trocar tamanho pin no zoom minimo
-// 5. rampa
-// 6. icone coord
 // 7. icone labs
-// icone sala professor
 // 8. resolver sobre Sala de Professor
 // ver sobre hover dos pinos
+// colocar filtro de bloco
+// ver sobre busca
+// bug: busca quando troca de pagina
