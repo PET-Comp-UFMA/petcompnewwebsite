@@ -16,18 +16,18 @@ include "head.php";
         <?php
         // Qual monitoria está ativa (via GET, default = primeira)
         $id_ativo  = $_GET['monitoria'] ?? $monitorias[0]['id'];
-        $monitoria = get_monitoria($id_ativo) ?? $monitorias[0];
+        $monitoria = get_monitoria($id_ativo, $monitorias) ?? $monitorias[0];
         ?>
         <h3><?= htmlspecialchars($monitoria['subtitulo']) ?></h3>
         <h4>
-            <a href="index.php">Pagina Inicial</a>
-            → <a href="biblioteca-petcomp-main.php">Repositório Educacional</a>
-            → <a href="biblioteca-petcomp-matpet.php?id=<?= urlencode($monitoria['id_json']) ?>"><?= htmlspecialchars($monitoria['subtitulo']) ?></a>
+            <a href="">Pagina Inicial</a>
+            → <a href="repositorio-educacional">Repositório Educacional</a>
+            → <a href="repositorio-educacional/monitorias/materiais?id=<?= urlencode($monitoria['id_json']) ?>"><?= htmlspecialchars($monitoria['subtitulo']) ?></a>
             → <span><?= htmlspecialchars($monitoria['titulo']) ?></span>
         </h4>
     </div>
     <?php
-    $href = 'biblioteca-petcomp-matpet.php?id=' . urlencode($monitoria['id_json']);
+    $href = 'repositorio-educacional/monitorias/materiais?id=' . urlencode($monitoria['id_json']);
     include('components/btn-voltar.php');
     ?>
 
