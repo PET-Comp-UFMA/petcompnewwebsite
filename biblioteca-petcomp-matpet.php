@@ -46,7 +46,7 @@ include "head.php";
         ?>
 
         <?php
-        $href = 'biblioteca-petcomp-monitoria.php';
+        $href = 'repositorio-educacional/monitorias';
         include('components/btn-voltar.php');
         ?>
 

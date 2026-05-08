@@ -19,7 +19,7 @@ include "head.php";
         ?>
 
         <?php
-        $href = 'biblioteca-petcomp-main.php';
+        $href = 'repositorio-educacional';
         include('components/btn-voltar.php');
         ?>
 
@@ -45,7 +45,7 @@ include "head.php";
                                 <p>Vídeo aula</p>
                                 <p>Questionário</p>
                                 <p>Resumo</p>
-                                <a href="biblioteca-petcomp-matpet.php?id=algoritmos1">Acessar</a>
+                                <a href="repositorio-educacional/monitorias/materiais?id=algoritmos1">Acessar</a>
                             </div>
                             <img src="img\algoritmos.png" alt="">
                         </div>
@@ -61,7 +61,7 @@ include "head.php";
                                 <p>Vídeo aula</p>
                                 <p>Questionário</p>
                                 <p>Resumo</p>
-                                <a href="biblioteca-petcomp-matpet.php?id=calculo1" >Acessar</a>
+                                <a href="repositorio-educacional/monitorias/materiais?id=calculo1">Acessar</a>
                             </div>
                             <img src="img\calculo.png" alt="">
                         </div>
@@ -77,7 +77,7 @@ include "head.php";
                                 <p>Vídeo aula</p>
                                 <p>Questionário</p>
                                 <p>Resumo</p>
-                                <a href="biblioteca-petcomp-matpet.php?id=ed1" >Acessar</a>
+                                <a href="repositorio-educacional/monitorias/materiais?id=ed1">Acessar</a>
                             </div>
                             <img src="img\ed1.png" alt="">
                         </div>
@@ -93,7 +93,7 @@ include "head.php";
                                 <p>Vídeo aula</p>
                                 <p>Questionário</p>
                                 <p>Resumo</p>
-                                <a href="biblioteca-petcomp-matpet.php?id=lp1" >Acessar</a>
+                                <a href="repositorio-educacional/monitorias/materiais?id=lp1">Acessar</a>
                             </div>
                             <img src="img\lp1.png" alt="">
                         </div>
@@ -109,7 +109,7 @@ include "head.php";
                                 <p>Vídeo aula</p>
                                 <p>Questionário</p>
                                 <p>Resumo</p>
-                                <a href="biblioteca-petcomp-matpet.php?id=mdl" >Acessar</a>
+                                <a href="repositorio-educacional/monitorias/materiais?id=mdl">Acessar</a>
                             </div>
                             <img src="img\mdl.png" alt="">
                         </div>

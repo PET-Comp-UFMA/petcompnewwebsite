@@ -1,10 +1,10 @@
 <header>
-    <a href="index.php">
+    <a href="">
         <img id="logo" src="img/logo.png" alt="Logo PETComp">
     </a>
     <nav class="navbar">
         <div>
-            <a href="index.php" class="nav-link">Início</a>
+            <a href="" class="nav-link">Início</a>
         </div>
         <div class="dropdown">
             <button class="dropbtn">Conheça o PETComp <span class="material-icons">arrow_drop_down</span></button>
@@ -35,7 +35,7 @@
         <div class="dropdown dropdown_produtos">
             <button class="dropbtn">Produtos <span class="material-icons">arrow_drop_down</span></button>
             <div class="dropdown-content">
-                <a href="biblioteca-petcomp-main.php" class="nav-link dropdown-link">Repositório Educacional</a>
+                <a href="repositorio-educacional" class="nav-link dropdown-link">Repositório Educacional</a>
                 <a href="podcast" class="nav-link dropdown-link">PodCast</a>
             </div>
         </div>
