@@ -50,7 +50,7 @@ $routes = [
     ($root ? "$root/eventos" : "eventos") => function () {
         require("eventos.php");
     },
-    ($root ? "$root/repositorio-educacional" : "rea-pet") => function () {
+    ($root ? "$root/repositorio-educacional" : "repositorio-educacional") => function () {
         require("biblioteca-petcomp-main.php");
     },
     ($root ? "$root/repositorio-educacional/jogos-computacionais" : "repositorio-educacional/jogos-computacionais") => function () {
