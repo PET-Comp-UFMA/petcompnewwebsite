@@ -1,10 +1,9 @@
-main{
+main {
     background-color: white;
 }
 
-
 .card-monitoria {
-    display : flex;
+    display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
@@ -12,7 +11,6 @@ main{
     background-color: white;
     margin-bottom: 4rem;
 }
-
 
 .imagem_icon {
     flex: 0 0 auto;
@@ -43,7 +41,7 @@ main{
 .container-text p {
     font-size: 20px;
     max-width: 60ch;
-    text-align: left; 
+    text-align: left;
 }
 
 .container-materiais {
@@ -56,26 +54,19 @@ main{
     flex-wrap: wrap;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     background-color: #F0F1F8;
-    
-    
 }
 
-.container-materiais div{  /* tira o flex direction de tudo depois*/
+.container-materiais div {
     display: flex;
     flex-direction: column;
     align-items: center;
-    
-    
 }
-
-
 
 .container-materiais figure {
     display: flex;
     flex-direction: column;
     align-items: center;
     border-radius: 30px 30px 0 0;
-    
 }
 
 .container-materiais button {
@@ -102,32 +93,26 @@ main{
     transition: transform 0.8s ease;
 }
 
-.card-materiais:hover{
+.card-materiais:hover {
     transform: scale(1.01);
 }
 
-
-.card-materiais h1{
+.card-materiais h1 {
     max-height: 50px;
     font-size: xx-large;
     font-weight: bolder;
     text-align: center;
-
-    
 }
 
-.card-materiais a{
+.card-materiais a {
     color: #ffffff;
     text-decoration: none;
     font-weight: 600;
     font-size: 25px;
     padding-inline: 1rem;
-
 }
 
-
-
-.video-img{
+.video-img {
     background-image: url('../img/video-background.png');
     background-size: cover;
     background-position: center;
@@ -140,14 +125,13 @@ main{
     border-top: 30px;
 }
 
-.video-img img{
-    max-width:  100%;
+.video-img img {
+    max-width: 100%;
     margin-top: auto;
     margin-bottom: auto;
 }
 
-
-.exercicios-img{
+.exercicios-img {
     background-image: url('../img/atividade-background.png');
     background-size: cover;
     background-position: center;
@@ -160,13 +144,13 @@ main{
     border-top: 30px;
 }
 
-.exercicios-img img{
-    max-width:  100%;
+.exercicios-img img {
+    max-width: 100%;
     margin-top: auto;
     margin-bottom: auto;
 }
 
-.materiais-img{
+.materiais-img {
     background-image: url('../img/materiais-background.png');
     background-size: cover;
     background-position: center;
@@ -179,12 +163,11 @@ main{
     border-top: 30px;
 }
 
-.materiais-img img{
-    max-width:  100%;
+.materiais-img img {
+    max-width: 100%;
     margin-top: auto;
     margin-bottom: auto;
 }
-
 
 .descricao-card {
     color: #060B3F;
@@ -196,4 +179,101 @@ main{
     font-weight: 500;
     line-height: normal;
     margin-inline: 10px;
+}
+
+
+/* =============================================
+   RESPONSIVIDADE
+   ============================================= */
+
+/* Tablet: até 768px */
+@media (max-width: 768px) {
+
+    .card-monitoria {
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 1.5rem 1rem;
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+
+    .icon_monitoria {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .imagem_icon {
+        width: 60%;
+        max-width: 18rem;
+        padding: 1rem 0;
+    }
+
+    .container-text {
+        flex: 0 0 auto;
+        width: 100%;
+        align-items: center;
+    }
+
+    .container-text h1 {
+        font-size: 2.5rem;
+        text-align: center;
+        max-width: 100%;
+    }
+
+    .container-text p {
+        font-size: 18px;
+        text-align: center;
+        max-width: 100%;
+    }
+
+    .container-materiais {
+        gap: 2rem;
+        padding: 2rem 1rem;
+    }
+
+    .card-materiais {
+        width: 280px;
+    }
+}
+
+/* Mobile: até 480px */
+@media (max-width: 480px) {
+
+    .card-monitoria {
+        gap: 1rem;
+        padding: 1rem 0.75rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .imagem_icon {
+        width: 70%;
+        max-width: 14rem;
+    }
+
+    .container-text h1 {
+        font-size: 2rem;
+    }
+
+    .container-text p {
+        font-size: 16px;
+    }
+
+    .container-materiais {
+        gap: 1.5rem;
+        padding: 1.5rem 0.75rem;
+    }
+
+    .card-materiais {
+        width: 90%;
+        max-width: 320px;
+    }
+
+    .card-materiais a {
+        font-size: 20px;
+    }
+
+    .descricao-card {
+        font-size: 17px;
+    }
 }
