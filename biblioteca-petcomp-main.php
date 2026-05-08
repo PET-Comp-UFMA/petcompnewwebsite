@@ -2,24 +2,24 @@
 
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <?php 
-    $title = "Repositório Educacional";
-    $cssFiles = ['css\biblioteca-main.css', 'css/biblioteca.css'];
-    include "head.php";
-  ?>
+<?php
+$title = "Repositório Educacional";
+$cssFiles = ['css\biblioteca-main.css', 'css/biblioteca.css'];
+include "head.php";
+?>
 
 <body>
   <?php include('header.php') ?>
   <main>
 
-  <?php
-      renderComponent("container-header.php", [
-        "titulo_pagina" => "Repositório Educacional Aberto",
-        "descricao" => "Veja o nosso Repositório de Recursos Educacionais",
-        "caminho" => ["Repositório Educacional"]
-      ]);
+    <?php
+    renderComponent("container-header.php", [
+      "titulo_pagina" => "Repositório Educacional Aberto",
+      "descricao" => "Veja o nosso Repositório de Recursos Educacionais",
+      "caminho" => ["Repositório Educacional"]
+    ]);
 
-    ?> 
+    ?>
 
     <div class="container-body">
       <div class="container-body-content">
@@ -32,7 +32,7 @@
     </div>
 
     <div class="repositorio-opcoes">
-      <a href="biblioteca-petcomp-monitoria.php" class="biblioteca-card">
+      <a href="repositorio-educacional/monitorias" class="biblioteca-card">
         <div class="card-topo card-topo-monitoria" style="background-image: url('img/backgroundmonitorias.png'); background-size: cover; background-position: center;">
           <img src="img/monitoriaimagem.png" alt="monitorias">
         </div>
@@ -43,7 +43,7 @@
         </div>
       </a>
 
-      <a href="biblioteca-petcomp-jogos.php" class="biblioteca-card">
+      <a href="repositorio-educacional/jogos-computacionais" class="biblioteca-card">
         <div class="card-topo card-topo-jogos" style="background-image: url('img/backgroundjogos.png'); background-size: cover; background-position: center;">
           <img src="img/controle.png" alt="controle">
         </div>
@@ -54,7 +54,7 @@
         </div>
       </a>
 
-      <a href="biblioteca-petcomp-minicursos.php" class="biblioteca-card card-largo">
+      <a href="repositorio-educacional/minicursos" class="biblioteca-card card-largo">
         <div class="card-topo card-topo-minicursos" style="background-image: url('img/backgroundminicursos.png'); background-size: cover; background-position: center;">
           <img src="img/logominicurso.png" alt="logo minicursos">
         </div>
@@ -69,4 +69,5 @@
 
   <?php include('footer.php') ?>
 </body>
+
 </html>

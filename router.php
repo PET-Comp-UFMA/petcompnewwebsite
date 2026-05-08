@@ -50,6 +50,24 @@ $routes = [
     ($root ? "$root/eventos" : "eventos") => function () {
         require("eventos.php");
     },
+    ($root ? "$root/repositorio-educacional" : "rea-pet") => function () {
+        require("biblioteca-petcomp-main.php");
+    },
+    ($root ? "$root/repositorio-educacional/jogos-computacionais" : "jogos-computacionais") => function () {
+        require("biblioteca-petcomp-jogos.php");
+    },
+    ($root ? "$root/repositorio-educacional/minicursos" : "minicursos") => function () {
+        require("biblioteca-petcomp-minicursos.php");
+    },
+    ($root ? "$root/repositorio-educacional/monitorias" : "monitorias") => function () {
+        require("biblioteca-petcomp-monitoria.php");
+    },
+    ($root ? "$root/repositorio-educacional/monitorias/materiais" : "materiais") => function () {
+        require("biblioteca-petcomp-matpet.php");
+    },
+    ($root ? "$root/repositorio-educacional/monitorias/video-aula" : "video-aula") => function () {
+        require("repositorio-monitorias.php");
+    },
     ($root ? "$root/registros" : "registros") => function () {
         require("registros.php");
     },
