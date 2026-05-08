@@ -1,4 +1,5 @@
 <?php
+
 /**
  * ============================================================
  *  CONFIGURAÇÃO DAS MONITORIAS — REPOSITÓRIO EDUCACIONAL
@@ -55,10 +56,10 @@ while ($row = $result->fetch_assoc()) {
 //  Função auxiliar: retorna dados de uma monitoria pelo ID
 //  Uso: $m = get_monitoria('algoritmos-1');
 // -------------------------------------------------------
-function get_monitoria(string $id): ?array {
-    global $monitorias;
-    foreach ($monitorias as $m) {
-        if ($m['id'] === $id) return $m;
+function get_monitoria(string $id, array $lista_monitorias): ?array
+{
+    foreach ($lista_monitorias as $m) {
+        if (trim($m['id']) === $id) return $m;
     }
     return null;
 }
