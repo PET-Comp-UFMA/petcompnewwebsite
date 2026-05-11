@@ -341,6 +341,48 @@ body {
     h4 {
         font-size: 0.9rem;
     }
+
+    .map_container {
+        width: 100% !important;
+        height: 100vh !important;
+    }
+
+    .busca-container { 
+        position: absolute;
+        top: 10px;
+        left: 50px;
+        width: calc(100vw - 80px); 
+        z-index: 1000;
+    }
+
+    .filtros-categoria { 
+        display: flex;
+        flex-wrap: nowrap !important; 
+        overflow-x: auto; 
+        padding-bottom: 5px;
+    }
+
+    .seletor-andares { 
+        top: auto !important; 
+        bottom: 30px !important; 
+        left: 50% !important;
+        transform: translateX(-50%) !important; 
+        display: flex !important;
+        flex-direction: row !important;
+        background: white;
+        border-radius: 20px;
+        padding: 5px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        width: max-content;
+    }
+
+    .btn-andar { 
+        margin: 0 2px !important;
+        padding: 8px 12px !important;
+        font-size: 11px !important;
+        border: none !important;
+        border-radius: 25px;
+    }
 }
 
 /* Estilo para dispositivos com largura até 600px (smartphones) */

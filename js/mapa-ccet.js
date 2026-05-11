@@ -582,18 +582,18 @@ window.mudarAndar = function(idAndar, elementoBotao) {
     }
 };
 
-// pegar coord quando clica
-map.on('click', function(e) {
+// // pegar coord quando clica
+// map.on('click', function(e) {
 
-    const y = Math.round(e.latlng.lat);
-    const x = Math.round(e.latlng.lng);
-    const coordenada = `[${y}, ${x}]`;
+//     const y = Math.round(e.latlng.lat);
+//     const x = Math.round(e.latlng.lng);
+//     const coordenada = `[${y}, ${x}]`;
 
-    L.popup()
-        .setLatLng(e.latlng)
-        .setContent(`<b>${coordenada}</b>`)
-        .openOn(map);
-});
+//     L.popup()
+//         .setLatLng(e.latlng)
+//         .setContent(`<b>${coordenada}</b>`)
+//         .openOn(map);
+// });
 
 
 // 1. configurar categoria outros
