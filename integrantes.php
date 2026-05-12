@@ -89,7 +89,7 @@ include "head.php";
    <div class="container-header">
       <h2>Equipe PETComp</h2>
       <h3>Veja os rostos que já passaram pelo PETComp </h3>
-      <h4><a href="./">Página Inicial</a></h4>
+      <h4><a href="index.php">Página Inicial</a></h4>
       <h4> → Conheça o PETComp</h4>
       <h4> → Integrantes</h4>
    </div>

@@ -4,7 +4,7 @@
     </a>
     <nav class="navbar">
         <div>
-            <a href="" class="nav-link">Início</a>
+            <a href="index.php" class="nav-link">Início</a>
         </div>
         <div class="dropdown">
             <button class="dropbtn">Conheça o PETComp <span class="material-icons">arrow_drop_down</span></button>

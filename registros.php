@@ -13,7 +13,7 @@
     <div class="container-header">
         <h2>Registros</h2>
         <h3>Veja tudo que o PETComp realizou</h3>
-        <h4><a href="./">Página Inicial</a></h4>
+        <h4><a href="index.php">Página Inicial</a></h4>
         <h4> → Registros</h4>
     </div>
 

@@ -17,7 +17,7 @@
             <div class="container-header">
                 <h2>Banners</h2>
                 <h3>Confira os banners do PETComp</h3>
-                <h4><a href="./">Página Inicial</a></h4>
+                <h4><a href="index.php">Página Inicial</a></h4>
                 <h4> -> Publicações</h4>
                 <h4> -> Banners</h4>
             </div>

@@ -27,7 +27,7 @@ if (mysqli_num_rows($resultRevistas) > 0) {
     <div class="container-header">
         <h2>Revista</h2>
         <h3>Confira a publicação anual do PETComp</h3>
-        <h4><a href="./">Página Inicial</a></h4>
+        <h4><a href="index.php">Página Inicial</a></h4>
         <h4> → Publicações</h4>
         <h4> → Revista</h4>
     </div>

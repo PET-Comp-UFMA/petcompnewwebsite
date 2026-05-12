@@ -13,7 +13,7 @@
         <div class="container-header">
             <h2>Eventos</h2>
             <h3>Confira os eventos nós promovemos</h3>
-            <h4><a href="./">Página Inicial</a></h4>
+            <h4><a href="index.php">Página Inicial</a></h4>
             <h4> → Eventos</h4> 
         </div>
         

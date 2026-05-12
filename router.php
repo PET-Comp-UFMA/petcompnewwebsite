@@ -44,6 +44,9 @@ $routes = [
     ($root ? "$root/publicacoes" : "publicacoes") => function () {
         require("publicacoes.php");
     },
+    ($root ? "$root/biblioteca" : "biblioteca") => function () {
+        require("biblioteca-petcomp-monitoria.php");
+    },
     ($root ? "$root/podcast" : "podcast") => function () {
         require("podcast.php");
     },
@@ -78,13 +81,7 @@ $routes = [
     ($root ? "$root/integrantes$param" : "integrantes$param") => function ($id) {
         $_GET['page'] = $id;
         require("integrantes.php");
-    },
-    ($root ? "$root/repositorio" : "repositorio") => function () {
-        require("biblioteca-petcomp-main.php");
-    },
-    ($root ? "$root/repositorio-monitorias" : "repositorio-monitorias") => function () {
-        require("biblioteca-petcomp-monitoria.php");
-    },
+    }
 ];
 
 function route($path, $routes)
