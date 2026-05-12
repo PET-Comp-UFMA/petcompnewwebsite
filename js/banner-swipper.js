@@ -28,7 +28,7 @@ var swiper = new Swiper('.carousel', {
     },
 
     autoplay: {
-        delay: 2500,
+        delay: 10000,
         disableOnInteraction: false,
     },
 

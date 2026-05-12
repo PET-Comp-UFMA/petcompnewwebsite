@@ -1,5 +1,5 @@
 <header>
-    <a href="./">
+    <a href="">
         <img id="logo" src="img/logo.png" alt="Logo PETComp">
     </a>
     <nav class="navbar">
@@ -35,7 +35,7 @@
         <div class="dropdown dropdown_produtos">
             <button class="dropbtn">Produtos <span class="material-icons">arrow_drop_down</span></button>
             <div class="dropdown-content">
-                <a href="repositorio" class="nav-link dropdown-link">Repositório Educacional</a>
+                <a href="repositorio-educacional" class="nav-link dropdown-link">Repositório Educacional</a>
                 <a href="podcast" class="nav-link dropdown-link">PodCast</a>
             </div>
         </div>

@@ -1,0 +1,71 @@
+{
+  "algoritmos1": {
+    "nome": "Algoritmos 1",
+    "imagem": "./img/matpet_algoritmos1.png",
+    "descricao-monitoria": "A monitoria de Algoritmos 1 tem como objetivo auxiliar os alunos a compreender os fundamentos básicos de algoritmos, como lógica de programação, tipos de dados, variáveis, estruturas de controle e muito mais. Os encontros são realizados toda quarta feira via Google Meet e são ideias para tirar dúvidas sobre a matéria e reforçar conceitos abordados em sala de aula.",
+    "video-aula": "repositorio-educacional/monitorias/video-aula?monitoria=algoritmos-1",
+    "descricao-video": "Vídeo aulas explicativas sobre Algoritmos 1.",
+    "atividade": "https://drive.google.com/drive/folders/1vRsWOiTPRkEYTnW5wqhMDjZf9SGuLfH-?usp=drive_link",
+    "descricao-atividade": "Exercícios para praticar e revisar o conteúdo de Algoritmos 1.",
+    "material": "https://drive.google.com/drive/folders/1JrswzjNaaVEwsqyfApwrd337NbGVDJJq?usp=drive_link",
+    "descricao-material": "Provas, livros, slides e demais recursos complementares para a disciplina."
+    
+    
+  },
+  "calculo1": {
+    "nome": "Cálculo 1",
+    "imagem": "./img/matpet_calculo1.png",
+    "descricao-monitoria": "A monitoria de Cálculo 1 tem como objetivo auxiliar os alunos a compreender os fundamentos básicos de cálculo, como limites, derivadas e integrais. Os encontros são realizados toda quarta feira via Google Meet e são ideias para tirar dúvidas sobre a matéria e reforçar conceitos abordados em sala de aula.",
+    "video-aula": "repositorio-educacional/monitorias/video-aula?monitoria=calculo-1",
+    "descricao-video": "Vídeo aulas explicativas sobre Cálculo 1.",
+    "atividade": "https://drive.google.com/drive/folders/1XQqSMnFq99N5p4LHpAM9b3SKyzAhvdLt?usp=sharing",
+    "descricao-atividade": "Exercícios para praticar e revisar o conteúdo de Cálculo 1.",
+    "material": "https://drive.google.com/drive/folders/1TWFcyY43dfO1H10On7-FXLKe6BlpYNZb?usp=sharing",
+    "descricao-material": "Provas, livros, slides e demais recursos complementares para a disciplina."
+  },
+  "ed1": {
+    "nome": "Estrutura de Dados 1",
+    "imagem": "./img/matpet_ed1.png",
+    "descricao-monitoria": "A monitoria de Estrutura de Dados 1 tem como objetivo auxiliar os alunos a compreender os fundamentos básicos de estruturas de dados, como listas, pilhas, filas e árvores. Os encontros são realizados toda quarta feira via Google Meet e são ideias para tirar dúvidas sobre a matéria e reforçar conceitos abordados em sala de aula.",
+    "video-aula": "repositorio-educacional/monitorias/video-aula?monitoria=estrutura-de-dados-1",
+    "descricao-video": "Vídeo aulas explicativas sobre Estrutura de Dados 1.",
+    "atividade": "https://drive.google.com/drive/folders/1SXyM1fsrm_Vo2yxLwplLn-WQ6HYhvmIu?usp=sharing",
+    "descricao-atividade": "Exercícios para praticar e revisar o conteúdo de Estrutura de Dados 1.",
+    "material": "https://drive.google.com/drive/folders/1VITTtRFDf7phn_cNGYzmldrtbibg9-wD?usp=sharing",
+    "descricao-material": "Provas, livros, slides e demais recursos complementares para a disciplina."
+  },
+  "lp1": {
+    "nome": "Linguagens de Programação 1",
+    "imagem": "./img/matpet_lp1.png",
+    "descricao-monitoria": "A monitoria de Linguagens de Programação 1 tem como objetivo auxiliar os alunos a compreender os fundamentos básicos de linguagens de programação, como sintaxe, semântica e lógica de programação. Os encontros são realizados toda quarta feira via Google Meet e são ideias para tirar dúvidas sobre a matéria e reforçar conceitos abordados em sala de aula.",
+    "video-aula": "repositorio-educacional/monitorias/video-aula?monitoria=linguagem-de-programacao-1",
+    "descricao-video": "Vídeo aulas explicativas sobre Linguagens de Programação 1.",
+    "atividade": "https://drive.google.com/drive/folders/1nceMza8lMeezAeutXhjJoMHXBJTRbz2Q?usp=sharing",
+    "descricao-atividade": "Exercícios para praticar e revisar o conteúdo de Linguagens de Programação 1.",
+    "material": "https://drive.google.com/drive/folders/1ORSJtP11bKwNM2lG6CRbdF9_JgBphDpt?usp=sharing",
+    "descricao-material": "Provas, livros, slides e demais recursos complementares para a disciplina."
+  },
+  "mdl": {
+    "nome": "Matemática Discreta e Lógica",
+    "imagem": "./img/matpet_mdl1.png",
+    "descricao-monitoria": "A monitoria de Matemática Discreta e Lógica tem como objetivo auxiliar os alunos a compreender os fundamentos básicos de matemática discreta e lógica, como proposições, predicados, quantificadores e proof techniques. Os encontros são realizados toda quarta feira via Google Meet e são ideias para tirar dúvidas sobre a matéria e reforçar conceitos abordados em sala de aula.",
+    "video-aula": "repositorio-educacional/monitorias/video-aula?monitoria=matematica-discreta-e-logica",
+    "descricao-video": "Vídeo aulas explicativas sobre Matemática Discreta e Lógica.",
+    "atividade": "https://drive.google.com/drive/folders/1qrAlLws2WJrzn95y1wkGo5P9tTHgvx_z?usp=sharing",
+    "descricao-atividade": "Exercícios para praticar e revisar o conteúdo de Matemática Discreta e Lógica.",
+    "material": "https://drive.google.com/drive/folders/1sTEs8vHcF4G4OdB1KJizkvXsCllEeL-A?usp=drive_link",
+    "descricao-material": "Provas, livros, slides e demais recursos complementares para a disciplina."
+  },
+  "cvga": {
+    "nome": "Cálculo Vetorial e Geometria Analítica",
+    "imagem": "./img/matpet_cvga.png",
+    "descricao-monitoria": "A monitoria de Cálculo Vetorial e Geometria Analítica tem como objetivo auxiliar os alunos a compreender os fundamentos básicos de cálculo vetorial e geometria analítica, como vetores, produtos escalares e vetoriais, e transformações geométricas. Os encontros são realizados toda quarta feira via Google Meet e são ideias para tirar dúvidas sobre a matéria e reforçar conceitos abordados em sala de aula.",
+    "video-aula": "repositorio-educacional/monitorias/video-aula?monitoria=calculo-vetorial-e-geometria-analitica",
+    "descricao-video": "Vídeo aulas explicativas sobre Cálculo Vetorial e Geometria Analítica.",
+    "atividade": "https://drive.google.com/drive/folders/1TuhPbhnQEi4NcRomaKrkLrRqexPtVvkL?usp=sharing",
+    "descricao-atividade": "Exercícios para praticar e revisar o conteúdo de Cálculo Vetorial e Geometria Analítica.",
+    "material": "https://drive.google.com/drive/folders/11L0d46pGAz1QnncY9M0HRaovMDcZCger?usp=sharing",
+    "descricao-material": "Provas, livros, slides e demais recursos complementares para a disciplina."
+  }
+  
+}

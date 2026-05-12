@@ -52,8 +52,8 @@ h4 {
 }
 .monitoring-card {
   position: relative;
-  width: 100%;        /* ← trocar 490px por 100% */
-  max-width: 490px;   /* ← adicionar max-width para desktop */
+  width: 100%;       
+  max-width: 490px;   
   height: 280px;
   background-color: white;
   box-shadow: 3px 5px 10px 5px rgba(0, 0, 0, 0.233);
@@ -89,6 +89,9 @@ h4 {
 #card-5 {
   background-color: #b973ff;
 }
+#card-6 {
+  background-color: #FFD294;
+}
 
 .monitoring-card:hover .card-background {
   transform: scale(8);
@@ -105,18 +108,30 @@ h4 {
 .division {
   display: flex;
   align-items: center;
-  justify-content: center;
- 
+  justify-content: flex-start; 
+  width: 100%;
+  padding-left: 24px;
+  gap: 16px;
+}
+
+.division img {
+  width: 200px; 
+  height: 180px;
+  object-fit: contain;
+  flex-shrink: 0; 
+  margin-right: 5%;
 }
 
 .box-texts {
-  padding-left: 10px;
+  padding-left: 5px;
   display: flex;
   flex-direction: column;
   gap: 6px;
   align-items: flex-start;
   font-family: "Mada";
   font-weight: bold;
+  flex: 1; 
+  min-width: 0;
 }
 
 .card-item {
@@ -371,4 +386,9 @@ h4 {
   .area-voltar{
     padding: 17px 0px 0px 20px;
   }
+
+  .division img {
+  
+  margin-right: auto;
+}
 }

@@ -20,6 +20,9 @@ $routes = [
     ($root ? "$root/laboratorios" : "laboratorios") => function () {
         require("laboratorios.php");
     },
+    ($root ? "$root/mapa-ccet" : "mapa-ccet") => function () {
+        require("mapa-ccet.php");
+    },
     ($root ? "$root/monitoria" : "monitoria") => function () {
         require("monitoria.php");
     },
@@ -46,6 +49,24 @@ $routes = [
     },
     ($root ? "$root/eventos" : "eventos") => function () {
         require("eventos.php");
+    },
+    ($root ? "$root/repositorio-educacional" : "repositorio-educacional") => function () {
+        require("biblioteca-petcomp-main.php");
+    },
+    ($root ? "$root/repositorio-educacional/jogos-computacionais" : "repositorio-educacional/jogos-computacionais") => function () {
+        require("biblioteca-petcomp-jogos.php");
+    },
+    ($root ? "$root/repositorio-educacional/minicursos" : "repositorio-educacional/minicursos") => function () {
+        require("biblioteca-petcomp-minicursos.php");
+    },
+    ($root ? "$root/repositorio-educacional/monitorias" : "repositorio-educacional/monitorias") => function () {
+        require("biblioteca-petcomp-monitoria.php");
+    },
+    ($root ? "$root/repositorio-educacional/monitorias/materiais" : "repositorio-educacional/monitorias/materiais") => function () {
+        require("biblioteca-petcomp-matpet.php");
+    },
+    ($root ? "$root/repositorio-educacional/monitorias/video-aula" : "repositorio-educacional/monitorias/video-aula") => function () {
+        require("repositorio-monitorias.php");
     },
     ($root ? "$root/registros" : "registros") => function () {
         require("registros.php");

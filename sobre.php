@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 
-<?php 
-    $title = "Sobre nós";
-    $cssFiles = ['css/sobre.css'];
-    include 'head.php';
+<?php
+$title = "Sobre nós";
+$cssFiles = ['css/sobre.css'];
+include 'head.php';
 ?>
 
 <body>
@@ -13,7 +13,7 @@
     <div class="container-header">
         <h2>Sobre nós</h2>
         <h3>Conheça um pouco sobre o grupo</h3>
-        <h4><a href="./">Página Inicial</a></h4>
+        <h4><a href="">Página Inicial</a></h4>
         <h4> → Sobre nós</h4>
     </div>
 
@@ -23,41 +23,42 @@
     </div>
 
     <div class="gallery">
-    <div class="group">
-         <div class="image-container">
-            <img src="img/sobre-image7.png" class="wide">
-            <p class="image-description">Equipe PETComp 2025</p>
+        <div class="group">
+            <div class="image-container">
+                <img src="img/sobre-image7.png" class="wide">
+                <p class="image-description">Equipe PETComp 2025</p>
+            </div>
+            <div class="image-container">
+                <img src="img/sobre-imagem1.jpg" class="wide">
+                <p class="image-description">Equipe PETComp 2023</p>
+            </div>
+            <div class="image-container">
+                <img src="img/sobre-image3.svg">
+                <p class="image-description">Apresentação do PETComp para L.A.B.I</p>
+            </div>
+            <div class="image-container">
+                <img src="img/sobre-imagem5.jpg">
+                <p class="image-description">PETComp na Feira de profissões 2023</p>
+            </div>
         </div>
-        <div class="image-container">
-            <img src="img/sobre-imagem1.jpg" class="wide">
-            <p class="image-description">Equipe PETComp 2023</p>
-        </div>
-        <div class="image-container">
-            <img src="img/sobre-image3.svg">
-            <p class="image-description">Apresentação do PETComp para L.A.B.I</p>
-        </div>
-        <div class="image-container">
-            <img src="img/sobre-imagem5.jpg">
-            <p class="image-description">PETComp na Feira de profissões 2023</p>
+        <div class="group">
+            <div class="image-container">
+                <img src="img/sobre-image6.jpeg" class="wide">
+                <p class="image-description">Petianos na recepção de calouros 2024.2</p>
+            </div>
+            <div class="image-container">
+                <img src="img/sobre-image4.png">
+                <p class="image-description"> PETComp na Feira de profissões 2024</p>
+            </div>
+            <div class="image-container">
+                <img src="img/sobre-image2.png">
+                <p class="image-description">Confraternização PETComp 2023</p>
+            </div>
         </div>
     </div>
-    <div class="group">
-        <div class="image-container">
-            <img src="img/sobre-image6.jpeg" class="wide">
-            <p class="image-description">Petianos na recepção de calouros 2024.2</p>
-        </div>
-        <div class="image-container">
-            <img src="img/sobre-image4.png">
-            <p class="image-description"> PETComp na Feira de profissões 2024</p>
-        </div>
-        <div class="image-container">
-            <img src="img/sobre-image2.png">
-            <p class="image-description">Confraternização PETComp 2023</p>
-        </div>
-    </div>
-</div>
 
 
     <?php include 'footer.php'; ?>
 </body>
+
 </html>
