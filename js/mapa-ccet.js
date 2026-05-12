@@ -233,7 +233,7 @@ const locaisCCET = [
     { id: '58', bloco: '1', sala: '199', nome: 'Sala', andar: '1', categoria: 'sala', imagem: '', descricao: '', coordenadas: [888, 991] },
     { id: '59', bloco: '1', sala: '200', nome: 'Sala', andar: '1', categoria: 'sala', imagem: '', descricao: '', coordenadas: [808, 991] },
     { id: '60', bloco: '1', sala: '201', nome: 'VIP Lab (Laboratório de Visão e Processamento de Imagens)', andar: '1', categoria: 'laboratorio', imagem: '', descricao: '', coordenadas: [721, 991] },
-    { id: '61', bloco: '1', sala: '202', nome: 'Sala', andar: '1', categoria: 'sala', imagem: '', descricao: '', coordenadas: [622, 991] },
+    { id: '61', bloco: '1', sala: '202', nome: 'Sala (Auditório DEINF)', andar: '1', categoria: 'sala', imagem: '', descricao: '', coordenadas: [622, 991] },
     { id: '62', bloco: '1', sala: '', nome: 'LACMOR (Laboratório de Métodos de Cognição Artifical para Otimização e Robótica)', andar: '1', categoria: 'laboratorio', imagem: '', descricao: '', coordenadas: [534, 991] },
     { id: '63', bloco: '1', sala: '203', nome: 'Telemídia (Laboratório de Sistemas Multimídia) / MODAL (Laboratório de Modelagem Matemática e Algoritmos)', andar: '1', categoria: 'laboratorio', imagem: '', descricao: '', coordenadas: [465, 991] },
     { id: '64', bloco: '1', sala: '204', nome: 'LINT² (Laboratório de Inteligência Interativa)', andar: '1', categoria: 'laboratorio', imagem: '', descricao: '', coordenadas: [406, 991] },
@@ -259,7 +259,7 @@ const locaisCCET = [
     { id: '79', bloco: '4', sala: '205', nome: 'Sala de Professor', andar: '1', categoria: 'prof', imagem: '', descricao: 'Profa. Maria da Guia Da Silva', coordenadas: [2562, 980] },
     { id: 'escada8', bloco: '4', sala: '', nome: 'Escada', andar: '1', categoria: 'escada', imagem: '', descricao: '', coordenadas: [2414, 1150] },
 
-    { id: '80', bloco: '5', sala: '211', nome: 'Sala de Professor', andar: '1', categoria: 'prof', imagem: '', descricao: 'Prof. Francisco J. Silva e Silva, Prof. Ivo José da C. Serra', coordenadas: [1220, 1142] },
+    { id: '80', bloco: '5', sala: '211', nome: 'Sala de Professor', andar: '1', categoria: 'prof', imagem: '', descricao: 'Prof. Francisco J. Silva e Silva, Prof. Ivo José da C. Serra, Prof. Luis Rivero', coordenadas: [1220, 1142] },
     { id: '81', bloco: '5', sala: '210', nome: 'Sala de Professor', andar: '1', categoria: 'prof', imagem: '', descricao: 'Prof. Geraldo Braz Júnior, Prof. Luciano R. Coutinho, Profa. Simara Rocha, Prof. Carlos de Salles S. Neto', coordenadas: [1260, 1142] },
     { id: '82', bloco: '5', sala: '209', nome: 'Sala de Professor', andar: '1', categoria: 'prof', imagem: '', descricao: 'Prof. Jonas da Silva Junior, Prof. Vilemar G. da Silva', coordenadas: [1300, 1142] },
     { id: '83', bloco: '5', sala: '208', nome: 'Sala de Professor', andar: '1', categoria: 'prof', imagem: '', descricao: 'Prof. Marcos Tadeu Rezende de Araújo, Luciano Buonocore, Profa. Maria de Fátima S. Farias', coordenadas: [1339, 1142] },
@@ -460,6 +460,10 @@ const marcadoresLeaflet = [];
 let andarAtual = 'terreo';
 let categoriaAtual = 'todos';
 
+function removerAcentos(texto) {
+    return texto.normalize('NFD').replace(/[\u0300-\u036f]/g, "");
+}
+
 function criarHTMLPopup(local) {
     let html = '<div class="popup-customizado">';
 
@@ -566,7 +570,7 @@ function executarBusca() {
     const inputElement = document.getElementById('input-busca');
     if (!inputElement) return;
     
-    const textoDigitado = inputElement.value.toLowerCase();
+    const textoDigitado = removerAcentos(inputElement.value.toLowerCase());
 
     marcadoresLeaflet.forEach(item => {
 
@@ -579,7 +583,7 @@ function executarBusca() {
                 textoParaBusca += `${item.dados.descricao}`;
             }
 
-            textoParaBusca = textoParaBusca.toLowerCase();
+            textoParaBusca = removerAcentos(textoParaBusca.toLowerCase());
             const passaTexto = textoParaBusca.includes(textoDigitado);
 
             const passaCategoria = (categoriaAtual === 'todos' || item.dados.categoria === categoriaAtual);
@@ -643,3 +647,4 @@ map.on('click', function(e) {
 // colocar localizacao em tempo real
 // ajeitar categorias de filtro
 // botar link das salas
+// não contar acento
