@@ -289,6 +289,7 @@ const locaisCCET = [
     { id: '104', bloco: '6', sala: '216', nome: 'Coordenação e Secretaria do Mestrado em Design', andar: '1', categoria: 'coord', imagem: '', descricao: '', coordenadas: [869, 1177] },
     { id: 'banheiro6', bloco: '6', sala: '', nome: 'Banheiro Feminino', andar: '1', categoria: 'wc-f', imagem: '', descricao: '', coordenadas: [1030, 1360] },
     { id: 'escada10', bloco: '6', sala: '', nome: 'Escada', andar: '1', categoria: 'escada', imagem: '', descricao: '', coordenadas: [1029, 1479] },
+    { id: 'bebedouro4', bloco: '6', sala: '', nome: 'Bebedouro', andar: '1', categoria: 'bebedouro', imagem: '', descricao: '', coordenadas: [980, 1362] },
 
     { id: '105', bloco: '7', sala: '209', nome: 'Central de Distribuição de Fios', andar: '1', categoria: 'outros', imagem: '', descricao: '', coordenadas: [2022, 1135] },
     { id: '106', bloco: '7', sala: '208', nome: 'Sala', andar: '1', categoria: 'sala', imagem: '', descricao: '', coordenadas: [2022, 1228] },
@@ -378,6 +379,7 @@ const locaisCCET = [
     { id: '177', bloco: '6', sala: '301', nome: 'Sala de Professor', andar: '2', categoria: 'prof', imagem: '', descricao: 'Profa. Jéssica Santos Stefano, Profa. Nahieh Toscano Miranda, Profa. Núbia Fernanda M. Rodrigues', coordenadas: [851, 2022] },
     { id: 'banheiro8', bloco: '6', sala: '', nome: 'Banheiro Feminino', andar: '2', categoria: 'wc-f', imagem: '', descricao: '', coordenadas: [1027, 1372] },
     { id: 'escada14', bloco: '6', sala: '', nome: 'Escada', andar: '2', categoria: 'escada', imagem: '', descricao: '', coordenadas: [1027, 1489] },
+    { id: 'bebedouro5', bloco: '6', sala: '', nome: 'Bebedouro', andar: '2', categoria: 'bebedouro', imagem: '', descricao: '', coordenadas: [961, 1501] },
 
     { id: '178', bloco: '7', sala: '301', nome: 'Laboratório de Informática e Simulação', andar: '2', categoria: 'laboratorio', imagem: '', descricao: '', coordenadas: [2034, 1993] },
     { id: '179', bloco: '7', sala: '302', nome: 'Laboratório de Química Analítica', andar: '2', categoria: 'laboratorio', imagem: '', descricao: '', coordenadas: [2034, 1885] },
