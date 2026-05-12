@@ -192,8 +192,20 @@ body {
 }
 
 .pino-customizado:hover {
-    transform: scale(1.15) translateY(-5px);
-    z-index: 1000;
+    width: 38px !important; 
+    height: 38px !important;
+    margin-left: -19px !important; 
+    margin-top: -23px !important;  
+    
+    box-shadow: 0 8px 12px rgba(0,0,0,0.6) !important;
+    z-index: 1000 !important;
+    cursor: pointer;
+}
+
+.pino-customizado:hover svg {
+    /* width: 20px !important;
+    height: 20px !important; */
+    scale: 1.25 !important;
 }
 
 .leaflet-popup-content-wrapper {
@@ -258,6 +270,44 @@ body {
 .botao-centralizar:hover {
     color: #000;
 }
+
+.zoom-afastado .pino-customizado {
+    width: 16px !important;
+    height: 16px !important;
+    margin-left: -8px !important;
+    margin-top: -8px !important; 
+    border: 1px solid white;
+}
+
+.zoom-afastado .pino-customizado svg {
+    /* width: 12px !important;
+    height: 12px !important; */
+    scale: 0.65 !important;
+}
+
+.zoom-afastado .pino-bebedouro {
+    width: 14px !important;
+    height: 14px !important;
+    margin-left: -7px !important;
+    margin-top: -7px !important;
+}
+
+.pino-bebedouro {   
+    width: 24px !important;
+    height: 24px !important;
+    margin-left: -12px !important;
+    margin-top: -12px !important;
+}
+
+.pino-bebedouro svg {
+    width: 14px !important;
+    height: 14px !important;
+}
+
+
+
+
+
 
 /* Animação de carregamento mais lenta */
 @keyframes fadeIn {

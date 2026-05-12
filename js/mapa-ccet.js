@@ -117,7 +117,14 @@ const iconeProfessor = L.divIcon({
 });
 const iconeRampa = L.divIcon({
     className: 'pino-customizado pino-rampa',
-    html: '<svg width="24px" height="24px" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" stroke-width="3" stroke="#ffffff" fill="none"><path d="M49,50.21,40,38.16a.63.63,0,0,0-.51-.25H27.13a.64.64,0,0,1-.63-.57L24.91,22.83" stroke-linecap="round"/><line x1="41.03" y1="28.46" x2="25.53" y2="28.46" stroke-linecap="round"/><path d="M42.64,50.21a15.43,15.43,0,1,1-22-21.33" stroke-linecap="round"/><circle cx="23.51" cy="12.64" r="4.85" stroke-linecap="round"/></svg>',
+    html: '<svg width="24px" height="24px" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" stroke-width="4" stroke="#ffffff" fill="none"><path d="M49,50.21,40,38.16a.63.63,0,0,0-.51-.25H27.13a.64.64,0,0,1-.63-.57L24.91,22.83" stroke-linecap="round"/><line x1="41.03" y1="28.46" x2="25.53" y2="28.46" stroke-linecap="round"/><path d="M42.64,50.21a15.43,15.43,0,1,1-22-21.33" stroke-linecap="round"/><circle cx="23.51" cy="12.64" r="4.85" stroke-linecap="round"/></svg>',
+    iconSize: [32, 32],
+    iconAnchor: [16, 16],
+    popupAnchor: [0, -16]
+});
+const iconeBebedouro = L.divIcon({
+    className: 'pino-customizado pino-bebedouro',
+    html: '<svg width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 18C11.5597 18 11.1318 17.8547 10.7825 17.5867C10.4332 17.3187 10.1821 16.9429 10.0681 16.5176" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/><path d="M10.4243 4.67868C11.0553 3.60606 11.3707 3.06975 11.8223 2.98822C11.9398 2.967 12.0602 2.967 12.1777 2.98822C12.6293 3.06975 12.9447 3.60606 13.5757 4.67868L15.244 7.51482C16.41 9.49693 17.3197 11.619 17.9515 13.8301V13.8301C18.9781 17.4232 16.2801 21 12.5432 21H11.4568C7.71989 21 5.02193 17.4232 6.04854 13.8301V13.8301C6.6803 11.619 7.59004 9.49693 8.75599 7.51482L10.4243 4.67868Z" stroke="#ffffff" stroke-width="2"/></svg>',
     iconSize: [32, 32],
     iconAnchor: [16, 16],
     popupAnchor: [0, -16]
@@ -128,7 +135,7 @@ const iconeOutros = L.divIcon({
     iconSize: [32, 32],
     iconAnchor: [16, 16],
     popupAnchor: [0, -16]
-});
+});     
 
 // locais
 const locaisCCET = [
@@ -183,6 +190,7 @@ const locaisCCET = [
     { id: 'escada4', bloco: '6', sala: '', nome: 'Escada', andar: 'terreo', categoria: 'escada', imagem: '', descricao: '', coordenadas: [1030, 1473] },
     { id: 'banheiro2', bloco: '6', sala: '', nome: 'Banheiro Feminino', andar: 'terreo', categoria: 'wc-f', imagem: '', descricao: '', coordenadas: [1030, 1356] },
     { id: 'auditorio2', bloco: '6', sala: '', nome: 'Auditório 2', andar: 'terreo', categoria: 'auditorio', imagem: '', descricao: '', coordenadas: [1140, 1777] },
+    { id: 'bebedouro1', bloco: '6', sala: '', nome: 'Bebedouro', andar: 'terreo', categoria: 'bebedouro', imagem: '', descricao: '', coordenadas: [974, 1398] },
 
     { id: '33', bloco: '7', sala: '101', nome: 'Sala', andar: 'terreo', categoria: 'sala', imagem: '', descricao: '', coordenadas: [2012, 1922] },
     { id: '34', bloco: '7', sala: '102', nome: 'Sala', andar: 'terreo', categoria: 'sala', imagem: '', descricao: '', coordenadas: [2012, 1777] },
@@ -195,7 +203,7 @@ const locaisCCET = [
     { id: 'escada5', bloco: '7', sala: '', nome: 'Escada', andar: 'terreo', categoria: 'escada', imagem: '', descricao: '', coordenadas: [1862, 1773] },
     { id: 'banheiro3', bloco: '7', sala: '', nome: 'Banheiro Masculino', andar: 'terreo', categoria: 'wc-m', imagem: '', descricao: '', coordenadas: [1862, 1893] },
     
-    { id: '41', bloco: '8', sala: '104/105', nome: 'NEPP (Núcleo de Ergonomia em Processos e Produtos)', andar: 'terreo', categoria: 'outros', imagem: '', descricao: '', coordenadas: [1610, 1942] },
+    { id: '41', bloco: '8', sala: '104/105', nome: 'NEPP (Núcleo de Ergonomia em Processos e Produtos)', andar: 'terreo', categoria: 'laboratorio', imagem: '', descricao: '', coordenadas: [1610, 1942] },
     { id: '42', bloco: '8', sala: '101', nome: 'LAB 2 - Ciência da Computação', andar: 'terreo', categoria: 'laboratorio', imagem: '', descricao: '', coordenadas: [1463, 1942] },
     { id: '43', bloco: '8', sala: '101', nome: 'LAB 1 - Ciência da Computação', andar: 'terreo', categoria: 'laboratorio', imagem: '', descricao: '', coordenadas: [1268, 1942] },
     { id: 'escada6', bloco: '8', sala: '', nome: 'Escada', andar: 'terreo', categoria: 'escada', imagem: '', descricao: '', coordenadas: [1260, 2092] },
@@ -203,7 +211,7 @@ const locaisCCET = [
     
     { id: '44', bloco: '9', sala: '', nome: 'NDA', andar: 'terreo', categoria: 'laboratorio', imagem: '', descricao: '', coordenadas: [1607, 2439] },
     { id: '45', bloco: '9', sala: '', nome: 'Sala de Professor', andar: 'terreo', categoria: 'prof', imagem: '', descricao: 'Prof. Dr. Nailton Martins Rodrigues, Profa. Dra. Rafaely Nascimento Lima, Prof. Dr. Tiago Gomes dos Santos, Prof. Dr. Ulisses Alves do Rego.', coordenadas: [1479, 2439] },
-    { id: '46', bloco: '9', sala: '', nome: 'DEQUI (Departamento de Química)', andar: 'terreo', categoria: 'outros', imagem: '', descricao: '', coordenadas: [1374, 2439] },
+    { id: '46', bloco: '9', sala: '', nome: 'DEQUI (Departamento de Química)', andar: 'terreo', categoria: 'coord', imagem: '', descricao: '', coordenadas: [1374, 2439] },
     { id: '47', bloco: '9', sala: '', nome: 'lequim (Laboratório de Ensino de Química)', andar: 'terreo', categoria: 'laboratorio', imagem: '', descricao: '', coordenadas: [1298, 2439] },
     { id: '48', bloco: '9', sala: '', nome: 'lequim (Laboratório de Ensino de Química)', andar: 'terreo', categoria: 'laboratorio', imagem: '', descricao: '', coordenadas: [1236, 2439] },
     { id: '49', bloco: '9', sala: '104', nome: 'Sala', andar: 'terreo', categoria: 'sala', imagem: '', descricao: '', coordenadas: [1096, 2432] },
@@ -400,6 +408,16 @@ const locaisCCET = [
 
 ];
 
+map.on('zoomend', function() {
+    const containerMapa = document.getElementById('map');
+
+    if (map.getZoom() <= -2) { 
+        containerMapa.classList.add('zoom-afastado');
+    } else {
+        containerMapa.classList.remove('zoom-afastado');
+    }
+});
+
 const ControleCentralizar = L.Control.extend({
     options: {
         position: 'topleft'
@@ -447,7 +465,11 @@ function criarHTMLPopup(local) {
     if (local.sala) subtitulo += ` - Sala ${local.sala}`;
     html += `<p class="popup-subtitulo">${subtitulo}</p>`;
 
-    if (local.descricao) {
+    if (local.categoria === 'prof' && local.descricao){
+        const listaProfs = local.descricao.split(',').map(prof => `<li>${prof.trim()}</li>`).join('');
+        html += `<ul class="popup-lista-profs">${listaProfs}</ul>`;
+    }
+    else if (local.descricao) {
         html += `<p class="popup-subtitulo">${local.descricao}</p>`;
     }
 
@@ -504,6 +526,9 @@ function inicializarMarcadores() {
         else if(local.categoria === 'rampa'){
             iconeEscolhido = iconeRampa;
         }
+        else if(local.categoria === 'bebedouro'){
+            iconeEscolhido = iconeBebedouro;
+        }
         else{
             iconeEscolhido = iconeOutros;
         }
@@ -539,7 +564,12 @@ function executarBusca() {
             
             const grupoDoAndar = dadosAndares[andarAtual].marcadores;
 
-            const textoParaBusca = `${item.dados.nome} Bloco ${item.dados.bloco} Sala ${item.dados.sala} ${item.dados.categoria}`.toLowerCase();
+            let textoParaBusca = `${item.dados.nome} Bloco ${item.dados.bloco} Sala ${item.dados.sala} ${item.dados.categoria}`;
+            if (item.dados.categoria === 'prof' && item.dados.descricao){
+                textoParaBusca += `${item.dados.descricao}`;
+            }
+
+            textoParaBusca = textoParaBusca.toLowerCase();
             const passaTexto = textoParaBusca.includes(textoDigitado);
 
             const passaCategoria = (categoriaAtual === 'todos' || item.dados.categoria === categoriaAtual);
@@ -582,25 +612,26 @@ window.mudarAndar = function(idAndar, elementoBotao) {
     }
 };
 
-// // pegar coord quando clica
-// map.on('click', function(e) {
+// pegar coord quando clica
+map.on('click', function(e) {
 
-//     const y = Math.round(e.latlng.lat);
-//     const x = Math.round(e.latlng.lng);
-//     const coordenada = `[${y}, ${x}]`;
+    const y = Math.round(e.latlng.lat);
+    const x = Math.round(e.latlng.lng);
+    const coordenada = `[${y}, ${x}]`;
 
-//     L.popup()
-//         .setLatLng(e.latlng)
-//         .setContent(`<b>${coordenada}</b>`)
-//         .openOn(map);
-// });
+    L.popup()
+        .setLatLng(e.latlng)
+        .setContent(`<b>${coordenada}</b>`)
+        .openOn(map);
+});
+
 
 
 // 1. configurar categoria outros
 // 2. trocar tamanho pin no zoom minimo
-// 7. icone labs
 // 8. resolver sobre Sala de Professor
 // ver sobre hover dos pinos
 // colocar filtro de bloco
-// ver sobre busca
+// ver sobre busca ? 
 // ver sobre imagem - enquadramento
+// mobile: quando clicar em algo e o balao sobressair pra cima, automaticamente enquadrar
