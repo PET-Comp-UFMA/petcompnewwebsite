@@ -190,7 +190,7 @@ const locaisCCET = [
     { id: 'escada4', bloco: '6', sala: '', nome: 'Escada', andar: 'terreo', categoria: 'escada', imagem: '', descricao: '', coordenadas: [1030, 1473] },
     { id: 'banheiro2', bloco: '6', sala: '', nome: 'Banheiro Feminino', andar: 'terreo', categoria: 'wc-f', imagem: '', descricao: '', coordenadas: [1030, 1356] },
     { id: 'auditorio2', bloco: '6', sala: '', nome: 'Auditório 2', andar: 'terreo', categoria: 'auditorio', imagem: '', descricao: '', coordenadas: [1140, 1777] },
-    { id: 'bebedouro1', bloco: '6', sala: '', nome: 'Bebedouro', andar: 'terreo', categoria: 'bebedouro', imagem: '', descricao: '', coordenadas: [974, 1398] },
+    { id: 'bebedouro1', bloco: '6', sala: '', nome: 'Bebedouro', andar: 'terreo', categoria: 'bebedouro', imagem: '', descricao: '', coordenadas: [950, 1398] },
 
     { id: '33', bloco: '7', sala: '101', nome: 'Sala', andar: 'terreo', categoria: 'sala', imagem: '', descricao: '', coordenadas: [2012, 1922] },
     { id: '34', bloco: '7', sala: '102', nome: 'Sala', andar: 'terreo', categoria: 'sala', imagem: '', descricao: '', coordenadas: [2012, 1777] },
@@ -202,12 +202,14 @@ const locaisCCET = [
     { id: '40', bloco: '7', sala: '108', nome: 'Sala', andar: 'terreo', categoria: 'sala', imagem: '', descricao: '', coordenadas: [2012, 1132] },
     { id: 'escada5', bloco: '7', sala: '', nome: 'Escada', andar: 'terreo', categoria: 'escada', imagem: '', descricao: '', coordenadas: [1862, 1773] },
     { id: 'banheiro3', bloco: '7', sala: '', nome: 'Banheiro Masculino', andar: 'terreo', categoria: 'wc-m', imagem: '', descricao: '', coordenadas: [1862, 1893] },
+    { id: 'bebedouro2', bloco: '7', sala: '', nome: 'Bebedouro', andar: 'terreo', categoria: 'bebedouro', imagem: '', descricao: '', coordenadas: [1943, 1855] },
     
     { id: '41', bloco: '8', sala: '104/105', nome: 'NEPP (Núcleo de Ergonomia em Processos e Produtos)', andar: 'terreo', categoria: 'laboratorio', imagem: '', descricao: '', coordenadas: [1610, 1942] },
     { id: '42', bloco: '8', sala: '101', nome: 'LAB 2 - Ciência da Computação', andar: 'terreo', categoria: 'laboratorio', imagem: '', descricao: '', coordenadas: [1463, 1942] },
     { id: '43', bloco: '8', sala: '101', nome: 'LAB 1 - Ciência da Computação', andar: 'terreo', categoria: 'laboratorio', imagem: '', descricao: '', coordenadas: [1268, 1942] },
     { id: 'escada6', bloco: '8', sala: '', nome: 'Escada', andar: 'terreo', categoria: 'escada', imagem: '', descricao: '', coordenadas: [1260, 2092] },
     { id: 'banheiro4', bloco: '8', sala: '', nome: 'Banheiro Masculino', andar: 'terreo', categoria: 'wc-m', imagem: '', descricao: '', coordenadas: [1377, 2092] },
+    { id: 'bebedouro3', bloco: '8', sala: '', nome: 'Bebedouro', andar: 'terreo', categoria: 'bebedouro', imagem: '', descricao: '', coordenadas: [1221, 2005] },
     
     { id: '44', bloco: '9', sala: '', nome: 'NDA', andar: 'terreo', categoria: 'laboratorio', imagem: '', descricao: '', coordenadas: [1607, 2439] },
     { id: '45', bloco: '9', sala: '', nome: 'Sala de Professor', andar: 'terreo', categoria: 'prof', imagem: '', descricao: 'Prof. Dr. Nailton Martins Rodrigues, Profa. Dra. Rafaely Nascimento Lima, Prof. Dr. Tiago Gomes dos Santos, Prof. Dr. Ulisses Alves do Rego.', coordenadas: [1479, 2439] },
@@ -418,6 +420,14 @@ map.on('zoomend', function() {
     }
 });
 
+// para o pop up nao fica fora da area da tela 
+const ehMobile = window.innerWidth <= 768;
+
+const opcoesDoPopup = {
+    autoPanPaddingTopLeft: ehMobile ? [10, 130] : [5, 5], 
+    autoPanPaddingBottomRight: [5, 5] 
+};
+
 const ControleCentralizar = L.Control.extend({
     options: {
         position: 'topleft'
@@ -533,7 +543,7 @@ function inicializarMarcadores() {
             iconeEscolhido = iconeOutros;
         }
 
-        let marker = L.marker(local.coordenadas, {icon: iconeEscolhido}).bindPopup( criarHTMLPopup(local) );
+        let marker = L.marker(local.coordenadas, {icon: iconeEscolhido}).bindPopup( criarHTMLPopup(local), opcoesDoPopup );
         
         marcadoresLeaflet.push({
             dados: local,
@@ -628,10 +638,8 @@ map.on('click', function(e) {
 
 
 // 1. configurar categoria outros
-// 2. trocar tamanho pin no zoom minimo
-// 8. resolver sobre Sala de Professor
-// ver sobre hover dos pinos
 // colocar filtro de bloco
-// ver sobre busca ? 
 // ver sobre imagem - enquadramento
-// mobile: quando clicar em algo e o balao sobressair pra cima, automaticamente enquadrar
+// colocar localizacao em tempo real
+// ajeitar categorias de filtro
+// botar link das salas
