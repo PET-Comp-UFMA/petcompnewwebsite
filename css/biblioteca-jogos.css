@@ -29,7 +29,6 @@
 .imagens {
   border-radius: 1rem 0 0 1rem; /* 16px */
   overflow: hidden;
-  border: 0.125rem solid #e8e8e9; /* 2px */
   width: 8.4375rem; /* 135px */
   flex-shrink: 0;
   object-fit: cover;
@@ -177,7 +176,14 @@
   .imagens {
     width: 100%;
     border-radius: 1rem 1rem 0 0;
-    height: 12.5rem; /* 200px */
+    height: 10rem;
+    overflow: hidden;
+  }
+
+   .imagens img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; 
   }
 
   .card-content {
@@ -192,5 +198,9 @@
     height: 2.25rem;
     font-size: 0.875rem;
     padding: 0.5rem 1.5rem;
+  }
+
+  .pagination {
+    gap: 2%;
   }
 }
