@@ -568,6 +568,106 @@ marcadoresTerreo.addTo(map);
 
 inicializarMarcadores();
 
+let marcadorUsuario = null;
+
+function pegarLocalizacao() {
+    if (!navigator.geolocation){
+        alert("O seu navegador não suporta geolocalização");
+        return;
+    }
+
+    const btnGps = document.getElementById('btn-localizacao');
+    if (btnGps){
+        btnGps.style.opacity = '0.5';
+    }
+
+    navigator.geolocation.getCurrentPosition(
+        function(posicao){
+            if (btnGps){
+                btnGps.style.opacity = '1';
+            }
+
+            const latReal = posicao.coords.latitude;
+            const lngReal = posicao.coords.longitude;
+
+            // calibracao
+            const refA_GPS = {lat: -2.55889, lng: -44.30806};
+            const refA_PIXEL = {y: 2566, x: 1067};
+
+            const refB_GPS = {lat: -2.558056, lng: -44.308056};
+            const refB_PIXEL = {y: 947, x: 2010};
+
+            // matematica
+            const escalaY = (refB_PIXEL.y - refA_PIXEL.y ) / (refB_GPS.lat - refA_GPS.lat);
+            const escalaX = (refB_PIXEL.x - refA_PIXEL.x ) / (refB_GPS.lng - refA_GPS.lng);
+
+            const yPixel = refA_PIXEL.y + ((latReal - refA_GPS.lat) * escalaY);
+            const xPixel = refA_PIXEL.x + ((lngReal - refA_GPS.lng) * escalaX);
+
+            const coordenadasNoMapa = [yPixel, xPixel];
+
+            if(marcadorUsuario) {
+                map.removeLayer(marcadorUsuario);
+            }
+
+            marcadorUsuario = L.circleMarker(coordenadasNoMapa, {
+                radius: 8,
+                fillColor: '#0066FF',
+                color: "#FFFFFF",
+                weight: 2,
+                opacity: 1,
+                fillOpacity: 1,
+                className: 'pino-usuario-pulsante'
+            }).addTo(map);
+
+            marcadorUsuario.bindPopup("<b> Você está aqui!</b>");
+
+            map.setView(coordenadasNoMapa, 0);
+            marcadorUsuario.openPopup();
+        },
+        function(erro){
+            if (btnGps){
+                btnGps.style.opacity = '1';
+            }
+
+            if(erro.code === 1){
+                alert("POr favor, permita o acesso à localização no seu navegador.");
+            }
+            else{
+                alert("Não foi possível obter sua localização no momento.");
+            }
+        },
+        {enableHighAccuracy: true, timeout: 15000, maximumAge: 0}
+    );
+}
+
+const ControleLocalizacao = L.Control.extend({
+    options: {
+        position: 'topleft' // Isso garante que ele fique na fila debaixo do zoom e centralizar
+    },
+
+    onAdd: function (map) {
+        const container = L.DomUtil.create('div', 'leaflet-bar leaflet-control');
+        const botao = L.DomUtil.create('a', 'botao-localizacao', container);
+        
+        botao.href = '#';
+        botao.title = 'Minha Localização';
+        
+        botao.innerHTML = `<svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 11 22 2 13 21 11 13 3 11"></polygon></svg>`;
+
+        L.DomEvent.disableClickPropagation(botao);
+
+        L.DomEvent.on(botao, 'click', function(e) {
+            e.preventDefault(); 
+            pegarLocalizacao(); 
+        });
+
+        return container;
+    }
+});
+
+map.addControl(new ControleLocalizacao());
+
 function executarBusca() {
     const inputElement = document.getElementById('input-busca');
     if (!inputElement) return;
@@ -628,18 +728,18 @@ window.mudarAndar = function(idAndar, elementoBotao) {
     }
 };
 
-// pegar coord quando clica
-map.on('click', function(e) {
+// // pegar coord quando clica
+// map.on('click', function(e) {
 
-    const y = Math.round(e.latlng.lat);
-    const x = Math.round(e.latlng.lng);
-    const coordenada = `[${y}, ${x}]`;
+//     const y = Math.round(e.latlng.lat);
+//     const x = Math.round(e.latlng.lng);
+//     const coordenada = `[${y}, ${x}]`;
 
-    L.popup()
-        .setLatLng(e.latlng)
-        .setContent(`<b>${coordenada}</b>`)
-        .openOn(map);
-});
+//     L.popup()
+//         .setLatLng(e.latlng)
+//         .setContent(`<b>${coordenada}</b>`)
+//         .openOn(map);
+// });
 
 
 
@@ -649,4 +749,3 @@ map.on('click', function(e) {
 // colocar localizacao em tempo real
 // ajeitar categorias de filtro
 // botar link das salas
-// não contar acento
