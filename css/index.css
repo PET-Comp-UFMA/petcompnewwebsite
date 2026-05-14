@@ -336,7 +336,6 @@ body {
     flex-direction: row;
     flex-wrap: wrap;
     gap: 5rem;
-    text-align: justify;
     padding: 3rem 1rem;
     align-items: center;
     justify-content: center;
@@ -394,6 +393,7 @@ body {
     font-size: 30px;
     word-break:normal;
     color: #fff;
+     word-spacing: 10px; 
     display: inline;
 }
 .text-card {
