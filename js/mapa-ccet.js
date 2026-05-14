@@ -569,33 +569,64 @@ marcadoresTerreo.addTo(map);
 inicializarMarcadores();
 
 let marcadorUsuario = null;
+let ultimaPosicaoUsuario = null;
+let usuarioMuitoLonge = false;
+let centralizouPrimeiraVez = false;
 
-function pegarLocalizacao() {
+function calcularDistanciaEmMetros(lat1, lon1, lat2, lon2) {
+    const raioTerra = 6371e3; // Metros
+    const radianoLat1 = lat1 * Math.PI / 180;
+    const radianoLat2 = lat2 * Math.PI / 180;
+    const diferencaLat = (lat2 - lat1) * Math.PI / 180;
+    const diferencaLon = (lon2 - lon1) * Math.PI / 180;
+
+    const a = Math.sin(diferencaLat / 2) * Math.sin(diferencaLat / 2) +
+              Math.cos(radianoLat1) * Math.cos(radianoLat2) *
+              Math.sin(diferencaLon / 2) * Math.sin(diferencaLon / 2);
+    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+
+    return raioTerra * c;
+}
+
+function iniciarRastreioContinuo() {
     if (!navigator.geolocation){
         alert("O seu navegador não suporta geolocalização");
         return;
     }
 
-    const btnGps = document.getElementById('btn-localizacao');
-    if (btnGps){
-        btnGps.style.opacity = '0.5';
-    }
-
-    navigator.geolocation.getCurrentPosition(
+    navigator.geolocation.watchPosition(
         function(posicao){
-            if (btnGps){
-                btnGps.style.opacity = '1';
+            if (posicao.coords.accuracy > 200) {
+                console.log("Sinal impreciso (" + posicao.coords.accuracy + "m). Ignorando...");
+                return;
             }
 
             const latReal = posicao.coords.latitude;
             const lngReal = posicao.coords.longitude;
 
-            // calibracao
-            const refA_GPS = {lat: -2.55889, lng: -44.30806};
-            const refA_PIXEL = {y: 2566, x: 1067};
+            const centroDoCCET = {lat: -2.558516, lng: -44.308165};
+            const limiteEmMetros = 500;
 
-            const refB_GPS = {lat: -2.558056, lng: -44.308056};
-            const refB_PIXEL = {y: 947, x: 2010};
+            const distancia = calcularDistanciaEmMetros(latReal, lngReal, centroDoCCET.lat, centroDoCCET.lng);
+
+            if (distancia > limiteEmMetros){
+                usuarioMuitoLonge = true;
+
+                if(marcadorUsuario){
+                    map.removeLayer(marcadorUsuario);
+                    marcadorUsuario = null;
+                }
+                return;
+            }
+
+            usuarioMuitoLonge = false;
+
+            // calibracao
+            const refA_GPS = {lat: -2.557843, lng: -44.307873};
+            const refA_PIXEL = {y: 295, x: 1016};
+
+            const refB_GPS = {lat: -2.558685, lng: -44.308688};
+            const refB_PIXEL = {y: 1810, x: 2462};
 
             // matematica
             const escalaY = (refB_PIXEL.y - refA_PIXEL.y ) / (refB_GPS.lat - refA_GPS.lat);
@@ -604,46 +635,65 @@ function pegarLocalizacao() {
             const yPixel = refA_PIXEL.y + ((latReal - refA_GPS.lat) * escalaY);
             const xPixel = refA_PIXEL.x + ((lngReal - refA_GPS.lng) * escalaX);
 
-            const coordenadasNoMapa = [yPixel, xPixel];
+            ultimaPosicaoUsuario = [yPixel, xPixel];
 
             if(marcadorUsuario) {
                 map.removeLayer(marcadorUsuario);
             }
-
-            marcadorUsuario = L.circleMarker(coordenadasNoMapa, {
-                radius: 8,
-                fillColor: '#0066FF',
-                color: "#FFFFFF",
-                weight: 2,
-                opacity: 1,
-                fillOpacity: 1,
-                className: 'pino-usuario-pulsante'
-            }).addTo(map);
-
-            marcadorUsuario.bindPopup("<b> Você está aqui!</b>");
-
-            map.setView(coordenadasNoMapa, 0);
-            marcadorUsuario.openPopup();
-        },
-        function(erro){
-            if (btnGps){
-                btnGps.style.opacity = '1';
-            }
-
-            if(erro.code === 1){
-                alert("POr favor, permita o acesso à localização no seu navegador.");
+            
+            if(!marcadorUsuario){
+                marcadorUsuario = L.circleMarker(ultimaPosicaoUsuario, {
+                    radius: 8,
+                    fillColor: '#0066FF',
+                    color: "#FFFFFF",
+                    weight: 2,
+                    opacity: 1,
+                    fillOpacity: 1,
+                    className: 'pino-usuario-pulsante'
+                }).addTo(map);
             }
             else{
-                alert("Não foi possível obter sua localização no momento.");
+                marcadorUsuario.setLatLng(ultimaPosicaoUsuario);
             }
+
+            if(!centralizouPrimeiraVez){
+                map.setView(ultimaPosicaoUsuario, 0);
+                centralizouPrimeiraVez = true;
+            }
+        },
+        function(erro){
+            console.warn("Rastreio em segundo plano falhou ou permissão negada:", erro);
         },
         {enableHighAccuracy: true, timeout: 15000, maximumAge: 0}
     );
 }
 
+function centralizarNoUsuario() {
+    if(usuarioMuitoLonge){
+        alert("Você parece estar muito longe");
+        return;
+    }
+    if (ultimaPosicaoUsuario) {
+        map.flyTo(ultimaPosicaoUsuario, 0, {
+            animate: true,
+            duration: 0.5
+        });
+        
+        if (marcadorUsuario) {
+            marcadorUsuario.bindPopup("<b>Você está aqui!</b>").openPopup();
+        }
+    } else {
+        alert("Buscando sinal do GPS... Por favor, certifique-se de que a permissão de localização está ativa.");
+
+        iniciarRastreioContinuo(); 
+    }
+}
+
+iniciarRastreioContinuo();
+
 const ControleLocalizacao = L.Control.extend({
     options: {
-        position: 'topleft' // Isso garante que ele fique na fila debaixo do zoom e centralizar
+        position: 'topleft' 
     },
 
     onAdd: function (map) {
@@ -659,7 +709,7 @@ const ControleLocalizacao = L.Control.extend({
 
         L.DomEvent.on(botao, 'click', function(e) {
             e.preventDefault(); 
-            pegarLocalizacao(); 
+            centralizarNoUsuario();; 
         });
 
         return container;
@@ -728,18 +778,18 @@ window.mudarAndar = function(idAndar, elementoBotao) {
     }
 };
 
-// // pegar coord quando clica
-// map.on('click', function(e) {
+// pegar coord quando clica
+map.on('click', function(e) {
 
-//     const y = Math.round(e.latlng.lat);
-//     const x = Math.round(e.latlng.lng);
-//     const coordenada = `[${y}, ${x}]`;
+    const y = Math.round(e.latlng.lat);
+    const x = Math.round(e.latlng.lng);
+    const coordenada = `[${y}, ${x}]`;
 
-//     L.popup()
-//         .setLatLng(e.latlng)
-//         .setContent(`<b>${coordenada}</b>`)
-//         .openOn(map);
-// });
+    L.popup()
+        .setLatLng(e.latlng)
+        .setContent(`<b>${coordenada}</b>`)
+        .openOn(map);
+});
 
 
 
@@ -749,3 +799,4 @@ window.mudarAndar = function(idAndar, elementoBotao) {
 // colocar localizacao em tempo real
 // ajeitar categorias de filtro
 // botar link das salas
+// quando sai da tela o pino some
