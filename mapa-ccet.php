@@ -89,6 +89,20 @@ include 'head.php';
             <button class="btn-andar" onclick="mudarAndar('1', this)">1º Andar</button>
             <button class="btn-andar ativo" onclick="mudarAndar('terreo', this)" id="btn-terreo">Térreo</button>
         </div>
+
+        <select id="select-bloco" class="seletor-blocos" onchange="filtrarBloco(this.value)">
+            <option value="todos">Todos</option>
+            <option value="1">Bloco 1</option>
+            <option value="2">Bloco 2</option>
+            <option value="3">Bloco 3</option>
+            <option value="4">Bloco 4</option>
+            <option value="5">Bloco 5</option>
+            <option value="6">Bloco 6</option>
+            <option value="7">Bloco 7</option>
+            <option value="8">Bloco 8</option>
+            <option value="9">Bloco 9</option>
+            <option value="10">Bloco 10</option>
+        </select>
     </div>
 
     <?php include 'footer.php'; ?>

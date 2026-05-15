@@ -139,7 +139,7 @@ const iconeOutros = L.divIcon({
 
 // locais
 const locaisCCET = [
-    // { id: '', bloco: '', sala: '', nome: '', andar: '2', categoria: '', imagem: '', descricao: '', coordenadas: [, ] },
+    // { id: '', bloco: '6', sala: '', nome: '', andar: 'terreo', categoria: '', imagem: '', descricao: '', coordenadas: [, ] },
     // TÉRREO
     { id: 'escada1', bloco: '1', sala: '', nome: 'Escada', andar: 'terreo', categoria: 'escada', imagem: '', descricao: '', coordenadas: [479, 1151] },
     { id: 'auditorio1', bloco: '1', sala: '', nome: 'Auditório 1', andar: 'terreo', categoria: 'auditorio', imagem: '', descricao: '', coordenadas: [607, 1324] },
@@ -190,6 +190,9 @@ const locaisCCET = [
     { id: 'escada4', bloco: '6', sala: '', nome: 'Escada', andar: 'terreo', categoria: 'escada', imagem: '', descricao: '', coordenadas: [1030, 1473] },
     { id: 'banheiro2', bloco: '6', sala: '', nome: 'Banheiro Feminino', andar: 'terreo', categoria: 'wc-f', imagem: '', descricao: '', coordenadas: [1030, 1356] },
     { id: 'auditorio2', bloco: '6', sala: '', nome: 'Auditório 2', andar: 'terreo', categoria: 'auditorio', imagem: '', descricao: '', coordenadas: [1140, 1777] },
+    { id: '32.1', bloco: '6', sala: '', nome: 'Grupo de Pesquisa - Mídias no Ensino de Ciências: Pesquisa e Produção', andar: 'terreo', categoria: 'laboratorio', imagem: '', descricao: '', coordenadas: [1092, 1699] },
+    { id: '32.2', bloco: '6', sala: '', nome: 'Laboratório e Oficina Maker', andar: 'terreo', categoria: 'laboratorio', imagem: '', descricao: '', coordenadas: [1188, 1669] },
+    { id: '32.3', bloco: '6', sala: '', nome: 'LIDI - Laboratório de Inclusão Digital', andar: 'terreo', categoria: 'laboratorio', imagem: '', descricao: '', coordenadas: [1240, 1721] },
     { id: 'bebedouro1', bloco: '6', sala: '', nome: 'Bebedouro', andar: 'terreo', categoria: 'bebedouro', imagem: '', descricao: '', coordenadas: [950, 1398] },
 
     { id: '33', bloco: '7', sala: '101', nome: 'Sala', andar: 'terreo', categoria: 'sala', imagem: '', descricao: '', coordenadas: [2012, 1922] },
@@ -233,12 +236,12 @@ const locaisCCET = [
     { id: '58', bloco: '1', sala: '199', nome: 'Sala', andar: '1', categoria: 'sala', imagem: '', descricao: '', coordenadas: [888, 991] },
     { id: '59', bloco: '1', sala: '200', nome: 'Sala', andar: '1', categoria: 'sala', imagem: '', descricao: '', coordenadas: [808, 991] },
     { id: '60', bloco: '1', sala: '201', nome: 'VIP Lab (Laboratório de Visão e Processamento de Imagens)', andar: '1', categoria: 'laboratorio', imagem: '', descricao: '', coordenadas: [721, 991] },
-    { id: '61', bloco: '1', sala: '202', nome: 'Sala (Auditório DEINF)', andar: '1', categoria: 'sala', imagem: '', descricao: '', coordenadas: [622, 991] },
+    { id: '61', bloco: '1', sala: '202', nome: 'Sala (Auditório DEINF / COCOM)', andar: '1', categoria: 'sala', imagem: '', descricao: '', coordenadas: [622, 991] },
     { id: '62', bloco: '1', sala: '', nome: 'LACMOR (Laboratório de Métodos de Cognição Artifical para Otimização e Robótica)', andar: '1', categoria: 'laboratorio', imagem: '', descricao: '', coordenadas: [534, 991] },
     { id: '63', bloco: '1', sala: '203', nome: 'Telemídia (Laboratório de Sistemas Multimídia) / MODAL (Laboratório de Modelagem Matemática e Algoritmos)', andar: '1', categoria: 'laboratorio', imagem: '', descricao: '', coordenadas: [465, 991] },
     { id: '64', bloco: '1', sala: '204', nome: 'LINT² (Laboratório de Inteligência Interativa)', andar: '1', categoria: 'laboratorio', imagem: '', descricao: '', coordenadas: [406, 991] },
     { id: '65', bloco: '1', sala: '', nome: 'DEINF (Departamento de Informática)', andar: '1', categoria: 'coord', imagem: '', descricao: '', coordenadas: [308, 991] },
-    { id: 'escada7', bloco: '4', sala: '', nome: 'Escada', andar: '1', categoria: 'escada', imagem: '', descricao: '', coordenadas: [477, 1150] },
+    { id: 'escada7', bloco: '1', sala: '', nome: 'Escada', andar: '1', categoria: 'escada', imagem: '', descricao: '', coordenadas: [477, 1150] },
 
     { id: '66', bloco: '2', sala: '', nome: 'Coordenação do Curso de Matemática (Bacharelado)', andar: '1', categoria: 'coord', imagem: '', descricao: '', coordenadas: [1085, 1027] },
     { id: '67', bloco: '2', sala: '', nome: 'Coordenação do Curso de Química (Bacharelado)', andar: '1', categoria: 'coord', imagem: '', descricao: '', coordenadas: [1085, 849] },
@@ -287,6 +290,7 @@ const locaisCCET = [
     { id: '102', bloco: '6', sala: '214', nome: 'Sala', andar: '1', categoria: 'outros', imagem: '', descricao: '', coordenadas: [869, 1265] },
     { id: '103', bloco: '6', sala: '215', nome: 'Sala de Professor', andar: '1', categoria: 'prof', imagem: '', descricao: 'Prof. Portela, Profa. Inêz C. Dantas, Prof. Adauto de S. Lima Neto, Prof. Samyr Béliche Vale', coordenadas: [869, 1225] },
     { id: '104', bloco: '6', sala: '216', nome: 'Coordenação e Secretaria do Mestrado em Design', andar: '1', categoria: 'coord', imagem: '', descricao: '', coordenadas: [869, 1177] },
+    { id: '104.1', bloco: '6', sala: '218', nome: 'PROFMAT - Coordenação', andar: '1', categoria: 'coord', imagem: '', descricao: '', coordenadas: [1030, 1360] },
     { id: 'escada10', bloco: '6', sala: '', nome: 'Escada', andar: '1', categoria: 'escada', imagem: '', descricao: '', coordenadas: [1029, 1479] },
     { id: 'bebedouro4', bloco: '6', sala: '', nome: 'Bebedouro', andar: '1', categoria: 'bebedouro', imagem: '', descricao: '', coordenadas: [980, 1362] },
 
@@ -460,6 +464,7 @@ map.addControl(new ControleCentralizar());
 const marcadoresLeaflet = [];
 let andarAtual = 'terreo';
 let categoriaAtual = 'todos';
+let blocoAtual = 'todos';
 
 function removerAcentos(texto) {
     return texto.normalize('NFD').replace(/[\u0300-\u036f]/g, "");
@@ -487,6 +492,15 @@ function criarHTMLPopup(local) {
     else if (local.descricao) {
         html += `<p class="popup-subtitulo">${local.descricao}</p>`;
     }
+
+    html += `
+    <button class="btn-partilha" onclick="copiarLink('${local.id}', this)">
+        <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+        </svg>
+        Copiar Link do Local
+    </button>
+    `;
 
     html += '</div></div>';
     return html;
@@ -585,11 +599,12 @@ function executarBusca() {
             }
 
             textoParaBusca = removerAcentos(textoParaBusca.toLowerCase());
+
             const passaTexto = textoParaBusca.includes(textoDigitado);
-
             const passaCategoria = (categoriaAtual === 'todos' || item.dados.categoria === categoriaAtual);
+            const passaBloco = (blocoAtual === 'todos' || item.dados.bloco === blocoAtual);
 
-            if (passaTexto && passaCategoria) {
+            if (passaTexto && passaCategoria && passaBloco) {
                 grupoDoAndar.addLayer(item.instanciaMarker);
             } else {
                 grupoDoAndar.removeLayer(item.instanciaMarker);
@@ -606,6 +621,11 @@ window.filtrarCategoria = function(categoriaDesejada, elementoBotao) {
 
     executarBusca();
 };
+
+window.filtrarBloco = function(blocoDesejado) {
+    blocoAtual = blocoDesejado;
+    executarBusca();
+}
 
 document.getElementById('input-busca').addEventListener('input', executarBusca);
 
@@ -627,25 +647,75 @@ window.mudarAndar = function(idAndar, elementoBotao) {
     }
 };
 
-// pegar coord quando clica
-map.on('click', function(e) {
+function verificarLink(){
+    const params = new URLSearchParams(window.location.search);
+    const idPartilhado = params.get('id');
 
-    const y = Math.round(e.latlng.lat);
-    const x = Math.round(e.latlng.lng);
-    const coordenada = `[${y}, ${x}]`;
+    if (idPartilhado) {
+        const localEncontrado = marcadoresLeaflet.find(item => item.dados.id === idPartilhado);
 
-    L.popup()
-        .setLatLng(e.latlng)
-        .setContent(`<b>${coordenada}</b>`)
-        .openOn(map);
-});
+        if (localEncontrado){
+            const botaoAndar = Array.from(document.querySelectorAll('.btn-andar')).find(btn => btn.getAttribute('onclick').includes(`'${localEncontrado.dados.andar}'`));
+
+            mudarAndar(localEncontrado.dados.andar, botaoAndar);
+
+            setTimeout(() => {
+                map.flyTo(localEncontrado.dados.coordenadas, 1, {
+                    animate: true,
+                    duration: 1.5
+                });
+                localEncontrado.instanciaMarker.openPopup();
+            }, 500);
+        }
+    }
+}
+
+verificarLink();
+
+window.copiarLink = function(id, botaoElemento) {
+    const url = window.location.origin + window.location.pathname + '?id=' + id;
+
+    navigator.clipboard.writeText(url).then(() => {
+        const conteudoOriginal = botaoElemento.innerHTML;
+
+        botaoElemento.innerHTML = `
+            <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+            Link copiado!
+        `;
+
+        botaoElemento.classList.add('btn-sucesso');
+
+        setTimeout(() => {
+            botaoElemento.innerHTML = conteudoOriginal;
+            botaoElemento.classList.remove('btn-sucesso');
+        }, 2000);
+    }).catch(err => {
+        console.error("Erro ao copiar: ", err);
+        botaoElemento.innerHTML = "Erro ao copiar";
+    });
+ };
+
+// // pegar coord quando clica
+// map.on('click', function(e) {
+
+//     const y = Math.round(e.latlng.lat);
+//     const x = Math.round(e.latlng.lng);
+//     const coordenada = `[${y}, ${x}]`;
+
+//     L.popup()
+//         .setLatLng(e.latlng)
+//         .setContent(`<b>${coordenada}</b>`)
+//         .openOn(map);
+// });
 
 
 
 // 1. configurar categoria outros
 // colocar filtro de bloco
 // ver sobre imagem - enquadramento
-// colocar localizacao em tempo real
 // ajeitar categorias de filtro
-// botar link das salas
+// botar forma de analise de uso
+// loading
 
