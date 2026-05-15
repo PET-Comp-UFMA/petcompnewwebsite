@@ -287,7 +287,6 @@ const locaisCCET = [
     { id: '102', bloco: '6', sala: '214', nome: 'Sala', andar: '1', categoria: 'outros', imagem: '', descricao: '', coordenadas: [869, 1265] },
     { id: '103', bloco: '6', sala: '215', nome: 'Sala de Professor', andar: '1', categoria: 'prof', imagem: '', descricao: 'Prof. Portela, Profa. Inêz C. Dantas, Prof. Adauto de S. Lima Neto, Prof. Samyr Béliche Vale', coordenadas: [869, 1225] },
     { id: '104', bloco: '6', sala: '216', nome: 'Coordenação e Secretaria do Mestrado em Design', andar: '1', categoria: 'coord', imagem: '', descricao: '', coordenadas: [869, 1177] },
-    { id: 'banheiro6', bloco: '6', sala: '', nome: 'Banheiro Feminino', andar: '1', categoria: 'wc-f', imagem: '', descricao: '', coordenadas: [1030, 1360] },
     { id: 'escada10', bloco: '6', sala: '', nome: 'Escada', andar: '1', categoria: 'escada', imagem: '', descricao: '', coordenadas: [1029, 1479] },
     { id: 'bebedouro4', bloco: '6', sala: '', nome: 'Bebedouro', andar: '1', categoria: 'bebedouro', imagem: '', descricao: '', coordenadas: [980, 1362] },
 
@@ -568,156 +567,6 @@ marcadoresTerreo.addTo(map);
 
 inicializarMarcadores();
 
-let marcadorUsuario = null;
-let ultimaPosicaoUsuario = null;
-let usuarioMuitoLonge = false;
-let centralizouPrimeiraVez = false;
-
-function calcularDistanciaEmMetros(lat1, lon1, lat2, lon2) {
-    const raioTerra = 6371e3; // Metros
-    const radianoLat1 = lat1 * Math.PI / 180;
-    const radianoLat2 = lat2 * Math.PI / 180;
-    const diferencaLat = (lat2 - lat1) * Math.PI / 180;
-    const diferencaLon = (lon2 - lon1) * Math.PI / 180;
-
-    const a = Math.sin(diferencaLat / 2) * Math.sin(diferencaLat / 2) +
-              Math.cos(radianoLat1) * Math.cos(radianoLat2) *
-              Math.sin(diferencaLon / 2) * Math.sin(diferencaLon / 2);
-    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-
-    return raioTerra * c;
-}
-
-function iniciarRastreioContinuo() {
-    if (!navigator.geolocation){
-        alert("O seu navegador não suporta geolocalização");
-        return;
-    }
-
-    navigator.geolocation.watchPosition(
-        function(posicao){
-            if (posicao.coords.accuracy > 200) {
-                console.log("Sinal impreciso (" + posicao.coords.accuracy + "m). Ignorando...");
-                return;
-            }
-
-            const latReal = posicao.coords.latitude;
-            const lngReal = posicao.coords.longitude;
-
-            const centroDoCCET = {lat: -2.558516, lng: -44.308165};
-            const limiteEmMetros = 500;
-
-            const distancia = calcularDistanciaEmMetros(latReal, lngReal, centroDoCCET.lat, centroDoCCET.lng);
-
-            if (distancia > limiteEmMetros){
-                usuarioMuitoLonge = true;
-
-                if(marcadorUsuario){
-                    map.removeLayer(marcadorUsuario);
-                    marcadorUsuario = null;
-                }
-                return;
-            }
-
-            usuarioMuitoLonge = false;
-
-            // calibracao
-            const refA_GPS = {lat: -2.557843, lng: -44.307873};
-            const refA_PIXEL = {y: 295, x: 1016};
-
-            const refB_GPS = {lat: -2.558685, lng: -44.308688};
-            const refB_PIXEL = {y: 1810, x: 2462};
-
-            // matematica
-            const escalaY = (refB_PIXEL.y - refA_PIXEL.y ) / (refB_GPS.lat - refA_GPS.lat);
-            const escalaX = (refB_PIXEL.x - refA_PIXEL.x ) / (refB_GPS.lng - refA_GPS.lng);
-
-            const yPixel = refA_PIXEL.y + ((latReal - refA_GPS.lat) * escalaY);
-            const xPixel = refA_PIXEL.x + ((lngReal - refA_GPS.lng) * escalaX);
-
-            ultimaPosicaoUsuario = [yPixel, xPixel];
-
-            if(marcadorUsuario) {
-                map.removeLayer(marcadorUsuario);
-            }
-            
-            if(!marcadorUsuario){
-                marcadorUsuario = L.circleMarker(ultimaPosicaoUsuario, {
-                    radius: 8,
-                    fillColor: '#0066FF',
-                    color: "#FFFFFF",
-                    weight: 2,
-                    opacity: 1,
-                    fillOpacity: 1,
-                    className: 'pino-usuario-pulsante'
-                }).addTo(map);
-            }
-            else{
-                marcadorUsuario.setLatLng(ultimaPosicaoUsuario);
-            }
-
-            if(!centralizouPrimeiraVez){
-                map.setView(ultimaPosicaoUsuario, 0);
-                centralizouPrimeiraVez = true;
-            }
-        },
-        function(erro){
-            console.warn("Rastreio em segundo plano falhou ou permissão negada:", erro);
-        },
-        {enableHighAccuracy: true, timeout: 15000, maximumAge: 0}
-    );
-}
-
-function centralizarNoUsuario() {
-    if(usuarioMuitoLonge){
-        alert("Você parece estar muito longe");
-        return;
-    }
-    if (ultimaPosicaoUsuario) {
-        map.flyTo(ultimaPosicaoUsuario, 0, {
-            animate: true,
-            duration: 0.5
-        });
-        
-        if (marcadorUsuario) {
-            marcadorUsuario.bindPopup("<b>Você está aqui!</b>").openPopup();
-        }
-    } else {
-        alert("Buscando sinal do GPS... Por favor, certifique-se de que a permissão de localização está ativa.");
-
-        iniciarRastreioContinuo(); 
-    }
-}
-
-iniciarRastreioContinuo();
-
-const ControleLocalizacao = L.Control.extend({
-    options: {
-        position: 'topleft' 
-    },
-
-    onAdd: function (map) {
-        const container = L.DomUtil.create('div', 'leaflet-bar leaflet-control');
-        const botao = L.DomUtil.create('a', 'botao-localizacao', container);
-        
-        botao.href = '#';
-        botao.title = 'Minha Localização';
-        
-        botao.innerHTML = `<svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 11 22 2 13 21 11 13 3 11"></polygon></svg>`;
-
-        L.DomEvent.disableClickPropagation(botao);
-
-        L.DomEvent.on(botao, 'click', function(e) {
-            e.preventDefault(); 
-            centralizarNoUsuario();; 
-        });
-
-        return container;
-    }
-});
-
-map.addControl(new ControleLocalizacao());
-
 function executarBusca() {
     const inputElement = document.getElementById('input-busca');
     if (!inputElement) return;
@@ -799,4 +648,4 @@ map.on('click', function(e) {
 // colocar localizacao em tempo real
 // ajeitar categorias de filtro
 // botar link das salas
-// quando sai da tela o pino some
+

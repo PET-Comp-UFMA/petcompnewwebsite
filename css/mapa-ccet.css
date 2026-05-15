@@ -304,24 +304,6 @@ body {
     height: 14px !important;
 }
 
-.botao-localizacao {
-    display: flex !important;
-    align-items: center;
-    justify-content: center;
-}
-
-.pino-usuario-pulsante {
-    border-radius: 50%;
-    border: 3px solid white;
-    box-shadow: 0 0 0 0 rgba(0, 102, 255, 0.7);
-    animation: pulsarGPS 1.5s infinite cubic-bezier(0.66, 0, 0, 1);
-}
-
-@keyframes pulsarGPS {
-    to {
-        box-shadow: 0 0 0 20px rgba(0, 102, 255, 0);
-    }
-}
 
 /* Animação de carregamento mais lenta */
 @keyframes fadeIn {
