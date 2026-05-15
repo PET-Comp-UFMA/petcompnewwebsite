@@ -11,14 +11,15 @@
             <div class="dropdown-content">
                 <a href="sobre" class="nav-link dropdown-link">Sobre nós</a>
                 <a href="integrantes" class="nav-link dropdown-link">Integrantes</a>
+                <a href="registros" class="nav-link dropdown-link">Registros</a>
             </div>
         </div>
         <div class="dropdown dropdown_projetos">
-            <button class="dropbtn">Projetos <span class="material-icons">arrow_drop_down</span></button>
+            <button class="dropbtn">Projetos PETComp<span class="material-icons">arrow_drop_down</span></button>
             <div class="dropdown-content">
-                <a href="monitoria" class="nav-link dropdown-link">Monitoria</a>
+                <a href="mapa-ccet" class="nav-link dropdown-link">Mapa-CCET</a>
                 <a href="desenvolvimento" class="nav-link dropdown-link">Fáb. de software </a>
-                <a href="minicurso" class="nav-link dropdown-link">Minicursos e oficinas</a>
+                <a href="podcast" class="nav-link dropdown-link">PodCast</a>
             </div>
         </div>
         <div class="dropdown">
@@ -32,18 +33,11 @@
         <div>
             <a href="noticias" class="nav-link">Notícias</a>
         </div>
-        <div class="dropdown dropdown_produtos">
-            <button class="dropbtn">Produtos <span class="material-icons">arrow_drop_down</span></button>
-            <div class="dropdown-content">
-                <a href="repositorio-educacional" class="nav-link dropdown-link">Repositório Educacional</a>
-                <a href="podcast" class="nav-link dropdown-link">PodCast</a>
-            </div>
+        <div >
+                <a href="repositorio-educacional" class="nav-link">REAPet</a>  
         </div>
         <div>
             <a href="eventos" class="nav-link">Eventos</a>
-        </div>
-        <div>
-            <a href="registros" class="nav-link">Registros</a>
         </div>
     </nav>
     <img src="./assets/svg/menu-white.svg" alt="" class="open-btn" onclick="openMenu()">
