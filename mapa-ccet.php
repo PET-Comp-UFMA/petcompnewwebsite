@@ -47,29 +47,33 @@ include 'head.php';
                 <button class="btn-filtro ativo" onclick="filtrarCategoria('todos', this)">
                     <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none">
                         <polyline points="20 6 9 17 4 12"></polyline>
-                    </svg> Todos
-                </button>
-
-                <button class="btn-filtro" onclick="filtrarCategoria('laboratorio', this)">
-                    <svg width="14px" height="14px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" version="1.1" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5">
-                        <path d="m4.75 1.75h6.5m-6.5 8h6.5m-5.5-7.5v4.5l-4 7.5h12.5l-4-7.5v-4.5" />
-                    </svg>Laboratórios
+                    </svg>
+                    Todos
                 </button>
 
                 <button class="btn-filtro" onclick="filtrarCategoria('sala', this)">
                     <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none">
                         <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
                         <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
-                    </svg> Salas
+                    </svg>
+                    Salas
                 </button>
 
-                <button class="btn-filtro" onclick="filtrarCategoria('auditorio', this)">
+                <button class="btn-filtro" onclick="filtrarCategoria('laboratorio', this)">
+                    <svg viewBox="0 0 16 16" width="14" height="14" stroke="currentColor" stroke-width="1.5" fill="none">
+                        <path d="m4.75 1.75h6.5m-6.5 8h6.5m-5.5-7.5v4.5l-4 7.5h12.5l-4-7.5v-4.5" />
+                    </svg>
+                    Laboratórios
+                </button>
+
+                <button class="btn-filtro" onclick="filtrarCategoria(['coord', 'prof'], this)">
                     <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none">
                         <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
                         <circle cx="9" cy="7" r="4"></circle>
                         <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
                         <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                    </svg> Auditórios
+                    </svg>
+                    Docente
                 </button>
 
                 <button class="btn-filtro" onclick="filtrarCategoria('outros', this)">

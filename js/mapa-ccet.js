@@ -601,8 +601,22 @@ function executarBusca() {
             textoParaBusca = removerAcentos(textoParaBusca.toLowerCase());
 
             const passaTexto = textoParaBusca.includes(textoDigitado);
-            const passaCategoria = (categoriaAtual === 'todos' || item.dados.categoria === categoriaAtual);
             const passaBloco = (blocoAtual === 'todos' || item.dados.bloco === blocoAtual);
+            let passaCategoria = false;
+            const categoriasPrincipais =['sala', 'laboratorio', 'coord', 'prof'];
+
+            if (categoriaAtual === 'todos'){
+                passaCategoria = true;
+            }
+            else if (categoriaAtual === 'outros'){
+                passaCategoria = !categoriasPrincipais.includes(item.dados.categoria);
+            }
+            else if (Array.isArray(categoriaAtual)) {
+                passaCategoria = categoriaAtual.includes(item.dados.categoria);
+            }
+            else {
+                passaCategoria = item.dados.categoria === categoriaAtual;
+            }
 
             if (passaTexto && passaCategoria && passaBloco) {
                 grupoDoAndar.addLayer(item.instanciaMarker);
@@ -713,7 +727,6 @@ window.copiarLink = function(id, botaoElemento) {
 
 
 // 1. configurar categoria outros
-// colocar filtro de bloco
 // ver sobre imagem - enquadramento
 // ajeitar categorias de filtro
 // botar forma de analise de uso
