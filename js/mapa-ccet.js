@@ -726,9 +726,5 @@ window.copiarLink = function(id, botaoElemento) {
 
 
 
-// 1. configurar categoria outros
 // ver sobre imagem - enquadramento
-// ajeitar categorias de filtro
-// botar forma de analise de uso
 // loading
-

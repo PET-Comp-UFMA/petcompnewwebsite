@@ -24,7 +24,7 @@ include 'head.php';
 
     <div class="container-body">
         <p>
-            Esta página oferece uma solução intuitiva e tecnológica para a navegação no Centro de Ciências Exatas e Tecnológicas (CCET) da UFMA, apresentando um mapa interativo detalhado do prédio. Desenvolvida pelos membros do PETComp, a plataforma permite que alunos, professores e visitantes localizem rapidamente salas de aula, auditórios e laboratórios, eliminando a desorientação comum nos corredores do centro. Com uma interface funcional e pensada na experiência do usuário, a ferramenta se consolida como um guia essencial para a comunidade acadêmica, facilitando o fluxo e o acesso às dependências do CCET.
+            Esta página oferece uma solução intuitiva e tecnológica para a navegação no Centro de Ciências Exatas e Tecnológicas (CCET) da UFMA, apresentando um mapa interativo detalhado do prédio. Desenvolvida pelos membros do PETComp, a plataforma permite que alunos, professores e visitantes localizem rapidamente salas de aula, auditórios, laboratórios e mais, eliminando a desorientação comum nos corredores do centro. Com uma interface funcional e pensada na experiência do usuário, a ferramenta se consolida como um guia essencial para a comunidade acadêmica, facilitando o fluxo e o acesso às dependências do CCET.
         </p>
     </div>
 
@@ -107,6 +107,18 @@ include 'head.php';
             <option value="9">Bloco 9</option>
             <option value="10">Bloco 10</option>
         </select>
+    </div>
+
+    <div class="container-body">
+        <p> O Mapa Digital do CCET é uma iniciativa idealizada e desenvolvida pelos membros do PETComp. O processo de mapeamento de todo o prédio foi realizado de forma manual, com a equipe percorrendo todos os corredores, andares e blocos do centro para catalogar a localização e informações de cada espaço. Devido ao tamanho do CCET e a mudança constante de salas, algumas informações podem apresentar erros ou estar desatualizadas. Logo, destacamos a importância da colaboração entre a comunidade acadêmica para manter o mapa sempre atualizado e o deixa-lo cada vez melhor.</br></br><strong>Você pode:</strong></p>
+        <ul>
+            <li>Reportar salas com informações erradas, como: numeração, bloco, nome ou descrição.</li>
+            <li>Adicionar ou atualizar a foto/logo do seu laboratório, diretório, etc.</li>
+            <li>Incluir uma descrição personalizada na sua sala, como: linhas de pesquisa, horários de atendimento, contatos, etc.</li>
+            <li>E sugerir novas funcionalidades, melhorias ou apontar bugs na plataforma.</li>
+        </ul>
+        <p>Para isso, preencha o nosso forms (<a href="https://forms.gle/Hec8p5DiC5p7FsY48" target="_blank" style="color: #016BE5; text-decoration: none; font-weight: bold;">https://forms.gle/Hec8p5DiC5p7FsY48</a>) ou entre em contato conosco pelo nosso e-mail (<a href="mailto:petcomputacao@ufma.br" style="color: #016BE5; text-decoration: none; font-weight: bold;">petcomputacao@ufma.br</a>).</p>
+        </p>
     </div>
 
     <?php include 'footer.php'; ?>

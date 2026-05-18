@@ -13,9 +13,14 @@ html, body {
     text-decoration: none;
 }
 
-.container-body p {
+.container-body p, .container-body li {
     line-height: 1.6;
     text-align: justify;
+}
+
+.container-body li {
+    text-indent: 0 !important;
+    padding-left: 5px; 
 }
 
 h4 {
@@ -38,7 +43,6 @@ body {
     width: 95%; 
     height: 95%; 
     margin: auto;
-    margin-bottom: 50px;
 }
 
 #map { 
@@ -394,9 +398,9 @@ body {
         padding: 50px 60px;
     }
 
-    .container-body p {
+    .container-body p, .container-body li{
         font-size: 20px;
-        font-weight: medium;
+        font-weight: 500;
     }
 }
 
@@ -425,7 +429,7 @@ body {
         padding: 20px 50px;
     }
 
-    .container-body p {
+    .container-body p, .container-body li {
         font-size: 14px;
         text-indent: 2em;
     }
@@ -518,7 +522,7 @@ body {
         padding: 20px 40px;
     }
 
-    .container-body p {
+    .container-body p, .container-body li {
         font-size: 10px;
         text-indent: 2em;
     }
