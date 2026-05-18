@@ -72,7 +72,7 @@ include "head.php";
             <div class="noticias-container">
                 <!-- Bloco noticias -->
                 <div class="image-container">
-                    <a class="noticia-link" href="noticias/38" target="_blank">
+                    <a class="noticia-link" href="noticias/57" target="_blank">
                         <img class="img-notice" src="assets/images/noticias/notice5.png" alt="REAPet">
                         <div class="grid-news-texts">
                             <span class="title" target="_blank">Produtos</span>
