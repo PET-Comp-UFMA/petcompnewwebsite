@@ -261,10 +261,6 @@ footer {
     .dropdown_projetos {
         padding: 0 8px;
     }
-
-    .dropdown_projetos .dropdown-content{
-        min-width: 200px;
-    }
     
     .dropdown_produtos {
         padding: 0 8px;
