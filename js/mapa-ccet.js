@@ -1,7 +1,24 @@
 const map = L.map('map', {
     crs: L.CRS.Simple,
     minZoom: -2,
-    maxZoom: 2
+    maxZoom: 2,
+
+    gestureHandling: true,
+    gestureHandlingOptions: {
+        text: {
+            touch: "Use dois dedos para mover o mapa",
+            scroll: "Use Ctrl + Scroll para ampliar o mapa",
+            scrollMac: "Use Command (⌘) + Scroll para ampliar o mapa"
+        },
+        duration: 1500
+    },
+
+    // fullscreenControl: true,
+    // fullscreenControlOptions: {
+    //     position: 'topleft', 
+    //     title: 'Expandir para tela cheia', 
+    //     titleCancel: 'Sair da tela cheia'
+    // }
 }); 
 
 const limitesDaImagem = [[0, 0], [2898, 2634]];
@@ -460,6 +477,7 @@ const ControleCentralizar = L.Control.extend({
 
 map.addControl(new ControleCentralizar());
 
+map.addControl(new L.Control.FullScreen());
 
 const marcadoresLeaflet = [];
 let andarAtual = 'terreo';
@@ -728,3 +746,7 @@ window.copiarLink = function(id, botaoElemento) {
 
 // ver sobre imagem - enquadramento
 // loading
+// colocar uma bolinha ao lado do botao de andar  com numero de correposndecias, quando nao tiver nenhuma correspondencia no andar atual mas tiver em outros
+// botar filtro de banheiro e bebedouro (botoes pequenos só icone)
+// não deixar sair da área do mapa
+// colocar fullscreen

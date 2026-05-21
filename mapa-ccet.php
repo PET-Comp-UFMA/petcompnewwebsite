@@ -3,6 +3,13 @@
 
 <head>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-gesture-handling/dist/leaflet-gesture-handling.min.css" type="text/css">
+    <script src="https://unpkg.com/leaflet-gesture-handling/dist/leaflet-gesture-handling.min.js"></script>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.fullscreen/dist/Control.FullScreen.css" />
+    <script src="https://unpkg.com/leaflet.fullscreen/dist/Control.FullScreen.umd.js"></script>
 </head>
 
 <?php
@@ -112,7 +119,7 @@ include 'head.php';
     <div class="container-body">
         <p> O Mapa Digital do CCET é uma iniciativa idealizada e desenvolvida pelos membros do PETComp. O processo de mapeamento de todo o prédio foi realizado de forma manual, com a equipe percorrendo todos os corredores, andares e blocos do centro para catalogar a localização e informações de cada espaço. Devido ao tamanho do CCET e a mudança constante de salas, algumas informações podem apresentar erros ou estar desatualizadas. Logo, destacamos a importância da colaboração entre a comunidade acadêmica para manter o mapa sempre atualizado e o deixa-lo cada vez melhor.</br></br><strong>Você pode:</strong></p>
         <ul>
-            <li>Reportar salas com informações erradas, como: numeração, bloco, nome ou descrição.</li>
+            <li>Reportar salas com informações erradas/incompletas, como: numeração, bloco, nome ou descrição.</li>
             <li>Adicionar ou atualizar a foto/logo do seu laboratório, diretório, etc.</li>
             <li>Incluir uma descrição personalizada na sua sala, como: linhas de pesquisa, horários de atendimento, contatos, etc.</li>
             <li>E sugerir novas funcionalidades, melhorias ou apontar bugs na plataforma.</li>
@@ -122,10 +129,6 @@ include 'head.php';
     </div>
 
     <?php include 'footer.php'; ?>
-
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-
-    <script src="mapa-ccet.js"></script>
 
 </body>
 
