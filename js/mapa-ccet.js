@@ -1,7 +1,13 @@
+const limitesDaImagem = [[0, 0], [2898, 2634]];
+const limitesDeNavegacao = [[-1000, -1000], [3898, 3634]];
+
 const map = L.map('map', {
     crs: L.CRS.Simple,
     minZoom: -2,
     maxZoom: 2,
+
+    maxBounds: limitesDeNavegacao,
+    maxBoundsViscosity: 0.8,
 
     gestureHandling: true,
     gestureHandlingOptions: {
@@ -12,16 +18,7 @@ const map = L.map('map', {
         },
         duration: 1500
     },
-
-    // fullscreenControl: true,
-    // fullscreenControlOptions: {
-    //     position: 'topleft', 
-    //     title: 'Expandir para tela cheia', 
-    //     titleCancel: 'Sair da tela cheia'
-    // }
 }); 
-
-const limitesDaImagem = [[0, 0], [2898, 2634]];
 
 const marcadoresTerreo = L.layerGroup();
 const marcadoresAndar1 = L.layerGroup();
