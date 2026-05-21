@@ -472,8 +472,21 @@ const ControleCentralizar = L.Control.extend({
     }
 });
 
-map.addControl(new ControleCentralizar());
+const marcadoresBusca = L.featureGroup();
 
+const controleBordas = L.edgeMarker({
+    icon: L.divIcon({
+        className: 'pino-borda',
+        
+        html: '<svg viewBox="0 0 24 24" width="20" height="20" fill="none"><path d="M15 18l-6-6 6-6" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path></svg>',        
+        iconSize: [36, 36],
+        iconAnchor: [18, 18] 
+    }),
+    rotateIcons: true,
+    layerGroup: marcadoresBusca
+}).addTo(map);
+
+map.addControl(new ControleCentralizar());
 map.addControl(new L.Control.FullScreen());
 
 const marcadoresLeaflet = [];
@@ -602,6 +615,8 @@ function executarBusca() {
     
     const textoDigitado = removerAcentos(inputElement.value.toLowerCase());
 
+    marcadoresBusca.clearLayers();
+
     marcadoresLeaflet.forEach(item => {
 
         if (item.dados.andar === andarAtual) {
@@ -635,6 +650,10 @@ function executarBusca() {
 
             if (passaTexto && passaCategoria && passaBloco) {
                 grupoDoAndar.addLayer(item.instanciaMarker);
+
+                if(textoDigitado.length > 0) {
+                    marcadoresBusca.addLayer(item.instanciaMarker);
+                }
             } else {
                 grupoDoAndar.removeLayer(item.instanciaMarker);
             }
@@ -745,5 +764,4 @@ window.copiarLink = function(id, botaoElemento) {
 // loading
 // colocar uma bolinha ao lado do botao de andar  com numero de correposndecias, quando nao tiver nenhuma correspondencia no andar atual mas tiver em outros
 // botar filtro de banheiro e bebedouro (botoes pequenos só icone)
-// não deixar sair da área do mapa
-// colocar fullscreen
+// mais destaque na pesquisa
