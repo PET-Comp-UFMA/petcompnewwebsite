@@ -74,6 +74,10 @@ $routes = [
     ($root ? "$root/registros" : "registros") => function () {
         require("registros.php");
     },
+    ($root ? "$root/404" : "404") => function () {
+        http_response_code(404);
+        require("404.php");
+    },
     ($root ? "$root/noticias$param" : "noticias$param") => function ($id) {
         $_GET['id'] = $id;
         require("noticia.php");
@@ -98,7 +102,8 @@ function route($path, $routes)
     }
     // Se nenhuma rota corresponder
     http_response_code(404);
-    echo "Página não encontrada";
+    require("404.php");
+    exit;
 }
 
 $path = parse_url($_SERVER["REQUEST_URI"], PHP_URL_PATH); # extraindo url digitada

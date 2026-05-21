@@ -117,7 +117,14 @@ const iconeProfessor = L.divIcon({
 });
 const iconeRampa = L.divIcon({
     className: 'pino-customizado pino-rampa',
-    html: '<svg width="24px" height="24px" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" stroke-width="3" stroke="#ffffff" fill="none"><path d="M49,50.21,40,38.16a.63.63,0,0,0-.51-.25H27.13a.64.64,0,0,1-.63-.57L24.91,22.83" stroke-linecap="round"/><line x1="41.03" y1="28.46" x2="25.53" y2="28.46" stroke-linecap="round"/><path d="M42.64,50.21a15.43,15.43,0,1,1-22-21.33" stroke-linecap="round"/><circle cx="23.51" cy="12.64" r="4.85" stroke-linecap="round"/></svg>',
+    html: '<svg width="24px" height="24px" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" stroke-width="4" stroke="#ffffff" fill="none"><path d="M49,50.21,40,38.16a.63.63,0,0,0-.51-.25H27.13a.64.64,0,0,1-.63-.57L24.91,22.83" stroke-linecap="round"/><line x1="41.03" y1="28.46" x2="25.53" y2="28.46" stroke-linecap="round"/><path d="M42.64,50.21a15.43,15.43,0,1,1-22-21.33" stroke-linecap="round"/><circle cx="23.51" cy="12.64" r="4.85" stroke-linecap="round"/></svg>',
+    iconSize: [32, 32],
+    iconAnchor: [16, 16],
+    popupAnchor: [0, -16]
+});
+const iconeBebedouro = L.divIcon({
+    className: 'pino-customizado pino-bebedouro',
+    html: '<svg width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 18C11.5597 18 11.1318 17.8547 10.7825 17.5867C10.4332 17.3187 10.1821 16.9429 10.0681 16.5176" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/><path d="M10.4243 4.67868C11.0553 3.60606 11.3707 3.06975 11.8223 2.98822C11.9398 2.967 12.0602 2.967 12.1777 2.98822C12.6293 3.06975 12.9447 3.60606 13.5757 4.67868L15.244 7.51482C16.41 9.49693 17.3197 11.619 17.9515 13.8301V13.8301C18.9781 17.4232 16.2801 21 12.5432 21H11.4568C7.71989 21 5.02193 17.4232 6.04854 13.8301V13.8301C6.6803 11.619 7.59004 9.49693 8.75599 7.51482L10.4243 4.67868Z" stroke="#ffffff" stroke-width="2"/></svg>',
     iconSize: [32, 32],
     iconAnchor: [16, 16],
     popupAnchor: [0, -16]
@@ -128,11 +135,11 @@ const iconeOutros = L.divIcon({
     iconSize: [32, 32],
     iconAnchor: [16, 16],
     popupAnchor: [0, -16]
-});
+});     
 
 // locais
 const locaisCCET = [
-    // { id: '', bloco: '', sala: '', nome: '', andar: '2', categoria: '', imagem: '', descricao: '', coordenadas: [, ] },
+    // { id: '', bloco: '6', sala: '', nome: '', andar: 'terreo', categoria: '', imagem: '', descricao: '', coordenadas: [, ] },
     // TÉRREO
     { id: 'escada1', bloco: '1', sala: '', nome: 'Escada', andar: 'terreo', categoria: 'escada', imagem: '', descricao: '', coordenadas: [479, 1151] },
     { id: 'auditorio1', bloco: '1', sala: '', nome: 'Auditório 1', andar: 'terreo', categoria: 'auditorio', imagem: '', descricao: '', coordenadas: [607, 1324] },
@@ -183,6 +190,10 @@ const locaisCCET = [
     { id: 'escada4', bloco: '6', sala: '', nome: 'Escada', andar: 'terreo', categoria: 'escada', imagem: '', descricao: '', coordenadas: [1030, 1473] },
     { id: 'banheiro2', bloco: '6', sala: '', nome: 'Banheiro Feminino', andar: 'terreo', categoria: 'wc-f', imagem: '', descricao: '', coordenadas: [1030, 1356] },
     { id: 'auditorio2', bloco: '6', sala: '', nome: 'Auditório 2', andar: 'terreo', categoria: 'auditorio', imagem: '', descricao: '', coordenadas: [1140, 1777] },
+    { id: '32.1', bloco: '6', sala: '', nome: 'Grupo de Pesquisa - Mídias no Ensino de Ciências: Pesquisa e Produção', andar: 'terreo', categoria: 'laboratorio', imagem: '', descricao: '', coordenadas: [1092, 1699] },
+    { id: '32.2', bloco: '6', sala: '', nome: 'Laboratório e Oficina Maker', andar: 'terreo', categoria: 'laboratorio', imagem: '', descricao: '', coordenadas: [1188, 1669] },
+    { id: '32.3', bloco: '6', sala: '', nome: 'LIDI - Laboratório de Inclusão Digital', andar: 'terreo', categoria: 'laboratorio', imagem: '', descricao: '', coordenadas: [1240, 1721] },
+    { id: 'bebedouro1', bloco: '6', sala: '', nome: 'Bebedouro', andar: 'terreo', categoria: 'bebedouro', imagem: '', descricao: '', coordenadas: [950, 1398] },
 
     { id: '33', bloco: '7', sala: '101', nome: 'Sala', andar: 'terreo', categoria: 'sala', imagem: '', descricao: '', coordenadas: [2012, 1922] },
     { id: '34', bloco: '7', sala: '102', nome: 'Sala', andar: 'terreo', categoria: 'sala', imagem: '', descricao: '', coordenadas: [2012, 1777] },
@@ -194,16 +205,18 @@ const locaisCCET = [
     { id: '40', bloco: '7', sala: '108', nome: 'Sala', andar: 'terreo', categoria: 'sala', imagem: '', descricao: '', coordenadas: [2012, 1132] },
     { id: 'escada5', bloco: '7', sala: '', nome: 'Escada', andar: 'terreo', categoria: 'escada', imagem: '', descricao: '', coordenadas: [1862, 1773] },
     { id: 'banheiro3', bloco: '7', sala: '', nome: 'Banheiro Masculino', andar: 'terreo', categoria: 'wc-m', imagem: '', descricao: '', coordenadas: [1862, 1893] },
+    { id: 'bebedouro2', bloco: '7', sala: '', nome: 'Bebedouro', andar: 'terreo', categoria: 'bebedouro', imagem: '', descricao: '', coordenadas: [1943, 1855] },
     
-    { id: '41', bloco: '8', sala: '104/105', nome: 'NEPP (Núcleo de Ergonomia em Processos e Produtos)', andar: 'terreo', categoria: 'outros', imagem: '', descricao: '', coordenadas: [1610, 1942] },
+    { id: '41', bloco: '8', sala: '104/105', nome: 'NEPP (Núcleo de Ergonomia em Processos e Produtos)', andar: 'terreo', categoria: 'laboratorio', imagem: '', descricao: '', coordenadas: [1610, 1942] },
     { id: '42', bloco: '8', sala: '101', nome: 'LAB 2 - Ciência da Computação', andar: 'terreo', categoria: 'laboratorio', imagem: '', descricao: '', coordenadas: [1463, 1942] },
     { id: '43', bloco: '8', sala: '101', nome: 'LAB 1 - Ciência da Computação', andar: 'terreo', categoria: 'laboratorio', imagem: '', descricao: '', coordenadas: [1268, 1942] },
     { id: 'escada6', bloco: '8', sala: '', nome: 'Escada', andar: 'terreo', categoria: 'escada', imagem: '', descricao: '', coordenadas: [1260, 2092] },
     { id: 'banheiro4', bloco: '8', sala: '', nome: 'Banheiro Masculino', andar: 'terreo', categoria: 'wc-m', imagem: '', descricao: '', coordenadas: [1377, 2092] },
+    { id: 'bebedouro3', bloco: '8', sala: '', nome: 'Bebedouro', andar: 'terreo', categoria: 'bebedouro', imagem: '', descricao: '', coordenadas: [1221, 2005] },
     
     { id: '44', bloco: '9', sala: '', nome: 'NDA', andar: 'terreo', categoria: 'laboratorio', imagem: '', descricao: '', coordenadas: [1607, 2439] },
     { id: '45', bloco: '9', sala: '', nome: 'Sala de Professor', andar: 'terreo', categoria: 'prof', imagem: '', descricao: 'Prof. Dr. Nailton Martins Rodrigues, Profa. Dra. Rafaely Nascimento Lima, Prof. Dr. Tiago Gomes dos Santos, Prof. Dr. Ulisses Alves do Rego.', coordenadas: [1479, 2439] },
-    { id: '46', bloco: '9', sala: '', nome: 'DEQUI (Departamento de Química)', andar: 'terreo', categoria: 'outros', imagem: '', descricao: '', coordenadas: [1374, 2439] },
+    { id: '46', bloco: '9', sala: '', nome: 'DEQUI (Departamento de Química)', andar: 'terreo', categoria: 'coord', imagem: '', descricao: '', coordenadas: [1374, 2439] },
     { id: '47', bloco: '9', sala: '', nome: 'lequim (Laboratório de Ensino de Química)', andar: 'terreo', categoria: 'laboratorio', imagem: '', descricao: '', coordenadas: [1298, 2439] },
     { id: '48', bloco: '9', sala: '', nome: 'lequim (Laboratório de Ensino de Química)', andar: 'terreo', categoria: 'laboratorio', imagem: '', descricao: '', coordenadas: [1236, 2439] },
     { id: '49', bloco: '9', sala: '104', nome: 'Sala', andar: 'terreo', categoria: 'sala', imagem: '', descricao: '', coordenadas: [1096, 2432] },
@@ -223,12 +236,12 @@ const locaisCCET = [
     { id: '58', bloco: '1', sala: '199', nome: 'Sala', andar: '1', categoria: 'sala', imagem: '', descricao: '', coordenadas: [888, 991] },
     { id: '59', bloco: '1', sala: '200', nome: 'Sala', andar: '1', categoria: 'sala', imagem: '', descricao: '', coordenadas: [808, 991] },
     { id: '60', bloco: '1', sala: '201', nome: 'VIP Lab (Laboratório de Visão e Processamento de Imagens)', andar: '1', categoria: 'laboratorio', imagem: '', descricao: '', coordenadas: [721, 991] },
-    { id: '61', bloco: '1', sala: '202', nome: 'Sala', andar: '1', categoria: 'sala', imagem: '', descricao: '', coordenadas: [622, 991] },
+    { id: '61', bloco: '1', sala: '202', nome: 'Sala (Auditório DEINF / COCOM)', andar: '1', categoria: 'sala', imagem: '', descricao: '', coordenadas: [622, 991] },
     { id: '62', bloco: '1', sala: '', nome: 'LACMOR (Laboratório de Métodos de Cognição Artifical para Otimização e Robótica)', andar: '1', categoria: 'laboratorio', imagem: '', descricao: '', coordenadas: [534, 991] },
     { id: '63', bloco: '1', sala: '203', nome: 'Telemídia (Laboratório de Sistemas Multimídia) / MODAL (Laboratório de Modelagem Matemática e Algoritmos)', andar: '1', categoria: 'laboratorio', imagem: '', descricao: '', coordenadas: [465, 991] },
     { id: '64', bloco: '1', sala: '204', nome: 'LINT² (Laboratório de Inteligência Interativa)', andar: '1', categoria: 'laboratorio', imagem: '', descricao: '', coordenadas: [406, 991] },
     { id: '65', bloco: '1', sala: '', nome: 'DEINF (Departamento de Informática)', andar: '1', categoria: 'coord', imagem: '', descricao: '', coordenadas: [308, 991] },
-    { id: 'escada7', bloco: '4', sala: '', nome: 'Escada', andar: '1', categoria: 'escada', imagem: '', descricao: '', coordenadas: [477, 1150] },
+    { id: 'escada7', bloco: '1', sala: '', nome: 'Escada', andar: '1', categoria: 'escada', imagem: '', descricao: '', coordenadas: [477, 1150] },
 
     { id: '66', bloco: '2', sala: '', nome: 'Coordenação do Curso de Matemática (Bacharelado)', andar: '1', categoria: 'coord', imagem: '', descricao: '', coordenadas: [1085, 1027] },
     { id: '67', bloco: '2', sala: '', nome: 'Coordenação do Curso de Química (Bacharelado)', andar: '1', categoria: 'coord', imagem: '', descricao: '', coordenadas: [1085, 849] },
@@ -249,7 +262,7 @@ const locaisCCET = [
     { id: '79', bloco: '4', sala: '205', nome: 'Sala de Professor', andar: '1', categoria: 'prof', imagem: '', descricao: 'Profa. Maria da Guia Da Silva', coordenadas: [2562, 980] },
     { id: 'escada8', bloco: '4', sala: '', nome: 'Escada', andar: '1', categoria: 'escada', imagem: '', descricao: '', coordenadas: [2414, 1150] },
 
-    { id: '80', bloco: '5', sala: '211', nome: 'Sala de Professor', andar: '1', categoria: 'prof', imagem: '', descricao: 'Prof. Francisco J. Silva e Silva, Prof. Ivo José da C. Serra', coordenadas: [1220, 1142] },
+    { id: '80', bloco: '5', sala: '211', nome: 'Sala de Professor', andar: '1', categoria: 'prof', imagem: '', descricao: 'Prof. Francisco J. Silva e Silva, Prof. Ivo José da C. Serra, Prof. Luis Rivero', coordenadas: [1220, 1142] },
     { id: '81', bloco: '5', sala: '210', nome: 'Sala de Professor', andar: '1', categoria: 'prof', imagem: '', descricao: 'Prof. Geraldo Braz Júnior, Prof. Luciano R. Coutinho, Profa. Simara Rocha, Prof. Carlos de Salles S. Neto', coordenadas: [1260, 1142] },
     { id: '82', bloco: '5', sala: '209', nome: 'Sala de Professor', andar: '1', categoria: 'prof', imagem: '', descricao: 'Prof. Jonas da Silva Junior, Prof. Vilemar G. da Silva', coordenadas: [1300, 1142] },
     { id: '83', bloco: '5', sala: '208', nome: 'Sala de Professor', andar: '1', categoria: 'prof', imagem: '', descricao: 'Prof. Marcos Tadeu Rezende de Araújo, Luciano Buonocore, Profa. Maria de Fátima S. Farias', coordenadas: [1339, 1142] },
@@ -277,8 +290,9 @@ const locaisCCET = [
     { id: '102', bloco: '6', sala: '214', nome: 'Sala', andar: '1', categoria: 'outros', imagem: '', descricao: '', coordenadas: [869, 1265] },
     { id: '103', bloco: '6', sala: '215', nome: 'Sala de Professor', andar: '1', categoria: 'prof', imagem: '', descricao: 'Prof. Portela, Profa. Inêz C. Dantas, Prof. Adauto de S. Lima Neto, Prof. Samyr Béliche Vale', coordenadas: [869, 1225] },
     { id: '104', bloco: '6', sala: '216', nome: 'Coordenação e Secretaria do Mestrado em Design', andar: '1', categoria: 'coord', imagem: '', descricao: '', coordenadas: [869, 1177] },
-    { id: 'banheiro6', bloco: '6', sala: '', nome: 'Banheiro Feminino', andar: '1', categoria: 'wc-f', imagem: '', descricao: '', coordenadas: [1030, 1360] },
+    { id: '104.1', bloco: '6', sala: '218', nome: 'PROFMAT - Coordenação', andar: '1', categoria: 'coord', imagem: '', descricao: '', coordenadas: [1030, 1360] },
     { id: 'escada10', bloco: '6', sala: '', nome: 'Escada', andar: '1', categoria: 'escada', imagem: '', descricao: '', coordenadas: [1029, 1479] },
+    { id: 'bebedouro4', bloco: '6', sala: '', nome: 'Bebedouro', andar: '1', categoria: 'bebedouro', imagem: '', descricao: '', coordenadas: [980, 1362] },
 
     { id: '105', bloco: '7', sala: '209', nome: 'Central de Distribuição de Fios', andar: '1', categoria: 'outros', imagem: '', descricao: '', coordenadas: [2022, 1135] },
     { id: '106', bloco: '7', sala: '208', nome: 'Sala', andar: '1', categoria: 'sala', imagem: '', descricao: '', coordenadas: [2022, 1228] },
@@ -368,6 +382,7 @@ const locaisCCET = [
     { id: '177', bloco: '6', sala: '301', nome: 'Sala de Professor', andar: '2', categoria: 'prof', imagem: '', descricao: 'Profa. Jéssica Santos Stefano, Profa. Nahieh Toscano Miranda, Profa. Núbia Fernanda M. Rodrigues', coordenadas: [851, 2022] },
     { id: 'banheiro8', bloco: '6', sala: '', nome: 'Banheiro Feminino', andar: '2', categoria: 'wc-f', imagem: '', descricao: '', coordenadas: [1027, 1372] },
     { id: 'escada14', bloco: '6', sala: '', nome: 'Escada', andar: '2', categoria: 'escada', imagem: '', descricao: '', coordenadas: [1027, 1489] },
+    { id: 'bebedouro5', bloco: '6', sala: '', nome: 'Bebedouro', andar: '2', categoria: 'bebedouro', imagem: '', descricao: '', coordenadas: [961, 1501] },
 
     { id: '178', bloco: '7', sala: '301', nome: 'Laboratório de Informática e Simulação', andar: '2', categoria: 'laboratorio', imagem: '', descricao: '', coordenadas: [2034, 1993] },
     { id: '179', bloco: '7', sala: '302', nome: 'Laboratório de Química Analítica', andar: '2', categoria: 'laboratorio', imagem: '', descricao: '', coordenadas: [2034, 1885] },
@@ -400,6 +415,24 @@ const locaisCCET = [
 
 ];
 
+map.on('zoomend', function() {
+    const containerMapa = document.getElementById('map');
+
+    if (map.getZoom() <= -2) { 
+        containerMapa.classList.add('zoom-afastado');
+    } else {
+        containerMapa.classList.remove('zoom-afastado');
+    }
+});
+
+// para o pop up nao fica fora da area da tela 
+const ehMobile = window.innerWidth <= 768;
+
+const opcoesDoPopup = {
+    autoPanPaddingTopLeft: ehMobile ? [10, 130] : [5, 5], 
+    autoPanPaddingBottomRight: [5, 5] 
+};
+
 const ControleCentralizar = L.Control.extend({
     options: {
         position: 'topleft'
@@ -431,6 +464,11 @@ map.addControl(new ControleCentralizar());
 const marcadoresLeaflet = [];
 let andarAtual = 'terreo';
 let categoriaAtual = 'todos';
+let blocoAtual = 'todos';
+
+function removerAcentos(texto) {
+    return texto.normalize('NFD').replace(/[\u0300-\u036f]/g, "");
+}
 
 function criarHTMLPopup(local) {
     let html = '<div class="popup-customizado">';
@@ -447,9 +485,22 @@ function criarHTMLPopup(local) {
     if (local.sala) subtitulo += ` - Sala ${local.sala}`;
     html += `<p class="popup-subtitulo">${subtitulo}</p>`;
 
-    if (local.descricao) {
+    if (local.categoria === 'prof' && local.descricao){
+        const listaProfs = local.descricao.split(',').map(prof => `<li>${prof.trim()}</li>`).join('');
+        html += `<ul class="popup-lista-profs">${listaProfs}</ul>`;
+    }
+    else if (local.descricao) {
         html += `<p class="popup-subtitulo">${local.descricao}</p>`;
     }
+
+    html += `
+    <button class="btn-partilha" onclick="copiarLink('${local.id}', this)">
+        <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+        </svg>
+        Copiar Link do Local
+    </button>
+    `;
 
     html += '</div></div>';
     return html;
@@ -504,11 +555,14 @@ function inicializarMarcadores() {
         else if(local.categoria === 'rampa'){
             iconeEscolhido = iconeRampa;
         }
+        else if(local.categoria === 'bebedouro'){
+            iconeEscolhido = iconeBebedouro;
+        }
         else{
             iconeEscolhido = iconeOutros;
         }
 
-        let marker = L.marker(local.coordenadas, {icon: iconeEscolhido}).bindPopup( criarHTMLPopup(local) );
+        let marker = L.marker(local.coordenadas, {icon: iconeEscolhido}).bindPopup( criarHTMLPopup(local), opcoesDoPopup );
         
         marcadoresLeaflet.push({
             dados: local,
@@ -531,7 +585,7 @@ function executarBusca() {
     const inputElement = document.getElementById('input-busca');
     if (!inputElement) return;
     
-    const textoDigitado = inputElement.value.toLowerCase();
+    const textoDigitado = removerAcentos(inputElement.value.toLowerCase());
 
     marcadoresLeaflet.forEach(item => {
 
@@ -539,12 +593,32 @@ function executarBusca() {
             
             const grupoDoAndar = dadosAndares[andarAtual].marcadores;
 
-            const textoParaBusca = `${item.dados.nome} Bloco ${item.dados.bloco} Sala ${item.dados.sala} ${item.dados.categoria}`.toLowerCase();
+            let textoParaBusca = `${item.dados.nome} Bloco ${item.dados.bloco} Sala ${item.dados.sala} ${item.dados.categoria}`;
+            if (item.dados.categoria === 'prof' && item.dados.descricao){
+                textoParaBusca += `${item.dados.descricao}`;
+            }
+
+            textoParaBusca = removerAcentos(textoParaBusca.toLowerCase());
+
             const passaTexto = textoParaBusca.includes(textoDigitado);
+            const passaBloco = (blocoAtual === 'todos' || item.dados.bloco === blocoAtual);
+            let passaCategoria = false;
+            const categoriasPrincipais =['sala', 'laboratorio', 'coord', 'prof'];
 
-            const passaCategoria = (categoriaAtual === 'todos' || item.dados.categoria === categoriaAtual);
+            if (categoriaAtual === 'todos'){
+                passaCategoria = true;
+            }
+            else if (categoriaAtual === 'outros'){
+                passaCategoria = !categoriasPrincipais.includes(item.dados.categoria);
+            }
+            else if (Array.isArray(categoriaAtual)) {
+                passaCategoria = categoriaAtual.includes(item.dados.categoria);
+            }
+            else {
+                passaCategoria = item.dados.categoria === categoriaAtual;
+            }
 
-            if (passaTexto && passaCategoria) {
+            if (passaTexto && passaCategoria && passaBloco) {
                 grupoDoAndar.addLayer(item.instanciaMarker);
             } else {
                 grupoDoAndar.removeLayer(item.instanciaMarker);
@@ -561,6 +635,11 @@ window.filtrarCategoria = function(categoriaDesejada, elementoBotao) {
 
     executarBusca();
 };
+
+window.filtrarBloco = function(blocoDesejado) {
+    blocoAtual = blocoDesejado;
+    executarBusca();
+}
 
 document.getElementById('input-busca').addEventListener('input', executarBusca);
 
@@ -582,6 +661,56 @@ window.mudarAndar = function(idAndar, elementoBotao) {
     }
 };
 
+function verificarLink(){
+    const params = new URLSearchParams(window.location.search);
+    const idPartilhado = params.get('id');
+
+    if (idPartilhado) {
+        const localEncontrado = marcadoresLeaflet.find(item => item.dados.id === idPartilhado);
+
+        if (localEncontrado){
+            const botaoAndar = Array.from(document.querySelectorAll('.btn-andar')).find(btn => btn.getAttribute('onclick').includes(`'${localEncontrado.dados.andar}'`));
+
+            mudarAndar(localEncontrado.dados.andar, botaoAndar);
+
+            setTimeout(() => {
+                map.flyTo(localEncontrado.dados.coordenadas, 1, {
+                    animate: true,
+                    duration: 1.5
+                });
+                localEncontrado.instanciaMarker.openPopup();
+            }, 500);
+        }
+    }
+}
+
+verificarLink();
+
+window.copiarLink = function(id, botaoElemento) {
+    const url = window.location.origin + window.location.pathname + '?id=' + id;
+
+    navigator.clipboard.writeText(url).then(() => {
+        const conteudoOriginal = botaoElemento.innerHTML;
+
+        botaoElemento.innerHTML = `
+            <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+            Link copiado!
+        `;
+
+        botaoElemento.classList.add('btn-sucesso');
+
+        setTimeout(() => {
+            botaoElemento.innerHTML = conteudoOriginal;
+            botaoElemento.classList.remove('btn-sucesso');
+        }, 2000);
+    }).catch(err => {
+        console.error("Erro ao copiar: ", err);
+        botaoElemento.innerHTML = "Erro ao copiar";
+    });
+ };
+
 // // pegar coord quando clica
 // map.on('click', function(e) {
 
@@ -596,11 +725,6 @@ window.mudarAndar = function(idAndar, elementoBotao) {
 // });
 
 
-// 1. configurar categoria outros
-// 2. trocar tamanho pin no zoom minimo
-// 7. icone labs
-// 8. resolver sobre Sala de Professor
-// ver sobre hover dos pinos
-// colocar filtro de bloco
-// ver sobre busca
+
 // ver sobre imagem - enquadramento
+// loading
