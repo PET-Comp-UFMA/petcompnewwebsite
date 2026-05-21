@@ -359,6 +359,24 @@ body {
     text-align: center;
 }
 
+.pino-borda {
+    background-color: #016BE5 !important;
+    border: 2px solid white !important;
+    border-radius: 50% !important;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.5) !important;
+    width: 36px !important;
+    height: 36px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin-top: -18px !important;
+    margin-left: -18px !important;
+}
+
+.pino-borda svg {
+    stroke: white !important; 
+}
+
 /* Animação de carregamento mais lenta */
 @keyframes fadeIn {
     from {

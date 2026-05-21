@@ -1,10 +1,24 @@
+const limitesDaImagem = [[0, 0], [2898, 2634]];
+const limitesDeNavegacao = [[-1000, -1000], [3898, 3634]];
+
 const map = L.map('map', {
     crs: L.CRS.Simple,
     minZoom: -2,
-    maxZoom: 2
-}); 
+    maxZoom: 2,
 
-const limitesDaImagem = [[0, 0], [2898, 2634]];
+    maxBounds: limitesDeNavegacao,
+    maxBoundsViscosity: 0.8,
+
+    gestureHandling: true,
+    gestureHandlingOptions: {
+        text: {
+            touch: "Use dois dedos para mover o mapa",
+            scroll: "Use Ctrl + Scroll para ampliar o mapa",
+            scrollMac: "Use Command (⌘) + Scroll para ampliar o mapa"
+        },
+        duration: 1500
+    },
+}); 
 
 const marcadoresTerreo = L.layerGroup();
 const marcadoresAndar1 = L.layerGroup();
@@ -458,8 +472,22 @@ const ControleCentralizar = L.Control.extend({
     }
 });
 
-map.addControl(new ControleCentralizar());
+const marcadoresBusca = L.featureGroup();
 
+const controleBordas = L.edgeMarker({
+    icon: L.divIcon({
+        className: 'pino-borda',
+        
+        html: '<svg viewBox="0 0 24 24" width="20" height="20" fill="none"><path d="M15 18l-6-6 6-6" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path></svg>',        
+        iconSize: [36, 36],
+        iconAnchor: [18, 18] 
+    }),
+    rotateIcons: true,
+    layerGroup: marcadoresBusca
+}).addTo(map);
+
+map.addControl(new ControleCentralizar());
+map.addControl(new L.Control.FullScreen());
 
 const marcadoresLeaflet = [];
 let andarAtual = 'terreo';
@@ -587,6 +615,8 @@ function executarBusca() {
     
     const textoDigitado = removerAcentos(inputElement.value.toLowerCase());
 
+    marcadoresBusca.clearLayers();
+
     marcadoresLeaflet.forEach(item => {
 
         if (item.dados.andar === andarAtual) {
@@ -620,6 +650,10 @@ function executarBusca() {
 
             if (passaTexto && passaCategoria && passaBloco) {
                 grupoDoAndar.addLayer(item.instanciaMarker);
+
+                if(textoDigitado.length > 0) {
+                    marcadoresBusca.addLayer(item.instanciaMarker);
+                }
             } else {
                 grupoDoAndar.removeLayer(item.instanciaMarker);
             }
@@ -728,3 +762,6 @@ window.copiarLink = function(id, botaoElemento) {
 
 // ver sobre imagem - enquadramento
 // loading
+// colocar uma bolinha ao lado do botao de andar  com numero de correposndecias, quando nao tiver nenhuma correspondencia no andar atual mas tiver em outros
+// botar filtro de banheiro e bebedouro (botoes pequenos só icone)
+// mais destaque na pesquisa
