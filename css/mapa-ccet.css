@@ -165,10 +165,11 @@ body {
 }
 
 .btn-filtro.ativo {
-    border-color: #001a4d; 
-    background-color: #016BE5; 
-    color:#ffffff;
+    border-color: #001a4d !important; 
+    background-color: #016BE5 !important; 
+    color:#ffffff !important;
 }
+
 
 #input-busca {
     border: none;
