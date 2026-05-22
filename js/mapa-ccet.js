@@ -9,15 +9,15 @@ const map = L.map('map', {
     maxBounds: limitesDeNavegacao,
     maxBoundsViscosity: 0.8,
 
-    gestureHandling: true,
-    gestureHandlingOptions: {
-        text: {
-            touch: "Use dois dedos para mover o mapa",
-            scroll: "Use Ctrl + Scroll para ampliar o mapa",
-            scrollMac: "Use Command (⌘) + Scroll para ampliar o mapa"
-        },
-        duration: 1500
-    },
+    dragging: true,
+    tap: !L.Browser.mobile,
+    touchZoom: 'center',
+    bounceAtZoomLimits: false,
+
+    zoomAnimation: true,
+    fadeAnimation: true,
+    markerZoomAnimation: true,
+
 }); 
 
 const marcadoresTerreo = L.layerGroup();
@@ -614,48 +614,100 @@ function executarBusca() {
     if (!inputElement) return;
     
     const textoDigitado = removerAcentos(inputElement.value.toLowerCase());
-
     marcadoresBusca.clearLayers();
 
     marcadoresLeaflet.forEach(item => {
+        if (item.instanciaMarker._icon) {
+            item.instanciaMarker._icon.classList.remove('marcador-destacado');
+        }
+    });
+
+    let contagemAndares = {'terreo': 0, '1': 0, '2': 0};
+    let temBuscaDeTexto = textoDigitado.length > 0;
+
+    marcadoresLeaflet.forEach(item => {
+        let textoParaBusca = `${item.dados.nome} Bloco ${item.dados.bloco} Sala ${item.dados.sala} ${item.dados.categoria}`;
+        if (item.dados.categoria === 'prof' && item.dados.descricao){
+            textoParaBusca += `${item.dados.descricao}`;
+        }
+
+        textoParaBusca = removerAcentos(textoParaBusca.toLowerCase());
+
+        const passaTexto = textoParaBusca.includes(textoDigitado);
+        const passaBloco = (blocoAtual === 'todos' || item.dados.bloco === blocoAtual);
+        let passaCategoria = false;
+        
+        const categoriasPrincipais = ['sala', 'laboratorio', 'coord', 'prof', 'banheiro', 'bebedouro'];
+
+        if (categoriaAtual === 'todos'){
+            passaCategoria = true;
+        }
+        else if (categoriaAtual === 'outros'){
+            passaCategoria = !categoriasPrincipais.includes(item.dados.categoria);
+        }
+        else if (Array.isArray(categoriaAtual)) {
+            passaCategoria = categoriaAtual.includes(item.dados.categoria);
+        }
+        else {
+            passaCategoria = item.dados.categoria === categoriaAtual;
+        }
+
+        const exibePino = passaTexto && passaCategoria && passaBloco;
+
+        if (exibePino && temBuscaDeTexto) {
+            contagemAndares[item.dados.andar]++;
+        }
 
         if (item.dados.andar === andarAtual) {
-            
-            const grupoDoAndar = dadosAndares[andarAtual].marcadores;
+            const grupoDoAndar = dadosAndares[andarAtual].marcadores; 
 
-            let textoParaBusca = `${item.dados.nome} Bloco ${item.dados.bloco} Sala ${item.dados.sala} ${item.dados.categoria}`;
-            if (item.dados.categoria === 'prof' && item.dados.descricao){
-                textoParaBusca += `${item.dados.descricao}`;
-            }
-
-            textoParaBusca = removerAcentos(textoParaBusca.toLowerCase());
-
-            const passaTexto = textoParaBusca.includes(textoDigitado);
-            const passaBloco = (blocoAtual === 'todos' || item.dados.bloco === blocoAtual);
-            let passaCategoria = false;
-            const categoriasPrincipais =['sala', 'laboratorio', 'coord', 'prof'];
-
-            if (categoriaAtual === 'todos'){
-                passaCategoria = true;
-            }
-            else if (categoriaAtual === 'outros'){
-                passaCategoria = !categoriasPrincipais.includes(item.dados.categoria);
-            }
-            else if (Array.isArray(categoriaAtual)) {
-                passaCategoria = categoriaAtual.includes(item.dados.categoria);
-            }
-            else {
-                passaCategoria = item.dados.categoria === categoriaAtual;
-            }
-
-            if (passaTexto && passaCategoria && passaBloco) {
+            if (exibePino) {
                 grupoDoAndar.addLayer(item.instanciaMarker);
 
-                if(textoDigitado.length > 0) {
+                if (temBuscaDeTexto) {
                     marcadoresBusca.addLayer(item.instanciaMarker);
+                    
+                    if (item.instanciaMarker._icon) {
+                        item.instanciaMarker._icon.classList.add('marcador-destacado');
+                    }
                 }
             } else {
                 grupoDoAndar.removeLayer(item.instanciaMarker);
+                if (item.instanciaMarker._icon) {
+                    item.instanciaMarker._icon.classList.remove('marcador-destacado');
+                }
+            }
+        } else {
+            if (item.instanciaMarker._icon) {
+                item.instanciaMarker._icon.classList.remove('marcador-destacado');
+            }
+        }
+    });
+
+    const nenhumaCorrespondenciaNoAndarAtual = (contagemAndares[andarAtual] === 0);
+
+    ['terreo', '1', '2'].forEach(andar => {
+        const btn = document.querySelector(`.btn-andar[data-andar="${andar}"]`);
+        
+        if (btn) {
+            let badge = btn.querySelector('.badge-andar');
+            
+            if (!badge) {
+                badge = document.createElement('span');
+                badge.className = 'badge-andar';
+                btn.appendChild(badge);
+            }
+            
+            const deveMostrar = temBuscaDeTexto && 
+                                andar !== andarAtual && 
+                                nenhumaCorrespondenciaNoAndarAtual && 
+                                contagemAndares[andar] > 0;
+            
+            if (deveMostrar) {
+                badge.textContent = contagemAndares[andar]; 
+                badge.classList.add('ativo');               
+            } else {
+                badge.classList.remove('ativo');            
             }
         }
     });
@@ -765,3 +817,4 @@ window.copiarLink = function(id, botaoElemento) {
 // colocar uma bolinha ao lado do botao de andar  com numero de correposndecias, quando nao tiver nenhuma correspondencia no andar atual mas tiver em outros
 // botar filtro de banheiro e bebedouro (botoes pequenos só icone)
 // mais destaque na pesquisa
+// botar hover no zoom minimo
