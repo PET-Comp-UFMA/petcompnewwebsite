@@ -98,9 +98,9 @@ include 'head.php';
             </div>
 
             <div class="seletor-andares">
-                <button class="btn-andar" onclick="mudarAndar('2', this)">2º Andar</button>
-                <button class="btn-andar" onclick="mudarAndar('1', this)">1º Andar</button>
-                <button class="btn-andar ativo" onclick="mudarAndar('terreo', this)" id="btn-terreo">Térreo</button>
+                <button class="btn-andar" data-andar="2" onclick="mudarAndar('2', this)">2º Andar</button>
+                <button class="btn-andar" data-andar="1" onclick="mudarAndar('1', this)">1º Andar</button>
+                <button class="btn-andar ativo" data-andar="terreo" onclick="mudarAndar('terreo', this)" id="btn-terreo">Térreo</button>
             </div>
 
             <select id="select-bloco" class="seletor-blocos" onchange="filtrarBloco(this.value)">
