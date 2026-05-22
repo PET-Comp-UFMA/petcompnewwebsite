@@ -9,15 +9,15 @@ const map = L.map('map', {
     maxBounds: limitesDeNavegacao,
     maxBoundsViscosity: 0.8,
 
-    gestureHandling: true,
-    gestureHandlingOptions: {
-        text: {
-            touch: "Use dois dedos para mover o mapa",
-            scroll: "Use Ctrl + Scroll para ampliar o mapa",
-            scrollMac: "Use Command (⌘) + Scroll para ampliar o mapa"
-        },
-        duration: 1500
-    },
+    dragging: true,
+    tap: !L.Browser.mobile,
+    touchZoom: 'center',
+    bounceAtZoomLimits: false,
+
+    zoomAnimation: true,
+    fadeAnimation: true,
+    markerZoomAnimation: true,
+
 }); 
 
 const marcadoresTerreo = L.layerGroup();
@@ -617,6 +617,8 @@ function executarBusca() {
 
     marcadoresBusca.clearLayers();
 
+    let temBuscaDeTexto = textoDigitado.length > 0;
+
     marcadoresLeaflet.forEach(item => {
 
         if (item.dados.andar === andarAtual) {
@@ -633,7 +635,7 @@ function executarBusca() {
             const passaTexto = textoParaBusca.includes(textoDigitado);
             const passaBloco = (blocoAtual === 'todos' || item.dados.bloco === blocoAtual);
             let passaCategoria = false;
-            const categoriasPrincipais =['sala', 'laboratorio', 'coord', 'prof'];
+            const categoriasPrincipais = ['sala', 'laboratorio', 'coord', 'prof'];
 
             if (categoriaAtual === 'todos'){
                 passaCategoria = true;
@@ -651,11 +653,28 @@ function executarBusca() {
             if (passaTexto && passaCategoria && passaBloco) {
                 grupoDoAndar.addLayer(item.instanciaMarker);
 
-                if(textoDigitado.length > 0) {
+                if (temBuscaDeTexto) {
                     marcadoresBusca.addLayer(item.instanciaMarker);
+
+                    setTimeout(() => {
+                        if (item.instanciaMarker._icon) {
+                            item.instanciaMarker._icon.classList.add('marcador-destacado');
+                        }
+                    }, 0);
+                } else {
+                    if (item.instanciaMarker._icon) {
+                        item.instanciaMarker._icon.classList.remove('marcador-destacado');
+                    }
                 }
             } else {
                 grupoDoAndar.removeLayer(item.instanciaMarker);
+                if (item.instanciaMarker._icon) {
+                    item.instanciaMarker._icon.classList.remove('marcador-destacado');
+                }
+            }
+        } else {
+            if (item.instanciaMarker._icon) {
+                item.instanciaMarker._icon.classList.remove('marcador-destacado');
             }
         }
     });
@@ -765,3 +784,4 @@ window.copiarLink = function(id, botaoElemento) {
 // colocar uma bolinha ao lado do botao de andar  com numero de correposndecias, quando nao tiver nenhuma correspondencia no andar atual mas tiver em outros
 // botar filtro de banheiro e bebedouro (botoes pequenos só icone)
 // mais destaque na pesquisa
+// botar hover no zoom minimo

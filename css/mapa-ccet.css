@@ -377,6 +377,21 @@ body {
     stroke: white !important; 
 }
 
+.marcador-destacado {
+    z-index: 99999 !important; 
+    filter: drop-shadow(0 0 16px white) drop-shadow(0 0 6px white) !important;
+}
+
+.marcador-destacado svg {
+    animation: pulsarSVGInterno 1s infinite alternate ease-in-out !important;
+}
+
+@keyframes pulsarSVGInterno {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.2); } 
+}
+
+
 /* Animação de carregamento mais lenta */
 @keyframes fadeIn {
     from {
