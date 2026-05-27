@@ -9,14 +9,16 @@ const map = L.map('map', {
     maxBounds: limitesDeNavegacao,
     maxBoundsViscosity: 0.8,
 
-    dragging: true,
+    //dragging: true,
     tap: !L.Browser.mobile,
-    touchZoom: 'center',
+    //touchZoom: 'center',
     bounceAtZoomLimits: false,
 
-    zoomAnimation: true,
-    fadeAnimation: true,
-    markerZoomAnimation: true,
+    doubleClickZoom: !L.Browser.mobile,
+
+    //zoomAnimation: true,
+   // fadeAnimation: true,
+   // markerZoomAnimation: true,
 
 }); 
 
@@ -443,7 +445,7 @@ map.on('zoomend', function() {
 const ehMobile = window.innerWidth <= 768;
 
 const opcoesDoPopup = {
-    autoPanPaddingTopLeft: ehMobile ? [10, 130] : [5, 5], 
+    autoPanPaddingTopLeft: ehMobile ? [10, 110] : [5, 5], 
     autoPanPaddingBottomRight: [5, 5] 
 };
 
@@ -727,7 +729,28 @@ window.filtrarBloco = function(blocoDesejado) {
     executarBusca();
 }
 
-document.getElementById('input-busca').addEventListener('input', executarBusca);
+const inputBusca = document.getElementById('input-busca');
+const btnLimpar = document.getElementById('btn-limpar-busca');
+
+if (inputBusca && btnLimpar) {
+    inputBusca.addEventListener('input', function() {
+        if (this.value.length > 0) {
+            btnLimpar.style.display = 'flex';
+        } else {
+            btnLimpar.style.display = 'none';
+        }
+
+        executarBusca();
+    });
+
+    btnLimpar.addEventListener('click', function(e) {
+        e.preventDefault(); 
+        inputBusca.value = '';   
+        btnLimpar.style.display = 'none'; 
+
+        executarBusca();
+    });
+}
 
 window.mudarAndar = function(idAndar, elementoBotao) {
 
@@ -797,6 +820,20 @@ window.copiarLink = function(id, botaoElemento) {
     });
  };
 
+const areaBusca = document.querySelector('.busca-container');
+if (areaBusca) {
+    L.DomEvent.disableClickPropagation(areaBusca);
+    L.DomEvent.disableScrollPropagation(areaBusca);
+}
+
+map.on('dragstart', function() {
+    document.activeElement.blur(); 
+});
+map.on('click', function() {
+    document.activeElement.blur();
+});
+
+
 // // pegar coord quando clica
 // map.on('click', function(e) {
 
@@ -814,7 +851,9 @@ window.copiarLink = function(id, botaoElemento) {
 
 // ver sobre imagem - enquadramento
 // loading
-// colocar uma bolinha ao lado do botao de andar  com numero de correposndecias, quando nao tiver nenhuma correspondencia no andar atual mas tiver em outros
-// botar filtro de banheiro e bebedouro (botoes pequenos só icone)
-// mais destaque na pesquisa
 // botar hover no zoom minimo
+// parou de funcionar scroll filtros mobile
+// MELHORAR MOBILE
+// se abre a busca trava todo o mapa no fullscreen
+// zoom travando icones
+// colocar x na busca

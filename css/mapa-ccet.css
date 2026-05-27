@@ -420,7 +420,19 @@ body {
     display: inline-block !important;
 }
 
-
+.btn-limpar {
+    background: none;
+    border: none;
+    padding: 4px;
+    margin-left: 8px;
+    display: none;
+    cursor: pointer;
+    color: #a0a0a0;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.2s ease;
+}
 
 
 
@@ -513,9 +525,9 @@ body {
         font-size: 0.9rem;
     }
 
-    .map_container {
-        width: 100% !important;
-        height: 100vh !important;
+    #map-container {
+        width: 95% !important;
+        height: 90% !important;
     }
 
     .busca-container { 
@@ -530,12 +542,16 @@ body {
         display: flex;
         flex-wrap: nowrap !important; 
         overflow-x: auto; 
-        padding-bottom: 5px;
+        padding-bottom: 8px;
+        margin-top: 5px;
+        width: 100%;
+        touch-action: pan-x !important; 
+        -webkit-overflow-scrolling: touch;
     }
 
     .seletor-andares { 
         top: auto !important; 
-        bottom: 30px !important; 
+        bottom: 10px !important; 
         left: 50% !important;
         transform: translateX(-50%) !important; 
         display: flex !important;
@@ -549,7 +565,7 @@ body {
 
     .btn-andar { 
         margin: 0 2px !important;
-        padding: 8px 12px !important;
+        padding: 6px 10px !important;
         font-size: 11px !important;
         border: none !important;
         border-radius: 25px;
@@ -557,7 +573,7 @@ body {
 
     .seletor-blocos {
         top: auto !important;
-        bottom: 80px !important; 
+        bottom: 55px !important; 
         left: 50% !important;
         right: auto !important;
         transform: translateX(-50%) !important;
@@ -566,6 +582,24 @@ body {
         box-shadow: 0 2px 10px rgba(0,0,0,0.3);
         font-size: 11px !important;
     }
+
+    #input-busca {
+        font-size: 16px;
+        padding: 6px;
+    }
+
+    .input-wrapper {
+        padding: 2px 12px;
+    }
+
+    .btn-filtro {
+        font-size: 12px;
+    }
+
+    .btn-filtro, .btn-categoria {
+        flex-shrink: 0 !important; 
+    }
+
 }
 
 /* Estilo para dispositivos com largura até 600px (smartphones) */
