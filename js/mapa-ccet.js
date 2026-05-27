@@ -852,8 +852,5 @@ map.on('click', function() {
 // ver sobre imagem - enquadramento
 // loading
 // botar hover no zoom minimo
-// parou de funcionar scroll filtros mobile
 // MELHORAR MOBILE
-// se abre a busca trava todo o mapa no fullscreen
 // zoom travando icones
-// colocar x na busca

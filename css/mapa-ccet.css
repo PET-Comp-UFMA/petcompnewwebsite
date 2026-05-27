@@ -391,22 +391,20 @@ body {
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
-    gap: 8px !important; /* Cria um espaço garantido entre o texto e a badge */
+    gap: 8px !important; 
 }
 
 .badge-andar {
-    display: none !important; /* Escondida por padrão */
-    background-color: #016BE5 !important; /* Vermelho iOS vibrante */
+    display: none !important;
+    background-color: #016BE5 !important;
     color: white !important;
-    border-radius: 50% !important; /* Força um círculo perfeito */
+    border-radius: 50% !important;
     
-    /* Dimensões fixas para impedir o navegador de achatar a bolinha */
     width: 18px !important;
     height: 18px !important;
     min-width: 18px !important;
     min-height: 18px !important;
     
-    /* Centralização perfeita do número lá dentro */
     font-size: 11px !important;
     font-weight: bold !important;
     line-height: 18px !important;
@@ -415,7 +413,6 @@ body {
     box-shadow: 0 2px 4px rgba(0,0,0,0.3) !important;
 }
 
-/* Classe ativada pelo JavaScript */
 .badge-andar.ativo {
     display: inline-block !important;
 }
