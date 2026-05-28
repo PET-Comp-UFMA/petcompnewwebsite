@@ -820,11 +820,19 @@ window.copiarLink = function(id, botaoElemento) {
     });
  };
 
-const areaBusca = document.querySelector('.busca-container');
-if (areaBusca) {
-    L.DomEvent.disableClickPropagation(areaBusca);
-    L.DomEvent.disableScrollPropagation(areaBusca);
-}
+const elementosParaProteger = [
+    '.busca-container', 
+    '.seletor-andares', 
+    '.seletor-blocos'
+];
+
+elementosParaProteger.forEach(seletor => {
+    const elemento = document.querySelector(seletor);
+    if (elemento) {
+        L.DomEvent.disableClickPropagation(elemento);
+        L.DomEvent.disableScrollPropagation(elemento);
+    }
+});
 
 map.on('dragstart', function() {
     document.activeElement.blur(); 
