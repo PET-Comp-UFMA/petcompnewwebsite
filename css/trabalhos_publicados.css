@@ -434,7 +434,10 @@ main .container .pagination .numbers .active:hover {
   main .container .list-tags {
     list-style: none;
   }
-
+  main .container .list {
+    padding: 0;
+    margin: 0;
+}
   main .container .list .item {
     padding: 4px;
   }
