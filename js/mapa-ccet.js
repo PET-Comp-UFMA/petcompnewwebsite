@@ -9,17 +9,10 @@ const map = L.map('map', {
     maxBounds: limitesDeNavegacao,
     maxBoundsViscosity: 0.8,
 
-    //dragging: true,
     tap: !L.Browser.mobile,
-    //touchZoom: 'center',
     bounceAtZoomLimits: false,
 
     doubleClickZoom: !L.Browser.mobile,
-
-    //zoomAnimation: true,
-   // fadeAnimation: true,
-   // markerZoomAnimation: true,
-
 }); 
 
 const marcadoresTerreo = L.layerGroup();
@@ -860,5 +853,4 @@ map.on('click', function() {
 // ver sobre imagem - enquadramento
 // loading
 // botar hover no zoom minimo
-// MELHORAR MOBILE
-// zoom travando icones
+

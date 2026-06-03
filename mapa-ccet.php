@@ -12,7 +12,41 @@
     <script src="https://unpkg.com/leaflet.fullscreen/dist/Control.FullScreen.umd.js"></script>
 
     <script src="https://cdn.jsdelivr.net/gh/ubergesundheit/Leaflet.EdgeMarker@master/Leaflet.EdgeMarker.js"></script>
-</head>
+
+    <?php
+    $isEmbed = isset($_GET['embed']) && $_GET['embed'] == 'true';
+
+    if ($isEmbed):
+    ?>
+        <style>
+            .container-header,
+            .container-body,
+            h4,
+            h5 {
+                display: none !important;
+            }
+
+            html,
+            body {
+                margin: 0 !important;
+                padding: 0 !important;
+                width: 100vw !important;
+                height: 100vh !important;
+                overflow: hidden !important;
+                background-color: transparent !important;
+            }
+
+            #map-container {
+                width: 100vw !important;
+                height: 100vh !important;
+                margin: 0 !important;
+                border-radius: 0 !important;
+                max-width: none !important;
+                max-height: none !important;
+            }
+        </style>
+    <?php endif; ?>
+
 </head>
 
 <?php
@@ -23,7 +57,11 @@ include 'head.php';
 ?>
 
 <body>
-    <?php include 'header.php'; ?>
+    <?php
+    if (!isset($_GET['embed']) || $_GET['embed'] !== 'true') {
+        include 'header.php';
+    }
+    ?>
 
     <div class="container-header">
         <h2>Mapa CCET</h2>
@@ -40,7 +78,7 @@ include 'head.php';
 
     <div id="map-container">
         <div id="map">
-            <img src="assets/svg/LOGOTIPO - CLARA.svg" class="logo-petcomp" alt="Logo PETComp">
+            <img src="assets/svg/LOGOTIPO - CLARA.svg" class="logo-petcomp" alt="Nicolas Caliman">
 
             <div class="busca-container">
                 <div class="input-wrapper">
@@ -49,7 +87,7 @@ include 'head.php';
                         <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
                     </svg>
 
-                    <input type="text" id="input-busca" placeholder="Buscar sala, laboratório...">
+                    <input type="text" id="input-busca" placeholder="Buscar sala, lab, professor...">
 
                     <button id="btn-limpar-busca" class="btn-limpar" aria-label="Limpar busca" title="Limpar pesquisa" style="display: none;">
                         <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
