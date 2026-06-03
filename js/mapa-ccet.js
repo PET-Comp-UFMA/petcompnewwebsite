@@ -9,17 +9,10 @@ const map = L.map('map', {
     maxBounds: limitesDeNavegacao,
     maxBoundsViscosity: 0.8,
 
-    //dragging: true,
     tap: !L.Browser.mobile,
-    //touchZoom: 'center',
     bounceAtZoomLimits: false,
 
     doubleClickZoom: !L.Browser.mobile,
-
-    //zoomAnimation: true,
-   // fadeAnimation: true,
-   // markerZoomAnimation: true,
-
 }); 
 
 const marcadoresTerreo = L.layerGroup();
@@ -820,11 +813,19 @@ window.copiarLink = function(id, botaoElemento) {
     });
  };
 
-const areaBusca = document.querySelector('.busca-container');
-if (areaBusca) {
-    L.DomEvent.disableClickPropagation(areaBusca);
-    L.DomEvent.disableScrollPropagation(areaBusca);
-}
+const elementosParaProteger = [
+    '.busca-container', 
+    '.seletor-andares', 
+    '.seletor-blocos'
+];
+
+elementosParaProteger.forEach(seletor => {
+    const elemento = document.querySelector(seletor);
+    if (elemento) {
+        L.DomEvent.disableClickPropagation(elemento);
+        L.DomEvent.disableScrollPropagation(elemento);
+    }
+});
 
 map.on('dragstart', function() {
     document.activeElement.blur(); 
@@ -852,5 +853,4 @@ map.on('click', function() {
 // ver sobre imagem - enquadramento
 // loading
 // botar hover no zoom minimo
-// MELHORAR MOBILE
-// zoom travando icones
+
