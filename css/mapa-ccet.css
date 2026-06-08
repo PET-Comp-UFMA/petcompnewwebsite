@@ -34,7 +34,7 @@ h5 {
 body { 
     margin: 0; 
     padding: 0; 
-    font-family: Arial, sans-serif; 
+    
 
 }
 
@@ -43,6 +43,8 @@ body {
     width: 95%; 
     height: 95%; 
     margin: auto;
+    position: relative;
+    z-index: 0;
 }
 
 #map { 
@@ -480,7 +482,6 @@ body {
 
     .container-body p, .container-body li{
         font-size: 20px;
-        font-weight: 500;
     }
 }
 
@@ -606,12 +607,12 @@ body {
     }
 
     .container-header h2 {
-        font-size: 20px;
+        font-size: 35px;
         margin-bottom: 10px;
     }
 
     .container-header h3 {
-        font-size: 10px;
+        font-size: 15px;
         margin-bottom: 10px;
     }
 
@@ -625,7 +626,7 @@ body {
     }
 
     .container-body p, .container-body li {
-        font-size: 10px;
+        font-size: 13px;
         text-indent: 2em;
     }
 

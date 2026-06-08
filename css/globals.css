@@ -320,7 +320,7 @@ footer {
 @media screen and (max-width: 950px) {
     header {
         position: relative;
-        z-index: 10;
+        z-index: 1000;
     }
 
     #logo {
@@ -331,7 +331,7 @@ footer {
         height: 25px;
         display: block;
         cursor: pointer;
-        z-index: 1000; /* acima do menu */
+        z-index: 10000; /* acima do menu */
         position: relative;
     }
 
@@ -350,7 +350,7 @@ footer {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        z-index: 999;
+        z-index: 9999;
         opacity: 0;
         animation: fadeIn 0.3s forwards;
     }

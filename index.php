@@ -126,9 +126,6 @@ include "head.php";
                     </a>
                 </div>
                 </a>
-                <a class="instagram-link" href="https://www.instagram.com/p/DJ9djMNAlza/?img_index=1" target="_blank">
-                    <img id="logo-Notice" src="img\Social-Icons.png" alt="">
-                </a>
             </div>
         </div>
     </div>

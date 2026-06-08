@@ -160,19 +160,15 @@ body {
     position: absolute;
     z-index: 4;
     display: block;
-    width: 40px;
-    margin-top: -40px;
-    left: 200px;
+    width: 30px;
+    bottom: 10px;
+    right: 10px;
 }
 
-
 #logo-Notice{
-    width: 30px;    /* ocupa metade do elemento pai */
-    float: right;
-    margin-right: 10px;
-    margin-left: 100px;
+    width: 30px;
     height: auto;
-    z-index: 4;
+    display: block;
 }
 
 /*-------------Area Ensino, Pesquisa e Extensão -------------*/
@@ -543,9 +539,6 @@ body {
     .final-text {
       font-size: 1.3rem;
       margin: 2rem;
-    }
-    #logo-Notice{
-        margin-left: 134px;
     }
     
     .minifundo {
