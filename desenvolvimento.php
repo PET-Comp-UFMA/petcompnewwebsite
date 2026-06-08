@@ -4,7 +4,9 @@
 
 <?php
 $title = "PETComp";
-$cssFiles = ['css/fab-de-software.css'];
+$cssFiles = [
+  'css/fab-de-software.css',
+];
 $jsFiles = ['js/swiper.js'];
 include "head.php";
 ?>
@@ -154,8 +156,6 @@ include "head.php";
       <div class="swiper-pagination"></div>
     </div>
   </div>
-  </div>
-
 
   <?php include('footer.php') ?>
   <script src="./js/js.js"></script>
