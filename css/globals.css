@@ -140,7 +140,7 @@ footer {
     }
     & img {
         width: 2.5rem;
-        height: 2.5rem;
+        /* height: 2.5rem; */
     }
     & hr {
         width: 100%;

@@ -66,7 +66,7 @@ include 'head.php';
     <div class="container-header">
         <h2>Mapa CCET</h2>
         <h3>Confira o mapa do CCET (Centro de Ciências Exatas e Tecnológicas)</h3>
-        <h4><a href="index.php">Página Inicial</a></h4>
+        <h4><a href="">Página Inicial</a></h4>
         <h4> → Mapa CCET</h4>
     </div>
 
