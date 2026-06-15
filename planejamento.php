@@ -30,32 +30,44 @@ include 'head.php';
             include('components/btn-voltar.php');
         ?>
         <section class="planejamentos">
-            <?php
-                $json = file_get_contents('data/planejamentos.json');
-                $planejamentos = json_decode($json, true);
-            foreach ($planejamentos as $planejamento):
-            ?>
-                <div class="planejamento-card">
 
-            <div class="planejamento-info">
-                <h2><?= $planejamento['titulo'] ?></h2>
-
-                <p>
-                    Planejamento anual referente ao ano de
-                    <?= $planejamento['ano'] ?>
-                </p>
+            <div class="menu-lateral">
+                <div>
+                    <p>Planejamento Anual</p>
+                </div>
+                <div>
+                    <p>Relatório Anual</p>
+                </div>
             </div>
 
-            <a
-                href="<?= $planejamento['arquivo'] ?>"
-                target="_blank"
-                class="btn-documento"
-            >
-                Ver documento
-            </a>
+            <div>
+                <?php
+                    $json = file_get_contents('data/planejamentos.json');
+                    $planejamentos = json_decode($json, true);
+                foreach ($planejamentos as $planejamento):
+                ?>
+                    <div class="planejamento-card">
 
-        </div>
-            <?php endforeach; ?>
+                <div class="planejamento-info">
+                    <h2><?= $planejamento['titulo'] ?></h2>
+
+                    <p>
+                        Planejamento anual referente ao ano de
+                        <?= $planejamento['ano'] ?>
+                    </p>
+                </div>
+
+                <a
+                    href="<?= $planejamento['arquivo'] ?>"
+                    target="_blank"
+                    class="btn-documento"
+                >
+                    Ver documento
+                </a>
+
+                </div>
+                    <?php endforeach; ?>
+            </div>
         </section>
 
     </main>

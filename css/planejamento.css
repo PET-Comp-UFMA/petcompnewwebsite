@@ -1,3 +1,7 @@
+.menu-lateral{
+    
+}
+
 .planejamentos{
     width: 100%;
     max-width: 1200px;
@@ -5,7 +9,7 @@
     padding: 40px 20px;
 
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: 24px;
 }
 
