@@ -1,0 +1,55 @@
+.planejamentos{
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.planejamento-card{
+    width: 100%;
+
+    background: #fff;
+
+    border-radius: 12px;
+
+    padding: 24px 32px;
+
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    transition: 0.2s;
+}
+
+.planejamento-card:hover{
+    transform: translateY(-2px);
+}
+
+.planejamento-info h2{
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.planejamento-info p{
+    margin-top: 8px;
+    color: #666;
+}
+
+.btn-documento{
+    text-decoration: none;
+
+    padding: 12px 24px;
+
+    border-radius: 8px;
+
+    font-weight: 600;
+
+    color: white;
+    background: #0066cc;
+}

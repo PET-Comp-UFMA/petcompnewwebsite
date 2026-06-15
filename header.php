@@ -30,6 +30,8 @@
                 <a href="revista" class="nav-link dropdown-link">Revista PETComp</a>
                 <a href="banners" class="nav-link dropdown-link">Banners PETComp</a>
                 <a href="eventos" class="nav-link dropdown-link">Eventos</a>
+                <a href="planejamento" class="nav-link dropdown-link">Planejamento Anual</a>
+                <a href="relatorio" class="nav-link dropdown-link">Relatório Anual</a>
             </div>
         </div>
         <div>
