@@ -69,8 +69,6 @@ function openMenu() {
     }
 
     function handleClick(click) {
-        if (!mediaQuery.matches) return;
-
         const dropdown = click.target.closest(".dropdown");
         const dropbtn = click.target.closest(".dropbtn");
 
