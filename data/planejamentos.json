@@ -2,11 +2,13 @@
     {
         "ano": 2026,
         "titulo": "Planejamento Anual 2026",
-        "arquivo": "assets/documentos/planejamento_2026.pdf"
+        "arquivo": "assets/documentos/planejamento_2026.pdf",
+        "dataPublicacao": "xx/xx/xxxx"
     },
     {
         "ano": 2025,
         "titulo": "Planejamento Anual 2025",
-        "arquivo": "assets/documentos/planejamento_2025.pdf"
+        "arquivo": "assets/documentos/planejamento_2025.pdf",
+        "dataPublicacao": "xx/xx/xxxx"
     }
 ]

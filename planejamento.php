@@ -41,29 +41,36 @@ include 'head.php';
             </div>
 
             <div>
+                <h1 id="title-documents">Titulo</h1>
                 <?php
                     $json = file_get_contents('data/planejamentos.json');
                     $planejamentos = json_decode($json, true);
                 foreach ($planejamentos as $planejamento):
                 ?>
-                    <div class="planejamento-card">
+                
+                <div class="planejamento-card">
 
-                <div class="planejamento-info">
-                    <h2><?= $planejamento['titulo'] ?></h2>
+                    
+                    <div class="planejamento-left">
+                        <span class="documents-icon">
+                                <img src="assets/svg/iconDocuments.svg" alt="">
+                        </span>
+                        <div class="planejamento-info">
+                        
+                            <h2><?= $planejamento['titulo'] ?></h2>
+                            <p>
+                                Publicado em
+                                <?= $planejamento['dataPublicacao'] ?>
+                            </p>
+                        
+                        </div>
+                    </div>
 
-                    <p>
-                        Planejamento anual referente ao ano de
-                        <?= $planejamento['ano'] ?>
-                    </p>
-                </div>
-
-                <a
-                    href="<?= $planejamento['arquivo'] ?>"
-                    target="_blank"
-                    class="btn-documento"
-                >
-                    Ver documento
-                </a>
+                    <div>
+                        <a href="<?= $planejamento['arquivo'] ?> "target="_blank" class="btn-documento">
+                            Ver documento
+                        </a>
+                    </div>
 
                 </div>
                     <?php endforeach; ?>
