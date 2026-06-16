@@ -88,10 +88,6 @@ header {
     cursor: pointer;
 }
 
-.dropdown.open .dropbtn { 
-    background-color: #002d5a;
-}
-
 /* Container-header */
 .container-header {
     color: white;
@@ -252,6 +248,16 @@ footer {
 
     .dropbtn:hover .material-icons {
         transform: rotate(180deg);
+    }
+}
+
+/* Para dispositivos que não possuem a função de hover: dispositivos touchscreen */
+@media (hover: none) {
+    .dropdown.open .dropdown-content {
+        display: block;
+    }
+    .dropdown.open .dropbtn { 
+        background-color: #002d5a;
     }
 }
 
