@@ -20,12 +20,6 @@ $routes = [
     ($root ? "$root/laboratorios" : "laboratorios") => function () {
         require("laboratorios.php");
     },
-    ($root ? "$root/planejamento" : "planejamento") => function () {
-        require("planejamento.php");
-    },
-    ($root ? "$root/relatorio" : "relatorio") => function () {
-        require("relatorio.php");
-    },
     ($root ? "$root/mapa-ccet" : "mapa-ccet") => function () {
         require("mapa-ccet.php");
     },
@@ -91,7 +85,16 @@ $routes = [
     ($root ? "$root/integrantes$param" : "integrantes$param") => function ($id) {
         $_GET['page'] = $id;
         require("integrantes.php");
-    }
+    },
+    ($root ? "$root/planejamento" : "planejamento") => function () {
+    $_GET['tipo'] = 'planejamento';
+    require("documentos.php");
+    },
+
+    ($root ? "$root/relatorio" : "relatorio") => function () {
+        $_GET['tipo'] = 'relatorio';
+        require("documentos.php");
+    },
 ];
 
 function route($path, $routes)

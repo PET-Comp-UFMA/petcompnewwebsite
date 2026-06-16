@@ -1,0 +1,14 @@
+[
+    {
+        "ano": 2026,
+        "titulo": "Relatório Anual 2026",
+        "arquivo": "assets/documentos/planejamento_2026.pdf",
+        "dataPublicacao": "xx/xx/xxxx"
+    },
+    {
+        "ano": 2025,
+        "titulo": "Relatório Anual 2025",
+        "arquivo": "assets/documentos/planejamento_2025.pdf",
+        "dataPublicacao": "xx/xx/xxxx"
+    }
+]
