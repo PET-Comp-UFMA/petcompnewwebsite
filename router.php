@@ -85,7 +85,16 @@ $routes = [
     ($root ? "$root/integrantes$param" : "integrantes$param") => function ($id) {
         $_GET['page'] = $id;
         require("integrantes.php");
-    }
+    },
+    ($root ? "$root/planejamento" : "planejamento") => function () {
+    $_GET['tipo'] = 'planejamento';
+    require("documentos.php");
+    },
+
+    ($root ? "$root/relatorio" : "relatorio") => function () {
+        $_GET['tipo'] = 'relatorio';
+        require("documentos.php");
+    },
 ];
 
 function route($path, $routes)
