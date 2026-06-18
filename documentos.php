@@ -38,6 +38,7 @@ E preencha com:
 <?php
 $title = "$titulohead";
 $cssFiles = ['css/documentos.css', 'css/biblioteca.css'];
+$jsFiles = ['js/documentos.js'];
 include 'head.php';
 ?>
 
@@ -58,57 +59,57 @@ include 'head.php';
         <section class="planejamentos">
 
             <div class="menu-lateral">
-                <a href="planejamento" class="select <?= $tipo == 'planejamento' ? 'active' : '' ?>">
+                <a href="planejamento" data-documentos-tab data-tipo="planejamento" class="select <?= $tipo == 'planejamento' ? 'active' : '' ?>">
                     
                         <div>
                             <img src="assets/svg/iconDocuments.svg" alt="">
                             <p>Planejamentos</p>
                         </div>
-                        <img src="assets/svg/seta.svg" id="setinha" alt="">
+                        <img src="assets/svg/seta.svg" class="setinha" alt="">
 
                 </a>
                 
-                <a href="relatorio" class="select <?= $tipo == 'relatorio' ? 'active' : '' ?>">
+                <a href="relatorio" data-documentos-tab data-tipo="relatorio" class="select <?= $tipo == 'relatorio' ? 'active' : '' ?>">
                         <div>
                             <img src="assets/svg/iconDocuments.svg"alt="">
                             <p>Relatórios</p>
                         </div>
-                        <img src="assets/svg/seta.svg" id="setinha" alt="">
+                        <img src="assets/svg/seta.svg" class="setinha" alt="">
                 </a>
             </div>
 
             <div class="documentos">
                 <h1 id="title-documents"><?= $tituloPagina ?></h1>
-                <?php
-                foreach ($documentos as $documento):
-                ?>
                 
-                <div class="planejamento-card">
-
+                <div id="documentos-lista">
+                    <?php
+                    foreach ($documentos as $documento):
+                    ?>
                     
-                    <div class="planejamento-left">
-                        <span class="documents-icon">
-                                <img src="assets/svg/iconDocuments.svg" alt="">
-                        </span>
-                        <div class="planejamento-info">
-                        
-                            <h2><?= $documento['titulo'] ?></h2>
-                            <p>
-                                Publicado em
-                                <?= $documento['dataPublicacao'] ?>
-                            </p>
-                        
+                    <div class="planejamento-card">
+                        <div class="planejamento-left">
+                            <span class="documents-icon">
+                                    <img src="assets/svg/iconDocuments.svg" alt="">
+                            </span>
+                            <div class="planejamento-info">
+                            
+                                <h2><?= $documento['titulo'] ?></h2>
+                                <p>
+                                    Publicado em
+                                    <?= $documento['dataPublicacao'] ?>
+                                </p>
+                            
+                            </div>
+                        </div>
+
+                        <div>
+                            <a href="<?= $documento['arquivo'] ?> "target="_blank" class="btn-documento">
+                                Ver documento
+                            </a>
                         </div>
                     </div>
-
-                    <div>
-                        <a href="<?= $documento['arquivo'] ?> "target="_blank" class="btn-documento">
-                            Ver documento
-                        </a>
-                    </div>
-
-                </div>
                     <?php endforeach; ?>
+                </div>
             </div>
         </section>
 
