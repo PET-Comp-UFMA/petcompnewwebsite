@@ -1,47 +1,47 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<?php 
-    $title = "Eventos";
-    $cssFiles = ['css/eventos.css'];
-    include "head.php";
+<?php
+$title = "Eventos";
+$cssFiles = ['css/eventos.css'];
+include "head.php";
 ?>
 
 <body>
     <?php include('header.php') ?>
     <main>
-        
+
         <div class="container-header">
             <h2>Eventos</h2>
             <h3>Confira os eventos nós promovemos</h3>
-            <h4><a href="index.php">Página Inicial</a></h4>
-            <h4> → Eventos</h4> 
+            <h4><a href="">Página Inicial</a></h4>
+            <h4> → Eventos</h4>
         </div>
-        
+
         <div class="container-body">
             <p>Os eventos do PETComp nascem da troca de ideias e do trabalho coletivo entre seus integrantes. Em encontros iniciais, o grupo se reúne para pensar e estruturar cada atividade, escolhendo um membro que assume o papel de liderança na organização do evento. Esse processo acontece de forma colaborativa, com o apoio do tutor, que atua como um elo entre o grupo e a universidade, facilitando diálogos, parcerias e articulações necessárias. Conforme o perfil e o alcance de cada evento, diferentes membros são convidados a participar ativamente da organização, fortalecendo o espírito de equipe.
 
             </p>
             <p>
-            A programação é construída com foco na vivência acadêmica e profissional, reunindo minicursos, palestras, tutoriais, competições, apresentações, rodas de conversa e atividades práticas em laboratório. As escolhas refletem as tendências atuais da área e buscam dialogar diretamente com os interesses e expectativas do público do curso de Ciência da Computação, criando espaços de aprendizado, debate e troca de experiências. Para dar suporte a essa diversidade de atividades, o grupo se organiza em comissões, cada uma dedicada a aspectos essenciais do evento.
+                A programação é construída com foco na vivência acadêmica e profissional, reunindo minicursos, palestras, tutoriais, competições, apresentações, rodas de conversa e atividades práticas em laboratório. As escolhas refletem as tendências atuais da área e buscam dialogar diretamente com os interesses e expectativas do público do curso de Ciência da Computação, criando espaços de aprendizado, debate e troca de experiências. Para dar suporte a essa diversidade de atividades, o grupo se organiza em comissões, cada uma dedicada a aspectos essenciais do evento.
 
             </p>
         </div>
 
-        <div class = "noticias">
-             <div class= "box-models">
+        <div class="noticias">
+            <div class="box-models">
                 <img src="assets/images/pag-eventos/box-Marapet.png" alt="Ícone Marapet">
-                <div class = "texts-content">
+                <div class="texts-content">
                     <h1>Marapet</h1>
                     <h4>
-                        O MARAPET é um evento acadêmico e formativo organizado pelos Grupos PET (Programa de Educação Tutorial) das universidades do Maranhão, especialmente da UFMA. Ele é um grande encontro estadual que reúne petianos e tutores para apresentar trabalhos, trocar experiências e discutir temas sobre ensino, pesquisa e extensão. Mais do que um evento, o MARAPET é um espaço de integração, aprendizado e compartilhamento de saberes entre os grupos PET maranhenses! 
+                        O MARAPET é um evento acadêmico e formativo organizado pelos Grupos PET (Programa de Educação Tutorial) das universidades do Maranhão, especialmente da UFMA. Ele é um grande encontro estadual que reúne petianos e tutores para apresentar trabalhos, trocar experiências e discutir temas sobre ensino, pesquisa e extensão. Mais do que um evento, o MARAPET é um espaço de integração, aprendizado e compartilhamento de saberes entre os grupos PET maranhenses!
                     </h4>
                     <button><a href="https://petcompufma.org/marapet/index.php" target="_blank" style="color: inherit; text-decoration: none">Saiba mais</a></button>
                 </div>
             </div>
 
-            <div class= "box-models">
+            <div class="box-models">
                 <img src="assets\images\pag-eventos\box-acalourada.png" alt="Ícone Acalourada">
-                <div class = "texts-content">
+                <div class="texts-content">
                     <h1>Acalourada</h1>
                     <h4>
                         A Acalourada Virtual é uma atividade de recepção dos estudantes ingressantes no curso de Ciência da
@@ -54,59 +54,59 @@
                 </div>
             </div>
 
-            <div class= "box-models">
+            <div class="box-models">
                 <img src="assets\images\pag-eventos\box-eacomp.png" alt="Ícone EACOMP">
-                <div class = "texts-content">
+                <div class="texts-content">
                     <h1>EAComp</h1>
                     <h4>
-                        O Encontro Acadêmico de Computação (EAComp) da UFMA é uma forma de receber novos alunos e familiarizá-los 
-                        com o curso de Graduação de Ciência da Computação da UFMA apresentando as oportunidades dentro da graduação. 
+                        O Encontro Acadêmico de Computação (EAComp) da UFMA é uma forma de receber novos alunos e familiarizá-los
+                        com o curso de Graduação de Ciência da Computação da UFMA apresentando as oportunidades dentro da graduação.
                         O EAComp é organizado pelo Programa de Educação Tutorial do curso de Ciência da Computação (PETComp).
                     </h4>
                     <button><a href="https://petcompufma.org/eacomp/index.html" target="_blank" style="color: inherit; text-decoration: none">Saiba mais</a></button>
                 </div>
             </div>
 
-            <div class= "box-models">
+            <div class="box-models">
                 <img src="assets\images\pag-eventos\box-eea.svg" alt="Ícone EEA">
-                <div class = "texts-content">
+                <div class="texts-content">
                     <h1>EEA</h1>
                     <h4>
-                        As competências digitais tornaram-se essenciais para o processo de ensino e aprendizagem, envolvendo a utilização 
-                        segura e crítica das TDIC (Tecnologias Digitais de Informação e Comunicação) e da Internet para pesquisar, encontrar, 
-                        avaliar, processar, armazenar, utilizar, produzir, apresentar e trocar informações, inclusive em rede. Nesse contexto, 
-                        o I Encontro sobre Experiências Acadêmicas da UFMA (I EEA da UFMA) é um evento com o objetivo de permitir que toda a 
-                        comunidade da Universidade Federal do Maranhão (UFMA) e demais Instituições de Ensino Superior públicas do Maranhão 
-                        possam trocar experiências, aprender e divulgar ações bem-sucedidas no contexto do desenvolvimento e disponibilização 
+                        As competências digitais tornaram-se essenciais para o processo de ensino e aprendizagem, envolvendo a utilização
+                        segura e crítica das TDIC (Tecnologias Digitais de Informação e Comunicação) e da Internet para pesquisar, encontrar,
+                        avaliar, processar, armazenar, utilizar, produzir, apresentar e trocar informações, inclusive em rede. Nesse contexto,
+                        o I Encontro sobre Experiências Acadêmicas da UFMA (I EEA da UFMA) é um evento com o objetivo de permitir que toda a
+                        comunidade da Universidade Federal do Maranhão (UFMA) e demais Instituições de Ensino Superior públicas do Maranhão
+                        possam trocar experiências, aprender e divulgar ações bem-sucedidas no contexto do desenvolvimento e disponibilização
                         de produções técnicas inovadoras.
                     </h4>
                     <button><a href="https://eea.ufma.br/#:~:text=O%20I%20EEA%20da%20UFMA%20tem,a%20Ag%C3%AAncia%20de%20Inova%C3%A7%C3%A3o%2C%20Empreendedorismo%2C" target="_blank" style="color: inherit; text-decoration: none">Saiba mais</a></button>
                 </div>
             </div>
 
-            <div class= "box-models">
+            <div class="box-models">
                 <img src="assets\images\pag-eventos\box-enepet.png" alt="Ícone ENEPET">
-                <div class = "texts-content">
+                <div class="texts-content">
                     <h1>ENEPET</h1>
                     <h4>
-                        O Encontro Nordestino dos Grupos do Programa de Educação Tutorial (ENEPET) é um evento em que a comunidade petiana da 
-                        região Nordeste se encontra para discutir questões relacionadas ao Programa de Educação Tutorial (PET) na região. O 
-                        encontro é caracterizado por assembleias, grupos de discussão e trabalhos, apresentação de trabalhos acadêmicos, 
+                        O Encontro Nordestino dos Grupos do Programa de Educação Tutorial (ENEPET) é um evento em que a comunidade petiana da
+                        região Nordeste se encontra para discutir questões relacionadas ao Programa de Educação Tutorial (PET) na região. O
+                        encontro é caracterizado por assembleias, grupos de discussão e trabalhos, apresentação de trabalhos acadêmicos,
                         atividades culturais, além da troca de experiências entre discentes e tutores nordestinos.
                     </h4>
-                    
+
                 </div>
             </div>
 
-            <div class= "box-models">
+            <div class="box-models">
                 <img src="assets\images\pag-eventos\box-ercemapi.svg" alt="Ícone ERCEMAPI">
-                <div class = "texts-content">
+                <div class="texts-content">
                     <h1>ERCEMAPI</h1>
                     <h4>
-                        A primeira edição da Escola Regional de Computação dos Estados do Ceará, Maranhão e Piauí (ERCEMAPI) ocorreu em 2007 e 
-                        foi sediada em Fortaleza, CE. O evento busca promover a integração entre os três estados e tem como objetivo disseminar 
-                        o conhecimento técnico e científico sobre temas e assuntos de vanguarda na área de Computação. As Escolas Regionais são 
-                        eventos promovidos pela Sociedade Brasileira de Computação (SBC). A ERCEMAPI visa se consolidar como um evento de 
+                        A primeira edição da Escola Regional de Computação dos Estados do Ceará, Maranhão e Piauí (ERCEMAPI) ocorreu em 2007 e
+                        foi sediada em Fortaleza, CE. O evento busca promover a integração entre os três estados e tem como objetivo disseminar
+                        o conhecimento técnico e científico sobre temas e assuntos de vanguarda na área de Computação. As Escolas Regionais são
+                        eventos promovidos pela Sociedade Brasileira de Computação (SBC). A ERCEMAPI visa se consolidar como um evento de
                         referência nos Estados do Maranhão, Ceará e Piauí e região. Além disso, o evento colabora e contribui com a consolidação
                         dos Programas de Pós-Graduação da região.
                     </h4>
@@ -114,28 +114,28 @@
                 </div>
             </div>
 
-            <div class= "box-models">
+            <div class="box-models">
                 <img src="assets\images\pag-eventos\box-ejim.svg" alt="Ícone EJIM">
-                <div class = "texts-content">
+                <div class="texts-content">
                     <h1>EJIM</h1>
                     <p>
-                        A Jornada Informática do Maranhão (JIM) é um evento de caráter acadêmico e técnico-científico com o objetivo de 
-                        propiciar um espaço de intercâmbio entre os diversos atores dos setores de Informática da região, apresentando e 
-                        discutindo temas que abordam a aplicação da Computação para a solução de problemas do Estado do Maranhão, bem como as 
-                        pesquisas em Informática realizadas nas instituições do estado, disponibilizando aos participantes a possibilidade de 
-                        acesso a temas e discussões recentes na área, através de diversas atividades, como palestras, minicursos, painéis de 
+                        A Jornada Informática do Maranhão (JIM) é um evento de caráter acadêmico e técnico-científico com o objetivo de
+                        propiciar um espaço de intercâmbio entre os diversos atores dos setores de Informática da região, apresentando e
+                        discutindo temas que abordam a aplicação da Computação para a solução de problemas do Estado do Maranhão, bem como as
+                        pesquisas em Informática realizadas nas instituições do estado, disponibilizando aos participantes a possibilidade de
+                        acesso a temas e discussões recentes na área, através de diversas atividades, como palestras, minicursos, painéis de
                         discussão e apresentação de trabalhos científicos.
                     </p>
                 </div>
             </div>
 
-            <div class= "box-models">
+            <div class="box-models">
                 <img src="assets\images\pag-eventos\box-enapet.jpg" alt="Ícone ENAPET">
-                <div class = "texts-content">
+                <div class="texts-content">
                     <h1>ENAPET</h1>
                     <h4>
-                        Todos os anos, o Encontro Nacional do Programa de Educação Tutorial (ENAPET) reúne discentes, docentes e interlocutores 
-                        vinculados ao programa com o objetivo de discutir, coletivamente, temas e questões relevantes para a manutenção e o 
+                        Todos os anos, o Encontro Nacional do Programa de Educação Tutorial (ENAPET) reúne discentes, docentes e interlocutores
+                        vinculados ao programa com o objetivo de discutir, coletivamente, temas e questões relevantes para a manutenção e o
                         desenvolvimento do PET nacionalmente.
                     </h4>
                 </div>
@@ -144,5 +144,6 @@
     </main>
 </body>
 <?php include('footer.php') ?>
-  <script src="./js/js.js"></script>
+<script src="./js/js.js"></script>
+
 </html>

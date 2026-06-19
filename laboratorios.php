@@ -65,7 +65,7 @@ function componentePopUp($idPopUp, $cor, $caminhoLogo, $titulo, $subtitulo, $des
     <div class="container-header">
         <h2>Laboratórios</h2>
         <h3>Confira os laboratórios do curso</h3>
-        <h4><a href="index.php">Página Inicial</a></h4>
+        <h4><a href="">Página Inicial</a></h4>
         <h4> → Laboratórios</h4>
     </div>
 
@@ -91,7 +91,7 @@ function componentePopUp($idPopUp, $cor, $caminhoLogo, $titulo, $subtitulo, $des
         ?>
     </div>
 
-    <?php 
+    <?php
     componentePopUp(
         "popUpDxt",
         "#ABF3FF",
