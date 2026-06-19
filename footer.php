@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,7 +14,7 @@
 
         <div class="footer-top">
             <div class="footer-logos">
-                <img src="img/logo-pet-branco.png" alt="logo-pet-branco">
+                <img src="assets/svg/logos-pet/LOGO PETCOMP - BRANCA.svg" alt="logo-pet">
                 <img src="img/logo-ufma-branco.png" alt="logo-ufma-branco">
             </div>
             <hr class="footer__line">
@@ -39,7 +40,7 @@
                 </h2>
                 <ul class="ulist">
                     <li class="litem">
-                        <a target="_blank"class="item-button" href="monitoria">Monitoria</a>
+                        <a target="_blank" class="item-button" href="monitoria">Monitoria</a>
                     </li>
                     <li class="litem">
                         <a target="_blank" class="item-button" href="desenvolvimento">Fáb. Software</a>
@@ -84,16 +85,16 @@
                         <a target="_blank" class="item-button" href="https://sigaa.ufma.br/sigaa/public/departamento/portal.jsf?lc=pt_BR&id=998">Departamento de computação</a>
                     </li>
                     <li class="litem">
-                        <a  target="_blank" class="item-button" href="https://portalpadrao.ufma.br/">UFMA</a>
+                        <a target="_blank" class="item-button" href="https://portalpadrao.ufma.br/">UFMA</a>
                     </li>
                 </ul>
             </div>
         </div>
-        
+
         <div class="footer-bottom">
             <hr class="footer__line">
             <div class="footer-logos">
-                <a  target="_blank" href="https://www.instagram.com/petcompufma/">
+                <a target="_blank" href="https://www.instagram.com/petcompufma/">
                     <img src="img/logo-instagram.png" alt="logo-instagram">
                 </a>
                 <a target="_blank" href="https://www.facebook.com/petcompufma">

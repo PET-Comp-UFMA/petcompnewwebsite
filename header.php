@@ -1,6 +1,6 @@
 <header>
     <a href="">
-        <img id="logo" src="img/logo.png" alt="Logo PETComp">
+        <img id="logo" src="assets/svg/logos-pet/LOGO CIRCULO - CLARA.svg" alt="Logo PETComp">
     </a>
     <nav class="navbar">
         <div>
@@ -12,13 +12,13 @@
                 <a href="sobre" class="nav-link dropdown-link">Sobre nós</a>
                 <a href="integrantes" class="nav-link dropdown-link">Integrantes</a>
                 <a href="registros" class="nav-link dropdown-link">Registros</a>
-                
+
             </div>
         </div>
         <div class="dropdown dropdown_projetos">
             <button class="dropbtn">Projetos<span class="material-icons">arrow_drop_down</span></button>
             <div class="dropdown-content">
-                
+
                 <a href="desenvolvimento" class="nav-link dropdown-link">Fáb. de software </a>
                 <a href="podcast" class="nav-link dropdown-link">PodCast</a>
             </div>
@@ -36,12 +36,12 @@
         <div>
             <a href="noticias" class="nav-link">Notícias</a>
         </div>
-        <div >
-                <a href="repositorio-educacional" class="nav-link">REAPet</a>  
+        <div>
+            <a href="repositorio-educacional" class="nav-link">REAPet</a>
         </div>
         <div>
             <a href="mapa-ccet" class="nav-link">Mapa CCET</a>
-            
+
         </div>
     </nav>
     <img src="./assets/svg/menu-white.svg" alt="" class="open-btn" onclick="openMenu()">
