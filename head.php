@@ -8,7 +8,7 @@
     <!-- Fontes e Ícones (cada uma incluída apenas uma vez com parâmetros modernos) -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Alatsi&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Mada:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Mada:wght@400;700;900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Sora&display=swap" rel="stylesheet">
     <link rel="icon" href="img/logo.png">
 
