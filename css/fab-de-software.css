@@ -1,5 +1,3 @@
-
-
 * {
   margin: 0;
   padding: 0;
@@ -30,399 +28,161 @@ h4 {
   display: inline;
 }
 
-.main img {
-  margin: 20px auto;
-  transition: 0.2s;
-  width: 100%;
+/* ===== Seção de projetos ===== */
+.main {
+  padding: 0 3em 3em;
 }
 
-.main .images-fab-software,
-.main .images-revistas,
-.main .images-minicursos {
+.main .container {
   display: grid;
-  grid-template-columns: 1fr;
-  flex-direction: row;
-  margin-bottom: 40px;
-  padding: 0 3em;
-}
-
-.main .images-fab-software .images-desenvolvimento {
-  width: 80%;
-}
-
-.main .sites-cards {
-  display: grid;
-  grid-gap: 5em;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2em;
+  max-width: 1200px;
   margin: 0 auto;
-  margin-bottom: 2em;
-  padding: 0 3em;
+}
+
+.main .container .card {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 14px rgba(1, 32, 76, 0.12);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+}
+
+a.card {
+  cursor: pointer;
+}
+
+div.card {
+  cursor: default;
+}
+
+.main .container .card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 22px rgba(1, 32, 76, 0.18);
+}
+
+.main .container .card:visited,
+.main .container .card:active {
+  color: inherit;
+  text-decoration: none;
+}
+
+.main .container .card img {
+  display: block;
   width: 100%;
-}
-
-.software-card {
-  background: #fafafa;
-  border-radius: 0.4em;
-  margin: 0 auto !important;
-  transition: transform 0.4s ease-in-out, opacity 0.3s ease-in-out !important;
-  width: 20em;
-  
-  
-}
-.software-card:hover {
-  transform: scale(1.06) !important;
-}
-
-
-.software-card img {
-  border: none;
   height: 10em;
-  width: 20em;
-  
-  animation: fadeIn 1s ease-out;
+  background: #f4f6fb;
+  margin: 0;
 }
 
-.software-card .text {
-  background: #060b3f;
-  border-radius: 0 0 0.4em 0.4em;
-  padding: 1em;
-}
-
-.software-card h2,
-.software-card a {
-  color: #fafafa;
+.main .container .card h3 {
+  color: #01204C;
+  font-size: 19px;
+  font-weight: bold;
+  padding: 0.5em 1.4em;
   margin-bottom: 0.4em;
-  font-size: 20px;
-  text-decoration: none;
 }
 
-.software-card .wrapper-labels {
+.main .container .card p {
+  color: #6b7280;
+  font-size: 14px;
+  line-height: 1.5;
+  padding: 0 1.4em 1.4em;
+  text-align: left;
+}
+
+/* ===== Título da seção (se você usar um <h3>/<h2> acima do grid) ===== */
+.main > h2,
+.main > h3.section-title {
+  color: #01204C;
+  font-size: 28px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 1.5em;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 2em;
+}
+.titulo{
+  color:0B114A;
+}
+
+.titulo::after {
+  content: "";
+  display: block;
+  width: 150px;
+  height: 6px;
+  background-color: #027BFD;
+  margin: 0.5em auto 0;
+  border-radius: 5px;
+}
+
+/* ===== Badges de tecnologia (não clicáveis) ===== */
+.main .container .card .tech-tags {
   display: flex;
-  flex-direction: row;
-  justify-content: left;
+  flex-wrap: wrap;
+  gap: 0.5em;
+  padding: 0 1.4em 1.4em;
+  margin-top: auto;
 }
 
-.software-card .label {
-  color: #fff;
-  border-radius: 50px;
-  font-size: 18px;
-  margin-right: 0.4em;
-  padding: 0.1em 0.4em;
-  width: fit-content;
+.main .container .card .tech-tags span {
+  background: #E6EAFB;
+  color: #027BDF;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 0.03em;
+  padding: 0.25em 0.7em;
+  border-radius: 20px;
+  pointer-events: none;
+  user-select: none;
 }
 
-.react {
-  background: #61dafb;
-}
-
-.css {
-  background: #563d7c;
-}
-
-.php {
-  background: #4f5d95;
-}
-
-.html {
-  background: #e34c26;
-}
-
-.software-card .javascript {
-  background: #f1e05a;
-  color: #000;
-}
-/* Estilo do Swiper para posicionar a paginação abaixo dos cards */
-.carousel {
-  position: relative;
-  margin-bottom: 2rem;
-}
-
-/* Estilo do Swiper */
-.carousel {
-  position: relative;
-}
-
-/* Estilo dos bullets de navegação (paginações) */
-.swiper-pagination {
-  display: flex;
-  justify-content: center; /* Centraliza os bullets horizontalmente */
-  z-index: 10;
-}
-
-/* Personalize os bullets */
-.swiper-pagination-bullet {
-  background-color: #007bff; /* Cor dos bullets */
-}
-
-/* Ajuste para o layout dos slides */
-.swiper-slide {
-  display: flex;
-  justify-content: center; /* Centraliza os cards */
-}
-
-/* Adicional: Adicionar margem aos slides, se necessário, para espaçamento */
-.swiper-slide {
-  margin-bottom: 20px; /* Ajuste conforme o seu layout */
-}
-/* Estilo do Swiper */
-.carousel {
-  position: relative;
-}
-
-/* Estilo dos slides */
-.swiper-slide {
-  display: flex;
-  justify-content: center;
-  align-items: center; /* Garantir que o conteúdo dos cards esteja centralizado */
-}
-
-/* Estilo dos bullets de navegação (paginações) */
-.swiper-pagination {
-  position: relative;
-  bottom: 10px; /* Coloca os bullets abaixo dos slides */
-  display: flex;
-  justify-content: center;
-  z-index: 1000; /* Garante que a paginação fique abaixo dos cards */
-  padding-top: 20px; /* Adiciona um espaçamento acima da paginação */
-}
-
-/* Personalize os bullets */
-.swiper-pagination-bullet {
-  background-color: #007bff;
-  width: 12px; /* Tamanho dos bullets */
-  height: 12px; /* Tamanho dos bullets */
-  margin: 0 5px; /* Espaçamento entre os bullets */
-}
-/* Estilo do Swiper */
-.carousel {
-  position: relative;
-}
-
-/* Estilo dos slides */
-.swiper-slide {
-  display: flex;
-  justify-content: center;
-  align-items: center; /* Garantir que o conteúdo dos cards esteja centralizado */
-}
-
-/* Estilo dos bullets de navegação (paginações) */
-.swiper-pagination {
-  position: relative;
-  bottom: 10px; /* Coloca os bullets abaixo dos slides */
-  display: flex;
-  justify-content: center;
-  z-index: 1000; /* Garante que a paginação fique abaixo dos cards */
-  padding-top: 30px; /* Adiciona um espaçamento acima da paginação */
-}
-
-/* Personalize os bullets */
-.swiper-pagination-bullet {
-  background-color: #007bff;
-  width: 12px; /* Tamanho dos bullets */
-  height: 12px; /* Tamanho dos bullets */
-  margin: 0 5px; /* Espaçamento entre os bullets */
-}
-.swiper-slide a{
-  text-decoration: none;
-
-}
-/* Ajustes de responsividade */
-@media (max-width: 768px) {
-  .swiper-pagination {
-    margin-top: 10px;
-  }
-  .swiper-pagination-bullet {
-    width: 10px; /* Bullets menores em telas pequenas */
-    height: 10px;
-  }
-}
-
-
-/* Ajustes de responsividade */
-@media (max-width: 768px) {
-  .swiper-pagination {
-    margin-top: 10px;
-  }
-  .swiper-pagination-bullet {
-    width: 10px; /* Bullets menores em telas pequenas */
-    height: 10px;
-  }
-}
-
-
-@media screen and (min-width: 1025px) {
-  .container-header {
-      padding: 50px 60px;
-  }
-
-  .container-header h2 {
-      font-size: 50px;
-      margin-bottom: 20px;
-      font-weight: bold;
-  }
-
-  .container-header h3 {
-      font-size: 30px;
-      margin-bottom: 20px;
-      font-weight: normal;
-  }
-
-  .container-header p {
-      font-size: 16px;
-      font-weight: normal;
-  }
-
-  .container-body {
-      padding: 50px 60px;
-  }
-
-  .container-body p {
-      font-size: 20px;
-      font-weight: medium;
-  }
-}
-
-@media (max-width: 1360px) {
-
-  .main .sites-cards {
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 3em;
-    padding: 0 2em;
-  }
-
-  .software-card {
-    width: 100%;
-  }
-
-  .software-card img {
-    display: flex;
-    flex-direction: column;
-  }
-
-}
-
+/* ===== Responsividade ===== */
 @media (max-width: 1024px) {
-
-  .title-section {
-    padding: 2rem 3rem;
-  }
-
-  .title-section h1 {
-    font-size: 50px;
-  }
-
-  .title-section h2 {
-    font-size: 30px;
-  }
-
-  .text-fab-software {
-    padding: 2rem 3rem;
-    font-size: 20px;
-  }
-
-  .main .sites-cards {
-    grid-template-columns: 1fr;
-    grid-gap: 3em;
-    padding: 0 2em;
-  }
-
-  .software-card {
-    width: 100%;
-  }
-
-  .software-card img {
-    display: flex;
-    flex-direction: column;
+  .main .container {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
-/* Telas menores que 768px (Tablets em modo retrato e celulares grandes) */
-@media (max-width: 768px) {
+@media (max-width: 640px) {
+  .main {
+    padding: 0 0 2em;
+  }
 
-  header .nav-links{ /* Provisorio, enquanto o header nao fica pronto */
+  .main .container {
+    display: flex;
+    grid-template-columns: unset;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: 1em;
+    padding: 0 1.5em 1em;
+    max-width: 100%;
+    scroll-padding-left: 1.5em;
+  }
+
+  .main .container .card {
+    flex: 0 0 82%;
+    scroll-snap-align: start;
+  }
+
+  .main .container::-webkit-scrollbar {
     display: none;
   }
 
-  .title-section {
-    padding: 1.5rem 2rem;
-  }
-
-  .title-section h1 {
-    font-size: 40px;
-  }
-
-  .title-section h2 {
-    font-size: 25px;
-  }
-
-  .text-fab-software {
-    padding: 1.5rem 2rem;
-    font-size: 18px;
-  }
-
-  .acess-title {
-    font-size: 18px;
-    flex-wrap: wrap;
-  }
-
-  .main .sites-cards {
-    grid-gap: 2em;
-    padding: 0 1.5em;
-  }
-
-  .software-card img {
-    display: flex;
-    flex-direction: column;
+  .main .container {
+    scrollbar-width: none;
   }
 }
 
-/* Telas menores que 480px (Celulares pequenos) */
-@media (max-width: 480px) {
-
-  header .nav-links{ /* Provisorio, enquanto o header nao fica pronto */
-    display: none;
-  }
-
-
-  .title-section {
-    padding: 1rem;
-  }
-
-  .title-section h1 {
-    font-size: 30px;
-  }
-
-  .title-section h2 {
-    font-size: 20px;
-  }
-
-  .text-fab-software {
-    padding: 1rem;
-    font-size: 16px;
-  }
-
-  .main .sites-cards {
-    grid-gap: 1em;
-    padding: 0 1em;
-  }
-
-  .software-card {
-    width: 100%;
-  }
-
-  .software-card img {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .software-card h2, .software-card a {
-    font-size: 16px;
-  }
-
-  .software-card .label {
-    font-size: 14px;
-  }
-}
 @media screen and (min-width: 1025px) {
   .container-header {
       padding: 50px 60px;
@@ -454,6 +214,7 @@ h4 {
       font-weight: medium;
   }
 }
+
 @media screen and (min-width: 601px) and (max-width: 1024px) {
   .container-header {
       padding: 20px 70px;
@@ -483,6 +244,7 @@ h4 {
       text-indent: 2em;
   }
 }
+
 @media screen and (max-width: 600px) {
   .container-header {
       padding: 20px 40px;
@@ -513,3 +275,9 @@ h4 {
   }
 }
 
+@media (min-width: 1400px) {
+  .main .container {
+    grid-template-columns: repeat(4, 1fr);
+    max-width: 1500px;
+  }
+}
