@@ -185,8 +185,8 @@ const locaisCCET = [
     { id: 'banheiro1', bloco: '5', sala: '', nome: 'Banheiro Feminino', andar: 'terreo', categoria: 'wc-f', imagem: '', descricao: '', coordenadas: [1556, 975] },
     { id: 'biblioteca', bloco: '5', sala: '', nome: 'Biblioteca CCET', andar: 'terreo', categoria: 'biblioteca', imagem: '', descricao: '', coordenadas: [1445, 440] },
     { id: '22', bloco: '5', sala: '', nome: 'PETComp', andar: 'terreo', categoria: 'petcomp', imagem: '', descricao: '', coordenadas: [1279, 1130] },
-    { id: '23', bloco: '5', sala: '101', nome: 'LAB 3 - Ciência da Computação', andar: 'terreo', categoria: 'laboratorio', imagem: '', descricao: '', coordenadas: [1400, 1130] },
-    { id: '24', bloco: '5', sala: '101', nome: 'LAB 4 - Ciência da Computação', andar: 'terreo', categoria: 'laboratorio', imagem: '', descricao: '', coordenadas: [1583, 1130] },
+    { id: '23', bloco: '5', sala: '101', nome: 'LAB 4 - Ciência da Computação', andar: 'terreo', categoria: 'laboratorio', imagem: '', descricao: '', coordenadas: [1400, 1130] },
+    { id: '24', bloco: '5', sala: '101', nome: 'LAB 3 - Ciência da Computação', andar: 'terreo', categoria: 'laboratorio', imagem: '', descricao: '', coordenadas: [1583, 1130] },
 
     { id: '25', bloco: '6', sala: '', nome: 'Coordenação do Curso de Matemática (Licenciatura)', andar: 'terreo', categoria: 'coord', imagem: '', descricao: '', coordenadas: [876, 1967] },
     { id: '26', bloco: '6', sala: '', nome: 'Coordenação do Curso de Física (Bacharelado)', andar: 'terreo', categoria: 'coord', imagem: '', descricao: '', coordenadas: [876, 1814] },
