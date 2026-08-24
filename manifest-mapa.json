@@ -1,7 +1,7 @@
 {
   "name": "Mapa CCET UFMA",
   "short_name": "Mapa CCET",
-  "start_url": "mapa-ccet.php",
+  "start_url": "mapa-ccet.php?embed=true",
   "display": "standalone",
   "background_color": "#01204C",
   "theme_color": "#01204C",
