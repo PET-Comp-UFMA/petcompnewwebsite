@@ -856,4 +856,5 @@ map.on('click', function() {
 // ver sobre imagem - enquadramento
 // loading
 // botar hover no zoom minimo
+//lista
 
