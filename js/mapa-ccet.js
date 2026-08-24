@@ -832,8 +832,13 @@ map.on('dragstart', function() {
 });
 map.on('click', function() {
     document.activeElement.blur();
-    if (!map.isFullscreen()) {
-        map.toggleFullscreen();
+    var fsBtn = document.querySelector('.leaflet-control-fullscreen-button');
+    if (fsBtn && map && typeof map.isFullscreen === 'function' && !map.isFullscreen()) {
+        fsBtn.dispatchEvent(new MouseEvent('click', {
+            view: window,
+            bubbles: true,
+            cancelable: true
+        }));
     }
 });
 
