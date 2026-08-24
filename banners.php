@@ -189,8 +189,8 @@
                             <!-- CARD 8 -->
                             <div class="swiper-slide">
                             <div class="banner-card">
-                                <h3>Plataforma Gamificada para POSCOMP e ENAD</h3>
-                                <p>Testes como ENADE e POSCOMP (exame de ingresso na pós graduação do curso de computação) são constantemente realizados pelos discentes do curso, visando melhorar sua carreira profissional. Em prol de ajudar estes alunos, o Programa de Educação Tutorial de Ciência da Computação (PETComp) da Universidade Federal do Maranhão (UFMA) se propôs a construir uma plataforma gamificada denominada COMPET, cuja proposta é auxiliar os estudantes do curso e interessados nesta área de uma forma dinâmica, interativa e mais atrativa, visando melhorar seu desempenho nos respectivos exames citados através de um jogo de perguntas e respostas, na qual as perguntas foram retiradas de provas anteriores do ENADE e POSCOMP, além de questões temáticas elaboradas pelos próprios docentes da universidade.</p>
+                                <h3>Plataforma Gamificada para POSCOMP e ENADE</h3>
+                                <p>Testes como ENADE e POSCOMP (exame de ingresso na pós graduação do curso de computação) são constantemente realizados pelos discentes do curso, visando melhorar sua carreira profissional. Em prol de ajudar estes alunos, o PETComp da Universidade Federal do Maranhão (UFMA) se propôs a construir uma plataforma gamificada denominada COMPET, cuja proposta é auxiliar os estudantes do curso e interessados nesta área de uma forma dinâmica, interativa e mais atrativa, visando melhorar seu desempenho nos respectivos exames citados através de um jogo de perguntas e respostas, na qual as perguntas foram retiradas de provas anteriores do ENADE e POSCOMP, além de questões temáticas elaboradas pelos próprios docentes da universidade.</p>
 
                                 <div class="banner-card-actions">
                                 <button class="btn-view" data-img="./assets/banners/08.jpg">Visualizar</button>

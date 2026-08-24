@@ -14,6 +14,7 @@ include 'head.php';
         <h2>Sobre nós</h2>
         <h3>Conheça um pouco sobre o grupo</h3>
         <h4><a href="">Página Inicial</a></h4>
+        <h4> → Conheça o PETComp</h4>
         <h4> → Sobre nós</h4>
     </div>
 

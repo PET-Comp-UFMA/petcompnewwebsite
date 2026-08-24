@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.2.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Tempo de geração: 18/06/2025 às 12:02
--- Versão do servidor: 5.7.23-23
--- Versão do PHP: 8.1.32
+-- Tempo de geração: 11/05/2026 às 10:41
+-- Versão do servidor: 5.7.44-48
+-- Versão do PHP: 8.3.26
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -20,6 +20,297 @@ SET time_zone = "+00:00";
 --
 -- Banco de dados: `petcom59_petcomp_db`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `monitorias`
+--
+
+CREATE TABLE `monitorias` (
+  `id` varchar(60) COLLATE utf8_unicode_ci NOT NULL,
+  `id_json` varchar(60) COLLATE utf8_unicode_ci NOT NULL,
+  `titulo` varchar(150) COLLATE utf8_unicode_ci NOT NULL,
+  `subtitulo` varchar(150) COLLATE utf8_unicode_ci NOT NULL,
+  `descricao` text COLLATE utf8_unicode_ci NOT NULL,
+  `cor` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  `icone` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
+  `semestres` varchar(200) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Despejando dados para a tabela `monitorias`
+--
+
+INSERT INTO `monitorias` (`id`, `id_json`, `titulo`, `subtitulo`, `descricao`, `cor`, `icone`, `semestres`) VALUES
+('algoritmos-1', 'algoritmos1', 'Vídeo Aula de Algoritmos 1', 'Monitoria de Algoritmos 1', 'Nas vídeo aulas de Algoritmos 1 você pode assistir gravações de monitorias anteriores, permitindo revisar conteúdos e acompanhar o desenvolvimento da disciplina no seu próprio ritmo. A monitoria tem como objetivo auxiliar os alunos a compreender os fundamentos básicos de algoritmos, como lógica de programação, tipos de dados, variáveis, estruturas de controle e muito mais.', '#1a73e8', '?', '2026.1,2025.2,2025.1,2024.2,2022.1'),
+('calculo-1', 'calculo1', 'Vídeo Aula de Cálculo 1', 'Monitoria de Cálculo 1', 'Nas vídeo aulas de Cálculo 1 você pode assistir gravações de monitorias anteriores, revisando limites, derivadas, integrais e suas aplicações. A monitoria oferece resolução de exercícios comentada e aprofundamento dos conceitos abordados em sala de aula.', '#e53935', '∫', '2025.2,2025.1,2024.1,2023.2,2023.1'),
+('calculo-vetorial-e-geometria-analitica', 'cvga', 'Vídeo Aula de Cálculo Vetorial e Geometria Analítica', 'Monitoria de Cálculo Vetorial e Geometria Analítica', 'Nas vídeo aulas de Cálculo Vetorial e Geometria Analítica você pode assistir gravações de monitorias anteriores, cobrindo vetores, retas e planos no espaço, curvas e superfícies, além de integrais de linha e superfície.', '#00838f', '→', '2026.1'),
+('estrutura-de-dados-1', 'ed1', 'Vídeo Aula de Estrutura de Dados 1', 'Monitoria de Estrutura de Dados 1', 'Nas vídeo aulas de Estrutura de Dados 1 você pode assistir gravações de monitorias anteriores, cobrindo estruturas fundamentais como listas encadeadas, pilhas, filas, árvores e grafos. A monitoria aborda implementação prática em C e análise de complexidade de algoritmos.', '#0f9d58', '?', '2026.1,2025.2,2025.1,2024.2,2024.1,2023.2'),
+('linguagem-de-programacao-1', 'lp1', 'Vídeo Aula de Linguagem de Programação 1', 'Monitoria de Linguagem de Programação 1', 'Nas vídeo aulas de Linguagem de Programação 1 você pode assistir gravações de monitorias anteriores, explorando os fundamentos de linguagens de programação, paradigmas, sintaxe, semântica e boas práticas de codificação.', '#f57c00', '?', '2025.2,2025.1,2024.2,2024.1,2023.2'),
+('matematica-discreta-e-logica', 'mdl', 'Vídeo Aula de Matemática Discreta e Lógica', 'Monitoria de Matemática Discreta e Lógica', 'Nas vídeo aulas de Matemática Discreta e Lógica você pode assistir gravações de monitorias anteriores, abordando lógica proposicional, teoria dos conjuntos, relações, funções, combinatória e teoria dos grafos aplicada à computação.', '#7b1fa2', '∧', '2026.1,2025.2,2025.1,2024.2,2024.1,2023.2');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `monitorias_aulas`
+--
+
+CREATE TABLE `monitorias_aulas` (
+  `id` int(11) NOT NULL,
+  `monitoria_id` varchar(60) COLLATE utf8_unicode_ci NOT NULL,
+  `titulo` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
+  `data` varchar(60) COLLATE utf8_unicode_ci NOT NULL,
+  `duracao` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+  `modulo` varchar(60) COLLATE utf8_unicode_ci NOT NULL,
+  `semestre` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  `youtube_id` varchar(20) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Despejando dados para a tabela `monitorias_aulas`
+--
+
+INSERT INTO `monitorias_aulas` (`id`, `monitoria_id`, `titulo`, `data`, `duracao`, `modulo`, `semestre`, `youtube_id`) VALUES
+(1, 'algoritmos-1', 'Aula 01 - Introdução a Python, tipos de dados e operadores básicos (2025.2)', '08 de Outubro, 2025', '2h 01 min', 'Módulo 1', '2025.2', '42UBFf1UYKs'),
+(2, 'algoritmos-1', 'Aula 02 - Strings, Condicionais e Resolução de Questões (2025.2)', '15 de Outubro, 2025', '1h 23 min', 'Módulo 1', '2025.2', 'ICrPQA4lLxA'),
+(3, 'algoritmos-1', 'Aula 03 - Revisão Prova 1 (2025.2)', '22 de Outubro, 2025', '1h 53 min', 'Módulo 1', '2025.2', 'ufMXEar39a4'),
+(4, 'calculo-1', 'Aula 01 - Derivadas', '28 de Novembro, 2025', '2h 20 min', 'Módulo 2', '2025.2', 'JGSVEUApy-c'),
+(6, 'estrutura-de-dados-1', 'Aula 01 - Vetores e Matrizes 2025.2', '08 de Outubro, 2025', '1h 23 min', 'Módulo 1', '2025.2', 'wqV6YYxwY8k'),
+(7, 'estrutura-de-dados-1', 'Aula 02 - Tipo Abstrato de Dados 2025.2', '15 de Outubro, 2025', '57 min', 'Módulo 1', '2025.2', 'vbKV8-zsAgg'),
+(8, 'estrutura-de-dados-1', 'Aula 03 - Pilhas e Filas 2025.2', '22 de Outubro, 2025', '51 min', 'Módulo 2', '2025.2', 'DlYtA5n8oDA'),
+(9, 'estrutura-de-dados-1', 'Aula 01 - Vetores, matrizes e pilhas', '27 de Fevereiro, 2023', '1h 34 min', 'Módulo 1', '2023.2', 'hUOK8LcYwxw'),
+(10, 'estrutura-de-dados-1', 'Aula 02 - Pilhas e filas', '27 de Fevereiro, 2023', '1h 57 min', 'Módulo 1', '2023.2', 'h1V6zZUaccg'),
+(11, 'estrutura-de-dados-1', 'Aula 03 - Resolução de Provas Anteriores', '27 de Fevereiro, 2023', '1h 48 min', 'Módulo 1', '2023.2', 'aSypgagn7So'),
+(12, 'estrutura-de-dados-1', 'Aula 04 - Resolução da Prova 1 de 2023', '27 de Fevereiro, 2023', '1h 27 min', 'Módulo 1', '2023.2', '3syKjzG_RMA'),
+(13, 'estrutura-de-dados-1', 'Aula 05 - Listas Encadeadas', '27 de Fevereiro, 2023', '1h 11 min', 'Módulo 2', '2023.2', '4kPO1zG983s'),
+(14, 'estrutura-de-dados-1', 'Aula 06 - Listas Encadeadas', '27 de Fevereiro, 2023', '21 min', 'Módulo 2', '2023.2', '8F7ERIM7dXQ'),
+(15, 'estrutura-de-dados-1', 'Aula 07 - Resolução de Provas Anteriores', '27 de Fevereiro, 2023', '1h 19 min', 'Módulo 2', '2023.2', 'x6eILl6xxI4'),
+(16, 'estrutura-de-dados-1', 'Aula 08 - Resolução de Questões', '27 de Fevereiro, 2023', '1h 18 min', 'Módulo 2', '2023.2', 'FJKoXvIuBrY'),
+(17, 'estrutura-de-dados-1', 'Aula 09 - Resolução de Questões', '27 de Fevereiro, 2023', '1h 14 min', 'Módulo 2', '2023.2', 'gSfjyvaed-Y'),
+(18, 'estrutura-de-dados-1', 'Aula 01 - Introdução', '28 de Abril, 2024', '11 min', 'Módulo 1', '2024.1', 'nHWMDTzcqgo'),
+(19, 'estrutura-de-dados-1', 'Aula 02 - Vetores e Matrizes', '28 de Abril, 2024', '7 min', 'Módulo 1', '2024.1', 'lKhcICyY_f4'),
+(20, 'estrutura-de-dados-1', 'Aula 03 - Tipos Abstratos de Dados', '28 de Abril, 2024', '20 min', 'Módulo 1', '2024.1', '0qfDEde4SZE'),
+(21, 'estrutura-de-dados-1', 'Aula 04 - Pilha', '28 de Abril, 2024', '39 min', 'Módulo 1', '2024.1', 'cyPXt8k1P3k'),
+(22, 'estrutura-de-dados-1', 'Aula 05 - Filas', '28 de Abril, 2024', '1h 29 min', 'Módulo 1', '2024.1', '8pSN02Q-1CI'),
+(23, 'estrutura-de-dados-1', 'Aula 06 - Listas Simplesmente Encadeada (1/3)', '28 de Abril, 2024', '40 min', 'Módulo 2', '2024.1', 'Pqrw_OlgGBk'),
+(24, 'estrutura-de-dados-1', 'Aula 07 - Listas Simplesmente Encadeada (2/3)', '28 de Abril, 2024', '37 min', 'Módulo 2', '2024.1', 'bd7gsHQgT1c'),
+(25, 'estrutura-de-dados-1', 'Aula 08 - Listas Simplesmente Encadeada (3/3)', '28 de Abril, 2024', '1h 00min', 'Módulo 2', '2024.1', 'MaKKYoDYLok'),
+(26, 'estrutura-de-dados-1', 'Aula 09 - Listas Duplamente Encadeadas', '28 de Abril, 2024', '1h 05min', 'Módulo 2', '2024.1', 'PgJncF_-_Vg'),
+(27, 'estrutura-de-dados-1', 'Aula 10 - Listas Circulares', '28 de Abril, 2024', '1h 52min', 'Módulo 2', '2024.1', 'T4RtOxAaBkE'),
+(28, 'estrutura-de-dados-1', 'Aula 11 - Árvores (1/3)', '28 de Abril, 2024', '1h 33min', 'Módulo 3', '2024.1', 'A8mb_sADb54'),
+(29, 'estrutura-de-dados-1', 'Aula 12 - Árvores (2/3)', '28 de Abril, 2024', '1h 15min', 'Módulo 3', '2024.1', 'cz8ZKqKPgGE'),
+(30, 'estrutura-de-dados-1', 'Aula 13 - Árvores (3/3)', '28 de Abril, 2024', '1h 00min', 'Módulo 3', '2024.1', 'KE2bAPNDEZc'),
+(31, 'linguagem-de-programacao-1', 'Aula 01 - Estrutura e Tipos de Dados em C 2025.2', '08 de Outubro, 2025', '1h 37 min', 'Módulo 1', '2025.2', 'bqnA5xEGbmM'),
+(32, 'linguagem-de-programacao-1', 'Aula 02 - Laços de Repetição em C 2025.2', '15 de Outubro, 2025', '1h 47 min', 'Módulo 1', '2025.2', '4pJBOJvEXio'),
+(33, 'matematica-discreta-e-logica', '01 - Introdução à Matemática Discreta 2025.2', '08 de Outubro, 2025', '1h 47 min', 'Módulo 1', '2025.2', 'Ib929rPGFQc'),
+(34, 'matematica-discreta-e-logica', '02 - Predicados e Quantificadores 2025.2', '15 de Outubro, 2025', '1h 26 min', 'Módulo 1', '2025.2', 'Z4Zu6hAVNxk'),
+(35, 'calculo-vetorial-e-geometria-analitica', 'Monitoria 01 - Vetores e Operações', '08 de Outubro, 2025', '1h 43 min', 'Módulo 1', '2026.1', '_qr5u5qsgiE'),
+(37, 'algoritmos-1', 'Aula 04 - Resolução P1 e Laços de Repetição (2025.2)', '30 de Outubro, 2025', '2h 00 min', 'Módulo 1', '2025.2', 'qRAC269GqTw'),
+(38, 'algoritmos-1', 'Aula 05 - Arrays / Listas (2025.2)', '05 de Novembro, 2025', '1h 45 min', 'Módulo 2', '2025.2', '5fNXthDujME'),
+(39, 'estrutura-de-dados-1', 'Aula 01 - Introdução à TAD', '04 de Dezembro, 2024', '1h 44 min', 'Módulo 1', '2024.2', 'FWfu4TPPcv0'),
+(41, 'estrutura-de-dados-1', 'Aula 02 - TAD Genérico, Pilhas e Filas', '11 de Dezembro, 2024', '51 min', 'Módulo 1', '2024.2', 'diL5ej7ATek'),
+(42, 'algoritmos-1', '\r\nAula 01 - Condicionais (2025.1)', '24 de Abril, 2025', '2h 42 min', 'Módulo 1', '2025.1', 'HSLaouWk3fU'),
+(43, 'estrutura-de-dados-1', 'Aula 03 - Revisão para Prova 1', '18 de Dezembro, 2024', '1h 59 min', 'Módulo 1', '2024.2', 'EEc7CulrNeI'),
+(44, 'estrutura-de-dados-1', 'Aula 04 - Resolução da Prova 1', '09 de Janeiro, 2025', '41 min', 'Módulo 1', '2024.2', '95lZlJc36rk'),
+(45, 'estrutura-de-dados-1', 'Aula 05 - Listas Simples e Duplamente Encadeadas', '29 de Janeiro, 2025', '1h 18 min', 'Módulo 2', '2024.2', '14Zo_36mUJI'),
+(46, 'estrutura-de-dados-1', 'Aula 06 - Revisão para a Prova 2', '12 de Fevereiro, 2025', '1h 06 min', 'Módulo 2', '2024.2', 'EO_6wrJ6HME'),
+(47, 'algoritmos-1', 'Aula 02 - Tipos primitivos e resolução de questões (2025.1)', '08 de Maio, 2025', '2h 50 min', 'Módulo 1', '2025.1', 'ptS9WQPgH14'),
+(48, 'estrutura-de-dados-1', 'Aula 07 - Introdução à Arvores', '27 de Janeiro, 2025', '42 min', 'Módulo 3', '2024.2', '-TbxcRjkeMY'),
+(49, 'estrutura-de-dados-1', 'Aula 08 - Árvores Binárias de Pesquisa', '12 de março, 2025', '23 min', 'Módulo 3', '2024.2', 'rzSJ5Hsuu64'),
+(50, 'algoritmos-1', 'Aula 03 - Resolução de provas antigas (2025.1)', '15 de Maio, 2025', '2h 37min', 'Módulo 1', '2025.1', 'dldf2Zqfw2Y'),
+(51, 'estrutura-de-dados-1', 'Aula 09 - Revisão para a Prova 3 e para a Reposição', '14 de março, 2025', '1h e 06 minutos', 'Módulo 3', '2024.2', 'r7z5FTvN5FY'),
+(52, 'algoritmos-1', 'Aula 04 - Laços de repetição e listas (2025.1)', '05 de Junho, 2025', '2h 31 min', 'Módulo 2', '2025.1', 'byYsUARnvP8'),
+(53, 'algoritmos-1', 'Aula 01 - Introdução a Algoritmos em Python 2024.2', '25 de Novembro, 2024', '1h 45 min', 'Módulo 1', '2024.2', 'v5MTEcJGU1Q'),
+(54, 'algoritmos-1', '\r\nAula 05 - Continuação em laços de repetição e listas (2025.1)', '12 de Junho, 2025', '2h 29min', 'Módulo 2', '2025.1', 'CazmFKTcRBg'),
+(55, 'algoritmos-1', 'Aula 02 - Estruturas condicionais if, else, elif 2024.2', '02 de Dezembro, 2024', '2h 1 min', 'Módulo 1', '2024.2', 'wYSbf4F4pcY'),
+(56, 'algoritmos-1', 'Aula 03 - Funções e resolução de exercícios de provas antigas (2024.2)', '07 de Dezembro, 2024', '2h', 'Módulo 1', '2024.2', 'Y2IEh84F3yI'),
+(57, 'algoritmos-1', 'Aula 06 - Resolvendo questões de loops aninhados (2025.1)', '26 de Junho, 2025', '1h 58min', 'Módulo 2', '2025.1', '4BhDC5vNq_g'),
+(59, 'algoritmos-1', '\r\nAula 07 - Matriz (2025.1)', '03 de Julho, 2025', '2h 01 min', 'Módulo 2', '2025.1', 'QJTlKVdudK0'),
+(60, 'algoritmos-1', 'Aula 04 - Listas, estruturas de repetição for e while 2024.2', '19 de Dezembro, 2024', '1h 27 min', 'Módulo 2', '2024.2', 'dxDn6JuOnSA'),
+(61, 'algoritmos-1', '\r\nAula 08 - Revisão da segunda prova (2025.1)', '10 de Julho, 2025', '3h 01min', 'Módulo 2', '2025.1', 's14YZHZjdAc'),
+(62, 'algoritmos-1', 'Aula 05 - Revisão de for e while 2024.2', '09 de Janeiro, 2024', '1h 16 min', 'Módulo 2', '2024.2', 'x90CnL7bTm4'),
+(63, 'algoritmos-1', 'Aula 06 - Matrizes 2024.2', '16 de Janeiro, 2024', '1h 11min', 'Módulo 2', '2024.2', '0_7j-MP3Sbo'),
+(64, 'algoritmos-1', 'Aula 07 - Revisão para a segunda prova 2024.2', '23 de Janeiro, 2025', '2h 11 min', 'Módulo 2', '2024.2', '9k26bJP9ruo'),
+(65, 'algoritmos-1', 'Aula 08 - Resolução de questões prova 2024.2', '30 de Janeiro, 2025', '1h 37 min', 'Módulo 2', '2024.2', '0S_lEdI0fq8'),
+(66, 'estrutura-de-dados-1', 'Aula 01 - Introdução a Estruturas de Dados', '30 de Abril, 2025', '2h 17 min', 'Módulo 1', '2025.1', 'thPenYE9Fw0'),
+(67, 'estrutura-de-dados-1', 'Aula 02 - Tipo Abstrato de Dados', '7 de maio, 2025', '2h 20 min', 'Módulo 1', '2025.1', 'cKzY57CohmY'),
+(68, 'algoritmos-1', 'Aula 1 - Introdução ao Python 2022.1', '15 de Março, 2022', '23 min', 'Módulo 1', '2022.1', 'DNuuPh3Ldtk'),
+(70, 'algoritmos-1', 'Aula 02 - Condicionais 2022.1', '22 de Março, 2021', '35 min', 'Módulo 1', '2022.1', 'QlxsPidq3Vo'),
+(72, 'estrutura-de-dados-1', 'Aula 03 - Pilhas e Filas', '15 de Maio, 2025', '1h 05 min', 'Módulo 1', '2025.1', '5Xaa5do5Z6Y'),
+(73, 'estrutura-de-dados-1', 'Aula 04 - Revisão para a prova 1', '28 de Maio, 2025', '1h 14 min', 'Módulo 1', '2025.1', 'OYEIDOtJTT8'),
+(74, 'estrutura-de-dados-1', 'Aula 05 - Lista Simplesmente Encadeada', '04 de Junho, 2025', '1h 46 min', 'Módulo 2', '2025.1', 'ucv91OeBU4s'),
+(75, 'estrutura-de-dados-1', 'Aula 06 - Lista Duplamente Encadeada e Lista Circular', '11 de Junho, 2025', '1h 47 min', 'Módulo 2', '2025.1', 'knUKSXpQ1RA'),
+(76, 'estrutura-de-dados-1', 'Aula 07 - Lista Circular 2 e Exercícios', '17 de Junho, 2025', '2h 18 min', 'Módulo 2', '2025.1', '01mT_a7wSpw'),
+(77, 'estrutura-de-dados-1', 'Aula 08 - TAD Lista Duplamente Encadeada', '18 de Junho, 2025', '1h 02 min', 'Módulo 2', '2025.1', '9r5tm1HtrjU'),
+(78, 'estrutura-de-dados-1', 'Aula 09 - Revisão para a prova 2', '25 de Junho, 2025', '2h 09 min', 'Módulo 2', '2025.1', 'b7AlG9TuUsU'),
+(79, 'estrutura-de-dados-1', 'Aula 10 - Introdução a Árvore', '09 de Julho, 2025', '1h 14 min', 'Módulo 3', '2025.1', 'fJSXacr4LrY'),
+(80, 'estrutura-de-dados-1', 'Aula 10.1 - Macete Visitação', '09 de Julho, 2025', '12 min', 'Módulo 3', '2025.1', 'U6DJyNLnXds'),
+(81, 'estrutura-de-dados-1', 'Aula 11 - Árvore Binária de Pesquisa ABP', '16 de Julho, 2025', '51 min', 'Módulo 3', '2025.1', 'V7yiw1fLqKs'),
+(82, 'estrutura-de-dados-1', 'Aula 12 - Resolução P3 2024.1', '21 de Julho, 2025', '2h 19 min', 'Módulo 3', '2025.1', '5rjk7eKcsc0'),
+(83, 'estrutura-de-dados-1', 'Aula 13 - Resolução P3 2023.2', '22 de Julho, 2025', '1h 33 min', 'Módulo 3', '2025.1', 'THZCd0bnh5A'),
+(84, 'linguagem-de-programacao-1', 'Aula 03 - Macros e Funções 2025.2', '05 de Novembro, 2025', '2h 14 min', 'Módulo 1', '2025.2', 'CGnGo3xsr-E'),
+(85, 'linguagem-de-programacao-1', 'Aula 04 - Vetores e Matrizes 2025.2', '15 de Novembro, 2025', '2h 01 min', 'Módulo 2', '2025.2', 'A7VCOGVlhS8'),
+(86, 'estrutura-de-dados-1', 'Aula 01 - Vetores e Matrizes', '16 de Outubro, 2025', '1h 23 min', 'Módulo 1', '2025.2', 'wqV6YYxwY8k'),
+(87, 'estrutura-de-dados-1', 'Aula 02 - Tipo Abstrato de Dados', '22 de Outubro, 2025', '57 min', 'Módulo 1', '2025.2', 'vbKV8-zsAgg'),
+(88, 'matematica-discreta-e-logica', '03 - Resolução Prova de 2024_2 2025.2', '22 de Outubro, 2025', '2h 19 min', 'Módulo 1', '2025.2', 'SfWtHapKiYA'),
+(89, 'estrutura-de-dados-1', 'Aula 03 - Pilhas e Filas', '30 de Outubro, 2025', '51 min', 'Módulo 1', '2025.2', 'DlYtA5n8oDA'),
+(90, 'estrutura-de-dados-1', 'Aula 04 - Revisão para a Prova 1', '03 de Novembro, 2025', '1h 40 min', 'Módulo 1', '2025.2', 'qI9zYdU_GDE'),
+(91, 'estrutura-de-dados-1', 'Aula 05 - Listas Lineares Simples e Duplas', '28 de Novembro, 2025', '56 min', 'Módulo 2', '2025.2', 'sxmUrNQANJ4'),
+(92, 'estrutura-de-dados-1', 'Aula 06 - Revisão para a Prova 2', '03 de Dezembro, 2025', '1h 09 min', 'Módulo 2', '2025.2', 'l6uCfZvHJYM'),
+(93, 'estrutura-de-dados-1', 'Aula 01 - Análise da Lista 1 \"LLM\"', '01 de Abril, 2026', '1h 57 min', 'Módulo 1', '2026.1', 'kcfT2rWb8ys'),
+(94, 'estrutura-de-dados-1', 'Aula 02 - Análise da Lista 2 \"Bom Programador\"', '09 de Abril, 2026', '1h 30 min', 'Módulo 1', '2026.1', '8VQinjSf5CU'),
+(95, 'estrutura-de-dados-1', 'Aula 03 - Introdução à Strings, Vetores e Matrizes', '16 de Abril, 2026', '1h 28 min', 'Módulo 1', '2026.1', '27xxqqYt_J0'),
+(96, 'estrutura-de-dados-1', 'Aula 04 - Resolvendo Lista de Vetores', '23 de Abril, 2026', '1h 44 min', 'Módulo 1', '2026.1', 'frLvQ5SumPo'),
+(97, 'matematica-discreta-e-logica', '\r\n01 - Introdução a MDL + Lógica Proposicional 2025.1', '28 de Abril, 2025', '2h 16 min', 'Módulo 1', '2025.1', '23Ijrv8wAPY'),
+(98, 'matematica-discreta-e-logica', '02 - Equivalência Lógica + Predicados e Quantificadores 2025.1', '08 de Maio, 2025', '50 min', 'Módulo 1', '2025.1', '3eQDVSkwvZc'),
+(99, 'matematica-discreta-e-logica', '03 - Regras de Inferência + Respondendo Prova Antiga 2025.1', '15 de Maio, 2025', '2h 17 min', 'Módulo 1', '2025.1', 'TV6kjvrxqMI'),
+(100, 'matematica-discreta-e-logica', '04 - Teoria dos Conjuntos + Operações de Conjunto 2025.1', '02 de Junho, 2025', '46 min', 'Módulo 2', '2025.1', 'AMQZrjQKyAM'),
+(101, 'matematica-discreta-e-logica', '05 - Funções 2025.1', '5 de Junho, 2025', '1h 29 min', 'Módulo 2', '2025.1', 'tMB6iw-5ue8'),
+(102, 'matematica-discreta-e-logica', '07 - Revisão P2 2025.1', '26 de Junho, 2025', '1h 37 min', 'Módulo 2', '2025.1', 'uPYvSZ2OwjU'),
+(103, 'matematica-discreta-e-logica', '08 - Indução Matemática + Recursão 2025.1', '10 de Julho, 2025', '47 min', 'Módulo 3', '2025.1', 'O9qyfftlmW4'),
+(104, 'calculo-1', 'Aula 01 - Limites', '12 de Abril, 2023', '1h 43 min', 'Módulo 1', '2023.1', '5vHymaY3-jE'),
+(105, 'calculo-1', 'Aula 02 - Exercício Limites', '19 de Abril, 2023', '1h 42 min', 'Módulo 1', '2023.1', 'KTwPGQ-riUw'),
+(106, 'calculo-1', 'Aula 03 - Exercício Limites 2', '26 de Abril, 2023', '1h 33 min', 'Módulo 1', '2023.1', '9rw-oCL_dMY'),
+(107, 'calculo-1', 'Aula 04 - Limite no infinito', '03 de Maio, 2023', '2h', 'Módulo 1', '2023.1', 'szWGjRVzrpQ'),
+(108, 'calculo-1', 'Aula 05 - Exercícios Limites no Infinito', '10 de Maio, 2023', '2h 43 min', 'Módulo 1', '2023.1', '6nKKQRazaPs'),
+(109, 'calculo-1', 'Aula 06 - Limites no Geogebra', '17 de Maio, 2023', '1h 27 min', 'Módulo 1', '2023.1', '9bzxa91lmz4'),
+(110, 'linguagem-de-programacao-1', 'Aula 01 - Estrutura do C e Tipos de Dados 2023.2', '09 de Abril, 2023', '1h 19 min', 'Módulo 1', '2023.2', '810vmJa2_e4'),
+(111, 'calculo-1', 'Aula 07 - Regras de Derivação', '24 de Abril, 2023', '1h 42 min', 'Módulo 2', '2023.1', 'PTSn88EKOjI'),
+(112, 'calculo-1', 'Aula 08 - Lista Derivadas', '31 de Maio, 2023', '1h 49 min', 'Módulo 2', '2023.1', 'D7RXkdhxzNA'),
+(113, 'calculo-1', 'Aula 09 - Lista Derivadas 2', '07 de Junho, 2023', '2h 07 min', 'Módulo 2', '2023.1', '1-8AzXYB1mw'),
+(114, 'calculo-1', 'Aula 10 - Lista Derivadas 3', '14 de Junho, 2023', '1h 42 min', 'Módulo 2', '2023.1', '12l2Rc2ScRs'),
+(115, 'calculo-1', 'Aula 11 - Integral', '21 de Junho, 2023', '1h 45', 'Módulo 3', '2023.1', 'JE_7CsZhIps'),
+(116, 'calculo-1', 'Aula 12 - Lista Integrais', '28 de Junho, 2023', '1h 35 min', 'Módulo 3', '2023.1', 'MMlZHz9E7P0'),
+(117, 'calculo-1', 'Aula 13 - Lista Integrais 3', '05 de Julho, 2023', '2h 31 min', 'Módulo 3', '2023.1', 'M1wl4YhStrQ'),
+(118, 'calculo-1', 'Aula 14 - Lista Integrais 4', '12 de Julho, 2023', '1h 53 min', 'Módulo 3', '2023.1', 'GsbKqisG0is'),
+(119, 'calculo-1', 'Aula 01 - Pré Cálculo', '06 de Setembro, 2023', '1h 39 min', 'Módulo 1', '2023.2', 'FZFWD4U0QEg'),
+(120, 'calculo-1', 'Aula 02 - Introdução a Limites', '13 de Setembro, 2023', '1h 29 min', 'Módulo 1', '2023.2', 'QUM40_nNIZQ'),
+(121, 'calculo-1', 'Aula 03 - Indeterminação de Limites', '20 de Setembro, 2023', '1h 27 min', 'Módulo 1', '2023.2', 'aSqOrRjeT6U'),
+(122, 'calculo-1', 'Aula 04 - Limites Laterais ', '27 de Setembro, 2023', '1h 13 min', 'Módulo 1', '2023.2', 'YxcXHEak2x0'),
+(123, 'calculo-1', 'Aula 05 - Revisão Limites ', '04 de Outubro, 2023', '1h 46 min', 'Módulo 1', '2023.2', 'NIBMf2K7spw'),
+(125, 'calculo-1', 'Aula 06 - Introdução a Derivadas', '11 de Outubro, 2023', '1h 35 min', 'Módulo 2', '2023.2', 'FSfsMT8XiLM'),
+(126, 'calculo-1', 'Aula 07 - Regras de Derivação', '18 de Outubro, 2023', '58 min', 'Módulo 2', '2023.2', 'HLRGa4Jg6Fo'),
+(127, 'calculo-1', 'Aula 08 - Tabela de Derivadas', '25 de Outubro, 2023', '1h 26 min', 'Módulo 2', '2023.2', 'gniRVYi9Da0'),
+(128, 'calculo-1', 'Aula 09 - Resolvendo Exercícios', '01 de Novembro, 2023', '1h 29 min', 'Módulo 2', '2023.2', 'NJvSICDxBj4'),
+(129, 'calculo-1', 'Aula 10 - Teorema do Valor Médio', '08 de Novembro, 2023', '1h 26 min', 'Módulo 2', '2023.2', 'SQxKCrVrlkI'),
+(130, 'calculo-1', 'Aula 11 - Introdução à Integrais', '22 de Outubro, 2023', '1h 25 min', 'Módulo 3', '2023.2', 'lk3hLzoFRAw'),
+(131, 'calculo-1', 'Aula 12 - Substituição Simples', '29 de Novembro, 2023', '1h 29 min', 'Módulo 3', '2023.2', 'zzY5rc9Dev4'),
+(132, 'calculo-1', 'Aula 13 - Integral por Partes', '06 de Dezembro, 2023', '1h 16 min', 'Módulo 3', '2023.2', '8tWKfyiIeTI'),
+(133, 'calculo-1', 'Aula 14 - Resolução Lista do Professor', '13 de Dezembro, 2023', '42 min', 'Módulo 3', '2023.2', 'NJztvkITcUo'),
+(134, 'linguagem-de-programacao-1', 'Aula 02 - Condicionais e Strings em C 2023.2', '18 de Setembro, 2023', '1h 08 min', 'Módulo 1', '2023.2', 'DddmjwAbijM'),
+(135, 'linguagem-de-programacao-1', 'Aula 03 - Laços de Repetição 2023.2', '15 de Setembro, 2023', '1h 00 min', 'Módulo 1', '2023.2', 'CPu2YEVE2ls'),
+(136, 'linguagem-de-programacao-1', 'Aula 06 - Ponteiros Revisão 2023.2', '02 de Outubro, 2023', '23 min', 'Módulo 2', '2023.2', 'Fd8mRO_cRY0'),
+(137, 'linguagem-de-programacao-1', 'Aula 07 - Alocação Dinâmica 2023.2', '09 de Outubro, 2025', '1h 32 min', 'Módulo 2', '2023.2', '8LeY1-SV-9o'),
+(138, 'linguagem-de-programacao-1', 'Aula 08 - Strings Revisão 2023.2', '16 de Outubro, 2023', '15 min', 'Módulo 2', '2023.2', 'SGDn4aw3zDU'),
+(139, 'linguagem-de-programacao-1', 'Aula 09 - Struct e Arquivos Revisão 2023.2', '30 de Outubro, 2023', '11 min', 'Módulo 2', '2023.2', 'y2dNFWgeqqM'),
+(140, 'calculo-1', 'Aula 1 - Pré Cálculo', '25 de Março, 2024', '1h 56 min', 'Módulo 1', '2024.1', 'bwh9XjhukBw'),
+(141, 'calculo-1', 'Aula 2 - Introdução à Limites', '01 de Abril, 2024', '1h 11 min', 'Módulo 1', '2024.1', '-G_62ElOf-c'),
+(142, 'linguagem-de-programacao-1', 'Aula 09 - Struct e Arquivos 2023.2', '06 de Novembro, 2023', '1h 38 min', 'Módulo 3', '2023.2', 'WjSwJ_eNVNQ'),
+(143, 'calculo-1', 'Aula 4 - Exercícios de Limites', '15 de Abril, 2024', '48 min', 'Módulo 1', '2024.1', '1Nx1dP17DQw'),
+(144, 'linguagem-de-programacao-1', 'Aula 10 - Unions Revisão 2023.2', '13 de Novembro, 2023', '16 min', 'Módulo 3', '2023.2', 'kYipWmv2Xt8'),
+(145, 'linguagem-de-programacao-1', 'Aula 11 - Resolução Prova 2023.2', '20 de Novembro, 2023', '1h 35 min', 'Módulo 3', '2023.2', 'e5lakmFpKB4'),
+(146, 'linguagem-de-programacao-1', 'Aula 12 - Resolução prova 2022.2 2023.2', '27 de Novembro, 2023', '1h 01 min', 'Módulo 3', '2023.2', 'F2ifAFA3_Hg'),
+(147, 'linguagem-de-programacao-1', 'Aula 13 - Resolução prova 2023.2 2023.2', '04 de Dezembro, 2023', '1h 02 min', 'Módulo 3', '2023.2', 'Oz9di_JkiZc'),
+(148, 'linguagem-de-programacao-1', 'Aula 14 - Resolução lista de exercícios 2 2023.2', '11 de Dezembro, 2023', '1h 13 min', 'Módulo 3', '2023.2', 'tSy62MYVjjY'),
+(149, 'linguagem-de-programacao-1', 'Aula 15 - Resolução prova 2020.2 2023.2', '11 de Dezembro, 2023', '1h 01 min', 'Módulo 3', '2023.2', 'tJAfvbZgvTk'),
+(150, 'matematica-discreta-e-logica', 'Aula 01 - Introdução 2024.1', '5 de Abril, 2024', '2h 07min', 'Módulo 1', '2024.1', '6nsKKFdSjjI'),
+(151, 'matematica-discreta-e-logica', 'Aula 2 - Equivalências e Predicados/Quantificadores 2024.1', '12 de Abril, 2024', '2h 07min', 'Módulo 1', '2024.1', '4NeoLKzpSxo'),
+(152, 'matematica-discreta-e-logica', 'Aula 03 - Regras de Inferência/Resolução de prova 2024.1', '19 de Abril, 2024', '1h 59min', 'Módulo 1', '2024.1', 'JRHIsFP9Te8'),
+(153, 'matematica-discreta-e-logica', 'Aula 04 - Conjuntos e suas operações 2024.1', '26 de Abril, 2024', '1h 57min', 'Módulo 2', '2024.1', 'FqI-j01Bw00'),
+(154, 'matematica-discreta-e-logica', 'Aula 05 - Resolução de Exercícios 2024.1', '03 de Maio, 2024', '1h 34min', 'Módulo 2', '2024.1', 'u-4pzdyGS88'),
+(155, 'matematica-discreta-e-logica', 'Aula 06 - Funções 2024.1', '16 de Maio, 2024', '1h 42min', 'Módulo 2', '2024.1', '1WHoNsuJX68'),
+(156, 'matematica-discreta-e-logica', 'Aula 07 - Sequencias e Somatórios / Cardinalidade 2024.1', '17 de Maio, 2024', '1h 56min', 'Módulo 2', '2024.1', '1BSwuNXl0fk'),
+(157, 'matematica-discreta-e-logica', 'Aula 08 - Resolução Prova 2 (2023.1) 2024.1', '29 de Maio, 2024', '1h 46min', 'Módulo 2', '2024.1', '3c6LrsFMoeE'),
+(158, 'matematica-discreta-e-logica', 'Aula 09 - Resolução da Prova 2 (2022.2) 2024.1', '4 de Junho, 2024', '1h 29min', 'Módulo 2', '2024.1', 'B0mtoxRz3qY'),
+(159, 'matematica-discreta-e-logica', 'Aula 10 - Crescimento de Funções 2024.1', '7 de Junho, 2024', '2h 01min', 'Módulo 2', '2024.1', 's4KA4oIbkxs'),
+(160, 'linguagem-de-programacao-1', 'Aula 16 - Resolução Lista Strings 2023.2', '18 de Dezembro, 2023', '1h 43 min', 'Módulo 3', '2023.2', 'WpXL0GFEIq4'),
+(161, 'linguagem-de-programacao-1', 'Aula 17 - Resolução segunda questão prova 2023.2', '22 de Dezembro, 2023', '40 min', 'Módulo 3', '2023.2', 'cSdEs1fxYxw'),
+(162, 'linguagem-de-programacao-1', 'Aula 18 - Revisão trabalho final 2023.2', '10 de Janeiro, 2024', '23 min', 'Módulo 3', '2023.2', 'R0ULMn5Jz5E'),
+(163, 'calculo-1', 'Aula 5 - Introdução à Derivadas', '13 de Maio, 2024', '1h 39 min', 'Módulo 1', '2024.1', 'Dj3nokpzuKg'),
+(164, 'calculo-1', 'Aula 6 - Revisão', '20 de Maio, 2024', '1h 55 min', 'Módulo 1', '2024.1', 'BjbmJf6psrA'),
+(165, 'matematica-discreta-e-logica', 'Aula 11 - Indução e Recursão 2024.1', '15 de Junho, 2024', '2h 27min', 'Módulo 3', '2024.1', 'ZFKXlB8wZmI'),
+(166, 'matematica-discreta-e-logica', 'Aula 12 - Contagem 2024.1', '24 de Junho, 2024', '1h 17min', 'Módulo 3', '2024.1', 'yKVrSGM0c3s'),
+(167, 'matematica-discreta-e-logica', 'Aula 13 - Exercícios sobre Indução e Recursão 2024.1', '28 de Junho, 2024', '2h 09min', 'Módulo 3', '2024.1', 'dlCTGRF6p2E'),
+(168, 'matematica-discreta-e-logica', 'Aula 14 - Relações 2024.1', '8 de Julho, 2024', '1h 38min', 'Módulo 3', '2024.1', 'X1-wDdj33C4'),
+(169, 'matematica-discreta-e-logica', 'Aula 15 - Resolução da P3 (2022.1) 2024.1', '12 de Julho, 2024', '1h 32min', 'Módulo 3', '2024.1', 'Y2BquhWiszI'),
+(170, 'matematica-discreta-e-logica', 'Aula 16 - Resolução da P3(2024.1) 2024.1', '19 de Julho, 2024', '2h 15min', 'Módulo 3', '2024.1', 's0aVrF1qaMw'),
+(171, 'matematica-discreta-e-logica', 'Aula 17 - Resolução de Provas Finais 2024.1', '29 de Julho, 2024', '2h 29min', 'Módulo 3', '2024.1', '9KJRYsOJVYI'),
+(172, 'calculo-1', 'Aula 7 - Derivadas Notáveis', '27 de Maio, 2024', '1h 20 min', 'Módulo 1', '2024.1', 'uCBAdF7pIRg'),
+(173, 'calculo-1', 'Aula 8 - Teoremas de Derivadas', '10 de Junho, 2024', '1h 37 min', 'Módulo 1', '2024.1', 'c2HimzYEOCQ'),
+(174, 'calculo-1', 'Aula 9 - Aplicações das Derivadas', '14 de Junho, 2024', '1h 43 min', 'Módulo 1', '2024.1', 'KiTdPYwEphs'),
+(175, 'calculo-1', 'Aula 10 - Métodos de Integração', '17 de Junho, 2024', '1h 18 min', 'Módulo 3', '2024.1', 'cVRzwtHveq8'),
+(176, 'calculo-1', 'Aula 11 - Exercícios de Integrais', '24 de Junho, 2024', '1h 24 min ', 'Módulo 3', '2024.1', 'QXi8vTT76PQ'),
+(177, 'calculo-1', 'Aula 12 - Substituição Trigonométrica', '02 de Julho, 2024', '1h 19 min', 'Módulo 3', '2024.1', 'RQLiAN6kQ8Y'),
+(178, 'calculo-1', 'Aula 13 - Aplicações das Integrais', '09 de julho, 2024', '59 min', 'Módulo 3', '2024.1', 'aEwSbKb8q8Y'),
+(179, 'calculo-1', 'Aula 14 - Exercícios Avançados', '15 de Julho, 2024', '1h 44 min', 'Módulo 3', '2024.1', 'Mei_ckQ1tTM'),
+(180, 'calculo-1', 'Aula 15 - Revisão de Integral', '19 de Julho, 2024', '1h 02 min', 'Módulo 3', '2024.1', 'vuPz7CFPNfo'),
+(181, 'calculo-1', 'Aula 16 - Revisão para Reposição da Prova 3', '22 de Julho, 2024', '47 min', 'Módulo 3', '2024.1', 'Dz0_8Wjo5Pc'),
+(182, 'calculo-1', 'Aula 17 - Revisão para Reposição da Prova 2', '24 de Julho, 2024', '2h 29 min', 'Módulo 3', '2024.1', 'rhlhCEwVKr0'),
+(183, 'calculo-1', 'Aula 01 - Limites Laterais e Exercícios', '17 de Maio, 2025', '57min', 'Módulo 1', '2025.1', 'qFMNZMxq_Hk'),
+(184, 'calculo-1', 'Aula 02 - Resolução da P1', '19 de Maio, 2025', '1h 13min', 'Módulo 1', '2025.1', '7fX30JsKCng'),
+(185, 'calculo-1', 'Aula 03 - Limites Fundamentais e Trigonométricos', '29 de Maio, 2025', '1h 16min', 'Módulo 1', '2025.1', 't1w-Pse6x8s'),
+(186, 'calculo-1', 'Aula 04 - Lista de Exercícios Resolvida', '30 de Maio, 2025', '43min', 'Módulo 1', '2025.1', '290DpVutBlY'),
+(187, 'calculo-1', 'Aula 05 -  Propriedades de Derivação e Regras de Derivação', '13 de Junho, 2025', '1h 22min', 'Módulo 1', '2025.1', 'hcq_XFx9HBs'),
+(188, 'linguagem-de-programacao-1', 'Aula 01 - Introdução à linguagem C e Comandos de Decisão 2024.1', '26 de Março, 2024', '2h 19 min', 'Módulo 1', '2024.1', 'nTYYfiHjbqY'),
+(189, 'linguagem-de-programacao-1', 'Aula 01 - Estrutura da Linguagem C e Tipos de Dados', '29 de Abril, 2025', '1h 23 min', 'Módulo 1', '2025.1', '59DI8zpvyHk'),
+(190, 'linguagem-de-programacao-1', 'Aula 02 - Laços de Repetição e Matrizes 2024.1', '09 de Abril, 2024', '52 min', 'Módulo 1', '2024.1', 'Bd1IjnNSsmA'),
+(191, 'linguagem-de-programacao-1', 'Aula 04 - Exercícios sobre Funções 2024.1', '23 de Abril, 2024', '1h 11 min', 'Módulo 1', '2024.1', 'DakR4--bRYc'),
+(192, 'linguagem-de-programacao-1', 'Aula 02 - Operadores e Comandos de Decisão', '08 de Maio, 2025', '1h 22 min', 'Módulo 1', '2025.1', '0c_bY-h7wIw'),
+(193, 'linguagem-de-programacao-1', 'Aula 03 - Laços de Repetição', '13 de Maio, 2025', '1h 58 min', 'Módulo 1', '2025.1', 'dDv09IpJAtY'),
+(194, 'matematica-discreta-e-logica', 'Aula 01 - Introdução', '26 de Março, 2026', '14min', 'Módulo 1', '2026.1', 'sKdsu70RCA8'),
+(195, 'linguagem-de-programacao-1', 'Aula 06 - Exercícios sobre Vetores 2024.1', '30 de Abril, 2024', '47 min', 'Módulo 2', '2024.1', 'BHRvQMAbtSc'),
+(196, 'linguagem-de-programacao-1', 'Aula 04 - Funções e Macros', '29 de Maio, 2025', '1h 34 min', 'Módulo 1', '2025.1', 'o82jPXqL_m4'),
+(197, 'matematica-discreta-e-logica', 'Aula 02   Proposições, Lógica Proposicional, e Quantificadores', '9 de Abril, 2026', '2h 7min', 'Módulo 1', '2026.1', 'CyXQW0zbRPw'),
+(198, 'linguagem-de-programacao-1', 'Aula 08 - Strings 2024.1', '07 de Maio, 2024', '50 min', 'Módulo 2', '2024.1', 'NR9732ioseg'),
+(199, 'matematica-discreta-e-logica', 'Aula 03 - Regras de Inferências e Resolução de Prova', '16 de Abril, 2026', '1h 42min', 'Módulo 1', '2026.1', 'Tx3fZ-HVN2w'),
+(200, 'linguagem-de-programacao-1', 'Aula 05 - Vetores ', '03 de Junho, 2025', '1h 49 min', 'Módulo 1', '2025.1', 'pCCrXHSSb9U'),
+(201, 'matematica-discreta-e-logica', 'Aula 04 - Resolução de Prova', '22 de Abril, 2026', '1h 33min', 'Módulo 1', '2026.1', 'H6TelhOTNBc'),
+(202, 'linguagem-de-programacao-1', 'Aula 06 - Revisão e Resolução de Provas Antigas', '06 de Junho, 2025', '2h 12 min', 'Módulo 1', '2025.1', '1Mu2zqiE0BI'),
+(203, 'linguagem-de-programacao-1', 'Aula 07 - Matrizes e Resolução da Prova tipo A', '11 de Junho, 2025', '2h 25 min', 'Módulo 2', '2025.1', '3zyGGyelhe8'),
+(204, 'linguagem-de-programacao-1', 'Aula 08 - Strings', '17 de Junho, 2025', '1h 40 min', 'Módulo 2', '2025.1', 'KUAeXSkk5HA'),
+(205, 'linguagem-de-programacao-1', 'Aula 09 - Ponteiros e Alocação Dinâmica', '24 de Junho, 2025', '2h 22 min', 'Módulo 2', '2025.1', 'RmsKFMJbsXU'),
+(206, 'matematica-discreta-e-logica', 'Aula 01 - Introdução', '15 de Setembro, 2023', '1h 49min', 'Módulo 1', '2023.2', 'kzhTSc_7Jyw'),
+(207, 'linguagem-de-programacao-1', 'Aula 10 - Structs e Unions', '07 de Julho, 2025', '1h 36 min', 'Módulo 2', '2025.1', '0ar1QO3sG6g'),
+(208, 'matematica-discreta-e-logica', 'Aula 02 - Lógica Proposicional', '22 de Setembro, 2023', '2h', 'Módulo 1', '2023.2', 'n7pZXX3M-6A'),
+(209, 'linguagem-de-programacao-1', 'Aula 11 -  Revisão para Prova', '08 de Julho, 2025', '2h 20 min', 'Módulo 2', '2025.1', '3dmNVU2rb5o'),
+(210, 'matematica-discreta-e-logica', 'Aula 03 - Equivalência Proposicional', '29 de Setembro, 2023', '2h 8min', 'Módulo 1', '2023.2', 'EBqXpv6XH2U'),
+(211, 'linguagem-de-programacao-1', 'Aula 01 - Funções e Recursividade', '19 de Novembro, 2024', '1h 27 min', 'Módulo 1', '2024.2', 'ki08fQXGIDk'),
+(212, 'matematica-discreta-e-logica', 'Aula 04 - Introdução a Conjuntos', '6 de Outubro, 2023', '1h 29min', 'Módulo 2', '2023.2', 'zEA8LZqQziA'),
+(213, 'linguagem-de-programacao-1', 'Aula 02 - Revisão para P1', '26 de Novembro, 2024', '2h 12 min', 'Módulo 1', '2024.2', 'AhI5NoIMOW0'),
+(214, 'matematica-discreta-e-logica', 'Aula 05 - Resolução de Prova de 2016', '20 de Outubro, 2023', '1h 3min', 'Módulo 2', '2023.2', 'ueQ9agdRdBM'),
+(215, 'linguagem-de-programacao-1', 'Aula 04 - Exercícios Vetores e Matrizes', '10 de Dezembro, 2024', '1h 44 min', 'Módulo 2', '2024.2', 'F50PPT9JIG8'),
+(216, 'linguagem-de-programacao-1', 'Aula 05 - Alocação Dinâmica', '17 de Dezembro, 2024', '1h 33 min', 'Módulo 2', '2024.2', 'JnckcFBb3Sc'),
+(217, 'matematica-discreta-e-logica', 'Aula 06 - Resolução Prova de 2021.1', '27 de Outubro, 2023', '1h 35min', 'Módulo 2', '2023.2', 'ZWEOK6_dlAE'),
+(218, 'matematica-discreta-e-logica', 'Aula 07 - Resolução Prova de 2022', '3 de Novembro, 2023', '2h 16min', 'Módulo 2', '2023.2', 'XbTQLqkUBtc'),
+(219, 'linguagem-de-programacao-1', 'Aula 06 - Strings', '09 de Janeiro, 2025', '1h 57 min', 'Módulo 2', '2024.2', 'xnnLOoMvCQg'),
+(220, 'linguagem-de-programacao-1', 'Aula 07 - Exercícios sobre Strings', '14 de Janeiro, 2025', '1h 54 min', 'Módulo 2', '2024.2', 'I3Xu1O56igI'),
+(221, 'matematica-discreta-e-logica', 'Aula 08 - Contagem', '1 de Dezembro, 2023', '1h 49min', 'Módulo 3', '2023.2', 'BkW01JUZGJI'),
+(222, 'linguagem-de-programacao-1', 'Aula 08 -  Strcuts e Unions', '21 de Janeiro, 2025', '1h 55 min', 'Módulo 2', '2024.2', 'SJPSHhwizp0'),
+(223, 'linguagem-de-programacao-1', 'Aula 09 - Trabalho Final', '04 de Fevereiro, 2025', '34 min', 'Módulo 2', '2024.2', '7nxJcNPFA7Y'),
+(225, 'matematica-discreta-e-logica', 'Aula 09 - Indução Finita', '8 de Dezembro, 2023', '2h 5min', 'Módulo 3', '2023.2', '71BZF6gvNQ0'),
+(226, 'matematica-discreta-e-logica', 'Aula 10 - Sequências e Recursão', '15 de Dezembro, 2023', '2h 1min', 'Módulo 3', '2023.2', 'rz5cGdxo5CI'),
+(227, 'linguagem-de-programacao-1', 'Aula 10 - Resolução da P2', '06 de Fevereiro, 2025', '1h 37 min', 'Módulo 2', '2024.2', 'ZCSYYUmEOZo'),
+(228, 'linguagem-de-programacao-1', 'Aula 11 - Arquivos', '13 de Fevereiro, 2025', '2h 01 min', 'Módulo 3', '2024.2', '7b5cjCgbjos'),
+(229, 'linguagem-de-programacao-1', 'Aula 12 - Resolução de exercícios', '06 de Março, 2025', '1h 53 min', 'Módulo 3', '2024.2', 'wKLG-V2Gc-I'),
+(230, 'linguagem-de-programacao-1', 'Aula 13 - Revisão prova final', '25 de Fevereiro, 2025', '1h 40 min', 'Módulo 3', '2024.2', 'FS-jXQx4kjs'),
+(231, 'matematica-discreta-e-logica', 'Aula 01 - Introdução à Matemática Discreta + Lógica Proposicional 2024.2', '22 de Novembro, 2024', '2h 17min', 'Módulo 1', '2024.2', 'jpa_3A73HhU'),
+(232, 'matematica-discreta-e-logica', 'Aula 02 - Equivalências proposicionais e Predicados/Quantificadores 2024.2', '29 de Novembro, 2024', '2h 05min', 'Módulo 1', '2024.2', 'UrfJSK-E7hk'),
+(233, 'matematica-discreta-e-logica', 'Aula 03 - Regras de Inferência e Resolução de Prova 2024.2', '2 de Dezembro, 2024', '2h 45min', 'Módulo 1', '2024.2', 'mMDobF9R1cU'),
+(234, 'matematica-discreta-e-logica', 'Aula 04 - Conjuntos e Operações sobre Conjuntos 2024.2', '20 de Dezembro, 2024', '1h 55min', 'Módulo 2', '2024.2', 'dx4rtDLsrLs'),
+(235, 'matematica-discreta-e-logica', 'Aula 05 - Funções 2024.2', '10 de janeiro, 2025', '1h 54min', 'Módulo 2', '2024.2', 'EFTw7d_-1wg'),
+(236, 'matematica-discreta-e-logica', 'Aula 06 - Sequências 2024.2', '17 de Janeiro, 2025', '1h 29min', 'Módulo 2', '2024.2', '9FEs1qrssqc'),
+(237, 'matematica-discreta-e-logica', 'Aula 07 - Resolução P2 (2023.2) 2024.2', '22 de Janeiro, 2025', '2h 09min', 'Módulo 2', '2024.2', 'zzhEBqZIH2o'),
+(238, 'matematica-discreta-e-logica', 'Aula 08 - Indução e Recursão 2024.2', '7 de Fevereiro, 2025', '2h 29min', 'Módulo 3', '2024.2', 'dPqz0vlJO-o'),
+(239, 'matematica-discreta-e-logica', 'Aula 09 - Exercícios de Indução e Recursão 2024.2', '14 de Fevereiro, 2025', '2h 17min', 'Módulo 3', '2024.2', '4VylxtB6Wx8'),
+(240, 'matematica-discreta-e-logica', 'Aula 10 - Contagem 2024.2', '21 de Fevereiro, 2025', '1h 54min', 'Módulo 3', '2024.2', 'qB7buKPIFEU'),
+(241, 'matematica-discreta-e-logica', 'Aula 11 - Relações e Resolução P3 (2023.1) 2024.2', '26 de Fevereiro, 2025', '3h 04min', 'Módulo 3', '2024.2', 'h1IDJu_pBkQ'),
+(242, 'matematica-discreta-e-logica', 'Aula 12 - Resolução Prova Final (2021.2) 2024.2', '7 de Março, 2025', '2h 19min', 'Módulo 3', '2024.2', 'HuI75cyxbes'),
+(243, 'algoritmos-1', 'Aula 01 - Introdução a Python 2026.1', '01 de Abril, 2026', '28 min', 'Módulo 1', '2026.1', 'A4bW72tIcuM'),
+(244, 'algoritmos-1', 'Aula 04 - Revisão de Conteúdo e Resolução de Prova - Parte 1 2026.1', '08 de Abril, 2026', '53 min', 'Módulo 1', '2026.1', '23XDOJeQbk0'),
+(245, 'algoritmos-1', 'Aula 05 - Revisão de Conteúdo e Resolução de Prova - Parte 2 2026.1', '15 de Abril, 2025', '1h 13 min', 'Módulo 1', '2026.1', 'rz-9NAiSOnU'),
+(246, 'algoritmos-1', 'Aula 06 - Laços de Repetição 2026.1', '13 de Maio, 2025', '1h 11 min', 'Módulo 2', '2026.1', 'AaZNSibkAN8'),
+(247, 'estrutura-de-dados-1', 'Aula 05 - Introdução à Tipo Abstrato de Dados', '07 de Maio, 2026', '1h 04 min', 'Módulo 1', '2026.1', 'oR99liclPVM');
 
 -- --------------------------------------------------------
 
@@ -75,7 +366,17 @@ INSERT INTO `noticias` (`id`, `titulo`, `texto`, `data`, `foto`) VALUES
 (33, 'Nona Edição da Acalourada Recepciona Calouros de Ciência da Computação da UFMA\r\n', 'Nos dias 11, 12 e 13 de novembro, foi realizada a nona edição da Acalourada do curso de Ciência da Computação da Universidade Federal do Maranhão (UFMA). O evento, organizado pelo PETComp em parceria com a Coordenação do Curso, o Departamento de Informática e o Diretório Acadêmico, ocorreu no Centro de Ciências Exatas e Tecnológicas (CCET) e contou com uma programação diversificada para recepcionar os calouros.\r\nA iniciativa teve como principal objetivo integrar os novos estudantes ao ambiente universitário e apresentar as diversas oportunidades disponíveis no curso. Entre as atividades realizadas estavam palestras motivadoras, rodas de conversa com veteranos e professores, dinâmicas de grupo e visitas aos laboratórios do curso.\r\nA Acalourada, já consolidada como uma tradição no curso, é um momento especial para acolher os calouros e oferecer a eles um ambiente acolhedor e informativo para essa nova etapa de suas vidas. Além disso, o evento promoveu trocas de experiências e aprendizado entre estudantes e professores, fortalecendo os laços da comunidade acadêmica.\r\nMais informações sobre o evento e outras iniciativas do PETComp estão disponíveis no Instagram oficial do grupo: @petcompufma.', '2024-11-18', './assets/images/noticias/acalouradaimg2024.2.png| ./assets/images/noticias/acalouradaimg22024.2.png');
 INSERT INTO `noticias` (`id`, `titulo`, `texto`, `data`, `foto`) VALUES
 (34, 'PETComp Representa a UFMA no ENAPET 2024 com Apresentação Presencial de Artigos em Recife', 'Nos dias 14 a 17 de novembro, o PETComp – UFMA marcou presença na 29ª edição do Encontro Nacional dos Grupos do Programa de Educação Tutorial (ENAPET), realizado na Universidade Federal Rural de Pernambuco (UFRPE), em Recife. Dois artigos do grupo, aprovados previamente, foram apresentados presencialmente por um petiano, que viajou acompanhado pelo tutor do PETComp.\r\nOs artigos aprovados abordam temas de impacto educacional:\r\n“Aplicando uma Metodologia Colaborativa para Trabalhos Dentro de um Grupo PET: Um Relato de Experiência no PETComp – UFMA”, destacando práticas inovadoras de colaboração entre membros.\r\n“De Estudante para Estudante: O Impacto das Monitorias Acadêmicas Organizadas pelo PETComp – UFMA Visando a Diminuição da Evasão Estudantil”, enfatizando a importância das monitorias na retenção de estudantes e no fortalecimento do vínculo universitário.\r\nA participação no ENAPET representou uma oportunidade de aprendizado, troca de experiências e ampliação do alcance dos projetos desenvolvidos pelo grupo. O tutor do PETComp acompanhou o petiano na viagem, destacando o apoio institucional e a valorização do protagonismo dos estudantes. Essa participação reafirma o compromisso do PETComp com a inovação e a colaboração no ensino superior.\r\nMais informações sobre o evento podem ser encontradas no Instagram oficial: @enapet2024.\r\n', '2024-11-18', './assets/images/noticias/artigosenapet1.png| ./assets/images/noticias/artigosenapet2.png'),
-(35, 'Nova Edição da Revista PETComp Já Está Disponível! ', 'O PETComp tem o prazer de anunciar o lançamento da mais nova edição de sua revista! Com conteúdo atualizado, abordando os projetos mais recentes executados pelo PET, a revista promete surpreender e informar seus leitores sobre como está sendo a trajetória do PET.\r\nNão perca a oportunidade de se atualizar e mergulhar nas novidades desta edição.', '2024-12-11', './assets/images/noticias/2ed_revista.png');
+(35, 'Nova Edição da Revista PETComp Já Está Disponível! ', 'O PETComp tem o prazer de anunciar o lançamento da mais nova edição de sua revista! Com conteúdo atualizado, abordando os projetos mais recentes executados pelo PET, a revista promete surpreender e informar seus leitores sobre como está sendo a trajetória do PET.\r\nNão perca a oportunidade de se atualizar e mergulhar nas novidades desta edição.', '2024-12-11', './assets/images/noticias/2ed_revista.png'),
+(36, 'Resultado processo Seletivo do PETComp: Novos membros para a equipe!', 'O nosso processo seletivo teve início no dia 22 de fevereiro, com a abertura das inscrições realizadas por meio de um formulário online. Durante esse período inicial, buscamos atingir o maior número possível de interessados, divulgando amplamente a oportunidade de fazer parte da nossa equipe.\r\nAs inscrições permanecem abertas até o dia 25 de fevereiro, dando tempo suficiente para que os candidatos pudessem se inscrever com tranquilidade. Após essa etapa, demos início à fase de análise dos perfis, utilizando dinâmicas online e atividades avaliativas cuidadosamente planejadas para conhecer melhor cada participante e suas habilidades.\r\nEncerrado o processo avaliativo, no dia 07 de março tivemos a grande alegria de anunciar os aprovados. Foi um momento especial, de celebração e boas-vindas aos novos membros que agora fazem parte da nossa jornada.', '2025-03-07', './assets/images/noticias/ResultSeletivo2025.1.jpeg'),
+(37, 'Decima edição acalorada: Recepção dos ingressantes no semestre 2025.1\r\n', 'Nos dias 14,15 e 16 de abril realizamos nossa tradicional acalourada, dessa vez para dar boas vindas ao novos ingressantes do curso no ano de 2025. O evento organizado pelo PETComp em parceria com a Coordenação do Curso e o Departamento de Informática, ocorreu no Centro de Ciências Exatas e Tecnológicas (CCET) e contou com uma programação enriquecedora para os calouros de Ciências da Computação. \r\nCom uma programação diversificada e enriquecedora, o evento teve como principal objetivo apresentar aos novos discentes o funcionamento do ambiente acadêmico, assim como as inúmeras oportunidades que o curso oferece, desde projetos de extensão e pesquisa até iniciativas extracurriculares e grupos de apoio estudantil.\r\nDurante os três dias, os calouros participaram de diversas atividades, como palestras motivadoras com professores e ex-alunos, rodas de conversa descontraídas com veteranos do curso, dinâmicas em grupo, jogos interativos e um minicurso introdutório. E, como não poderia faltar, encerramos com o já tradicional LabTour, um passeio guiado pelos laboratórios do departamento, onde os estudantes puderam conhecer de perto os espaços que farão parte de sua rotina nos próximos anos.\r\n\r\nA Acalourada é, sem dúvida, um momento muito especial para toda a comunidade acadêmica. Mais do que um evento de recepção, é uma oportunidade de integração, troca de experiências e acolhimento, onde os novos estudantes recebem todo o suporte necessário para iniciar essa nova fase com confiança, empolgação e senso de pertencimento.', '2025-04-16', './assets/images/noticias/acalourada2025.1.jpg'),
+(38, 'Primeira edição ExploraComp', 'Neste ano de 2025 realizamos nossa primeira edição do ExploraComp. Uma ação promovida pelo PETComp (Programa de Educação Tutorial em Ciências da Computação) da Ufma, voltada para os alunos do ensino médio, nesta primeira edição a escola participante foi a CEM Ayrton Senna de Itapecuru-Mirim.\r\n \r\nEntre as atividades realizadas durante o evento, tivemos palestras motivadoras que abordaram temas relevantes para a trajetória acadêmica, além de uma visita guiada aos prédios do CCET, proporcionando aos participantes uma imersão no ambiente universitário. Para tornar o momento ainda mais leve e acolhedor, promovemos também um Coffee Break, permitindo a interação descontraída entre os visitantes, organizadores e membros da comunidade acadêmica.\r\n\r\nFoi um imenso prazer receber a escola Ayrton Senna em nosso campus. Esperamos que a experiência tenha sido enriquecedora e inspiradora para todos os alunos e professores presentes. As portas da universidade estarão sempre abertas para acolher iniciativas que aproximem a educação básica do ensino superior.\r\n', '2025-05-23', './assets/images/noticias/Minicurso3.png'),
+(39, 'PetComp em destaque na UFMA: tecnologia e formação além da sala de aula', 'Tivemos a honra de receber a equipe de jornalismo da UFMA para uma entrevista especial que destacou o impacto do PETComp dentro e fora da sala de aula. A matéria apresentou nossas ações em ensino, pesquisa e extensão, ressaltando o papel do programa na formação completa dos discentes.\r\n\r\nEntre os destaques, estão os eventos acadêmicos e científicos, as atividades de integração com a comunidade e o mais recente projeto, o ExploraComp, que aproximou estudantes do ensino médio da realidade universitária, inspirando novas trajetórias na Computação.\r\n\r\nCom mais de uma década de atuação, o PETComp se consolida como um espaço dinâmico e colaborativo, que alia tecnologia, vivências práticas e impacto social à formação dos futuros profissionais da área.\r\n\r\nConfira a reportagem completa!\r\nhttps://portalpadrao.ufma.br/site/noticias/tecnologia-que-aproxima-o-petcomp-e-sua-missao-para-alem-da-sala-de-aula?fbclid=PAQ0xDSwLcpDdleHRuA2FlbQIxMAABpyuRO1UHPwm3Z5e2xLWtz\r\noxkTlv36HwRcA1O8zlex7pLREDQwegClBP1s1lJ_aem_meRAUBOxAF_a26hnBAkG_g\r\n', '2025-07-09', './assets/images/noticias/petcomp_entrevista.jpeg'),
+(40, 'PETComp UFMA tem dois artigos aprovados no ENEPET 2025, reforçando inovação e integração acadêmica\r\n', 'Com entusiasmo, anunciamos a aprovação de dois artigos do PETComp UFMA no Encontro Nordestino dos Grupos do Programa de Educação Tutorial (ENEPET) de 2025. Os trabalhos refletem o compromisso contínuo do grupo em integrar ensino, pesquisa e extensão, trazendo soluções criativas e impacto positivo no ambiente universitário.\r\n\r\nO primeiro artigo, “Do Primeiro Contato à Permanência: Acalourada como Ferramenta de Integração ao PETComp”, analisa o papel da Acalourada como estratégia de acolhimento e divulgação do programa. A pesquisa demonstra que o evento é um ponto decisivo de contato inicial entre calouros e o PETComp, contribuindo para maior interesse, engajamento e diminuição da rotatividade de membros. A experiência evidencia como a tríade ensino–pesquisa–extensão se traduz em oportunidades de desenvolvimento acadêmico e pessoal, fortalecendo a permanência estudantil.\r\n\r\nO segundo artigo, “Planilhas Inteligentes: Transformando Organização em Automação via Programação”, apresenta a experiência de implementação de uma planilha automatizada com Google Sheets e Google Apps Script. A ferramenta tornou o registro de atividades mais eficiente e confiável, otimizando processos rotineiros do grupo. A avaliação dos membros destacou ganhos significativos em usabilidade e produtividade, mostrando como soluções de baixo custo e programação podem potencializar a organização em contextos acadêmicos.\r\n\r\nEssas publicações reafirmam o papel do PETComp UFMA como um espaço de inovação, colaboração e impacto na comunidade acadêmica. A aprovação no ENAPET é um reconhecimento da dedicação dos petianos em transformar ideias em práticas que fortalecem a integração, a permanência e a produtividade no ensino superior.\r\n', '2025-08-16', './assets/images/noticias/petcomp_no_enepet.png'),
+(41, 'Novo Seletivo PETComp Será Aberto para 2025.2', 'O processo seletivo do Programa de Educação Tutorial de Ciência da Computação da Universidade Federal do Maranhão (PETComp UFMA) para o semestre 2025.2 está se aproximando. O programa, iniciado em 1º de setembro de 2007 e atualmente sob a tutoria do professor Luis Rivero, tem como base fundamental a orientação dos estudantes do curso, promovendo uma formação acadêmica ampla que integra ensino, pesquisa e extensão. A organização em grupo possibilita uma vivência única na universidade, resultando em experiências que fortalecem tanto o desenvolvimento acadêmico quanto o profissional.\r\n\r\nAs inscrições para o processo seletivo serão abertas em setembro, e o edital oficial, com todas as informações detalhadas, será publicado em breve. Até lá, convidamos todos os interessados a ficarem atentos às novidades no perfil oficial do grupo no Instagram: @petcompufma.', '2025-08-18', './assets/images/noticias/seletivo_2025_02.png'),
+(42, 'Décima Primeira edição Acalourada: Recepção dos ingressantes no semestre 2025.2', 'Nos dias 24, 25 e 26 de setembro, ocorreu a Acalourada de Ciência da Computação 2025.2, evento organizado pelo PETComp em parceria com a Coordenação do Curso e o Departamento de Informática da Universidade Federal do Maranhão (UFMA), no Centro de Ciências Exatas e Tecnológicas (CCET). A programação foi enriquecedora e dedicada a recepcionar os calouros.\r\n\r\nA Acalourada teve como objetivo integrar os novos estudantes ao ambiente universitário e apresentar as oportunidades oferecidas pelo curso: projetos de pesquisa, extensão, iniciativas extracurriculares e grupos de apoio estudantil.\r\n\r\nAo longo de três dias, os participantes desfrutaram de uma programação diversa, que incluiu palestras motivadoras de professores, rodas de conversa com egressos do curso sobre a carreira, mercado de trabalho e experiência no curso, dinâmicas de jogos e apresentação, e também um minicurso introdutório sobre pensamento computacional.\r\n\r\nPara encerrar com chave de ouro, foi realizado o LabTour, um passeio guiado pelos laboratórios do curso, onde os calouros puderam conversar diretamente com os professores pesquisadores responsáveis pelos mesmos. Houve ainda a premiação dos calouros mais participativos.', '2025-09-27', './assets/images/noticias/acalourada2025_2.jpg|./assets/images/noticias/fotodia3.jpg'),
+(53, 'Resultado do Processo Seletivo: Novos Petianos', 'O Processo Seletivo para novos membros do PETComp - UFMA teve início no dia 08 de setembro e foi realizado em três etapas. A primeira consistiu na inscrição, realizada por meio de um formulário online, disponível até o dia 19 de setembro. Essa etapa foi amplamente divulgada nas redes sociais do programa, com o objetivo de alcançar o maior número possível de estudantes interessados em integrar o PETComp. Na sequência, deu-se início à fase de análise de perfis, na qual foram avaliadas tecnicamente as respostas obtidas no formulário de inscrição. A partir dessa análise, foram selecionados os candidatos classificados para a etapa final do processo seletivo. Nesta última fase, os participantes foram submetidos a desafios técnicos, com o objetivo de avaliar suas habilidades práticas. Encerradas todas as etapas, o resultado final do processo seletivo foi divulgado no dia 03 de outubro. Agradecemos a todos os estudantes que se disponibilizaram a participar do processo e parabenizamos os novos membros aprovados, aos quais damos as boas-vindas ao PETComp, desejando uma trajetória de aprendizado, colaboração e crescimento no programa.', '2025-10-07', ''),
+(54, 'Realização do MARAPET', 'Nos dias 17 a 19 de novembro, na Cidade Universitária Dom Delgado, foi realizada a 5ª edição do Encontro Maranhense dos Grupos PET (V MARAPET). O evento marcou o retorno do MARAPET após seis anos desde a realização de sua 4ª edição. Com a temática “PET Maranhão: Ciência que se faz terra, gente e cultura”, o encontro teve como principal objetivo promover a integração entre os grupos PET do Maranhão, incentivando a troca de experiências, o debate acadêmico, a realização de atividades culturais e a apresentação das ações desenvolvidas por cada grupo. A organização do evento foi conduzida de forma conjunta por todos os grupos PET participantes, sendo que cada grupo ficou responsável por uma atividade específica da programação. O PETComp assumiu a responsabilidade pelo credenciamento do evento, realizando o controle de participação dos inscritos e a organização da certificação destinada aos participantes. O V MARAPET foi um sucesso, consolidando-se como um importante espaço de diálogo, aprendizado e fortalecimento do Programa de Educação Tutorial no Maranhão. Parabenizamos todos os grupos PET envolvidos pelo empenho e dedicação que tornaram possível a retomada desse evento tão significativo para a comunidade acadêmica, reforçando o compromisso coletivo com a ciência, a extensão e a formação crítica dos estudantes. Acesse nossa página de registros e confira as fotos do evento!', '2025-11-20', ''),
+(55, 'Décima Segunda Acalourada de Ciência da Computação: Integração dos Ingressantes 2026.1', 'Nos dias 18, 19 e 20 de março, ocorreu a Acalourada de Ciência da Computação 2026.1, evento organizado pelo PETComp em parceria com a Coordenação do Curso, o Departamento de Informática e com o apoio do Diretório Acadêmico de Ciência da Computação da Universidade Federal do Maranhão (UFMA), no Centro de Ciências Exatas e Tecnológicas (CCET). A programação foi enriquecedora e dedicada a recepcionar os calouros.\r\n\r\nA Acalourada teve como objetivo integrar os novos estudantes ao ambiente universitário e apresentar as oportunidades oferecidas na graduação, como projetos de pesquisa, extensão, iniciativas extracurriculares e grupos de apoio estudantil.\r\n\r\nAo longo de três dias, os participantes desfrutaram de uma programação diversa, que incluiu palestras motivadoras de professores, rodas de conversa com egressos sobre carreira, mercado de trabalho e experiências acadêmicas, além de dinâmicas de apresentação e da exposição dos diversos laboratórios disponíveis.\r\n\r\nPara encerrar com chave de ouro, foram realizadas dinâmicas interativas com os calouros, acompanhadas de premiações para os participantes que mais se destacaram ao longo das atividades, promovendo ainda mais engajamento e integração entre todos os envolvidos.', '2026-03-08', './assets/images/noticias/acalourada_2026.1.jpg| ./assets/images/noticias/foto2_acalourada2026.1.jpg');
 
 -- --------------------------------------------------------
 
@@ -286,27 +587,36 @@ INSERT INTO `petianos` (`id`, `nome_completo`, `primeiro_nome`, `ultimo_nome`, `
 (146, 'William Valther Silva Martins', 'William', 'Martins', 2023, 1, 0, 0, 0, 'WILLIAM_VALTHER.jpg', NULL, NULL),
 (147, 'Mikael Cauã Silva Diniz Almeida', 'Mikael', 'Cauã', 2023, 2, 0, 0, 1, 'MIKAEL_CAUA.jpeg', NULL, NULL),
 (148, 'Paloma Santos Ferreira', 'Paloma', 'Santos', 2024, 3, 0, 0, 0, 'palomaSantos.jpeg', NULL, NULL),
-(149, 'Breno Roberto Reis Vidigal', 'Breno', 'Roberto', 2024, 6, 1, 0, 0, 'BrenoRoberto.jpg', NULL, ''),
-(150, 'Pedro Artur Oliveira Costa', 'Pedro', 'Artur', 2024, 3, 1, 0, 0, 'PedroArtur.jpg', 'Graduando em Ciência da Computação, atua na equipe de desenvolvimento e como monitor da disciplina Algoritmos I. Contribuiu para o projeto CientAlcântara com a criação do site e é coautor de dois artigos aprovados nos eventos ENAPET e ENEPET.', 'linkedin=\"https://www.linkedin.com/in/artur-pedro/\";github=\"https://github.com/artur-pedro\";'),
+(149, 'Breno Roberto Reis Vidigal', 'Breno', 'Roberto', 2024, 6, 0, 0, 0, 'BrenoRoberto.jpeg', NULL, ''),
+(150, 'Pedro Artur Oliveira Costa', 'Pedro', 'Artur', 2024, 3, 0, 0, 0, 'PedroArtur.jpg', 'Graduando em Ciência da Computação, atua na equipe de desenvolvimento e como monitor da disciplina Algoritmos I. Contribuiu para o projeto CientAlcântara com a criação do site e é coautor de dois artigos aprovados nos eventos ENAPET e ENEPET.', 'linkedin=\"https://www.linkedin.com/in/artur-pedro/\";github=\"https://github.com/artur-pedro\";'),
 (151, 'João Leonardo Freitas Dias', 'João', 'Leonardo', 2024, 3, 0, 0, 0, 'JoãoLeonardo.jpg', NULL, NULL),
 (152, 'Heloísa Jansen Ferreira Ribeiro', 'Heloísa', 'Jansen', 2024, 2, 0, 0, 0, 'HeloisaJansen.jpg', 'Graduanda em Ciência da Computação pela Universidade Federal do Maranhão (UFMA) e bolsista do Programa de Educação Tutorial em Computação (PETComp), onde realiza atividades de ensino, pesquisa e extensão. Integrante da divisão de jogos educacionais GameAnalysis do Data Analysis and Artificial Intelligence Laboratory (DARTiLab). Atua como monitora da disciplina Linguagem de Programação I, auxiliando estudantes na compreensão de fundamentos e na execução de atividades práticas em programação.', 'linkedin=\"https://www.linkedin.com/in/heloisa-jansen/\";github=\"https://github.com/heloisajansen\";'),
 (153, 'Fabio Kauê Araujo da Silva', 'Fabio', 'Araujo', 2024, 2, 0, 0, 0, 'FabioAraujo.jpeg', NULL, NULL),
-(154, 'Anderson Leandro Fernandes Batalha', 'Anderson', 'Batalha', 2024, 2, 1, 0, 0, 'AndersonBatalha.jpeg', 'Graduando em Ciência da Computação pela Universidade Federal do Maranhão (UFMA) e técnico em Eletrotécnica pelo Instituto Federal do Maranhão (IFMA). Atualmente, sou bolsista no Programa de Educação Tutorial em Ciência da Computação (PETComp), onde exerço a função de monitor na disciplina Introdução à Computação, ofertada aos cursos de Engenharia da UFMA. Fui líder na escrita de dois artigos aprovados, um para o ENEPET e outro para o ENAPET. Também atuo como UX Designer e coordenador das mídias sociais do PETComp.', 'github=\"https://github.com/andybatalha\";'),
-(155, 'Francisco Roberto Cantanhede Brito', 'Francisco', 'Roberto', 2024, 2, 1, 0, 0, 'FranciscoRoberto.jpg', 'Graduando em Ciência da Computação, com experiência como UX Designer e coordenador de mídias sociais no PETComp. Participou do programa Trilhas Inova Maranhão, especializando-se em ciência de dados.', 'github=\"https://github.com/franciscorcb\"'),
+(154, 'Anderson Leandro Fernandes Batalha', 'Anderson', 'Batalha', 2024, 2, 0, 0, 0, 'AndersonBatalha.jpeg', 'Graduando em Ciência da Computação pela Universidade Federal do Maranhão (UFMA) e técnico em Eletrotécnica pelo Instituto Federal do Maranhão (IFMA). Atualmente, sou bolsista no Programa de Educação Tutorial em Ciência da Computação (PETComp), onde exerço a função de monitor na disciplina Introdução à Computação, ofertada aos cursos de Engenharia da UFMA. Fui líder na escrita de dois artigos aprovados, um para o ENEPET e outro para o ENAPET. Também atuo como UX Designer e coordenador das mídias sociais do PETComp.', 'github=\"https://github.com/andybatalha\";'),
+(155, 'Francisco Roberto Cantanhede Brito', 'Francisco', 'Roberto', 2024, 2, 0, 0, 0, 'FranciscoRoberto.jpg', 'Graduando em Ciência da Computação, com experiência como UX Designer e coordenador de mídias sociais no PETComp. Participou do programa Trilhas Inova Maranhão, especializando-se em ciência de dados.', 'github=\"https://github.com/franciscorcb\"'),
 (156, 'Victor José Beltrão Almajano Martinez', 'Victor', 'José', 2024, 5, 0, 0, 0, 'VictorJose.jpeg', 'Estudante de Ciência da Computação na Universidade Federal do Maranhão-UFMA (2022.1). Membro do Programa de Educação Tutorial em Computação (PETComp) e Bolsista do Laboratório de Modelagem Matemática e Algoritmos (MODAL). Áreas de interesse: Otimização, Pesquisa Operacional, Topologia, Jogos Digitais e Mineração de Dados. \r\n', 'instagram = https://www.instagram.com/victorjosemartinez99/;github = https://github.com/VICTORMARTINEZ2002'),
-(157, 'Rochel Andrey', 'Rochel', 'Andrey', 2024, 2, 1, 0, 0, 'RochelAndrey.jpg', 'Graduando em Ciência da Computação, membro da equipe de mídias do PETComp e monitor das disciplinas Cálculo I e Introdução à Computação (ICP), ofertada aos cursos de Engenharia da UFMA. Apaixonado por UI design, tem interesse em áreas como visão computacional e jogos digitais. É coautor de um artigo aprovado e apresentado no ENAPET.', 'github = https://github.com/rochelAsc'),
+(157, 'Rochel Andrey', 'Rochel', 'Andrey', 2024, 2, 0, 0, 0, 'RochelAndrey.jpg', 'Graduando em Ciência da Computação, membro da equipe de mídias do PETComp e monitor das disciplinas Cálculo I e Introdução à Computação (ICP), ofertada aos cursos de Engenharia da UFMA. Apaixonado por UI design, tem interesse em áreas como visão computacional e jogos digitais. É coautor de um artigo aprovado e apresentado no ENAPET.', 'github = https://github.com/rochelAsc'),
 (158, 'José Guilherme', 'José', 'Guilherme', 2024, 2, 1, 0, 0, 'JoseGuilherme.jpeg', 'Monitor da disciplina Algoritmos I e membro da equipe de desenvolvimento do Programa de Educação Tutorial em Computação (PETComp).', 'github=\"https://github.com/oficialjoseguilherme\";'),
-(159, 'WendersonArthur.jpg', 'Wenderson', 'Arthur', 2024, 2, 1, 0, 0, 'WendersonArthur.jpg', 'Graduando em Ciência da Computação pela Universidade Federal do Maranhão (UFMA) e técnico em Eletromecânica pelo Instituto Federal do Maranhão (IFMA) – Campus Monte Castelo. Membro bolsista do Programa de Educação Tutorial em Computação (PETComp) e monitor da disciplina Introdução à Computação (ICP), ofertada aos cursos de Engenharia da UFMA.', 'linkedin = https://www.linkedin.com/in/arthur-dutra-59ba9933b/;github = https://github.com/wenderson-arthur'),
+(159, 'WendersonArthur.jpg', 'Wenderson', 'Arthur', 2024, 2, 0, 0, 0, 'WendersonArthur.jpg', 'Graduando em Ciência da Computação pela Universidade Federal do Maranhão (UFMA) e técnico em Eletromecânica pelo Instituto Federal do Maranhão (IFMA) – Campus Monte Castelo. Membro bolsista do Programa de Educação Tutorial em Computação (PETComp) e monitor da disciplina Introdução à Computação (ICP), ofertada aos cursos de Engenharia da UFMA.', 'linkedin = https://www.linkedin.com/in/arthur-dutra-59ba9933b/;github = https://github.com/wenderson-arthur'),
 (160, 'Nycole Maria', 'Nycole', 'Maria', 2024, 5, 0, 0, 0, 'nycole-maria.jpg', NULL, NULL),
 (161, 'Wemerson Miranda', 'Wemerson', 'Miranda', 2024, 2, 1, 0, 0, 'Wemerson_Miranda.jpg', 'Graduando em Ciência da Computação pela Universidade Federal do Maranhão (UFMA) e bolsista do Programa de Educação Tutorial em Computação (PETComp). Atualmente, dedica-se ao estudo de desenvolvimento web e atua como monitor da disciplina Linguagem de Programação I.', 'linkedin=\"https://br.linkedin.com/in/wemerson-chagas-de-miranda-345b47233?trk=public_profile_samename-profile\";github=\"https://github.com/Wemerson88\";'),
 (162, 'Roberth Kauã', 'Roberth', 'Kauã', 2024, 6, 1, 0, 0, 'RoberthKaua.jpg', 'Graduando em Ciência da Computação, atua como monitor da disciplina Estruturas de Dados I, utilizando a linguagem de programação C, pela qual possui grande apreço. Pretende se especializar e evoluir na área de desenvolvimento, destacando-se pela versatilidade e capacidade de adaptação a diferentes áreas.', 'github=\"https://github.com/robertinhooK\";'),
 (163, 'Carlos Guillherme', 'Carlos', 'Guilherme', 2024, 3, 1, 0, 0, 'CarlosGuilherme.jpg', 'Graduando em Ciência da Computação pela Universidade Federal do Maranhão (UFMA), membro do Programa de Educação Tutorial em Computação (PETComp) e monitor da disciplina Introdução à Computação (ICP).', 'github = https://github.com/GuilhermeSantosrr'),
-(164, 'Ariel Batista Costa da Silva', 'Ariel', 'Batista', 2025, 4, 1, 0, 0, 'ArielBatista.jpg', NULL, NULL),
-(165, 'Geovanna Ingrid de Matos Lima', 'Geovanna', 'Ingrid', 2025, 6, 1, 0, 0, 'GeovannaIngrid.jpg', NULL, NULL),
+(164, 'Ariel Batista Costa da Silva', 'Ariel', 'Batista', 2025, 4, 1, 0, 0, 'ArielBatista.jpg', 'Graduando em Ciência da Computação, membro da equipe de mídias do PETComp e monitor da Disciplina de Estrutura de Dados I. Tem interesse em áreas como computação em nuvem e Design gráfico.', 'github=https://github.com/Arielb17'),
+(165, 'Geovanna Ingrid de Matos Lima', 'Geovanna', 'Ingrid', 2025, 6, 0, 0, 0, 'GeovannaIngrid.jpg', NULL, NULL),
 (166, 'Gabriel Machado Simao Amancio', 'Gabriel', 'Amancio', 2025, 2, 0, 0, 0, 'GabrielAmancio.jpg', NULL, NULL),
-(167, 'Yan Felipe Buceles Pinto', 'Yan', 'Felipe', 2025, 2, 1, 0, 0, 'YanFelipe.jpg', NULL, NULL),
-(168, 'Paulo Nixon Cantanhede dos Santos Saraiva', 'Paulo', 'Nixon', 2025, 4, 1, 0, 0, 'PauloNixon.jpg', NULL, NULL),
-(169, 'Amadeu Fernandes da Silva Neto', 'Amadeu', 'Fernandes', 2025, 2, 1, 0, 0, 'AmadeuFernandes.jpg', NULL, NULL);
+(167, 'Yan Felipe Buceles Pinto', 'Yan', 'Felipe', 2025, 2, 1, 0, 0, 'YanFelipe.jpg', NULL, 'github = https://github.com/YanFelipebp'),
+(168, 'Paulo Nixon Cantanhede dos Santos Saraiva', 'Paulo', 'Nixon', 2025, 4, 1, 0, 0, 'PauloNixon.jpg', NULL, 'github = https://github.com/paulonixon21'),
+(169, 'Amadeu Fernandes da Silva Neto', 'Amadeu', 'Fernandes', 2025, 2, 1, 0, 0, 'AmadeuFernandes.jpg', 'Graduando em Ciência da Computação, membro da diretoria de Marketing da atual chapa do Diretório Acadêmico do curso de Computação, em busca constante por novos conhecimentos e aperfeiçoamento profissional, com interesse em projetos que aliam criatividade, tecnologia e web Design.', NULL),
+(170, 'José Marques Viana Júnior', 'José', 'Marques', 2025, 5, 0, 0, 0, 'José Marques.png', 'Graduando em Ciência da Computação pela Universidade Federal do Maranhão(UFMA), parte da equipe de desenvolvimento e monitor da disciplina de Estrutura de Dados I. Tem interesse nas áreas de Engenharia de Software e Ciência de Dados.', 'github = https://github.com/JuniorViana07'),
+(171, 'Nicolas Caliman Bandeira', 'Nicolas', 'Caliman', 2025, 2, 1, 0, 0, 'Nicolas.png', NULL, 'github = https://github.com/nicolascaliman'),
+(172, 'Fernanda Miranda Brito', 'Fernanda', 'Miranda', 2025, 2, 1, 0, 0, 'Fernanda.png', 'Graduanda em Ciência da Computação pela Universidade Federal do Maranhão(UFMA), atua como monitora da disciplina de Algoritmos I. Também dedicada a projetos em Desenvolvimento Web e Design de Interfaces.', 'github = https://github.com/fwrmiranda'),
+(173, 'Edmar Miqueias Carvalho Vieira', 'Miqueias', 'Carvalho', 2025, 4, 1, 0, 0, 'Miqueias.png', NULL, 'github = https://github.com/Miqueias-Carvalho'),
+(174, 'Davi Esdras Gomes Batista', 'Davi', 'Esdras', 2025, 2, 1, 0, 0, 'Davi Esdras.png', 'Graduando em Ciência da Computação pela Universidade Federal do Maranhão (UFMA). Atuo como monitor da disciplina Algoritmos 1 e tenho interesse nas áreas de desenvolvimento de software, desiner e pesquisa em tecnologia.', 'github = https://github.com/Daviesdras'),
+(175, 'Luis Eduardo do Rosario Fonseca', 'Luis', 'Fonseca', 2025, 4, 1, 0, 0, 'Luis.png', NULL, 'github = https://github.com/luiskeyd'),
+(176, 'David Martins Costa', 'David', 'Martins Costa', 2025, 2, 1, 0, 0, 'David.png', NULL, 'github = https://github.com/davidesuu'),
+(177, 'Samantha Pereira Menezes ', 'Samantha ', 'Menezes', 2025, 2, 1, 0, 0, 'samantha.png', NULL, 'github = https://github.com/smnth-mnsz'),
+(179, 'Glezier Montalvane de Farias Ferreira', 'Glezier', 'Ferreira', 2025, 4, 0, 0, 0, 'Glezier.png', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -356,9 +666,9 @@ CREATE TABLE `trabalhos_publicados` (
   `id` int(11) NOT NULL,
   `titulo` varchar(500) NOT NULL,
   `autor` varchar(500) NOT NULL,
-  `ano` varchar(4) DEFAULT NULL,
+  `ano` varchar(4) NOT NULL,
   `palavras_chave` varchar(150) DEFAULT NULL,
-  `resumo` text,
+  `resumo` text NOT NULL,
   `link` varchar(500) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -417,11 +727,26 @@ INSERT INTO `trabalhos_publicados` (`id`, `titulo`, `autor`, `ano`, `palavras_ch
 (47, 'Artigo: Criando uma solução automatizada para o controle de atividades em grupo PET', 'Anderson Leandro Fernandes Batalha, Sabryna Rodrigues Araujo, Vitor Gabriel Rodrigues Sousa, Juan Carlos Melo do Nascimento, Heloísa Jansen Ferreira Ribeiro, Victor José Beltrão Almajano Martinez, Breno Roberto Reis Vidigal, Luis Jorge Enrique Rivero Cabrejos', '2024', 'PET; planilha; gestão de tarefas.', 'As planilhas automatizadas são uma tecnologia essencial para o gerenciamento de informações, proporcionando a rápida realização de cálculos e a eficiente organização de dados (TAVARES, 2020). Devido à necessidade de controlar de maneira mais eficiente as atividades desenvolvidas dentro do grupo PET, foram idealizadas planilhas automatizadas para melhorar a gestão de tarefas da equipe, visando o aumento da produtividade e melhor organização das demandas. Neste artigo, apresenta-se o desenvolvimento e a implantação de uma planilha automatizada para controle das atividades do grupo PETComp da UFMA. Também foi avaliado o resultado da aplicação da planilha via questionário, no qual 12 de 13 petianos (92%) indicaram um impacto positivo da planilha automatizada em suas atividades. Este estudo visa analisar os efeitos gerados pela aplicação da planilha automatizada, podendo ser aplicado em outros grupos PET.', './assets/artigos/CRIANDO UMA SOLUÇÃO AUTOMATIZADA PARA O CONTROLE DE ATIVIDADES EM GRUPOS PET.pdf'),
 (48, 'Artigo: Aplicando Uma Metodologia Colaborativa Para Trabalhos Dentro De Um Grupo Pet: Um Relato De Experiência No Petcomp - Ufma', 'Anderson Leandro Fernandes Batalha, Vitor Gabriel Rodrigues Sousa, Heloísa Jansen Ferreira Ribeiro, Victor José Beltrão Almajano Martinez, Francisco Roberto Cantanhêde Brito, Wenderson Arthur Dutra Oliveira, Wemerson Chagas De Miranda, Pedro Artur Oliveira Costa, José Guilherme Magalhães de Almeida, Luis Jorge Enrique Rivero Cabrejos', '2024', 'Ensino; Aprendizagem; Colaboração; Metodologia.', 'As atividades dos grupos PET (Programa de Educação Tutorial) enfatizam\r\nensino, pesquisa e extensão, essenciais para a formação acadêmica e profissional. Para atender\r\nàs demandas, é necessário um intenso aprendizado técnico, que pode ser desafiador quando\r\nrealizado de forma isolada, especialmente em grupos com alta rotatividade de membros. O\r\nPETComp-UFMA implementou uma metodologia colaborativa intergeracional, promovendo\r\ntransferência eficiente de conhecimentos entre os discentes. Este trabalho apresenta um relato\r\nsobre a aplicação dessa metodologia em projetos de desenvolvimento e ensino, destacando\r\nseus resultados preliminares.', './assets/artigos/APLICANDO UMA METODOLOGIA COLABORATIVA PARA TRABALHOS DENTRO DE UM GRUPO PET_ UM RELATO DE EXPERIÊNCIA.pdf'),
 (49, 'Artigo: De Estudante Para Estudante: O Impacto Das Monitorias Acadêmicas Organizadas Pelo Petcomp Ufma Visando A Diminuição Da Evasão Estudantil', 'Victor José Beltrão Almajano Martinez, Juan Carlos Melo do Nascimento, Sabryna Rodrigues Araujo, Vitor Gabriel Rodrigues Sousa, José Guilherme Magalhães de Almeida, Luis Jorge Enrique Rivero Cabrejos', '2024', 'Monitorias; Acompanhamento; Discentes; Evasão;', 'A formação superior é essencial para o crescimento pessoal e social, oferecendo\r\nconhecimentos especializados e permitindo o desenvolvimento de habilidades fundamentais\r\npara diferenciação no mercado de trabalho, sucesso profissional e, a longo prazo, na formação\r\nde cidadãos como agentes da mudança. Entretanto, visualiza-se um alto índice de evasão nas\r\nfaculdades brasileiras em períodos iniciais, sobretudo em cursos da área de ciências exatas e\r\ntecnologias. Nesse contexto, o PETComp-UFMA implanta Grupos de Acompanhamento de\r\nDiscentes (GAD) para realizar monitorias nas matérias iniciais do curso ciência da\r\ncomputação, combatendo a evasão e incentivando os discentes a se engajarem no aprendizado\r\npara além da sala de aula. Assim, o presente artigo descreve o relato de experiência no\r\nacompanhamento do processo da ministração das monitorias, apresentando a metodologia\r\nutilizada, seus resultados e uma breve discussão mediante uma avaliação respondida pelos\r\ndiscentes participantes.\r\n', './assets/artigos/Monitorias.docx.pdf'),
-(50, 'Artigo: Desenvolvimento De Um Sistema Com Dashboards Para Apresentação De Resultados De Projetos De Pesquisa Educacionais', 'Fabio Kauê Araujo da Silva, André Luiz Ribeiro de Araujo Lima, Paloma Santos Ferreira, Rick Eick Vieira Dos Santos, Francisco Roberto Cantanhêde Brito, Pedro Artur Oliveira Costa, Luis Jorge Enrique Rivero Cabrejos', '2024', 'Índices; Representações Visuais; Planilhas.', 'O constante acompanhamento do andamento e dos resultados de projetos de\r\npesquisa educacionais são de extrema importância, uma vez que possibilita o controle de\r\ndesempenho e qualidade do programa de forma transparente. Contudo, constantemente dados\r\nsão apresentados aos interessados de forma ineficiente e estática, dificultando a síntese de\r\ninformações e impossibilitando a personalização das buscas. Nessa perspectiva, dashboards\r\nsão representações visuais de dados essenciais de forma interativa, apresentando parâmetros e\r\níndices de forma a melhorar a compreensão das informações e auxiliar na tomada de decisões.\r\nLevando isso em consideração, o presente artigo descreve o desenvolvimento de um modelo\r\nde dashboard voltado para o cenário de projetos de pesquisa no contexto educacional,\r\napresentando a criação de uma planilha automatizada para extração dos dados, o projeto do\r\nsistema para hospedar o dashboard, assim como a implementação e validação dos resultados\r\ncom o cliente. O sistema apresentado foi instanciado com informações fictícias, podendo ser\r\nutilizado posteriormente para projetos de pesquisa em outros contextos visando a\r\nsimplificação da análise dos resultados obtidos pelos mesmos.\r\n', './assets/artigos/DESENVOLVIMENTO DE UM SISTEMA COM DASHBOARDS PARA APRESENTAÇÃO DE RESULTADOS DE PROJETOS DE PESQUISA EDUCACIONAIS.docx.pdf');
+(50, 'Artigo: Desenvolvimento De Um Sistema Com Dashboards Para Apresentação De Resultados De Projetos De Pesquisa Educacionais', 'Fabio Kauê Araujo da Silva, André Luiz Ribeiro de Araujo Lima, Paloma Santos Ferreira, Rick Eick Vieira Dos Santos, Francisco Roberto Cantanhêde Brito, Pedro Artur Oliveira Costa, Luis Jorge Enrique Rivero Cabrejos', '2024', 'Índices; Representações Visuais; Planilhas.', 'O constante acompanhamento do andamento e dos resultados de projetos de\r\npesquisa educacionais são de extrema importância, uma vez que possibilita o controle de\r\ndesempenho e qualidade do programa de forma transparente. Contudo, constantemente dados\r\nsão apresentados aos interessados de forma ineficiente e estática, dificultando a síntese de\r\ninformações e impossibilitando a personalização das buscas. Nessa perspectiva, dashboards\r\nsão representações visuais de dados essenciais de forma interativa, apresentando parâmetros e\r\níndices de forma a melhorar a compreensão das informações e auxiliar na tomada de decisões.\r\nLevando isso em consideração, o presente artigo descreve o desenvolvimento de um modelo\r\nde dashboard voltado para o cenário de projetos de pesquisa no contexto educacional,\r\napresentando a criação de uma planilha automatizada para extração dos dados, o projeto do\r\nsistema para hospedar o dashboard, assim como a implementação e validação dos resultados\r\ncom o cliente. O sistema apresentado foi instanciado com informações fictícias, podendo ser\r\nutilizado posteriormente para projetos de pesquisa em outros contextos visando a\r\nsimplificação da análise dos resultados obtidos pelos mesmos.\r\n', './assets/artigos/DESENVOLVIMENTO DE UM SISTEMA COM DASHBOARDS PARA APRESENTAÇÃO DE RESULTADOS DE PROJETOS DE PESQUISA EDUCACIONAIS.docx.pdf'),
+(52, 'Artigo: Do Primeiro Contato à Permanência: Acalourada como Ferramenta de Integração ao PETComp', 'Anderson Leandro Fernandes Batalha, Amadeu Fernandes da Silva Neto, Ariel Batista Costa da Silva, Francisco Roberto Cantanhêde Brito, José Guilherme Magalhães de Almeida, Paulo Nixon Cantanhede dos Santos Saraiva, Wemerson Chagas de Miranda, Yan Felipe Buceles Pinto, Luis Jorge Enrique Rivero Cabrejos', '2025', 'Programa de Educação Tutorial; Acalourada; Calouro; Permanência Estudantil.', 'As atividades do PETComp (Programa de Educação Tutorial de Ciência da Computação da UFMA) integram ensino, pesquisa e extensão, sendo fundamentais para a formação dos discentes. Neste contexto, o presente trabalho destaca a participação do grupo nas Acalouradas, evento institucional de recepção de calouros, como estratégia de divulgação e fortalecimento do programa. A partir de formulários digitais e análise qualitativa das percepções dos participantes, observou-se que a Acalourada tem sido um ponto de contato inicial e decisivo para o ingresso no PETComp. Os resultados indicam que a atuação do grupo no evento contribui para o aumento do interesse, compreensão das atividades e redução da rotatividade de ingressantes, consolidando a ação como uma ferramenta eficaz de acolhimento e engajamento estudantil.', 'https://drive.google.com/file/d/1SWLdVJ76_7tl0F2awXLkPSsJqK5R_7ga/view'),
+(53, 'Artigo: Planilhas Inteligentes: Transformando Organização em Automação Via Programação', 'José Guilherme Magalhães de Almeida, Anderson Leandro Fernandes Batalha, Francisco Roberto Cantanhêde Brito, Rochel Andrey dos Santos Costa, Rôberth Kauã Diniz Costa, Wenderson Arthur Dutra Oliveira, Carlos Guilherme Santos Rodrigues, Breno Roberto Reis Vidigal, Luis Jorge Enrique Rivero Cabrejos', '2025', 'Automação; Planilha; Apps Script.', 'O controle diário de atividades é essencial para a organização e o bom funcionamento de grupos acadêmicos como o PETComp (Programa de Educação Tutorial em Ciência da Computação). Este artigo apresenta a avaliação da implementação de uma planilha automatizada, criada com Google Sheets e Google Apps Script, com o objetivo de tornar o processo de registro de atividades mais eficiente, confiável e acessível. A automação foi modelada por meio de um fluxo de estados do sistema. A metodologia adotada para avaliação da ferramenta consistiu na aplicação de um questionário para os membros da equipe. Os dados coletados foram analisados com foco na percepção dos usuários sobre usabilidade, eficiência e adaptabilidade. Os resultados apontam ganhos significativos e se mostrou uma solução viável e eficiente para o gerenciamento das atividades diárias. A experiência demonstra como ferramentas de baixo custo podem ser aplicadas para otimizar processos rotineiros em contextos acadêmicos com recursos limitados.', 'https://drive.google.com/file/d/1SWLdVJ76_7tl0F2awXLkPSsJqK5R_7ga/view');
 
 --
 -- Índices para tabelas despejadas
 --
+
+--
+-- Índices de tabela `monitorias`
+--
+ALTER TABLE `monitorias`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Índices de tabela `monitorias_aulas`
+--
+ALTER TABLE `monitorias_aulas`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `monitoria_id` (`monitoria_id`);
 
 --
 -- Índices de tabela `noticias`
@@ -465,10 +790,16 @@ ALTER TABLE `trabalhos_publicados`
 --
 
 --
+-- AUTO_INCREMENT de tabela `monitorias_aulas`
+--
+ALTER TABLE `monitorias_aulas`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=248;
+
+--
 -- AUTO_INCREMENT de tabela `noticias`
 --
 ALTER TABLE `noticias`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
 
 --
 -- AUTO_INCREMENT de tabela `noticias_botoes`
@@ -480,7 +811,7 @@ ALTER TABLE `noticias_botoes`
 -- AUTO_INCREMENT de tabela `petianos`
 --
 ALTER TABLE `petianos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=170;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=180;
 
 --
 -- AUTO_INCREMENT de tabela `revista`
@@ -498,11 +829,17 @@ ALTER TABLE `sites`
 -- AUTO_INCREMENT de tabela `trabalhos_publicados`
 --
 ALTER TABLE `trabalhos_publicados`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
 
 --
 -- Restrições para tabelas despejadas
 --
+
+--
+-- Restrições para tabelas `monitorias_aulas`
+--
+ALTER TABLE `monitorias_aulas`
+  ADD CONSTRAINT `monitorias_aulas_ibfk_1` FOREIGN KEY (`monitoria_id`) REFERENCES `monitorias` (`id`);
 
 --
 -- Restrições para tabelas `noticias_botoes`

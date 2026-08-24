@@ -5,6 +5,7 @@
 <?php
 $title = "Repositório";
 $cssFiles = ['css/biblioteca.css', 'css/repositorio-monitorias.css'];
+$jsFiles = ['js/repositorio_monitorias.js'];
 include "head.php";
 ?>
 

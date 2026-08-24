@@ -20,6 +20,9 @@ $routes = [
     ($root ? "$root/laboratorios" : "laboratorios") => function () {
         require("laboratorios.php");
     },
+    ($root ? "$root/mapa-ccet" : "mapa-ccet") => function () {
+        require("mapa-ccet.php");
+    },
     ($root ? "$root/monitoria" : "monitoria") => function () {
         require("monitoria.php");
     },
@@ -71,6 +74,10 @@ $routes = [
     ($root ? "$root/registros" : "registros") => function () {
         require("registros.php");
     },
+    ($root ? "$root/404" : "404") => function () {
+        http_response_code(404);
+        require("404.php");
+    },
     ($root ? "$root/noticias$param" : "noticias$param") => function ($id) {
         $_GET['id'] = $id;
         require("noticia.php");
@@ -78,7 +85,16 @@ $routes = [
     ($root ? "$root/integrantes$param" : "integrantes$param") => function ($id) {
         $_GET['page'] = $id;
         require("integrantes.php");
-    }
+    },
+    ($root ? "$root/planejamento" : "planejamento") => function () {
+    $_GET['tipo'] = 'planejamento';
+    require("documentos.php");
+    },
+
+    ($root ? "$root/relatorio" : "relatorio") => function () {
+        $_GET['tipo'] = 'relatorio';
+        require("documentos.php");
+    },
 ];
 
 function route($path, $routes)
@@ -95,7 +111,8 @@ function route($path, $routes)
     }
     // Se nenhuma rota corresponder
     http_response_code(404);
-    echo "Página não encontrada";
+    require("404.php");
+    exit;
 }
 
 $path = parse_url($_SERVER["REQUEST_URI"], PHP_URL_PATH); # extraindo url digitada

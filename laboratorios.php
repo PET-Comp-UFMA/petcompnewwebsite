@@ -71,7 +71,7 @@ function componentePopUp($idPopUp, $cor, $caminhoLogo, $titulo, $subtitulo, $des
 
     <div class="container-body">
         <p>
-            Os laboratórios de Ciência da Computação e Inteligência Artificial da UFMA (CCET) formam um ecossistema integrado e colaborativo focado em inovação tecnológica e na resolução de problemas complexos. Em vez de atuarem isoladamente, esses espaços se complementam em pesquisas de ponta que envolvem Inteligência Artificial, aprendizado de máquina e visão computacional (com aplicações médicas e em dados geográficos); engenharia de software e interação humano-computador; além de sistemas web avançados, computação pervasiva, mídias interativas, TV digital e jogos. Funcionando como verdadeiros centros de formação, esses laboratórios mantêm as portas abertas para os alunos, que podem ingressar em projetos de pesquisa bastando entrar em contato direto e conversar com os professores responsáveis.
+            Os laboratórios de Ciência da Computação e Inteligência Artificial da UFMA (CCET) formam um ecossistema integrado e colaborativo focado em inovação tecnológica e na resolução de problemas complexos. Em vez de atuarem isoladamente, esses espaços se complementam em pesquisas de ponta que envolvem Inteligência Artificial, Aprendizado de Máquina e Visão Computacional (com aplicações médicas e em dados geográficos); Engenharia de Software e Interação Humano-Computador; além de Sistemas Web Avançados, Computação Pervasiva, Mídias Interativas, TV Digital e jogos. Funcionando como verdadeiros centros de formação, esses laboratórios mantêm as portas abertas para os alunos, que podem ingressar em projetos de pesquisa, a partir do 2º período, bastando entrar em contato direto e conversar com os professores responsáveis.
         </p>
     </div>
 
@@ -91,7 +91,7 @@ function componentePopUp($idPopUp, $cor, $caminhoLogo, $titulo, $subtitulo, $des
         ?>
     </div>
 
-    <?php // AINDA FALTA FAZER O CARROSSEL DEPOIS
+    <?php 
     componentePopUp(
         "popUpDxt",
         "#ABF3FF",

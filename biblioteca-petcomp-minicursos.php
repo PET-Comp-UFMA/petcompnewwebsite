@@ -303,7 +303,7 @@ include "head.php";
     <div class="pagination">
       <div id="prev" class="box-pagination">
         <h1>
-          << /h1>
+        <h1><</h1>
       </div>
       <div id="primeiro" class="box-pagination">
         <h1>1</h1>
