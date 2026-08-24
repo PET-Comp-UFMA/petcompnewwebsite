@@ -832,6 +832,9 @@ map.on('dragstart', function() {
 });
 map.on('click', function() {
     document.activeElement.blur();
+    if (!map.isFullscreen()) {
+        map.toggleFullscreen();
+    }
 });
 
 
