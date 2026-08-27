@@ -21,6 +21,8 @@
                 
                 <a href="desenvolvimento" class="nav-link dropdown-link">Fáb. de software </a>
                 <a href="podcast" class="nav-link dropdown-link">PodCast</a>
+                <a href="repositorio-educacional" class="nav-link dropdown-link">REAPet</a>
+                <a href="mapa-ccet" class="nav-link dropdown-link">Mapa CCET</a>
             </div>
         </div>
         <div class="dropdown">
@@ -36,11 +38,11 @@
         <div>
             <a href="noticias" class="nav-link">Notícias</a>
         </div>
-        <div >
-                <a href="repositorio-educacional" class="nav-link">REAPet</a>  
-        </div>
-        <div>
-            <a href="mapa-ccet" class="nav-link">Mapa CCET</a>
+        
+        <div class="dropdown">
+            <button class="dropbtn">Documentos<span class="material-icons">arrow_drop_down</span></button>
+            <div class="dropdown-content">
+            <a href="#" class="nav-link dropdown-link">Declaração HC</a>
             
         </div>
     </nav>
