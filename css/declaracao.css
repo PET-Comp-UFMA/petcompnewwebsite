@@ -1,0 +1,84 @@
+main{
+    display: flex;
+    margin: 6rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.text{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.text h2{
+    color: #0B114A;
+    font-family: sans-serif;
+    font-size: 60px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.text hr{
+    height: 5px;
+    width: 30%;
+    color: #027BFD;
+    background-color: #027bdf;
+    border-radius: 50px;
+}
+
+.text p{
+    width: 58ch;
+    text-align: center;
+}
+
+.card-form{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    box-shadow: 0 4px 8.8px 0 rgba(0, 0, 0, 0.25);
+    padding: 40.241px;
+    border-radius: 17px;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.campo input {
+    width: 100%;
+    padding: 12px;
+
+    background-color: transparent;
+    border: 3px solid #047CE0;
+    border-radius: 6px;
+    color: white;
+    caret-color: white;
+
+    transition: all 0.25s ease;
+}
+
+#btnRegistrar {
+    margin: 0 auto;
+    width: 100%;
+    height: 40px;
+    border: none;
+    border-radius: 6px;
+    background-color: #047CE0;
+    color: white;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+#btnRegistrar:disabled {
+    background-color: #5f7da1;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
