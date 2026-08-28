@@ -37,31 +37,55 @@
                 Validar Documento
             </button>
         </div>
-        <div class="text">
-            <h2>Emissão Declaração</h2>
-            <hr>
-            <p>Informe seu CPF e matrícula para verificar sua elegibilidade e baixar sua declaração de horas complementares.</p>
+        <div class="painel-declaracao" data-painel="emissao">
+            <div class="text">
+                <h2>Emissão Declaração</h2>
+                <hr>
+                <p>Informe seu CPF e matrícula para verificar sua elegibilidade e baixar sua declaração de horas complementares.</p>
+            </div>
+            <div class="card-form">
+                <form action="" id="form-emissao">
+                    <div class="campo">
+                        <label for="cpf">CPF</label>
+                        <input id="cpf" type="text" placeholder="000.000.000-00">
+                    </div>
+                    <div class="campo">
+                        <label for="Matricula">N° da Matrícula</label>
+                        <input id="Matricula" type="text" placeholder="12345678910">
+                    </div>
+                </form>
+                <button id="btnverificar" class="btnRegistrar">
+                    Verificar Elegibilidade
+                </button>
+            </div>
         </div>
-        <div class="card-form">
-            <form action="">
-                <div class="campo">
-                    <label for="cpf">CPF</label>
-                    <input id="cpf" type="text" placeholder="000.000.000-00">
-                </div>
-                <div class="campo">
-                    <label for="Matricula">N° da Matrícula</label>
-                    <input id="Matricula" type="text" placeholder="20202020">
-                </div>
-            </form>
 
-            <button id="btnRegistrar">
-                Verificar Elegibilidade
-            </button>
+        <div class="painel-declaracao" data-painel="validacao">
+            <div  class="text">
+                <h2>Autenticidade de Documentos</h2>
+                <hr>
+                <p>Digite o número de identificação do documento para validar sua autenticidade.</p>
+            </div>
+            <div class="card-form">
+                <form action="" id="form-validacao">
+                    <div class="campo">
+                        <label for="numValidacao">Código de Verificação</label>
+                        <input id="numValidacao" type="text" placeholder="Número de Identificação">
+                    </div>
+                </form>
+                <button id="btnvalidar" class="btnRegistrar">
+                    Verificar
+                </button>
+            </div>
         </div>
+
     </main>
 
 
 
     <?php include('footer.php') ?>
+    <script src="script.js" defer></script>
 </body>
+
+    
 </html>

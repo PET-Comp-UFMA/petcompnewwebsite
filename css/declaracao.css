@@ -5,6 +5,12 @@ body {
 
 }
 
+.hidden {
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
 .container-header {
     color: white;
     background-color: #01204C;
@@ -51,7 +57,7 @@ main{
     height: 58px;
     max-width: 448px;
     padding: 6px;
-    align-items: flex-start;
+    align-items: center;
     gap: 4px;
     flex-shrink: 0;
     border-radius: 15px;
@@ -83,6 +89,7 @@ main{
     background: rgba(241, 245, 249, 0.70)
 }
 
+
 .text{
     display: flex;
     flex-direction: column;
@@ -93,6 +100,7 @@ main{
 .text h2{
     color: #0B114A;
     font-family: sans-serif;
+    text-align: center;
     font-size: 60px;
     font-style: normal;
     font-weight: 700;
@@ -100,9 +108,9 @@ main{
 }
 
 .text hr{
+    border: none;
     border-radius: 50px;
     background-color: #027BFD;
-    border-radius: 50px;
     width: 385px;
     height: 9px;
 }
@@ -122,7 +130,8 @@ main{
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    width: 600px;
+    max-width: 600px;
+    margin: 0 auto;
     box-shadow: 0 4px 8.8px 0 rgba(0, 0, 0, 0.25);
     padding: 40px;
     border-radius: 17px;
@@ -134,24 +143,30 @@ form{
     gap: 1rem;
 }
 
+.campo {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
 .campo input {
     width: 100%;
     padding: 12px;
     border-radius: 6px;
-    color: white;
+    color: black;
     caret-color: white;
     transition: all 0.25s ease;
     border: 1.551px solid #E2E8F0;
     background: #F8FAFC;
 }
 
-#btnRegistrar {
+.btnRegistrar.ativo {
     margin: 0 auto;
     width: 100%;
-    height: 40px;
+    height: 50px;
     border: none;
     border-radius: 6px;
-    background-color: #047CE0;
+    background-color: #0A1A3F;
     color: white;
     font-weight: 600;
     font-size: 1rem;
@@ -159,8 +174,205 @@ form{
     transition: 0.2s;
 }
 
-#btnRegistrar:disabled {
-    background-color: #5f7da1;
+.btnRegistrar {
+    margin: 0 auto;
+    background-color: #CAD5E2;
+    color: #62748E;
     cursor: not-allowed;
-    opacity: 0.7;
+    width: 100%;
+    height: 50px;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.btnRegistrar:disabled {
+    opacity: 0.6;
+}
+
+
+@media (max-width: 1024px) {
+
+    main {
+        margin: 3rem 2rem;
+    }
+
+    .container-header {
+        padding: 50px 60px;
+    }
+
+    .container-header h2 {
+        font-size: 50px;
+        margin-bottom: 20px;
+        font-weight: bold;
+    }
+
+    .container-header h3 {
+        font-size: 30px;
+        margin-bottom: 20px;
+        font-weight: normal;
+    }
+
+    .container-header p {
+        font-size: 16px;
+        font-weight: normal;
+    }
+
+    .select {
+        max-width: 90%;
+        width: 100%;
+        height: auto;
+    }
+
+    .ativado,
+    .desativado {
+        width: 50%; /* divide igualmente o espaço disponível, em vez de largura fixa */
+        padding: 10px 12px;
+    }
+
+    .painel-declaracao {
+        padding: 0 24px;
+    }
+
+    .card-form {
+        max-width: 500px;
+    }
+}
+
+
+@media (max-width: 768px) {
+
+    main {
+        margin: 2rem 1rem;
+    }
+
+    .container-header {
+        padding: 20px 70px;
+    }
+
+    .container-header h2 {
+        font-size: 24px;
+        margin-bottom: 15px;
+    }
+
+    .container-header h3 {
+        font-size: 16px;
+        margin-bottom: 15px;
+    }
+
+    .container-header p {
+        font-size: 9px;
+        font-weight: normal;
+    }
+
+    .select {
+        max-width: 90%;
+        width: 100%;
+        height: auto;
+    }
+
+    .ativado,
+    .desativado {
+        width: 50%; 
+        padding: 10px 12px;
+    }
+
+
+    .text hr {
+        width: 250px;
+        height: 6px;
+    }
+
+    .text h2 {
+        font-size: 1.5rem;
+    }
+
+    .text p {
+        font-size: 0.9rem;
+        padding: 0 16px;
+    }
+
+    .card-form {
+        width: 90%;
+        max-width: 400px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    main {
+        margin: 1rem 1rem;
+    }
+
+    .container-header {
+        padding: 20px 40px;
+    }
+
+    .container-header h2 {
+        font-size: 35px;
+        margin-bottom: 10px;
+    }
+
+    .container-header h3 {
+        font-size: 15px;
+        margin-bottom: 10px;
+    }
+
+    .container-header p {
+        font-size: 5px;
+        font-weight: normal;
+    }
+
+    .select {
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+        padding: 4px;
+        border-radius: 12px;
+        align-self: stretch;
+        box-sizing: border-box;
+    }
+
+    .ativado,
+    .desativado {
+        width: 50%;
+        padding: 8px 10px;
+        font-size: 0.85rem;
+        border-radius: 10px;
+    }
+
+    .painel-declaracao {
+        padding: 0 18px;
+    }
+
+    .text hr {
+        width: 180px;
+        height: 5px;
+    }
+
+    .text h2 {
+        font-size: 1.25rem;
+        text-align: center;
+    }
+
+    .text p {
+        font-size: 0.85rem;
+    }
+
+    .card-form {
+        width: 100%;
+    }
+
+    .btnRegistrar,
+    .btnRegistrar.ativo {
+        height: 45px;
+        font-size: 0.9rem;
+    }
+
+    .campo input {
+        font-size: 0.9rem;
+        padding: 8px;
+    }
 }
