@@ -43,6 +43,43 @@ function configurarValidacaoBotao(seletorForm, seletorBotao) {
     verificarCampos(); // estado inicial ao carregar a página
 }
 
+// Máscara e bloqueio de letras no campo CPF
+const inputCpf = document.getElementById('cpf');
+
+inputCpf.addEventListener('input', (e) => {
+    let valor = e.target.value.replace(/\D/g, ''); // remove tudo que não é número
+    valor = valor.slice(0, 11); // limita a 11 dígitos
+
+    valor = valor.replace(/(\d{3})(\d)/, '$1.$2');
+    valor = valor.replace(/(\d{3})(\d)/, '$1.$2');
+    valor = valor.replace(/(\d{3})(\d{1,2})$/, '$1-$2');
+
+    e.target.value = valor;
+});
+
+inputCpf.addEventListener('keydown', (e) => {
+    const teclasPermitidas = ['Backspace', 'Delete', 'ArrowLeft', 'ArrowRight', 'Tab'];
+    if (!/\d/.test(e.key) && !teclasPermitidas.includes(e.key)) {
+        e.preventDefault();
+    }
+});
+
+// Máscara e bloqueio de letras no campo Matrícula
+const inputMatricula = document.getElementById('Matricula');
+
+inputMatricula.addEventListener('input', (e) => {
+    let valor = e.target.value.replace(/\D/g, ''); // remove tudo que não é número
+    valor = valor.slice(0, 11); // limita a 11 dígitos
+    e.target.value = valor;
+});
+
+inputMatricula.addEventListener('keydown', (e) => {
+    const teclasPermitidas = ['Backspace', 'Delete', 'ArrowLeft', 'ArrowRight', 'Tab'];
+    if (!/\d/.test(e.key) && !teclasPermitidas.includes(e.key)) {
+        e.preventDefault();
+    }
+});
+
 prepararTrocaComponenteDeclaracao("emissao");
 configurarValidacaoBotao("#form-emissao", "#btnverificar");
 configurarValidacaoBotao("#form-validacao", "#btnvalidar");

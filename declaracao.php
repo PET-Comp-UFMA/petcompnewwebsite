@@ -47,11 +47,11 @@
                 <form action="" id="form-emissao">
                     <div class="campo">
                         <label for="cpf">CPF</label>
-                        <input id="cpf" type="text" placeholder="000.000.000-00">
+                        <input id="cpf" type="text" placeholder="000.000.000-00" maxlength="14" inputmode="numeric">
                     </div>
                     <div class="campo">
                         <label for="Matricula">N° da Matrícula</label>
-                        <input id="Matricula" type="text" placeholder="12345678910">
+                        <input id="Matricula" type="text" placeholder="12345678910" maxlength="11" inputmode="numeric">
                     </div>
                 </form>
                 <button id="btnverificar" class="btnRegistrar">

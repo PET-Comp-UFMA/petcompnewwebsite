@@ -113,6 +113,7 @@ main{
     background-color: #027BFD;
     width: 385px;
     height: 9px;
+    opacity: 1;
 }
 
 .text p{
@@ -158,6 +159,7 @@ form{
     transition: all 0.25s ease;
     border: 1.551px solid #E2E8F0;
     background: #F8FAFC;
+    box-sizing: border-box;
 }
 
 .btnRegistrar.ativo {
@@ -166,12 +168,20 @@ form{
     height: 50px;
     border: none;
     border-radius: 6px;
-    background-color: #0A1A3F;
+    background-color: #027BFD;
     color: white;
     font-weight: 600;
     font-size: 1rem;
     cursor: pointer;
-    transition: 0.2s;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.btnRegistrar.ativo:hover {
+    background-color: #0263D1;
+}
+
+.btnRegistrar.ativo:active {
+    transform: scale(0.98);
 }
 
 .btnRegistrar {
