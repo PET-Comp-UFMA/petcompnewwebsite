@@ -95,11 +95,6 @@ $routes = [
         $_GET['tipo'] = 'relatorio';
         require("documentos.php");
     },
-
-    ($root ? "$root/declaracao" : "declaracao") => function (){
-        $_GET['tipo'] = 'declaracao';
-        require("declaracao.php");
-    },
 ];
 
 function route($path, $routes)
