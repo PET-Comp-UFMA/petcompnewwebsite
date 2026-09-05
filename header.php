@@ -42,8 +42,7 @@
         <div class="dropdown">
             <button class="dropbtn">Documentos<span class="material-icons">arrow_drop_down</span></button>
             <div class="dropdown-content">
-            <a href="declaracao" class="nav-link dropdown-link">Declaração HC</a>
-            
+            <a href="declaracao" class="nav-link dropdown-link">Declaração HC</a> 
         </div>
     </nav>
     <img src="./assets/svg/menu-white.svg" alt="" class="open-btn" onclick="openMenu()">

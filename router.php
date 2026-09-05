@@ -11,7 +11,7 @@
 $param = "[/]?(\w*)";
 
 $routes = [
-    "$root/" => function () {
+    "$root" => function () {
         require("index.php");
     },
     ($root ? "$root/sobre" : "sobre") => function () {
@@ -121,7 +121,7 @@ function route($path, $routes)
 }
 
 $path = parse_url($_SERVER["REQUEST_URI"], PHP_URL_PATH); # extraindo url digitada
-$path = ltrim($path, '/'); // removendo '/' à esquerda
+$path = trim($path, '/'); // removendo '/' à esquerda
 //echo "url: " . $path . "<br>";
 route($path, $routes); // redirecionando a url pra rota correspondente
 ?>

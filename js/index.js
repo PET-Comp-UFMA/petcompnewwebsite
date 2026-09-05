@@ -37,7 +37,7 @@ function changeNews() {
         });
 
         // Atualiza o índice
-        currentIndex = (currentIndex + 1) % newsData.length;
+        let currentIndex = (currentIndex + 1) % newsData.length;
     }, 500); // Tempo para a transição suave
 }
 

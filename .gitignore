@@ -1,2 +1,4 @@
 /vscode
 .env
+/vendor
+/services/GoogleSheetsService.php

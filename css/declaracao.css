@@ -6,7 +6,7 @@ body {
 }
 
 .hidden {
-    display: none;
+    display: none !important;
     align-items: center;
     justify-content: center;
 }
@@ -136,6 +136,130 @@ main{
     box-shadow: 0 4px 8.8px 0 rgba(0, 0, 0, 0.25);
     padding: 40px;
     border-radius: 17px;
+}
+
+
+.resultado-erro {
+    margin: 1rem auto;
+    max-width: 600px;
+    padding: 15px 20px;
+    width: 100%;
+    font-weight: 700;
+    border-radius: 16px;
+    border: 1px solid #FFC9C9;
+    background: #FEF2F2;
+    color: #E7000B;
+}
+
+.declaracao-card{
+    display: flex;
+    flex-direction: column;
+    padding: 2rem ;
+    gap: 1rem;
+    border-radius: 17.885px;
+    border: 1.118px solid rgba(255, 255, 255, 0.10);
+    background: #FFF;
+    box-shadow: 0 4px 8.8px 0 rgba(0, 0, 0, 0.25);
+}
+
+.status-declaracao{
+    margin-left: 0;
+    border-radius: 10px;
+    font-size: small;
+    font-weight: 700;
+    background: #ECFDF5;
+    color:#007A55;
+    padding: 10px 20px;
+}
+
+.corpo-declaracao {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.cabecalho-declaracao{
+    display: inline-flex;
+    width: 100%;
+    padding: 28px 30px 27px 26px;
+    align-items: center;
+    gap: 30px;
+    border-radius: 5px 5px 0 0;
+    background: #0A1A3F;
+}
+
+.logo-declaracao{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    color: #FFF;
+}
+.logo-declaracao img{
+    width: 40px;
+    height: 41px;
+    aspect-ratio: 133.75/41.30;
+}
+
+.info-aluno{
+    display: flex;
+    height: 30px;
+    flex-direction: column;
+    align-items: flex-start;
+    align-self: stretch;
+}
+
+.info-aluno span{
+    color: #6EA3FF;
+    font-family: sans-serif;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 17px;
+    letter-spacing: 1.3px;
+    text-transform: uppercase;
+}
+
+.info-aluno strong{
+    color: #FFF;
+    font-family: sans-serif;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 31px;
+}
+
+.informacoes-declaracao {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    padding: 10px 10px;
+    border: 1px solid #0B114A;
+}
+
+.periodo{
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+    border-right: 1px solid #0B114A;;
+}
+
+.carga-horaria {
+    padding: 10px;
+    width: 55%;
+    display: flex;
+    flex-direction: column;
+}
+
+#btn-baixar-declaracao{
+    display: flex;
+    height: 56px;
+    padding: 15px 26px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    color: #FFF;
+    border-radius: 13.049px;
+    background: #0A1A3F;
 }
 
 form{
