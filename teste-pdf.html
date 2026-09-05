@@ -1,0 +1,10 @@
+<script>
+fetch('api/validar_documento.php', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ numero: 'PET202600061' })
+})
+.then(r => r.json())
+.then(data => document.body.innerText = JSON.stringify(data, null, 2))
+.catch(err => document.body.innerText = 'Erro: ' + err);
+</script>

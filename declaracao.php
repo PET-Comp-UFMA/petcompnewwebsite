@@ -5,7 +5,7 @@
 <?php 
     $title = "Declaração de Horas";
     $cssFiles = ['css\declaracao.css'];
-    $jsFiles = ['js/declaracao.js'];
+    $jsFiles = ['js/declaracao.js', 'js/declaracao-backend.js'];
     include "head.php";
 ?>
 
@@ -57,6 +57,7 @@
                 <button id="btnverificar" class="btnRegistrar">
                     Verificar Elegibilidade
                 </button>
+                <div id="msg-emissao"></div>
             </div>
         </div>
 
@@ -76,6 +77,7 @@
                 <button id="btnvalidar" class="btnRegistrar">
                     Verificar
                 </button>
+                <div id="msg-validacao"></div>
             </div>
         </div>
 

@@ -11,9 +11,9 @@ function ativarBotaoDeclaracao(botaoSelecionado) {
 
 function prepararTrocaComponenteDeclaracao(tipoSelecionado) {
     paineisDeclaracao.forEach((painel) => {
-            const visivel = painel.dataset.painel === tipoSelecionado;
-            painel.classList.toggle("hidden", !visivel);
-        });
+        const visivel = painel.dataset.painel === tipoSelecionado;
+        painel.classList.toggle("hidden", !visivel);
+    });
 }
 
 botoesDeclaracao.forEach((botao) => {
@@ -58,6 +58,8 @@ inputCpf.addEventListener('input', (e) => {
 });
 
 inputCpf.addEventListener('keydown', (e) => {
+    if (e.ctrlKey || e.metaKey) return; 
+
     const teclasPermitidas = ['Backspace', 'Delete', 'ArrowLeft', 'ArrowRight', 'Tab'];
     if (!/\d/.test(e.key) && !teclasPermitidas.includes(e.key)) {
         e.preventDefault();
@@ -74,6 +76,8 @@ inputMatricula.addEventListener('input', (e) => {
 });
 
 inputMatricula.addEventListener('keydown', (e) => {
+    if (e.ctrlKey || e.metaKey) return; // libera Ctrl+V, Ctrl+C, Ctrl+A, etc.
+
     const teclasPermitidas = ['Backspace', 'Delete', 'ArrowLeft', 'ArrowRight', 'Tab'];
     if (!/\d/.test(e.key) && !teclasPermitidas.includes(e.key)) {
         e.preventDefault();
