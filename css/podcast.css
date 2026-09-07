@@ -1,26 +1,14 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
 body {
-    text-align: justify;
-    padding: 0px;
+    padding: 0;
 }
 
-main .container p {
-    color: #010101;
-    font-family: "Montserrat", sans-serif;
-    line-height: 2em;
-    text-align: justify;
-    text-indent: 0.8em;
-    padding: 0 3em;
-}
-main .container {
-    margin: 0 auto;
-    width: 70%;
-}
+/* ── HEADER DA PÁGINA ── */
 .container-header {
     color: white;
     background-color: #01204C;
@@ -33,31 +21,262 @@ main .container {
     text-decoration: none;
 }
 
+.path-text {
+    font-family: 'Mada';
+    display: flex;
+    font-weight: 400;
+    gap: 5px;
+    font-size: 20px;
+}
+
+.path-text h4 {
+    display: inline;
+    font-weight: 400;
+}
+
+.path-text a {
+    color: rgb(70, 101, 221);
+    text-decoration: none;
+}
+
+.path-text a:hover {
+    color: rgb(74, 167, 224);
+}
+
+/* ── CORPO DO TEXTO ── */
+.container-body {
+    padding: 50px 60px;
+}
+
 .container-body p {
+    font-size: 20px;
     line-height: 1.6;
     text-align: justify;
 }
 
-h4 {
-    display: inline;
+/* ── SEÇÃO AZUL (dicas, recomendações...) ── */
+.sobre-podcomp {
+    padding: 5px 0 10px 0;
+    background-color: #249BFF;
+    overflow: hidden;
 }
-.episodios {
+
+.podcomp-inner {
+    margin: 0 auto;
+    padding: 24px 40px;
     display: flex;
-    flex-direction: column-reverse;
-    margin: auto;
-    padding: 0 3em;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+    flex-wrap: wrap;
+    min-height: 320px;
+    box-sizing: border-box;
+    max-width: 100%;
+    max-width: 1800px;
 }
+
+.podcomp-textos {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    flex-shrink: 1;
+    min-width: 0;
+}
+
+.podcomp-textos span {
+    font-size: clamp(32px, 5vw, 64px);
+    font-weight: 900;
+    line-height: 1.15;
+    letter-spacing: -1px;
+}
+
+.pc-titulo {
+    text-align: center;
+    color: rgb(0, 19, 65);
+    font-weight: 700;
+    font-size: 32px;
+    font-family: 'Mada', sans-serif;
+    margin-bottom: 1.5rem;
+}
+
+.podcomp-textos .solido {
+    color: #fff;
+}
+
+.podcomp-textos .contorno {
+    color: transparent;
+    -webkit-text-stroke: 2.5px #fff;
+}
+
+.podcomp-player {
+    background-color: #005BD2;
+    border-radius: 18px;
+    padding: 20px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    width: 100%;
+    max-width: 420px;
+    flex-shrink: 1;
+    min-width: 260px;
+    box-sizing: border-box;
+    position: relative;
+    isolation: isolate;
+    width: 45%;
+    max-width: 600px;
+    min-width: 280px;
+}
+
+.podcomp-player::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 18px;
+    background-color: #060f3a;
+    transform: translate(10px, 10px);
+    z-index: -1;
+}
+
+.podcomp-top-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: nowrap;
+    min-width: 0;
+}
+
+.podcomp-thumb {
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+    flex-shrink: 0;
+    overflow: hidden;
+}
+
+.podcomp-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.podcomp-title {
+    flex: 1;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 500;
+    margin: 0;
+    line-height: 1.4;
+    min-width: 0;
+    word-break: normal;
+    overflow-wrap: normal;
+}
+
+.podcomp-spotify-icon {
+    width: 36px;
+    height: 36px;
+    background-color: #1DB954;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.podcomp-spotify-icon svg {
+    width: 20px;
+    height: 20px;
+    fill: #ffffff;
+}
+
+.podcomp-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.podcomp-controls svg {
+    width: 32px;
+    height: 32px;
+    fill: #ffffff;
+}
+
+.podcomp-bar-track {
+    width: 100%;
+    height: 4px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    position: relative;
+}
+
+.podcomp-bar-fill {
+    height: 100%;
+    width: 32%;
+    background-color: #ffffff;
+    border-radius: 4px;
+    position: relative;
+}
+
+.podcomp-bar-fill::after {
+    position: absolute;
+    right: -5px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 10px;
+    height: 10px;
+    background-color: #ffffff;
+    border-radius: 50%;
+}
+
+/* ── RESPONSIVO mobile ── */
+
+.spotify-btn svg {
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+}
+
+.spotify-btn-texto {
+    display: flex;
+    flex-direction: column;
+}
+
+.spotify-btn-label {
+    font-size: 14px;
+    color: #aaa;
+}
+
+.spotify-btn-nome {
+    font-size: 28px;
+    font-weight: 700;
+    color: #1DB954;
+    letter-spacing: -0.5px;
+}
+
+/* ── CARDS DE EPISÓDIOS ── */
+.episodios {
+    padding-top: 1em;
+    padding-left: 13em;
+    padding-right: 13em;
+    margin-bottom: 1rem;
+    font-family: 'Mada';
+}
+
+.episodios h2 {
+    text-align: center;
+    color: rgb(0, 19, 65);
+    font-weight: 700;
+    font-size: 45px;
+}
+
 .episodio {
-    width: 50%;
-    max-width: 50%;
+    width: 100%;
     margin-top: 3rem;
 }
+
 .episodio .texto {
     display: flex;
     flex-direction: column;
-    font-size: 12px;
-}
-.episodio .texto {
     background: #000838;
     border-radius: 1em;
     color: #fff;
@@ -69,7 +288,6 @@ h4 {
     padding-top: 20px;
     width: 100%;
     height: 400px;
-    max-height: 400;
 }
 
 .episodio .texto p {
@@ -79,342 +297,137 @@ h4 {
     margin-bottom: 0;
     font-size: 14px;
     font-weight: 300;
+    flex-direction: column
 }
 
 .episodio .texto p img {
     width: 20px;
 }
-.path-text{
-    font-family: 'Mada';
-    display: flex;
-    font-weight: 400;
-    gap: 5px;
-    font-size: 20px;
 
-    & h4{
-        font-weight: 400;
-    }
-    & a{
-        color: rgb(70, 101, 221);
-        text-decoration: none;
-    }
-    
-    & a:hover{
-        color: rgb(74, 167, 224);
-    }
-}
-
-.textos{
-    font-family: 'Mada';
-    font-weight: 500;
-    gap: 5px;
-    height: 50%;
-    width: 100%;
-    padding: 50px 60px;
-    line-height: 1.6;
-    text-align: justify;
-    & p{
-        font-size: 20px;
-        
-    }
-}
-
-.infos{
-    display: flex;
-    font-family: 'Mada';
-    background-color: #249BFF;
-    padding: 3rem 5rem;
-    color: white;
-    & h2 {
-        font-weight: 700;
-        font-size: 55px;
-    }
-    & img{
-        padding-top: 8px;
-        object-fit: contain;
-        max-width: 45%;
-        height:auto;
-        align-items: center;
-        justify-content: center;
-    }
-}
-
-.texts{
-    padding-right: 11rem;
-}
-
-.with-bord{
-    color:transparent;
-    -webkit-text-stroke: 1px white;
-}
-
-.episodios{
-    padding-top: 1em;
-    padding-left: 13em;
-    padding-right: 13em;
-    margin-bottom: 1rem;
-    font-family: 'Mada';
-    & h2{
-        text-align: center;
-        color:rgb(0, 19, 65);
-        font-weight: 700;
-        font-size: 45px;
-    }
-}
-
-.ep-unico{
+.ep-unico {
     font-family: 'Mada';
     background: #000838;
     border-radius: 18px;
     color: rgba(255, 255, 255, 0.801);
     margin: 20px;
-    & p {
-        font-family: "Montserrat", sans-serif;
-        line-height: 3em;
-        text-align: justify;
-        text-indent: 0.8em;
-        align-items: center;
-        display: flex;
-        margin-left: 10px;
-        font-size: 14px;
-        font-weight: 300;
-    }
-    & img {
-        max-width: 20px;
-        height: auto;
-    }
-}
-.carousel {
-  position: relative;
-  margin-bottom: 2rem;
 }
 
-/* Estilo do Swiper */
-.carousel {
-  position: relative;
-}
-
-/* Estilo dos bullets de navegação (paginações) */
-.swiper-pagination {
-  display: flex;
-  justify-content: center; /* Centraliza os bullets horizontalmente */
-  z-index: 10;
-}
-
-/* Personalize os bullets */
-.swiper-pagination-bullet {
-  background-color: #007bff; /* Cor dos bullets */
-}
-
-/* Ajuste para o layout dos slides */
-.swiper-slide {
-  display: flex;
-  justify-content: center; /* Centraliza os cards */
-}
-
-/* Adicional: Adicionar margem aos slides, se necessário, para espaçamento */
-.swiper-slide {
-  margin-bottom: 20px; /* Ajuste conforme o seu layout */
-}
-/* Estilo do Swiper */
-.carousel {
-  position: relative;
-}
-
-/* Estilo dos slides */
-.swiper-slide {
-  display: flex;
-  justify-content: center;
-  align-items: center; /* Garantir que o conteúdo dos cards esteja centralizado */
-}
-
-/* Estilo dos bullets de navegação (paginações) */
-.swiper-pagination {
-  position: relative;
-  bottom: 10px; /* Coloca os bullets abaixo dos slides */
-  display: flex;
-  justify-content: center;
-  z-index: 1000; /* Garante que a paginação fique abaixo dos cards */
-  padding-top: 20px; /* Adiciona um espaçamento acima da paginação */
-}
-
-/* Personalize os bullets */
-.swiper-pagination-bullet {
-  background-color: #007bff;
-  width: 12px; /* Tamanho dos bullets */
-  height: 12px; /* Tamanho dos bullets */
-  margin: 0 5px; /* Espaçamento entre os bullets */
-}
-/* Estilo do Swiper */
-.carousel {
-  position: relative;
-}
-
-/* Estilo dos slides */
-.swiper-slide {
-  display: flex;
-  justify-content: center;
-  align-items: center; /* Garantir que o conteúdo dos cards esteja centralizado */
-}
-
-/* Estilo dos bullets de navegação (paginações) */
-.swiper-pagination {
-  position: relative;
-  bottom: 10px; /* Coloca os bullets abaixo dos slides */
-  display: flex;
-  justify-content: center;
-  z-index: 1000; /* Garante que a paginação fique abaixo dos cards */
-  padding-top: 30px; /* Adiciona um espaçamento acima da paginação */
-}
-
-/* Personalize os bullets */
-.swiper-pagination-bullet {
-  background-color: #007bff;
-  width: 12px; /* Tamanho dos bullets */
-  height: 12px; /* Tamanho dos bullets */
-  margin: 0 5px; /* Espaçamento entre os bullets */
-}
-.swiper-slide a{
-  text-decoration: none;
-
-}
-.carousel {
-    position: relative;
-    margin-bottom: 2rem;
-  }
-  
-  /* Estilo do Swiper */
-  .carousel {
-    position: relative;
-  }
-  
-  /* Estilo dos bullets de navegação (paginações) */
-  .swiper-pagination {
+.ep-unico p {
+    font-family: "Montserrat", sans-serif;
+    line-height: 3em;
+    text-align: justify;
+    text-indent: 0.8em;
+    align-items: center;
     display: flex;
-    justify-content: center; /* Centraliza os bullets horizontalmente */
-    z-index: 10;
-  }
-  
-  /* Personalize os bullets */
-  .swiper-pagination-bullet {
-    background-color: #007bff; /* Cor dos bullets */
-  }
-  
-  /* Ajuste para o layout dos slides */
-  .swiper-slide {
+    margin-left: 10px;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.ep-unico img {
+    max-width: 20px;
+    height: auto;
+}
+
+/* ── CAROUSEL DE EPISÓDIOS ── */
+#produtos-podcomp {
+    margin: 0 auto;
+    max-width: 780px;
+    padding: 20px 0 0 0;
+}
+
+.carousel-wrapper {
     display: flex;
-    justify-content: center; /* Centraliza os cards */
-  }
-  
-  /* Adicional: Adicionar margem aos slides, se necessário, para espaçamento */
-  .swiper-slide {
-    margin-bottom: 20px; /* Ajuste conforme o seu layout */
-  }
-  /* Estilo do Swiper */
-  .carousel {
-    position: relative;
-  }
-  .swiper-button-next,
-  .swiper-button-prev {
-  color: #000838; /* ou qualquer cor que combine com seu layout */
-  
-  }
-  #produtos-podcomp {
-    margin: 0rem 8rem;
-  }
-  
-  /* Estilo dos slides */
-  .swiper-slide {
+    align-items: center;
+    gap: 16px;
+}
+
+.carousel-track {
+    flex: 1;
+    overflow: hidden;
+}
+
+.carousel-slide {
+    display: none;
+}
+
+.carousel-slide.active {
+    display: block;
+}
+
+.carousel-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #000838;
+    font-size: 2rem;
+    padding: 8px;
+    flex-shrink: 0;
+    line-height: 1;
+    transition: color 0.2s;
+}
+
+.carousel-btn:hover {
+    color: #249BFF;
+}
+
+.carousel-btn:disabled {
+    color: #ccc;
+    cursor: default;
+}
+
+.carousel-pagination {
     display: flex;
     justify-content: center;
-    align-items: center; /* Garantir que o conteúdo dos cards esteja centralizado */
-  }
-  
-  /* Estilo dos bullets de navegação (paginações) */
-  .swiper-pagination {
-    position: relative;
-    bottom: 10px; /* Coloca os bullets abaixo dos slides */
-    display: flex;
-    justify-content: center;
-    z-index: 1000; /* Garante que a paginação fique abaixo dos cards */
-    padding-top: 20px; /* Adiciona um espaçamento acima da paginação */
-  }
-  
-  /* Personalize os bullets */
-  .swiper-pagination-bullet {
+    gap: 8px;
+    padding: 16px 0 0 0;
+}
+
+.carousel-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #ccc;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    transition: background-color 0.2s;
+}
+
+.carousel-dot.active {
     background-color: #007bff;
-    width: 12px; /* Tamanho dos bullets */
-    height: 12px; /* Tamanho dos bullets */
-    margin: 0 5px; /* Espaçamento entre os bullets */
-  }
-  /* Estilo do Swiper */
-  .carousel {
-    position: relative;
-  }
-  
-  /* Estilo dos slides */
-  .swiper-slide {
+}
+
+/* ── BOTÃO VER MAIS ── */
+.ver-mais {
     display: flex;
     justify-content: center;
-    align-items: center; /* Garantir que o conteúdo dos cards esteja centralizado */
-  }
-  
-  /* Estilo dos bullets de navegação (paginações) */
-  .swiper-pagination {
-    position: relative;
-    bottom: 10px; /* Coloca os bullets abaixo dos slides */
-    display: flex;
-    justify-content: center;
-    z-index: 1000; /* Garante que a paginação fique abaixo dos cards */
-    padding-top: 30px; /* Adiciona um espaçamento acima da paginação */
-  }
-  
-  /* Personalize os bullets */
-  .swiper-pagination-bullet {
-    background-color: #007bff;
-    width: 12px; /* Tamanho dos bullets */
-    height: 12px; /* Tamanho dos bullets */
-    margin: 0 5px; /* Espaçamento entre os bullets */
-  }
-  .swiper-slide a{
-    text-decoration: none;
-  
-  }
-.ver-mais{
-    display: flex;
-    justify-content: center; 
     width: 100%;
     margin-bottom: 2em;
-    & a{ 
-        align-items: center;
-        justify-content: center;
-        font-family: 'Mada';
-        display: block;
-        width: 116px;
-        height: 35px;
-        background-color: rgb(255, 255, 255);
-        font-size: 17px;
-        font-weight: 550;
-        color: #000838;
-        border: 2px solid #000838;
-        border-radius: 30px;
-        text-align: center; 
-        text-decoration: none;
-        display: flex;
-    }
-    & a:hover{
-        background-color: #000838;
-        color: white;
-        text-decoration: none;
-    }
 }
 
-@media (max-width:500px){
-    .textos{
-        padding: 1rem 3rem;
-    }
+.ver-mais a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Mada';
+    width: 116px;
+    height: 35px;
+    background-color: #fff;
+    font-size: 17px;
+    font-weight: 550;
+    color: #000838;
+    border: 2px solid #000838;
+    border-radius: 30px;
+    text-decoration: none;
 }
 
+.ver-mais a:hover {
+    background-color: #000838;
+    color: white;
+}
+
+/* ── RESPONSIVO ── */
 @media screen and (min-width: 1025px) {
     .container-header {
         padding: 50px 60px;
@@ -431,28 +444,14 @@ h4 {
         margin-bottom: 20px;
         font-weight: normal;
     }
-
-    .container-header p {
-        font-size: 16px;
-        font-weight: normal;
-    }
-
-    .container-body {
-        padding: 50px 60px;
-    }
-
-    .container-body p {
-        font-size: 20px;
-        font-weight: medium;
-    }
 }
 
 @media screen and (min-width: 601px) and (max-width: 1024px) {
+    #produtos-podcomp {
+        margin: 0 2rem;
+        max-width: 100%;
+    }
 
-  #produtos-podcomp {
-    margin: 2rem;
-  }
-  
     .container-header {
         padding: 20px 70px;
     }
@@ -467,23 +466,58 @@ h4 {
         margin-bottom: 15px;
     }
 
-    .container-header p {
-        font-size: 9px;
-        font-weight: normal;
-    }
-
     .container-body {
         padding: 20px 50px;
     }
 
     .container-body p {
         font-size: 14px;
-        text-indent: 2em;
+    }
+
+    .podcomp-textos span {
+        font-size: clamp(28px, 4vw, 48px);
+    }
+
+    .podcomp-inner {
+        padding: 24px 32px;
+        min-height: 240px;
+        gap: 24px;
+    }
+
+    .podcomp-player {
+        width: 45%;
+        max-width: 400px;
+        min-width: unset;
+        padding: 16px 20px;
+        gap: 14px;
+    }
+
+    .podcomp-thumb {
+        width: 60px;
+        height: 60px;
+    }
+
+    .podcomp-title {
+        font-size: 13px;
+    }
+
+    .podcomp-controls svg {
+        width: 26px;
+        height: 26px;
+    }
+
+    .podcomp-spotify-icon {
+        width: 30px;
+        height: 30px;
+    }
+
+    .podcomp-spotify-icon svg {
+        width: 16px;
+        height: 16px;
     }
 }
 
 @media screen and (max-width: 600px) {
-  
     .container-header {
         padding: 20px 40px;
     }
@@ -494,13 +528,12 @@ h4 {
     }
 
     .container-header h3 {
-        font-size: 10px;
+        font-size: 14px;
         margin-bottom: 10px;
     }
-
-    .container-header p {
-        font-size: 5px;
-        font-weight: normal;
+    
+    .podcomp-textos .contorno {
+        -webkit-text-stroke: 0.5px #fff;
     }
 
     .container-body {
@@ -508,44 +541,177 @@ h4 {
     }
 
     .container-body p {
-        font-size: 10px;
-        text-indent: 2em;
+        font-size: 14px;
     }
-}
-@media (max-width: 800px) {
-  #produtos-podcomp {
-    margin: 0rem !important;
-  }
-  
-    main .container {
-      width: 90%;
+
+
+    .podcomp-textos span {
+        font-size: 36px;
     }
-  
-    main .container p {
-      padding: 0;
+
+    .podcomp-player {
+        width: 100%;
     }
-  
-    .episodios {
-      padding: 0;
-      width: 80%;
+
+    #produtos-podcomp {
+        padding: 20px 12px 0 12px
     }
-  
-    .episodio .texto {
-      width: 100%;
-      overflow-x: visible;
-      overflow-y: scroll;
-    }
-  
-    .hosts {
-      padding: 0.2em;
-    }
+
     .swiper-button-next,
     .swiper-button-prev {
-    color: #000; /* ou qualquer cor que combine com seu layout */
+        color: #000;
     }
-    .episodio {
-      width: 80%;
-      max-width: 70%;
-      margin-top: 3rem;
-  }
-  }
+
+    .episodios {
+        padding: 0;
+        width: 80%;
+    }
+
+    .podcomp-inner {
+        padding: 20px 20px;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: space-between;
+        min-height: unset;
+        gap: 12px;
+    }
+
+    .podcomp-textos span {
+        font-size: clamp(18px, 5.5vw, 28px);
+        font-weight: 700;
+        letter-spacing: -0.3px;
+    }
+
+    .podcomp-player {
+        width: 48%;
+        min-width: unset;
+        max-width: unset;
+        padding: 10px 12px;
+        gap: 10px;
+    }
+
+    .podcomp-thumb {
+        width: 40px;
+        height: 40px;
+    }
+
+    .podcomp-title {
+        font-size: 9px;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        word-break: normal;
+        overflow-wrap: normal;
+        white-space: normal;
+    }
+
+    .podcomp-top-row {
+        align-items: center;
+        gap: 8px;
+    }
+
+    .podcomp-controls svg {
+        width: 22px;
+        height: 22px;
+    }
+
+    .podcomp-spotify-icon {
+        width: 26px;
+        height: 26px;
+    }
+
+    .podcomp-spotify-icon svg {
+        width: 14px;
+        height: 14px;
+    }
+}
+
+#produtos-podcomp {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 20px 0 0;
+}
+
+.pc-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.pc-track {
+    flex: 1;
+    min-width: 0;
+}
+.episodio .texto {
+    display: flex;
+    flex-direction: center;
+    background: #000838;
+    border-radius: 1em;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 400;
+    margin: 10px 0;
+    margin-top: -10px;
+    padding: 10px;
+    padding-top: 20px;
+    width: 100%;
+}
+
+.pc-slide {
+    display: none;
+}
+
+.pc-slide.active {
+    display: block;
+}
+
+.pc-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #01204C;
+    padding: 4px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.2s, transform 0.2s;
+}
+.pc-btn svg {
+    width: 35px;
+    height: 35px;
+}
+
+.pc-btn:hover {
+    color: #249BFF;
+    transform: scale(1.1);
+}
+
+.pc-btn:disabled {
+    color: #ccc;
+    cursor: default;
+    transform: none;
+}
+
+.pc-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    padding: 14px 0 0;
+}
+
+.pc-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #ccc;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    transition: background 0.2s;
+}
+
+.pc-dot.active {
+    background: #249BFF;
+}
