@@ -15,7 +15,7 @@ class declaracaoRules
     public function verificarDiasPet(array $aluno): ?string
     {
         
-        $permanencia = (int) $aluno['permanencia'];
+        $permanencia = (int) $aluno['permanenciaDias'];
 
         if ($permanencia < 180) {
             return 'O aluno não possui horas suficientes no PET.';

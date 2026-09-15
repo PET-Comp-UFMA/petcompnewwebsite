@@ -2,6 +2,9 @@
 
 require_once __DIR__ . '/../services/declaracaoService.php';
 
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/..');
+$dotenv->load();
+
 header('Content-Type: application/json; charset=utf-8');
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
@@ -31,7 +34,7 @@ if (empty($cpf) || empty($matricula)) {
     exit;
 }
 
-$spreadsheetId = '1AzYO_oHPJy6Pq2BCErGLrL8MWdvKdASU2SbDbooG2Rs';
+$spreadsheetId = $_ENV['ID_PLANILHA'];
 
 $declarationService = new declaracaoService();
 
