@@ -29,7 +29,7 @@
                         <a class="item-button" href="sobre">Sobre nós</a>
                     </li>
                     <li class="litem">
-                        <a target="_blank" class="item-button" href="integrantes">Integrantes</a>
+                        <a target="_blank" class="item-button" href="integrantes">Ricardo Arthur</a>
                     </li>
                 </ul>
             </div>
