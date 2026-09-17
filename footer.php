@@ -45,7 +45,7 @@
                         <a target="_blank" class="item-button" href="desenvolvimento">Fáb. Software</a>
                     </li>
                     <li class="litem">
-                        <a target="_blank" class="item-button" href="minicurso">Minicursos e Oficinas</a>
+                        <a target="_blank" class="item-button" href="minicurso">Rhyan Sousa</a>
                     </li>
                 </ul>
             </div>
