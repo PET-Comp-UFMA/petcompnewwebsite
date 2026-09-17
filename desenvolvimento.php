@@ -72,7 +72,7 @@ include "head.php";
             </a>
             <a href="https://petcompufma.org/cocom/" target="_blank" class="card">
                 <img src="./assets/images/fabrica_software/comcom.png" alt="Imagem 4">
-                <h3>COMCOM</h3>
+                <h3>COCOM</h3>
                 <p>Site sobre a Coordenação de Ciência da Computação da UFMA e o histórico do curso</p>
                 <div class="tech-tags">
                     <span>HTML</span>
