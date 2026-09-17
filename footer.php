@@ -71,7 +71,7 @@
                         <a target="_blank" class="item-button" href="biblioteca">Biblioteca PETComp</a>
                     </li>
                     <li class="litem">
-                        <a target="_blank" class="item-button" href="podcast">PODCast</a>
+                        <a target="_blank" class="item-button" href="podcast">João Paulo</a>
                     </li>
                 </ul>
             </div>
