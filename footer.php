@@ -39,7 +39,7 @@
                 </h2>
                 <ul class="ulist">
                     <li class="litem">
-                        <a target="_blank"class="item-button" href="monitoria">Monitoria</a>
+                        <a target="_blank"class="item-button" href="monitoria">Chrysthyan</a>
                     </li>
                     <li class="litem">
                         <a target="_blank" class="item-button" href="desenvolvimento">Pedro Matos</a>
