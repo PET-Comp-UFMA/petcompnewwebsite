@@ -81,7 +81,7 @@
                 </h2>
                 <ul class="ulist">
                     <li class="litem">
-                        <a target="_blank" class="item-button" href="https://sigaa.ufma.br/sigaa/public/departamento/portal.jsf?lc=pt_BR&id=998">Departamento de computação</a>
+                        <a target="_blank" class="item-button" href="https://sigaa.ufma.br/sigaa/public/departamento/portal.jsf?lc=pt_BR&id=998">Arthuro Jacob</a>
                     </li>
                     <li class="litem">
                         <a  target="_blank" class="item-button" href="https://portalpadrao.ufma.br/">Igor Diogo</a>
