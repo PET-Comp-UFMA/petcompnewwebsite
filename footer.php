@@ -42,7 +42,7 @@
                         <a target="_blank"class="item-button" href="monitoria">Monitoria</a>
                     </li>
                     <li class="litem">
-                        <a target="_blank" class="item-button" href="desenvolvimento">Fáb. Software</a>
+                        <a target="_blank" class="item-button" href="desenvolvimento">Pedro Matos</a>
                     </li>
                     <li class="litem">
                         <a target="_blank" class="item-button" href="minicurso">Minicursos e Oficinas</a>
