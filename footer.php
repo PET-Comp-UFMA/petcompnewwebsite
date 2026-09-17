@@ -68,7 +68,7 @@
                 </h2>
                 <ul class="ulist">
                     <li class="litem">
-                        <a target="_blank" class="item-button" href="biblioteca">Biblioteca PETComp</a>
+                        <a target="_blank" class="item-button" href="biblioteca">Gabriel</a>
                     </li>
                     <li class="litem">
                         <a target="_blank" class="item-button" href="podcast">PODCast</a>
