@@ -57,10 +57,10 @@ include "head.php";
 
         <div class="background">
             <section class="text-PETCOMP">
-                <img src="img/petcomptext.png" alt="text petcomp">
+
             </section>
             <section class="petianos-container">
-                <img src="img/foto_headerP.svg" alt="imagem dos petianos" id="petianosimg">
+
             </section>
         </div>
 
