@@ -24,41 +24,26 @@ if ($matricula === '' || !preg_match('/^\d{5,20}$/', $matricula)) {
     exit;
 }
 
+// A elegibilidade agora é simples: existir na lista que o tutor liberou.
 $stmt = $mysqli->prepare(
-    'SELECT id, nome_completo, data_ingresso, data_saida, ativo
-     FROM petianos
+    'SELECT id, nome FROM liberacoes_certificado
      WHERE cpf = ? AND matricula = ?
      LIMIT 1'
 );
 $stmt->bind_param('ss', $cpf, $matricula);
 $stmt->execute();
-$petiano = $stmt->get_result()->fetch_assoc();
+$liberacao = $stmt->get_result()->fetch_assoc();
 $stmt->close();
 
-if (!$petiano) {
-    echo json_encode(['ok' => false, 'erro' => 'Não encontramos um cadastro com esse CPF e matrícula.']);
-    exit;
-}
-
-if (empty($petiano['data_ingresso'])) {
-    echo json_encode(['ok' => false, 'erro' => 'Cadastro incompleto. Procure a coordenação do PETComp.']);
-    exit;
-}
-
-$inicio = new DateTime($petiano['data_ingresso']);
-$fim    = !empty($petiano['data_saida']) ? new DateTime($petiano['data_saida']) : new DateTime();
-
-$mesesNoPrograma = $inicio->diff($fim)->y * 12 + $inicio->diff($fim)->m;
-
-if ($mesesNoPrograma < MESES_MINIMOS_ELEGIBILIDADE) {
+if (!$liberacao) {
     echo json_encode([
         'ok'   => false,
-        'erro' => 'Tempo mínimo de ' . MESES_MINIMOS_ELEGIBILIDADE . ' meses no programa ainda não foi atingido.',
+        'erro' => 'Não encontramos uma liberação para esse CPF e matrícula. Procure a coordenação do PETComp.',
     ]);
     exit;
 }
 
 echo json_encode([
     'ok'   => true,
-    'nome' => $petiano['nome_completo'],
+    'nome' => $liberacao['nome'],
 ]);

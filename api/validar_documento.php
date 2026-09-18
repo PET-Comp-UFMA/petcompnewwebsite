@@ -17,12 +17,11 @@ if ($numero === '' || !preg_match('/^PET\d{9}$/', $numero)) {
     exit;
 }
 
+// Não depende mais de a liberação ainda existir — o nome já está
+// gravado direto no log, então documentos antigos continuam
+// validáveis mesmo que o aluno tenha sido removido da lista depois.
 $stmt = $mysqli->prepare(
-    'SELECT d.numero_declaracao, d.periodo_inicio, d.periodo_fim, d.emitido_em, p.nome_completo
-     FROM declaracoes_emitidas d
-     JOIN petianos p ON p.id = d.petiano_id
-     WHERE d.numero_declaracao = ?
-     LIMIT 1'
+    'SELECT nome_aluno, emitido_em FROM declaracoes_emitidas WHERE numero_declaracao = ? LIMIT 1'
 );
 $stmt->bind_param('s', $numero);
 $stmt->execute();
@@ -34,15 +33,15 @@ if (!$declaracao) {
     exit;
 }
 
-// Nome parcialmente mascarado por privacidade (mostra só o primeiro e o último nome)
-$partesNome = explode(' ', trim($declaracao['nome_completo']));
+// Nome parcialmente mascarado por privacidade
+$partesNome = explode(' ', trim($declaracao['nome_aluno']));
 $nomeExibicao = count($partesNome) > 1
     ? $partesNome[0] . ' ' . end($partesNome)
     : $partesNome[0];
 
 echo json_encode([
-    'ok'     => true,
-    'valido' => true,
-    'nome'   => $nomeExibicao,
+    'ok'         => true,
+    'valido'     => true,
+    'nome'       => $nomeExibicao,
     'emitido_em' => (new DateTime($declaracao['emitido_em']))->format('d/m/Y'),
 ]);

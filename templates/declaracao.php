@@ -1,7 +1,7 @@
 <?php
 /**
  * Espera as variáveis: $numeroDeclaracao, $nome, $cpfFormatado,
- * $dataInicioExtenso, $dataFimExtenso, $dataEmissaoExtenso,
+ * $dataInicioExtenso, $dataFimExtenso, $dataEmissaoExtenso, $mesesTotais,
  * $tutorNome, $tutorCargo, $logoBase64, $assinaturaBase64
  */
 ?>
@@ -26,7 +26,7 @@
        vertical-align:middle. Isso resolve o "espaço em branco embaixo". */
     .pagina-wrapper {
         width: 100%;
-        height: 793px; /* altura útil de uma A4 paisagem a 96dpi */
+        height: 253px; /* altura útil de uma A4 paisagem a 96dpi */
         display: table;
     }
     .pagina-cell {
@@ -39,7 +39,7 @@
         display: inline-block;
         width: 1000px;
         text-align: left;
-        padding: 65px 85px 107px;
+        padding: 86px 85px;
         border: 3px solid #1b3a7a;
         background-color: #eef5fc;
         position: relative;
@@ -130,9 +130,11 @@
                         com <strong>CPF <?= htmlspecialchars($cpfFormatado) ?></strong>,
                         integrou o Programa de Educação Tutorial de Ciência da Computação,
                         financiado pela Secretaria de Educação Superior do Ministério da
-                        Educação (MEC/SESu), <strong>de <?= $dataInicioExtenso ?> a <?= $dataFimExtenso ?></strong>,
+                        Educação (MEC/SESu), <strong>de <?= $dataInicioExtenso ?> a <?= $dataFimExtenso ?></strong>
+                        (<?= $mesesTotais ?> <?= $mesesTotais == 1 ? 'mês' : 'meses' ?>),
                         desenvolvendo com dedicação e responsabilidade, atividades de ensino,
-                        pesquisa e extensão.
+                        pesquisa e extensão<?php if (!empty($cargaHorariaTotal)): ?>, totalizando
+                        <strong><?= $cargaHorariaTotal ?> horas</strong> complementares<?php endif; ?>.
                     </p>
 
                     <div class="local-data">São Luís, <?= $dataEmissaoExtenso ?></div>
@@ -146,7 +148,7 @@
                     </div>
 
                     <div class="rodape-validacao">
-                        Valide este documento na aba "Validar Documento" usando o código: <?= htmlspecialchars($numeroDeclaracao) ?>
+                        Valide este documento na aba "Validar Documento" no site PETComp usando o código: <?= htmlspecialchars($numeroDeclaracao) ?>
                     </div>
                 </div>
             </div>
