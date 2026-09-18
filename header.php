@@ -39,12 +39,12 @@
             <a href="noticias" class="nav-link">Notícias</a>
         </div>
         
-        <div class="dropdown">
+        <!-- <div class="dropdown">
             <button class="dropbtn">Documentos<span class="material-icons">arrow_drop_down</span></button>
             <div class="dropdown-content">
             <a href="declaracao" class="nav-link dropdown-link">Declaração HC</a>
             
-        </div>
+        </div> -->
     </nav>
     <img src="./assets/svg/menu-white.svg" alt="" class="open-btn" onclick="openMenu()">
 </header>
