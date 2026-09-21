@@ -173,14 +173,6 @@ body {
 }
 
 
-#input-busca {
-    border: none;
-    outline: none;
-    padding: 8px;
-    width: 250px;
-    font-size: 14px;
-}
-
 .filtros-categoria {
     display: flex;
     gap: 8px;
