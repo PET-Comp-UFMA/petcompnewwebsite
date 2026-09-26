@@ -51,7 +51,7 @@
                     </div>
                     <div class="campo">
                         <label for="Matricula">N° da Matrícula</label>
-                        <input id="Matricula" type="text" placeholder="12345678910" maxlength="11" inputmode="numeric">
+                        <input id="Matricula" type="text" placeholder="12345678910" maxlength="15" inputmode="numeric">
                     </div>
                 </form>
                 <button id="btnverificar" class="btnRegistrar">

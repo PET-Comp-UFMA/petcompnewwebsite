@@ -1,113 +1,152 @@
 <?php
+
 /**
  * Espera as variáveis: $numeroDeclaracao, $nome, $cpfFormatado,
  * $dataInicioExtenso, $dataFimExtenso, $dataEmissaoExtenso, $mesesTotais,
- * $tutorNome, $tutorCargo, $logoBase64, $assinaturaBase64
+ * $tutorNome, $tutorCargo, $tutorMatriculaSiape, $logoBase64, $assinaturaBase64
  */
 ?>
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta charset="utf-8">
-<style>
-    @page { margin: 0; size: A4 landscape; }
+    <meta charset="utf-8">
+    <style>
+        @page {
+            margin: 0;
+            size: A4 landscape;
+        }
 
-    * { box-sizing: border-box; }
+        * {
+            box-sizing: border-box;
+        }
 
-    body {
-        font-family: Arial, sans-serif;
-        color: #1b2a55;
-        margin: 0;
-        padding: 0;
-    }
+        body {
+            font-family: Arial, sans-serif;
+            color: #1b2a55;
+            margin: 0;
+            padding: 0;
+            background-color: #eef5fc;
+        }
 
-    /* Trick clássico do dompdf pra centralizar vertical E horizontalmente
+        /* Trick clássico do dompdf pra centralizar vertical E horizontalmente
        na página inteira: uma table de 100% de altura com célula
        vertical-align:middle. Isso resolve o "espaço em branco embaixo". */
-    .pagina-wrapper {
-        width: 100%;
-        height: 253px; /* altura útil de uma A4 paisagem a 96dpi */
-        display: table;
-    }
-    .pagina-cell {
-        display: table-cell;
-        vertical-align: middle;
-        text-align: center;
-    }
+        .pagina-wrapper {
+            width: 100%;
+            height: 253px;
+            /* altura útil de uma A4 paisagem a 96dpi */
+            display: table;
+        }
 
-    .pagina {
-        display: inline-block;
-        width: 1000px;
-        text-align: left;
-        padding: 86px 85px;
-        border: 3px solid #1b3a7a;
-        background-color: #eef5fc;
-        position: relative;
-    }
+        .pagina-cell {
+            display: table-cell;
+            vertical-align: middle;
+            text-align: center;
+        }
 
-    .marca-dagua {
-        position: absolute;
-        top: 125px;
-        left: 50%;
-        margin-left: -265px;
-        width: 530px;
-        opacity: 0.07;
-        z-index: 0;
-    }
+        .pagina {
+            display: inline-block;
+            width: 1000px;
+            text-align: left;
+            padding: 66px 59px;
+            background-color: #eef5fc;
+            position: relative;
+        }
 
-    .conteudo { position: relative; z-index: 1; }
+        .marca-dagua {
+            position: absolute;
+            top: 125px;
+            left: 50%;
+            margin-left: -265px;
+            width: 530px;
+            opacity: 0.07;
+            z-index: 0;
+        }
 
-    .header { display: table; width: 100%; }
-    .header .logo { display: table-cell; vertical-align: top; }
-    .header .logo img { height: 58px; }
-    .header .numero {
-        display: table-cell;
-        vertical-align: top;
-        text-align: right;
-        font-size: 13px;
-        color: #6b7a99;
-        padding-top: 8px;
-    }
+        .conteudo {
+            position: relative;
+            z-index: 1;
+        }
 
-    .titulo-bloco { text-align: center; margin: 35px 0 28px; }
-    h1 {
-        color: #1b2a55;
-        font-size: 36px;
-        letter-spacing: 3px;
-        margin: 0;
-        font-weight: bold;
-    }
+        .header {
+            display: table;
+            width: 100%;
+        }
 
-    p.corpo {
-        font-size: 18px;
-        line-height: 1.75;
-        text-align: center;
-        max-width: 750px;
-        margin: 0 auto 35px;
-    }
+        .header .logo {
+            display: table-cell;
+            vertical-align: top;
+        }
 
-    .local-data { font-size: 16px; text-align: left; margin: 0 0 48px 0; }
+        .header .logo img {
+            height: 54px;
+        }
 
-    .assinatura { text-align: center; }
-    .assinatura img { height: 122px; margin-bottom: -40px; }
-    .linha-assinatura {
-        border-top: 1px solid #444;
-        width: 340px;
-        margin: 0 auto;
-        padding-top: 8px;
-        font-size: 13px;
-        line-height: 1.5;
-        color: #1b2a55;
-    }
+        .header .numero {
+            display: table-cell;
+            vertical-align: top;
+            text-align: right;
+            font-size: 13px;
+            color: #6b7a99;
+            padding-top: 8px;
+        }
 
-    .rodape-validacao {
-        font-size: 11px;
-        color: #99a3b8;
-        text-align: center;
-        margin-top: 24px;
-    }
-</style>
+        .titulo-bloco {
+            text-align: center;
+            margin: 30px 0 23px;
+        }
+
+        h1 {
+            color: #1b2a55;
+            font-size: 36px;
+            letter-spacing: 3px;
+            margin: 0;
+            font-weight: bold;
+        }
+
+        p.corpo {
+            font-size: 18px;
+            line-height: 1.65;
+            text-align: center;
+            max-width: 750px;
+            margin: 0 auto 35px;
+        }
+
+        .local-data {
+            font-size: 16px;
+            text-align: left;
+            margin: 0 0 41px 0;
+        }
+
+        .assinatura {
+            text-align: center;
+        }
+
+        .assinatura img {
+            height: 122px;
+            margin-bottom: -40px;
+        }
+
+        .linha-assinatura {
+            border-top: 1px solid #444;
+            width: 400px;
+            margin: 0 auto;
+            padding-top: 2px;
+            font-size: 13px;
+            line-height: 1.2;
+            color: #1b2a55;
+        }
+
+        .rodape-validacao {
+            font-size: 11px;
+            color: #99a3b8;
+            text-align: center;
+            margin-top: 24px;
+        }
+    </style>
 </head>
+
 <body>
     <div class="pagina-wrapper">
         <div class="pagina-cell">
@@ -142,8 +181,11 @@
                     <div class="assinatura">
                         <img src="<?= $assinaturaBase64 ?>" alt="assinatura">
                         <div class="linha-assinatura">
-                            <?= htmlspecialchars($tutorNome) ?><br>
-                            <?= htmlspecialchars($tutorCargo) ?>
+                            <p><?= htmlspecialchars($tutorNome) ?> <br>
+                                Matricula SIAPE: <?= htmlspecialchars($tutorMatriculaSiape) ?> <br>
+                                <?= htmlspecialchars($tutorCargo) ?><br>
+                                Universidade Federal do Maranhão <br>
+                            </p>
                         </div>
                     </div>
 
@@ -155,4 +197,5 @@
         </div>
     </div>
 </body>
+
 </html>

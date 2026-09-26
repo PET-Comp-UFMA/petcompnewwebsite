@@ -10,7 +10,12 @@ if (isset($_GET['editar'])) {
     $stmt->close();
 }
 
-$lista = $mysqli->query('SELECT * FROM liberacoes_certificado ORDER BY nome ASC')->fetch_all(MYSQLI_ASSOC);
+$lista = $mysqli->query(
+    'SELECT lc.*, de.numero_declaracao
+     FROM liberacoes_certificado lc
+     LEFT JOIN declaracoes_emitidas de ON de.liberacao_id = lc.id
+     ORDER BY lc.nome ASC'
+)->fetch_all(MYSQLI_ASSOC);
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -54,9 +59,15 @@ $lista = $mysqli->query('SELECT * FROM liberacoes_certificado ORDER BY nome ASC'
 <main>
 
     <?php if (isset($_GET['msg'])): ?>
-        <div class="msg <?= $_GET['msg'] === 'erro' ? 'erro' : 'ok' ?>">
-            <?= $_GET['msg'] === 'erro' ? 'Não foi possível salvar. Confira os dados (CPF já cadastrado?).' : 'Salvo com sucesso.' ?>
-        </div>
+        <?php
+            $classe = $_GET['msg'] === 'ok' ? 'ok' : 'erro';
+            $texto = match ($_GET['msg']) {
+                'ok' => 'Salvo com sucesso.',
+                'data_invalida' => 'A data de fim não pode ser anterior à data de início.',
+                default => 'Não foi possível salvar. Confira os dados (CPF já cadastrado?).',
+            };
+        ?>
+        <div class="msg <?= $classe ?>"><?= $texto ?></div>
     <?php endif; ?>
 
     <div class="card">
@@ -68,17 +79,22 @@ $lista = $mysqli->query('SELECT * FROM liberacoes_certificado ORDER BY nome ASC'
             <?php endif; ?>
 
             <label for="nome">Nome completo</label>
-            <input type="text" id="nome" name="nome" required value="<?= htmlspecialchars($editando['nome'] ?? '') ?>">
+            <input type="text" id="nome" name="nome" required maxlength="80"
+                   value="<?= htmlspecialchars($editando['nome'] ?? '') ?>">
 
             <div class="linha-dupla">
                 <div>
                     <label for="cpf">CPF (só números)</label>
-                    <input type="text" id="cpf" name="cpf" required maxlength="11" pattern="\d{11}"
+                    <input type="text" id="cpf" name="cpf" required
+                           inputmode="numeric" autocomplete="off"
+                           maxlength="11" pattern="\d{11}"
+                           title="Digite os 11 números do CPF, sem pontos ou traço"
                            value="<?= htmlspecialchars($editando['cpf'] ?? '') ?>">
                 </div>
                 <div>
                     <label for="matricula">Matrícula</label>
                     <input type="text" id="matricula" name="matricula" required
+                           maxlength="15" autocomplete="off"
                            value="<?= htmlspecialchars($editando['matricula'] ?? '') ?>">
                 </div>
             </div>
@@ -112,7 +128,7 @@ $lista = $mysqli->query('SELECT * FROM liberacoes_certificado ORDER BY nome ASC'
         <table>
             <thead>
                 <tr>
-                    <th>Nome</th><th>CPF</th><th>Matrícula</th><th>Início</th><th>Fim</th><th></th>
+                    <th>Nome</th><th>CPF</th><th>Matrícula</th><th>Início</th><th>Fim</th><th>Cód. validação</th><th></th>
                 </tr>
             </thead>
             <tbody>
@@ -123,6 +139,13 @@ $lista = $mysqli->query('SELECT * FROM liberacoes_certificado ORDER BY nome ASC'
                     <td><?= htmlspecialchars($item['matricula']) ?></td>
                     <td><?= date('d/m/Y', strtotime($item['data_inicio'])) ?></td>
                     <td><?= $item['data_fim'] ? date('d/m/Y', strtotime($item['data_fim'])) : '<span style="color:#16a34a">ativo</span>' ?></td>
+                    <td>
+                        <?php if ($item['numero_declaracao']): ?>
+                            <code style="font-size:12px;"><?= htmlspecialchars($item['numero_declaracao']) ?></code>
+                        <?php else: ?>
+                            <span style="color:#94a3b8; font-size:12px;">ainda não emitido</span>
+                        <?php endif; ?>
+                    </td>
                     <td class="acoes">
                         <a class="editar" href="painel.php?editar=<?= (int)$item['id'] ?>">editar</a>
                         <a class="excluir" href="excluir.php?id=<?= (int)$item['id'] ?>&csrf=<?= urlencode(csrfToken()) ?>"
@@ -134,7 +157,28 @@ $lista = $mysqli->query('SELECT * FROM liberacoes_certificado ORDER BY nome ASC'
         </table>
         <?php endif; ?>
     </div>
-
+    
 </main>
+
+<script>
+    const inputInicio = document.getElementById('data_inicio');
+    const inputFim = document.getElementById('data_fim');
+
+    function atualizarMinFim() {
+        inputFim.min = inputInicio.value;
+    }
+
+    inputInicio.addEventListener('change', atualizarMinFim);
+    atualizarMinFim();
+
+    // CPF: aceita só números (também ao colar) e no máximo 11 dígitos.
+    // Ex.: colar "275.610.470-10" vira "27561047010".
+    const inputCpf = document.getElementById('cpf');
+
+    inputCpf.addEventListener('input', function () {
+        this.value = this.value.replace(/\D/g, '').slice(0, 11);
+    });
+</script>
+
 </body>
 </html>
