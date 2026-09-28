@@ -71,7 +71,7 @@ const inputMatricula = document.getElementById('Matricula');
 
 inputMatricula.addEventListener('input', (e) => {
     let valor = e.target.value.replace(/\D/g, ''); // remove tudo que não é número
-    valor = valor.slice(0, 11); // limita a 11 dígitos
+    valor = valor.slice(0, 15); // limita a 11 dígitos
     e.target.value = valor;
 });
 

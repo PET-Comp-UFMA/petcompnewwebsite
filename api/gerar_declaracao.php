@@ -69,6 +69,19 @@ if ($existente) {
     $stmtAtualiza->bind_param('sssi', $liberacao['nome'], $periodoFim, $ip, $existente['id']);
     $stmtAtualiza->execute();
     $stmtAtualiza->close();
+
+    // Reaproveita o snapshot de tutor gravado na primeira emissão —
+    // nunca busca o tutor "atual" aqui, senão declarações antigas
+    // mudariam de assinatura toda vez que fossem baixadas de novo.
+    $stmtSnap = $mysqli->prepare(
+        'SELECT tutor_nome, tutor_cargo, tutor_matricula_siape, tutor_assinatura_base64
+         FROM declaracoes_emitidas WHERE id = ?'
+    );
+    $stmtSnap->bind_param('i', $existente['id']);
+    $stmtSnap->execute();
+    $snap = $stmtSnap->get_result()->fetch_assoc();
+    $stmtSnap->close();
+
 } else {
     $ano = date('Y');
     $stmtSeq = $mysqli->prepare(
@@ -81,20 +94,46 @@ if ($existente) {
     $stmtSeq->close();
     $numeroDeclaracao = sprintf('PET%s%05d', $ano, $seq);
 
+    // Tutor atual: usuarios_admin só tem um registro hoje, então é
+    // sempre "o" tutor. O snapshot logo abaixo é o que garante que
+    // trocar esses dados depois (tela "Minha conta") não afeta
+    // declarações já emitidas.
+    $tutor = $mysqli->query(
+        'SELECT nome, cargo, matricula_siape, assinatura_base64 FROM usuarios_admin ORDER BY id LIMIT 1'
+    )->fetch_assoc();
+
+    if (!$tutor || empty($tutor['assinatura_base64'])) {
+        http_response_code(500);
+        exit('Dados do tutor incompletos (falta cadastrar a assinatura em "Minha conta"). Contate a coordenação do PETComp.');
+    }
+
     $stmtLog = $mysqli->prepare(
-        'INSERT INTO declaracoes_emitidas (numero_declaracao, nome_aluno, liberacao_id, periodo_inicio, periodo_fim, ip_solicitante)
-         VALUES (?, ?, ?, ?, ?, ?)'
+        'INSERT INTO declaracoes_emitidas
+            (numero_declaracao, nome_aluno, liberacao_id, periodo_inicio, periodo_fim, ip_solicitante,
+             tutor_nome, tutor_cargo, tutor_matricula_siape, tutor_assinatura_base64)
+         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)'
     );
-    $stmtLog->bind_param('ssisss', $numeroDeclaracao, $liberacao['nome'], $liberacao['id'], $periodoInicio, $periodoFim, $ip);
+    $stmtLog->bind_param(
+        'ssisssssss',
+        $numeroDeclaracao, $liberacao['nome'], $liberacao['id'], $periodoInicio, $periodoFim, $ip,
+        $tutor['nome'], $tutor['cargo'], $tutor['matricula_siape'], $tutor['assinatura_base64']
+    );
     $stmtLog->execute();
     $stmtLog->close();
+
+    // Normaliza as chaves pro mesmo formato usado no branch do $existente.
+    $snap = [
+        'tutor_nome'              => $tutor['nome'],
+        'tutor_cargo'             => $tutor['cargo'],
+        'tutor_matricula_siape'   => $tutor['matricula_siape'],
+        'tutor_assinatura_base64' => $tutor['assinatura_base64'],
+    ];
 }
 
-// ---- Busca o tutor atual (o único registro em usuarios_admin) pra
-//      assinar a declaração — se trocar de tutor, atualiza sozinho. ----
-$tutor = $mysqli->query('SELECT nome FROM usuarios_admin ORDER BY id LIMIT 1')->fetch_assoc();
-$tutorNome  = $tutor['nome'] ?? 'Tutor(a) não configurado(a)';
-$tutorCargo = 'Tutor do Programa de Educação Tutorial de Ciência da Computação';
+$tutorNome           = $snap['tutor_nome'];
+$tutorCargo          = $snap['tutor_cargo'];
+$tutorMatriculaSiape = $snap['tutor_matricula_siape'];
+$assinaturaBase64    = $snap['tutor_assinatura_base64']; // já vem com o prefixo data:image/png;base64,
 
 // ---- Formata os dados ----
 $mesesPt = [1=>'janeiro',2=>'fevereiro',3=>'março',4=>'abril',5=>'maio',6=>'junho',
@@ -107,13 +146,14 @@ $cpfFormatado = substr($cpf,0,3).'.'.substr($cpf,3,3).'.'.substr($cpf,6,3).'-'.s
 $logoBase64 = 'data:image/png;base64,' . base64_encode(
     file_get_contents(__DIR__ . '/../assets/images/logos/PETComp.png')
 );
-$assinaturaBase64 = 'data:image/png;base64,' . base64_encode(
-    file_get_contents(__DIR__ . '/../assets/images/assinatura-tutor.png')
-);
 
 // Quantidade de meses entre entrada e saída (arredondado pra baixo —
 // ex: 1 ano e 3 meses = "15 meses").
-$mesesTotais = $inicio->diff($fim)->y * 12 + $inicio->diff($fim)->m;
+$diffPeriodo = $inicio->diff($fim);
+$mesesTotais = $diffPeriodo->y * 12 + $diffPeriodo->m;
+if ($diffPeriodo->d > 0) {
+    $mesesTotais++;
+}
 
 ob_start();
 $nome               = $liberacao['nome'];
@@ -121,6 +161,7 @@ $dataInicioExtenso  = $formatarExtenso($inicio);
 $dataFimExtenso     = $formatarExtenso($fim);
 $dataEmissaoExtenso = $dataEmissao->format('d') . ' de ' . $formatarExtenso($dataEmissao);
 $cargaHorariaTotal  = null; // desligado por enquanto (ver conexao_e_helpers.php)
+$numeroDeclaracao   = $numeroDeclaracao;
 include __DIR__ . '/../templates/declaracao.php';
 $html = ob_get_clean();
 

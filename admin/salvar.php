@@ -18,6 +18,14 @@ if ($nome === '' || $cpf === false || $matricula === '' || $dataInicio === '') {
     exit;
 }
 
+// data_fim é opcional, mas se vier preenchida não pode ser antes da data_inicio.
+// Os dois campos vêm de <input type="date"> (formato YYYY-MM-DD), então a
+// comparação de strings já dá a ordem cronológica certa.
+if ($dataFim !== null && $dataFim < $dataInicio) {
+    header('Location: painel.php?msg=data_invalida');
+    exit;
+}
+
 try {
     if ($id) {
         $stmt = $mysqli->prepare(
