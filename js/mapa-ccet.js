@@ -160,7 +160,7 @@ const locaisCCET = [
     { id: '6', bloco: '1', sala: '103', nome: 'DA Elétrica (Diretório Acadêmico de Engenharia Elétrica)', andar: 'terreo', categoria: 'da', imagem: '', descricao: '', coordenadas: [626, 999] },
     { id: '7', bloco: '1', sala: '102',nome: 'CAD (Centro Acadêmico de Design)', andar: 'terreo', categoria: 'ca', imagem: '', descricao: '', coordenadas: [684, 999] },
     { id: '8', bloco: '1', sala: '101', nome: 'DAQM (Diretório Acâdemico de Química)', andar: 'terreo', categoria: 'da', imagem: '', descricao: '', coordenadas: [742, 999] },
-    { id: '9', bloco: '1', sala: '100', nome: 'Sala', bloco: '1', sala: '100', andar: 'terreo', categoria: 'sala', imagem: '', descricao: '', coordenadas: [824, 999] },
+    { id: '9', bloco: '1', sala: '100', nome: 'Sala', andar: 'terreo', categoria: 'sala', imagem: '', descricao: '', coordenadas: [824, 999] },
     { id: '10', bloco: '1', sala: '', nome: 'caeq (Centro Acadêmico de Engenharia Química)', andar: 'terreo', categoria: 'ca', imagem: '', descricao: '', coordenadas: [900, 999] },
 
     { id: '11', bloco: '2', sala: '101', nome: 'Sala do Mestrado em Matemática', andar: 'terreo', categoria: 'sala', imagem: '', descricao: '', coordenadas: [1095, 1008] },
@@ -529,61 +529,28 @@ function criarHTMLPopup(local) {
     return html;
 }
 
+const iconesPorCategoria = {
+    'laboratorio': iconeLaboratorio,
+    'sala': iconeSala,
+    'auditorio': iconeAuditorio,
+    'da': iconeDA,
+    'ca': iconeCA,
+    'pet': iconePET,
+    'ej': iconeEJ,
+    'petcomp': iconePETComp,
+    'biblioteca': iconeBiblioteca,
+    'escada': iconeEscada,
+    'wc-m': iconeWC_M,
+    'wc-f': iconeWC_F,
+    'coord': iconeCoordenacao,
+    'prof': iconeProfessor,
+    'rampa': iconeRampa,
+    'bebedouro': iconeBebedouro
+};
+
 function inicializarMarcadores() {
     locaisCCET.forEach(local => {
-        let iconeEscolhido;
-
-        if(local.categoria === 'laboratorio'){
-            iconeEscolhido = iconeLaboratorio;
-        }
-        else if(local.categoria === 'sala'){
-            iconeEscolhido = iconeSala;
-        }
-        else if(local.categoria === 'auditorio'){
-            iconeEscolhido = iconeAuditorio;
-        }
-        else if (local.categoria === 'da') {
-            iconeEscolhido = iconeDA;
-        }
-        else if (local.categoria === 'ca') {
-            iconeEscolhido = iconeCA;
-        }
-        else if (local.categoria === 'pet') {
-            iconeEscolhido = iconePET;
-        }
-        else if (local.categoria === 'ej') {
-            iconeEscolhido = iconeEJ;
-        }
-        else if(local.categoria === 'petcomp'){
-            iconeEscolhido = iconePETComp;
-        }
-        else if(local.categoria === 'biblioteca'){
-            iconeEscolhido = iconeBiblioteca;
-        }
-        else if(local.categoria === 'escada'){
-            iconeEscolhido = iconeEscada;
-        }
-        else if(local.categoria === 'wc-m'){
-            iconeEscolhido = iconeWC_M;
-        }
-        else if(local.categoria === 'wc-f'){
-            iconeEscolhido = iconeWC_F;
-        }
-        else if(local.categoria === 'coord'){
-            iconeEscolhido = iconeCoordenacao;
-        }
-        else if(local.categoria === 'prof'){
-            iconeEscolhido = iconeProfessor;
-        }
-        else if(local.categoria === 'rampa'){
-            iconeEscolhido = iconeRampa;
-        }
-        else if(local.categoria === 'bebedouro'){
-            iconeEscolhido = iconeBebedouro;
-        }
-        else{
-            iconeEscolhido = iconeOutros;
-        }
+        const iconeEscolhido = iconesPorCategoria[local.categoria] || iconeOutros;
 
         let marker = L.marker(local.coordenadas, {icon: iconeEscolhido}).bindPopup( criarHTMLPopup(local), opcoesDoPopup );
         
@@ -632,7 +599,7 @@ function executarBusca() {
         const passaBloco = (blocoAtual === 'todos' || item.dados.bloco === blocoAtual);
         let passaCategoria = false;
         
-        const categoriasPrincipais = ['sala', 'laboratorio', 'coord', 'prof', 'banheiro', 'bebedouro'];
+        const categoriasPrincipais = ['sala', 'laboratorio', 'coord', 'prof', 'wc-m', 'wc-f', 'bebedouro'];
 
         if (categoriaAtual === 'todos'){
             passaCategoria = true;
@@ -769,7 +736,7 @@ function verificarLink(){
         const localEncontrado = marcadoresLeaflet.find(item => item.dados.id === idPartilhado);
 
         if (localEncontrado){
-            const botaoAndar = Array.from(document.querySelectorAll('.btn-andar')).find(btn => btn.getAttribute('onclick').includes(`'${localEncontrado.dados.andar}'`));
+            const botaoAndar = document.querySelector(`.btn-andar[data-andar="${localEncontrado.dados.andar}"]`);
 
             mudarAndar(localEncontrado.dados.andar, botaoAndar);
 

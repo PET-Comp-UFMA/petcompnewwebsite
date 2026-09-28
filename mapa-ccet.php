@@ -187,7 +187,6 @@ include 'head.php';
             <li>E sugerir novas funcionalidades, melhorias ou apontar bugs na plataforma.</li>
         </ul>
         <p>Para isso, preencha o nosso forms (<a href="https://forms.gle/Hec8p5DiC5p7FsY48" target="_blank" style="color: #016BE5; text-decoration: none; font-weight: bold;">https://forms.gle/Hec8p5DiC5p7FsY48</a>) ou entre em contato conosco pelo nosso e-mail (<a href="mailto:petcomputacao@ufma.br" style="color: #016BE5; text-decoration: none; font-weight: bold;">petcomputacao@ufma.br</a>).</p>
-        </p>
     </div>
 
     <?php include 'footer.php'; ?>
