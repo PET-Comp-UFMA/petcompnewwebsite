@@ -256,7 +256,7 @@ const locaisCCET = [
     { id: '67', bloco: '2', sala: '', nome: 'Coordenação do Curso de Química (Bacharelado)', andar: '1', categoria: 'coord', imagem: '', descricao: '', coordenadas: [1085, 849] },
     { id: '68', bloco: '2', sala: '', nome: 'Coordenação do Curso de Física (Licenciatura)', andar: '1', categoria: 'coord', imagem: '', descricao: '', coordenadas: [1085, 778] },
     { id: '69', bloco: '2', sala: '', nome: 'Coordenação do Curso de Ciência Da Computação', andar: '1', categoria: 'coord', imagem: '', descricao: '', coordenadas: [1085, 691] },
-    { id: '70', bloco: '2', sala: '', nome: 'PPGMAT - Sala dos alunos', andar: '1', categoria: 'outro', imagem: '', descricao: '', coordenadas: [1085, 622] },
+    { id: '70', bloco: '2', sala: '', nome: 'PPGMAT - Sala dos alunos', andar: '1', categoria: 'outros', imagem: '', descricao: '', coordenadas: [1085, 622] },
     { id: 'rampa3', bloco: '2', sala: '', nome: 'Rampa', andar: '1', categoria: 'rampa', imagem: '', descricao: '', coordenadas: [1254, 942] },
     
     { id: '71', bloco: '3', sala: '', nome: 'Laboratório de Medidas Elétricas', andar: '1', categoria: 'laboratorio', imagem: '', descricao: '', coordenadas: [1813, 998] },
@@ -483,6 +483,18 @@ const controleBordas = L.edgeMarker({
 
 map.addControl(new ControleCentralizar());
 map.addControl(new L.Control.FullScreen());
+
+let mapaEmTelaCheia = false;
+map.on('enterFullscreen', () => { mapaEmTelaCheia = true; });
+map.on('exitFullscreen', () => { mapaEmTelaCheia = false; });
+
+if (L.Browser.mobile) {
+    map.getContainer().addEventListener('touchstart', () => {
+        if (!mapaEmTelaCheia) {
+            map.toggleFullscreen();
+        }
+    }, { passive: true });
+}
 
 const marcadoresLeaflet = [];
 let andarAtual = 'terreo';
