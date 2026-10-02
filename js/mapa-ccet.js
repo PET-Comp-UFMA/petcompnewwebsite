@@ -1,9 +1,11 @@
+const VERSAO_MAPA = '1.3.0';
+
 const limitesDaImagem = [[0, 0], [2898, 2634]];
 const limitesDeNavegacao = [[-1000, -1000], [3898, 3634]];
 
 const map = L.map('map', {
     crs: L.CRS.Simple,
-    minZoom: -2,
+    minZoom: L.Browser.mobile ? -3 : -2,
     maxZoom: 2,
 
     maxBounds: limitesDeNavegacao,
@@ -13,7 +15,15 @@ const map = L.map('map', {
     bounceAtZoomLimits: false,
 
     doubleClickZoom: !L.Browser.mobile,
-}); 
+});
+
+const ZOOM_MINIMO_VISAO_PADRAO = -2;
+
+function ajustarVisaoAosLimites(bounds) {
+    const zoomIdeal = map.getBoundsZoom(bounds);
+    const zoom = Math.max(zoomIdeal, ZOOM_MINIMO_VISAO_PADRAO);
+    map.setView(L.latLngBounds(bounds).getCenter(), zoom);
+}
 
 const marcadoresTerreo = L.layerGroup();
 const marcadoresAndar1 = L.layerGroup();
@@ -256,7 +266,7 @@ const locaisCCET = [
     { id: '67', bloco: '2', sala: '', nome: 'Coordenação do Curso de Química (Bacharelado)', andar: '1', categoria: 'coord', imagem: '', descricao: '', coordenadas: [1085, 849] },
     { id: '68', bloco: '2', sala: '', nome: 'Coordenação do Curso de Física (Licenciatura)', andar: '1', categoria: 'coord', imagem: '', descricao: '', coordenadas: [1085, 778] },
     { id: '69', bloco: '2', sala: '', nome: 'Coordenação do Curso de Ciência Da Computação', andar: '1', categoria: 'coord', imagem: '', descricao: '', coordenadas: [1085, 691] },
-    { id: '70', bloco: '2', sala: '', nome: 'PPGMAT - Sala dos alunos', andar: '1', categoria: 'outro', imagem: '', descricao: '', coordenadas: [1085, 622] },
+    { id: '70', bloco: '2', sala: '', nome: 'PPGMAT - Sala dos alunos', andar: '1', categoria: 'outros', imagem: '', descricao: '', coordenadas: [1085, 622] },
     { id: 'rampa3', bloco: '2', sala: '', nome: 'Rampa', andar: '1', categoria: 'rampa', imagem: '', descricao: '', coordenadas: [1254, 942] },
     
     { id: '71', bloco: '3', sala: '', nome: 'Laboratório de Medidas Elétricas', andar: '1', categoria: 'laboratorio', imagem: '', descricao: '', coordenadas: [1813, 998] },
@@ -460,7 +470,7 @@ const ControleCentralizar = L.Control.extend({
 
         L.DomEvent.on(botao, 'click', function(e) {
             e.preventDefault(); 
-            map.fitBounds(limitesDaImagem); 
+            ajustarVisaoAosLimites(limitesDaImagem);
         });
 
         return container;
@@ -484,6 +494,18 @@ const controleBordas = L.edgeMarker({
 map.addControl(new ControleCentralizar());
 map.addControl(new L.Control.FullScreen());
 
+let mapaEmTelaCheia = false;
+map.on('enterFullscreen', () => { mapaEmTelaCheia = true; });
+map.on('exitFullscreen', () => { mapaEmTelaCheia = false; });
+
+if (L.Browser.mobile) {
+    map.getContainer().addEventListener('touchstart', () => {
+        if (!mapaEmTelaCheia) {
+            map.toggleFullscreen();
+        }
+    }, { passive: true });
+}
+
 const marcadoresLeaflet = [];
 let andarAtual = 'terreo';
 let categoriaAtual = 'todos';
@@ -491,6 +513,64 @@ let blocoAtual = 'todos';
 
 function removerAcentos(texto) {
     return texto.normalize('NFD').replace(/[\u0300-\u036f]/g, "");
+}
+
+function gerarTextoDeBusca(local) {
+    const partes = [local.nome, local.categoria];
+
+    if (local.categoria === 'prof' && local.descricao) {
+        partes.push(local.descricao);
+    }
+
+    if (local.bloco) {
+        partes.push(`bloco ${local.bloco}`, `bloco${local.bloco}`, `b${local.bloco}`, `bl${local.bloco}`);
+    }
+
+    if (local.sala) {
+        partes.push(`sala ${local.sala}`, `sala${local.sala}`, `s${local.sala}`, `sl${local.sala}`);
+    }
+
+    return removerAcentos(partes.join(' ').toLowerCase());
+}
+
+const SEPARADOR_DE_PALAVRAS = /[^a-z0-9]+/;
+
+const indiceBusca = locaisCCET.map(local => {
+    const texto = gerarTextoDeBusca(local);
+    // Separa por qualquer caractere não-alfanumérico (não só espaço), para que
+    // pontuação ou hífen colado (ex: "NCA (Núcleo...", "Físico-Química") não
+    // grude a palavra seguinte ao caractere anterior.
+    return { id: local.id, texto, palavras: texto.split(SEPARADOR_DE_PALAVRAS).filter(Boolean) };
+});
+
+function removerZerosEsquerda(texto) {
+    // Remove zeros à esquerda de qualquer número no texto (ex: "bloco03" -> "bloco3"),
+    // assim "03" digitado bate com o "3" armazenado nos dados.
+    return texto.replace(/\d+/g, trecho => trecho.replace(/^0+(?=\d)/, ''));
+}
+
+function tokenCorresponde(item, token) {
+    // Números puros (ex: "3") só batem como palavra inteira, senão "3" combinaria
+    // com qualquer número que contenha esse dígito, como "103" ou "203".
+    if (/^\d+$/.test(token)) {
+        return item.palavras.includes(token);
+    }
+    // Demais termos só batem com o INÍCIO de alguma palavra, senão "nca" encontraria
+    // "Sala de Estudos INCAS" (substring no meio da palavra), o que é contraintuitivo.
+    return item.palavras.some(palavra => palavra.startsWith(token));
+}
+
+function buscarPorTexto(textoDigitadoBruto) {
+    // Usa o mesmo separador do índice (não só espaço), assim "wc-m" digitado
+    // também vira ["wc", "m"] e bate com as mesmas palavras separadas nos dados.
+    const tokens = removerZerosEsquerda(textoDigitadoBruto).split(SEPARADOR_DE_PALAVRAS).filter(Boolean);
+    if (tokens.length === 0) return null;
+
+    return new Set(
+        indiceBusca
+            .filter(item => tokens.every(token => tokenCorresponde(item, token)))
+            .map(item => item.id)
+    );
 }
 
 function criarHTMLPopup(local) {
@@ -566,16 +646,21 @@ function inicializarMarcadores() {
 }
 
 let camadaImagemAtual = L.imageOverlay(dadosAndares['terreo'].url, limitesDaImagem).addTo(map);
-map.fitBounds(limitesDaImagem);
+ajustarVisaoAosLimites(limitesDaImagem);
 marcadoresTerreo.addTo(map); 
 
 inicializarMarcadores();
+
+const elementoVersao = document.getElementById('versao-mapa');
+if (elementoVersao) {
+    elementoVersao.textContent = `v${VERSAO_MAPA}`;
+}
 
 function executarBusca() {
     const inputElement = document.getElementById('input-busca');
     if (!inputElement) return;
     
-    const textoDigitado = removerAcentos(inputElement.value.toLowerCase());
+    const textoDigitado = removerAcentos(inputElement.value.trim().toLowerCase());
     marcadoresBusca.clearLayers();
 
     marcadoresLeaflet.forEach(item => {
@@ -587,15 +672,10 @@ function executarBusca() {
     let contagemAndares = {'terreo': 0, '1': 0, '2': 0};
     let temBuscaDeTexto = textoDigitado.length > 0;
 
+    const idsCorrespondentes = buscarPorTexto(textoDigitado);
+
     marcadoresLeaflet.forEach(item => {
-        let textoParaBusca = `${item.dados.nome} Bloco ${item.dados.bloco} Sala ${item.dados.sala} ${item.dados.categoria}`;
-        if (item.dados.categoria === 'prof' && item.dados.descricao){
-            textoParaBusca += `${item.dados.descricao}`;
-        }
-
-        textoParaBusca = removerAcentos(textoParaBusca.toLowerCase());
-
-        const passaTexto = textoParaBusca.includes(textoDigitado);
+        const passaTexto = temBuscaDeTexto ? idsCorrespondentes.has(item.dados.id) : true;
         const passaBloco = (blocoAtual === 'todos' || item.dados.bloco === blocoAtual);
         let passaCategoria = false;
         
@@ -667,10 +747,74 @@ function executarBusca() {
                 badge.textContent = contagemAndares[andar]; 
                 badge.classList.add('ativo');               
             } else {
-                badge.classList.remove('ativo');            
+                badge.classList.remove('ativo');
             }
         }
     });
+
+    atualizarSugestoes(temBuscaDeTexto, idsCorrespondentes);
+}
+
+const CATEGORIAS_SEM_SUGESTAO = ['sala'];
+
+function atualizarSugestoes(temBuscaDeTexto, idsCorrespondentes) {
+    const container = document.getElementById('busca-sugestoes');
+    if (!container) return;
+
+    container.innerHTML = '';
+
+    const candidatos = temBuscaDeTexto
+        ? marcadoresLeaflet
+            .filter(item => idsCorrespondentes.has(item.dados.id) && !CATEGORIAS_SEM_SUGESTAO.includes(item.dados.categoria))
+            .slice(0, 2)
+        : [];
+
+    if (candidatos.length === 0) {
+        container.classList.remove('ativo');
+        return;
+    }
+
+    candidatos.forEach(item => {
+        const nomeAndar = item.dados.andar === 'terreo' ? 'Térreo' : `${item.dados.andar}º Andar`;
+        const descricaoLocal = `Bloco ${item.dados.bloco}${item.dados.sala ? ' · Sala ' + item.dados.sala : ''} · ${nomeAndar}`;
+
+        const botao = document.createElement('button');
+        botao.type = 'button';
+        botao.className = 'sugestao-item';
+        botao.innerHTML = `
+            <span class="sugestao-nome">${item.dados.nome}</span>
+            <span class="sugestao-local">${descricaoLocal}</span>
+        `;
+
+        botao.addEventListener('mousedown', (e) => {
+            e.preventDefault();
+            irParaLocal(item);
+        });
+
+        container.appendChild(botao);
+    });
+
+    container.classList.add('ativo');
+}
+
+function esconderSugestoes() {
+    const container = document.getElementById('busca-sugestoes');
+    if (container) container.classList.remove('ativo');
+}
+
+function irParaLocal(item) {
+    const botaoAndar = document.querySelector(`.btn-andar[data-andar="${item.dados.andar}"]`);
+    mudarAndar(item.dados.andar, botaoAndar);
+
+    esconderSugestoes();
+
+    setTimeout(() => {
+        map.flyTo(item.dados.coordenadas, 1, {
+            animate: true,
+            duration: 1.5
+        });
+        item.instanciaMarker.openPopup();
+    }, 500);
 }
 
 window.filtrarCategoria = function(categoriaDesejada, elementoBotao) {
@@ -702,11 +846,16 @@ if (inputBusca && btnLimpar) {
     });
 
     btnLimpar.addEventListener('click', function(e) {
-        e.preventDefault(); 
-        inputBusca.value = '';   
-        btnLimpar.style.display = 'none'; 
+        e.preventDefault();
+        inputBusca.value = '';
+        btnLimpar.style.display = 'none';
 
         executarBusca();
+    });
+
+    inputBusca.addEventListener('blur', function() {
+        // Timeout permite o mousedown da sugestão ser processado antes do dropdown sumir.
+        setTimeout(esconderSugestoes, 150);
     });
 }
 
@@ -736,17 +885,7 @@ function verificarLink(){
         const localEncontrado = marcadoresLeaflet.find(item => item.dados.id === idPartilhado);
 
         if (localEncontrado){
-            const botaoAndar = document.querySelector(`.btn-andar[data-andar="${localEncontrado.dados.andar}"]`);
-
-            mudarAndar(localEncontrado.dados.andar, botaoAndar);
-
-            setTimeout(() => {
-                map.flyTo(localEncontrado.dados.coordenadas, 1, {
-                    animate: true,
-                    duration: 1.5
-                });
-                localEncontrado.instanciaMarker.openPopup();
-            }, 500);
+            irParaLocal(localEncontrado);
         }
     }
 }

@@ -1,0 +1,16 @@
+{
+    "name": "Mapa CCET",
+    "short_name": "Mapa CCET",
+    "description": "Mapa interativo do CCET - UFMA",
+    "start_url": "mapa-ccet.php?embed=true",
+    "scope": "mapa-ccet.php",
+    "display": "fullscreen",
+    "display_override": ["fullscreen", "standalone"],
+    "orientation": "any",
+    "background_color": "#01204C",
+    "theme_color": "#01204C",
+    "icons": [
+        { "src": "img/icon-192.png", "sizes": "192x192", "type": "image/png" },
+        { "src": "img/icon-512.png", "sizes": "512x512", "type": "image/png" }
+    ]
+}

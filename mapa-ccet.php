@@ -2,6 +2,20 @@
 <html lang="pt-br">
 
 <head>
+    <script>
+        // Quando o app foi salvo na tela inicial (modo standalone/fullscreen),
+        // abrir direto só o mapa, mesmo que o atalho aponte pra página normal.
+        (function () {
+            var emTelaCheia = window.navigator.standalone === true ||
+                window.matchMedia('(display-mode: standalone)').matches ||
+                window.matchMedia('(display-mode: fullscreen)').matches;
+
+            if (emTelaCheia && !/[?&]embed=true\b/.test(window.location.search)) {
+                var separador = window.location.search ? '&' : '?';
+                window.location.replace(window.location.pathname + window.location.search + separador + 'embed=true');
+            }
+        })();
+    </script>
     <?php
     $extraHead = '
     <!-- Leaflet e Plugins -->
@@ -13,6 +27,14 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet.fullscreen/dist/Control.FullScreen.css" />
     <script src="https://unpkg.com/leaflet.fullscreen/dist/Control.FullScreen.umd.js" defer></script>
     <script src="https://cdn.jsdelivr.net/gh/ubergesundheit/Leaflet.EdgeMarker@master/Leaflet.EdgeMarker.js" defer></script>
+
+    <!-- App salva na tela inicial: abre só o mapa, em tela cheia -->
+    <link rel="manifest" href="manifest-mapa.json">
+    <meta name="theme-color" content="#01204C">
+    <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Mapa CCET">
 ';
     echo $extraHead;
     $isEmbed = isset($_GET['embed']) && $_GET['embed'] == 'true';
@@ -81,6 +103,8 @@ include 'head.php';
         <div id="map">
             <img src="assets/svg/LOGOTIPO - CLARA.svg" class="logo-petcomp" alt="Nicolas Caliman">
 
+            <span id="versao-mapa"></span>
+
             <div class="busca-container">
                 <div class="input-wrapper">
                     <svg class="icone-lupa" viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -97,6 +121,8 @@ include 'head.php';
                         </svg>
                     </button>
                 </div>
+
+                <div class="busca-sugestoes" id="busca-sugestoes"></div>
 
                 <div class="filtros-categoria">
                     <button class="btn-filtro ativo" onclick="filtrarCategoria('todos', this)">

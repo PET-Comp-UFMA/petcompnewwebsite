@@ -68,11 +68,23 @@ body {
 
 .logo-petcomp {
     position: absolute;
-    bottom: 20px; 
-    right: 2px; 
-    z-index: 9999; 
+    bottom: 20px;
+    right: 2px;
+    z-index: 9999;
     height: 18px;
     pointer-events: none;
+}
+
+#versao-mapa {
+    position: absolute;
+    bottom: 4px;
+    left: 8px;
+    z-index: 9999;
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.45);
+    pointer-events: none;
+    user-select: none;
 }
 
 .btn-andar {
@@ -140,6 +152,55 @@ body {
     color: #a0a0a0;
 }
 
+.busca-sugestoes {
+    display: none;
+    flex-direction: column;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    overflow: hidden;
+}
+
+.busca-sugestoes.ativo {
+    display: flex;
+}
+
+.sugestao-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+    width: 100%;
+    padding: 8px 16px;
+    background: none;
+    border: none;
+    border-bottom: 1px solid #f0f0f0;
+    cursor: pointer;
+    text-align: left;
+    font-family: Arial, sans-serif;
+}
+
+.sugestao-item:last-child {
+    border-bottom: none;
+}
+
+.sugestao-item:hover {
+    background: #f5f8ff;
+}
+
+.sugestao-nome {
+    font-size: 13px;
+    font-weight: 700;
+    color: #001a4d;
+}
+
+.sugestao-local {
+    font-size: 11px;
+    color: #666666;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
 .filtros-categoria {
     display: flex;
     flex-wrap: wrap; 
@@ -171,7 +232,6 @@ body {
     background-color: #016BE5 !important; 
     color:#ffffff !important;
 }
-
 
 .filtros-categoria {
     display: flex;
@@ -291,7 +351,28 @@ body {
     margin-top: -7px !important;
 }
 
-.pino-bebedouro {   
+/* Reforça a especificidade do hover para vencer os tamanhos reduzidos
+   do .zoom-afastado (mesma especificidade + ordem no arquivo fazia o
+   hover ser ignorado nos zooms -2 e -3). */
+.zoom-afastado .pino-customizado:hover {
+    width: 20px !important;
+    height: 20px !important;
+    margin-left: -10px !important;
+    margin-top: -12px !important;
+}
+
+.zoom-afastado .pino-customizado:hover svg {
+    scale: 0.8 !important;
+}
+
+.zoom-afastado .pino-bebedouro:hover {
+    width: 22px !important;
+    height: 22px !important;
+    margin-left: -11px !important;
+    margin-top: -13px !important;
+}
+
+.pino-bebedouro {
     width: 24px !important;
     height: 24px !important;
     margin-left: -12px !important;
