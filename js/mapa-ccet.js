@@ -505,6 +505,55 @@ function removerAcentos(texto) {
     return texto.normalize('NFD').replace(/[\u0300-\u036f]/g, "");
 }
 
+function gerarTextoDeBusca(local) {
+    const partes = [local.nome, local.categoria];
+
+    if (local.categoria === 'prof' && local.descricao) {
+        partes.push(local.descricao);
+    }
+
+    if (local.bloco) {
+        partes.push(`bloco ${local.bloco}`, `bloco${local.bloco}`, `b${local.bloco}`, `bl${local.bloco}`);
+    }
+
+    if (local.sala) {
+        partes.push(`sala ${local.sala}`, `sala${local.sala}`, `s${local.sala}`, `sl${local.sala}`);
+    }
+
+    return removerAcentos(partes.join(' ').toLowerCase());
+}
+
+const indiceBusca = locaisCCET.map(local => {
+    const texto = gerarTextoDeBusca(local);
+    return { id: local.id, texto, palavras: texto.split(/\s+/).filter(Boolean) };
+});
+
+function removerZerosEsquerda(texto) {
+    // Remove zeros à esquerda de qualquer número no texto (ex: "bloco03" -> "bloco3"),
+    // assim "03" digitado bate com o "3" armazenado nos dados.
+    return texto.replace(/\d+/g, trecho => trecho.replace(/^0+(?=\d)/, ''));
+}
+
+function tokenCorresponde(item, token) {
+    // Números puros (ex: "3") só batem como palavra inteira, senão "3" combinaria
+    // com qualquer número que contenha esse dígito, como "103" ou "203".
+    if (/^\d+$/.test(token)) {
+        return item.palavras.includes(token);
+    }
+    return item.texto.includes(token);
+}
+
+function buscarPorTexto(textoDigitadoBruto) {
+    const tokens = removerZerosEsquerda(textoDigitadoBruto).split(/\s+/).filter(Boolean);
+    if (tokens.length === 0) return null;
+
+    return new Set(
+        indiceBusca
+            .filter(item => tokens.every(token => tokenCorresponde(item, token)))
+            .map(item => item.id)
+    );
+}
+
 function criarHTMLPopup(local) {
     let html = '<div class="popup-customizado">';
 
@@ -587,7 +636,7 @@ function executarBusca() {
     const inputElement = document.getElementById('input-busca');
     if (!inputElement) return;
     
-    const textoDigitado = removerAcentos(inputElement.value.toLowerCase());
+    const textoDigitado = removerAcentos(inputElement.value.trim().toLowerCase());
     marcadoresBusca.clearLayers();
 
     marcadoresLeaflet.forEach(item => {
@@ -599,15 +648,10 @@ function executarBusca() {
     let contagemAndares = {'terreo': 0, '1': 0, '2': 0};
     let temBuscaDeTexto = textoDigitado.length > 0;
 
+    const idsCorrespondentes = buscarPorTexto(textoDigitado);
+
     marcadoresLeaflet.forEach(item => {
-        let textoParaBusca = `${item.dados.nome} Bloco ${item.dados.bloco} Sala ${item.dados.sala} ${item.dados.categoria}`;
-        if (item.dados.categoria === 'prof' && item.dados.descricao){
-            textoParaBusca += `${item.dados.descricao}`;
-        }
-
-        textoParaBusca = removerAcentos(textoParaBusca.toLowerCase());
-
-        const passaTexto = textoParaBusca.includes(textoDigitado);
+        const passaTexto = temBuscaDeTexto ? idsCorrespondentes.has(item.dados.id) : true;
         const passaBloco = (blocoAtual === 'todos' || item.dados.bloco === blocoAtual);
         let passaCategoria = false;
         
