@@ -98,6 +98,8 @@ include 'head.php';
                     </button>
                 </div>
 
+                <div class="busca-sugestoes" id="busca-sugestoes"></div>
+
                 <div class="filtros-categoria">
                     <button class="btn-filtro ativo" onclick="filtrarCategoria('todos', this)">
                         <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none">

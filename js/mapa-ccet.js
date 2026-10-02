@@ -531,9 +531,14 @@ function gerarTextoDeBusca(local) {
     return removerAcentos(partes.join(' ').toLowerCase());
 }
 
+const SEPARADOR_DE_PALAVRAS = /[^a-z0-9]+/;
+
 const indiceBusca = locaisCCET.map(local => {
     const texto = gerarTextoDeBusca(local);
-    return { id: local.id, texto, palavras: texto.split(/\s+/).filter(Boolean) };
+    // Separa por qualquer caractere não-alfanumérico (não só espaço), para que
+    // pontuação ou hífen colado (ex: "NCA (Núcleo...", "Físico-Química") não
+    // grude a palavra seguinte ao caractere anterior.
+    return { id: local.id, texto, palavras: texto.split(SEPARADOR_DE_PALAVRAS).filter(Boolean) };
 });
 
 function removerZerosEsquerda(texto) {
@@ -548,11 +553,15 @@ function tokenCorresponde(item, token) {
     if (/^\d+$/.test(token)) {
         return item.palavras.includes(token);
     }
-    return item.texto.includes(token);
+    // Demais termos só batem com o INÍCIO de alguma palavra, senão "nca" encontraria
+    // "Sala de Estudos INCAS" (substring no meio da palavra), o que é contraintuitivo.
+    return item.palavras.some(palavra => palavra.startsWith(token));
 }
 
 function buscarPorTexto(textoDigitadoBruto) {
-    const tokens = removerZerosEsquerda(textoDigitadoBruto).split(/\s+/).filter(Boolean);
+    // Usa o mesmo separador do índice (não só espaço), assim "wc-m" digitado
+    // também vira ["wc", "m"] e bate com as mesmas palavras separadas nos dados.
+    const tokens = removerZerosEsquerda(textoDigitadoBruto).split(SEPARADOR_DE_PALAVRAS).filter(Boolean);
     if (tokens.length === 0) return null;
 
     return new Set(
@@ -731,10 +740,74 @@ function executarBusca() {
                 badge.textContent = contagemAndares[andar]; 
                 badge.classList.add('ativo');               
             } else {
-                badge.classList.remove('ativo');            
+                badge.classList.remove('ativo');
             }
         }
     });
+
+    atualizarSugestoes(temBuscaDeTexto, idsCorrespondentes);
+}
+
+const CATEGORIAS_SEM_SUGESTAO = ['sala'];
+
+function atualizarSugestoes(temBuscaDeTexto, idsCorrespondentes) {
+    const container = document.getElementById('busca-sugestoes');
+    if (!container) return;
+
+    container.innerHTML = '';
+
+    const candidatos = temBuscaDeTexto
+        ? marcadoresLeaflet
+            .filter(item => idsCorrespondentes.has(item.dados.id) && !CATEGORIAS_SEM_SUGESTAO.includes(item.dados.categoria))
+            .slice(0, 2)
+        : [];
+
+    if (candidatos.length === 0) {
+        container.classList.remove('ativo');
+        return;
+    }
+
+    candidatos.forEach(item => {
+        const nomeAndar = item.dados.andar === 'terreo' ? 'Térreo' : `${item.dados.andar}º Andar`;
+        const descricaoLocal = `Bloco ${item.dados.bloco}${item.dados.sala ? ' · Sala ' + item.dados.sala : ''} · ${nomeAndar}`;
+
+        const botao = document.createElement('button');
+        botao.type = 'button';
+        botao.className = 'sugestao-item';
+        botao.innerHTML = `
+            <span class="sugestao-nome">${item.dados.nome}</span>
+            <span class="sugestao-local">${descricaoLocal}</span>
+        `;
+
+        botao.addEventListener('mousedown', (e) => {
+            e.preventDefault();
+            irParaLocal(item);
+        });
+
+        container.appendChild(botao);
+    });
+
+    container.classList.add('ativo');
+}
+
+function esconderSugestoes() {
+    const container = document.getElementById('busca-sugestoes');
+    if (container) container.classList.remove('ativo');
+}
+
+function irParaLocal(item) {
+    const botaoAndar = document.querySelector(`.btn-andar[data-andar="${item.dados.andar}"]`);
+    mudarAndar(item.dados.andar, botaoAndar);
+
+    esconderSugestoes();
+
+    setTimeout(() => {
+        map.flyTo(item.dados.coordenadas, 1, {
+            animate: true,
+            duration: 1.5
+        });
+        item.instanciaMarker.openPopup();
+    }, 500);
 }
 
 window.filtrarCategoria = function(categoriaDesejada, elementoBotao) {
@@ -766,11 +839,16 @@ if (inputBusca && btnLimpar) {
     });
 
     btnLimpar.addEventListener('click', function(e) {
-        e.preventDefault(); 
-        inputBusca.value = '';   
-        btnLimpar.style.display = 'none'; 
+        e.preventDefault();
+        inputBusca.value = '';
+        btnLimpar.style.display = 'none';
 
         executarBusca();
+    });
+
+    inputBusca.addEventListener('blur', function() {
+        // Timeout permite o mousedown da sugestão ser processado antes do dropdown sumir.
+        setTimeout(esconderSugestoes, 150);
     });
 }
 
@@ -800,17 +878,7 @@ function verificarLink(){
         const localEncontrado = marcadoresLeaflet.find(item => item.dados.id === idPartilhado);
 
         if (localEncontrado){
-            const botaoAndar = document.querySelector(`.btn-andar[data-andar="${localEncontrado.dados.andar}"]`);
-
-            mudarAndar(localEncontrado.dados.andar, botaoAndar);
-
-            setTimeout(() => {
-                map.flyTo(localEncontrado.dados.coordenadas, 1, {
-                    animate: true,
-                    duration: 1.5
-                });
-                localEncontrado.instanciaMarker.openPopup();
-            }, 500);
+            irParaLocal(localEncontrado);
         }
     }
 }
