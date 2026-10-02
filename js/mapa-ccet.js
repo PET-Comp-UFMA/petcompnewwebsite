@@ -3,7 +3,7 @@ const limitesDeNavegacao = [[-1000, -1000], [3898, 3634]];
 
 const map = L.map('map', {
     crs: L.CRS.Simple,
-    minZoom: -2,
+    minZoom: L.Browser.mobile ? -3 : -2,
     maxZoom: 2,
 
     maxBounds: limitesDeNavegacao,
@@ -13,7 +13,15 @@ const map = L.map('map', {
     bounceAtZoomLimits: false,
 
     doubleClickZoom: !L.Browser.mobile,
-}); 
+});
+
+const ZOOM_MINIMO_VISAO_PADRAO = -2;
+
+function ajustarVisaoAosLimites(bounds) {
+    const zoomIdeal = map.getBoundsZoom(bounds);
+    const zoom = Math.max(zoomIdeal, ZOOM_MINIMO_VISAO_PADRAO);
+    map.setView(L.latLngBounds(bounds).getCenter(), zoom);
+}
 
 const marcadoresTerreo = L.layerGroup();
 const marcadoresAndar1 = L.layerGroup();
@@ -460,7 +468,7 @@ const ControleCentralizar = L.Control.extend({
 
         L.DomEvent.on(botao, 'click', function(e) {
             e.preventDefault(); 
-            map.fitBounds(limitesDaImagem); 
+            ajustarVisaoAosLimites(limitesDaImagem);
         });
 
         return container;
@@ -627,7 +635,7 @@ function inicializarMarcadores() {
 }
 
 let camadaImagemAtual = L.imageOverlay(dadosAndares['terreo'].url, limitesDaImagem).addTo(map);
-map.fitBounds(limitesDaImagem);
+ajustarVisaoAosLimites(limitesDaImagem);
 marcadoresTerreo.addTo(map); 
 
 inicializarMarcadores();
