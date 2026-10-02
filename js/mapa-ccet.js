@@ -1,3 +1,5 @@
+const VERSAO_MAPA = '1.3.0';
+
 const limitesDaImagem = [[0, 0], [2898, 2634]];
 const limitesDeNavegacao = [[-1000, -1000], [3898, 3634]];
 
@@ -648,6 +650,11 @@ ajustarVisaoAosLimites(limitesDaImagem);
 marcadoresTerreo.addTo(map); 
 
 inicializarMarcadores();
+
+const elementoVersao = document.getElementById('versao-mapa');
+if (elementoVersao) {
+    elementoVersao.textContent = `v${VERSAO_MAPA}`;
+}
 
 function executarBusca() {
     const inputElement = document.getElementById('input-busca');

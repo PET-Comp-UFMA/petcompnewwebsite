@@ -103,6 +103,8 @@ include 'head.php';
         <div id="map">
             <img src="assets/svg/LOGOTIPO - CLARA.svg" class="logo-petcomp" alt="Nicolas Caliman">
 
+            <span id="versao-mapa"></span>
+
             <div class="busca-container">
                 <div class="input-wrapper">
                     <svg class="icone-lupa" viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
