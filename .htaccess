@@ -8,3 +8,7 @@ RewriteRule ^ router.php [QSA,L]
 <IfModule mime_module>
   AddHandler application/x-httpd-php .php
 </IfModule>
+
+<Files "manifest-mapa.json">
+  ForceType application/manifest+json
+</Files>
