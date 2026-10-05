@@ -23,6 +23,12 @@
     </div>
     <div class="atividade">
       <div class="fundo"></div>
+      <h3>Acalourada 2026.2</h3>
+      <div class="galeria" data-evento="acalourada2026_2">
+      </div>
+    </div>
+    <div class="atividade">
+      <div class="fundo"></div>
       <h3>Acalourada 2026.1</h3>
       <div class="galeria" data-evento="acalourada2026_1">
       </div>
