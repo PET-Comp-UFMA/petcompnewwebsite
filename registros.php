@@ -24,6 +24,13 @@
 
     <div class="atividade">
       <div class="fundo"></div>
+      <h3>VI Marapet</h3>
+      <div class="galeria" data-evento="vimarapet">
+      </div>
+    </div>
+
+    <div class="atividade">
+      <div class="fundo"></div>
       <h3>Girls++</h3>
       <div class="galeria" data-evento="girls2026_9">
       </div>
