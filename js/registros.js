@@ -53,6 +53,14 @@ document.addEventListener("DOMContentLoaded", () => {
 // Função para diversos tamanhos de imagens
 // Mapeamento dos eventos e suas imagens
 const imagensPorEvento = {
+  vimarapet: [
+    "img/2026/VIMarapet/vimarapet01.jpg",
+    "img/2026/VIMarapet/vimarapet02.JPG",
+    "img/2026/VIMarapet/vimarapet03.jpeg",
+    "img/2026/VIMarapet/vimarapet04.jpg",
+    "img/2026/VIMarapet/vimarapet05.JPEG",
+    "img/2026/VIMarapet/vimarapet06.jpeg"
+  ],
   girls2026_9: [
     "img/2026/Girls2026/Girls0.jpeg",
     "img/2026/Girls2026/Girls1.jpg",

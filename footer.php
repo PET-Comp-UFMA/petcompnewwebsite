@@ -39,13 +39,13 @@
                 </h2>
                 <ul class="ulist">
                     <li class="litem">
-                        <a target="_blank"class="item-button" href="monitoria">Monitoria</a>
+                        <a target="_blank"class="item-button" href="repositorio-educacional/monitorias">Monitoria</a>
                     </li>
                     <li class="litem">
                         <a target="_blank" class="item-button" href="desenvolvimento">Fáb. Software</a>
                     </li>
                     <li class="litem">
-                        <a target="_blank" class="item-button" href="minicurso">Minicursos e Oficinas</a>
+                        <a target="_blank" class="item-button" href="repositorio-educacional/minicursos">Minicursos e Oficinas</a>
                     </li>
                 </ul>
             </div>
