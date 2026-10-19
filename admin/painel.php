@@ -10,11 +10,21 @@ if (isset($_GET['editar'])) {
     $stmt->close();
 }
 
+// Ordenação da lista (valores fixos, nunca o texto da URL direto no SQL)
+$ordensValidas = ['az', 'za', 'liberacao'];
+$ordem = in_array($_GET['ordem'] ?? '', $ordensValidas, true) ? $_GET['ordem'] : 'az';
+
+$orderBy = match ($ordem) {
+    'za'        => 'lc.nome DESC',
+    'liberacao' => 'lc.criado_em DESC, lc.id DESC',
+    default     => 'lc.nome ASC',
+};
+
 $lista = $mysqli->query(
-    'SELECT lc.*, de.numero_declaracao
+    "SELECT lc.*, de.numero_declaracao, de.emitido_em
      FROM liberacoes_certificado lc
      LEFT JOIN declaracoes_emitidas de ON de.liberacao_id = lc.id
-     ORDER BY lc.nome ASC'
+     ORDER BY $orderBy"
 )->fetch_all(MYSQLI_ASSOC);
 ?>
 <!DOCTYPE html>
@@ -44,6 +54,17 @@ $lista = $mysqli->query(
     .msg.ok { background: #dcfce7; color: #15803d; }
     .msg.erro { background: #fee2e2; color: #b91c1c; }
     .vazio { color: #94a3b8; font-size: 14px; padding: 20px 0; text-align: center; }
+
+    /* Botão retrátil de ordenação */
+    .card-topo { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+    .card-topo h2 { margin: 0; }
+    .ordenar { position: relative; }
+    .ordenar summary { list-style: none; cursor: pointer; padding: 8px 14px; background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 13px; color: #334155; }
+    .ordenar summary::-webkit-details-marker { display: none; }
+    .ordenar .opcoes { position: absolute; right: 0; top: 38px; background: #fff; border: 1px solid #e2e8f0; border-radius: 6px; box-shadow: 0 4px 10px rgba(0,0,0,.1); min-width: 220px; z-index: 10; }
+    .ordenar .opcoes a { display: block; padding: 10px 14px; font-size: 13px; color: #334155; text-decoration: none; }
+    .ordenar .opcoes a:hover { background: #f1f5f9; }
+    .ordenar .opcoes a.atual { font-weight: 700; color: #027BFD; }
 </style>
 </head>
 <body>
@@ -120,7 +141,17 @@ $lista = $mysqli->query(
     </div>
 
     <div class="card">
-        <h2>Alunos liberados (<?= count($lista) ?>)</h2>
+        <div class="card-topo">
+            <h2>Alunos liberados (<?= count($lista) ?>)</h2>
+            <details class="ordenar">
+                <summary>Ordenar ▾</summary>
+                <div class="opcoes">
+                    <a href="painel.php?ordem=az"        class="<?= $ordem === 'az' ? 'atual' : '' ?>">A → Z</a>
+                    <a href="painel.php?ordem=za"        class="<?= $ordem === 'za' ? 'atual' : '' ?>">Z → A</a>
+                    <a href="painel.php?ordem=liberacao" class="<?= $ordem === 'liberacao' ? 'atual' : '' ?>">Ordem de liberação (último primeiro)</a>
+                </div>
+            </details>
+        </div>
 
         <?php if (empty($lista)): ?>
             <div class="vazio">Nenhum aluno liberado ainda.</div>
@@ -128,7 +159,7 @@ $lista = $mysqli->query(
         <table>
             <thead>
                 <tr>
-                    <th>Nome</th><th>CPF</th><th>Matrícula</th><th>Início</th><th>Fim</th><th>Cód. validação</th><th></th>
+                    <th>Nome</th><th>CPF</th><th>Matrícula</th><th>Início</th><th>Fim</th><th>Cód. validação</th><th>Último download</th><th></th>
                 </tr>
             </thead>
             <tbody>
@@ -144,6 +175,13 @@ $lista = $mysqli->query(
                             <code style="font-size:12px;"><?= htmlspecialchars($item['numero_declaracao']) ?></code>
                         <?php else: ?>
                             <span style="color:#94a3b8; font-size:12px;">ainda não emitido</span>
+                        <?php endif; ?>
+                    </td>
+                    <td>
+                        <?php if (!empty($item['emitido_em'])): ?>
+                            <?= date('d/m/Y H:i', strtotime($item['emitido_em'])) ?>
+                        <?php else: ?>
+                            <span style="color:#94a3b8; font-size:12px;">—</span>
                         <?php endif; ?>
                     </td>
                     <td class="acoes">

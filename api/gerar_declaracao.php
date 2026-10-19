@@ -52,6 +52,12 @@ $periodoInicio = $inicio->format('Y-m-d');
 $periodoFim    = $fim->format('Y-m-d');
 $ip            = $_SERVER['REMOTE_ADDR'] ?? null;
 
+// Data deste download: criada uma vez só e usada tanto no PDF quanto
+// no banco (emitido_em = data do ÚLTIMO download), assim os dois
+// nunca divergem.
+$dataEmissao = new DateTime();
+$emitidoEm   = $dataEmissao->format('Y-m-d H:i:s');
+
 $stmtExistente = $mysqli->prepare(
     'SELECT id, numero_declaracao FROM declaracoes_emitidas WHERE liberacao_id = ? LIMIT 1'
 );
@@ -63,10 +69,11 @@ $stmtExistente->close();
 if ($existente) {
     $numeroDeclaracao = $existente['numero_declaracao'];
 
+    // Atualiza também o emitido_em: ele representa o último download.
     $stmtAtualiza = $mysqli->prepare(
-        'UPDATE declaracoes_emitidas SET nome_aluno = ?, periodo_fim = ?, ip_solicitante = ? WHERE id = ?'
+        'UPDATE declaracoes_emitidas SET nome_aluno = ?, periodo_fim = ?, ip_solicitante = ?, emitido_em = ? WHERE id = ?'
     );
-    $stmtAtualiza->bind_param('sssi', $liberacao['nome'], $periodoFim, $ip, $existente['id']);
+    $stmtAtualiza->bind_param('ssssi', $liberacao['nome'], $periodoFim, $ip, $emitidoEm, $existente['id']);
     $stmtAtualiza->execute();
     $stmtAtualiza->close();
 
@@ -109,13 +116,13 @@ if ($existente) {
 
     $stmtLog = $mysqli->prepare(
         'INSERT INTO declaracoes_emitidas
-            (numero_declaracao, nome_aluno, liberacao_id, periodo_inicio, periodo_fim, ip_solicitante,
+            (numero_declaracao, nome_aluno, liberacao_id, periodo_inicio, periodo_fim, emitido_em, ip_solicitante,
              tutor_nome, tutor_cargo, tutor_matricula_siape, tutor_assinatura_base64)
-         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)'
+         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)'
     );
     $stmtLog->bind_param(
-        'ssisssssss',
-        $numeroDeclaracao, $liberacao['nome'], $liberacao['id'], $periodoInicio, $periodoFim, $ip,
+        'ssissssssss',
+        $numeroDeclaracao, $liberacao['nome'], $liberacao['id'], $periodoInicio, $periodoFim, $emitidoEm, $ip,
         $tutor['nome'], $tutor['cargo'], $tutor['matricula_siape'], $tutor['assinatura_base64']
     );
     $stmtLog->execute();
@@ -139,7 +146,6 @@ $assinaturaBase64    = $snap['tutor_assinatura_base64']; // já vem com o prefix
 $mesesPt = [1=>'janeiro',2=>'fevereiro',3=>'março',4=>'abril',5=>'maio',6=>'junho',
     7=>'julho',8=>'agosto',9=>'setembro',10=>'outubro',11=>'novembro',12=>'dezembro'];
 $formatarExtenso = fn(DateTime $d) => $mesesPt[(int)$d->format('n')] . ' de ' . $d->format('Y');
-$dataEmissao = new DateTime();
 
 $cpfFormatado = substr($cpf,0,3).'.'.substr($cpf,3,3).'.'.substr($cpf,6,3).'-'.substr($cpf,9,2);
 
