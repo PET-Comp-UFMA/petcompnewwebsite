@@ -144,8 +144,8 @@ $stmt->close();
                            value="<?= htmlspecialchars($editando['cpf'] ?? '') ?>">
                 </div>
                 <div>
-                    <label for="matricula">Matrícula</label>
-                    <input type="text" id="matricula" name="matricula" required
+                    <label for="matricula">Matrícula <span style="color:#94a3b8; font-weight:400;">(se não tiver, deixe em branco)</span></label>
+                    <input type="text" id="matricula" name="matricula"
                            maxlength="15" autocomplete="off"
                            value="<?= htmlspecialchars($editando['matricula'] ?? '') ?>">
                 </div>
@@ -219,7 +219,13 @@ $stmt->close();
                 <tr>
                     <td><?= htmlspecialchars($item['nome']) ?></td>
                     <td><?= htmlspecialchars(substr($item['cpf'],0,3).'.'.substr($item['cpf'],3,3).'.'.substr($item['cpf'],6,3).'-'.substr($item['cpf'],9,2)) ?></td>
-                    <td><?= htmlspecialchars($item['matricula']) ?></td>
+                    <td>
+                        <?php if (!empty($item['matricula'])): ?>
+                            <?= htmlspecialchars($item['matricula']) ?>
+                        <?php else: ?>
+                            <span style="color:#94a3b8; font-size:12px;">—</span>
+                        <?php endif; ?>
+                    </td>
                     <td><?= date('d/m/Y', strtotime($item['data_inicio'])) ?></td>
                     <td><?= $item['data_fim'] ? date('d/m/Y', strtotime($item['data_fim'])) : '<span style="color:#16a34a">ativo</span>' ?></td>
                     <td>
@@ -231,7 +237,7 @@ $stmt->close();
                     </td>
                     <td>
                         <?php if (!empty($item['emitido_em'])): ?>
-                            <?= date('d/m/Y H:i', strtotime($item['emitido_em'])) ?>
+                            <?= date('d/m/Y', strtotime($item['emitido_em'])) ?>
                         <?php else: ?>
                             <span style="color:#94a3b8; font-size:12px;">—</span>
                         <?php endif; ?>

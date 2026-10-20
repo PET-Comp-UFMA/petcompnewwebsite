@@ -9,11 +9,11 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST' || !csrfValido($_POST['csrf'] ?? null)
 $id          = $_POST['id'] ?? null;
 $nome        = trim($_POST['nome'] ?? '');
 $cpf         = validarCpf($_POST['cpf'] ?? '');
-$matricula   = trim($_POST['matricula'] ?? '');
+$matricula   = trim($_POST['matricula'] ?? '') ?: null; // opcional: vazio vira NULL
 $dataInicio  = $_POST['data_inicio'] ?? '';
 $dataFim     = trim($_POST['data_fim'] ?? '') ?: null;
 
-if ($nome === '' || $cpf === false || $matricula === '' || $dataInicio === '') {
+if ($nome === '' || $cpf === false || $dataInicio === '') {
     header('Location: painel.php?msg=erro');
     exit;
 }

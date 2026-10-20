@@ -4,7 +4,7 @@
 
 <?php 
     $title = "Declaração de Horas";
-    $cssFiles = ['css\declaracao.css'];
+    $cssFiles = ['css/declaracao.css'];
     $jsFiles = ['js/declaracao.js', 'js/declaracao-backend.js'];
     include "head.php";
 ?>
@@ -13,7 +13,7 @@
     <?php include('header.php') ?>
     <div class="container-header">
         <h2>Declaração de Horas Complementares </h2>
-        <h3>Informe seus dados  para  baixar sua declaração de horas complementares.</h3>
+        <h3>Informe seu CPF para baixar sua declaração de horas complementares.</h3>
         <h4><a href="">Página Inicial</a></h4>
         <h4> → Documentos →</h4>
         <h4> Declaração HC </h4>
@@ -41,17 +41,13 @@
             <div class="text">
                 <h2>Emissão Declaração</h2>
                 <hr>
-                <p>Informe seu CPF e matrícula para verificar sua elegibilidade e baixar sua declaração de horas complementares.</p>
+                <p>Informe seu CPF para verificar sua elegibilidade e baixar sua declaração de horas complementares.</p>
             </div>
             <div class="card-form">
                 <form action="" id="form-emissao">
                     <div class="campo">
                         <label for="cpf">CPF</label>
                         <input id="cpf" type="text" placeholder="000.000.000-00" maxlength="14" inputmode="numeric">
-                    </div>
-                    <div class="campo">
-                        <label for="Matricula">N° da Matrícula</label>
-                        <input id="Matricula" type="text" placeholder="12345678910" maxlength="15" inputmode="numeric">
                     </div>
                 </form>
                 <button id="btnverificar" class="btnRegistrar">
