@@ -10,12 +10,44 @@ if (isset($_GET['editar'])) {
     $stmt->close();
 }
 
-$lista = $mysqli->query(
-    'SELECT lc.*, de.numero_declaracao
-     FROM liberacoes_certificado lc
-     LEFT JOIN declaracoes_emitidas de ON de.liberacao_id = lc.id
-     ORDER BY lc.nome ASC'
-)->fetch_all(MYSQLI_ASSOC);
+// Ordenação da lista (valores fixos, nunca o texto da URL direto no SQL)
+$ordensValidas = ['az', 'za', 'liberacao'];
+$ordem = in_array($_GET['ordem'] ?? '', $ordensValidas, true) ? $_GET['ordem'] : 'az';
+
+$orderBy = match ($ordem) {
+    'za'        => 'lc.nome DESC',
+    'liberacao' => 'lc.criado_em DESC, lc.id DESC',
+    default     => 'lc.nome ASC',
+};
+
+// Pesquisa por nome
+$busca = trim($_GET['busca'] ?? '');
+if (mb_strlen($busca) > 80) {
+    $busca = mb_substr($busca, 0, 80);
+}
+
+// Monta links mantendo a ordem e a busca atuais
+function linkPainel(array $params): string {
+    $params = array_filter($params, fn($v) => $v !== '' && $v !== null);
+    return 'painel.php' . ($params ? '?' . http_build_query($params) : '');
+}
+
+$sql = "SELECT lc.*, de.numero_declaracao, de.emitido_em
+        FROM liberacoes_certificado lc
+        LEFT JOIN declaracoes_emitidas de ON de.liberacao_id = lc.id";
+if ($busca !== '') {
+    $sql .= " WHERE lc.nome LIKE ?";
+}
+$sql .= " ORDER BY $orderBy";
+
+$stmt = $mysqli->prepare($sql);
+if ($busca !== '') {
+    $like = '%' . addcslashes($busca, '%_\\') . '%';
+    $stmt->bind_param('s', $like);
+}
+$stmt->execute();
+$lista = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+$stmt->close();
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -44,6 +76,26 @@ $lista = $mysqli->query(
     .msg.ok { background: #dcfce7; color: #15803d; }
     .msg.erro { background: #fee2e2; color: #b91c1c; }
     .vazio { color: #94a3b8; font-size: 14px; padding: 20px 0; text-align: center; }
+
+    /* Topo da lista: título + pesquisa + ordenação */
+    .card-topo { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 12px; }
+    .card-topo h2 { margin: 0; }
+    .controles { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+
+    /* Pesquisa */
+    .busca { display: flex; align-items: center; gap: 6px; }
+    .busca input[type="search"] { padding: 8px 10px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 13px; width: 220px; box-sizing: border-box; }
+    .busca button { margin-top: 0; padding: 8px 14px; font-size: 13px; }
+    .busca a { font-size: 13px; color: #64748b; text-decoration: none; }
+
+    /* Botão retrátil de ordenação */
+    .ordenar { position: relative; }
+    .ordenar summary { list-style: none; cursor: pointer; padding: 8px 14px; background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 13px; color: #334155; }
+    .ordenar summary::-webkit-details-marker { display: none; }
+    .ordenar .opcoes { position: absolute; right: 0; top: 38px; background: #fff; border: 1px solid #e2e8f0; border-radius: 6px; box-shadow: 0 4px 10px rgba(0,0,0,.1); min-width: 220px; z-index: 10; }
+    .ordenar .opcoes a { display: block; padding: 10px 14px; font-size: 13px; color: #334155; text-decoration: none; }
+    .ordenar .opcoes a:hover { background: #f1f5f9; }
+    .ordenar .opcoes a.atual { font-weight: 700; color: #027BFD; }
 </style>
 </head>
 <body>
@@ -114,21 +166,52 @@ $lista = $mysqli->query(
 
             <button type="submit"><?= $editando ? 'Salvar alterações' : 'Liberar aluno' ?></button>
             <?php if ($editando): ?>
-                <a href="painel.php" style="margin-left:14px; font-size:13px;">cancelar edição</a>
+                <a href="<?= htmlspecialchars(linkPainel(['ordem' => $ordem, 'busca' => $busca])) ?>" style="margin-left:14px; font-size:13px;">cancelar edição</a>
             <?php endif; ?>
         </form>
     </div>
 
     <div class="card">
-        <h2>Alunos liberados (<?= count($lista) ?>)</h2>
+        <div class="card-topo">
+            <h2>
+                <?php if ($busca !== ''): ?>
+                    Resultados (<?= count($lista) ?>)
+                <?php else: ?>
+                    Alunos liberados (<?= count($lista) ?>)
+                <?php endif; ?>
+            </h2>
+
+            <div class="controles">
+                <form class="busca" method="get" action="painel.php">
+                    <input type="hidden" name="ordem" value="<?= htmlspecialchars($ordem) ?>">
+                    <input type="search" name="busca" placeholder="Pesquisar por nome..."
+                           maxlength="80" value="<?= htmlspecialchars($busca) ?>">
+                    <button type="submit">Buscar</button>
+                    <?php if ($busca !== ''): ?>
+                        <a href="<?= htmlspecialchars(linkPainel(['ordem' => $ordem])) ?>">limpar</a>
+                    <?php endif; ?>
+                </form>
+
+                <details class="ordenar">
+                    <summary>Ordenar ▾</summary>
+                    <div class="opcoes">
+                        <a href="<?= htmlspecialchars(linkPainel(['ordem' => 'az', 'busca' => $busca])) ?>"        class="<?= $ordem === 'az' ? 'atual' : '' ?>">A → Z</a>
+                        <a href="<?= htmlspecialchars(linkPainel(['ordem' => 'za', 'busca' => $busca])) ?>"        class="<?= $ordem === 'za' ? 'atual' : '' ?>">Z → A</a>
+                        <a href="<?= htmlspecialchars(linkPainel(['ordem' => 'liberacao', 'busca' => $busca])) ?>" class="<?= $ordem === 'liberacao' ? 'atual' : '' ?>">Ordem de liberação (último primeiro)</a>
+                    </div>
+                </details>
+            </div>
+        </div>
 
         <?php if (empty($lista)): ?>
-            <div class="vazio">Nenhum aluno liberado ainda.</div>
+            <div class="vazio">
+                <?= $busca !== '' ? 'Nenhum aluno encontrado com esse nome.' : 'Nenhum aluno liberado ainda.' ?>
+            </div>
         <?php else: ?>
         <table>
             <thead>
                 <tr>
-                    <th>Nome</th><th>CPF</th><th>Matrícula</th><th>Início</th><th>Fim</th><th>Cód. validação</th><th></th>
+                    <th>Nome</th><th>CPF</th><th>Matrícula</th><th>Início</th><th>Fim</th><th>Cód. validação</th><th>Último download</th><th></th>
                 </tr>
             </thead>
             <tbody>
@@ -146,8 +229,15 @@ $lista = $mysqli->query(
                             <span style="color:#94a3b8; font-size:12px;">ainda não emitido</span>
                         <?php endif; ?>
                     </td>
+                    <td>
+                        <?php if (!empty($item['emitido_em'])): ?>
+                            <?= date('d/m/Y H:i', strtotime($item['emitido_em'])) ?>
+                        <?php else: ?>
+                            <span style="color:#94a3b8; font-size:12px;">—</span>
+                        <?php endif; ?>
+                    </td>
                     <td class="acoes">
-                        <a class="editar" href="painel.php?editar=<?= (int)$item['id'] ?>">editar</a>
+                        <a class="editar" href="<?= htmlspecialchars(linkPainel(['editar' => (int)$item['id'], 'ordem' => $ordem, 'busca' => $busca])) ?>">editar</a>
                         <a class="excluir" href="excluir.php?id=<?= (int)$item['id'] ?>&csrf=<?= urlencode(csrfToken()) ?>"
                            onclick="return confirm('Excluir <?= htmlspecialchars(addslashes($item['nome'])) ?>? Isso remove o acesso dela(e) ao certificado.');">excluir</a>
                     </td>

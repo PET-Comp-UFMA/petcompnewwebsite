@@ -1,6 +1,9 @@
 const botoesDeclaracao = document.querySelectorAll("#btnEmissao button");
 const paineisDeclaracao = document.querySelectorAll(".painel-declaracao");
 
+// NOVO: guarda as funções verificarCampos de cada formulário,
+// pra conseguir reavaliar o estado dos botões depois de limpar os campos.
+const verificadoresDeCampos = [];
 
 function ativarBotaoDeclaracao(botaoSelecionado) {
     botoesDeclaracao.forEach((botao) => {
@@ -16,10 +19,31 @@ function prepararTrocaComponenteDeclaracao(tipoSelecionado) {
     });
 }
 
+// NOVO: limpa campos e mensagens das duas abas.
+function limparDeclaracao() {
+    document.getElementById("form-emissao").reset();
+    document.getElementById("form-validacao").reset();
+
+    document.getElementById("msg-emissao").textContent = "";
+    document.getElementById("msg-validacao").textContent = "";
+
+    // reset() não dispara o evento "input", então reavaliamos manualmente
+    // pra os botões "Verificar" voltarem a ficar desabilitados.
+    verificadoresDeCampos.forEach((verificar) => verificar());
+}
+
 botoesDeclaracao.forEach((botao) => {
     botao.addEventListener("click", () => {
+        // NOVO: só limpa se realmente estiver trocando de aba
+        // (clicar na aba que já está aberta não apaga o que a pessoa digitou)
+        const trocouDeAba = !botao.classList.contains("ativado");
+
         ativarBotaoDeclaracao(botao);
         prepararTrocaComponenteDeclaracao(botao.dataset.declaracaoTab);
+
+        if (trocouDeAba) {
+            limparDeclaracao();
+        }
     });
 });
 
@@ -41,6 +65,9 @@ function configurarValidacaoBotao(seletorForm, seletorBotao) {
     });
 
     verificarCampos(); // estado inicial ao carregar a página
+
+    // NOVO: registra pra poder ser chamada ao limpar os campos
+    verificadoresDeCampos.push(verificarCampos);
 }
 
 // Máscara e bloqueio de letras no campo CPF

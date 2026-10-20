@@ -55,7 +55,7 @@
                     </div>
                 </form>
                 <button id="btnverificar" class="btnRegistrar">
-                    Verificar Elegibilidade
+                        Emitir Declaração
                 </button>
                 <div id="msg-emissao"></div>
             </div>
