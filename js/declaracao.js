@@ -93,24 +93,6 @@ inputCpf.addEventListener('keydown', (e) => {
     }
 });
 
-// Máscara e bloqueio de letras no campo Matrícula
-const inputMatricula = document.getElementById('Matricula');
-
-inputMatricula.addEventListener('input', (e) => {
-    let valor = e.target.value.replace(/\D/g, ''); // remove tudo que não é número
-    valor = valor.slice(0, 15); // limita a 11 dígitos
-    e.target.value = valor;
-});
-
-inputMatricula.addEventListener('keydown', (e) => {
-    if (e.ctrlKey || e.metaKey) return; // libera Ctrl+V, Ctrl+C, Ctrl+A, etc.
-
-    const teclasPermitidas = ['Backspace', 'Delete', 'ArrowLeft', 'ArrowRight', 'Tab'];
-    if (!/\d/.test(e.key) && !teclasPermitidas.includes(e.key)) {
-        e.preventDefault();
-    }
-});
-
 prepararTrocaComponenteDeclaracao("emissao");
 configurarValidacaoBotao("#form-emissao", "#btnverificar");
 configurarValidacaoBotao("#form-validacao", "#btnvalidar");

@@ -8,10 +8,9 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     // ---------------- EMISSÃO ----------------
-    const inputCpf       = document.getElementById('cpf');
-    const inputMatricula = document.getElementById('Matricula');
-    const btnVerificar   = document.getElementById('btnverificar');
-    const msgEmissao     = document.getElementById('msg-emissao');
+    const inputCpf     = document.getElementById('cpf');
+    const btnVerificar = document.getElementById('btnverificar');
+    const msgEmissao   = document.getElementById('msg-emissao');
 
     function mostrarMsg(el, texto, tipo) {
         if (!el) return;
@@ -26,7 +25,6 @@ document.addEventListener('DOMContentLoaded', () => {
         if (btnVerificar.disabled) return; // respeita a validação de campos preenchidos que já existe
 
         const cpf = inputCpf.value;
-        const matricula = inputMatricula.value;
 
         const textoOriginal = btnVerificar.textContent;
         btnVerificar.disabled = true;
@@ -37,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const respElegibilidade = await fetch('api/verificar_elegibilidade.php', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ cpf, matricula }),
+                body: JSON.stringify({ cpf }),
             });
             const elegibilidade = await respElegibilidade.json();
 
@@ -51,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const respPdf = await fetch('api/gerar_declaracao.php', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ cpf, matricula }),
+                body: JSON.stringify({ cpf }),
             });
 
             if (!respPdf.ok) {

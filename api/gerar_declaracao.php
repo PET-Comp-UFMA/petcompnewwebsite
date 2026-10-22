@@ -12,11 +12,10 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 
 $input = json_decode(file_get_contents('php://input'), true) ?? $_POST;
 
-$cpf       = validarCpf($input['cpf'] ?? '');
-$matricula = trim($input['matricula'] ?? '');
-$ppc       = $input['ppc'] ?? 'antigo'; // por enquanto só existe o PPC antigo
+$cpf = validarCpf($input['cpf'] ?? '');
+$ppc = $input['ppc'] ?? 'antigo'; // por enquanto só existe o PPC antigo
 
-if ($cpf === false || $matricula === '' || !preg_match('/^\d{5,20}$/', $matricula)) {
+if ($cpf === false) {
     http_response_code(400);
     exit('Dados inválidos.');
 }
@@ -29,17 +28,19 @@ if ($ppc !== 'antigo') {
 }
 
 // Revalida no servidor: existir na lista de liberação é o critério.
+// ORDER BY id DESC: se o mesmo CPF tiver mais de uma liberação,
+// sempre pega a mais recente (mesmo critério do verificar_elegibilidade.php).
 $stmt = $mysqli->prepare(
-    'SELECT * FROM liberacoes_certificado WHERE cpf = ? AND matricula = ? LIMIT 1'
+    'SELECT * FROM liberacoes_certificado WHERE cpf = ? ORDER BY id DESC LIMIT 1'
 );
-$stmt->bind_param('ss', $cpf, $matricula);
+$stmt->bind_param('s', $cpf);
 $stmt->execute();
 $liberacao = $stmt->get_result()->fetch_assoc();
 $stmt->close();
 
 if (!$liberacao) {
     http_response_code(404);
-    exit('Não encontramos uma liberação para esse CPF e matrícula.');
+    exit('Não encontramos uma liberação para esse CPF.');
 }
 
 $inicio = new DateTime($liberacao['data_inicio']);
